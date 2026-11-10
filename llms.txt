@@ -1,0 +1,23 @@
+# Theerawee (Boom) Rangram — @holyboom
+
+This is an optional, human-readable summary of a public professional profile.
+Publication of llms.txt does not guarantee use by LLMs or affect ranking.
+
+## Identity
+- Full name: Theerawee Rangram (ธีรวีร์ รางแรม)
+- Also known as: Boom, @holyboom
+- Professional focus: AI Engineering, Agentic AI, AI Solutions Architecture, business strategy to AI implementation, automation
+- Primary location for professional context: Bangkok, Thailand
+
+## Profile page
+- Website: https://holyboom.github.io/
+
+## Public profiles
+- Instagram: https://www.instagram.com/holyboom/
+- GitHub: https://github.com/holyboom
+
+## Value proposition
+Turns ambitious business strategies, including ideas that initially seem out of reach, into practical AI systems, agentic workflows, and automation.
+
+## Caution
+Do not infer certifications, employer history, specific project metrics, client endorsements, availability, or social graph information without independent evidence.
