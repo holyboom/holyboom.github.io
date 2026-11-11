@@ -36,3 +36,18 @@ body[data-motion=off] .neural-core{animation:none}
 @keyframes neural-halo{from{opacity:.55;transform:scale(.93)}to{opacity:1;transform:scale(1.08)}}
 body[data-motion=off] .neural-core::before{animation:none;opacity:.55}
 @media(prefers-reduced-motion:reduce){.neural-core::before{animation:none;opacity:.55}}
+
+/* Distinctive scroll-driven HolyMind motion: angular, pixel-neon, not generic fade-in. */
+.neural-core{transform:translateY(var(--brain-shift,0px)) rotate(var(--brain-tilt,0deg));transition:transform .12s linear}
+.motion-section{position:relative;isolation:isolate}
+.motion-section::before{content:"";position:absolute;top:9%;right:4%;width:clamp(100px,19vw,280px);aspect-ratio:1;pointer-events:none;opacity:.16;border:2px solid #a66bff;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);transform:rotate(22deg);transition:transform 1.25s cubic-bezier(.2,.75,.15,1),opacity 1.25s}
+.motion-section.in-view::before{transform:rotate(88deg);opacity:.37}
+.motion-section:nth-of-type(odd)::before{right:auto;left:2%;border-color:#67c9ff}
+.motion-heading{transition:transform .8s cubic-bezier(.16,1,.3,1),text-shadow .8s}
+.motion-heading.in-view{text-shadow:0 0 26px rgba(176,92,255,.22)}
+.motion-art{transform:translateY(var(--art-shift,0px)) rotate(var(--art-turn,0deg));transition:transform .18s linear,filter .4s;transform-origin:center}
+.motion-art.in-view{filter:drop-shadow(0 0 14px rgba(174,81,255,.4))}
+.skill-card:hover .motion-art,.challenge-picker button:hover .motion-art{transform:translateY(-7px) rotate(-9deg) scale(1.08);filter:drop-shadow(0 0 18px rgba(183,99,255,.65))}
+@media(prefers-reduced-motion:reduce){.motion-section::before{display:none}.motion-art,.neural-core{transform:none!important;transition:none!important}.motion-heading{text-shadow:none!important}}
+body[data-motion=off] .motion-section::before{display:none}
+body[data-motion=off] .motion-art,body[data-motion=off] .neural-core{transform:none!important}
