@@ -8,3 +8,10 @@
 @media print{.sound-toggle,.sonic-settings{display:none}}
 
 html:not(.js) .sound-toggle,html:not(.js) .sonic-settings{display:none}
+
+/* Soundscape controls live in the existing disclosure; no change to hero geometry. */
+.sonic-settings .sound-layer-option{display:flex;align-items:center;gap:9px;text-align:left;min-height:40px;font-size:12px;color:var(--soft);cursor:pointer}
+.sonic-settings .sound-layer-option input{width:17px;height:17px;flex:none;margin:0}
+.sonic-settings[open]{padding:8px 12px 12px;border:1px solid var(--line);border-radius:6px;background:var(--night)}
+.sonic-settings .sound-mix-note{display:block;margin-top:8px;color:var(--muted);font-size:10px;line-height:1.65}
+.sonic-settings input:focus-visible{outline:2px solid var(--accent-cyan);outline-offset:3px}

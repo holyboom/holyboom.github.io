@@ -79,3 +79,7 @@ Tap the brain for one of 14 visual reactions and its authored micro-score. Sound
 Sound-source documentation: `assets/audio/README.md`; data and waveform metrics: `assets/audio/manifest.json`. The sounds are procedural DSP, not actual recordings or output from an audio-generation model.
 
 Digital + Electricity v12: [Sound Studio](qa/electric-v12.html), 14 new electrical presets and retained previous WAVs for comparison. `npm run build:sounds` reproduces the versioned sound assets.
+
+
+## Quiet Current v13
+A scoped Hero-to-Assemble listening prototype with a quiet field, reversible continuous scroll current and unchanged Electric v12 taps. Start with qa/soundscape-v13.html for a matched three-mode comparison. See docs/evidence/soundscape-v13/sound-design.md for the design, controls, scope and limitations. New sound starts only after a tap. No change to always-on visual motion.

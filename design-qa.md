@@ -210,3 +210,12 @@ Live suites: 48/48 Chromium, 48/48 WebKit, 68/68 existing Interaction WebKit: **
 ### Published Electric v12 verification
 
 48/48 checks passed in Chromium and 48/48 in WebKit on the public release URL, with zero failed assertions/runtime errors. All fourteen audio-visual mappings, sound-only mute, persisted zero volume, first-gesture unlock, bounded voices, milestone cues, no-AudioContext fallback and live Studio selectors were exercised. The 92-check DSP report and source/image comparisons are recorded alongside production results. Audio perception and physical-iPhone playback are not certified.
+
+
+## Quiet Current v13 — local acceptance
+- Soundscape: 48 checks in Chromium + 48 in WebKit, no captured errors or failed checks. Actual output buses, foreground ducking, native wheel/range input, reverse, pause, new completion cue, hidden/return semantics and three comparison mixes exercised.
+- Existing interaction regression: 68 WebKit checks pass, including pinning, layers, callouts, geometry, 34 skills and native controls. Only the expected release key changes.
+- Tests wait for actual scroll/continuity settlement and the observed gesture activity peak rather than assume an 80 ms snapshot is timely under concurrent browser load. Playwright range fill is not used as evidence of a trusted gesture; native keyboard input is used.
+- Five production-graph OfflineAudioContext previews have matched master gain, finite/nonzero PCM, controlled fades and no clipping. Full-mix peak does not exceed the unchanged tap baseline by 5%. No per-file loudness normalization.
+- Mobile settings and desktop/mobile studio images reviewed. Original 14 tap DSP and nine pre-existing visual/control modules are unchanged; 37 original source images unchanged.
+- Physical iPhone audio, subjective pleasantness and performance are not certified. Published verification is recorded separately.

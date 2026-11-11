@@ -1,0 +1,139 @@
+{
+  "version": "soundscape-v13",
+  "duration": 22,
+  "masterGain": 0.48,
+  "normalization": "None; identical master gain and compressor in every comparison",
+  "renderer": "Production HolyMindSoundscape graph via OfflineAudioContext",
+  "originalTaps": "Electric v12 unchanged",
+  "timeline": [
+    {
+      "at": 0.6,
+      "event": "tap"
+    },
+    {
+      "at": 2.5,
+      "event": "scroll forward"
+    },
+    {
+      "at": 5.8,
+      "event": "pause"
+    },
+    {
+      "at": 7.5,
+      "event": "tap"
+    },
+    {
+      "at": 8.5,
+      "event": "assembly unfold"
+    },
+    {
+      "at": 13.9,
+      "event": "new current settle"
+    },
+    {
+      "at": 16.2,
+      "event": "tap"
+    },
+    {
+      "at": 17,
+      "event": "reverse / reconnect"
+    },
+    {
+      "at": 21.2,
+      "event": "fade"
+    }
+  ],
+  "presets": [
+    {
+      "mode": "taps",
+      "file": "taps-only.wav",
+      "sr": 24000,
+      "duration": 22,
+      "finite": true,
+      "peak": 0.33902645111083984,
+      "rms": 0.01478683666407877,
+      "maxStep": 0.23720716685056686,
+      "end": 0,
+      "bytes": 2112044,
+      "sha256": "43b32d6c3f20ddc57682b5051db2410937cb244092a14a01ec7ffdca7eb37717"
+    },
+    {
+      "mode": "bed",
+      "file": "field-and-taps.wav",
+      "sr": 24000,
+      "duration": 22,
+      "finite": true,
+      "peak": 0.3380793035030365,
+      "rms": 0.015215528182350686,
+      "maxStep": 0.23724793642759323,
+      "end": 0.0000035841310364048695,
+      "bytes": 2112044,
+      "sha256": "3d829f95d8145253fdf23127fe1429dd951564cf23598dbed4aaa94178775204"
+    },
+    {
+      "mode": "full",
+      "file": "full-journey.wav",
+      "sr": 24000,
+      "duration": 22,
+      "finite": true,
+      "peak": 0.3380793035030365,
+      "rms": 0.01570020834875493,
+      "maxStep": 0.23724793642759323,
+      "end": 0.000003584451405913569,
+      "bytes": 2112044,
+      "sha256": "0e9a943aae4f8dd70be5fa7f0e868490f8fec99b52536bfba36e153fac26c3b5"
+    },
+    {
+      "mode": "field-only",
+      "file": "quiet-field.wav",
+      "sr": 24000,
+      "duration": 22,
+      "finite": true,
+      "peak": 0.01238724123686552,
+      "rms": 0.0037192714295183394,
+      "maxStep": 0.00105653190985322,
+      "end": 0.0000035841314911522204,
+      "bytes": 2112044,
+      "sha256": "d4153f44826dd4375feef46513be56bb3805a6fc90fdebe0c2c5249eaec6bdc4"
+    },
+    {
+      "mode": "scroll-only",
+      "file": "reversible-current.wav",
+      "sr": 24000,
+      "duration": 22,
+      "finite": true,
+      "peak": 0.019478479400277138,
+      "rms": 0.0035182852908504617,
+      "maxStep": 0.0031914175488054752,
+      "end": 5.710213413223642e-10,
+      "bytes": 2112044,
+      "sha256": "b13f2698390aebeab88ff76561929be4fa8ffa82269f9c58a86598aed766a359"
+    }
+  ],
+  "checks": [
+    {
+      "file": "taps-only.wav",
+      "pass": true
+    },
+    {
+      "file": "field-and-taps.wav",
+      "pass": true
+    },
+    {
+      "file": "full-journey.wav",
+      "pass": true
+    },
+    {
+      "file": "quiet-field.wav",
+      "pass": true
+    },
+    {
+      "file": "reversible-current.wav",
+      "pass": true
+    },
+    {
+      "file": "full-versus-baseline",
+      "pass": true
+    }
+  ]
+}

@@ -129,3 +129,16 @@ The owner requires full visible animation without the previous system-level calm
 - Use deterministic source-authored DSP, not stock, actual material recordings or generative audio. Ship matching 32 kHz WAVs in `assets/audio/electric-v12/`, a complete reel, a level-matched before/after and the source kit. Preserve v11 samples for comparison.
 - Keep default volume, browser gesture unlock, mute, three-voice mixing, lifecycle behavior and assembly milestone controls. Do not touch layout, visual renderer, pin/scroll progress or existing semantics. User audio preferences remain intact.
 - Bound the signal with shaped attacks, DC removal, two low-pass stages and normalization; test waveforms and the browser graph. Subjective timbre and real iPhone speaker behavior must not be claimed from automated tests.
+
+
+## Quiet Current v13 — approved listening prototype
+
+Scope: Hero → orbital chapters → ribbon → pinned Assemble. Keep the original fourteen Electric v12 tap waveforms byte-identical and every visual/motion layout intact. No general rollout below assembly until this prototype is evaluated.
+
+Three audio roles share one gesture-unlocked AudioContext: a quiet slowly evolving electric field; a smooth directional scroll filament; existing brief tap discharges. New soft settle/reconnect cues replace the four reused tap milestones. No new music track, stock effect, recorded texture or generative model.
+
+Ambient and scroll buses yield to taps via bounded ducking. New controls in Sound mix can disable the background and scroll independently. The global sound switch and saved volume remain separate from Always-on Motion. Scroll itself cannot create/resume audio. Returning from a hidden/interrupted page requires a fresh explicit gesture; no missed events are replayed.
+
+Scroll sound follows genuine wheel, touch, keyboard and manual-range input. Resize, anchor jumps, overscroll and unprompted programmatic repositioning must not make swooshes. Read the assembly's continuous eased progress rather than its rounded displayed percentage. One source of visual truth remains unchanged. A deadband plus direction hysteresis avoids tiny-jitter retriggers.
+
+Prototype exit fades the new buses away, leaving old taps elsewhere intact. Compare Taps only / Field + taps / Full mix at the same master level in the listening studio. Offline previews are rendered through the exact production audio graph, not a separate approximation. Automated signal checks do not establish subjective pleasantness or physical-iPhone speaker performance.
