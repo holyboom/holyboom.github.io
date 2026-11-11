@@ -1,0 +1,629 @@
+{
+  "version": "electric-v12",
+  "checks": [
+    {
+      "name": "exactly-fourteen-presets",
+      "pass": true
+    },
+    {
+      "name": "electric-character-and-version",
+      "pass": true
+    },
+    {
+      "name": "neural-discharge-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.06662870793842593,
+        "dc": -0.00003394677124406773,
+        "maxSampleStep": 0.26555292308330536
+      }
+    },
+    {
+      "name": "neural-discharge-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "neural-discharge-deterministic",
+      "pass": true
+    },
+    {
+      "name": "neural-discharge-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "neural-discharge-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "neural-discharge-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "crystallizer-bloom-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.06296444172774723,
+        "dc": -0.00003531415549024229,
+        "maxSampleStep": 0.14589252322912216
+      }
+    },
+    {
+      "name": "crystallizer-bloom-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "crystallizer-bloom-deterministic",
+      "pass": true
+    },
+    {
+      "name": "crystallizer-bloom-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "crystallizer-bloom-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "crystallizer-bloom-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "insight-pulse-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.060108787655196436,
+        "dc": -0.00005378630449576916,
+        "maxSampleStep": 0.16482269763946533
+      }
+    },
+    {
+      "name": "insight-pulse-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "insight-pulse-deterministic",
+      "pass": true
+    },
+    {
+      "name": "insight-pulse-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "insight-pulse-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "insight-pulse-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "constraint-break-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.052854565223695596,
+        "dc": -0.00001312160581648733,
+        "maxSampleStep": 0.1853276565670967
+      }
+    },
+    {
+      "name": "constraint-break-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "constraint-break-deterministic",
+      "pass": true
+    },
+    {
+      "name": "constraint-break-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "constraint-break-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "constraint-break-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "verification-spark-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.061982058595981854,
+        "dc": -0.000044384403652265795,
+        "maxSampleStep": 0.1520399022847414
+      }
+    },
+    {
+      "name": "verification-spark-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "verification-spark-deterministic",
+      "pass": true
+    },
+    {
+      "name": "verification-spark-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "verification-spark-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "verification-spark-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "reasoning-arc-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.06314416467785647,
+        "dc": -0.00003804930604010238,
+        "maxSampleStep": 0.1739300824701786
+      }
+    },
+    {
+      "name": "reasoning-arc-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "reasoning-arc-deterministic",
+      "pass": true
+    },
+    {
+      "name": "reasoning-arc-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "reasoning-arc-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "reasoning-arc-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "cognitive-reframe-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.0556859904855961,
+        "dc": -0.000024209802607781914,
+        "maxSampleStep": 0.1746755838394165
+      }
+    },
+    {
+      "name": "cognitive-reframe-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "cognitive-reframe-deterministic",
+      "pass": true
+    },
+    {
+      "name": "cognitive-reframe-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "cognitive-reframe-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "cognitive-reframe-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "pattern-reset-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.049788175203801,
+        "dc": -0.000031266328261586914,
+        "maxSampleStep": 0.11781860888004303
+      }
+    },
+    {
+      "name": "pattern-reset-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "pattern-reset-deterministic",
+      "pass": true
+    },
+    {
+      "name": "pattern-reset-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "pattern-reset-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "pattern-reset-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "signal-fork-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.06236011073308352,
+        "dc": -0.000035531694323824275,
+        "maxSampleStep": 0.14922405779361725
+      }
+    },
+    {
+      "name": "signal-fork-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "signal-fork-deterministic",
+      "pass": true
+    },
+    {
+      "name": "signal-fork-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "signal-fork-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "signal-fork-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "goal-lock-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.05372876794946079,
+        "dc": -0.00002558426771207932,
+        "maxSampleStep": 0.19056680239737034
+      }
+    },
+    {
+      "name": "goal-lock-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "goal-lock-deterministic",
+      "pass": true
+    },
+    {
+      "name": "goal-lock-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "goal-lock-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "goal-lock-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "debate-synthesis-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.05613765801935226,
+        "dc": -0.000031612827086481844,
+        "maxSampleStep": 0.16831102594733238
+      }
+    },
+    {
+      "name": "debate-synthesis-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "debate-synthesis-deterministic",
+      "pass": true
+    },
+    {
+      "name": "debate-synthesis-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "debate-synthesis-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "debate-synthesis-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "evidence-manifest-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.41803351044654846,
+        "rms": 0.06900000005170287,
+        "dc": -0.000039361738337754656,
+        "maxSampleStep": 0.16395160928368568
+      }
+    },
+    {
+      "name": "evidence-manifest-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "evidence-manifest-deterministic",
+      "pass": true
+    },
+    {
+      "name": "evidence-manifest-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "evidence-manifest-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "evidence-manifest-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "holy-prime-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.0528025742347217,
+        "dc": -0.000012379608563583464,
+        "maxSampleStep": 0.13304632157087326
+      }
+    },
+    {
+      "name": "holy-prime-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "holy-prime-deterministic",
+      "pass": true
+    },
+    {
+      "name": "holy-prime-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "holy-prime-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "holy-prime-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "triad-resonance-finite-bounded",
+      "pass": true,
+      "metrics": {
+        "peak": 0.4300000071525574,
+        "rms": 0.06354616877229535,
+        "dc": -0.0000348705101664706,
+        "maxSampleStep": 0.1731239529326558
+      }
+    },
+    {
+      "name": "triad-resonance-silent-endpoints",
+      "pass": true
+    },
+    {
+      "name": "triad-resonance-deterministic",
+      "pass": true
+    },
+    {
+      "name": "triad-resonance-correct-rate-duration",
+      "pass": true
+    },
+    {
+      "name": "triad-resonance-published-file-matches-renderer",
+      "pass": true
+    },
+    {
+      "name": "triad-resonance-different-from-v11",
+      "pass": true
+    },
+    {
+      "name": "fourteen-unique-waveforms",
+      "pass": true
+    },
+    {
+      "name": "portable-sample-rate-16000",
+      "pass": true
+    },
+    {
+      "name": "portable-sample-rate-24000",
+      "pass": true
+    },
+    {
+      "name": "portable-sample-rate-44100",
+      "pass": true
+    },
+    {
+      "name": "portable-sample-rate-48000",
+      "pass": true
+    },
+    {
+      "name": "invalid-rate-rejected",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "metrics": [
+    {
+      "id": "neural-discharge",
+      "name": "Synaptic voltage",
+      "tag": "Sharp charge / branching crackle",
+      "duration": 0.68,
+      "peak": 0.4300000071525574,
+      "rms": 0.06662870793842593,
+      "dc": -0.00003394677124406773,
+      "maxSampleStep": 0.26555292308330536,
+      "sha256": "64eaf6a9a667c80631bc183e5766b7c240a02a6f741e460b5affd111080494fb",
+      "oldDuration": 0.7
+    },
+    {
+      "id": "crystallizer-bloom",
+      "name": "Digital crystallization",
+      "tag": "Faceted data / rising electric bloom",
+      "duration": 0.84,
+      "peak": 0.4300000071525574,
+      "rms": 0.06296444172774723,
+      "dc": -0.00003531415549024229,
+      "maxSampleStep": 0.14589252322912216,
+      "sha256": "faa85df32088d92c343e72d38f12ff3d214e61d022ce46ac137b38150d8095ad",
+      "oldDuration": 1.05
+    },
+    {
+      "id": "insight-pulse",
+      "name": "Insight ignition",
+      "tag": "Two clean pulses / quick spark release",
+      "duration": 0.66,
+      "peak": 0.4300000071525574,
+      "rms": 0.060108787655196436,
+      "dc": -0.00005378630449576916,
+      "maxSampleStep": 0.16482269763946533,
+      "sha256": "13e6711e8f3844df0a6ee07bc159bda3af1ac01eac84153ea854f6a58c97e41e",
+      "oldDuration": 1.05
+    },
+    {
+      "id": "constraint-break",
+      "name": "Constraint short-circuit",
+      "tag": "Broken digital gate / controlled arc",
+      "duration": 0.63,
+      "peak": 0.4300000071525574,
+      "rms": 0.052854565223695596,
+      "dc": -0.00001312160581648733,
+      "maxSampleStep": 0.1853276565670967,
+      "sha256": "503a25cc4cd64daf30c377354fd4c5db9879a88a33e27312838331221e7b3093",
+      "oldDuration": 0.75
+    },
+    {
+      "id": "verification-spark",
+      "name": "Verification latch",
+      "tag": "Paired logic ticks / resolved voltage",
+      "duration": 0.6,
+      "peak": 0.4300000071525574,
+      "rms": 0.061982058595981854,
+      "dc": -0.000044384403652265795,
+      "maxSampleStep": 0.1520399022847414,
+      "sha256": "2296a03dbc5ccfb7e68431092f3068e483c52ddeca4c08b39849dabf3810a171",
+      "oldDuration": 0.85
+    },
+    {
+      "id": "reasoning-arc",
+      "name": "Logic sequence",
+      "tag": "Clocked packets / linked electric steps",
+      "duration": 0.85,
+      "peak": 0.4300000071525574,
+      "rms": 0.06314416467785647,
+      "dc": -0.00003804930604010238,
+      "maxSampleStep": 0.1739300824701786,
+      "sha256": "a734fd6a17353fafedc3c0e2db3c4d6f4bb6bd4971a3fa5ce4c58b01dd3e224c",
+      "oldDuration": 1
+    },
+    {
+      "id": "cognitive-reframe",
+      "name": "Phase reframe",
+      "tag": "Down-up voltage / changed perspective",
+      "duration": 0.78,
+      "peak": 0.4300000071525574,
+      "rms": 0.0556859904855961,
+      "dc": -0.000024209802607781914,
+      "maxSampleStep": 0.1746755838394165,
+      "sha256": "9aacb79078d1a607c744e4e93df2b10abc97fb127511c1b2e5b1c65f26a8879e",
+      "oldDuration": 1
+    },
+    {
+      "id": "pattern-reset",
+      "name": "Pattern interrupt",
+      "tag": "Repeating clock / clean break / restart",
+      "duration": 0.68,
+      "peak": 0.4300000071525574,
+      "rms": 0.049788175203801,
+      "dc": -0.000031266328261586914,
+      "maxSampleStep": 0.11781860888004303,
+      "sha256": "a0ef6223654486b6c123905807b06b3675c6cc0b8533bb07940fb2852f33c419",
+      "oldDuration": 0.8
+    },
+    {
+      "id": "signal-fork",
+      "name": "Branching circuit",
+      "tag": "Split data paths / twin spark trails",
+      "duration": 0.76,
+      "peak": 0.4300000071525574,
+      "rms": 0.06236011073308352,
+      "dc": -0.000035531694323824275,
+      "maxSampleStep": 0.14922405779361725,
+      "sha256": "eba0e7631b9517703634ecbab163e9cb7a93c70bfc9775a70a92fec376dcc079",
+      "oldDuration": 0.9
+    },
+    {
+      "id": "goal-lock",
+      "name": "Target voltage lock",
+      "tag": "Converging charge / low firm latch",
+      "duration": 0.78,
+      "peak": 0.4300000071525574,
+      "rms": 0.05372876794946079,
+      "dc": -0.00002558426771207932,
+      "maxSampleStep": 0.19056680239737034,
+      "sha256": "85d3dfb16f2740c8b88e7231ce7a73b65dcb0b254636b21335349741544185aa",
+      "oldDuration": 1
+    },
+    {
+      "id": "debate-synthesis",
+      "name": "Dual-signal fusion",
+      "tag": "Alternating carriers / one resolved signal",
+      "duration": 0.82,
+      "peak": 0.4300000071525574,
+      "rms": 0.05613765801935226,
+      "dc": -0.000031612827086481844,
+      "maxSampleStep": 0.16831102594733238,
+      "sha256": "52cb54c0379388eb87d1412e9b7f9a4c38d95b4828b5c3717d04ed596a516bb6",
+      "oldDuration": 1
+    },
+    {
+      "id": "evidence-manifest",
+      "name": "Evidence data-write",
+      "tag": "Encoded ticks / electric write-through",
+      "duration": 0.78,
+      "peak": 0.41803351044654846,
+      "rms": 0.06900000005170287,
+      "dc": -0.000039361738337754656,
+      "maxSampleStep": 0.16395160928368568,
+      "sha256": "34315f8324dba5558a3a072a959881f98a6ac0c557bb70680eb5f3ddb8ebaccf",
+      "oldDuration": 0.9
+    },
+    {
+      "id": "holy-prime",
+      "name": "HolyMind Prime charge",
+      "tag": "Signature capacitor rise / violet arc / resolved core",
+      "duration": 1.05,
+      "peak": 0.4300000071525574,
+      "rms": 0.0528025742347217,
+      "dc": -0.000012379608563583464,
+      "maxSampleStep": 0.13304632157087326,
+      "sha256": "5723004641ab930b643bacf98fb0b367afdfa57e08f21d5243cff88aa25ab53f",
+      "oldDuration": 1.3
+    },
+    {
+      "id": "triad-resonance",
+      "name": "Triad circuit alignment",
+      "tag": "Three digital branches / synchronized charge",
+      "duration": 0.98,
+      "peak": 0.4300000071525574,
+      "rms": 0.06354616877229535,
+      "dc": -0.0000348705101664706,
+      "maxSampleStep": 0.1731239529326558,
+      "sha256": "f9522883956fcf99f43c3b32dc1f6307ddc5565c242fb85c550ad42098a20ed7",
+      "oldDuration": 1.25
+    }
+  ],
+  "physicalListeningTest": false
+}

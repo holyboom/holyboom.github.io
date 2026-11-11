@@ -77,3 +77,5 @@ Tap the hero/orbit brain to release a HolyMind charge. Scroll through the pinned
 Tap the brain for one of 14 visual reactions and its authored micro-score. Sound begins only after a trusted gesture; the independent mute/volume controls do not stop motion. Try all styles at `qa/resonance-v11.html`. Rebuild the original WAV previews with `npm run build:sounds`.
 
 Sound-source documentation: `assets/audio/README.md`; data and waveform metrics: `assets/audio/manifest.json`. The sounds are procedural DSP, not actual recordings or output from an audio-generation model.
+
+Digital + Electricity v12: [Sound Studio](qa/electric-v12.html), 14 new electrical presets and retained previous WAVs for comparison. `npm run build:sounds` reproduces the versioned sound assets.

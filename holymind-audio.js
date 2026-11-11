@@ -70,5 +70,5 @@
  // Warm pure PCM in idle slices; this creates no AudioContext and emits no sound.
  let warm=0;function warmOne(){if(warm>=timbres.presets.length)return;const p=timbres.presets[warm++];pcm.set(p.id,timbres.render(p.id));if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1500});else setTimeout(warmOne,90);}
  if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1200});else setTimeout(warmOne,300);
- window.HolyMindAudio=Object.freeze({play,mute,setVolume(n){volume=Math.max(0,Math.min(1,Number(n)||0));if(master)master.gain.setTargetAtTime(enabled?volume:0,context.currentTime,.02);ui();},snapshot:()=>({version:'resonance-v11',enabled,volume,unlocked,context:context?.state||'uncreated',played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history]})});ui();
+ window.HolyMindAudio=Object.freeze({play,mute,setVolume(n){volume=Math.max(0,Math.min(1,Number(n)||0));if(master)master.gain.setTargetAtTime(enabled?volume:0,context.currentTime,.02);ui();},snapshot:()=>({version:'electric-v12',character:timbres.character,enabled,volume,unlocked,context:context?.state||'uncreated',played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history]})});ui();
 })();

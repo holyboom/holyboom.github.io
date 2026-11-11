@@ -1,0 +1,86 @@
+[
+  {
+    "id": "neural-discharge",
+    "name": "Synaptic voltage",
+    "start": 0,
+    "end": 0.68
+  },
+  {
+    "id": "crystallizer-bloom",
+    "name": "Digital crystallization",
+    "start": 0.98,
+    "end": 1.82
+  },
+  {
+    "id": "insight-pulse",
+    "name": "Insight ignition",
+    "start": 2.12,
+    "end": 2.78
+  },
+  {
+    "id": "constraint-break",
+    "name": "Constraint short-circuit",
+    "start": 3.08,
+    "end": 3.71
+  },
+  {
+    "id": "verification-spark",
+    "name": "Verification latch",
+    "start": 4.01,
+    "end": 4.61
+  },
+  {
+    "id": "reasoning-arc",
+    "name": "Logic sequence",
+    "start": 4.91,
+    "end": 5.76
+  },
+  {
+    "id": "cognitive-reframe",
+    "name": "Phase reframe",
+    "start": 6.06,
+    "end": 6.84
+  },
+  {
+    "id": "pattern-reset",
+    "name": "Pattern interrupt",
+    "start": 7.14,
+    "end": 7.82
+  },
+  {
+    "id": "signal-fork",
+    "name": "Branching circuit",
+    "start": 8.12,
+    "end": 8.88
+  },
+  {
+    "id": "goal-lock",
+    "name": "Target voltage lock",
+    "start": 9.18,
+    "end": 9.96
+  },
+  {
+    "id": "debate-synthesis",
+    "name": "Dual-signal fusion",
+    "start": 10.26,
+    "end": 11.08
+  },
+  {
+    "id": "evidence-manifest",
+    "name": "Evidence data-write",
+    "start": 11.38,
+    "end": 12.16
+  },
+  {
+    "id": "holy-prime",
+    "name": "HolyMind Prime charge",
+    "start": 12.46,
+    "end": 13.51
+  },
+  {
+    "id": "triad-resonance",
+    "name": "Triad circuit alignment",
+    "start": 13.81,
+    "end": 14.79
+  }
+]

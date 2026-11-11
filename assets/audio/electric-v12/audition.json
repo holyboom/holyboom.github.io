@@ -1,0 +1,14 @@
+{
+  "version": "electric-v12",
+  "beforeAfter": {
+    "oldFirst": true,
+    "old": "resonance-v11 / neural-discharge",
+    "new": "electric-v12 / neural-discharge",
+    "matchedRms": 0.05
+  },
+  "signaturePreview": [
+    "neural-discharge",
+    "signal-fork",
+    "holy-prime"
+  ]
+}

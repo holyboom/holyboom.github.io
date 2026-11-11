@@ -198,3 +198,11 @@ Live acceptance: Chromium 68/68 and WebKit 68/68, zero failures and observed run
 ### Resonance v11 — published-site verification
 
 Live suites: 48/48 Chromium, 48/48 WebKit, 68/68 existing Interaction WebKit: **164 checks passed**, zero failed assertions and captured runtime errors. The AnalyserNode measured nonzero output after actual trusted taps; every visual preset matched its audio ID. Twenty-three runtime files and fourteen WAV files hash-match the committed implementation. See `docs/evidence/resonance-v11/summary.json` and `qa/resonance-v11.html`. Audio naturalness is a subjective listening judgment, and physical iPhone audio was not tested.
+
+## Electric v12 — audio character refinement
+
+- Replace material/modal timbres with capacitor sweeps, shaped arc crackle, clocked digital pulses and short dry logic latches. All fourteen existing reaction IDs and mappings remain unchanged.
+- Generated fourteen reproducible 32 kHz WAVs plus a 15.09 s catalogue reel, a 3.33 s three-preset preview, and a 2.33 s level-matched old/new neural-discharge comparison. Previous v11 WAVs retained.
+- DSP checks: 92/92 pass; all signals finite, non-silent, deterministic and unique; endpoints zero; peak <= 0.431, RMS <= 0.075, DC < 0.001. These bounds do not certify device loudness/hearing safety.
+- Local browser checks: 48/48 in Chromium and 48/48 in WebKit, including trusted tap audio, nonzero graph signal, style mapping, volume/mute persistence, milestones and fallback.
+- Fourteen visual/layout/motion implementation files and all 37 original images byte-identical to v11. No physical iPhone audio or subjective listening certification is claimed. Production results are recorded separately.

@@ -71,3 +71,11 @@ The owner requires full visible animation without the previous system-level calm
 - After sound unlock only, assembly crossings at 25/50/75/100 produce quiet matching cues. Boundary dithering does not repeat a cue, a fast jump emits only the last cue, and returning to 0 rearms the sequence.
 - The QA studio offers intentional selection of all fourteen animations and sounds, plus reproducible WAVs and their provenance. Main-page brain taps remain randomized.
 - Preserve v10 pinned 0→100→0 scroll, all ten reversible transfers, 34 skills, phone-only brain-first layout and the explicitly requested always-on motion. No new runtime library. Physical iPhone audio, latency, speakers and independent flash/accessibility certification remain untested.
+
+## Digital + Electricity v12 — owner sound-direction refinement
+
+- Audio-only character revision: replace the previous material/modal ringing with fast capacitor/FM sweeps, shaped irregular electric sparks, clocked digital packet pulses and short dry logic latches. Retain violet pixel identity, all fourteen visual reactions, rarity and random selection unchanged.
+- All fourteen sound IDs retain their visual mapping; names and parameters now explicitly communicate digital electricity. Prime and Triad are longer signature charging gestures, not bells or musical pads.
+- Use deterministic source-authored DSP, not stock, actual material recordings or generative audio. Ship matching 32 kHz WAVs in `assets/audio/electric-v12/`, a complete reel, a level-matched before/after and the source kit. Preserve v11 samples for comparison.
+- Keep default volume, browser gesture unlock, mute, three-voice mixing, lifecycle behavior and assembly milestone controls. Do not touch layout, visual renderer, pin/scroll progress or existing semantics. User audio preferences remain intact.
+- Bound the signal with shaped attacks, DC removal, two low-pass stages and normalization; test waveforms and the browser graph. Subjective timbre and real iPhone speaker behavior must not be claimed from automated tests.
