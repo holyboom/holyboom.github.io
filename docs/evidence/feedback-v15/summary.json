@@ -1,0 +1,14 @@
+{
+  "release": "feedback-v15",
+  "status": "Local verified; production verification pending",
+  "local_checks": {
+    "local-chromium": 69,
+    "local-webkit": 69,
+    "local-touch-phase-webkit": 9,
+    "local-visual-webkit": 68,
+    "local-continuous-audio-webkit": 48
+  },
+  "root_cause": "Missing event-to-sound mapping, not a failed ambient/scroll sound engine",
+  "new_cue_timbres": 10,
+  "physical_iphone_tested": false
+}

@@ -1,0 +1,27 @@
+{
+  "baseline": "bf066a937a6a1814b6fd9d849c96777174dfda07",
+  "unchanged_modules": [
+    "holymind-timbres.js",
+    "holymind-soundscape.js",
+    "soundscape-scenes.js",
+    "brain-reactions.js",
+    "neural-core.js",
+    "site.js",
+    "style.css",
+    "showcase.js",
+    "showcase.css",
+    "scroll-motion.js",
+    "continuity.js",
+    "assembly-lab.js",
+    "assembly-lab.css",
+    "assembly-scroll.js",
+    "ambient-current.js",
+    "ambient-current.css",
+    "energy-field.js",
+    "brain-energy.css",
+    "interaction-v10.css",
+    "resonance.css"
+  ],
+  "original_images": 37,
+  "original_brain_sound_presets": 14
+}

@@ -46,6 +46,7 @@
   gesturePeak=Math.max(gesturePeak,activity);
   state={...p,focus:readingFocus(),activity:activity<.008?0:activity,direction,intent:accepted,lastInput,speed,renderedScrollY:y};updates++;
   window.HolyMindAudio?.updateSoundscape(state);
+  window.HolyMindFeedback?.onScroll({...state,gesturePeak});
   // Hysteresis: completion does not replay at 99/100; fast anchor jumps stay silent.
   if(p.progress<.84)completionArmed=true;
   if(p.progress>.16)reconnectArmed=true;

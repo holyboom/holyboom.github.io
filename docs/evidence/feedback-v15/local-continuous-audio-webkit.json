@@ -1,0 +1,540 @@
+{
+  "base": "http://127.0.0.1:8778/",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "release-v15",
+      "pass": true
+    },
+    {
+      "name": "load-has-no-context-or-sound",
+      "pass": true
+    },
+    {
+      "name": "scroll-cannot-unlock-audio",
+      "pass": true
+    },
+    {
+      "name": "explicit-start-unlocks-one-context",
+      "pass": true
+    },
+    {
+      "name": "ambient-has-real-output-while-idle",
+      "pass": true,
+      "rms": {
+        "ambient": 0.004598373568565362,
+        "scroll": 0,
+        "resolve": 0
+      }
+    },
+    {
+      "name": "idle-scroll-bus-is-silent",
+      "pass": true
+    },
+    {
+      "name": "no-motion-toggle-restored",
+      "pass": true
+    },
+    {
+      "name": "tap-preset-still-matches-visual",
+      "pass": true
+    },
+    {
+      "name": "tap-ducks-both-background-buses",
+      "pass": true,
+      "actual": {
+        "ambient": 0.8509303331375122,
+        "scroll": 0,
+        "ambientDuck": 0.41999998688697815,
+        "scrollDuck": 0.23999999463558197
+      }
+    },
+    {
+      "name": "duck-recovers-without-restarting-scene",
+      "pass": true
+    },
+    {
+      "name": "native-scroll-produces-current",
+      "pass": true,
+      "activity": 0.679514898339627,
+      "rms": {
+        "ambient": 0.0055814572761146266,
+        "scroll": 0.008528348141636348,
+        "resolve": 0
+      }
+    },
+    {
+      "name": "pause-fades-current-not-field",
+      "pass": true,
+      "rms": {
+        "ambient": 0.006053158540433846,
+        "scroll": 0.0000013541376295483786,
+        "resolve": 0
+      }
+    },
+    {
+      "name": "no-idle-scroll-frame-loop",
+      "pass": true
+    },
+    {
+      "name": "reverse-gathers-not-retriggers",
+      "pass": true
+    },
+    {
+      "name": "tiny-jitter-adds-no-one-shots",
+      "pass": true
+    },
+    {
+      "name": "programmatic-reposition-no-swoosh",
+      "pass": true
+    },
+    {
+      "name": "continuous-progress-not-integer-percent",
+      "pass": true
+    },
+    {
+      "name": "native-range-input-is-sonified",
+      "pass": true,
+      "scroll": {
+        "scope": 1,
+        "raw": 0.4369146005509642,
+        "progress": 0.39948229658981627,
+        "start": 2944,
+        "end": 4759,
+        "fieldLevel": 1,
+        "currentLevel": 1,
+        "openness": 1,
+        "textureLevel": 1,
+        "voiceProgress": 0.39948229658981627,
+        "id": "assembly",
+        "name": "System unfolding",
+        "selector": "#system-assembly",
+        "morph": 0.7958239808405376,
+        "scene": "assembly",
+        "label": "System unfolding",
+        "sceneNext": "assembly",
+        "blend": 0,
+        "sceneProgress": 0.39948229658981627,
+        "focus": 1,
+        "activity": 0.23544285405386678,
+        "direction": 1,
+        "intent": true,
+        "lastInput": "manual-scrub",
+        "speed": 0.1498942158381227,
+        "renderedScrollY": 3737,
+        "gesturePeak": 0.23544285405386678,
+        "updates": 436,
+        "running": true,
+        "lastScroll": 14746,
+        "completionArmed": true,
+        "reconnectArmed": true,
+        "scopeName": "Full journey · 11 scenes",
+        "stations": [
+          {
+            "id": "hero",
+            "name": "Neural origin",
+            "at": 0
+          },
+          {
+            "id": "orbit",
+            "name": "Connected intelligence",
+            "at": 790.421875
+          },
+          {
+            "id": "ribbon",
+            "name": "Signal crossing",
+            "at": 2311.0625
+          },
+          {
+            "id": "assembly",
+            "name": "System unfolding",
+            "at": 2944
+          },
+          {
+            "id": "workbench",
+            "name": "Working intention",
+            "at": 5505.703125
+          },
+          {
+            "id": "instrument",
+            "name": "Capability constellation",
+            "at": 7221.546875
+          },
+          {
+            "id": "gallery",
+            "name": "Evidence atlas",
+            "at": 7822.734375
+          },
+          {
+            "id": "services",
+            "name": "Applied intelligence",
+            "at": 9638.78125
+          },
+          {
+            "id": "about",
+            "name": "The human behind the mind",
+            "at": 10644.796875
+          },
+          {
+            "id": "contact",
+            "name": "The next possibility",
+            "at": 11403.81875
+          },
+          {
+            "id": "footer",
+            "name": "A quiet return",
+            "at": 11979
+          }
+        ],
+        "measuredHeight": 12963
+      }
+    },
+    {
+      "name": "completion-uses-new-settle-not-tap",
+      "pass": true,
+      "history": [
+        {
+          "id": "insight-pulse",
+          "kind": "enable",
+          "time": 4352,
+          "rate": 1.0045214891433716
+        },
+        {
+          "id": "insight-pulse",
+          "kind": "brain",
+          "time": 6343,
+          "rate": 1.0131843090057373
+        },
+        {
+          "id": "current-resolve",
+          "kind": "resolution",
+          "time": 18182
+        }
+      ],
+      "scroll": {
+        "scope": 1,
+        "raw": 0.9575757575757575,
+        "progress": 1,
+        "start": 2944,
+        "end": 4759,
+        "fieldLevel": 1,
+        "currentLevel": 1,
+        "openness": 1,
+        "textureLevel": 1,
+        "voiceProgress": 1,
+        "id": "assembly",
+        "name": "System unfolding",
+        "selector": "#system-assembly",
+        "morph": 1,
+        "scene": "assembly",
+        "label": "System unfolding",
+        "sceneNext": "assembly",
+        "blend": 0,
+        "sceneProgress": 1,
+        "focus": 1,
+        "activity": 0.29228959306983837,
+        "direction": 1,
+        "intent": true,
+        "lastInput": "wheel",
+        "speed": 0.193524874313131,
+        "renderedScrollY": 4682,
+        "gesturePeak": 0.8170965556967915,
+        "updates": 605,
+        "running": true,
+        "lastScroll": 18376,
+        "completionArmed": false,
+        "reconnectArmed": true,
+        "scopeName": "Full journey · 11 scenes",
+        "stations": [
+          {
+            "id": "hero",
+            "name": "Neural origin",
+            "at": 0
+          },
+          {
+            "id": "orbit",
+            "name": "Connected intelligence",
+            "at": 790.421875
+          },
+          {
+            "id": "ribbon",
+            "name": "Signal crossing",
+            "at": 2311.0625
+          },
+          {
+            "id": "assembly",
+            "name": "System unfolding",
+            "at": 2944
+          },
+          {
+            "id": "workbench",
+            "name": "Working intention",
+            "at": 5505.703125
+          },
+          {
+            "id": "instrument",
+            "name": "Capability constellation",
+            "at": 7221.546875
+          },
+          {
+            "id": "gallery",
+            "name": "Evidence atlas",
+            "at": 7822.734375
+          },
+          {
+            "id": "services",
+            "name": "Applied intelligence",
+            "at": 9638.78125
+          },
+          {
+            "id": "about",
+            "name": "The human behind the mind",
+            "at": 10644.796875
+          },
+          {
+            "id": "contact",
+            "name": "The next possibility",
+            "at": 11403.81875
+          },
+          {
+            "id": "footer",
+            "name": "A quiet return",
+            "at": 11979
+          }
+        ],
+        "measuredHeight": 12963
+      }
+    },
+    {
+      "name": "old-four-milestones-removed",
+      "pass": true
+    },
+    {
+      "name": "completion-boundary-does-not-repeat",
+      "pass": true
+    },
+    {
+      "name": "reverse-progress-reconnects",
+      "pass": true
+    },
+    {
+      "name": "reverse-cue-is-not-forward-cue",
+      "pass": true
+    },
+    {
+      "name": "full-site-continues-after-assembly",
+      "pass": true,
+      "rms": {
+        "ambient": 0.004206887075689903,
+        "scroll": 0,
+        "resolve": 0
+      }
+    },
+    {
+      "name": "ambience-switch-controls-only-field",
+      "pass": true
+    },
+    {
+      "name": "scroll-switch-controls-only-current",
+      "pass": true
+    },
+    {
+      "name": "mute-kills-audio-not-visuals",
+      "pass": true
+    },
+    {
+      "name": "mute-persists-and-no-context",
+      "pass": true
+    },
+    {
+      "name": "zero-master-volume-persists",
+      "pass": true
+    },
+    {
+      "name": "background-stops-all-audio-sources",
+      "pass": true
+    },
+    {
+      "name": "return-scroll-cannot-resume-or-replay",
+      "pass": true
+    },
+    {
+      "name": "fresh-explicit-gesture-resumes-one-context",
+      "pass": true,
+      "audio": {
+        "version": "feedback-v15",
+        "character": "digital-electric",
+        "enabled": true,
+        "volume": 0.48,
+        "ambience": true,
+        "flow": true,
+        "cues": false,
+        "unlocked": true,
+        "needsGesture": false,
+        "context": "running",
+        "contextCount": 1,
+        "played": 2,
+        "dropped": 0,
+        "lastStyle": "insight-pulse",
+        "voices": 0,
+        "peakVoices": 1,
+        "pending": 0,
+        "maxRms": 0.04392680948546732,
+        "lastSynthesisMs": 0,
+        "lastScheduleMs": 7,
+        "warm": 14,
+        "history": [
+          {
+            "id": "insight-pulse",
+            "kind": "enable",
+            "time": 1083,
+            "rate": 1.006724238395691
+          },
+          {
+            "id": "insight-pulse",
+            "kind": "enable",
+            "time": 3460,
+            "rate": 1.0123589038848877
+          }
+        ],
+        "feedback": {
+          "played": 0,
+          "dropped": 0,
+          "active": false,
+          "maxVoices": 0,
+          "maxRms": 0,
+          "rms": 0,
+          "lastKey": ""
+        },
+        "soundscape": {
+          "version": "full-current-v14",
+          "disposed": false,
+          "updates": 14,
+          "ducks": 1,
+          "resolves": 0,
+          "continuousSources": 13,
+          "oneShots": 0,
+          "scope": 1,
+          "enabled": true,
+          "ambience": true,
+          "flow": true,
+          "activity": 0,
+          "progress": 0,
+          "direction": -1,
+          "morph": 0.1,
+          "scene": "hero",
+          "fieldLevel": 1,
+          "currentLevel": 1,
+          "openness": 1,
+          "textureLevel": 1,
+          "focus": 1,
+          "ambientGain": 0.898,
+          "scrollGain": 0,
+          "at": 0.8053333333333333,
+          "actual": {
+            "ambient": 0.5657408833503723,
+            "scroll": 0,
+            "ambientDuck": 0.9881669282913208,
+            "scrollDuck": 0.9844945073127747
+          },
+          "rms": {
+            "ambient": 0.0031245516175114098,
+            "scroll": 0,
+            "resolve": 0
+          }
+        }
+      },
+      "neural": {
+        "ready": true,
+        "frames": 79,
+        "elapsed": 3098.6666666666665,
+        "burstCount": 0,
+        "activeBursts": 0,
+        "lastBurstPoint": null,
+        "lastStyle": null,
+        "active": true,
+        "running": true,
+        "transporting": false,
+        "heroInside": true,
+        "orbitInside": false,
+        "paths": 46,
+        "branches": 12,
+        "contour": 96,
+        "profile": "full",
+        "meanPaintMs": 0.357,
+        "targets": {
+          "hero": "78",
+          "orbit": "0",
+          "transit": "34"
+        }
+      }
+    },
+    {
+      "name": "rapid-taps-remain-bounded",
+      "pass": true
+    },
+    {
+      "name": "tap-voices-clean-up-with-field-active",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-320",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-390",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-430",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-680",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-768",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-1024",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-1440",
+      "pass": true
+    },
+    {
+      "name": "mobile-trusted-tap-starts-field",
+      "pass": true
+    },
+    {
+      "name": "studio-starts-real-production-graph",
+      "pass": true
+    },
+    {
+      "name": "studio-comparison-taps",
+      "pass": true
+    },
+    {
+      "name": "studio-comparison-bed",
+      "pass": true
+    },
+    {
+      "name": "studio-comparison-full",
+      "pass": true
+    },
+    {
+      "name": "studio-three-matched-previews",
+      "pass": true
+    },
+    {
+      "name": "no-audio-support-preserves-motion",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

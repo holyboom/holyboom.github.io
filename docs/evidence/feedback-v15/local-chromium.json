@@ -1,0 +1,939 @@
+{
+  "base": "http://127.0.0.1:8778/",
+  "engine": "chromium",
+  "checks": [
+    {
+      "name": "release-feedback-v15",
+      "pass": true
+    },
+    {
+      "name": "no-context-on-load",
+      "pass": true
+    },
+    {
+      "name": "scroll-cannot-unlock",
+      "pass": true
+    },
+    {
+      "name": "first-real-action-unlocks-and-responds",
+      "pass": true,
+      "history": [
+        {
+          "id": "switch",
+          "kind": "cue",
+          "eventKind": "action",
+          "key": "scenario:knowledge",
+          "variant": 0,
+          "direction": 1,
+          "time": 2124.9000000059605
+        }
+      ]
+    },
+    {
+      "name": "cue-bus-has-measured-output",
+      "pass": true,
+      "maxRms": 0.08718831227818001
+    },
+    {
+      "name": "workbench-step",
+      "pass": true,
+      "last": {
+        "id": "select",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "step:2",
+        "variant": 2,
+        "direction": 1,
+        "time": 3051.4000000059605
+      }
+    },
+    {
+      "name": "same-selection-is-silent",
+      "pass": true
+    },
+    {
+      "name": "keyboard-scenario",
+      "pass": true,
+      "last": {
+        "id": "switch",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "scenario:venture",
+        "variant": 0,
+        "direction": 1,
+        "time": 4272.600000008941
+      }
+    },
+    {
+      "name": "skill-selection",
+      "pass": true,
+      "last": {
+        "id": "select",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "skill-select:chain-of-verification",
+        "variant": 0,
+        "direction": 1,
+        "time": 5022.70000000298
+      }
+    },
+    {
+      "name": "skill-open",
+      "pass": true,
+      "last": {
+        "id": "open",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "skill-detail:Chain of verification",
+        "variant": 0,
+        "direction": 1,
+        "time": 5872.29999999702
+      }
+    },
+    {
+      "name": "escape-closes-with-cue",
+      "pass": true,
+      "last": {
+        "id": "close",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "skill-close:false",
+        "variant": 0,
+        "direction": 1,
+        "time": 6331.5
+      }
+    },
+    {
+      "name": "filter-change",
+      "pass": true,
+      "last": {
+        "id": "filter",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "filter:verify",
+        "variant": 3,
+        "direction": 1,
+        "time": 7001.70000000298
+      }
+    },
+    {
+      "name": "same-filter-is-silent",
+      "pass": true
+    },
+    {
+      "name": "all-filter",
+      "pass": true,
+      "last": {
+        "id": "filter",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "filter:all",
+        "variant": 0,
+        "direction": 1,
+        "time": 8721.5
+      }
+    },
+    {
+      "name": "gallery-expands",
+      "pass": true,
+      "last": {
+        "id": "open",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "gallery-expand:true",
+        "variant": 0,
+        "direction": 1,
+        "time": 9731.29999999702
+      }
+    },
+    {
+      "name": "gallery-collapses",
+      "pass": true,
+      "last": {
+        "id": "close",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "gallery-expand:false",
+        "variant": 0,
+        "direction": 1,
+        "time": 10533.10000000894
+      }
+    },
+    {
+      "name": "service-opens",
+      "pass": true,
+      "last": {
+        "id": "open",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "disclosure:4:true",
+        "variant": 0,
+        "direction": 1,
+        "time": 11293.60000000894
+      }
+    },
+    {
+      "name": "service-closes",
+      "pass": true,
+      "last": {
+        "id": "close",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "disclosure:4:false",
+        "variant": 0,
+        "direction": 1,
+        "time": 11805
+      }
+    },
+    {
+      "name": "about-opens",
+      "pass": true,
+      "last": {
+        "id": "open",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "disclosure:6:true",
+        "variant": 0,
+        "direction": 1,
+        "time": 12681.40000000596
+      }
+    },
+    {
+      "name": "about-closes",
+      "pass": true,
+      "last": {
+        "id": "close",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "disclosure:6:false",
+        "variant": 0,
+        "direction": 1,
+        "time": 13360.79999999702
+      }
+    },
+    {
+      "name": "mobile-menu-opens",
+      "pass": true,
+      "last": {
+        "id": "open",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "navigation:true",
+        "variant": 0,
+        "direction": 1,
+        "time": 15717.20000000298
+      }
+    },
+    {
+      "name": "mobile-menu-closes",
+      "pass": true,
+      "last": {
+        "id": "close",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "navigation:false",
+        "variant": 0,
+        "direction": 1,
+        "time": 16331.5
+      }
+    },
+    {
+      "name": "search-one-cue-after-typing",
+      "pass": true,
+      "events": [
+        {
+          "id": "open",
+          "kind": "cue",
+          "eventKind": "action",
+          "key": "navigation:true",
+          "variant": 0,
+          "direction": 1,
+          "time": 15717.20000000298
+        },
+        {
+          "id": "close",
+          "kind": "cue",
+          "eventKind": "action",
+          "key": "navigation:false",
+          "variant": 0,
+          "direction": 1,
+          "time": 16331.5
+        },
+        {
+          "id": "close",
+          "kind": "cue",
+          "eventKind": "action",
+          "key": "search-result:12:0",
+          "variant": 0,
+          "direction": 1,
+          "time": 17860.29999999702
+        }
+      ]
+    },
+    {
+      "name": "clear-search",
+      "pass": true,
+      "last": {
+        "id": "filter",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "search-reset:|all",
+        "variant": 0,
+        "direction": 1,
+        "time": 18760
+      }
+    },
+    {
+      "name": "arrival-orbit",
+      "pass": true,
+      "cues": [
+        "dock:orbit:1"
+      ],
+      "continuity": {
+        "from": "orbit",
+        "to": "orbit",
+        "p": 0.01412
+      },
+      "feedback": {
+        "last": "orbit",
+        "history": [
+          {
+            "id": "close",
+            "priority": 3,
+            "key": "search-result:12:0",
+            "kind": "action",
+            "variant": 0,
+            "played": true,
+            "time": 17860.40000000596
+          },
+          {
+            "id": "filter",
+            "priority": 3,
+            "key": "search-reset:|all",
+            "kind": "action",
+            "variant": 0,
+            "played": true,
+            "time": 18760.10000000894
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:orbit:1",
+            "kind": "arrival",
+            "variant": 1,
+            "direction": 1,
+            "played": true,
+            "time": 22649.29999999702
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-orbit",
+      "pass": true
+    },
+    {
+      "name": "arrival-ribbon",
+      "pass": true,
+      "cues": [
+        "dock:ribbon:1"
+      ],
+      "continuity": {
+        "from": "ribbon",
+        "to": "ribbon",
+        "p": 0.24686
+      },
+      "feedback": {
+        "last": "ribbon",
+        "history": [
+          {
+            "id": "filter",
+            "priority": 3,
+            "key": "search-reset:|all",
+            "kind": "action",
+            "variant": 0,
+            "played": true,
+            "time": 18760.10000000894
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:orbit:1",
+            "kind": "arrival",
+            "variant": 1,
+            "direction": 1,
+            "played": true,
+            "time": 22649.29999999702
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:ribbon:1",
+            "kind": "arrival",
+            "variant": 2,
+            "direction": 1,
+            "played": true,
+            "time": 27628.90000000596
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-ribbon",
+      "pass": true
+    },
+    {
+      "name": "arrival-assembly",
+      "pass": true,
+      "cues": [
+        "dock:assembly:1"
+      ],
+      "continuity": {
+        "from": "assembly",
+        "to": "assembly",
+        "p": 0.00496
+      },
+      "feedback": {
+        "last": "assembly",
+        "history": [
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:orbit:1",
+            "kind": "arrival",
+            "variant": 1,
+            "direction": 1,
+            "played": true,
+            "time": 22649.29999999702
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:ribbon:1",
+            "kind": "arrival",
+            "variant": 2,
+            "direction": 1,
+            "played": true,
+            "time": 27628.90000000596
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:assembly:1",
+            "kind": "arrival",
+            "variant": 3,
+            "direction": 1,
+            "played": true,
+            "time": 32329.29999999702
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-assembly",
+      "pass": true
+    },
+    {
+      "name": "arrival-system",
+      "pass": true,
+      "cues": [
+        "dock:system:1"
+      ],
+      "continuity": {
+        "from": "system",
+        "to": "system",
+        "p": 0.3016
+      },
+      "feedback": {
+        "last": "system",
+        "history": [
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:ribbon:1",
+            "kind": "arrival",
+            "variant": 2,
+            "direction": 1,
+            "played": true,
+            "time": 27628.90000000596
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:assembly:1",
+            "kind": "arrival",
+            "variant": 3,
+            "direction": 1,
+            "played": true,
+            "time": 32329.29999999702
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:system:1",
+            "kind": "arrival",
+            "variant": 1,
+            "direction": 1,
+            "played": true,
+            "time": 36735.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-system",
+      "pass": true
+    },
+    {
+      "name": "arrival-skills",
+      "pass": true,
+      "cues": [
+        "dock:skills:1"
+      ],
+      "continuity": {
+        "from": "skills",
+        "to": "skills",
+        "p": 0.06892
+      },
+      "feedback": {
+        "last": "skills",
+        "history": [
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:assembly:1",
+            "kind": "arrival",
+            "variant": 3,
+            "direction": 1,
+            "played": true,
+            "time": 32329.29999999702
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:system:1",
+            "kind": "arrival",
+            "variant": 1,
+            "direction": 1,
+            "played": true,
+            "time": 36735.5
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:skills:1",
+            "kind": "arrival",
+            "variant": 4,
+            "direction": 1,
+            "played": true,
+            "time": 41896.20000000298
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-skills",
+      "pass": true
+    },
+    {
+      "name": "arrival-gallery",
+      "pass": true,
+      "cues": [
+        "dock:gallery:1"
+      ],
+      "continuity": {
+        "from": "gallery",
+        "to": "gallery",
+        "p": 0.3016
+      },
+      "feedback": {
+        "last": "gallery",
+        "history": [
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:system:1",
+            "kind": "arrival",
+            "variant": 1,
+            "direction": 1,
+            "played": true,
+            "time": 36735.5
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:skills:1",
+            "kind": "arrival",
+            "variant": 4,
+            "direction": 1,
+            "played": true,
+            "time": 41896.20000000298
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:gallery:1",
+            "kind": "arrival",
+            "variant": 2,
+            "direction": 1,
+            "played": true,
+            "time": 46620.40000000596
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-gallery",
+      "pass": true
+    },
+    {
+      "name": "arrival-services",
+      "pass": true,
+      "cues": [
+        "dock:services:1"
+      ],
+      "continuity": {
+        "from": "services",
+        "to": "services",
+        "p": 0.0864
+      },
+      "feedback": {
+        "last": "services",
+        "history": [
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:skills:1",
+            "kind": "arrival",
+            "variant": 4,
+            "direction": 1,
+            "played": true,
+            "time": 41896.20000000298
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:gallery:1",
+            "kind": "arrival",
+            "variant": 2,
+            "direction": 1,
+            "played": true,
+            "time": 46620.40000000596
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:services:1",
+            "kind": "arrival",
+            "variant": 3,
+            "direction": 1,
+            "played": true,
+            "time": 52054.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-services",
+      "pass": true
+    },
+    {
+      "name": "arrival-delivery",
+      "pass": true,
+      "cues": [
+        "dock:delivery:1"
+      ],
+      "continuity": {
+        "from": "delivery",
+        "to": "delivery",
+        "p": 0.192
+      },
+      "feedback": {
+        "last": "delivery",
+        "history": [
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:gallery:1",
+            "kind": "arrival",
+            "variant": 2,
+            "direction": 1,
+            "played": true,
+            "time": 46620.40000000596
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:services:1",
+            "kind": "arrival",
+            "variant": 3,
+            "direction": 1,
+            "played": true,
+            "time": 52054.5
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:delivery:1",
+            "kind": "arrival",
+            "variant": 4,
+            "direction": 1,
+            "played": true,
+            "time": 57252.10000000894
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-delivery",
+      "pass": true
+    },
+    {
+      "name": "arrival-signature",
+      "pass": true,
+      "cues": [
+        "dock:signature:1"
+      ],
+      "continuity": {
+        "from": "signature",
+        "to": "signature",
+        "p": 0.08309
+      },
+      "feedback": {
+        "last": "signature",
+        "history": [
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:services:1",
+            "kind": "arrival",
+            "variant": 3,
+            "direction": 1,
+            "played": true,
+            "time": 52054.5
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:delivery:1",
+            "kind": "arrival",
+            "variant": 4,
+            "direction": 1,
+            "played": true,
+            "time": 57252.10000000894
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:signature:1",
+            "kind": "arrival",
+            "variant": 0,
+            "direction": 1,
+            "played": true,
+            "time": 62261.90000000596
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-signature",
+      "pass": true
+    },
+    {
+      "name": "arrival-portal",
+      "pass": true,
+      "cues": [
+        "dock:portal:1"
+      ],
+      "continuity": {
+        "from": "signature",
+        "to": "portal",
+        "p": 1
+      },
+      "feedback": {
+        "last": "portal",
+        "history": [
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:delivery:1",
+            "kind": "arrival",
+            "variant": 4,
+            "direction": 1,
+            "played": true,
+            "time": 57252.10000000894
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:signature:1",
+            "kind": "arrival",
+            "variant": 0,
+            "direction": 1,
+            "played": true,
+            "time": 62261.90000000596
+          },
+          {
+            "id": "dock",
+            "priority": 1,
+            "key": "dock:portal:1",
+            "kind": "arrival",
+            "variant": 5,
+            "direction": 1,
+            "played": true,
+            "time": 66153.70000000298
+          }
+        ]
+      }
+    },
+    {
+      "name": "hold-does-not-repeat-portal",
+      "pass": true
+    },
+    {
+      "name": "return-signature",
+      "pass": true,
+      "cues": [
+        "dock:signature:-1"
+      ]
+    },
+    {
+      "name": "return-services",
+      "pass": true,
+      "cues": [
+        "dock:services:-1"
+      ]
+    },
+    {
+      "name": "return-skills",
+      "pass": true,
+      "cues": [
+        "dock:skills:-1"
+      ]
+    },
+    {
+      "name": "return-assembly",
+      "pass": true,
+      "cues": [
+        "dock:assembly:-1"
+      ]
+    },
+    {
+      "name": "return-orbit",
+      "pass": true,
+      "cues": [
+        "dock:orbit:-1"
+      ]
+    },
+    {
+      "name": "real-layer-reveal-0",
+      "pass": true,
+      "cues": [
+        "layer:0:1"
+      ]
+    },
+    {
+      "name": "real-layer-reveal-1",
+      "pass": true,
+      "cues": [
+        "layer:1:1"
+      ]
+    },
+    {
+      "name": "real-layer-reveal-2",
+      "pass": true,
+      "cues": [
+        "layer:2:1"
+      ]
+    },
+    {
+      "name": "layer-retracts-with-return-cue",
+      "pass": true
+    },
+    {
+      "name": "layer-focus",
+      "pass": true,
+      "last": {
+        "id": "select",
+        "kind": "cue",
+        "eventKind": "action",
+        "key": "layer-focus:intent",
+        "variant": 0,
+        "direction": 1,
+        "time": 113323.20000000298
+      }
+    },
+    {
+      "name": "scripted-seek-does-not-emit-cues",
+      "pass": true
+    },
+    {
+      "name": "cue-switch-independent",
+      "pass": true
+    },
+    {
+      "name": "cue-preference-persists",
+      "pass": true
+    },
+    {
+      "name": "action-unlocks-after-reload",
+      "pass": true
+    },
+    {
+      "name": "master-mute-blocks-action-sound",
+      "pass": true
+    },
+    {
+      "name": "rapid-actions-bounded-and-cleaned",
+      "pass": true,
+      "feedback": {
+        "played": 4,
+        "dropped": 9,
+        "active": false,
+        "maxVoices": 1,
+        "maxRms": 0.02622524526104548,
+        "rms": 0,
+        "lastKey": "step:2"
+      }
+    },
+    {
+      "name": "background-stops-cues-and-field",
+      "pass": true
+    },
+    {
+      "name": "return-scroll-does-not-unlock",
+      "pass": true
+    },
+    {
+      "name": "next-action-resumes-no-back-to-hero",
+      "pass": true
+    },
+    {
+      "name": "responsive-320",
+      "pass": true
+    },
+    {
+      "name": "responsive-390",
+      "pass": true
+    },
+    {
+      "name": "responsive-680",
+      "pass": true
+    },
+    {
+      "name": "responsive-768",
+      "pass": true
+    },
+    {
+      "name": "responsive-1024",
+      "pass": true
+    },
+    {
+      "name": "responsive-1440",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

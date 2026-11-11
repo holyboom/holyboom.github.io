@@ -87,3 +87,7 @@ A scoped Hero-to-Assemble listening prototype with a quiet field, reversible con
 
 ## Quiet Current — complete journey
 Release `full-current-v14`: the approved ambient/scroll instrument now spans all eleven listening zones through the footer. See `qa/full-current-v14.html` for live scene comparisons and `docs/evidence/full-current-v14/sound-design.md` for the mapping and limits.
+
+
+## Responsive Current v15
+Adds event sounds at actual visual docking, phase changes, layer connections and meaningful controls. The original accepted soundscape is unchanged. See `qa/feedback-v15.html` and `docs/evidence/feedback-v15/summary.json`.

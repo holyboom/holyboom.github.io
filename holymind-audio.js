@@ -1,4 +1,4 @@
-/* Quiet Current v14. One gesture-unlocked AudioContext, separate sound buses.
+/* Quiet Current v15. One gesture-unlocked AudioContext, separate sound buses.
  * Electric v12 tap PCM is unchanged. Muting sound never changes visual motion.
  * A suspended/interrupted page requires a new explicit gesture: scroll cannot wake it.
  */
@@ -10,20 +10,22 @@
  let played=0,dropped=0,lastStyle=null,token=0,pending=0,peakVoices=0,maxRms=0,lastSynthesisMs=0,lastScheduleMs=0,meterTimer=0;
  let latest={scope:1,activity:0,progress:0,direction:1,morph:0},contextCount=0;
  const cache=new Map(),pcm=new Map(),voices=new Set(),history=[];
+ let cues=true,cueVoice=null,cueMeter=null,cuePlayed=0,cueDropped=0,cueMaxRms=0,cuePeakVoices=0,lastCueAt=-1e6,lastCueKey='',lastCuePriority=0,lastBrainAt=-1e6,feedbackUnlock=null;
+ const cueCache=new Map();
  const button=document.getElementById('sound-toggle'),control=document.getElementById('sound-volume');
- const bedControl=document.getElementById('sound-ambience'),flowControl=document.getElementById('sound-flow');
+ const bedControl=document.getElementById('sound-ambience'),flowControl=document.getElementById('sound-flow'),cueControl=document.getElementById('sound-cues');
  const fieldEnabled=!!document.getElementById('system-assembly');
  try{enabled=localStorage.getItem('holymind-sound')!=='muted';const raw=localStorage.getItem('holymind-volume'),v=Number(raw);if(raw!==null&&v>=0&&v<=1)volume=v;
-  ambience=localStorage.getItem('holymind-ambience')!=='off';flow=localStorage.getItem('holymind-flow')!=='off';}catch(_){}
+  cues=localStorage.getItem('holymind-cues')!=='off';ambience=localStorage.getItem('holymind-ambience')!=='off';flow=localStorage.getItem('holymind-flow')!=='off';}catch(_){}
  const ready=()=>enabled&&unlocked&&!needsGesture&&!disposed&&!document.hidden&&context?.state==='running';
  function ui(){
   const waiting=enabled&&(!unlocked||needsGesture),label=waiting?(needsGesture?'Resume sound':'Start sound'):enabled?'Sound on':'Muted';
   if(button){button.setAttribute('aria-pressed',String(enabled&&unlocked&&!needsGesture));button.setAttribute('aria-label',waiting?label:enabled?'Mute HolyMind sound':'Enable HolyMind sound');button.dataset.sound=enabled?'on':'off';const l=button.querySelector('.sound-label');if(l)l.textContent=label;button.title=waiting?'Tap to begin the quiet soundscape':'Mute sound without stopping motion';}
-  if(control)control.value=String(Math.round(volume*100));if(bedControl)bedControl.checked=ambience;if(flowControl)flowControl.checked=flow;
+  if(control)control.value=String(Math.round(volume*100));if(bedControl)bedControl.checked=ambience;if(flowControl)flowControl.checked=flow;if(cueControl)cueControl.checked=cues;
   document.body.dataset.sound=enabled?(needsGesture?'needs-gesture':unlocked?'enabled':'armed'):'muted';
-  document.dispatchEvent(new CustomEvent('holymind:audio-state',{detail:{enabled,unlocked,needsGesture,ambience,flow}}));
+  document.dispatchEvent(new CustomEvent('holymind:audio-state',{detail:{enabled,unlocked,needsGesture,ambience,flow,cues}}));
  }
- function stop(){token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
+ function stop(){stopCue();feedbackUnlock=null;token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
  function field(){
   if(!ready()||!fieldEnabled||!window.HolyMindSoundscape)return;
   if(!landscape){try{landscape=HolyMindSoundscape.create(context,master);}catch(_){document.body.dataset.soundscape='unavailable';return;}}
@@ -36,6 +38,7 @@
    master=context.createGain();master.gain.value=enabled?volume:0;
    compressor=context.createDynamicsCompressor();compressor.threshold.value=-16;compressor.knee.value=14;compressor.ratio.value=5;compressor.attack.value=.003;compressor.release.value=.14;
    analyser=context.createAnalyser();analyser.fftSize=512;master.connect(compressor);compressor.connect(analyser);analyser.connect(context.destination);
+   cueMeter=context.createAnalyser();cueMeter.fftSize=512;cueMeter.connect(master);
    context.addEventListener('statechange',()=>{if(context.state!=='running'&&unlocked){needsGesture=true;landscape?.silence();stop();ui();}});
    return true;
   }catch(_){document.body.dataset.sound='unsupported';return false;}
@@ -45,7 +48,7 @@
   const b=context.createBuffer(1,d.samples.length,d.sampleRate);b.copyToChannel(d.samples,0);cache.set(id,b);lastSynthesisMs=performance.now()-start;return b;
  }
  function meter(){
-  if(!analyser||!voices.size){meterTimer=0;return;}const d=new Float32Array(analyser.fftSize);analyser.getFloatTimeDomainData(d);let sum=0;for(const x of d)sum+=x*x;maxRms=Math.max(maxRms,Math.sqrt(sum/d.length));meterTimer=setTimeout(meter,55);
+  if(!analyser||(!voices.size&&!cueVoice)){meterTimer=0;return;}const d=new Float32Array(analyser.fftSize);analyser.getFloatTimeDomainData(d);let sum=0;for(const x of d)sum+=x*x;maxRms=Math.max(maxRms,Math.sqrt(sum/d.length));if(cueVoice)cueMaxRms=Math.max(cueMaxRms,readCueRms());meterTimer=setTimeout(meter,55);
  }
  function play(id,{gain=1,gesture=false,variation=true,kind='brain'}={}){
   if(!enabled||document.hidden||disposed||!timbres.presets.some(p=>p.id===id))return false;
@@ -64,7 +67,7 @@
    const now=context.currentTime;g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(Math.max(0,Math.min(1,gain))/Math.sqrt(1+voices.size*.65),now+.004);g.gain.setTargetAtTime(0,now+source.buffer.duration*.83,.035);
    source.connect(g);g.connect(master);const voice={source,gain:g};voices.add(voice);peakVoices=Math.max(peakVoices,voices.size);
    source.onended=()=>{voices.delete(voice);source.disconnect();g.disconnect();};source.start(now+.002);
-   landscape?.duck(now);played++;lastStyle=id;lastScheduleMs=performance.now()-requestAt;
+   stopCue();lastBrainAt=performance.now();landscape?.duck(now);played++;lastStyle=id;lastScheduleMs=performance.now()-requestAt;
    history.push({id,kind,time:performance.now(),rate:source.playbackRate.value});if(history.length>80)history.shift();if(!meterTimer)meter();
   }).catch(()=>{pending=Math.max(0,pending-1);dropped++;needsGesture=true;ui();});return true;
  }
@@ -75,7 +78,7 @@
  }
  function setVolume(n){volume=Math.max(0,Math.min(1,Number(n)||0));if(master)master.gain.setTargetAtTime(enabled?volume:0,context.currentTime,.02);try{localStorage.setItem('holymind-volume',String(volume));}catch(_){}ui();}
  function setLayer(name,on,persist=true){
-  if(name==='ambience')ambience=!!on;else if(name==='flow')flow=!!on;else return;
+  if(name==='ambience')ambience=!!on;else if(name==='flow')flow=!!on;else if(name==='cues'){cues=!!on;if(!cues)stopCue();}else return;
   if(persist)try{localStorage.setItem('holymind-'+name,on?'on':'off');}catch(_){}field();ui();
  }
  button?.addEventListener('click',e=>{
@@ -85,17 +88,47 @@
   else mute(true);
  });
  control?.addEventListener('input',()=>setVolume(Number(control.value)/100));
- bedControl?.addEventListener('change',()=>setLayer('ambience',bedControl.checked));flowControl?.addEventListener('change',()=>setLayer('flow',flowControl.checked));
+ bedControl?.addEventListener('change',()=>setLayer('ambience',bedControl.checked));flowControl?.addEventListener('change',()=>setLayer('flow',flowControl.checked));cueControl?.addEventListener('change',()=>setLayer('cues',cueControl.checked));
  document.addEventListener('holymind:brain-burst',e=>{const d=e.detail||{};play(d.styleId||'neural-discharge',{gesture:d.userGesture===true});});
+ // Only an actual relevant input may unlock the feedback instrument. Scroll cannot.
+ function beginFeedback(gesture=false){
+  if(!gesture||!enabled||!cues||document.hidden||disposed)return false;
+  if(ready())return true;if(!make())return false;
+  const generation=token;unlocked=true;needsGesture=false;
+  const resumed=context.state==='running'?Promise.resolve():context.resume();
+  feedbackUnlock=Promise.resolve(resumed).then(()=>{if(generation!==token||!enabled||disposed||document.hidden||context.state!=='running')return false;needsGesture=false;ui();field();return true;}).catch(()=>{needsGesture=true;ui();return false;});
+  return true;
+ }
+ function readCueRms(){if(!cueMeter)return 0;const d=new Float32Array(512);cueMeter.getFloatTimeDomainData(d);let sum=0;for(const n of d)sum+=n*n;return Math.sqrt(sum/d.length);}
+ function stopCue(){if(!cueVoice)return;const v=cueVoice;cueVoice=null;try{const now=context.currentTime;v.gain.gain.cancelScheduledValues(now);v.gain.gain.setValueAtTime(v.gain.gain.value,now);v.gain.gain.linearRampToValueAtTime(0,now+.009);v.source.stop(now+.012);}catch(_){};}
+ function cue(id,{variant=0,priority=2,key=id,kind='action',direction=1}={}){
+  const registry=window.HolyMindCueTimbres;if(!registry||!registry.presets.some(p=>p.id===id)||!enabled||!cues||document.hidden||disposed)return false;
+  if(!ready()){
+   if(feedbackUnlock&&!needsGesture){const generation=token,at=performance.now();feedbackUnlock.then(ok=>{if(ok&&generation===token&&performance.now()-at<350)cue(id,{variant,priority,key,kind,direction});});}
+   return false;
+  }
+  const wall=performance.now();
+  if(wall-lastBrainAt<230||(key===lastCueKey&&wall-lastCueAt<750)||wall-lastCueAt<(priority>lastCuePriority?70:priority>=3?145:280)){cueDropped++;return false;}
+  const v=Math.max(0,Math.min(5,Math.round(variant))),cacheKey=id+':'+v;
+  let b=cueCache.get(cacheKey);if(!b){const d=registry.render(id,v);b=context.createBuffer(1,d.samples.length,d.sampleRate);b.copyToChannel(d.samples,0);cueCache.set(cacheKey,b);}
+  stopCue();const source=context.createBufferSource(),g=context.createGain(),now=context.currentTime;source.buffer=b;
+  const level=kind==='arrival'?.72:kind==='layer'?.66:kind==='phase'?.67:.70;
+  g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(level,now+.004);g.gain.setTargetAtTime(0,now+b.duration*.78,.018);source.connect(g);g.connect(cueMeter);
+  const voice={source,gain:g};cueVoice=voice;cuePeakVoices=Math.max(cuePeakVoices,1);
+  source.onended=()=>{if(cueVoice===voice)cueVoice=null;source.disconnect();g.disconnect();};source.start(now+.002);
+  cuePlayed++;lastCueAt=wall;lastCueKey=key;lastCuePriority=priority;landscape?.duck(now,.38);
+  history.push({id,kind:'cue',eventKind:kind,key,variant:v,direction,time:wall});if(history.length>120)history.shift();if(!meterTimer)meter();
+  return true;
+ }
  // No 25/50/75 tap-preset milestones: continuous layer opening owns that story.
  function suspend(){disposed=true;needsGesture=unlocked;stop();landscape?.dispose();landscape=null;if(context?.state==='running')context.suspend().catch(()=>{});ui();}
  function restore(){disposed=false;latest={...latest,activity:0};ui();}
  addEventListener('pagehide',suspend);addEventListener('pageshow',restore);document.addEventListener('visibilitychange',()=>document.hidden?suspend():restore());
  let warm=0;function warmOne(){if(warm>=timbres.presets.length)return;const p=timbres.presets[warm++];pcm.set(p.id,timbres.render(p.id));if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1500});else setTimeout(warmOne,90);}
  if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1200});else setTimeout(warmOne,300);
- window.HolyMindAudio=Object.freeze({play,mute,setVolume,setLayer,
-  setMix(mode){if(!['taps','bed','full'].includes(mode))return;setLayer('ambience',mode!=='taps',false);setLayer('flow',mode==='full',false);},
+ window.HolyMindAudio=Object.freeze({play,mute,setVolume,setLayer,beginFeedback,cue,
+  setMix(mode){if(!['taps','bed','full'].includes(mode))return;setLayer('ambience',mode!=='taps',false);setLayer('flow',mode==='full',false);setLayer('cues',mode==='full',false);},
   updateSoundscape(state){latest={...latest,...state};if(ready())field();},
-  settle(reverse=false){if(!ready()||!flow||!landscape)return false;const ok=landscape.settle(reverse);if(ok){history.push({id:reverse?'current-reconnect':'current-resolve',kind:'resolution',time:performance.now()});if(history.length>80)history.shift();}return ok;},
-  snapshot:()=>({version:'full-current-v14',character:timbres.character,enabled,volume,ambience,flow,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],soundscape:landscape?.snapshot()||null})});ui();
+  settle(reverse=false){if(!ready()||!flow||!landscape)return false;const ok=landscape.settle(reverse);if(ok){stopCue();lastCueAt=performance.now();lastCuePriority=3;history.push({id:reverse?'current-reconnect':'current-resolve',kind:'resolution',time:performance.now()});if(history.length>80)history.shift();}return ok;},
+  snapshot:()=>({version:'feedback-v15',character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey},soundscape:landscape?.snapshot()||null})});ui();
 })();

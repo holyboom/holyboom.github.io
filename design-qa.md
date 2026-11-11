@@ -243,3 +243,10 @@ Production checks: {'coverage_chromium': 82, 'coverage_webkit': 82, 'core_audio_
 The initial native-swipe harness read only the final sample: resetting per-input gesturePeak between render frames produced two false end-sample assertions despite measured current. The final harness samples throughout every swipe and requires at least three observations with the same strict input/direction/peak/RMS thresholds; all six directions/zones and one-context check pass. Runtime sound code was not changed for this harness correction.
 
 See qa/full-current-v14.html and docs/evidence/full-current-v14/summary.json for the full route, comparisons, measured signal and scope/limitations. No physical iPhone listening/performance test was performed.
+
+
+## Responsive Current v15 — local checks
+
+{'local-chromium': 69, 'local-webkit': 69, 'local-touch-phase-webkit': 9, 'local-visual-webkit': 68, 'local-continuous-audio-webkit': 48}; total 263. All final assertions pass; no runtime errors captured. Ten finite and unique cue WAVs pass level/DC checks. Original accepted soundscape, fourteen tap synthesis and visual/control source modules remain byte-identical to bf066a9.
+
+The initial test expected the first service panel to open, but it starts open; the corrected test uses a closed panel. The clear-search button is only present in the empty-results state, so its test uses an empty-result query. No runtime logic was weakened to satisfy these test corrections.

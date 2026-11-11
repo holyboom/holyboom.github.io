@@ -1,0 +1,171 @@
+{
+  "version": "feedback-v15",
+  "source": "Original authored deterministic digital-electric DSP, no stock samples or generative audio model",
+  "gain": 0.33599999999999997,
+  "preview": "Individual cues at action gain and default master, before live compression. No independent normalization.",
+  "presets": [
+    {
+      "id": "dock",
+      "name": "Circuit seated",
+      "file": "dock.wav",
+      "duration": 0.29,
+      "peak": 0.10575121641159058,
+      "rms": 0.02217599995902346,
+      "dc": -0.00002868004347947719,
+      "finite": true,
+      "sha256": "74ee544f8b0831d58f615dd9aac1d90410e7b0b7958cee645cfb684d66d2dae9",
+      "pass": true
+    },
+    {
+      "id": "return",
+      "name": "Current reconnected",
+      "file": "return.wav",
+      "duration": 0.27,
+      "peak": 0.10157839208841324,
+      "rms": 0.0221760000235167,
+      "dc": -0.000012884612576380816,
+      "finite": true,
+      "sha256": "d15fb1cf8046d3e6dcea7bb20801197a55b764a047f6acb8f92169926706ae71",
+      "pass": true
+    },
+    {
+      "id": "phase",
+      "name": "Reason · Build · Verify",
+      "file": "phase.wav",
+      "duration": 0.3,
+      "peak": 0.09443976730108261,
+      "rms": 0.022175999995719915,
+      "dc": -0.000031107472884985834,
+      "finite": true,
+      "sha256": "a7c8c8170f1987390a3c2aacc04c10a6e9192f1f15c3273fef68265cc066e7a5",
+      "pass": true
+    },
+    {
+      "id": "layer",
+      "name": "Layer connection revealed",
+      "file": "layer.wav",
+      "duration": 0.24,
+      "peak": 0.09889865666627884,
+      "rms": 0.022176000001859774,
+      "dc": -0.00001773906983230181,
+      "finite": true,
+      "sha256": "ddfaad6a948016a442bc33165b466ef80cbd63f2359b6f948f97ecbd74c99d44",
+      "pass": true
+    },
+    {
+      "id": "select",
+      "name": "Focused capability",
+      "file": "select.wav",
+      "duration": 0.15,
+      "peak": 0.11596039682626724,
+      "rms": 0.022176000039530595,
+      "dc": -0.000023834381591966527,
+      "finite": true,
+      "sha256": "8942046aca327305316bc31a7d5b6c964684679e26c5861bf5d995bebba161f6",
+      "pass": true
+    },
+    {
+      "id": "switch",
+      "name": "New working path",
+      "file": "switch.wav",
+      "duration": 0.26,
+      "peak": 0.12238600105047226,
+      "rms": 0.022176000018971728,
+      "dc": -0.000050259023871619573,
+      "finite": true,
+      "sha256": "29bdd33a67a359261016fa8c084bf2a23176cb4391fd7a0e235434435d77ba84",
+      "pass": true
+    },
+    {
+      "id": "open",
+      "name": "Information unfolds",
+      "file": "open.wav",
+      "duration": 0.31,
+      "peak": 0.10077725350856781,
+      "rms": 0.02217600002772418,
+      "dc": -0.00003870556992086658,
+      "finite": true,
+      "sha256": "e2b72fd266a4bc52d330ed5fcb7ca8730947c631588231f5ae4136f66892f3f6",
+      "pass": true
+    },
+    {
+      "id": "close",
+      "name": "Information gathers",
+      "file": "close.wav",
+      "duration": 0.22,
+      "peak": 0.11044993996620178,
+      "rms": 0.022176000010402958,
+      "dc": -0.000015973184669268197,
+      "finite": true,
+      "sha256": "c9c2738b1d8de075215a27d9d7c578d2e9916d299a1c31892409151b3ae49e0c",
+      "pass": true
+    },
+    {
+      "id": "confirm",
+      "name": "Evidence accepted",
+      "file": "confirm.wav",
+      "duration": 0.28,
+      "peak": 0.10705934464931488,
+      "rms": 0.022175999973730952,
+      "dc": -0.000015548364005501286,
+      "finite": true,
+      "sha256": "d359e7953fb07cf9c12fd1e0a8b7ddc2cc26e36bff318f425519b3caf8b21fc2",
+      "pass": true
+    },
+    {
+      "id": "filter",
+      "name": "Signal refined",
+      "file": "filter.wav",
+      "duration": 0.19,
+      "peak": 0.07981227338314056,
+      "rms": 0.02217600000268297,
+      "dc": -0.00002601082662514698,
+      "finite": true,
+      "sha256": "64e4b40b7dda50a197f1380b867272377443fc15782e645a88fdf99992f3ac83",
+      "pass": true
+    }
+  ],
+  "timeline": [
+    {
+      "id": "dock",
+      "start": 0
+    },
+    {
+      "id": "return",
+      "start": 0.65
+    },
+    {
+      "id": "phase",
+      "start": 1.28
+    },
+    {
+      "id": "layer",
+      "start": 1.94
+    },
+    {
+      "id": "select",
+      "start": 2.54
+    },
+    {
+      "id": "switch",
+      "start": 3.05
+    },
+    {
+      "id": "open",
+      "start": 3.67
+    },
+    {
+      "id": "close",
+      "start": 4.34
+    },
+    {
+      "id": "confirm",
+      "start": 4.92
+    },
+    {
+      "id": "filter",
+      "start": 5.56
+    }
+  ],
+  "unique": 10
+}

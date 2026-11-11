@@ -156,3 +156,18 @@ The owner approved the v13 sound and asked for coverage everywhere. This superse
 - Master mute/volume and independent ambience/current controls remain global and persistent. Always-on visual motion is independent. One trusted sound/brain gesture starts audio; hidden/interrupted pages stop audio and require a new gesture on return as before.
 - Full-journey Studio jumps to all eleven zones, compares Taps only / Field + taps / Full mix, and provides forty-second equal-master previews from the actual production graph. Preview files are not loaded by the main runtime.
 - No new runtime dependency, outside audio request, recording, stock music, or generative-audio model. No physical-iPhone speaker, listener-comfort, hearing-safety or motion-accessibility certification claimed.
+
+
+## Responsive Current v15 — missing arrival/action feedback
+
+The owner reported that motion stops at a point or changes action without any sound. v14 deliberately had continuous ambience/current but omitted semantic acknowledgements. This revision supersedes that omission; it does not replace the accepted soundscape or original fourteen brain taps.
+
+- Add ten short, original digital-electric cue timbres (150–310 ms): dock, return, phase, layer, select, switch, open, close, confirm and filter. No old brain sample is reused. One foreground feedback lane with brief fade-out on preemption, priority/cooldown/deduplication, and no replay queue. Brain taps retain priority.
+- Arrival follows the ACTUAL visual continuity from/to/progress and stable docking; reverse docking uses a return sound. A 65 ms settle and traversal rearm prevent stationary loops. Fast skipped stations are not queued.
+- Reason/Build/Verify and real layer-callout reveal/retract transitions respond during trusted scrolling. Preserve the distinct original full assembly settle/reconnect cues; do not add a second completion sound.
+- Meaningful actual control changes receive feedback: Workbench scenario/stage, selected skill, dialog open/close/Escape, filters, gallery expansion, service/about/brief disclosures, menu, layer focus and navigation. Re-selecting the current state stays silent. Search cues occur once after typing settles. Copy confirmation only follows the actual success status.
+- A first trusted relevant control action can unlock/resume the single AudioContext, as can the existing brain/sound button. Scroll/hover/programmatic UI changes cannot unlock it. Saved master mute still wins.
+- Add one independent Action & arrival cues checkbox to existing Sound mix, default on; no Motion toggle. Ambience/current/tap sources and every visual/motion module remain unchanged.
+- Use the existing scroll-update loop and actual DOM state; no second perpetual rendering loop. Hidden/interrupted pages cancel pending cues and require a new explicit gesture.
+- Main-site layout preserved. The dedicated event Studio exposes ten audition buttons through the same production cue bus, displays the latest semantic event, and retains old-mix comparisons.
+- Tests exercise native input and measured cue-bus output, all ten forward landings, five reverse landings, layer and phase changes, state deduplication, preferences, first-action unlock and lifecycle. Physical iPhone speaker quality and perceived comfort remain untested.
