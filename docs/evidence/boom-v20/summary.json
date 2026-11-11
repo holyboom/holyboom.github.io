@@ -1,6 +1,31 @@
 {
   "release": "boom-v20",
-  "status": "Local verification passed; production check pending",
+  "name": "HolyMind — Boom Signature Celebration",
+  "status": "Published and verified",
+  "implementation_commit": "11e370df968fc39df4fcb6119ffcf0a28d49293d",
+  "verified_at": "2026-11-11T17:44:42.841612+00:00",
+  "url": "https://holyboom.github.io/?v=boom-v20#about",
+  "studio": "https://holyboom.github.io/qa/boom-v20.html",
+  "behavior": {
+    "outward": "After the existing carrier arrives at the Boom full stop, continued scroll charges the dot, launches five staggered pixel-neon fireworks above the word, scatters glitter and fades the effect to clear.",
+    "return": "The same 135 deterministic particle identities reconstruct their exact prior coordinates as scroll reverses: glitter reappears, collapses into the original burst centers and follows the original launch curves into the full stop.",
+    "scrub": "One native-scroll progress; pause freezes the visual frame. No independent animation time, new pin, blocked scrolling, added spacer or fullscreen explosion.",
+    "range": "Signature hold extended to 120–300 CSS pixels depending on viewport, bounded before Contact. Short landscape arrival is earlier and burst radii adapt to overhead space.",
+    "sound": "Dedicated finite charge, launch, five burst, glitter and inward recall/gather/return/seal cues. Supporting piano notes come from the current Mozart harmony, not random chords or reversed piano audio.",
+    "limits": "No repeated sound while parked, threshold hysteresis for tiny jitter, coalescing rather than queuing skipped explosions, maximum five temporary celebration voices and deterministic geometry.",
+    "existing_audio": "The v19 +8 dB line-current graph is unchanged and remains exactly silent while the carrier is docked for the fireworks. Mozart score order, piano natural decay, ambience and fourteen original brain sounds are unchanged.",
+    "control": "Existing master sound mute/volume and piano/action-cue setting apply. Prior explicit gesture is required; scrolling never unlocks audio. Mute/hidden clean all celebration sources. Visual motion stays enabled independently.",
+    "visual": "One pointer-transparent canvas driven by the existing continuity render clock, fixed seed, 90 primary particles plus 45 glitter particles, five burst styles. The secondary heading recedes briefly during the focal moment and returns at the ends."
+  },
+  "live_checks": {
+    "boom_chromium": 51,
+    "boom_webkit": 51,
+    "native_touch_chromium": 8,
+    "screen_reversal_webkit": 5
+  },
+  "total_live_checks": 115,
+  "failed_checks": 0,
+  "runtime_errors": 0,
   "local_checks": {
     "local_boom_chromium": 51,
     "local_boom_webkit": 51,
@@ -10,6 +35,37 @@
     "local_native_touch": 8,
     "local_screen_reversal": 5
   },
-  "local_total": 312,
-  "physical_iphone_audio_tested": false
+  "total_local_checks": 312,
+  "screen_reversal": {
+    "samples": 5,
+    "max_particle_coordinate_difference_css_px": 0,
+    "method": "Actual screen coordinates after scrolling forward and back to the same five positions, not a recreated random effect."
+  },
+  "new_burst_count": 5,
+  "particle_count": 135,
+  "dedicated_cue_types": 8,
+  "recorded_forward_bursts": 5,
+  "recorded_reverse_gathers": 5,
+  "waveform_tests": {
+    "comparisons": 3,
+    "finite_cue_types": 8,
+    "preview_peak": 0.13767220079898834,
+    "last_sample_zero": true
+  },
+  "preserved_modules": 25,
+  "preserved_original_images": 37,
+  "matched_live_assets": 38,
+  "new_runtime_dependencies": 0,
+  "recording": {
+    "video": "docs/evidence/boom-v20/boom-forward-reverse.mp4",
+    "gif": "docs/evidence/boom-v20/boom-forward-reverse.gif",
+    "method": "Real production-page native scrolling; video has no captured browser audio. GIF is cropped and time-compressed to about twelve seconds. Listen on the actual page or Studio for sound."
+  },
+  "limitations": {
+    "physical_iphone_audio_tested": false,
+    "physical_device_frame_rate_certified": false,
+    "subjective_pleasantness_certified": false,
+    "flashing_or_motion_accessibility_certified": false,
+    "note": "Browser-emulated touch and measured Web Audio signals are not a physical iPhone listening or performance test."
+  }
 }

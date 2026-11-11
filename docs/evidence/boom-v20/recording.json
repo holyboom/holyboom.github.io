@@ -1,0 +1,339 @@
+{
+  "base": "https://holyboom.github.io/?v=boom-v20",
+  "method": "Actual production page, native Playwright mouse.wheel down and up. Video does not capture browser audio.",
+  "elapsed": 41754,
+  "errors": [],
+  "build": "boom-v20",
+  "events": [
+    {
+      "kind": "charge",
+      "index": 0,
+      "direction": 1,
+      "notes": [
+        60
+      ],
+      "harmony": [
+        60,
+        64,
+        67
+      ],
+      "at": 4.128,
+      "progress": 0.049275160301085384
+    },
+    {
+      "kind": "launch",
+      "index": 0,
+      "direction": 1,
+      "notes": [],
+      "harmony": [
+        59,
+        62,
+        65,
+        67
+      ],
+      "at": 5.856,
+      "progress": 0.16078896013381502
+    },
+    {
+      "kind": "launch",
+      "index": 1,
+      "direction": 1,
+      "notes": [],
+      "harmony": [
+        59,
+        62,
+        65,
+        67
+      ],
+      "at": 6.325333333333333,
+      "progress": 0.18866741009199742
+    },
+    {
+      "kind": "launch",
+      "index": 2,
+      "direction": 1,
+      "notes": [],
+      "harmony": [
+        59,
+        62,
+        65,
+        67
+      ],
+      "at": 6.789333333333333,
+      "progress": 0.21654586005017984
+    },
+    {
+      "kind": "launch",
+      "index": 3,
+      "direction": 1,
+      "notes": [],
+      "harmony": [
+        59,
+        62,
+        65,
+        67
+      ],
+      "at": 7.024,
+      "progress": 0.23048508502927104
+    },
+    {
+      "kind": "launch",
+      "index": 4,
+      "direction": 1,
+      "notes": [],
+      "harmony": [
+        59,
+        62,
+        65,
+        67
+      ],
+      "at": 7.488,
+      "progress": 0.25836353498745346
+    },
+    {
+      "kind": "burst",
+      "index": 0,
+      "direction": 1,
+      "notes": [
+        72
+      ],
+      "harmony": [
+        60,
+        65,
+        69
+      ],
+      "at": 9.194666666666667,
+      "progress": 0.35593810984109187
+    },
+    {
+      "kind": "burst",
+      "index": 1,
+      "direction": 1,
+      "notes": [],
+      "harmony": [
+        60,
+        65,
+        69
+      ],
+      "at": 9.888,
+      "progress": 0.3977557847783655
+    },
+    {
+      "kind": "burst",
+      "index": 2,
+      "direction": 1,
+      "notes": [
+        81
+      ],
+      "harmony": [
+        60,
+        65,
+        69
+      ],
+      "at": 10.589333333333334,
+      "progress": 0.4395734597156391
+    },
+    {
+      "kind": "burst",
+      "index": 3,
+      "direction": 1,
+      "notes": [],
+      "harmony": [
+        59,
+        62,
+        67
+      ],
+      "at": 11.056,
+      "progress": 0.46745190967382155
+    },
+    {
+      "kind": "burst",
+      "index": 4,
+      "direction": 1,
+      "notes": [
+        74
+      ],
+      "harmony": [
+        59,
+        62,
+        67
+      ],
+      "at": 11.754666666666667,
+      "progress": 0.5092695846110952
+    },
+    {
+      "kind": "glitter",
+      "index": 0,
+      "direction": 1,
+      "notes": [],
+      "harmony": [
+        53,
+        57,
+        60
+      ],
+      "at": 15.162666666666667,
+      "progress": 0.7322971842765544
+    },
+    {
+      "kind": "recall",
+      "index": 0,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        54,
+        57,
+        60,
+        62
+      ],
+      "at": 28.901333333333334,
+      "progress": 0.704418734318372
+    },
+    {
+      "kind": "gather",
+      "index": 4,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 31.621333333333332,
+      "progress": 0.49533035963200395
+    },
+    {
+      "kind": "gather",
+      "index": 3,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 32.384,
+      "progress": 0.45351268469473033
+    },
+    {
+      "kind": "gather",
+      "index": 2,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 33.152,
+      "progress": 0.4116950097574567
+    },
+    {
+      "kind": "gather",
+      "index": 1,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 33.968,
+      "progress": 0.3698773348201831
+    },
+    {
+      "kind": "gather",
+      "index": 0,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 34.57066666666667,
+      "progress": 0.3419988848620007
+    },
+    {
+      "kind": "return",
+      "index": 4,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 36.666666666666664,
+      "progress": 0.24442431000836226
+    },
+    {
+      "kind": "return",
+      "index": 3,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 37.269333333333336,
+      "progress": 0.21654586005017984
+    },
+    {
+      "kind": "return",
+      "index": 2,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 37.86666666666667,
+      "progress": 0.18866741009199742
+    },
+    {
+      "kind": "return",
+      "index": 1,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 38.144,
+      "progress": 0.17472818511290622
+    },
+    {
+      "kind": "return",
+      "index": 0,
+      "direction": -1,
+      "notes": [],
+      "harmony": [
+        55,
+        59,
+        62
+      ],
+      "at": 38.648,
+      "progress": 0.14684973515472383
+    },
+    {
+      "kind": "seal",
+      "index": 0,
+      "direction": -1,
+      "notes": [
+        60
+      ],
+      "harmony": [
+        60,
+        64,
+        67
+      ],
+      "at": 40.66133333333333,
+      "progress": 0.03533593532199417
+    }
+  ],
+  "gif_method": "Cropped to the signature area and time-compressed to approximately twelve seconds; source video is the actual recorded native-scroll page. GIF/video do not contain audio.",
+  "video_duration_seconds": 47.68
+}

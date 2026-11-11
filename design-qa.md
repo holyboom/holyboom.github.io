@@ -324,3 +324,10 @@ The reverse test compares actual rendered particle coordinates after traversing 
 A landscape visual review found insufficient overhead space. The signature arrival now occurs earlier in short viewports, and radius/vertical centers shrink to fit above the word, instead of drawing over the letters. The secondary heading recedes only during the moment. No new scroll pin/spacer was introduced.
 
 The original +8 dB line current stays exactly silent while the carrier is docked, including the new effect. Piano score, natural releases, existing ambient/current graphs and original brain timbres are unchanged. Dedicated new voices are bounded and cleaned up on mute/hidden. Physical iPhone audio, frame rate and subjective comfort were not tested.
+
+
+### Published Boom v20 verification
+
+Live tests: {'boom_chromium': 51, 'boom_webkit': 51, 'native_touch_chromium': 8, 'screen_reversal_webkit': 5}, total 115, zero failed assertions or detected runtime errors in the final runs. 38 public assets match the implementation release. Actual reverse particle coordinates at five matched scroll positions had a maximum observed difference of zero CSS pixels. The full forward and reverse native-scroll clip is from the published page; it does not capture audio. Its GIF is cropped and time-compressed for mobile viewing.
+
+The 312 local checks also include the 92-case line-gate suite, 68 existing visual interactions and 37 Mozart progression/tail tests. Original current and piano sources remain byte-identical. Physical iPhone sound and performance were not tested.

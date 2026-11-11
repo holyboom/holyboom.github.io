@@ -1,0 +1,40 @@
+{
+  "base": "https://holyboom.github.io/?v=boom-v20",
+  "checks": [
+    {
+      "name": "native-touch-forward-scrubs-scene",
+      "pass": true
+    },
+    {
+      "name": "native-touch-fireworks-have-signal",
+      "pass": true
+    },
+    {
+      "name": "native-touch-no-line-current-at-dock",
+      "pass": true
+    },
+    {
+      "name": "native-touch-reverse-reconstructs",
+      "pass": true
+    },
+    {
+      "name": "native-touch-return-audible",
+      "pass": true
+    },
+    {
+      "name": "touch-source-cleanup",
+      "pass": true
+    },
+    {
+      "name": "studio-auditions-real-bus",
+      "pass": true
+    },
+    {
+      "name": "studio-inspects-real-scene",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "method": "Chromium native touch input via DevTools; simulated phone, not physical iPhone"
+}
