@@ -83,3 +83,7 @@ Digital + Electricity v12: [Sound Studio](qa/electric-v12.html), 14 new electric
 
 ## Quiet Current v13
 A scoped Hero-to-Assemble listening prototype with a quiet field, reversible continuous scroll current and unchanged Electric v12 taps. Start with qa/soundscape-v13.html for a matched three-mode comparison. See docs/evidence/soundscape-v13/sound-design.md for the design, controls, scope and limitations. New sound starts only after a tap. No change to always-on visual motion.
+
+
+## Quiet Current — complete journey
+Release `full-current-v14`: the approved ambient/scroll instrument now spans all eleven listening zones through the footer. See `qa/full-current-v14.html` for live scene comparisons and `docs/evidence/full-current-v14/sound-design.md` for the mapping and limits.

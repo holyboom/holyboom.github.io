@@ -142,3 +142,17 @@ Ambient and scroll buses yield to taps via bounded ducking. New controls in Soun
 Scroll sound follows genuine wheel, touch, keyboard and manual-range input. Resize, anchor jumps, overscroll and unprompted programmatic repositioning must not make swooshes. Read the assembly's continuous eased progress rather than its rounded displayed percentage. One source of visual truth remains unchanged. A deadband plus direction hysteresis avoids tiny-jitter retriggers.
 
 Prototype exit fades the new buses away, leaving old taps elsewhere intact. Compare Taps only / Field + taps / Full mix at the same master level in the listening studio. Offline previews are rendered through the exact production audio graph, not a separate approximation. Automated signal checks do not establish subjective pleasantness or physical-iPhone speaker performance.
+
+
+## Quiet Current v14 — owner-approved full-site rollout
+
+The owner approved the v13 sound and asked for coverage everywhere. This supersedes the prototype-only scope, not its sonic identity or controls.
+
+- One existing instrument follows eleven measured zones: Hero, Orbit, Ribbon, Assemble, Workbench, Skill Instrument, Skill Gallery, Services, About, Contact, Footer. No new oscillator bank or chapter-triggered sound is created at a boundary.
+- Original Electric v12 fourteen tap presets, waveform files, synthesis source, random visual registry and all visual/motion modules remain byte-identical. The accepted v13 default sound graph is compared sample by sample in OfflineAudioContext against the new default graph.
+- Hero through the pinned assembly keeps its accepted parameters. Later scenes blend deterministic material profiles: slightly open skill navigation; restrained gallery; structured services; softer About/reading; gentle Contact and Footer. All profile weights remain positive. Scroll direction and speed still shape one continuous current, and native scroll is never intercepted.
+- Existing assembly completion/reconnect cues remain specific to the assembly interval. Passing chapter boundaries does not play a chime, restart the soundscape, or queue missed events.
+- Dialogs and mobile navigation soften ambience and suppress page-scroll sonification; visible optional reading disclosures gently lower the field. Layout changes, filter/search changes, gallery expansion and navigation jumps are suppressed as audio gestures, but remeasure the route. Native assembly range remains sonified.
+- Master mute/volume and independent ambience/current controls remain global and persistent. Always-on visual motion is independent. One trusted sound/brain gesture starts audio; hidden/interrupted pages stop audio and require a new gesture on return as before.
+- Full-journey Studio jumps to all eleven zones, compares Taps only / Field + taps / Full mix, and provides forty-second equal-master previews from the actual production graph. Preview files are not loaded by the main runtime.
+- No new runtime dependency, outside audio request, recording, stock music, or generative-audio model. No physical-iPhone speaker, listener-comfort, hearing-safety or motion-accessibility certification claimed.

@@ -1,0 +1,8 @@
+{
+  "sampleRate": 24000,
+  "seconds": 12,
+  "maxDifference": 4.6566128730773926e-9,
+  "rmsDifference": 3.85978330278775e-10,
+  "pass": true,
+  "method": "Same OfflineAudioContext, original v13 graph vs v14 defaults, approved Hero-to-Assembly parameter score"
+}

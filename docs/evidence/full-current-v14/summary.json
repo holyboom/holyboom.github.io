@@ -1,0 +1,14 @@
+{
+  "release": "full-current-v14",
+  "name": "HolyMind Quiet Current \u2014 Complete Journey",
+  "status": "Local checks passed; production verification pending",
+  "scope": "All eleven listening zones, Hero to Footer",
+  "local_checks": {
+    "coverage_chromium": 82,
+    "coverage_webkit": 82,
+    "core_audio_webkit": 48,
+    "existing_interaction_webkit": 68,
+    "native_touch_chromium": 7
+  },
+  "physical_iphone_tested": false
+}

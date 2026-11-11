@@ -1,0 +1,976 @@
+{
+  "base": "http://127.0.0.1:8777/",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "full-site-release",
+      "pass": true
+    },
+    {
+      "name": "eleven-scene-registry",
+      "pass": true
+    },
+    {
+      "name": "silent-load",
+      "pass": true
+    },
+    {
+      "name": "strict-scene-order",
+      "pass": true
+    },
+    {
+      "name": "ambient-hero",
+      "pass": true,
+      "scene": "hero",
+      "rms": 0.005116886003502547
+    },
+    {
+      "name": "one-instrument-hero",
+      "pass": true
+    },
+    {
+      "name": "current-hero",
+      "pass": true,
+      "scene": "hero",
+      "activity": 0.3735745606500703,
+      "direction": 1,
+      "rms": 0.005141568333245982
+    },
+    {
+      "name": "pause-hero",
+      "pass": true
+    },
+    {
+      "name": "ambient-orbit",
+      "pass": true,
+      "scene": "orbit",
+      "rms": 0.005229794619893486
+    },
+    {
+      "name": "one-instrument-orbit",
+      "pass": true
+    },
+    {
+      "name": "current-orbit",
+      "pass": true,
+      "scene": "orbit",
+      "activity": 0.4037650237946943,
+      "direction": 1,
+      "rms": 0.005257935547468575
+    },
+    {
+      "name": "pause-orbit",
+      "pass": true
+    },
+    {
+      "name": "ambient-ribbon",
+      "pass": true,
+      "scene": "ribbon",
+      "rms": 0.00488543305220817
+    },
+    {
+      "name": "one-instrument-ribbon",
+      "pass": true
+    },
+    {
+      "name": "current-ribbon",
+      "pass": true,
+      "scene": "ribbon",
+      "activity": 0.4042393267135039,
+      "direction": 1,
+      "rms": 0.005207204118353981
+    },
+    {
+      "name": "pause-ribbon",
+      "pass": true
+    },
+    {
+      "name": "ambient-assembly",
+      "pass": true,
+      "scene": "assembly",
+      "rms": 0.004140356920044906
+    },
+    {
+      "name": "one-instrument-assembly",
+      "pass": true
+    },
+    {
+      "name": "current-assembly",
+      "pass": true,
+      "scene": "assembly",
+      "activity": 0.4060794968613312,
+      "direction": 1,
+      "rms": 0.00547794638517057
+    },
+    {
+      "name": "pause-assembly",
+      "pass": true
+    },
+    {
+      "name": "ambient-workbench",
+      "pass": true,
+      "scene": "workbench",
+      "rms": 0.004094089681326839
+    },
+    {
+      "name": "one-instrument-workbench",
+      "pass": true
+    },
+    {
+      "name": "current-workbench",
+      "pass": true,
+      "scene": "workbench",
+      "activity": 0.395447208945097,
+      "direction": 1,
+      "rms": 0.00430118467683344
+    },
+    {
+      "name": "pause-workbench",
+      "pass": true
+    },
+    {
+      "name": "ambient-instrument",
+      "pass": true,
+      "scene": "instrument",
+      "rms": 0.0044747983312055685
+    },
+    {
+      "name": "one-instrument-instrument",
+      "pass": true
+    },
+    {
+      "name": "current-instrument",
+      "pass": true,
+      "scene": "instrument",
+      "activity": 0.40192754451784246,
+      "direction": 1,
+      "rms": 0.005039291886034711
+    },
+    {
+      "name": "pause-instrument",
+      "pass": true
+    },
+    {
+      "name": "ambient-gallery",
+      "pass": true,
+      "scene": "gallery",
+      "rms": 0.0041581480982974045
+    },
+    {
+      "name": "one-instrument-gallery",
+      "pass": true
+    },
+    {
+      "name": "current-gallery",
+      "pass": true,
+      "scene": "gallery",
+      "activity": 0.398103064670455,
+      "direction": 1,
+      "rms": 0.004123571496896612
+    },
+    {
+      "name": "pause-gallery",
+      "pass": true
+    },
+    {
+      "name": "ambient-services",
+      "pass": true,
+      "scene": "services",
+      "rms": 0.004374683533265733
+    },
+    {
+      "name": "one-instrument-services",
+      "pass": true
+    },
+    {
+      "name": "current-services",
+      "pass": true,
+      "scene": "services",
+      "activity": 0.4067623093356816,
+      "direction": 1,
+      "rms": 0.0047279640960655985
+    },
+    {
+      "name": "pause-services",
+      "pass": true
+    },
+    {
+      "name": "ambient-about",
+      "pass": true,
+      "scene": "about",
+      "rms": 0.0029619525998059596
+    },
+    {
+      "name": "one-instrument-about",
+      "pass": true
+    },
+    {
+      "name": "current-about",
+      "pass": true,
+      "scene": "about",
+      "activity": 0.4004487777454792,
+      "direction": 1,
+      "rms": 0.003152950310393176
+    },
+    {
+      "name": "pause-about",
+      "pass": true
+    },
+    {
+      "name": "ambient-contact",
+      "pass": true,
+      "scene": "contact",
+      "rms": 0.003623155710379307
+    },
+    {
+      "name": "one-instrument-contact",
+      "pass": true
+    },
+    {
+      "name": "current-contact",
+      "pass": true,
+      "scene": "contact",
+      "activity": 0.40450451924669256,
+      "direction": 1,
+      "rms": 0.003918397042402213
+    },
+    {
+      "name": "pause-contact",
+      "pass": true
+    },
+    {
+      "name": "ambient-footer",
+      "pass": true,
+      "scene": "footer",
+      "rms": 0.0031362664190026112
+    },
+    {
+      "name": "one-instrument-footer",
+      "pass": true
+    },
+    {
+      "name": "current-footer",
+      "pass": true,
+      "scene": "contact",
+      "activity": 0.22934738054820702,
+      "direction": -1,
+      "rms": 0.0018897912291246568
+    },
+    {
+      "name": "pause-footer",
+      "pass": true
+    },
+    {
+      "name": "no-chapter-chimes",
+      "pass": true
+    },
+    {
+      "name": "reversible-material-workbench",
+      "pass": true,
+      "delta": 0,
+      "forwardY": 6363,
+      "reverseY": 6363
+    },
+    {
+      "name": "reversible-material-instrument",
+      "pass": true,
+      "delta": 0,
+      "forwardY": 7522,
+      "reverseY": 7522
+    },
+    {
+      "name": "reversible-material-gallery",
+      "pass": true,
+      "delta": 0,
+      "forwardY": 8730,
+      "reverseY": 8730
+    },
+    {
+      "name": "reversible-material-services",
+      "pass": true,
+      "delta": 0,
+      "forwardY": 10141,
+      "reverseY": 10141
+    },
+    {
+      "name": "reversible-material-about",
+      "pass": true,
+      "delta": 0,
+      "forwardY": 11024,
+      "reverseY": 11024
+    },
+    {
+      "name": "reversible-material-contact",
+      "pass": true,
+      "delta": 0,
+      "forwardY": 11682,
+      "reverseY": 11682
+    },
+    {
+      "name": "no-discontinuous-chapter-seams",
+      "pass": true,
+      "max": 0.0000011547622672802849,
+      "all": true
+    },
+    {
+      "name": "expanded-gallery-keeps-34-skills",
+      "pass": true
+    },
+    {
+      "name": "gallery-remeasures-services",
+      "pass": true
+    },
+    {
+      "name": "expanded-gallery-still-has-current",
+      "pass": true
+    },
+    {
+      "name": "filter-layout-does-not-swoosh",
+      "pass": true
+    },
+    {
+      "name": "dialog-ducks-field",
+      "pass": true
+    },
+    {
+      "name": "dialog-scroll-no-page-current",
+      "pass": true
+    },
+    {
+      "name": "dialog-close-restores-field",
+      "pass": true
+    },
+    {
+      "name": "about-disclosure-reading-space",
+      "pass": true,
+      "state": {
+        "scope": 1,
+        "raw": 1,
+        "progress": 1,
+        "start": 2944,
+        "end": 4759,
+        "fieldLevel": 0.7702113532281388,
+        "currentLevel": 0.6516701179750158,
+        "openness": 0.7902113532281388,
+        "textureLevel": 0.5145876474687697,
+        "voiceProgress": 0.2920928244312934,
+        "id": "about",
+        "name": "The human behind the mind",
+        "selector": "#about",
+        "morph": 0.9327061762656151,
+        "scene": "about",
+        "label": "The human behind the mind",
+        "sceneNext": "contact",
+        "blend": 0.07293823734384862,
+        "sceneProgress": 0.16529916832880415,
+        "focus": 0.78,
+        "activity": 0,
+        "direction": 1,
+        "intent": false,
+        "lastInput": "wheel",
+        "speed": 0,
+        "renderedScrollY": 15378,
+        "gesturePeak": 0.5708428733325177,
+        "updates": 3530,
+        "running": false,
+        "lastScroll": 93885,
+        "completionArmed": true,
+        "reconnectArmed": true,
+        "scopeName": "Full journey · 11 scenes",
+        "stations": [
+          {
+            "id": "hero",
+            "name": "Neural origin",
+            "at": 0
+          },
+          {
+            "id": "orbit",
+            "name": "Connected intelligence",
+            "at": 790.421875
+          },
+          {
+            "id": "ribbon",
+            "name": "Signal crossing",
+            "at": 2311.0625
+          },
+          {
+            "id": "assembly",
+            "name": "System unfolding",
+            "at": 2944
+          },
+          {
+            "id": "workbench",
+            "name": "Working intention",
+            "at": 5505.703125
+          },
+          {
+            "id": "instrument",
+            "name": "Capability constellation",
+            "at": 7221.546875
+          },
+          {
+            "id": "gallery",
+            "name": "Evidence atlas",
+            "at": 7822.734375
+          },
+          {
+            "id": "services",
+            "name": "Applied intelligence",
+            "at": 14214.78125
+          },
+          {
+            "id": "about",
+            "name": "The human behind the mind",
+            "at": 15220.796875
+          },
+          {
+            "id": "contact",
+            "name": "The next possibility",
+            "at": 16171.81875
+          },
+          {
+            "id": "footer",
+            "name": "A quiet return",
+            "at": 16730
+          }
+        ],
+        "measuredHeight": 17714
+      },
+      "rect": {
+        "x": 22,
+        "y": 786.265625,
+        "width": 346,
+        "height": 250
+      }
+    },
+    {
+      "name": "deep-link-does-not-autoplay",
+      "pass": true
+    },
+    {
+      "name": "deep-link-gesture-starts-full-soundscape",
+      "pass": true
+    },
+    {
+      "name": "global-ambience-off-retains-late-scroll",
+      "pass": true
+    },
+    {
+      "name": "late-scene-mute-removes-all-buses",
+      "pass": true
+    },
+    {
+      "name": "responsive-scene-map-320",
+      "pass": true,
+      "stations": [
+        {
+          "id": "hero",
+          "name": "Neural origin",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "name": "Connected intelligence",
+          "at": 715.21875
+        },
+        {
+          "id": "ribbon",
+          "name": "Signal crossing",
+          "at": 2225.140625
+        },
+        {
+          "id": "assembly",
+          "name": "System unfolding",
+          "at": 2902
+        },
+        {
+          "id": "workbench",
+          "name": "Working intention",
+          "at": 5463.640625
+        },
+        {
+          "id": "instrument",
+          "name": "Capability constellation",
+          "at": 7328.03125
+        },
+        {
+          "id": "gallery",
+          "name": "Evidence atlas",
+          "at": 7909.21875
+        },
+        {
+          "id": "services",
+          "name": "Applied intelligence",
+          "at": 14287.953125
+        },
+        {
+          "id": "about",
+          "name": "The human behind the mind",
+          "at": 15341.953125
+        },
+        {
+          "id": "contact",
+          "name": "The next possibility",
+          "at": 16141.2875
+        },
+        {
+          "id": "footer",
+          "name": "A quiet return",
+          "at": 16652
+        }
+      ]
+    },
+    {
+      "name": "footer-covered-320",
+      "pass": true
+    },
+    {
+      "name": "responsive-scene-map-390",
+      "pass": true,
+      "stations": [
+        {
+          "id": "hero",
+          "name": "Neural origin",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "name": "Connected intelligence",
+          "at": 790.421875
+        },
+        {
+          "id": "ribbon",
+          "name": "Signal crossing",
+          "at": 2311.0625
+        },
+        {
+          "id": "assembly",
+          "name": "System unfolding",
+          "at": 2944
+        },
+        {
+          "id": "workbench",
+          "name": "Working intention",
+          "at": 5505.703125
+        },
+        {
+          "id": "instrument",
+          "name": "Capability constellation",
+          "at": 7221.546875
+        },
+        {
+          "id": "gallery",
+          "name": "Evidence atlas",
+          "at": 7822.734375
+        },
+        {
+          "id": "services",
+          "name": "Applied intelligence",
+          "at": 14214.78125
+        },
+        {
+          "id": "about",
+          "name": "The human behind the mind",
+          "at": 15220.796875
+        },
+        {
+          "id": "contact",
+          "name": "The next possibility",
+          "at": 15979.81875
+        },
+        {
+          "id": "footer",
+          "name": "A quiet return",
+          "at": 16538
+        }
+      ]
+    },
+    {
+      "name": "footer-covered-390",
+      "pass": true
+    },
+    {
+      "name": "responsive-scene-map-680",
+      "pass": true,
+      "stations": [
+        {
+          "id": "hero",
+          "name": "Neural origin",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "name": "Connected intelligence",
+          "at": 845.265625
+        },
+        {
+          "id": "ribbon",
+          "name": "Signal crossing",
+          "at": 2358.765625
+        },
+        {
+          "id": "assembly",
+          "name": "System unfolding",
+          "at": 2991
+        },
+        {
+          "id": "workbench",
+          "name": "Working intention",
+          "at": 5553.40625
+        },
+        {
+          "id": "instrument",
+          "name": "Capability constellation",
+          "at": 7106.234375
+        },
+        {
+          "id": "gallery",
+          "name": "Evidence atlas",
+          "at": 7707.421875
+        },
+        {
+          "id": "services",
+          "name": "Applied intelligence",
+          "at": 14099.46875
+        },
+        {
+          "id": "about",
+          "name": "The human behind the mind",
+          "at": 15035.9375
+        },
+        {
+          "id": "contact",
+          "name": "The next possibility",
+          "at": 15733.178125
+        },
+        {
+          "id": "footer",
+          "name": "A quiet return",
+          "at": 16233
+        }
+      ]
+    },
+    {
+      "name": "footer-covered-680",
+      "pass": true
+    },
+    {
+      "name": "responsive-scene-map-768",
+      "pass": true,
+      "stations": [
+        {
+          "id": "hero",
+          "name": "Neural origin",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "name": "Connected intelligence",
+          "at": 516
+        },
+        {
+          "id": "ribbon",
+          "name": "Signal crossing",
+          "at": 2232
+        },
+        {
+          "id": "assembly",
+          "name": "System unfolding",
+          "at": 2862
+        },
+        {
+          "id": "workbench",
+          "name": "Working intention",
+          "at": 6070.578125
+        },
+        {
+          "id": "instrument",
+          "name": "Capability constellation",
+          "at": 7268.734375
+        },
+        {
+          "id": "gallery",
+          "name": "Evidence atlas",
+          "at": 7865.421875
+        },
+        {
+          "id": "services",
+          "name": "Applied intelligence",
+          "at": 13454.3125
+        },
+        {
+          "id": "about",
+          "name": "The human behind the mind",
+          "at": 14601.21875
+        },
+        {
+          "id": "contact",
+          "name": "The next possibility",
+          "at": 14980.890625
+        },
+        {
+          "id": "footer",
+          "name": "A quiet return",
+          "at": 15181
+        }
+      ]
+    },
+    {
+      "name": "footer-covered-768",
+      "pass": true
+    },
+    {
+      "name": "responsive-scene-map-1024",
+      "pass": true,
+      "stations": [
+        {
+          "id": "hero",
+          "name": "Neural origin",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "name": "Connected intelligence",
+          "at": 633.390625
+        },
+        {
+          "id": "ribbon",
+          "name": "Signal crossing",
+          "at": 2349.390625
+        },
+        {
+          "id": "assembly",
+          "name": "System unfolding",
+          "at": 3079
+        },
+        {
+          "id": "workbench",
+          "name": "Working intention",
+          "at": 6298.390625
+        },
+        {
+          "id": "instrument",
+          "name": "Capability constellation",
+          "at": 7518.46875
+        },
+        {
+          "id": "gallery",
+          "name": "Evidence atlas",
+          "at": 8165.15625
+        },
+        {
+          "id": "services",
+          "name": "Applied intelligence",
+          "at": 14002.34375
+        },
+        {
+          "id": "about",
+          "name": "The human behind the mind",
+          "at": 15236.53125
+        },
+        {
+          "id": "contact",
+          "name": "The next possibility",
+          "at": 15646.703125
+        },
+        {
+          "id": "footer",
+          "name": "A quiet return",
+          "at": 15957
+        }
+      ]
+    },
+    {
+      "name": "footer-covered-1024",
+      "pass": true
+    },
+    {
+      "name": "responsive-scene-map-1440",
+      "pass": true,
+      "stations": [
+        {
+          "id": "hero",
+          "name": "Neural origin",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "name": "Connected intelligence",
+          "at": 798.109375
+        },
+        {
+          "id": "ribbon",
+          "name": "Signal crossing",
+          "at": 2514.109375
+        },
+        {
+          "id": "assembly",
+          "name": "System unfolding",
+          "at": 3276
+        },
+        {
+          "id": "workbench",
+          "name": "Working intention",
+          "at": 6494.546875
+        },
+        {
+          "id": "instrument",
+          "name": "Capability constellation",
+          "at": 7711.828125
+        },
+        {
+          "id": "gallery",
+          "name": "Evidence atlas",
+          "at": 8358.515625
+        },
+        {
+          "id": "services",
+          "name": "Applied intelligence",
+          "at": 14151.40625
+        },
+        {
+          "id": "about",
+          "name": "The human behind the mind",
+          "at": 15459.125
+        },
+        {
+          "id": "contact",
+          "name": "The next possibility",
+          "at": 15869.296875
+        },
+        {
+          "id": "footer",
+          "name": "A quiet return",
+          "at": 16179
+        }
+      ]
+    },
+    {
+      "name": "footer-covered-1440",
+      "pass": true
+    },
+    {
+      "name": "studio-all-eleven-chapters",
+      "pass": true
+    },
+    {
+      "name": "studio-downstream-live-graph",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "visits": [
+    {
+      "id": "hero",
+      "scene": "hero",
+      "rms": 0.005116886003502547,
+      "mix": {
+        "morph": 0.1,
+        "fieldLevel": 1,
+        "openness": 1
+      }
+    },
+    {
+      "id": "orbit",
+      "scene": "orbit",
+      "rms": 0.005229794619893486,
+      "mix": {
+        "morph": 0.34,
+        "fieldLevel": 1,
+        "openness": 1
+      }
+    },
+    {
+      "id": "ribbon",
+      "scene": "ribbon",
+      "rms": 0.00488543305220817,
+      "mix": {
+        "morph": 0.55,
+        "fieldLevel": 1,
+        "openness": 1
+      }
+    },
+    {
+      "id": "assembly",
+      "scene": "assembly",
+      "rms": 0.004140356920044906,
+      "mix": {
+        "morph": 0.66,
+        "fieldLevel": 1,
+        "openness": 1
+      }
+    },
+    {
+      "id": "workbench",
+      "scene": "workbench",
+      "rms": 0.004094089681326839,
+      "mix": {
+        "morph": 0.7788096362020109,
+        "fieldLevel": 0.9402856873115173,
+        "openness": 0.9207618328307131
+      }
+    },
+    {
+      "id": "instrument",
+      "scene": "instrument",
+      "rms": 0.0044747983312055685,
+      "mix": {
+        "morph": 0.5362824239991463,
+        "fieldLevel": 0.9955653477653085,
+        "openness": 1.072608912942181
+      }
+    },
+    {
+      "id": "gallery",
+      "scene": "gallery",
+      "rms": 0.0041581480982974045,
+      "mix": {
+        "morph": 0.7002551926571967,
+        "fieldLevel": 0.8802551926571968,
+        "openness": 0.8802977247667295
+      }
+    },
+    {
+      "id": "services",
+      "scene": "services",
+      "rms": 0.004374683533265733,
+      "mix": {
+        "morph": 0.7624391550624544,
+        "fieldLevel": 0.9375608449375455,
+        "openness": 0.9476963535521264
+      }
+    },
+    {
+      "id": "about",
+      "scene": "about",
+      "rms": 0.0029619525998059596,
+      "mix": {
+        "morph": 0.9376577666783961,
+        "fieldLevel": 0.7632791266502454,
+        "openness": 0.7832791266502455
+      }
+    },
+    {
+      "id": "contact",
+      "scene": "contact",
+      "rms": 0.003623155710379307,
+      "mix": {
+        "morph": 0.8467641545271591,
+        "fieldLevel": 0.8923903261569459,
+        "openness": 0.911544806841051
+      }
+    },
+    {
+      "id": "footer",
+      "scene": "footer",
+      "rms": 0.0031362664190026112,
+      "mix": {
+        "morph": 1,
+        "fieldLevel": 0.72,
+        "openness": 0.72
+      }
+    }
+  ],
+  "physicalDevice": false
+}

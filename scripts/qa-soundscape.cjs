@@ -1,7 +1,7 @@
 /* Test real output buses, trusted input, suppression, lifecycle and preservation. */
 const {chromium,webkit}=require('playwright'),fs=require('fs');
 (async()=>{
- const engine=process.env.ENGINE||'webkit',base=process.env.TEST_URL||'http://127.0.0.1:8776/',out=process.env.QA_DIR||'qa-output/soundscape-'+engine;
+ const engine=process.env.ENGINE||'webkit',base=process.env.TEST_URL||'http://127.0.0.1:8777/',out=process.env.QA_DIR||'qa-output/soundscape-'+engine;
  fs.mkdirSync(out,{recursive:true});fs.rmSync(out+'/result.json',{force:true});const checks=[],errors=[];
  const check=(name,pass,data={})=>{checks.push({name,pass:!!pass,...data});console.log(name,pass);};
  const browser=await(engine==='webkit'?webkit.launch({headless:true}):chromium.launch({headless:true,executablePath:process.platform==='darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':undefined}));
@@ -14,7 +14,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
  const wheel=async(d,count=8,ms=55)=>{for(let i=0;i<count;i++){await p.mouse.wheel(0,d);await p.waitForTimeout(ms);}};
  const jump=async y=>{await p.waitForTimeout(180);await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await p.waitForFunction(target=>{const c=HolyMindContinuity.snapshot(),wanted=Math.max(0,Math.min(target,document.documentElement.scrollHeight-innerHeight));return Math.abs(scrollY-wanted)<1.5&&Math.abs(c.renderedScrollY-scrollY)<1.5&&!c.running;},y,{timeout:12000});await p.waitForTimeout(100);};
  const story=()=>p.evaluate(()=>HolyMindAssemblyScroll.snapshot());
- check('release-v13',await p.locator('html').getAttribute('data-build')==='soundscape-v13');
+ check('release-v14',await p.locator('html').getAttribute('data-build')==='full-current-v14');
  let v=await snap();check('load-has-no-context-or-sound',v.a.context==='uncreated'&&v.a.played===0&&v.a.soundscape===null);
  await wheel(25,5);v=await snap();check('scroll-cannot-unlock-audio',v.a.context==='uncreated'&&v.a.soundscape===null);
  await jump(0);await p.locator('#sound-toggle').click();await p.waitForTimeout(2000);v=await snap();
@@ -42,7 +42,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
  await p.waitForTimeout(1800);st=await story();await wheel(-(st.end-st.start)*.94/24,24,60);await p.waitForTimeout(160);v=await snap();
  check('reverse-progress-reconnects',v.s.progress<.01&&v.s.direction===-1);
  check('reverse-cue-is-not-forward-cue',v.a.history.some(h=>h.id==='current-reconnect'));
- await p.waitForTimeout(1500);await jump(st.end+1000);await p.waitForTimeout(1800);v=await snap();check('prototype-exit-fades-new-buses',v.s.scope===0&&v.a.soundscape.rms.ambient<.0001&&v.a.soundscape.rms.scroll<.0001,{rms:v.a.soundscape.rms});
+ await p.waitForTimeout(1500);await jump(st.end+1000);await p.waitForTimeout(1800);v=await snap();check('full-site-continues-after-assembly',v.s.scope===1&&v.a.soundscape.rms.ambient>.0003&&v.a.soundscape.rms.scroll<.0001,{rms:v.a.soundscape.rms});
  await jump(0);await p.waitForTimeout(1500);await p.locator('.sonic-settings summary').click();await p.screenshot({path:out+'/mobile-sound-controls.jpg',quality:85});
  await p.locator('#sound-ambience').uncheck();await p.waitForTimeout(1500);v=await snap();check('ambience-switch-controls-only-field',!v.a.ambience&&v.a.flow&&v.a.soundscape.rms.ambient<.0001&&v.n.running);
  await p.locator('#sound-ambience').check();await p.locator('#sound-flow').uncheck();await wheel(35,8);v=await snap();check('scroll-switch-controls-only-current',v.a.ambience&&!v.a.flow&&v.a.soundscape.rms.scroll<.0001);
@@ -59,7 +59,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
  for(const w of [320,390,430,680,768,1024,1440]){await p.setViewportSize({width:w,height:w<=680?844:1000});await jump(0);const r=await p.evaluate(()=>{const b=document.querySelector('.neural-stage').getBoundingClientRect(),c=document.querySelector('.hero-copy').getBoundingClientRect();return {over:document.documentElement.scrollWidth>innerWidth,first:b.top<c.top,side:c.left<b.left&&b.top<c.bottom};});check('layout-preserved-'+w,!r.over&&(w<=680?r.first:r.side));}
  await p.screenshot({path:out+'/desktop-hero.jpg',quality:85});
  const touch=await browser.newPage({viewport:{width:390,height:844},hasTouch:true,isMobile:true});touch.on('pageerror',e=>errors.push('touch: '+e.message));await touch.goto(base,{waitUntil:'networkidle'});await touch.waitForFunction(()=>HolyMindAudio.snapshot().warm===14);const rr=await touch.locator('[data-brain-target=hero]').boundingBox();await touch.touchscreen.tap(rr.x+rr.width*.5,rr.y+rr.height*.45);await touch.waitForTimeout(900);check('mobile-trusted-tap-starts-field',await touch.evaluate(()=>HolyMindAudio.snapshot().context==='running'&&HolyMindAudio.snapshot().soundscape.rms.ambient>0));await touch.close();
- const q=await browser.newPage({viewport:{width:390,height:844}});q.on('pageerror',e=>errors.push('studio: '+e.message));await q.goto(new URL('qa/soundscape-v13.html',base).href,{waitUntil:'networkidle'});await q.waitForFunction(()=>!document.getElementById('begin').disabled);await q.locator('#begin').click();await q.waitForTimeout(900);check('studio-starts-real-production-graph',await q.evaluate(()=>document.getElementById('showcase').contentWindow.HolyMindAudio.snapshot().context==='running'));
+ const q=await browser.newPage({viewport:{width:390,height:844}});q.on('pageerror',e=>errors.push('studio: '+e.message));await q.goto(new URL('qa/full-current-v14.html',base).href,{waitUntil:'networkidle'});await q.waitForFunction(()=>!document.getElementById('begin').disabled);await q.locator('#begin').click();await q.waitForTimeout(900);check('studio-starts-real-production-graph',await q.evaluate(()=>document.getElementById('showcase').contentWindow.HolyMindAudio.snapshot().context==='running'));
  for(const mode of ['taps','bed','full']){await q.locator('[data-mix='+mode+']').click();const mix=await q.evaluate(()=>document.getElementById('showcase').contentWindow.HolyMindAudio.snapshot());check('studio-comparison-'+mode,mix.ambience===(mode!=='taps')&&mix.flow===(mode==='full')&&mix.volume===.48);}
  check('studio-three-matched-previews',await q.locator('audio').count()===3);await q.screenshot({path:out+'/mobile-studio.jpg',quality:85,fullPage:true});await q.setViewportSize({width:1440,height:1000});await q.screenshot({path:out+'/desktop-studio.jpg',quality:85});await q.close();
  const silent=await browser.newPage({viewport:{width:390,height:844}});await silent.addInitScript(()=>{window.AudioContext=undefined;window.webkitAudioContext=undefined;});silent.on('pageerror',e=>errors.push('noaudio: '+e.message));await silent.goto(base,{waitUntil:'networkidle'});const sr=await silent.locator('[data-brain-target=hero]').boundingBox();await silent.mouse.click(sr.x+sr.width*.5,sr.y+sr.height*.45);await silent.waitForTimeout(250);check('no-audio-support-preserves-motion',await silent.evaluate(()=>HolyMindNeural.snapshot().burstCount===1&&HolyMindNeural.snapshot().running&&document.body.dataset.sound==='unsupported'));await silent.close();

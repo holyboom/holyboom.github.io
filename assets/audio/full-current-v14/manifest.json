@@ -1,0 +1,108 @@
+{
+  "version": "full-current-v14",
+  "duration": 40,
+  "masterGain": 0.48,
+  "normalization": "None; same tap timing, master gain and compressor for all comparisons",
+  "renderer": "Production HolyMindSoundScenes + HolyMindSoundscape through OfflineAudioContext",
+  "preservation": {
+    "sampleRate": 24000,
+    "seconds": 12,
+    "maxDifference": 4.6566128730773926e-9,
+    "rmsDifference": 3.85978330278775e-10,
+    "pass": true,
+    "method": "Same OfflineAudioContext, original v13 graph vs v14 defaults, approved Hero-to-Assembly parameter score"
+  },
+  "presets": [
+    {
+      "mode": "taps",
+      "file": "taps-only.wav",
+      "sr": 24000,
+      "duration": 40,
+      "finite": true,
+      "peak": 0.33902645111083984,
+      "rms": 0.0109662115698489,
+      "end": 0,
+      "bytes": 3840044,
+      "sha256": "516da26cccbbb16f27bba5738fa8c44c10ed0f6af08012ca0e7ee7331524262a"
+    },
+    {
+      "mode": "bed",
+      "file": "field-and-taps.wav",
+      "sr": 24000,
+      "duration": 40,
+      "finite": true,
+      "peak": 0.338565468788147,
+      "rms": 0.011468929320583951,
+      "end": 0.0000019878625607816502,
+      "bytes": 3840044,
+      "sha256": "6ab0f6b973a74c6127dd7520b02335abc8d621e89fb5c57877c75b6b102f918b"
+    },
+    {
+      "mode": "full",
+      "file": "full-journey.wav",
+      "sr": 24000,
+      "duration": 40,
+      "finite": true,
+      "peak": 0.3378467559814453,
+      "rms": 0.012241124597350586,
+      "end": 0.0000019884132598235738,
+      "bytes": 3840044,
+      "sha256": "e1952575b12611d58252ee17570041d12486666308fe4681641949efa156859b"
+    },
+    {
+      "mode": "field-only",
+      "file": "quiet-field.wav",
+      "sr": 24000,
+      "duration": 40,
+      "finite": true,
+      "peak": 0.01187987346202135,
+      "rms": 0.0034326314510027193,
+      "end": 0.0000019878625607816502,
+      "bytes": 3840044,
+      "sha256": "3ee86d09083a2889fe3e6d31e7efe0415f16f2369baccdae32c3d0efdaf20e63"
+    },
+    {
+      "mode": "scroll-only",
+      "file": "reversible-current.wav",
+      "sr": 24000,
+      "duration": 40,
+      "finite": true,
+      "peak": 0.023386884480714798,
+      "rms": 0.004120613939155641,
+      "end": 1.1376977138155553e-9,
+      "bytes": 3840044,
+      "sha256": "43db5fa730c2e05fd61a1ea7220af87ec0fbd30040041046136dce6ccc4791eb"
+    }
+  ],
+  "checks": [
+    {
+      "name": "taps-only.wav",
+      "pass": true
+    },
+    {
+      "name": "field-and-taps.wav",
+      "pass": true
+    },
+    {
+      "name": "full-journey.wav",
+      "pass": true
+    },
+    {
+      "name": "quiet-field.wav",
+      "pass": true
+    },
+    {
+      "name": "reversible-current.wav",
+      "pass": true
+    },
+    {
+      "name": "full-versus-unchanged-tap-baseline",
+      "pass": true
+    },
+    {
+      "name": "approved-v13-instrument-preserved",
+      "pass": true
+    }
+  ],
+  "limitations": "Illustrative scripted gestures, not a recording of an iPhone speaker or a subjective listening study"
+}

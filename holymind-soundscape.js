@@ -1,4 +1,4 @@
-/* HolyMind Quiet Current v13 — authored Web Audio instrument, not a music loop.
+/* HolyMind Quiet Current v14 — authored Web Audio instrument, not a music loop.
  * Three independent buses: quiet field, continuous scroll current, brief resolution.
  * Browser and OfflineAudioContext use this SAME graph. No samples, no network,
  * no generative-audio service, no repeating tap presets, no JS audio callback.
@@ -59,18 +59,21 @@
   function update(input={},at=ctx.currentTime){
    if(disposed)return;updates++;
    const scope=clamp(input.scope??1),enabled=input.enabled!==false,amb=input.ambience!==false,flow=input.flow!==false;
-   const activity=clamp(input.activity??0),p=clamp(input.progress??0),direction=clamp(input.direction??1,-1,1),scene=clamp(input.morph??0);
+   const activity=clamp(input.activity??0),p=clamp(input.voiceProgress??input.progress??0),direction=clamp(input.direction??1,-1,1),scene=clamp(input.morph??0);
+   const fieldLevel=clamp(input.fieldLevel??1,.45,1.1),currentLevel=clamp(input.currentLevel??1,.45,1.1),openness=clamp(input.openness??1,.6,1.15),textureLevel=clamp(input.textureLevel??1,.3,1.15);
+   const focus=clamp(input.focus??1,.25,1);
    const active=enabled?scope:0;
-   const bed=amb?active*(.91-scene*.12):0,travel=flow?active*Math.pow(activity,.72)*.86:0;
+   const bed=amb?active*(.91-scene*.12)*fieldLevel*focus:0,travel=flow?active*Math.pow(activity,.72)*.86*currentLevel*focus:0;
    target(ambient.gain,bed,at,bed<(last.ambientGain||0)?.22:.7);target(scroll.gain,travel,at,travel>(last.scrollGain||0)?.09:.13);
    // Direction is expressed mostly through openness, not a cartoon pitch slide.
    target(primary.o.frequency,220*(1+.035*p+.009*direction),at,.18);
    target(secondary.o.frequency,330*(1+.028*p-.004*direction),at,.22);
-   target(motionLow.frequency,1100+activity*650+p*260+direction*170,at,.16);
-   target(driftBand.frequency,690+activity*510+p*240+direction*95,at,.2);
-   target(bedLow.frequency,1370-scene*460,at,.8);
+   target(motionLow.frequency,(1100+activity*650+p*260+direction*170)*openness,at,.16);
+   target(driftBand.frequency,(690+activity*510+p*240+direction*95)*openness,at,.2);
+   target(bedLow.frequency,(1370-scene*460)*openness,at,.8);
+   target(fieldGain.gain,.0075*textureLevel,at,.65);target(driftGain.gain,.040*textureLevel,at,.3);
    if(motionPan.pan)target(motionPan.pan,direction*.09*activity,at,.24);
-   last={scope,enabled,ambience:amb,flow,activity,progress:p,direction,morph:scene,ambientGain:bed,scrollGain:travel,at};
+   last={scope,enabled,ambience:amb,flow,activity,progress:p,direction,morph:scene,scene:input.scene||'hero',fieldLevel,currentLevel,openness,textureLevel,focus,ambientGain:bed,scrollGain:travel,at};
   }
   function duck(at=ctx.currentTime,strength=1){
    if(disposed)return;ducks++;const d=clamp(strength);
@@ -91,7 +94,7 @@
    for(const s of oneshots){try{s.stop(at);}catch(_){}}oneshots.clear();
   }
   function dispose(){if(disposed)return;silence();disposed=true;for(const s of sources){try{s.stop();}catch(_){}}for(const n of nodes){try{n.disconnect();}catch(_){}}}
-  return Object.freeze({update,duck,settle,silence,dispose,snapshot:()=>({version:'soundscape-v13',disposed,updates,ducks,resolves,continuousSources:sources.length,oneShots:oneshots.size,...last,actual:{ambient:ambient.gain.value,scroll:scroll.gain.value,ambientDuck:ambientDuck.gain.value,scrollDuck:scrollDuck.gain.value},rms:{ambient:rms(meterA),scroll:rms(meterS),resolve:rms(meterR)}})});
+  return Object.freeze({update,duck,settle,silence,dispose,snapshot:()=>({version:'full-current-v14',disposed,updates,ducks,resolves,continuousSources:sources.length,oneShots:oneshots.size,...last,actual:{ambient:ambient.gain.value,scroll:scroll.gain.value,ambientDuck:ambientDuck.gain.value,scrollDuck:scrollDuck.gain.value},rms:{ambient:rms(meterA),scroll:rms(meterS),resolve:rms(meterR)}})});
  }
- root.HolyMindSoundscape=Object.freeze({version:'soundscape-v13',create,description:'Quiet Electric Field / Reversible Filament / Settled Current',scope:'Hero through Assemble',resolution});
+ root.HolyMindSoundscape=Object.freeze({version:'full-current-v14',create,description:'Quiet Electric Field / Reversible Filament / Settled Current',scope:'Entire showcase, Hero through Footer',resolution});
 })(globalThis);

@@ -1,4 +1,4 @@
-/* Quiet Current v13. One gesture-unlocked AudioContext, separate sound buses.
+/* Quiet Current v14. One gesture-unlocked AudioContext, separate sound buses.
  * Electric v12 tap PCM is unchanged. Muting sound never changes visual motion.
  * A suspended/interrupted page requires a new explicit gesture: scroll cannot wake it.
  */
@@ -97,5 +97,5 @@
   setMix(mode){if(!['taps','bed','full'].includes(mode))return;setLayer('ambience',mode!=='taps',false);setLayer('flow',mode==='full',false);},
   updateSoundscape(state){latest={...latest,...state};if(ready())field();},
   settle(reverse=false){if(!ready()||!flow||!landscape)return false;const ok=landscape.settle(reverse);if(ok){history.push({id:reverse?'current-reconnect':'current-resolve',kind:'resolution',time:performance.now()});if(history.length>80)history.shift();}return ok;},
-  snapshot:()=>({version:'soundscape-v13',character:timbres.character,enabled,volume,ambience,flow,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],soundscape:landscape?.snapshot()||null})});ui();
+  snapshot:()=>({version:'full-current-v14',character:timbres.character,enabled,volume,ambience,flow,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],soundscape:landscape?.snapshot()||null})});ui();
 })();

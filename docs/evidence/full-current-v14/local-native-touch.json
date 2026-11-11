@@ -1,0 +1,51 @@
+{
+  "base": "http://127.0.0.1:8777/",
+  "engine": "chromium",
+  "method": "DevTools native touch sequence in emulated mobile viewport",
+  "checks": [
+    {
+      "name": "native-touch-down-instrument",
+      "pass": true,
+      "activity": 0.5208319484207935,
+      "rms": 0.004405230027634999
+    },
+    {
+      "name": "native-touch-up-instrument",
+      "pass": true,
+      "activity": 0.23682966445459908,
+      "rms": 0.004176872523532444
+    },
+    {
+      "name": "native-touch-down-gallery",
+      "pass": true,
+      "activity": 0.2857385432685408,
+      "rms": 0.004411471191978347
+    },
+    {
+      "name": "native-touch-up-gallery",
+      "pass": true,
+      "activity": 0.3937326555243356,
+      "rms": 0.004567278565793468
+    },
+    {
+      "name": "native-touch-down-services",
+      "pass": true,
+      "activity": 0.622569987269366,
+      "rms": 0.004362195831005614
+    },
+    {
+      "name": "native-touch-up-services",
+      "pass": true,
+      "activity": 0.1830289832958742,
+      "rms": 0.004214905193676013
+    },
+    {
+      "name": "one-context-after-native-swipes",
+      "pass": true,
+      "contextCount": 1
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

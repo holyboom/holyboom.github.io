@@ -222,3 +222,15 @@ Live suites: 48/48 Chromium, 48/48 WebKit, 68/68 existing Interaction WebKit: **
 
 ### Quiet Current v13 — published verification
 Live checks: 48 Chromium + 48 WebKit soundscape assertions and 68 WebKit existing-interaction checks, all passed without captured runtime errors. Thirty-one served files match source hashes, including five audio previews. Actual live audio buses, native input, lifecycle and the comparison studio were exercised. See docs/evidence/soundscape-v13/summary.json and qa/soundscape-v13.html. Physical-speaker output and subjective pleasantness are not claimed.
+
+
+## Quiet Current v14 — whole-page release checks
+
+Approved v13 field and current are extended to eleven reachable zones. All 19 visual/control/tap modules, 37 source images and 17 Electric v12 WAV assets (including all fourteen presets) were byte-compared against 7e596d8 and unchanged.
+
+- Full route: 82 checks per engine in Chromium and WebKit. Measured nonzero ambient/current, pause, direction and reversible material coordinates for every zone; one context and thirteen continuous sources remain constant.
+- Existing audio lifecycle/control suite: 48 WebKit checks. Existing interaction suite: 68 WebKit checks. Native mobile touch-swipes: seven Chromium checks via browser input dispatch, not forged DOM events.
+- Caught and fixed tablet contact/footer markers clamping to the same maximum scroll coordinate. Reserved reachable late intervals. Caught WebKit rounding fractional Studio chapter coordinates just before a seam; jump targets now land eight CSS pixels inside the intended chapter.
+- Optional reading fields reduce ambience when their open summary/content is visible. Dialog/menu scroll does not generate the page current. Gallery/search/disclosure reflows are remeasured without a false swipe sound.
+- Offline sample comparison of the original v13 instrument versus the new default graph over twelve seconds at 24 kHz: max delta 4.66e-9. Five forty-second whole-journey audition stems/comparisons use the actual production scene mapper and graph at identical master gain. All samples finite, peaks below 0.5, fades below 0.001.
+- No physical iPhone speaker or listener fatigue test was performed. Automated graph checks do not certify subjective pleasantness, hearing safety, accessibility or real-device performance. Production results are recorded after publication.
