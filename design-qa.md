@@ -186,3 +186,11 @@ The existing energy/continuity regression suite also passed all 85 checks in Web
 ### Published Interaction v10 verification
 
 Live acceptance: Chromium 68/68 and WebKit 68/68, zero failures and observed runtime errors. All 19 HTML/CSS/JS files served by the public page matched source hashes. A native-input recording confirms three tap bursts and a 0 → 100 → 0 pinned reveal. See `qa/interaction-v10.html` and `docs/evidence/interaction-v10/summary.json`. Physical-device testing remains outstanding.
+
+## Resonance v11 — local prepublication verification
+
+- Fourteen different renderer geometries, twelve common and two rare; a context-weighted bag excludes the last three selections. 1,200 selection trials exercised all fourteen.
+- 48/48 acceptance checks passed in Chromium and 48/48 in WebKit. Checks include trusted-touch AudioContext unlock, a nonzero measured audio graph signal, visual/sound ID matching for all fourteen, three-voice bound, cleanup, sound-only mute/volume persistence, lifecycle, four assembly cues, boundary de-duplication, a single cue for fast scroll, viewport ordering and the direct-preview studio.
+- The existing 68-check Interaction suite passed in WebKit, including pinned 0–100–0 progress, attached leader geometry, keyboard, touches, existing controls and fallback content.
+- All 37 original bitmap artwork files remain byte-identical. Fourteen deterministic 24 kHz WAVs have distinct SHA-256 hashes, finite nonzero signal and sample peak < 0.5. These are DSP synthesis, not field recordings or generative-audio model output.
+- Actual mobile and desktop browser captures were inspected. Headless audio-graph verification does not establish physical iPhone speaker output, perceived timbre naturalness or end-to-end acoustic latency. No independent flash-safety/motion compliance certification is claimed.

@@ -21,7 +21,11 @@
  const active=()=>ready&&!document.hidden&&!dead&&(heroInside||orbitInside||transporting);
  const colors=['#67e8f9','#c48aff','#f2cc8f','#ff7ac6'];
  const sprites=new Map();
- const bursts=[];let burstCount=0,lastBurstAt=-1000,lastBurstPoint=null;
+ const bursts=[];let burstCount=0,lastBurstAt=-1000,lastBurstPoint=null,lastStyle=null;
+ const memoryNodes=[];
+ const glyphImages=new Map();
+ function glyph(id){if(!/^[a-z0-9-]+$/.test(id))return null;if(!glyphImages.has(id)){const im=new Image();im.src='assets/skills/'+id+'.webp';glyphImages.set(id,im);}return glyphImages.get(id);}
+ window.HolyMindReactions?.styles.forEach(s=>glyph(s.glyph));
  const crystal=new Image();crystal.src='assets/skills/the-crystallizer.webp';
  function burst(options={}){
   if(!ready||document.hidden||transporting)return false;
@@ -30,11 +34,14 @@
   const y=clamp(Number.isFinite(options.y)?options.y:.46,.10,.90)*W;
   const selected=paths.map((path,id)=>({id,d:Math.min(...path.filter((_,j)=>j%4===0).map(v=>(v[0]-x)**2+(v[1]-y)**2))})).sort((a,b)=>a.d-b.d).slice(0,6).map(o=>o.id);
   if(bursts.length>=3)bursts.shift();
-  bursts.push({x,y,start:elapsed,seed:burstCount++,paths:selected});lastBurstPoint={x,y};
-  document.dispatchEvent(new CustomEvent('holymind:brain-burst',{detail:{x:x/W,y:y/W,target:options.target||'hero',count:burstCount}}));
+  const style=window.HolyMindReactions?.get(options.styleId)||window.HolyMindReactions?.pick(options.target||'hero');
+  lastStyle=style?.id||'neural-discharge';
+  bursts.push({x,y,start:elapsed,seed:burstCount++,paths:selected,styleId:lastStyle});lastBurstPoint={x,y};
+  for(const id of selected.slice(0,3)){const path=paths[id];if(path)memoryNodes.push({point:path.at(-1),start:elapsed});}while(memoryNodes.length>9)memoryNodes.shift();
+  document.dispatchEvent(new CustomEvent('holymind:brain-burst',{detail:{x:x/W,y:y/W,target:options.target||'hero',count:burstCount,styleId:lastStyle,name:style?.name||'Neural Discharge',meaning:style?.meaning||'Activation',rare:!!style?.rare,userGesture:options.userGesture===true}}));
   sync();return true;
  }
- function paintBursts(t){
+ function paintLegacyBursts(t){
   while(bursts.length&&t-bursts[0].start>1200)bursts.shift();
   let charge=0;
   for(const b of bursts){
@@ -66,6 +73,16 @@
     const path=paths[id];if(!path)return;const p=clamp((u-j*.025)/.8),head=Math.floor(p*(path.length-1));
     const tail=Math.max(0,head-24);line(path.slice(tail,head+1),j%3===0?'#f2cc8f':'#67e8f9',a*.85,2);
    });
+  }
+  return charge;
+ }
+
+ function paintBursts(t){
+  if(!window.HolyMindReactions)return paintLegacyBursts(t);
+  while(bursts.length&&t-bursts[0].start>1200)bursts.shift();
+  let charge=0;
+  for(const b of bursts){const u=clamp((t-b.start)/1200),a=(1-u)**.8/Math.sqrt(Math.max(1,bursts.length));
+   charge=Math.max(charge,a);window.HolyMindReactions.draw({ctx,line,star,glow,paths,glyph},b,u,a);
   }
   return charge;
  }
@@ -111,7 +128,7 @@
   bc.clearRect(0,0,W,W);bc.globalCompositeOperation='source-over';
   const g=bc.createRadialGradient(x,y,4,x,y,145);g.addColorStop(0,'rgba(103,232,249,.9)');g.addColorStop(.38,'rgba(178,114,255,.62)');g.addColorStop(1,'rgba(103,232,249,0)');bc.fillStyle=g;bc.fillRect(0,0,W,W);bc.globalCompositeOperation='destination-in';bc.drawImage(mask,0,0);
   ctx.globalAlpha=.6;ctx.drawImage(beam,0,0);ctx.globalAlpha=1;
-  const count=small.matches?12:18;
+  const count=bursts.length?(small.matches?4:6):(small.matches?12:18);
   for(let i=0;i<count&&paths.length;i++){
    const time=tick/3100+i*.647,phase=fract(time),id=(Math.floor(time)+i*7)%paths.length,path=paths[id],n=path.length;
    const head=Math.min(n-1,Math.floor(phase*n)),tail=Math.max(0,head-22);
@@ -128,7 +145,7 @@
   }
   if(outline.length){
    // Edge discharges follow a radial contour sampled from the actual brain, not an oval mask.
-   for(let i=0;i<6;i++){
+   for(let i=0;i<(bursts.length?2:6);i++){
     const cycle=tick/4400+i*.159,phase=fract(cycle),idx=(Math.floor(cycle)*11+i*15)%outline.length;
     const [ox,oy,a]=outline[idx],length=14+Math.sin(phase*Math.PI)*24,alpha=Math.sin(phase*Math.PI)**2*.75;
     const arc=[];for(let j=0;j<8;j++){const u=j/7,jitter=Math.sin(j*2.3+tick*.0014+i)*3.5*Math.sin(u*Math.PI);arc.push([ox+Math.cos(a)*length*u+Math.cos(a+Math.PI/2)*jitter,oy+Math.sin(a)*length*u+Math.sin(a+Math.PI/2)*jitter]);}
@@ -141,6 +158,8 @@
    if(wave>.45)star(nx,ny,3.5,(wave-.45)*1.3,i%3===0?colors[2]:colors[0]);
   }
   const burstCharge=paintBursts(t);
+  while(memoryNodes.length&&t-memoryNodes[0].start>2100)memoryNodes.shift();
+  for(const node of memoryNodes){const a=(1-clamp((t-node.start)/2100))*.26;star(...node.point,2.5,a,'#f2cc8f');}
   ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
   // All three displays copy the SAME rendered frame and time. No spark restart at a seam.
   const copy=(c,target)=>{if(!c)return;c.clearRect(0,0,W,W);c.imageSmoothingEnabled=false;c.drawImage(surface,0,0);target.dataset.frames=String(frames);};
@@ -162,7 +181,7 @@
   if(enabled&&!raf){last=0;raf=requestAnimationFrame(tick);}
   if(!enabled&&raf){cancelAnimationFrame(raf);raf=0;last=0;}
  }
- window.HolyMindNeural=Object.freeze({version:'interaction-v10',burst,transport(value){if(transporting===value)return;transporting=value;orbit.style.opacity=value?'0':'1';sync();},snapshot:()=>({ready,frames,elapsed,burstCount,activeBursts:bursts.length,lastBurstPoint,active:active(),running:!!raf,transporting,heroInside,orbitInside,paths:paths.length,branches:small.matches?12:18,contour:outline.length,profile:body.dataset.motionProfile,meanPaintMs:Number(frameCost.toFixed(3)),targets:{hero:canvas.dataset.frames||'0',orbit:orbit.dataset.frames||'0',transit:transit?.dataset.frames||'0'}})});
+ window.HolyMindNeural=Object.freeze({version:'resonance-v11',burst,transport(value){if(transporting===value)return;transporting=value;orbit.style.opacity=value?'0':'1';sync();},snapshot:()=>({ready,frames,elapsed,burstCount,activeBursts:bursts.length,lastBurstPoint,lastStyle,active:active(),running:!!raf,transporting,heroInside,orbitInside,paths:paths.length,branches:small.matches?12:18,contour:outline.length,profile:body.dataset.motionProfile,meanPaintMs:Number(frameCost.toFixed(3)),targets:{hero:canvas.dataset.frames||'0',orbit:orbit.dataset.frames||'0',transit:transit?.dataset.frames||'0'}})});
  image.addEventListener('load',loadMask);if(image.complete&&image.naturalWidth)loadMask();
  fetch('assets/neural-paths.json?v=spark-v8').then(r=>{if(!r.ok)throw Error('paths');return r.json();}).then(data=>{
   if(Array.isArray(data.paths)&&data.paths.every(p=>Array.isArray(p)&&p.length>1&&p.every(v=>v.length===2&&v.every(n=>Number.isFinite(n)&&n>=0&&n<W)))){paths=data.paths;nodes=(data.nodes||[]).filter(v=>v.length===2&&v.every(Number.isFinite));canvas.dataset.paths=String(paths.length);sync();}
@@ -185,9 +204,10 @@
    if(e.detail!==0&&(cancelled||(down&&(Math.hypot(e.clientX-down.x,e.clientY-down.y)>12||Math.abs(scrollY-down.scroll)>8))))return;
    const target=button.dataset.brainTarget==='orbit'?orbitImage:image,r=target.getBoundingClientRect();
    const x=e.detail===0?.5:(e.clientX-r.left)/r.width,y=e.detail===0?.46:(e.clientY-r.top)/r.height;
-   burst({x,y,target:button.dataset.brainTarget});down=null;
+   burst({x,y,target:button.dataset.brainTarget,userGesture:e.isTrusted});down=null;
   });
  });
+ document.addEventListener('holymind:brain-burst',e=>{const label=document.getElementById('reaction-readout');if(label){label.textContent=e.detail.name+' · '+e.detail.meaning;label.dataset.rare=String(e.detail.rare);}});
  const stage=document.querySelector('.neural-stage');stage?.addEventListener('pointerenter',()=>{engaged=true;});stage?.addEventListener('pointerleave',()=>{engaged=false;});
  addEventListener('pagehide',()=>{dead=true;if(visibilityFrame)cancelAnimationFrame(visibilityFrame);visibilityFrame=0;sync();});
  addEventListener('pageshow',resume);

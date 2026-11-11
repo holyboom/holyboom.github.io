@@ -109,3 +109,15 @@ The owner requires full visible animation without the previous system-level calm
 - Pin interval is 1200–2400 CSS scroll pixels, derived from viewport size. A resize rebuild restores natural dimensions before remeasuring to avoid stale pinned sizes on orientation change.
 - Continuity docks at assembly for the entire pin interval, then resumes the ten existing reversible transfers. Slider, scroll and geometry have a single source of progress, rather than competing writers.
 - No external runtime library, audio or analytics added. No-JS content/guide and missing-GSAP manual range remain available. Always-on policy remains as explicitly requested; no WCAG motion conformance or physical-iPhone performance certification is claimed.
+
+## Resonance v11 — authored cognitive reactions and sonic identity
+
+- Fourteen visibly different cognitive-inspired metaphors: twelve regular reactions and two infrequent signature reactions. These are narrative visual metaphors, not treatment claims or insight into a visitor's actual cognitive state.
+- Context-weighted non-repeating bag; exclude the previous three reactions. Rare effects require at least seven intervening selections and a separate 12% eligibility roll. Original violet/cyan/gold pixel geometry and existing glyphs remain unchanged.
+- The established single neural canvas clock renders every style. At most three concurrent bursts, 180 ms input cooldown, 1.2-second finite geometry and a bounded 2.1-second synaptic afterglow. Ambient energy remains active during and after reactions.
+- Fourteen original parameter-authored DSP timbres, with seeded friction texture, modal resonances, warm impact and deliberately uneven note timing. No stock sample, actual glass/metal recording, external audio API or generative-audio model. Subjective naturalness is not certified.
+- Sound is armed but silent until a trusted brain tap or explicit sound-enable gesture creates/resumes the AudioContext. First-party PCM is warmed without an AudioContext; no network audio fetch gates a tap. Never automatically replay a delayed gesture after return.
+- Separate sound-only mute and volume. Muting never affects visual motion. Sound preferences persist; no sound/context is created on initial load. Three voices maximum, gain discipline and compressor; stop on pagehide/hidden, resume on a new gesture.
+- After sound unlock only, assembly crossings at 25/50/75/100 produce quiet matching cues. Boundary dithering does not repeat a cue, a fast jump emits only the last cue, and returning to 0 rearms the sequence.
+- The QA studio offers intentional selection of all fourteen animations and sounds, plus reproducible WAVs and their provenance. Main-page brain taps remain randomized.
+- Preserve v10 pinned 0→100→0 scroll, all ten reversible transfers, 34 skills, phone-only brain-first layout and the explicitly requested always-on motion. No new runtime library. Physical iPhone audio, latency, speakers and independent flash/accessibility certification remain untested.

@@ -10,7 +10,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
  p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
  await p.addInitScript(()=>localStorage.setItem('holyboom-motion','off'));
  await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>window.HolyMindNeural?.snapshot().paths===46&&window.HolyMindAssemblyScroll?.enabled());await p.waitForTimeout(1000);
- check('release-v10',await p.locator('html').getAttribute('data-build')==='interaction-v10');
+ check('release-v11',await p.locator('html').getAttribute('data-build')==='resonance-v11');
  check('always-on-preserved',await p.evaluate(()=>document.body.dataset.motionProfile==='full'&&HolyMindNeural.snapshot().running));
  check('removed-controls-stay-removed',await p.locator('#motion-toggle,.hero-actions').count()===0);
  check('fresh-load-starts-zero',await p.locator('#assembly-control').inputValue()==='0');

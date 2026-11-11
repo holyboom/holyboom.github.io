@@ -72,3 +72,8 @@ Full motion is now the fixed showcase policy, including with OS Reduce Motion an
 ## Interaction v10
 
 Tap the hero/orbit brain to release a HolyMind charge. Scroll through the pinned assembly to uncover its layers, then reverse to reconnect. The range remains a manual scrubber. Run `npm run test:interaction` with `TEST_URL` and `ENGINE=webkit` or `ENGINE=chromium` for the reusable acceptance suite.
+
+## Resonance v11
+Tap the brain for one of 14 visual reactions and its authored micro-score. Sound begins only after a trusted gesture; the independent mute/volume controls do not stop motion. Try all styles at `qa/resonance-v11.html`. Rebuild the original WAV previews with `npm run build:sounds`.
+
+Sound-source documentation: `assets/audio/README.md`; data and waveform metrics: `assets/audio/manifest.json`. The sounds are procedural DSP, not actual recordings or output from an audio-generation model.

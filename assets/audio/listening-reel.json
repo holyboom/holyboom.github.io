@@ -1,0 +1,86 @@
+[
+  {
+    "id": "neural-discharge",
+    "name": "Graphite ignition",
+    "start": 0,
+    "end": 0.7
+  },
+  {
+    "id": "crystallizer-bloom",
+    "name": "Cut crystal",
+    "start": 1,
+    "end": 2.05
+  },
+  {
+    "id": "insight-pulse",
+    "name": "Porcelain insight",
+    "start": 2.35,
+    "end": 3.4
+  },
+  {
+    "id": "constraint-break",
+    "name": "Split slate",
+    "start": 3.7,
+    "end": 4.45
+  },
+  {
+    "id": "verification-spark",
+    "name": "Evidence seal",
+    "start": 4.75,
+    "end": 5.6
+  },
+  {
+    "id": "reasoning-arc",
+    "name": "Connected beads",
+    "start": 5.9,
+    "end": 6.9
+  },
+  {
+    "id": "cognitive-reframe",
+    "name": "Turned glass",
+    "start": 7.2,
+    "end": 8.2
+  },
+  {
+    "id": "pattern-reset",
+    "name": "Loop release",
+    "start": 8.5,
+    "end": 9.3
+  },
+  {
+    "id": "signal-fork",
+    "name": "Twin filaments",
+    "start": 9.6,
+    "end": 10.5
+  },
+  {
+    "id": "goal-lock",
+    "name": "Magnetic resolve",
+    "start": 10.8,
+    "end": 11.8
+  },
+  {
+    "id": "debate-synthesis",
+    "name": "Two into one",
+    "start": 12.1,
+    "end": 13.1
+  },
+  {
+    "id": "evidence-manifest",
+    "name": "Etched ledger",
+    "start": 13.4,
+    "end": 14.3
+  },
+  {
+    "id": "holy-prime",
+    "name": "HolyMind signature",
+    "start": 14.6,
+    "end": 15.9
+  },
+  {
+    "id": "triad-resonance",
+    "name": "Threefold resonance",
+    "start": 16.2,
+    "end": 17.45
+  }
+]

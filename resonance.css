@@ -1,0 +1,10 @@
+/* Sound is a separate preference. It never disables the visual showcase. */
+.sound-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 10px;border:1px solid #513765;border-radius:7px;background:transparent;color:var(--accent-cyan);cursor:pointer;white-space:nowrap}
+.sound-toggle svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.sound-label{font-size:11px}.sound-slash{display:none}.sound-toggle[data-sound=off]{color:var(--muted)}.sound-toggle[data-sound=off] .sound-slash{display:block}.sound-toggle[data-sound=off] .sound-waves{display:none}.sound-toggle:hover{border-color:var(--accent-cyan)}
+.reaction-readout{display:block;min-height:30px;max-width:39ch;margin-inline:auto;line-height:1.5;color:var(--soft)}.reaction-readout[data-rare=true]{color:var(--accent-gold)}
+.sonic-settings{font-size:10px;line-height:1.6;color:var(--muted);margin:9px auto 0;max-width:260px;position:relative;z-index:4}.sonic-settings summary{display:list-item;cursor:pointer;color:var(--muted);width:max-content;margin:auto;min-height:28px}.sonic-settings label{display:block;color:var(--soft)}.sonic-settings input{accent-color:var(--accent-cyan);width:100%;height:36px;margin:0}.sonic-settings>span{display:block;font-size:10px}
+@media(max-width:680px){.sound-toggle{width:44px;padding:0;flex:none}.sound-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.nav-actions{gap:9px}.reaction-readout{font-size:10px;min-height:27px;max-width:34ch}.energy-scroll-hint{font-size:10px}.sonic-settings{margin-top:3px}.hero-visual figcaption{padding-inline:5px}}
+@media(max-width:360px){.masthead-inner{gap:6px}.nav-actions{gap:5px}.wordmark{font-size:18px}.sound-toggle{width:40px}}
+@media print{.sound-toggle,.sonic-settings{display:none}}
+
+html:not(.js) .sound-toggle,html:not(.js) .sonic-settings{display:none}
