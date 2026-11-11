@@ -74,3 +74,16 @@ See `design-qa.md` for the observed review outcome and its limits.
 - Violet remains identity. Cyan carries energy/leader lines, champagne gold marks arrivals/confirmed focus, pearl is the small bright core, orchid pink is a sparse glint. Do not recolor original images.
 - Focal moment: the exploded diagram unpacks into three short anchored explanations. A finite scan acknowledges full expansion, not a perpetual light show. Every state reverses with the slider.
 - Phone: the illustration and side annotations share the same viewport; short copy, generous touch target, no horizontal scrolling. Reduced motion still allows immediate explicit slider input and static lines. No background loops or new library.
+
+## Spark v8 — mobile-first entrance, shared electricity (current)
+
+This revision supersedes the earlier mobile text-first arrangement and persistent motion toggle, not the desktop layout or established pixel-neon artwork.
+
+- Phone portrait and narrow touch-landscape: image-first hero. Desktop/tablet keep the established left-copy/right-art composition. Remove the two hero shortcut actions everywhere; retain navigation and contact destinations.
+- One 480×480 Canvas light field uses the 46 source-derived paths and 96 contour samples. Full mode uses 12 moving traces on phones and 18 on wider screens, six edge discharges, and sparse pixel debris. Source bitmaps are unchanged.
+- Hero, travelling brain and orbit copy the same rendered frame from one clock. The overlay pauses outside those visible targets; transport explicitly retains its renderer when the hero leaves view.
+- Cyan expresses energy; champagne expresses arrival; pearl cores remain tiny; pink is a sparse edge glint. Local reflections illuminate existing borders, circuit SVGs, glyphs, the signature point and portal geometry. Reading text is not flashed, distorted or recolored wholesale.
+- Departing/receiving light is derived from the same reversible continuity progress. It never writes to the slider, skill selection or disclosure state.
+- Always-on is the normal experience; legacy localStorage off is ignored. System Reduce Motion uses a low-amplitude 12 fps light field and disables spatial scroll choreography, without showing a site toggle. The no-pause-control choice is NOT represented as WCAG 2.2.2 compliance. Flash safety has not been independently certified.
+- No new runtime dependencies, WebGL contexts, audio, analytics or external network calls. Adapted regression tests exercise OS profile changes instead of the intentionally removed toggle.
+- Release key: spark-v8. Validate pixel movement, handoff rendering, geometry, reversibility, phone ordering, desktop preservation and existing interactive controls before publication.

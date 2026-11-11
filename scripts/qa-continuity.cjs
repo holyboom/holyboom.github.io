@@ -1,3 +1,6 @@
+
+// v8 removed the site toggle; exercise the real OS preference instead.
+async function toggleMotion(page){const calm=await page.locator('body').getAttribute('data-motion-profile')==='calm';await page.emulateMedia({reducedMotion:calm?'no-preference':'reduce'});}
 /* Verify actual shared-element transfer, every seam in both directions and dynamic layouts. */
 const {chromium,webkit}=require('playwright');const fs=require('fs');
 (async()=>{
@@ -8,7 +11,7 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
  const check=(name,pass,detail={})=>{checks.push({name,pass,...detail});console.log(name,pass);};
  const go=async y=>{await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await page.waitForTimeout(1020);return await page.evaluate(()=>HolyMindContinuity.snapshot());};
  await page.goto(base,{waitUntil:'networkidle'});await page.waitForTimeout(1100);
- check('release-v6',await page.locator('html').getAttribute('data-build')===(process.env.EXPECT_BUILD||'exploded-v7'));
+ check('release-v6',await page.locator('html').getAttribute('data-build')===(process.env.EXPECT_BUILD||'spark-v8'));
  check('single-shared-carrier',await page.locator('.continuity-carrier').count()===1&&await page.locator('.continuity-brain').count()===1);
  check('pointer-transparent',await page.locator('.continuity-layer').evaluate(el=>getComputedStyle(el).pointerEvents==='none'));
  const initial=await page.evaluate(()=>HolyMindContinuity.snapshot());check('eleven-stations',initial.stations.length===11);
@@ -25,9 +28,9 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
   check('reversible-'+a.id+'-'+b.id,Math.abs(forward.x-reverse.x)<1.5&&Math.abs(forward.y-reverse.y)<1.5&&forward.from===reverse.from&&forward.to===reverse.to,{forward:{x:forward.x,y:forward.y},reverse:{x:reverse.x,y:reverse.y}});
  }
  await go(initial.stations.find(s=>s.id==='orbit').at+10);check('original-brain-restored',await page.locator('.continuity-transferred').count()===0);
- await go(500);await page.locator('#motion-toggle').click();await page.waitForTimeout(200);
+ await go(500);await toggleMotion(page);await page.waitForTimeout(200);
  check('pause-restores-art',await page.locator('.continuity-transferred').count()===0&&await page.locator('.continuity-layer').evaluate(e=>getComputedStyle(e).display==='none'));
- await page.locator('#motion-toggle').click();await page.waitForTimeout(1100);check('resume-current-position',await page.locator('body').getAttribute('data-continuity')==='ready');
+ await toggleMotion(page);await page.waitForTimeout(1100);check('resume-current-position',await page.locator('body').getAttribute('data-continuity')==='ready');
  check('no-idle-loop',!(await page.evaluate(()=>HolyMindContinuity.snapshot())).running);
  const priorHeight=await page.locator('.continuity-layer').getAttribute('data-measured-height');
  await page.locator('#show-skills').click();await page.waitForTimeout(1500);

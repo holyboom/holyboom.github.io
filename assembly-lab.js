@@ -9,7 +9,7 @@
  const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),smooth=t=>t*t*(3-2*t),ns='http://www.w3.org/2000/svg';
  const kinds=['intent','tools','evidence'],titles=['Human Intent','Connections','Evidence'],ranges=[[18,42],[42,67],[67,90]];
  let amount=Number(slider.value),reveals=[0,0,0],focus=-1,manualFocus=-1,raf=0,until=0,inside=false,scanStart=0,lastComplete=false,frames=0,geometry=[];
- const allowed=()=>document.body.dataset.motion==='on';
+ const allowed=()=>document.body.dataset.motion==='on'&&document.body.dataset.motionProfile!=='calm';
  const el=(tag,attrs)=>{const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);return e;};
  const rows=kinds.map((kind,i)=>{
   const group=el('g',{'data-leader':kind});

@@ -12,7 +12,7 @@
  const small=()=>innerWidth<=680;
  const q=s=>document.querySelector(s);
  const layer=document.createElement('div');layer.className='continuity-layer';layer.setAttribute('aria-hidden','true');
- layer.innerHTML=`<svg class="continuity-field" xmlns="${ns}"><path class="continuity-wire"/><path class="continuity-shadow"/><path class="continuity-current"/><g class="continuity-dock"><path class="continuity-receiver"/></g><g class="continuity-carrier"><path class="continuity-echo"/><path class="continuity-form"/><path class="continuity-facet"/><image class="continuity-glyph" href="assets/skills/the-crystallizer.webp" x="-28" y="-28" width="56" height="56" opacity="0"/><image class="continuity-glyph-next" href="assets/skills/the-crystallizer.webp" x="-28" y="-28" width="56" height="56" opacity="0"/><path class="continuity-core"/><g class="continuity-satellites"><path class="continuity-fragment"/><path class="continuity-fragment"/><path class="continuity-fragment"/></g></g></svg><img class="continuity-brain" src="assets/brain.webp" alt="" width="960" height="960">`;
+ layer.innerHTML=`<svg class="continuity-field" xmlns="${ns}"><path class="continuity-wire"/><path class="continuity-shadow"/><path class="continuity-current"/><g class="continuity-dock"><path class="continuity-receiver"/></g><g class="continuity-carrier"><path class="continuity-echo"/><path class="continuity-form"/><path class="continuity-facet"/><image class="continuity-glyph" href="assets/skills/the-crystallizer.webp" x="-28" y="-28" width="56" height="56" opacity="0"/><image class="continuity-glyph-next" href="assets/skills/the-crystallizer.webp" x="-28" y="-28" width="56" height="56" opacity="0"/><path class="continuity-core"/><g class="continuity-satellites"><path class="continuity-fragment"/><path class="continuity-fragment"/><path class="continuity-fragment"/></g></g></svg><div class="continuity-brain"><img src="assets/brain.webp" alt="" width="960" height="960"><canvas class="neural-transit-sparks" width="480" height="480"></canvas></div>`;
  body.appendChild(layer);
  const field=layer.querySelector('svg'),wire=layer.querySelector('.continuity-wire'),current=layer.querySelector('.continuity-current'),shadow=layer.querySelector('.continuity-shadow');
  const carrier=layer.querySelector('.continuity-carrier'),form=layer.querySelector('.continuity-form'),echo=layer.querySelector('.continuity-echo'),facet=layer.querySelector('.continuity-facet');
@@ -40,7 +40,7 @@
   {id:'portal',s:'.contact-portal',x:.50,y:.50,shape:octagon,w:150,h:150,angle:0,spread:68,hold:0}
  ];
  let keys=[],raf=0,until=0,needsMeasure=true,lastY=scrollY,restored=false;
- const enabled=()=>body.dataset.motion==='on'&&!document.hidden;
+ const enabled=()=>body.dataset.motion==='on'&&body.dataset.motionProfile!=='calm'&&!document.hidden;
  const svgPath=points=>points.map((v,i)=>`${i?'L':'M'}${v[0].toFixed(2)} ${v[1].toFixed(2)}`).join(' ')+'Z';
  const diamondPath=(x,y,r)=>`M${x} ${y-r}l${r} ${r}l${-r} ${r}l${-r} ${-r}Z`;
  // offset geometry avoids measuring our own overlays and ignores scene transforms.
@@ -77,7 +77,7 @@
  }
  function restore(){
   mute('none');
-  brain.style.visibility='hidden';restored=true;
+  brain.style.visibility='hidden';window.HolyMindNeural?.transport(false);restored=true;
  }
  function routePoint(a,c1,c2,b,t){const edge=Math.sin(Math.PI*t)**2;return {x:lerp(lerp(a.x,b.x,t),c1.x,edge),y:lerp(a.y,b.y,t)};}
  function curve(a,b,from,to){
@@ -100,7 +100,7 @@
   const endAngle=Number(window.gsap?.getProperty(orbitImage,'rotation'))||0;
   brain.style.width=`${width}px`;brain.style.height=`${width}px`;
   brain.style.transform=`translate3d(${x-width/2}px,${y-width/2}px,0) rotate(${lerp(startAngle,endAngle,t)}deg)`;
-  brain.style.visibility='visible';
+  brain.style.visibility='visible';window.HolyMindNeural?.transport(true);
   mute('brain');restored=false;
   const trace=(start,end)=>{let d='';for(let j=0;j<=30;j++){const v=lerp(start,end,j/30),f=Math.sin(Math.PI*v)**2,px=lerp(lerp(src.x,dst.x,v),innerWidth-(small()?44:70),f*.96),py=lerp(src.y,dst.y,v)+f*innerHeight*.06;d+=`${j?'L':'M'}${Math.round(px/2)*2} ${Math.round(py/2)*2} `;}return d;};
   return {x,y,wire:trace(0,1),lit:trace(Math.max(0,t-.13),Math.min(1,t+.02))};
@@ -118,6 +118,7 @@
   let pos=same?A:routePoint(...path,t);
   const brainTransit=a.id==='neural'&&b.id==='orbit'&&p>0&&p<1;
   const glyphTransfer=a.id==='ribbon'&&b.id==='assembly'&&p>0&&p<1;
+  if(!brainTransit)window.HolyMindNeural?.transport(false);
   if(brainTransit)pos=sharedBrain(A,B,p);else if(glyphTransfer){mute('crystal');brain.style.visibility='hidden';restored=false;}else if(!restored)restore();
   
   // The original brain arrives intact; a luminous shard then carries its intent onward.
@@ -150,6 +151,7 @@
   layer.style.setProperty('--carrier-accent',`rgb(${Math.round(lerp(103,242,dock))} ${Math.round(lerp(232,204,dock))} ${Math.round(lerp(249,143,dock))})`);
   receiver.setAttribute('d',arrival?diamondPath(B.x,B.y,(18+22*(1-arrival))*factor):'');
   receiver.style.opacity=String(arrival*.6);
+  window.HolyMindEnergy?.receive({from:a.id,to:b.id,progress:p,same,x:pos.x,y:pos.y,brainTransit});
   layer.dataset.from=a.id;layer.dataset.to=b.id;layer.dataset.progress=p.toFixed(5);
   layer.dataset.x=pos.x.toFixed(3);layer.dataset.y=pos.y.toFixed(3);
   layer.dataset.direction=y<lastY?'reverse':y>lastY?'forward':layer.dataset.direction||'forward';lastY=y;
@@ -170,6 +172,6 @@
  if(window.ScrollTrigger)window.ScrollTrigger.addEventListener('refresh',refresh);
  if(window.ResizeObserver){const observer=new ResizeObserver(refresh);observer.observe(main);}
  // Read-only diagnostics make reversal and geometry testable without driving state.
- window.HolyMindContinuity=Object.freeze({version:'continuity-v6',snapshot:()=>({stations:stations.map(s=>({id:s.id,at:s.at})),keys:keys.map(k=>({id:k.station.id,at:k.at})),state:body.dataset.continuity,from:layer.dataset.from,to:layer.dataset.to,progress:Number(layer.dataset.progress),x:Number(layer.dataset.x),y:Number(layer.dataset.y),running:!!raf})});
+ window.HolyMindContinuity=Object.freeze({version:'spark-v8',snapshot:()=>({stations:stations.map(s=>({id:s.id,at:s.at})),keys:keys.map(k=>({id:k.station.id,at:k.at})),state:body.dataset.continuity,from:layer.dataset.from,to:layer.dataset.to,progress:Number(layer.dataset.progress),x:Number(layer.dataset.x),y:Number(layer.dataset.y),running:!!raf})});
  refresh();
 })();

@@ -1,0 +1,529 @@
+{
+  "engine": "chromium",
+  "base": "http://127.0.0.1:8771/",
+  "checks": [
+    {
+      "name": "release-v8",
+      "pass": true
+    },
+    {
+      "name": "legacy-off-does-not-disable",
+      "pass": true
+    },
+    {
+      "name": "motion-toggle-removed",
+      "pass": true
+    },
+    {
+      "name": "two-hero-shortcuts-removed",
+      "pass": true
+    },
+    {
+      "name": "scroll-hint-is-not-a-jump-link",
+      "pass": true
+    },
+    {
+      "name": "hero-actual-pixels-animate",
+      "pass": true
+    },
+    {
+      "name": "more-source-aligned-pulses",
+      "pass": true
+    },
+    {
+      "name": "hero-layout-320",
+      "pass": true,
+      "brain": {
+        "x": 14.151313781738281,
+        "y": 53.15131378173828,
+        "width": 323.6973876953125,
+        "height": 323.6973876953125,
+        "top": 53.15131378173828,
+        "right": 337.8487014770508,
+        "bottom": 376.8487014770508,
+        "left": 14.151313781738281
+      },
+      "copy": {
+        "x": 22,
+        "y": 410.140625,
+        "width": 276,
+        "height": 227.21875,
+        "top": 410.140625,
+        "right": 298,
+        "bottom": 637.359375,
+        "left": 22
+      }
+    },
+    {
+      "name": "hero-layout-390",
+      "pass": true,
+      "brain": {
+        "x": 12.367522239685059,
+        "y": 45.367523193359375,
+        "width": 397.26495361328125,
+        "height": 397.26495361328125,
+        "top": 45.367523193359375,
+        "right": 409.6324758529663,
+        "bottom": 442.6324768066406,
+        "left": 12.367522239685059
+      },
+      "copy": {
+        "x": 22,
+        "y": 476.53125,
+        "width": 346,
+        "height": 236.0625,
+        "top": 476.53125,
+        "right": 368,
+        "bottom": 712.59375,
+        "left": 22
+      }
+    },
+    {
+      "name": "hero-layout-430",
+      "pass": true,
+      "brain": {
+        "x": 11.348212242126465,
+        "y": 44.34821319580078,
+        "width": 439.3035888671875,
+        "height": 439.3035888671875,
+        "top": 44.34821319580078,
+        "right": 450.65180110931396,
+        "bottom": 483.6518020629883,
+        "left": 11.348212242126465
+      },
+      "copy": {
+        "x": 22,
+        "y": 516.53125,
+        "width": 386,
+        "height": 219.65625,
+        "top": 516.53125,
+        "right": 408,
+        "bottom": 736.1875,
+        "left": 22
+      }
+    },
+    {
+      "name": "hero-layout-680",
+      "pass": true,
+      "brain": {
+        "x": 114.04241943359375,
+        "y": 44.04241943359375,
+        "width": 451.9151611328125,
+        "height": 451.9151611328125,
+        "top": 44.04241943359375,
+        "right": 565.9575805664062,
+        "bottom": 495.95758056640625,
+        "left": 114.04241943359375
+      },
+      "copy": {
+        "x": 30.59375,
+        "y": 528.53125,
+        "width": 618.8125,
+        "height": 238.875,
+        "top": 528.53125,
+        "right": 649.40625,
+        "bottom": 767.40625,
+        "left": 30.59375
+      }
+    },
+    {
+      "name": "hero-layout-768",
+      "pass": true,
+      "brain": {
+        "x": 384.52838134765625,
+        "y": 118.68462371826172,
+        "width": 371.9432373046875,
+        "height": 371.9432373046875,
+        "top": 118.68462371826172,
+        "right": 756.4716186523438,
+        "bottom": 490.6278610229492,
+        "left": 384.52838134765625
+      },
+      "copy": {
+        "x": 34.546875,
+        "y": 191.171875,
+        "width": 365,
+        "height": 362.65625,
+        "top": 191.171875,
+        "right": 399.546875,
+        "bottom": 553.828125,
+        "left": 34.546875
+      }
+    },
+    {
+      "name": "hero-layout-1024",
+      "pass": true,
+      "brain": {
+        "x": 516.3222045898438,
+        "y": 93.18157958984375,
+        "width": 487.4180908203125,
+        "height": 487.4180908203125,
+        "top": 93.18157958984375,
+        "right": 1003.7402954101562,
+        "bottom": 580.5996704101562,
+        "left": 516.3222045898438
+      },
+      "copy": {
+        "x": 46.078125,
+        "y": 195.015625,
+        "width": 488.0625,
+        "height": 423.515625,
+        "top": 195.015625,
+        "right": 534.140625,
+        "bottom": 618.53125,
+        "left": 46.078125
+      }
+    },
+    {
+      "name": "hero-layout-1440",
+      "pass": true,
+      "brain": {
+        "x": 713.8408813476562,
+        "y": 89.34085083007812,
+        "width": 645.8182983398438,
+        "height": 645.8182373046875,
+        "top": 89.34085083007812,
+        "right": 1359.6591796875,
+        "bottom": 735.1590881347656,
+        "left": 713.8408813476562
+      },
+      "copy": {
+        "x": 124,
+        "y": 241.296875,
+        "width": 625.5,
+        "height": 481.65625,
+        "top": 241.296875,
+        "right": 749.5,
+        "bottom": 722.953125,
+        "left": 124
+      }
+    },
+    {
+      "name": "all-ten-bridges-retained",
+      "pass": true
+    },
+    {
+      "name": "spark-travels-with-brain",
+      "pass": true
+    },
+    {
+      "name": "receiver-orbit",
+      "pass": true,
+      "level": 0.9887511982992419
+    },
+    {
+      "name": "reverse-neural-orbit",
+      "pass": true
+    },
+    {
+      "name": "receiver-ribbon",
+      "pass": true,
+      "level": 0.9882125333137495
+    },
+    {
+      "name": "reverse-orbit-ribbon",
+      "pass": true
+    },
+    {
+      "name": "receiver-assembly",
+      "pass": true,
+      "level": 0.9885716426378082
+    },
+    {
+      "name": "reverse-ribbon-assembly",
+      "pass": true
+    },
+    {
+      "name": "receiver-system",
+      "pass": true,
+      "level": 0.9889164906394582
+    },
+    {
+      "name": "reverse-assembly-system",
+      "pass": true
+    },
+    {
+      "name": "receiver-skills",
+      "pass": true,
+      "level": 0.9886401367291032
+    },
+    {
+      "name": "reverse-system-skills",
+      "pass": true
+    },
+    {
+      "name": "receiver-gallery",
+      "pass": true,
+      "level": 0.9888180663097452
+    },
+    {
+      "name": "reverse-skills-gallery",
+      "pass": true
+    },
+    {
+      "name": "receiver-services",
+      "pass": true,
+      "level": 0.9892788764555007
+    },
+    {
+      "name": "reverse-gallery-services",
+      "pass": true
+    },
+    {
+      "name": "receiver-delivery",
+      "pass": true,
+      "level": 0.9889099601347281
+    },
+    {
+      "name": "reverse-services-delivery",
+      "pass": true
+    },
+    {
+      "name": "receiver-signature",
+      "pass": true,
+      "level": 0.9891783709292125
+    },
+    {
+      "name": "reverse-delivery-signature",
+      "pass": true
+    },
+    {
+      "name": "receiver-portal",
+      "pass": true,
+      "level": 0.9889759074559294
+    },
+    {
+      "name": "reverse-signature-portal",
+      "pass": true
+    },
+    {
+      "name": "orbit-keeps-brain-sparking",
+      "pass": true
+    },
+    {
+      "name": "offscreen-renderer-stops",
+      "pass": true
+    },
+    {
+      "name": "right-expands-all-three-layers",
+      "pass": true
+    },
+    {
+      "name": "leader-endpoints-still-within-1px",
+      "pass": true,
+      "errors": [
+        0.0025757992976085443,
+        0.0035389865757627505,
+        0.00265454693501252
+      ]
+    },
+    {
+      "name": "layer-focus-still-works",
+      "pass": true
+    },
+    {
+      "name": "left-connects-and-retracts",
+      "pass": true
+    },
+    {
+      "name": "scenario-operations-0",
+      "pass": true
+    },
+    {
+      "name": "scenario-operations-1",
+      "pass": true
+    },
+    {
+      "name": "scenario-operations-2",
+      "pass": true
+    },
+    {
+      "name": "scenario-operations-3",
+      "pass": true
+    },
+    {
+      "name": "scenario-knowledge-0",
+      "pass": true
+    },
+    {
+      "name": "scenario-knowledge-1",
+      "pass": true
+    },
+    {
+      "name": "scenario-knowledge-2",
+      "pass": true
+    },
+    {
+      "name": "scenario-knowledge-3",
+      "pass": true
+    },
+    {
+      "name": "scenario-venture-0",
+      "pass": true
+    },
+    {
+      "name": "scenario-venture-1",
+      "pass": true
+    },
+    {
+      "name": "scenario-venture-2",
+      "pass": true
+    },
+    {
+      "name": "scenario-venture-3",
+      "pass": true
+    },
+    {
+      "name": "deck-next-0",
+      "pass": true
+    },
+    {
+      "name": "deck-next-1",
+      "pass": true
+    },
+    {
+      "name": "deck-next-2",
+      "pass": true
+    },
+    {
+      "name": "deck-next-3",
+      "pass": true
+    },
+    {
+      "name": "deck-next-4",
+      "pass": true
+    },
+    {
+      "name": "deck-next-5",
+      "pass": true
+    },
+    {
+      "name": "dialog-light-layer-does-not-block",
+      "pass": true
+    },
+    {
+      "name": "dialog-focus-returns",
+      "pass": true
+    },
+    {
+      "name": "filter-reason",
+      "pass": true
+    },
+    {
+      "name": "filter-build",
+      "pass": true
+    },
+    {
+      "name": "filter-verify",
+      "pass": true
+    },
+    {
+      "name": "all-34-skills",
+      "pass": true
+    },
+    {
+      "name": "route-remeasures-expansion",
+      "pass": true
+    },
+    {
+      "name": "empty-state",
+      "pass": true
+    },
+    {
+      "name": "responsive-page-320",
+      "pass": true,
+      "over": []
+    },
+    {
+      "name": "responsive-page-390",
+      "pass": true,
+      "over": []
+    },
+    {
+      "name": "responsive-page-768",
+      "pass": true,
+      "over": []
+    },
+    {
+      "name": "responsive-page-1024",
+      "pass": true,
+      "over": []
+    },
+    {
+      "name": "responsive-page-1440",
+      "pass": true,
+      "over": []
+    },
+    {
+      "name": "touch-menu",
+      "pass": true
+    },
+    {
+      "name": "touch-expands",
+      "pass": true
+    },
+    {
+      "name": "touch-deck",
+      "pass": true
+    },
+    {
+      "name": "phone-landscape-brain-first",
+      "pass": true
+    },
+    {
+      "name": "system-calm-without-toggle",
+      "pass": true
+    },
+    {
+      "name": "calm-original-art-restored",
+      "pass": true
+    },
+    {
+      "name": "calm-explicit-control",
+      "pass": true
+    },
+    {
+      "name": "system-profile-restores-automatically",
+      "pass": true
+    },
+    {
+      "name": "nojs-original-and-guide",
+      "pass": true
+    },
+    {
+      "name": "library-failure-keeps-brain-animation",
+      "pass": true
+    },
+    {
+      "name": "back-navigation-resumes",
+      "pass": true
+    },
+    {
+      "name": "original-art-loads",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "renderer": {
+    "ready": true,
+    "frames": 45,
+    "elapsed": 1766.4013333333335,
+    "active": true,
+    "running": true,
+    "transporting": false,
+    "heroInside": true,
+    "orbitInside": false,
+    "paths": 46,
+    "branches": 12,
+    "contour": 96,
+    "profile": "full",
+    "meanPaintMs": 0.486,
+    "targets": {
+      "hero": "44",
+      "orbit": "0",
+      "transit": "0"
+    }
+  },
+  "physicalDevice": false
+}

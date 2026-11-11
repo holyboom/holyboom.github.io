@@ -74,29 +74,16 @@
  document.documentElement.classList.add("js");
  let current = "operations";
 
- // System reduced-motion is the default. A saved, explicit visitor choice takes precedence for all effects.
- const motionButton = byId("motion-toggle");
- let motionPreference = null;
- try { motionPreference = localStorage.getItem("holyboom-motion"); } catch (_) { /* Storage can be unavailable in private browsing. */ }
- let motionEnabled = motionPreference === "on" || (motionPreference !== "off" && !reduced.matches);
+ // Always-on showcase. Old localStorage off choices are intentionally not read.
+ // System Reduce Motion remains an automatic calm rendering profile, not a site toggle.
+ let motionEnabled = !reduced.matches;
  function applyMotion() {
-  document.body.dataset.motion = motionEnabled ? "on" : "off";
-  document.dispatchEvent(new CustomEvent("holymind:motion", { detail: { enabled: motionEnabled } }));
-  if (!motionButton) return;
-  motionButton.setAttribute("aria-pressed", String(motionEnabled));
-  motionButton.setAttribute("aria-label", motionEnabled ? "Turn animations off" : "Turn animations on");
-  const label = motionButton.querySelector(".motion-label");
-  if (label) label.textContent = motionEnabled ? "Motion on" : "Motion off";
+  motionEnabled = !reduced.matches;
+  document.body.dataset.motion = 'on';
+  document.body.dataset.motionProfile = motionEnabled ? 'full' : 'calm';
+  document.dispatchEvent(new CustomEvent('holymind:motion', {detail:{enabled:true,profile:document.body.dataset.motionProfile}}));
  }
- motionButton?.addEventListener("click", () => {
-  motionEnabled = !motionEnabled;
-  motionPreference = motionEnabled ? "on" : "off";
-  try { localStorage.setItem("holyboom-motion", motionPreference); } catch (_) { /* Keep the setting for this page even without storage. */ }
-  applyMotion();
- });
- reduced.addEventListener("change", () => {
-  if (motionPreference === null) { motionEnabled = !reduced.matches; applyMotion(); }
- });
+ reduced.addEventListener('change', applyMotion);
  applyMotion();
 
  function selectStep(index) {

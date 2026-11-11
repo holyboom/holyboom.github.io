@@ -1,3 +1,6 @@
+
+// v8 removed the site toggle; exercise the real OS preference instead.
+async function toggleMotion(page){const calm=await page.locator('body').getAttribute('data-motion-profile')==='calm';await page.emulateMedia({reducedMotion:calm?'no-preference':'reduce'});}
 const {chromium,webkit}=require('playwright');
 const fs=require('fs');
 (async()=>{
@@ -9,7 +12,7 @@ const fs=require('fs');
  await page.goto(base,{waitUntil:'networkidle'});await page.waitForFunction(()=>document.body.dataset.showcaseEngine==='ready');await page.waitForTimeout(800);
  const check=(name,pass,extra={})=>{checks.push({name,pass,...extra});console.log(name,pass);};
  const go=async(sel,offset=100)=>{const y=await page.locator(sel).evaluate(el=>el.getBoundingClientRect().top+scrollY);await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y-offset);await page.waitForTimeout(850);};
- check('release-key',await page.locator('html').getAttribute('data-build')===(process.env.EXPECT_BUILD||'continuity-v6'));
+ check('release-key',await page.locator('html').getAttribute('data-build')===(process.env.EXPECT_BUILD||'spark-v8'));
  check('six-scenes',await page.locator('[data-scene]').count()===6);
  for(const [name,sel] of Object.entries({hero:'.hero',crossing:'.signal-crossing',assembly:'.assembly-exhibit',instrument:'.skill-instrument',services:'.approach-list',signature:'.about',portal:'.connect'})){
   await go(sel);await page.screenshot({path:out+'/desktop-'+name+'.jpg',quality:80});
@@ -40,8 +43,8 @@ const fs=require('fs');
  for(const [name,scene,target] of [['assembly-scroll','.assembly-exhibit','.assembly-rotor'],['deck-scroll','.skill-instrument','.deck-fan'],['signature-scroll','.about','.signature-depth'],['portal-scroll','.connect','.portal-frame']]){
   await go(scene,700);a=await page.locator(target).first().evaluate(e=>e instanceof SVGGraphicsElement ? JSON.stringify(['a','b','c','d','e','f'].map(k=>e.getCTM()[k])) : getComputedStyle(e).transform);await go(scene,140);b=await page.locator(target).first().evaluate(e=>e instanceof SVGGraphicsElement ? JSON.stringify(['a','b','c','d','e','f'].map(k=>e.getCTM()[k])) : getComputedStyle(e).transform);check(name,a!==b,{a,b});
  }
- await page.locator('#motion-toggle').click();await page.waitForTimeout(300);check('pause-all',await page.locator('body').getAttribute('data-showcase-engine')==='paused'&&await page.evaluate(()=>ScrollTrigger.getAll().length===0));
- await page.locator('#assembly-control').fill('80');check('static-interaction',await page.locator('.assembly-exhibit').getAttribute('data-expanded')==='80');await page.locator('#motion-toggle').click();
+ await toggleMotion(page);await page.waitForTimeout(300);check('pause-all',await page.locator('body').getAttribute('data-showcase-engine')==='paused'&&await page.evaluate(()=>ScrollTrigger.getAll().length===0));
+ await page.locator('#assembly-control').fill('80');check('static-interaction',await page.locator('.assembly-exhibit').getAttribute('data-expanded')==='80');await toggleMotion(page);
  for(const w of [320,390,680,768,1024,1440]){
   await page.setViewportSize({width:w,height:w<=680?844:1000});await page.waitForTimeout(500);
   let over=[],missing=[];for(const sel of ['#top','#mind-flow','.signal-crossing','.assembly-exhibit','.skill-instrument','#framework','#what-i-do','#about','#connect']){
@@ -60,7 +63,7 @@ const fs=require('fs');
  await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await page.waitForTimeout(300);
  check('all-images-load',await page.locator('img').evaluateAll(es=>es.filter(e=>e.complete&&!e.naturalWidth).length===0));
  const countBefore=await page.evaluate(()=>ScrollTrigger.getAll().length);
- for(let i=0;i<3;i++){await page.locator('#motion-toggle').click();await page.locator('#motion-toggle').click();}
+ for(let i=0;i<3;i++){await toggleMotion(page);await toggleMotion(page);}
  check('no-trigger-leak',await page.evaluate(()=>ScrollTrigger.getAll().length)===countBefore,{before:countBefore,after:await page.evaluate(()=>ScrollTrigger.getAll().length)});
  const fallback=await browser.newPage({viewport:{width:390,height:844}});
  await fallback.route('**/assets/vendor/**',route=>route.abort());

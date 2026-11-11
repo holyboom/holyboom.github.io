@@ -29,3 +29,11 @@ Keep the approved showcase scenes. Their boundaries must share a visible visual 
 ## Exploded System v7 — approved implementation
 
 Apply the approved cyan/champagne highlights without replacing the violet identity or original pixel artwork. For Assemble the system, dragging right must separate the layers and reveal interesting internal sheets, real anchored leader lines and concise side explanations. Dragging left reverses the full sequence. Preserve all prior showcase interactions and bidirectional scene continuity. Deliver on the existing public website with browser evidence.
+
+## Spark v8 — current approved scope (supersedes earlier hero/motion policy)
+
+- MOBILE ONLY: put the existing brain above the hero copy. Tablet/desktop retain the two-column composition and existing side placement.
+- ALL screen sizes: a stronger original-pixel-aligned spark field, edge discharges, synapse glints, shared animated handoff, and light received by downstream components as scrolling advances or reverses.
+- Remove both hero shortcut buttons and the Motion on/off control. Play automatically, ignore the legacy saved-off preference. A non-clickable scroll hint replaces the jump link in the artwork caption.
+- System Reduce Motion is an automatic calm lighting profile with no travel/large rotation; no site switch is added. Hidden/offscreen render work is suspended and resumes automatically.
+- Original image bytes, six showcase scenes, three assembly layers plus two inner circuits, actual controls, semantic profile and public destinations remain intact.

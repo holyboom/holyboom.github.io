@@ -59,3 +59,9 @@ Accent roles: violet identity, cyan movement, champagne gold arrivals, pearl spa
 The range now means **expanded percentage**; `data-expanded` is the range value and `data-assembled` is its complement. This deliberate direction change is reflected in regression tests.
 
 `npm run test:assembly` verifies the native range, staged reveals, endpoint alignment, reversal, keyboard/touch input, six viewport widths, offscreen/idle behavior, and static fallbacks. Set `TEST_URL`, `QA_DIR`, and optionally `ENGINE=webkit`. Tests require the installed Playwright browser engine.
+
+### Spark v8
+
+Brain-first entrance on phones only; stronger shared neural electricity on all screens. The two hero shortcuts and site Motion control have been removed. Old `holyboom-motion=off` values no longer disable the experience. System Reduce Motion selects a calm profile.
+
+Run `npm run check` and `npm run test:energy` with `TEST_URL`, `QA_DIR` and optionally `ENGINE=webkit`. Existing motion/showcase/assembly/continuity scripts now exercise OS-profile changes in place of the removed site control. Browser simulation is not a physical-device performance benchmark.

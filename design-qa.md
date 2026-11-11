@@ -135,3 +135,16 @@ Live video and the 71-frame GIF were captured from the published site, not gener
 - Live Assembly: 47 Chromium + 47 WebKit checks passed. Live existing Showcase: 55 WebKit checks passed. Live Continuity: 43 WebKit checks passed. Zero failed checks or observed runtime errors.
 - Six published asset hashes match the local implementation exactly. Evidence includes desktop/phone renders, native forward/reverse pointer recording, and raw JSON results at `docs/evidence/exploded-v7/`.
 - `qa/exploded-v7.html` is the evidence viewer. Existing site routes and the physical-device-testing limitation are unchanged.
+
+## Spark v8 — local pre-publication verification
+
+Scope: stronger source-aligned brain electricity on all viewports; phone-only image-first hero; no hero shortcut buttons or site Motion switch; shared animated brain transfer and reversible receiving light.
+
+- New acceptance suite: Chromium 85/85, WebKit 85/85, zero runtime errors in each run.
+- Adapted WebKit assembly regression: 47/47, including original projected leader endpoints and touch controls.
+- Adapted WebKit motion regression: 31/31. System preference changes replace the deliberately removed toggle; selectors now name the hero canvas because orbit/transport canvases are intentional additions.
+- Viewport checks include 320, 390, 430, 680, 768, 1024 and 1440 CSS pixels, plus 844×390 touch-landscape.
+- Original 37 WebP/PNG asset files were byte-compared to the pre-v8 source and remain unchanged.
+- Visual inspection: desktop preserves left-copy/right-brain composition; mobile shows complete visible brain art before the headline. Source sparks survive the shared-object transfer and keep animating in the orbit.
+- OS reduced motion selects a calm light field and removes large spatial choreography without showing a toggle. The absence of a manual pause mechanism is not certified as WCAG compliance.
+- No physical iPhone performance test or independent flash-safety audit is claimed. Headless renderer paint measurements are diagnostic only.
