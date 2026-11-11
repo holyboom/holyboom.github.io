@@ -1,0 +1,452 @@
+{
+  "base": "https://holyboom.github.io/?v=piano-v16",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "sample-load-does-not-create-audio-context",
+      "pass": true
+    },
+    {
+      "name": "seven-real-key-bank",
+      "pass": true
+    },
+    {
+      "name": "eleven-moment-profiles",
+      "pass": true
+    },
+    {
+      "name": "piano-attribution-present",
+      "pass": true
+    },
+    {
+      "name": "first-action-is-piano-in-workbench",
+      "pass": true
+    },
+    {
+      "name": "real-piano-bus-produces-signal",
+      "pass": true
+    },
+    {
+      "name": "piano-and-material-hero",
+      "pass": true,
+      "metric": {
+        "scene": "hero",
+        "notes": [
+          69,
+          76
+        ],
+        "returnNotes": [
+          76,
+          69
+        ],
+        "texture": "pulse",
+        "textureRatio": 0.09499999999999999,
+        "duration": 1.18,
+        "peak": 0.3199999928474426,
+        "rms": 0.047963652206630826,
+        "tail": 3.2511597390890463,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-orbit",
+      "pass": true,
+      "metric": {
+        "scene": "orbit",
+        "notes": [
+          64,
+          69,
+          76
+        ],
+        "returnNotes": [
+          76,
+          69,
+          64
+        ],
+        "texture": "air",
+        "textureRatio": 0.095,
+        "duration": 1.34,
+        "peak": 0.3199999928474426,
+        "rms": 0.05554275958772785,
+        "tail": 5.360917695302534,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-ribbon",
+      "pass": true,
+      "metric": {
+        "scene": "ribbon",
+        "notes": [
+          69,
+          72
+        ],
+        "returnNotes": [
+          72,
+          69
+        ],
+        "texture": "filament",
+        "textureRatio": 0.09499999999999999,
+        "duration": 1.08,
+        "peak": 0.3199999928474426,
+        "rms": 0.05113565791606125,
+        "tail": 2.6314882897859904,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-assembly",
+      "pass": true,
+      "metric": {
+        "scene": "assembly",
+        "notes": [
+          57,
+          64,
+          69
+        ],
+        "returnNotes": [
+          69,
+          64,
+          57
+        ],
+        "texture": "join",
+        "textureRatio": 0.06378806102759794,
+        "duration": 1.22,
+        "peak": 0.3199999928474426,
+        "rms": 0.06435644618294131,
+        "tail": 18.13709095686448,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-workbench",
+      "pass": true,
+      "metric": {
+        "scene": "workbench",
+        "notes": [
+          60,
+          64
+        ],
+        "returnNotes": [
+          64,
+          60
+        ],
+        "texture": "focus",
+        "textureRatio": 0.06469843991990223,
+        "duration": 0.97,
+        "peak": 0.3199999928474426,
+        "rms": 0.0644209309732668,
+        "tail": 7.3524992738030015,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-instrument",
+      "pass": true,
+      "metric": {
+        "scene": "instrument",
+        "notes": [
+          72,
+          76
+        ],
+        "returnNotes": [
+          76,
+          72
+        ],
+        "texture": "particles",
+        "textureRatio": 0.095,
+        "duration": 1.13,
+        "peak": 0.3199999928474426,
+        "rms": 0.0512465943765711,
+        "tail": 1.3825514599669133,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-gallery",
+      "pass": true,
+      "metric": {
+        "scene": "gallery",
+        "notes": [
+          69,
+          72
+        ],
+        "returnNotes": [
+          72,
+          69
+        ],
+        "texture": "etch",
+        "textureRatio": 0.065,
+        "duration": 1.02,
+        "peak": 0.3199999928474426,
+        "rms": 0.05327600218174926,
+        "tail": 2.7426243770045042,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-services",
+      "pass": true,
+      "metric": {
+        "scene": "services",
+        "notes": [
+          57,
+          64,
+          72
+        ],
+        "returnNotes": [
+          72,
+          64,
+          57
+        ],
+        "texture": "weight",
+        "textureRatio": 0.09499999999999999,
+        "duration": 1.25,
+        "peak": 0.3199999928474426,
+        "rms": 0.06767642342432272,
+        "tail": 21.890815050285585,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-about",
+      "pass": true,
+      "metric": {
+        "scene": "about",
+        "notes": [
+          57,
+          64
+        ],
+        "returnNotes": [
+          64,
+          57
+        ],
+        "texture": "warmth",
+        "textureRatio": 0.035,
+        "duration": 1.4,
+        "peak": 0.3199999928474426,
+        "rms": 0.06881458638902511,
+        "tail": 29.782313185417934,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-contact",
+      "pass": true,
+      "metric": {
+        "scene": "contact",
+        "notes": [
+          64,
+          69,
+          72
+        ],
+        "returnNotes": [
+          72,
+          69,
+          64
+        ],
+        "texture": "opening",
+        "textureRatio": 0.095,
+        "duration": 1.45,
+        "peak": 0.3199999928474426,
+        "rms": 0.05307270801233664,
+        "tail": 6.305730257262748,
+        "different": true
+      }
+    },
+    {
+      "name": "piano-and-material-footer",
+      "pass": true,
+      "metric": {
+        "scene": "footer",
+        "notes": [
+          64,
+          57
+        ],
+        "returnNotes": [
+          57,
+          64
+        ],
+        "texture": "warmth",
+        "textureRatio": 0.045,
+        "duration": 1.18,
+        "peak": 0.3199999928474426,
+        "rms": 0.06736519807661863,
+        "tail": 21.797377476233898,
+        "different": true
+      }
+    },
+    {
+      "name": "eleven-distinct-moments",
+      "pass": true
+    },
+    {
+      "name": "real-dock-to-moment-map",
+      "pass": true,
+      "mappings": [
+        {
+          "id": "orbit",
+          "scene": "orbit"
+        },
+        {
+          "id": "ribbon",
+          "scene": "ribbon"
+        },
+        {
+          "id": "assembly",
+          "scene": "assembly"
+        },
+        {
+          "id": "system",
+          "scene": "workbench"
+        },
+        {
+          "id": "skills",
+          "scene": "instrument"
+        },
+        {
+          "id": "gallery",
+          "scene": "gallery"
+        },
+        {
+          "id": "services",
+          "scene": "services"
+        },
+        {
+          "id": "delivery",
+          "scene": "services"
+        },
+        {
+          "id": "signature",
+          "scene": "about"
+        },
+        {
+          "id": "portal",
+          "scene": "contact"
+        }
+      ]
+    },
+    {
+      "name": "live-phrase-orbit",
+      "pass": true,
+      "event": {
+        "id": "dock",
+        "kind": "cue",
+        "eventKind": "preview",
+        "key": "qa-moment:orbit",
+        "variant": 0,
+        "direction": 1,
+        "scene": "orbit",
+        "notes": [
+          64,
+          69,
+          76
+        ],
+        "texture": "air",
+        "time": 6093
+      },
+      "rms": 0.0649943048814235
+    },
+    {
+      "name": "live-phrase-assembly",
+      "pass": true,
+      "event": {
+        "id": "dock",
+        "kind": "cue",
+        "eventKind": "preview",
+        "key": "qa-moment:assembly",
+        "variant": 0,
+        "direction": 1,
+        "scene": "assembly",
+        "notes": [
+          57,
+          64,
+          69
+        ],
+        "texture": "join",
+        "time": 7702
+      },
+      "rms": 0.07561850949958294
+    },
+    {
+      "name": "live-phrase-about",
+      "pass": true,
+      "event": {
+        "id": "dock",
+        "kind": "cue",
+        "eventKind": "preview",
+        "key": "qa-moment:about",
+        "variant": 0,
+        "direction": 1,
+        "scene": "about",
+        "notes": [
+          57,
+          64
+        ],
+        "texture": "warmth",
+        "time": 9311
+      },
+      "rms": 0.07161136621623115
+    },
+    {
+      "name": "live-phrase-contact",
+      "pass": true,
+      "event": {
+        "id": "dock",
+        "kind": "cue",
+        "eventKind": "preview",
+        "key": "qa-moment:contact",
+        "variant": 0,
+        "direction": 1,
+        "scene": "contact",
+        "notes": [
+          64,
+          69,
+          72
+        ],
+        "texture": "opening",
+        "time": 10920
+      },
+      "rms": 0.06669982240511378
+    },
+    {
+      "name": "service-action-has-service-piano",
+      "pass": true
+    },
+    {
+      "name": "about-action-has-warm-piano",
+      "pass": true
+    },
+    {
+      "name": "piano-tail-cleans-up",
+      "pass": true
+    },
+    {
+      "name": "overlapping-release-bounded",
+      "pass": true
+    },
+    {
+      "name": "original-brain-sound-separate",
+      "pass": true
+    },
+    {
+      "name": "studio-eleven-real-moment-buttons",
+      "pass": true
+    },
+    {
+      "name": "studio-hears-real-about-instrument",
+      "pass": true
+    },
+    {
+      "name": "studio-return-uses-reversed-note-order",
+      "pass": true
+    },
+    {
+      "name": "missing-bank-no-beep-no-runtime-crash",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

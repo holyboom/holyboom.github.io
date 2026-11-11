@@ -266,3 +266,6 @@ Local checks: event routing 69 Chromium + 69 WebKit; piano/provenance/moment beh
 Twenty-one exported cue/moment waveforms are finite, nonzero and bounded; the eleven scene arrangements have distinct PCM. The captured cue bus has measured output and exposes the scene/notes/texture chosen by actual event routing. The single sounding phrase permits at most one brief release tail, with cleanup checked. Sample fetch failure keeps the visual site and other sounds working but never substitutes the rejected beeps or replays a late note.
 
 No claim of physical iPhone output, listening-comfort certification or guaranteed emotion follows from these automated checks. The owner can audition a 6.81-second Orbit → Assemble → About → Contact preview, or all eleven moments in the Studio.
+
+
+Published Piano v16: {'piano_chromium': 32, 'piano_webkit': 32, 'events_webkit': 69, 'continuous_audio_webkit': 48}; 181 live checks, zero final assertion failures or captured runtime errors. Thirty-four public assets match the implementation, including piano bank, Studio, attribution and previews. All 21 individual waveform checks pass. No physical-iPhone listening test was performed.

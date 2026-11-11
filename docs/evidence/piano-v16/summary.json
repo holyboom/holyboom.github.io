@@ -1,15 +1,177 @@
 {
   "release": "piano-v16",
-  "status": "Local validation complete; live verification pending",
-  "local_checks": {
-    "local-events-chromium": 69,
-    "local-events-webkit": 69,
-    "local-piano-chromium": 32,
-    "local-piano-webkit": 32,
-    "local-continuous-audio": 48,
-    "local-visual": 68
+  "name": "HolyMind Piano Moments",
+  "status": "Published and verified",
+  "implementation_commit": "feda0f0cf421c0973474c181e217eecc5a33de2c",
+  "verified_at": "2026-11-11T15:39:37.129157+00:00",
+  "url": "https://holyboom.github.io/?v=piano-v16",
+  "studio": "https://holyboom.github.io/qa/piano-v16.html",
+  "short_preview": "https://holyboom.github.io/assets/audio/piano-v16/signature-preview.wav",
+  "preview_order": [
+    "Orbit",
+    "Assemble",
+    "About",
+    "Contact"
+  ],
+  "preview_seconds": 6.81,
+  "request": "Piano-key-led sound mixed with a subtle sonic detail that expresses the moment of each section, replacing the rejected electronic event beeps.",
+  "source": {
+    "piano": "Real recorded Salamander Grand Piano keys by Alexander Holm, distributed through Tonejs/audio",
+    "license": "CC BY 3.0",
+    "source_notice": "https://github.com/Tonejs/audio/blob/master/salamander/README",
+    "credit_page": "audio-credits.html",
+    "self_hosted_bank_bytes": 806400,
+    "recorded_source_keys": 7,
+    "modifications": "Left-channel selection, trimming, 32 kHz mono resampling, level adjustment, nearby-note repitching, envelopes, filtering, short reflections, original phrases and synthesized section textures",
+    "generative_audio_model": false
   },
-  "total_local_checks": 318,
-  "piano_source": "Salamander Grand Piano / Alexander Holm / CC BY 3.0",
-  "physical_iphone_tested": false
+  "moments": [
+    {
+      "scene": "hero",
+      "name": "Neural origin",
+      "notes": [
+        69,
+        76
+      ],
+      "texture": "pulse",
+      "duration": 1.18
+    },
+    {
+      "scene": "orbit",
+      "name": "Connected intelligence",
+      "notes": [
+        64,
+        69,
+        76
+      ],
+      "texture": "air",
+      "duration": 1.34
+    },
+    {
+      "scene": "ribbon",
+      "name": "Signal crossing",
+      "notes": [
+        69,
+        72
+      ],
+      "texture": "filament",
+      "duration": 1.08
+    },
+    {
+      "scene": "assembly",
+      "name": "System unfolding",
+      "notes": [
+        57,
+        64,
+        69
+      ],
+      "texture": "join",
+      "duration": 1.22
+    },
+    {
+      "scene": "workbench",
+      "name": "Working intention",
+      "notes": [
+        60,
+        64
+      ],
+      "texture": "focus",
+      "duration": 0.97
+    },
+    {
+      "scene": "instrument",
+      "name": "Capability constellation",
+      "notes": [
+        72,
+        76
+      ],
+      "texture": "particles",
+      "duration": 1.13
+    },
+    {
+      "scene": "gallery",
+      "name": "Evidence atlas",
+      "notes": [
+        69,
+        72
+      ],
+      "texture": "etch",
+      "duration": 1.02
+    },
+    {
+      "scene": "services",
+      "name": "Applied intelligence",
+      "notes": [
+        57,
+        64,
+        72
+      ],
+      "texture": "weight",
+      "duration": 1.25
+    },
+    {
+      "scene": "about",
+      "name": "The human behind the mind",
+      "notes": [
+        57,
+        64
+      ],
+      "texture": "warmth",
+      "duration": 1.4
+    },
+    {
+      "scene": "contact",
+      "name": "The next possibility",
+      "notes": [
+        64,
+        69,
+        72
+      ],
+      "texture": "opening",
+      "duration": 1.45
+    },
+    {
+      "scene": "footer",
+      "name": "A quiet return",
+      "notes": [
+        64,
+        57
+      ],
+      "texture": "warmth",
+      "duration": 1.18
+    }
+  ],
+  "features": {
+    "piano_leads": "Actual recorded attacks and string decay lead every arrival/action cue; original v15 FM/gated electronic cue synthesis is removed. Texture RMS is capped below piano, quieter in About.",
+    "section_specific": "Eleven authored piano/texture profiles: Hero, Orbit, Ribbon, Assembly, Workbench, Skill Instrument, Gallery, Services, About, Contact and Footer. Actual visual docks and originating action sections select the profile.",
+    "meaning": "Orbit is open and airy; Assembly aligns keys with a quiet circuit join; Workbench is close/dry; Skills brighter with particles; Gallery restrained; Services grounded; About warm; Contact gently opens; Footer gathers. These are design intentions, not guaranteed emotional outcomes.",
+    "reverse": "Return gestures reorder piano notes rather than reversing recordings. Shorter one-key/two-key actions keep the site from becoming a continuous song.",
+    "voice_control": "One foreground phrase plus at most one short retiring release to avoid abrupt note cuts. Brain effects take priority; mute/background disposes voices.",
+    "loading": "One first-party PCM bank loads without creating an AudioContext. Failed/late samples never substitute rejected beeps or replay stale notes.",
+    "preserved": "Exact approved continuous soundscape and scroll instrument, fourteen Electric v12 brain presets, visual artwork, always-active motion, mobile-only brain-first layout, 34 skills and pinned 0–100–0 assembly.",
+    "audition": "Eleven live scene audition buttons, forward/return comparison, everyday action keys, full moment reel and a 6.81-second four-scene preview. Old ambient comparisons remain clearly labelled as unchanged."
+  },
+  "live_checks": {
+    "piano_chromium": 32,
+    "piano_webkit": 32,
+    "events_webkit": 69,
+    "continuous_audio_webkit": 48
+  },
+  "total_live_checks": 181,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "local_checks": 318,
+  "waveform_checks": 21,
+  "preview_peak_max": 0.10751999914646149,
+  "public_asset_matches": 34,
+  "unchanged_visual_sound_control_modules": 22,
+  "original_images_unchanged": 37,
+  "original_brain_presets_unchanged": 14,
+  "new_runtime_libraries": 0,
+  "limitations": {
+    "physical_iphone_audio_tested": false,
+    "subjective_listening_certified": false,
+    "performance_or_accessibility_certified": false,
+    "note": "Automated checks establish waveform/bus output, event routing, actual section choices and lifecycle—not perceived emotion or speaker quality."
+  }
 }
