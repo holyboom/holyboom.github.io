@@ -88,3 +88,13 @@ The public release at `https://holyboom.github.io/?v=living-mind-v4` was tested 
 The five changed first-party assets match local SHA-256 hashes. Canvas output changes over time; the orbital transform changes at three scroll positions. Global pause removes ScrollTriggers and freezes the Canvas. Back-navigation resumes Canvas correctly. The original brain image files remain byte-identical to the previous release.
 
 See `qa/living-v4.html` for actual public-page recordings, and `docs/evidence/living-v4/chromium.json`, `webkit.json` and `live-asset-check.json` for raw observations. The GIF is a sequence of screenshots captured while scrolling the public page; the MP4 is a browser video recording. These are not generated mockups. Physical iPhone hardware and real-world battery use have not been measured.
+
+## Showcase v5 — 11 November 2026
+
+Owner-approved direction: expand the successful v4 identity into a visual showcase, with more distinct scroll scenes rather than requiring visitors to read every paragraph. The hero and the existing orbital chapter are retained.
+
+Implementation adds the signal crossing, exploded assembly slider, six-skill optical fan, service doors, typographic Boom sculpture and contact aperture. The long About description is now a native disclosure. No image regeneration, new runtime dependency, sound, model execution or third-party analytics was added.
+
+Local review: 52 showcase checks passed in WebKit, including keyboard/focus, all six skill dialogs, SVG screen-transform motion, pause/resume, repeated motion toggles without trigger growth, reduced motion, no-JavaScript content and missing-library fallback. The original 31-item motion/interaction regression suite passed in Chromium. Layout inspected at 320, 390, 680, 768, 1024 and 1440 CSS pixels. No horizontal overflow or page runtime errors were recorded in those runs.
+
+First-pass fixes: added accessible previous/next controls for overlapping fan plates on touch screens; used native SVG transform attributes to keep the portal centered in both engines; removed a mobile line-break spacing defect. Original brain WebP hashes match v4. Browser emulation does not establish physical-device frame rate or battery use.

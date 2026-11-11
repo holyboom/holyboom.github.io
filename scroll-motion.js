@@ -42,9 +42,6 @@
     ScrollTrigger.create({trigger:el,start:'top 60%',end:'bottom 60%',onEnter:()=>phase(el.dataset.phase),onEnterBack:()=>phase(el.dataset.phase)});
    });
    gsap.fromTo('.strategy-panel',{y:small()?32:65,rotation:small()?1.2:2.2},{y:0,rotation:0,ease:'none',scrollTrigger:scroll('.bench-layout','top 90%','top 38%')});
-   gsap.fromTo('.approach-intro>img',{rotation:-30},{rotation:100,ease:'none',scrollTrigger:scroll('.approach','top bottom','bottom top')});
-   gsap.fromTo('.signature>span',{x:small()?-12:-28},{x:0,ease:'none',scrollTrigger:scroll('.about','top 90%','top 30%')});
-   gsap.fromTo('.connect-action>img',{rotation:-30,scale:.85},{rotation:65,scale:1.06,ease:'none',scrollTrigger:scroll('.connect','top bottom','bottom bottom')});
   });
   gallery();ScrollTrigger.refresh();
  }

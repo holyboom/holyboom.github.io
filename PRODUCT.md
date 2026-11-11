@@ -17,3 +17,7 @@ Help business owners, collaborators and engineering teams understand how Theeraw
 Static GitHub Pages website. Preserve the existing workbench, public identity, existing anchors, public profile metadata and no-submission behavior. Add an understandable HolyMind collection, improve responsive hierarchy, and implement meaningful focus, motion and interaction states.
 
 No authentication, payment, model execution, lead capture, third-party analytics, internal source instructions, private contact details or private repository links are included.
+
+## Showcase v5 brief — owner approved direction
+
+The primary surface mode is Experience: a showcase of authored AI engineering and the HolyMind visual world, not a document visitors are expected to read in full. Build on the approved Living Mind v4 hero and orbital journey without replacing them. Other zones should offer distinct, reversible, scroll-linked spatial exhibits with optional depth, using original pixel-neon artwork. Keep real workbench controls, all 34 skills, accessibility, native scrolling, public identity and no-submission behavior.

@@ -1,12 +1,13 @@
 {
   "name": "holyboom-holymind-profile",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "description": "Static GitHub Pages profile and interactive HolyMind skill collection",
   "scripts": {
     "dev": "node scripts/preview.mjs",
-    "check": "node --check site.js && node --check neural-core.js && node --check scroll-motion.js && node --check scripts/preview.mjs",
-    "test:motion": "node scripts/qa-motion.cjs"
+    "check": "node --check site.js && node --check neural-core.js && node --check scroll-motion.js && node --check showcase.js && node --check scripts/preview.mjs",
+    "test:motion": "node scripts/qa-motion.cjs",
+    "test:showcase": "node scripts/qa-showcase.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

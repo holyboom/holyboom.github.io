@@ -43,3 +43,15 @@ The owner supplied a diagnostic image of the installed HolyMind artwork. Origina
 Product Design, Impeccable 4.8.2, Anthropic frontend-design and UI/UX Pro Max source guidance informed the design. Impeccable's binary workflow was unavailable; no certification is claimed. UI/UX Pro Max returned a partial portfolio typography match and generic guidance; its unrelated AI photo-generator palette was not applied.
 
 See `design-qa.md` for the observed review outcome and its limits.
+
+## Showcase v5 — experiential expansion
+
+- Preserve the approved hero, electric brain and Reason → Build → Verify orbit verbatim. Original brain and skill image bytes remain unchanged.
+- Signal crossing: two diagonal bands travel in opposite directions as intent turns into a system.
+- Assembly workbench: three transparent architecture planes separate and reconnect with a native range control. Scroll changes the viewing angle, not the slider state. Actual workbench step selection updates the top-plane symbol.
+- Skill instrument: six original glyphs fan out as optical plates. Tap a plate or use next/previous controls; arrow keys, Home and End work too. The action opens the existing description dialog, returning focus on close. The gallery still contains all 34 skills.
+- Services: oversized illustrated disclosure panels rotate into place, with explanations on demand rather than mandatory paragraphs.
+- Identity: the existing Boom name is a layered typographic sculpture. Decorative copies are hidden from assistive technology. The longer description is a native details disclosure.
+- Contact: a seven-plane octagonal aperture opens around the original goal symbol. Desktop pointer movement tilts its own parent; touch scroll is never captured. The public contact destination is unchanged.
+- Bound motion to scroll and control input; add no constant new render loop, sound, network service, analytics or extra runtime dependency. The shared motion switch reverts all contexts and clears pointer effects. Reduced motion defaults to the static compositions; explicit opt-in remains available.
+- Every release asset uses the same showcase-v5 key. Capability prose and simulations remain labelled illustrative; there is no live model execution.

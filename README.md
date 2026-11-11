@@ -37,3 +37,11 @@ Original public identity and section anchors remain. Search inclusion and rankin
 Adds an original-artwork neural pulse overlay, sticky Reason → Build → Verify orbital narrative, staggered open skill gallery, and scroll-linked symbol movement. Motion is optional and never hides content. The same preference controls every effect.
 
 All libraries, paths, images and fonts are same-origin. See `design-qa.md` for verification scope and `docs/evidence/living-v4/` for browser evidence.
+
+## Showcase v5
+
+Six new experience surfaces extend the approved v4 orbit without replacing it: a kinetic signal crossing, an interactive exploded system, a six-skill optical fan, spatial service panels, a layered Boom signature, and a seven-plane contact aperture. Existing workbench, search, filters, all 34 descriptions and contact links are preserved.
+
+`npm run check` validates all first-party JavaScript. Start preview with `npm run dev -- --host 127.0.0.1 --port 8768`, then run `npm run test:showcase` (Playwright browsers required). Set `TEST_URL`, `QA_DIR`, `ENGINE=webkit` and optionally `CHROME_PATH` to change the test target. `npm run test:motion` retains the v4 functional regressions.
+
+Test output and captured live evidence are linked from `qa/showcase-v5.html` after release. Browser-engine testing is not a physical iPhone performance certification.

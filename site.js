@@ -109,6 +109,7 @@
   const stageIcon = byId("stage-icon");
   if (stageIcon) { stageIcon.src = "assets/skills/" + skill[0] + ".webp"; stageIcon.alt = ""; }
   setText("workbench-skill-name", skill[1]);
+  document.dispatchEvent(new CustomEvent("holymind:step", { detail: { index, challenge: current, skill: skill[0] } }));
  }
  function makeBrief() {
   const c = challenges[current];
@@ -266,6 +267,10 @@
   dialog.showModal();
   byId("close-skill-dialog")?.focus();
  }
+ document.addEventListener("holymind:open-skill", event => {
+  const skill = skills.find(item => item.id === event.detail?.id);
+  if (skill && event.detail?.opener instanceof HTMLElement) openSkill(skill, event.detail.opener);
+ });
  byId("close-skill-dialog")?.addEventListener("click", () => dialog?.close());
  byId("skill-source")?.addEventListener("click", () => { dialogNavigation = true; dialog?.close(); });
  dialog?.addEventListener("click", event => {
@@ -359,6 +364,7 @@
    .then(data => {
     if (!Array.isArray(data) || !data.every(skill => typeof skill.id === "string" && /^[a-z0-9-]+$/.test(skill.id) && Object.prototype.hasOwnProperty.call(categoryLabels, skill.category) && [skill.name, skill.purpose, skill.description, skill.example].every(value => typeof value === "string"))) throw new Error("Invalid skill summaries");
     skills = data;
+    byId("instrument-open")?.removeAttribute("disabled");
     renderSkills();
    })
    .catch(() => {
