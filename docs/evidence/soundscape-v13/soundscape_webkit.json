@@ -1,0 +1,382 @@
+{
+  "base": "https://holyboom.github.io/?v=soundscape-v13",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "release-v13",
+      "pass": true
+    },
+    {
+      "name": "load-has-no-context-or-sound",
+      "pass": true
+    },
+    {
+      "name": "scroll-cannot-unlock-audio",
+      "pass": true
+    },
+    {
+      "name": "explicit-start-unlocks-one-context",
+      "pass": true
+    },
+    {
+      "name": "ambient-has-real-output-while-idle",
+      "pass": true,
+      "rms": {
+        "ambient": 0.0048779457713880444,
+        "scroll": 0,
+        "resolve": 0
+      }
+    },
+    {
+      "name": "idle-scroll-bus-is-silent",
+      "pass": true
+    },
+    {
+      "name": "no-motion-toggle-restored",
+      "pass": true
+    },
+    {
+      "name": "tap-preset-still-matches-visual",
+      "pass": true
+    },
+    {
+      "name": "tap-ducks-both-background-buses",
+      "pass": true,
+      "actual": {
+        "ambient": 0.8509303331375122,
+        "scroll": 0,
+        "ambientDuck": 0.41999998688697815,
+        "scrollDuck": 0.23999999463558197
+      }
+    },
+    {
+      "name": "duck-recovers-without-restarting-scene",
+      "pass": true
+    },
+    {
+      "name": "native-scroll-produces-current",
+      "pass": true,
+      "activity": 0.6787599393055154,
+      "rms": {
+        "ambient": 0.005599355564896332,
+        "scroll": 0.008811300166879633,
+        "resolve": 0
+      }
+    },
+    {
+      "name": "pause-fades-current-not-field",
+      "pass": true,
+      "rms": {
+        "ambient": 0.005569790128802859,
+        "scroll": 0.0000014123927667990818,
+        "resolve": 0
+      }
+    },
+    {
+      "name": "no-idle-scroll-frame-loop",
+      "pass": true
+    },
+    {
+      "name": "reverse-gathers-not-retriggers",
+      "pass": true
+    },
+    {
+      "name": "tiny-jitter-adds-no-one-shots",
+      "pass": true
+    },
+    {
+      "name": "programmatic-reposition-no-swoosh",
+      "pass": true
+    },
+    {
+      "name": "continuous-progress-not-integer-percent",
+      "pass": true
+    },
+    {
+      "name": "native-range-input-is-sonified",
+      "pass": true,
+      "scroll": {
+        "scene": "assembly",
+        "scope": 1,
+        "progress": 0.39948229658981627,
+        "raw": 0.4369146005509642,
+        "morph": 0.7958239808405376,
+        "start": 2944,
+        "end": 4759,
+        "activity": 0.2389321538268373,
+        "direction": 1,
+        "intent": true,
+        "lastInput": "manual-scrub",
+        "speed": 0.15247059776470567,
+        "renderedScrollY": 3737,
+        "gesturePeak": 0.2389321538268373,
+        "updates": 440,
+        "running": true,
+        "lastScroll": 15652,
+        "completionArmed": true,
+        "reconnectArmed": true,
+        "scopeName": "Hero → Assemble"
+      }
+    },
+    {
+      "name": "completion-uses-new-settle-not-tap",
+      "pass": true,
+      "history": [
+        {
+          "id": "insight-pulse",
+          "kind": "enable",
+          "time": 5237,
+          "rate": 0.9900761246681213
+        },
+        {
+          "id": "debate-synthesis",
+          "kind": "brain",
+          "time": 7229,
+          "rate": 1.0043604373931885
+        },
+        {
+          "id": "current-resolve",
+          "kind": "resolution",
+          "time": 19089
+        }
+      ],
+      "scroll": {
+        "scene": "assembly",
+        "scope": 1,
+        "progress": 1,
+        "raw": 0.9575757575757575,
+        "morph": 1,
+        "start": 2944,
+        "end": 4759,
+        "activity": 0.2917724837257988,
+        "direction": 1,
+        "intent": true,
+        "lastInput": "wheel",
+        "speed": 0.19311123348424072,
+        "renderedScrollY": 4682,
+        "gesturePeak": 0.8145143016326033,
+        "updates": 608,
+        "running": true,
+        "lastScroll": 19286,
+        "completionArmed": false,
+        "reconnectArmed": true,
+        "scopeName": "Hero → Assemble"
+      }
+    },
+    {
+      "name": "old-four-milestones-removed",
+      "pass": true
+    },
+    {
+      "name": "completion-boundary-does-not-repeat",
+      "pass": true
+    },
+    {
+      "name": "reverse-progress-reconnects",
+      "pass": true
+    },
+    {
+      "name": "reverse-cue-is-not-forward-cue",
+      "pass": true
+    },
+    {
+      "name": "prototype-exit-fades-new-buses",
+      "pass": true,
+      "rms": {
+        "ambient": 0,
+        "scroll": 0,
+        "resolve": 0
+      }
+    },
+    {
+      "name": "ambience-switch-controls-only-field",
+      "pass": true
+    },
+    {
+      "name": "scroll-switch-controls-only-current",
+      "pass": true
+    },
+    {
+      "name": "mute-kills-audio-not-visuals",
+      "pass": true
+    },
+    {
+      "name": "mute-persists-and-no-context",
+      "pass": true
+    },
+    {
+      "name": "zero-master-volume-persists",
+      "pass": true
+    },
+    {
+      "name": "background-stops-all-audio-sources",
+      "pass": true
+    },
+    {
+      "name": "return-scroll-cannot-resume-or-replay",
+      "pass": true
+    },
+    {
+      "name": "fresh-explicit-gesture-resumes-one-context",
+      "pass": true,
+      "audio": {
+        "version": "soundscape-v13",
+        "character": "digital-electric",
+        "enabled": true,
+        "volume": 0.48,
+        "ambience": true,
+        "flow": true,
+        "unlocked": true,
+        "needsGesture": false,
+        "context": "running",
+        "contextCount": 1,
+        "played": 2,
+        "dropped": 0,
+        "lastStyle": "insight-pulse",
+        "voices": 0,
+        "peakVoices": 1,
+        "pending": 0,
+        "maxRms": 0.042751147701408615,
+        "lastSynthesisMs": 0,
+        "lastScheduleMs": 10,
+        "warm": 14,
+        "history": [
+          {
+            "id": "insight-pulse",
+            "kind": "enable",
+            "time": 1335,
+            "rate": 0.9873584508895874
+          },
+          {
+            "id": "insight-pulse",
+            "kind": "enable",
+            "time": 3719,
+            "rate": 1.0089514255523682
+          }
+        ],
+        "soundscape": {
+          "version": "soundscape-v13",
+          "disposed": false,
+          "updates": 14,
+          "ducks": 1,
+          "resolves": 0,
+          "continuousSources": 13,
+          "oneShots": 0,
+          "scope": 1,
+          "enabled": true,
+          "ambience": true,
+          "flow": true,
+          "activity": 0,
+          "progress": 0,
+          "direction": -1,
+          "morph": 0.1,
+          "ambientGain": 0.898,
+          "scrollGain": 0,
+          "at": 0.808,
+          "actual": {
+            "ambient": 0.5644726157188416,
+            "scroll": 0,
+            "ambientDuck": 0.9879216551780701,
+            "scrollDuck": 0.9841731190681458
+          },
+          "rms": {
+            "ambient": 0.0031165714014822297,
+            "scroll": 0,
+            "resolve": 0
+          }
+        }
+      },
+      "neural": {
+        "ready": true,
+        "frames": 90,
+        "elapsed": 3351.666666666667,
+        "burstCount": 0,
+        "activeBursts": 0,
+        "lastBurstPoint": null,
+        "lastStyle": null,
+        "active": true,
+        "running": true,
+        "transporting": false,
+        "heroInside": true,
+        "orbitInside": false,
+        "paths": 46,
+        "branches": 12,
+        "contour": 96,
+        "profile": "full",
+        "meanPaintMs": 0.586,
+        "targets": {
+          "hero": "89",
+          "orbit": "0",
+          "transit": "44"
+        }
+      }
+    },
+    {
+      "name": "rapid-taps-remain-bounded",
+      "pass": true
+    },
+    {
+      "name": "tap-voices-clean-up-with-field-active",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-320",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-390",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-430",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-680",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-768",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-1024",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-1440",
+      "pass": true
+    },
+    {
+      "name": "mobile-trusted-tap-starts-field",
+      "pass": true
+    },
+    {
+      "name": "studio-starts-real-production-graph",
+      "pass": true
+    },
+    {
+      "name": "studio-comparison-taps",
+      "pass": true
+    },
+    {
+      "name": "studio-comparison-bed",
+      "pass": true
+    },
+    {
+      "name": "studio-comparison-full",
+      "pass": true
+    },
+    {
+      "name": "studio-three-matched-previews",
+      "pass": true
+    },
+    {
+      "name": "no-audio-support-preserves-motion",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

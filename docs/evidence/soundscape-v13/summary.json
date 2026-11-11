@@ -1,0 +1,55 @@
+{
+  "release": "soundscape-v13",
+  "name": "HolyMind Quiet Current",
+  "implementation_commit": "59b7018d02e277a372a0e9949490c12155017202",
+  "verified_at": "2026-11-11T14:17:11.573656+00:00",
+  "url": "https://holyboom.github.io/?v=soundscape-v13",
+  "studio": "https://holyboom.github.io/qa/soundscape-v13.html",
+  "scope": "Listening prototype on Hero → orbit → ribbon → pinned Assemble. New channels fade out below the assembly; fourteen original tap sounds remain available elsewhere.",
+  "features": {
+    "ambient": "New quiet electric field: low stable partials, filtered seeded texture and slow asynchronous modulation; no leading melody or repeated tap samples.",
+    "scroll": "New continuous filament follows trusted native wheel, touch, keyboard and manual range gestures. Smoothed bounded speed, direction hysteresis, and continuous pre-rounded assembly progress. Down opens; up gathers; pause fades only current.",
+    "mix": "One AudioContext; separate field/current/resolve buses alongside unchanged Electric v12 taps. Tap ducking reduces the two background buses then restores them.",
+    "assembly": "Four reused tap milestones replaced by a new soft completion cue and a quieter reconnect cue, with boundary hysteresis and cooldown.",
+    "control": "Sound mix contains independent Background ambience and Scroll response toggles, plus persistent master mute/volume. No Motion toggle. Visuals remain always-on.",
+    "lifecycle": "No audio context or playback on load/scroll alone. A tap starts sound. Hidden/interrupted pages stop all sound; returning requires an explicit new gesture. No missed-event replay.",
+    "intent": "Anchor jumps, resize, unprompted scripted scrolling and layout changes do not create scroll swooshes.",
+    "comparison": "Studio uses the actual live showcase for Taps only / Field + taps / Full mix at unchanged master level. Five 22-second WAVs render the same production graph, no per-file normalization."
+  },
+  "live_checks": {
+    "soundscape_chromium": 48,
+    "soundscape_webkit": 48,
+    "existing_interaction_webkit": 68
+  },
+  "total_live_checks": 164,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "offline_signal_checks": 6,
+  "live_asset_hash_matches": 31,
+  "preservation": {
+    "original_tap_presets": 14,
+    "tap_synth_byte_identical": true,
+    "original_images_byte_identical": 37,
+    "unchanged_visual_and_control_modules": 9,
+    "skills": 34,
+    "pinned_assembly": "0 → 100 → 0, anchored leaders and existing controls retained",
+    "hero": "Mobile-first brain only; desktop/tablet composition unchanged"
+  },
+  "sound_source": "Original parameter-authored Web Audio synthesis. No stock samples, real-world recordings, generative-audio model, external audio service or new runtime dependency.",
+  "preview_peak": {
+    "taps": 0.33902645111083984,
+    "bed": 0.3380793035030365,
+    "full": 0.3380793035030365,
+    "field-only": 0.01238724123686552,
+    "scroll-only": 0.019478479400277138
+  },
+  "master_preview_gain": 0.48,
+  "test_note": "Tests wait for actual scroll/continuity settlement and observed native-input activity rather than taking fixed-delay snapshots. Playwright fill is not treated as proof of trusted input.",
+  "limitations": {
+    "physical_iphone_audio_tested": false,
+    "subjective_pleasantness_certified": false,
+    "physical_device_performance_certified": false,
+    "motion_accessibility_certified": false,
+    "preview_method": "Scripted OfflineAudioContext renders of the production graph, not microphone recordings."
+  }
+}

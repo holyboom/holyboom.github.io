@@ -219,3 +219,6 @@ Live suites: 48/48 Chromium, 48/48 WebKit, 68/68 existing Interaction WebKit: **
 - Five production-graph OfflineAudioContext previews have matched master gain, finite/nonzero PCM, controlled fades and no clipping. Full-mix peak does not exceed the unchanged tap baseline by 5%. No per-file loudness normalization.
 - Mobile settings and desktop/mobile studio images reviewed. Original 14 tap DSP and nine pre-existing visual/control modules are unchanged; 37 original source images unchanged.
 - Physical iPhone audio, subjective pleasantness and performance are not certified. Published verification is recorded separately.
+
+### Quiet Current v13 — published verification
+Live checks: 48 Chromium + 48 WebKit soundscape assertions and 68 WebKit existing-interaction checks, all passed without captured runtime errors. Thirty-one served files match source hashes, including five audio previews. Actual live audio buses, native input, lifecycle and the comparison studio were exercised. See docs/evidence/soundscape-v13/summary.json and qa/soundscape-v13.html. Physical-speaker output and subjective pleasantness are not claimed.

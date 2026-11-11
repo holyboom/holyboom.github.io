@@ -1,0 +1,157 @@
+[
+  {
+    "asset": "index.html",
+    "bytes": 40376,
+    "match": true
+  },
+  {
+    "asset": "style.css?v=soundscape-v13",
+    "bytes": 44582,
+    "match": true
+  },
+  {
+    "asset": "showcase.css?v=soundscape-v13",
+    "bytes": 18984,
+    "match": true
+  },
+  {
+    "asset": "continuity.css?v=soundscape-v13",
+    "bytes": 1914,
+    "match": true
+  },
+  {
+    "asset": "site.js?v=soundscape-v13",
+    "bytes": 18737,
+    "match": true
+  },
+  {
+    "asset": "assembly-lab.css?v=soundscape-v13",
+    "bytes": 14465,
+    "match": true
+  },
+  {
+    "asset": "brain-energy.css?v=soundscape-v13",
+    "bytes": 6176,
+    "match": true
+  },
+  {
+    "asset": "ambient-current.css?v=soundscape-v13",
+    "bytes": 2133,
+    "match": true
+  },
+  {
+    "asset": "interaction-v10.css?v=soundscape-v13",
+    "bytes": 4289,
+    "match": true
+  },
+  {
+    "asset": "resonance.css?v=soundscape-v13",
+    "bytes": 2602,
+    "match": true
+  },
+  {
+    "asset": "assets/vendor/gsap-3.15.1.min.js",
+    "bytes": 73357,
+    "match": true
+  },
+  {
+    "asset": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "bytes": 44683,
+    "match": true
+  },
+  {
+    "asset": "brain-reactions.js?v=soundscape-v13",
+    "bytes": 9704,
+    "match": true
+  },
+  {
+    "asset": "holymind-timbres.js?v=soundscape-v13",
+    "bytes": 8918,
+    "match": true
+  },
+  {
+    "asset": "holymind-soundscape.js?v=soundscape-v13",
+    "bytes": 8105,
+    "match": true
+  },
+  {
+    "asset": "holymind-audio.js?v=soundscape-v13",
+    "bytes": 9401,
+    "match": true
+  },
+  {
+    "asset": "neural-core.js?v=soundscape-v13",
+    "bytes": 15388,
+    "match": true
+  },
+  {
+    "asset": "scroll-motion.js?v=soundscape-v13",
+    "bytes": 4168,
+    "match": true
+  },
+  {
+    "asset": "showcase.js?v=soundscape-v13",
+    "bytes": 7561,
+    "match": true
+  },
+  {
+    "asset": "energy-field.js?v=soundscape-v13",
+    "bytes": 3323,
+    "match": true
+  },
+  {
+    "asset": "continuity.js?v=soundscape-v13",
+    "bytes": 15019,
+    "match": true
+  },
+  {
+    "asset": "assembly-lab.js?v=soundscape-v13",
+    "bytes": 8307,
+    "match": true
+  },
+  {
+    "asset": "ambient-current.js?v=soundscape-v13",
+    "bytes": 2682,
+    "match": true
+  },
+  {
+    "asset": "assembly-scroll.js?v=soundscape-v13",
+    "bytes": 4265,
+    "match": true
+  },
+  {
+    "asset": "scroll-sonification.js?v=soundscape-v13",
+    "bytes": 5811,
+    "match": true
+  },
+  {
+    "asset": "qa/soundscape-v13.html",
+    "bytes": 11361,
+    "match": true
+  },
+  {
+    "asset": "assets/audio/soundscape-v13/quiet-field.wav",
+    "bytes": 2112044,
+    "match": true
+  },
+  {
+    "asset": "assets/audio/soundscape-v13/full-journey.wav",
+    "bytes": 2112044,
+    "match": true
+  },
+  {
+    "asset": "assets/audio/soundscape-v13/field-and-taps.wav",
+    "bytes": 2112044,
+    "match": true
+  },
+  {
+    "asset": "assets/audio/soundscape-v13/taps-only.wav",
+    "bytes": 2112044,
+    "match": true
+  },
+  {
+    "asset": "assets/audio/soundscape-v13/reversible-current.wav",
+    "bytes": 2112044,
+    "match": true
+  }
+]
