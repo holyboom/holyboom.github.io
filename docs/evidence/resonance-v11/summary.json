@@ -1,0 +1,52 @@
+{
+  "release": "resonance-v11",
+  "implementation_commit": "5b5ab748e0607f635dd297c79354499849531010",
+  "verified_at": "2026-11-11T12:51:38.703943+00:00",
+  "url": "https://holyboom.github.io/?v=resonance-v11",
+  "preview": "https://holyboom.github.io/qa/resonance-v11.html",
+  "features": {
+    "visual_styles": 14,
+    "regular_styles": 12,
+    "signature_styles": [
+      "HolyMind Prime",
+      "Triad Resonance"
+    ],
+    "selection": "Context-weighted bag excludes the preceding three styles; eligible rare draws after seven selections, at 12% probability. All 14 covered in 1,200 selection trials in both engines.",
+    "geometry": "Fourteen genuinely different rendering branches: neural branches, facets, polygon wave fronts, opening brackets, checked nodes, sequential arcs, reframing, broken loops, forked trees, converging goals, two-to-one synthesis, ledgers, HolyMind crystal mandala and aligned triads.",
+    "sound_presets": 14,
+    "sound_source": "Original deterministic DSP written for this website: modal resonance, seeded texture, warm impacts, irregular note timing and short early reflections. Not real recordings, stock samples or a generative-audio model.",
+    "gesture_policy": "No AudioContext and no sound on page load or before the first trusted brain tap / explicit sound-enable gesture.",
+    "controls": "Sound-only mute and volume persist. Muting never stops always-on visual motion. Three concurrent voices maximum; compressor and controlled gain. No ambient soundtrack.",
+    "milestones": "After sound unlock, assembly 25/50/75/100 crossings play quiet matching cues. Threshold dithering does not replay; a fast jump plays one cue, not four.",
+    "preserved": "Phone-only brain-first, desktop/tablet layout, 37 original images, all 34 skills, pinned 0\u2013100\u20130 assembly with real leader lines and all prior motion/controls."
+  },
+  "live_checks": {
+    "resonance_chromium": 48,
+    "resonance_webkit": 48,
+    "existing_interaction_webkit": 68
+  },
+  "total_live_checks": 164,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "audio_graph_nonzero_signal_verified": true,
+  "sample_waveforms_unique": 14,
+  "sample_peak_max": 0.4166443645954132,
+  "sample_rate_hz": 24000,
+  "runtime_asset_hash_matches": 23,
+  "audio_asset_hash_matches": 14,
+  "original_images_byte_identical": 37,
+  "new_runtime_dependencies": 0,
+  "viewports": [
+    320,
+    390,
+    430,
+    680,
+    768,
+    1024,
+    1440
+  ],
+  "physical_iphone_audio_tested": false,
+  "subjective_naturalness_certified": false,
+  "independent_flash_safety_audit": false,
+  "limitations": "Audio-graph and simulated-touch browser verification do not certify speaker output, perceived sound quality, real-device latency or motion accessibility."
+}

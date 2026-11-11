@@ -1,0 +1,201 @@
+[
+  {
+    "file": "index.html",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "style.css?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "showcase.css?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "continuity.css?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "site.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "assembly-lab.css?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "brain-energy.css?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "ambient-current.css?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "interaction-v10.css?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "resonance.css?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "assets/vendor/gsap-3.15.1.min.js",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "brain-reactions.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "holymind-timbres.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "holymind-audio.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "neural-core.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "scroll-motion.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "showcase.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "energy-field.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "continuity.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "assembly-lab.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "ambient-current.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "assembly-scroll.js?v=resonance-v11",
+    "match": true,
+    "type": "runtime"
+  },
+  {
+    "file": "assets/audio/neural-discharge.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/crystallizer-bloom.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/insight-pulse.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/constraint-break.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/verification-spark.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/reasoning-arc.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/cognitive-reframe.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/pattern-reset.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/signal-fork.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/goal-lock.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/debate-synthesis.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/evidence-manifest.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/holy-prime.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "assets/audio/triad-resonance.wav",
+    "match": true,
+    "type": "audio",
+    "contentType": "audio/wav"
+  }
+]

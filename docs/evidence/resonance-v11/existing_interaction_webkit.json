@@ -1,0 +1,1085 @@
+{
+  "base": "https://holyboom.github.io/?v=resonance-v11",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "release-v11",
+      "pass": true
+    },
+    {
+      "name": "always-on-preserved",
+      "pass": true
+    },
+    {
+      "name": "removed-controls-stay-removed",
+      "pass": true
+    },
+    {
+      "name": "fresh-load-starts-zero",
+      "pass": true
+    },
+    {
+      "name": "native-touch-triggers-discharge",
+      "pass": true
+    },
+    {
+      "name": "nearby-components-receive-burst",
+      "pass": true
+    },
+    {
+      "name": "burst-finishes-ambient-continues",
+      "pass": true
+    },
+    {
+      "name": "repeated-taps-bounded",
+      "pass": true
+    },
+    {
+      "name": "keyboard-enter-space",
+      "pass": true
+    },
+    {
+      "name": "cancelled-scroll-gesture-no-burst",
+      "pass": true
+    },
+    {
+      "name": "before-entry-zero",
+      "pass": true
+    },
+    {
+      "name": "pin-holds-0.1",
+      "pass": true,
+      "value": 0,
+      "top": 80.703125,
+      "bottom": 831.703125
+    },
+    {
+      "name": "pin-holds-0.25",
+      "pass": true,
+      "value": 9,
+      "top": 80.703125,
+      "bottom": 831.703125
+    },
+    {
+      "name": "pin-holds-0.5",
+      "pass": true,
+      "value": 53,
+      "top": 80.703125,
+      "bottom": 831.703125
+    },
+    {
+      "name": "pin-holds-0.75",
+      "pass": true,
+      "value": 94,
+      "top": 80.703125,
+      "bottom": 831.703125
+    },
+    {
+      "name": "pin-holds-0.95",
+      "pass": true,
+      "value": 100,
+      "top": 80.703125,
+      "bottom": 831.703125
+    },
+    {
+      "name": "pin-position-stable",
+      "pass": true
+    },
+    {
+      "name": "progress-monotonic",
+      "pass": true
+    },
+    {
+      "name": "slow-normal-slow",
+      "pass": true,
+      "values": [
+        1,
+        6,
+        32,
+        50,
+        94,
+        99
+      ]
+    },
+    {
+      "name": "reverse-exact-progress",
+      "pass": true
+    },
+    {
+      "name": "complete-before-release",
+      "pass": true
+    },
+    {
+      "name": "real-leader-endpoints-under-1px",
+      "pass": true,
+      "errors": [
+        0.004421601103330306,
+        0.004423733219703438,
+        0.0057653606046134676
+      ]
+    },
+    {
+      "name": "callout-focus-preserved",
+      "pass": true
+    },
+    {
+      "name": "release-after-completion",
+      "pass": true
+    },
+    {
+      "name": "reverse-reconnects-and-releases",
+      "pass": true
+    },
+    {
+      "name": "manual-slider-seeks-story",
+      "pass": true
+    },
+    {
+      "name": "range-home-zero",
+      "pass": true
+    },
+    {
+      "name": "range-arrow-right-expands",
+      "pass": true
+    },
+    {
+      "name": "range-end-100",
+      "pass": true
+    },
+    {
+      "name": "responsive-pin-320x740",
+      "pass": true,
+      "data": {
+        "pin": {
+          "x": 22,
+          "y": 80.640625,
+          "width": 276,
+          "height": 647,
+          "top": 80.640625,
+          "right": 298,
+          "bottom": 727.640625,
+          "left": 22
+        },
+        "view": {
+          "x": 22,
+          "y": 254.375,
+          "width": 276,
+          "height": 465.265625,
+          "top": 254.375,
+          "right": 298,
+          "bottom": 719.640625,
+          "left": 22
+        },
+        "all": [
+          {
+            "name": "assembly-plane plane-evidence",
+            "r": {
+              "x": 16.657272338867188,
+              "y": 544.4189453125,
+              "width": 144.72886657714844,
+              "height": 81.48193359375,
+              "top": 544.4189453125,
+              "right": 161.38613891601562,
+              "bottom": 625.90087890625,
+              "left": 16.657272338867188
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-checks",
+            "r": {
+              "x": 32.22724151611328,
+              "y": 484.20703125,
+              "width": 125.7115249633789,
+              "height": 70.62939453125,
+              "top": 484.20703125,
+              "right": 157.9387664794922,
+              "bottom": 554.83642578125,
+              "left": 32.22724151611328
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-tools",
+            "r": {
+              "x": 27.522964477539062,
+              "y": 425.32568359375,
+              "width": 144.5745849609375,
+              "height": 81.087890625,
+              "top": 425.32568359375,
+              "right": 172.09754943847656,
+              "bottom": 506.41357421875,
+              "left": 27.522964477539062
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-routing",
+            "r": {
+              "x": 41.99497985839844,
+              "y": 377.02392578125,
+              "width": 125.59086608886719,
+              "height": 70.32177734375,
+              "top": 377.02392578125,
+              "right": 167.58584594726562,
+              "bottom": 447.345703125,
+              "left": 41.99497985839844
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-intent",
+            "r": {
+              "x": 38.38865661621094,
+              "y": 306.232421875,
+              "width": 144.42030334472656,
+              "height": 80.6943359375,
+              "top": 306.232421875,
+              "right": 182.8089599609375,
+              "bottom": 386.9267578125,
+              "left": 38.38865661621094
+            },
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "spacers": 1,
+        "pinTriggers": 1
+      }
+    },
+    {
+      "name": "single-pin-after-resize-320",
+      "pass": true
+    },
+    {
+      "name": "responsive-pin-390x844",
+      "pass": true,
+      "data": {
+        "pin": {
+          "x": 22,
+          "y": 80.703125,
+          "width": 346,
+          "height": 751,
+          "top": 80.703125,
+          "right": 368,
+          "bottom": 831.703125,
+          "left": 22
+        },
+        "view": {
+          "x": 22,
+          "y": 254.4375,
+          "width": 346,
+          "height": 569.265625,
+          "top": 254.4375,
+          "right": 368,
+          "bottom": 823.703125,
+          "left": 22
+        },
+        "all": [
+          {
+            "name": "assembly-plane plane-evidence",
+            "r": {
+              "x": 15.566876411437988,
+              "y": 606.5849609375,
+              "width": 181.44760131835938,
+              "height": 102.1875,
+              "top": 606.5849609375,
+              "right": 197.01447772979736,
+              "bottom": 708.7724609375,
+              "left": 15.566876411437988
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-checks",
+            "r": {
+              "x": 32.36048126220703,
+              "y": 534.55810546875,
+              "width": 162.38815307617188,
+              "height": 91.2294921875,
+              "top": 534.55810546875,
+              "right": 194.7486343383789,
+              "bottom": 625.78759765625,
+              "left": 32.36048126220703
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-tools",
+            "r": {
+              "x": 28.793170928955078,
+              "y": 463.8662109375,
+              "width": 181.21046447753906,
+              "height": 101.59033203125,
+              "top": 463.8662109375,
+              "right": 210.00363540649414,
+              "bottom": 565.45654296875,
+              "left": 28.793170928955078
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-routing",
+            "r": {
+              "x": 44.46989440917969,
+              "y": 403.73828125,
+              "width": 162.19351196289062,
+              "height": 90.7392578125,
+              "top": 403.73828125,
+              "right": 206.6634063720703,
+              "bottom": 494.4775390625,
+              "left": 44.46989440917969
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-intent",
+            "r": {
+              "x": 42.01946258544922,
+              "y": 321.14794921875,
+              "width": 180.97329711914062,
+              "height": 100.99267578125,
+              "top": 321.14794921875,
+              "right": 222.99275970458984,
+              "bottom": 422.140625,
+              "left": 42.01946258544922
+            },
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "spacers": 1,
+        "pinTriggers": 1
+      }
+    },
+    {
+      "name": "single-pin-after-resize-390",
+      "pass": true
+    },
+    {
+      "name": "responsive-pin-430x932",
+      "pass": true,
+      "data": {
+        "pin": {
+          "x": 22,
+          "y": 81.15625,
+          "width": 386,
+          "height": 820,
+          "top": 81.15625,
+          "right": 408,
+          "bottom": 901.15625,
+          "left": 22
+        },
+        "view": {
+          "x": 22,
+          "y": 227.78125,
+          "width": 386,
+          "height": 665.375,
+          "top": 227.78125,
+          "right": 408,
+          "bottom": 893.15625,
+          "left": 22
+        },
+        "all": [
+          {
+            "name": "assembly-plane plane-evidence",
+            "r": {
+              "x": 23.215139389038086,
+              "y": 647.4931640625,
+              "width": 183.94775390625,
+              "height": 103.609375,
+              "top": 647.4931640625,
+              "right": 207.1628932952881,
+              "bottom": 751.1025390625,
+              "left": 23.215139389038086
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-checks",
+            "r": {
+              "x": 41.292091369628906,
+              "y": 563.8486328125,
+              "width": 164.86907958984375,
+              "height": 92.59912109375,
+              "top": 563.8486328125,
+              "right": 206.16117095947266,
+              "bottom": 656.44775390625,
+              "left": 41.292091369628906
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-tools",
+            "r": {
+              "x": 38.97896957397461,
+              "y": 481.54541015625,
+              "width": 183.6563720703125,
+              "height": 102.8935546875,
+              "top": 481.54541015625,
+              "right": 222.6353416442871,
+              "bottom": 584.43896484375,
+              "left": 38.97896957397461
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-routing",
+            "r": {
+              "x": 55.90902328491211,
+              "y": 409.79150390625,
+              "width": 164.62648010253906,
+              "height": 92.0029296875,
+              "top": 409.79150390625,
+              "right": 220.53550338745117,
+              "bottom": 501.79443359375,
+              "left": 55.90902328491211
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-intent",
+            "r": {
+              "x": 54.742801666259766,
+              "y": 315.59814453125,
+              "width": 183.36502075195312,
+              "height": 102.1767578125,
+              "top": 315.59814453125,
+              "right": 238.1078224182129,
+              "bottom": 417.77490234375,
+              "left": 54.742801666259766
+            },
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "spacers": 1,
+        "pinTriggers": 1
+      }
+    },
+    {
+      "name": "single-pin-after-resize-430",
+      "pass": true
+    },
+    {
+      "name": "responsive-pin-680x960",
+      "pass": true,
+      "data": {
+        "pin": {
+          "x": 30.59375,
+          "y": 81.40625,
+          "width": 619,
+          "height": 820,
+          "top": 81.40625,
+          "right": 649.59375,
+          "bottom": 901.40625,
+          "left": 30.59375
+        },
+        "view": {
+          "x": 30.59375,
+          "y": 228.03125,
+          "width": 619,
+          "height": 665.375,
+          "top": 228.03125,
+          "right": 649.59375,
+          "bottom": 893.40625,
+          "left": 30.59375
+        },
+        "all": [
+          {
+            "name": "assembly-plane plane-evidence",
+            "r": {
+              "x": 96.56216430664062,
+              "y": 647.42578125,
+              "width": 183.88751220703125,
+              "height": 103.50732421875,
+              "top": 647.42578125,
+              "right": 280.4496765136719,
+              "bottom": 750.93310546875,
+              "left": 96.56216430664062
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-checks",
+            "r": {
+              "x": 114.85596466064453,
+              "y": 563.78564453125,
+              "width": 164.808837890625,
+              "height": 92.501953125,
+              "top": 563.78564453125,
+              "right": 279.66480255126953,
+              "bottom": 656.28759765625,
+              "left": 114.85596466064453
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-tools",
+            "r": {
+              "x": 112.73155212402344,
+              "y": 481.49755859375,
+              "width": 183.5834197998047,
+              "height": 102.77880859375,
+              "top": 481.49755859375,
+              "right": 296.3149719238281,
+              "bottom": 584.2763671875,
+              "left": 112.73155212402344
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-routing",
+            "r": {
+              "x": 129.84869384765625,
+              "y": 409.74560546875,
+              "width": 164.55563354492188,
+              "height": 91.89501953125,
+              "top": 409.74560546875,
+              "right": 294.4043273925781,
+              "bottom": 501.640625,
+              "left": 129.84869384765625
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-intent",
+            "r": {
+              "x": 128.90093994140625,
+              "y": 315.5693359375,
+              "width": 183.27932739257812,
+              "height": 102.0498046875,
+              "top": 315.5693359375,
+              "right": 312.1802673339844,
+              "bottom": 417.619140625,
+              "left": 128.90093994140625
+            },
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "spacers": 1,
+        "pinTriggers": 1
+      }
+    },
+    {
+      "name": "single-pin-after-resize-680",
+      "pass": true
+    },
+    {
+      "name": "responsive-pin-768x1000",
+      "pass": true,
+      "data": {
+        "pin": {
+          "x": 34.546875,
+          "y": 84.578125,
+          "width": 699,
+          "height": 820,
+          "top": 84.578125,
+          "right": 733.546875,
+          "bottom": 904.578125,
+          "left": 34.546875
+        },
+        "view": {
+          "x": 34.546875,
+          "y": 216.6875,
+          "width": 699,
+          "height": 677.890625,
+          "top": 216.6875,
+          "right": 733.546875,
+          "bottom": 894.578125,
+          "left": 34.546875
+        },
+        "all": [
+          {
+            "name": "assembly-plane plane-evidence",
+            "r": {
+              "x": 38.324302673339844,
+              "y": 599.54638671875,
+              "width": 344.4528503417969,
+              "height": 201.650390625,
+              "top": 599.54638671875,
+              "right": 382.7771530151367,
+              "bottom": 801.19677734375,
+              "left": 38.324302673339844
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-checks",
+            "r": {
+              "x": 65.9808349609375,
+              "y": 523.982421875,
+              "width": 309.1349182128906,
+              "height": 180.19873046875,
+              "top": 523.982421875,
+              "right": 375.1157531738281,
+              "bottom": 704.18115234375,
+              "left": 65.9808349609375
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-tools",
+            "r": {
+              "x": 55.56271743774414,
+              "y": 440.3349609375,
+              "width": 343.4277648925781,
+              "height": 199.38134765625,
+              "top": 440.3349609375,
+              "right": 398.99048233032227,
+              "bottom": 639.71630859375,
+              "left": 55.56271743774414
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-routing",
+            "r": {
+              "x": 81.88253784179688,
+              "y": 376.54345703125,
+              "width": 308.2822265625,
+              "height": 178.3115234375,
+              "top": 376.54345703125,
+              "right": 390.1647644042969,
+              "bottom": 554.85498046875,
+              "left": 81.88253784179688
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-intent",
+            "r": {
+              "x": 72.80113220214844,
+              "y": 281.12353515625,
+              "width": 342.4027099609375,
+              "height": 197.1123046875,
+              "top": 281.12353515625,
+              "right": 415.20384216308594,
+              "bottom": 478.23583984375,
+              "left": 72.80113220214844
+            },
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "spacers": 1,
+        "pinTriggers": 1
+      }
+    },
+    {
+      "name": "single-pin-after-resize-768",
+      "pass": true
+    },
+    {
+      "name": "responsive-pin-1024x900",
+      "pass": true,
+      "data": {
+        "pin": {
+          "x": 46.078125,
+          "y": 95.390625,
+          "width": 932,
+          "height": 793,
+          "top": 95.390625,
+          "right": 978.078125,
+          "bottom": 888.390625,
+          "left": 46.078125
+        },
+        "view": {
+          "x": 46.078125,
+          "y": 227.5,
+          "width": 932,
+          "height": 650.890625,
+          "top": 227.5,
+          "right": 978.078125,
+          "bottom": 878.390625,
+          "left": 46.078125
+        },
+        "all": [
+          {
+            "name": "assembly-plane plane-evidence",
+            "r": {
+              "x": 145.81689453125,
+              "y": 594.76708984375,
+              "width": 331.9886779785156,
+              "height": 194.095703125,
+              "top": 594.76708984375,
+              "right": 477.8055725097656,
+              "bottom": 788.86279296875,
+              "left": 145.81689453125
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-checks",
+            "r": {
+              "x": 172.71592712402344,
+              "y": 522.01513671875,
+              "width": 296.62158203125,
+              "height": 172.71484375,
+              "top": 522.01513671875,
+              "right": 469.33750915527344,
+              "bottom": 694.72998046875,
+              "left": 172.71592712402344
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-tools",
+            "r": {
+              "x": 161.6207733154297,
+              "y": 441.12353515625,
+              "width": 331.11785888671875,
+              "height": 192.072265625,
+              "top": 441.12353515625,
+              "right": 492.73863220214844,
+              "bottom": 633.19580078125,
+              "left": 161.6207733154297
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-routing",
+            "r": {
+              "x": 187.25125122070312,
+              "y": 380.17431640625,
+              "width": 295.9027404785156,
+              "height": 171.04443359375,
+              "top": 380.17431640625,
+              "right": 483.15399169921875,
+              "bottom": 551.21875,
+              "left": 187.25125122070312
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-intent",
+            "r": {
+              "x": 177.42465209960938,
+              "y": 287.47998046875,
+              "width": 330.2469787597656,
+              "height": 190.04931640625,
+              "top": 287.47998046875,
+              "right": 507.671630859375,
+              "bottom": 477.529296875,
+              "left": 177.42465209960938
+            },
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "spacers": 1,
+        "pinTriggers": 1
+      }
+    },
+    {
+      "name": "single-pin-after-resize-1024",
+      "pass": true
+    },
+    {
+      "name": "responsive-pin-1440x1000",
+      "pass": true,
+      "data": {
+        "pin": {
+          "x": 124,
+          "y": 94.546875,
+          "width": 1192,
+          "height": 820,
+          "top": 94.546875,
+          "right": 1316,
+          "bottom": 914.546875,
+          "left": 124
+        },
+        "view": {
+          "x": 124,
+          "y": 244.890625,
+          "width": 1192,
+          "height": 659.65625,
+          "top": 244.890625,
+          "right": 1316,
+          "bottom": 904.546875,
+          "left": 124
+        },
+        "all": [
+          {
+            "name": "assembly-plane plane-evidence",
+            "r": {
+              "x": 299.78033447265625,
+              "y": 616.55078125,
+              "width": 336.5333251953125,
+              "height": 196.6015625,
+              "top": 616.55078125,
+              "right": 636.3136596679688,
+              "bottom": 813.15234375,
+              "left": 299.78033447265625
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-checks",
+            "r": {
+              "x": 327.1849060058594,
+              "y": 542.80859375,
+              "width": 301.1103820800781,
+              "height": 175.171875,
+              "top": 542.80859375,
+              "right": 628.2952880859375,
+              "bottom": 717.98046875,
+              "left": 327.1849060058594
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-tools",
+            "r": {
+              "x": 316.44720458984375,
+              "y": 460.9580078125,
+              "width": 335.57354736328125,
+              "height": 194.4560546875,
+              "top": 460.9580078125,
+              "right": 652.020751953125,
+              "bottom": 655.4140625,
+              "left": 316.44720458984375
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-routing",
+            "r": {
+              "x": 342.52813720703125,
+              "y": 399.01708984375,
+              "width": 300.3160400390625,
+              "height": 173.39697265625,
+              "top": 399.01708984375,
+              "right": 642.8441772460938,
+              "bottom": 572.4140625,
+              "left": 342.52813720703125
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-intent",
+            "r": {
+              "x": 333.11407470703125,
+              "y": 305.36474609375,
+              "width": 334.61370849609375,
+              "height": 192.3115234375,
+              "top": 305.36474609375,
+              "right": 667.727783203125,
+              "bottom": 497.67626953125,
+              "left": 333.11407470703125
+            },
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "spacers": 1,
+        "pinTriggers": 1
+      }
+    },
+    {
+      "name": "single-pin-after-resize-1440",
+      "pass": true
+    },
+    {
+      "name": "responsive-pin-844x390",
+      "pass": true,
+      "data": {
+        "pin": {
+          "x": 37.96875,
+          "y": 84.78125,
+          "width": 768,
+          "height": 293,
+          "top": 84.78125,
+          "right": 805.96875,
+          "bottom": 377.78125,
+          "left": 37.96875
+        },
+        "view": {
+          "x": 37.96875,
+          "y": 208.890625,
+          "width": 768,
+          "height": 158.890625,
+          "top": 208.890625,
+          "right": 805.96875,
+          "bottom": 367.78125,
+          "left": 37.96875
+        },
+        "all": [
+          {
+            "name": "assembly-plane plane-evidence",
+            "r": {
+              "x": 207.18016052246094,
+              "y": 299.095703125,
+              "width": 85.49546813964844,
+              "height": 49.79833984375,
+              "top": 299.095703125,
+              "right": 292.6756286621094,
+              "bottom": 348.89404296875,
+              "left": 207.18016052246094
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-checks",
+            "r": {
+              "x": 227.7373046875,
+              "y": 279.8486328125,
+              "width": 50.734893798828125,
+              "height": 29.5078125,
+              "top": 279.8486328125,
+              "right": 278.4721984863281,
+              "bottom": 309.3564453125,
+              "left": 227.7373046875
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-tools",
+            "r": {
+              "x": 211.94674682617188,
+              "y": 252.4140625,
+              "width": 85.42510986328125,
+              "height": 49.6376953125,
+              "top": 252.4140625,
+              "right": 297.3718566894531,
+              "bottom": 302.0517578125,
+              "left": 211.94674682617188
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-interlayer inter-routing",
+            "r": {
+              "x": 231.27328491210938,
+              "y": 245.08984375,
+              "width": 50.70379638671875,
+              "height": 29.43701171875,
+              "top": 245.08984375,
+              "right": 281.9770812988281,
+              "bottom": 274.52685546875,
+              "left": 231.27328491210938
+            },
+            "opacity": "1"
+          },
+          {
+            "name": "assembly-plane plane-intent",
+            "r": {
+              "x": 216.7133331298828,
+              "y": 205.73291015625,
+              "width": 85.35472106933594,
+              "height": 49.47705078125,
+              "top": 205.73291015625,
+              "right": 302.06805419921875,
+              "bottom": 255.2099609375,
+              "left": 216.7133331298828
+            },
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "spacers": 1,
+        "pinTriggers": 1
+      }
+    },
+    {
+      "name": "single-pin-after-resize-844",
+      "pass": true
+    },
+    {
+      "name": "orbital-brain-tap",
+      "pass": true
+    },
+    {
+      "name": "ten-bridges-preserved",
+      "pass": true
+    },
+    {
+      "name": "continuity-stays-through-pin",
+      "pass": true
+    },
+    {
+      "name": "workbench-operations-0",
+      "pass": true
+    },
+    {
+      "name": "workbench-operations-1",
+      "pass": true
+    },
+    {
+      "name": "workbench-operations-2",
+      "pass": true
+    },
+    {
+      "name": "workbench-operations-3",
+      "pass": true
+    },
+    {
+      "name": "workbench-knowledge-0",
+      "pass": true
+    },
+    {
+      "name": "workbench-knowledge-1",
+      "pass": true
+    },
+    {
+      "name": "workbench-knowledge-2",
+      "pass": true
+    },
+    {
+      "name": "workbench-knowledge-3",
+      "pass": true
+    },
+    {
+      "name": "workbench-venture-0",
+      "pass": true
+    },
+    {
+      "name": "workbench-venture-1",
+      "pass": true
+    },
+    {
+      "name": "workbench-venture-2",
+      "pass": true
+    },
+    {
+      "name": "workbench-venture-3",
+      "pass": true
+    },
+    {
+      "name": "skill-dialog-preserved",
+      "pass": true
+    },
+    {
+      "name": "dialog-focus-return",
+      "pass": true
+    },
+    {
+      "name": "all-34-skills-preserved",
+      "pass": true
+    },
+    {
+      "name": "pin-single-after-gallery-expansion",
+      "pass": true
+    },
+    {
+      "name": "search-empty-state",
+      "pass": true
+    },
+    {
+      "name": "direct-anchor-load-no-errors",
+      "pass": true
+    },
+    {
+      "name": "missing-library-manual-fallback",
+      "pass": true
+    },
+    {
+      "name": "nojs-content-accessible",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

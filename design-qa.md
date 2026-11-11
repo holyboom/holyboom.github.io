@@ -194,3 +194,7 @@ Live acceptance: Chromium 68/68 and WebKit 68/68, zero failures and observed run
 - The existing 68-check Interaction suite passed in WebKit, including pinned 0–100–0 progress, attached leader geometry, keyboard, touches, existing controls and fallback content.
 - All 37 original bitmap artwork files remain byte-identical. Fourteen deterministic 24 kHz WAVs have distinct SHA-256 hashes, finite nonzero signal and sample peak < 0.5. These are DSP synthesis, not field recordings or generative-audio model output.
 - Actual mobile and desktop browser captures were inspected. Headless audio-graph verification does not establish physical iPhone speaker output, perceived timbre naturalness or end-to-end acoustic latency. No independent flash-safety/motion compliance certification is claimed.
+
+### Resonance v11 — published-site verification
+
+Live suites: 48/48 Chromium, 48/48 WebKit, 68/68 existing Interaction WebKit: **164 checks passed**, zero failed assertions and captured runtime errors. The AnalyserNode measured nonzero output after actual trusted taps; every visual preset matched its audio ID. Twenty-three runtime files and fourteen WAV files hash-match the committed implementation. See `docs/evidence/resonance-v11/summary.json` and `qa/resonance-v11.html`. Audio naturalness is a subjective listening judgment, and physical iPhone audio was not tested.
