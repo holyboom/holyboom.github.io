@@ -1,0 +1,487 @@
+{
+  "base": "https://holyboom.github.io/?v=electric-v12",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "release-v12",
+      "pass": true
+    },
+    {
+      "name": "fourteen-styles-two-signatures",
+      "pass": true
+    },
+    {
+      "name": "no-context-no-autoplay-before-gesture",
+      "pass": true
+    },
+    {
+      "name": "scroll-before-tap-remains-silent",
+      "pass": true
+    },
+    {
+      "name": "always-on-motion-unaffected",
+      "pass": true
+    },
+    {
+      "name": "trusted-tap-unlocks-real-audio",
+      "pass": true,
+      "state": "running",
+      "scheduleMs": 24
+    },
+    {
+      "name": "audio-graph-carries-nonzero-signal",
+      "pass": true,
+      "maxRms": 0.08343992755401378
+    },
+    {
+      "name": "sound-preset-matches-visual",
+      "pass": true
+    },
+    {
+      "name": "reaction-name-visible",
+      "pass": true
+    },
+    {
+      "name": "random-covers-all-fourteen",
+      "pass": true,
+      "unique": [
+        "pattern-reset",
+        "constraint-break",
+        "signal-fork",
+        "evidence-manifest",
+        "neural-discharge",
+        "cognitive-reframe",
+        "insight-pulse",
+        "holy-prime",
+        "reasoning-arc",
+        "verification-spark",
+        "crystallizer-bloom",
+        "goal-lock",
+        "debate-synthesis",
+        "triad-resonance"
+      ]
+    },
+    {
+      "name": "no-repeat-in-last-three",
+      "pass": true
+    },
+    {
+      "name": "signature-effects-are-infrequent",
+      "pass": true,
+      "rare": 74,
+      "total": 1200
+    },
+    {
+      "name": "style-audio-neural-discharge",
+      "pass": true
+    },
+    {
+      "name": "style-audio-crystallizer-bloom",
+      "pass": true
+    },
+    {
+      "name": "style-audio-insight-pulse",
+      "pass": true
+    },
+    {
+      "name": "style-audio-constraint-break",
+      "pass": true
+    },
+    {
+      "name": "style-audio-verification-spark",
+      "pass": true
+    },
+    {
+      "name": "style-audio-reasoning-arc",
+      "pass": true
+    },
+    {
+      "name": "style-audio-cognitive-reframe",
+      "pass": true
+    },
+    {
+      "name": "style-audio-pattern-reset",
+      "pass": true
+    },
+    {
+      "name": "style-audio-signal-fork",
+      "pass": true
+    },
+    {
+      "name": "style-audio-goal-lock",
+      "pass": true
+    },
+    {
+      "name": "style-audio-debate-synthesis",
+      "pass": true
+    },
+    {
+      "name": "style-audio-evidence-manifest",
+      "pass": true
+    },
+    {
+      "name": "style-audio-holy-prime",
+      "pass": true
+    },
+    {
+      "name": "style-audio-triad-resonance",
+      "pass": true
+    },
+    {
+      "name": "bounded-audio-polyphony",
+      "pass": true
+    },
+    {
+      "name": "voices-and-bursts-clean-up",
+      "pass": true
+    },
+    {
+      "name": "fourteen-distinct-same-phase-images",
+      "pass": true
+    },
+    {
+      "name": "mute-stops-sound-not-motion",
+      "pass": true
+    },
+    {
+      "name": "mute-persists-without-disabling-motion",
+      "pass": true
+    },
+    {
+      "name": "zero-volume-persists",
+      "pass": true
+    },
+    {
+      "name": "background-stops-voices",
+      "pass": true
+    },
+    {
+      "name": "no-delayed-audio-on-return",
+      "pass": true
+    },
+    {
+      "name": "next-tap-resumes-audio",
+      "pass": true
+    },
+    {
+      "name": "four-forward-milestone-cues",
+      "pass": true,
+      "ids": [
+        "insight-pulse",
+        "signal-fork",
+        "verification-spark",
+        "holy-prime"
+      ]
+    },
+    {
+      "name": "milestone-boundary-no-repeat",
+      "pass": true
+    },
+    {
+      "name": "fast-scroll-plays-one-cue-not-four",
+      "pass": true
+    },
+    {
+      "name": "responsive-320",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "brainFirst": true,
+        "side": false,
+        "nav": [
+          {
+            "left": 22,
+            "right": 148.484375,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          },
+          {
+            "left": 194.3125,
+            "right": 298,
+            "display": "flex"
+          },
+          {
+            "left": 194.3125,
+            "right": 234.3125,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          },
+          {
+            "left": 239.3125,
+            "right": 298,
+            "display": "flex"
+          }
+        ]
+      }
+    },
+    {
+      "name": "responsive-390",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "brainFirst": true,
+        "side": false,
+        "nav": [
+          {
+            "left": 22,
+            "right": 167.890625,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          },
+          {
+            "left": 253.765625,
+            "right": 368,
+            "display": "flex"
+          },
+          {
+            "left": 253.765625,
+            "right": 297.765625,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          },
+          {
+            "left": 306.765625,
+            "right": 368,
+            "display": "flex"
+          }
+        ]
+      }
+    },
+    {
+      "name": "responsive-430",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "brainFirst": true,
+        "side": false,
+        "nav": [
+          {
+            "left": 22,
+            "right": 167.890625,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          },
+          {
+            "left": 293.765625,
+            "right": 408,
+            "display": "flex"
+          },
+          {
+            "left": 293.765625,
+            "right": 337.765625,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          },
+          {
+            "left": 346.765625,
+            "right": 408,
+            "display": "flex"
+          }
+        ]
+      }
+    },
+    {
+      "name": "responsive-680",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "brainFirst": true,
+        "side": true,
+        "nav": [
+          {
+            "left": 30.59375,
+            "right": 176.484375,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          },
+          {
+            "left": 535.171875,
+            "right": 649.40625,
+            "display": "flex"
+          },
+          {
+            "left": 535.171875,
+            "right": 579.171875,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          },
+          {
+            "left": 588.171875,
+            "right": 649.40625,
+            "display": "flex"
+          }
+        ]
+      }
+    },
+    {
+      "name": "responsive-768",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "brainFirst": true,
+        "side": true,
+        "nav": [
+          {
+            "left": 34.546875,
+            "right": 196.578125,
+            "display": "flex"
+          },
+          {
+            "left": 261.546875,
+            "right": 482.703125,
+            "display": "flex"
+          },
+          {
+            "left": 547.6875,
+            "right": 733.453125,
+            "display": "flex"
+          },
+          {
+            "left": 547.6875,
+            "right": 642.875,
+            "display": "flex"
+          },
+          {
+            "left": 656.875,
+            "right": 733.453125,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "responsive-1024",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "brainFirst": true,
+        "side": true,
+        "nav": [
+          {
+            "left": 46.078125,
+            "right": 218.390625,
+            "display": "flex"
+          },
+          {
+            "left": 367.21875,
+            "right": 627.234375,
+            "display": "flex"
+          },
+          {
+            "left": 776.0625,
+            "right": 977.921875,
+            "display": "flex"
+          },
+          {
+            "left": 776.0625,
+            "right": 871.25,
+            "display": "flex"
+          },
+          {
+            "left": 889.25,
+            "right": 977.921875,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "responsive-1440",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "brainFirst": true,
+        "side": true,
+        "nav": [
+          {
+            "left": 124,
+            "right": 296.3125,
+            "display": "flex"
+          },
+          {
+            "left": 564.21875,
+            "right": 840.234375,
+            "display": "flex"
+          },
+          {
+            "left": 1108.140625,
+            "right": 1316,
+            "display": "flex"
+          },
+          {
+            "left": 1108.140625,
+            "right": 1203.328125,
+            "display": "flex"
+          },
+          {
+            "left": 1227.328125,
+            "right": 1316,
+            "display": "flex"
+          },
+          {
+            "left": 0,
+            "right": 0,
+            "display": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "preview-fourteen-real-selectors",
+      "pass": true
+    },
+    {
+      "name": "preview-plays-selected-sound",
+      "pass": true
+    },
+    {
+      "name": "no-audio-api-keeps-visuals",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

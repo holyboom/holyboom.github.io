@@ -1,0 +1,162 @@
+[
+  {
+    "file": "index.html",
+    "match": true
+  },
+  {
+    "file": "style.css?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "showcase.css?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "continuity.css?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "site.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "assembly-lab.css?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "brain-energy.css?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "ambient-current.css?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "interaction-v10.css?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "resonance.css?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "assets/vendor/gsap-3.15.1.min.js",
+    "match": true
+  },
+  {
+    "file": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "match": true
+  },
+  {
+    "file": "brain-reactions.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "holymind-timbres.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "holymind-audio.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "neural-core.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "scroll-motion.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "showcase.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "energy-field.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "continuity.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "assembly-lab.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "ambient-current.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "assembly-scroll.js?v=electric-v12",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/neural-discharge.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/crystallizer-bloom.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/insight-pulse.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/constraint-break.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/verification-spark.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/reasoning-arc.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/cognitive-reframe.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/pattern-reset.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/signal-fork.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/goal-lock.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/debate-synthesis.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/evidence-manifest.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/holy-prime.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/triad-resonance.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/signature-preview.wav",
+    "match": true
+  },
+  {
+    "file": "assets/audio/electric-v12/before-after.wav",
+    "match": true
+  },
+  {
+    "file": "qa/electric-v12.html",
+    "match": true
+  }
+]

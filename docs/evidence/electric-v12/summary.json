@@ -1,0 +1,53 @@
+{
+  "release": "electric-v12",
+  "implementation_commit": "b4b13d9ba7279d705a82c55d03f2257727ca50a6",
+  "verified_at": "2026-11-11T13:12:48.595120+00:00",
+  "url": "https://holyboom.github.io/?v=electric-v12",
+  "studio": "https://holyboom.github.io/qa/electric-v12.html",
+  "scope": "Audio-only sound-character refinement; no visual or motion changes.",
+  "sound_design": {
+    "presets": 14,
+    "character": "Digital + Electricity",
+    "layers": [
+      "fast capacitor/FM sweeps",
+      "shaped aperiodic electric crackle",
+      "clocked digital data packets",
+      "short dry electrical latch"
+    ],
+    "removed": "Glass/ceramic-like modal resonators and ringing material tails",
+    "provenance": "Original deterministic source-authored DSP; not real electrical recordings, stock samples or generative-audio-model output.",
+    "sample_rate": 32000,
+    "master_volume_unchanged": 0.48,
+    "preview_seconds": 3.33,
+    "reel_seconds": 15.09,
+    "before_after_seconds": 2.33,
+    "before_after_order": "Previous v11 neural-discharge, then v12; level-matched RMS for comparison."
+  },
+  "preserved": [
+    "14 random visual reactions and rare signature rules",
+    "always-active motion",
+    "phone-only brain-first layout",
+    "pinned 0\u2013100\u20130 assembly and callout geometry",
+    "first-gesture audio unlock",
+    "persistent sound-only mute and volume",
+    "three-voice limit and master compressor",
+    "assembly milestone cues"
+  ],
+  "live_browser_checks": {
+    "chromium": 48,
+    "webkit": 48
+  },
+  "total_live_browser_checks": 96,
+  "live_failed_checks": 0,
+  "live_runtime_errors": 0,
+  "offline_dsp_checks": 92,
+  "offline_failed_checks": 0,
+  "max_sample_peak": 0.4300000071525574,
+  "original_images_byte_identical": 37,
+  "visual_layout_motion_modules_byte_identical": 14,
+  "verified_published_asset_hashes": 40,
+  "all_published_asset_hashes_match": true,
+  "physical_iphone_audio_tested": false,
+  "subjective_listening_certified": false,
+  "limitations": "Signal/graph and simulated browser checks do not certify perceived timbre, hearing safety, physical-device speakers or latency."
+}

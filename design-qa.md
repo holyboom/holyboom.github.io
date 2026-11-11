@@ -206,3 +206,7 @@ Live suites: 48/48 Chromium, 48/48 WebKit, 68/68 existing Interaction WebKit: **
 - DSP checks: 92/92 pass; all signals finite, non-silent, deterministic and unique; endpoints zero; peak <= 0.431, RMS <= 0.075, DC < 0.001. These bounds do not certify device loudness/hearing safety.
 - Local browser checks: 48/48 in Chromium and 48/48 in WebKit, including trusted tap audio, nonzero graph signal, style mapping, volume/mute persistence, milestones and fallback.
 - Fourteen visual/layout/motion implementation files and all 37 original images byte-identical to v11. No physical iPhone audio or subjective listening certification is claimed. Production results are recorded separately.
+
+### Published Electric v12 verification
+
+48/48 checks passed in Chromium and 48/48 in WebKit on the public release URL, with zero failed assertions/runtime errors. All fourteen audio-visual mappings, sound-only mute, persisted zero volume, first-gesture unlock, bounded voices, milestone cues, no-AudioContext fallback and live Studio selectors were exercised. The 92-check DSP report and source/image comparisons are recorded alongside production results. Audio perception and physical-iPhone playback are not certified.
