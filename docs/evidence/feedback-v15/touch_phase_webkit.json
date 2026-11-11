@@ -1,0 +1,120 @@
+{
+  "base": "https://holyboom.github.io/?v=feedback-v15",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "touch-first-menu-unlocks-and-acknowledges",
+      "pass": true
+    },
+    {
+      "name": "touch-close-responds",
+      "pass": true
+    },
+    {
+      "name": "synthetic-click-does-not-beep",
+      "pass": true
+    },
+    {
+      "name": "touch-scenario-responds",
+      "pass": true
+    },
+    {
+      "name": "phase-transition-build",
+      "pass": true,
+      "last": [
+        {
+          "id": "insight-pulse",
+          "kind": "enable",
+          "time": 1624,
+          "rate": 1.0034160614013672
+        },
+        {
+          "id": "dock",
+          "kind": "cue",
+          "eventKind": "arrival",
+          "key": "dock:orbit:1",
+          "variant": 1,
+          "direction": 1,
+          "time": 4895
+        },
+        {
+          "id": "phase",
+          "kind": "cue",
+          "eventKind": "phase",
+          "key": "phase:build",
+          "variant": 1,
+          "direction": 1,
+          "time": 5027
+        }
+      ]
+    },
+    {
+      "name": "phase-transition-verify",
+      "pass": true,
+      "last": [
+        {
+          "id": "dock",
+          "kind": "cue",
+          "eventKind": "arrival",
+          "key": "dock:orbit:1",
+          "variant": 1,
+          "direction": 1,
+          "time": 4895
+        },
+        {
+          "id": "phase",
+          "kind": "cue",
+          "eventKind": "phase",
+          "key": "phase:build",
+          "variant": 1,
+          "direction": 1,
+          "time": 5027
+        },
+        {
+          "id": "phase",
+          "kind": "cue",
+          "eventKind": "phase",
+          "key": "phase:verify",
+          "variant": 2,
+          "direction": 1,
+          "time": 7728
+        }
+      ]
+    },
+    {
+      "name": "reverse-phase-reason",
+      "pass": true,
+      "last": [
+        {
+          "id": "phase",
+          "kind": "cue",
+          "eventKind": "phase",
+          "key": "phase:verify",
+          "variant": 2,
+          "direction": 1,
+          "time": 7728
+        },
+        {
+          "id": "phase",
+          "kind": "cue",
+          "eventKind": "phase",
+          "key": "phase:reason",
+          "variant": 0,
+          "direction": -1,
+          "time": 10411
+        }
+      ]
+    },
+    {
+      "name": "studio-ten-distinct-cues",
+      "pass": true
+    },
+    {
+      "name": "studio-uses-production-cue-bus",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

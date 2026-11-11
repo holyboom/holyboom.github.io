@@ -1,14 +1,45 @@
 {
   "release": "feedback-v15",
-  "status": "Local verified; production verification pending",
-  "local_checks": {
-    "local-chromium": 69,
-    "local-webkit": 69,
-    "local-touch-phase-webkit": 9,
-    "local-visual-webkit": 68,
-    "local-continuous-audio-webkit": 48
+  "name": "HolyMind Responsive Current",
+  "status": "Published and verified",
+  "implementation_commit": "01a097e3959f41dc2ecba47981b96937c425ce6d",
+  "verified_at": "2026-11-11T15:17:34.442503+00:00",
+  "url": "https://holyboom.github.io/?v=feedback-v15",
+  "studio": "https://holyboom.github.io/qa/feedback-v15.html",
+  "root_cause": "v14 continued ambience and scroll texture across the whole page but deliberately omitted event cues at visual docking and other action changes. Those states had no sound mapping. This was missing semantic feedback, not an observed speaker/mute/cache failure.",
+  "features": {
+    "arrival": "Ten forward visual destinations now acknowledge actual continuity docking after a short settle; returning uses a distinct gathering sound. Holding at one station does not replay it; skipped stations do not queue sounds.",
+    "phase": "Reason/Build/Verify responds to actual visible phase changes, not arbitrary section percentages.",
+    "layers": "Cue on the actual three callout reveal/retract boundaries plus manual layer focus. Preserve the original complete-assembly settle/reconnect without doubling it.",
+    "actions": "Workbench scenario and stage, skill selection, details/dialog open and close including Escape, filters, gallery expand/collapse, services/About/brief disclosures, menu, internal navigation and settled search results respond to real state changes. Same selections stay silent. Copy confirmation is gated on the success status, not the click.",
+    "first_action": "A trusted meaningful control action can start/resume the existing AudioContext. Visitors do not need to return to the hero to tap the brain. Scrolling, hover and synthetic/programmatic state changes do not unlock audio.",
+    "sounds": "Ten newly authored short digital-electric cues (150–310 ms), with state-specific variants, rather than replaying the original brain-tap samples.",
+    "mix": "Single foreground cue lane with a brief fade-out on preemption, priority/cooldown/deduplication and no deferred replay queue. Cues lightly duck the approved field and yield to brain taps.",
+    "preferences": "New Action & arrival cues option in existing Sound mix, on by default and persistent. Master mute/volume still apply. Independent ambience/current switches and always-on visual motion remain.",
+    "preserved": "The approved v14 soundscape module, original fourteen Electric v12 tap synthesis, original artwork, scroll choreography, 34 skills, pinned 0–100–0 assembly and mobile-only brain-first layout are unchanged."
   },
-  "root_cause": "Missing event-to-sound mapping, not a failed ambient/scroll sound engine",
   "new_cue_timbres": 10,
-  "physical_iphone_tested": false
+  "live_checks": {
+    "feedback_chromium": 69,
+    "feedback_webkit": 69,
+    "touch_phase_webkit": 9,
+    "existing_visual_webkit": 68,
+    "continuous_audio_webkit": 48
+  },
+  "total_live_checks": 263,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "test_scope": "69 feedback checks each on Chromium/WebKit, 9 trusted-touch/phase/studio WebKit checks, 68 existing visual checks and 48 continuous-audio regression checks with new cues independently muted. Tests verify measured nonzero cue-bus output, real native inputs, ten forward dockings, five reverse dockings, all three layer reveals and Reason/Build/Verify transitions.",
+  "verified_live_asset_matches": 40,
+  "cue_waveform_checks": 10,
+  "cue_waveforms_unique": 10,
+  "cue_preview_max_peak": 0.12238600105047226,
+  "unchanged_source_style_modules": 20,
+  "original_images_unchanged": 37,
+  "original_tap_presets_unchanged": 14,
+  "new_runtime_dependencies": 0,
+  "audio_contexts": 1,
+  "physical_iphone_audio_tested": false,
+  "subjective_listening_certified": false,
+  "limitations": "Browser automation verifies routing, native-input behavior and nonzero audio signal, not physical iPhone speaker output, real-device latency, listening comfort or motion-accessibility conformance."
 }

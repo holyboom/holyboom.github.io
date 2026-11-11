@@ -250,3 +250,8 @@ See qa/full-current-v14.html and docs/evidence/full-current-v14/summary.json for
 {'local-chromium': 69, 'local-webkit': 69, 'local-touch-phase-webkit': 9, 'local-visual-webkit': 68, 'local-continuous-audio-webkit': 48}; total 263. All final assertions pass; no runtime errors captured. Ten finite and unique cue WAVs pass level/DC checks. Original accepted soundscape, fourteen tap synthesis and visual/control source modules remain byte-identical to bf066a9.
 
 The initial test expected the first service panel to open, but it starts open; the corrected test uses a closed panel. The clear-search button is only present in the empty-results state, so its test uses an empty-result query. No runtime logic was weakened to satisfy these test corrections.
+
+
+### Production feedback-v15 verification
+
+{'feedback_chromium': 69, 'feedback_webkit': 69, 'touch_phase_webkit': 9, 'existing_visual_webkit': 68, 'continuous_audio_webkit': 48}; total 263, zero failed assertions or captured runtime errors in the final live runs. 40 public assets match the local build, including all eleven cue WAVs (ten individual sounds plus audition reel). Continuous audio was independently regression-tested with the new cue lane muted, while separate feedback suites exercise its production default-on behavior. Physical iPhone playback and subjective listening remain unverified.
