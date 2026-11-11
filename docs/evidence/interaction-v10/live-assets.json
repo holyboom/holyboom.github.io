@@ -1,0 +1,78 @@
+[
+  {
+    "asset": "index.html",
+    "match": true
+  },
+  {
+    "asset": "style.css?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "showcase.css?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "continuity.css?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "site.js?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "assembly-lab.css?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "brain-energy.css?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "ambient-current.css?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "interaction-v10.css?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "assets/vendor/gsap-3.15.1.min.js",
+    "match": true
+  },
+  {
+    "asset": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "match": true
+  },
+  {
+    "asset": "neural-core.js?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "scroll-motion.js?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "showcase.js?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "energy-field.js?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "continuity.js?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "assembly-lab.js?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "ambient-current.js?v=interaction-v10",
+    "match": true
+  },
+  {
+    "asset": "assembly-scroll.js?v=interaction-v10",
+    "match": true
+  }
+]

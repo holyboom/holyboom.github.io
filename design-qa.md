@@ -182,3 +182,7 @@ Harness correction: scroll the stable scene or use its live coordinates to view 
 Both Chromium and WebKit passed 68 acceptance checks, with zero failed assertions or captured runtime errors. Tests cover native touch, keyboard burst, repeat bounds, gesture cancellation, pin geometry, nonlinear progress, endpoint hold/release, reversal, real leader endpoints, manual scrubbing, eight viewport/orientation combinations, single-pin rebuilding, continuity interval, all twelve workbench steps, 34 skills, dialogs, direct anchors and fallbacks. Rendered portrait, landscape and desktop views were inspected. A stale inline pin-size issue found during rotation was fixed by rebuilding from natural styles before refresh. Live verification is recorded separately after deployment.
 
 The existing energy/continuity regression suite also passed all 85 checks in WebKit, including all ten reversed bridges and original assembly controls.
+
+### Published Interaction v10 verification
+
+Live acceptance: Chromium 68/68 and WebKit 68/68, zero failures and observed runtime errors. All 19 HTML/CSS/JS files served by the public page matched source hashes. A native-input recording confirms three tap bursts and a 0 → 100 → 0 pinned reveal. See `qa/interaction-v10.html` and `docs/evidence/interaction-v10/summary.json`. Physical-device testing remains outstanding.

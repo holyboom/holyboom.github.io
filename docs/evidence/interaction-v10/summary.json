@@ -1,0 +1,47 @@
+{
+  "release": "interaction-v10",
+  "implementation_commit": "c8e50f6dc604adefdd2d1705663f082888cba0d4",
+  "verified_at": "2026-11-11T11:37:26.119924+00:00",
+  "url": "https://holyboom.github.io/?v=interaction-v10",
+  "features": {
+    "brain_discharge": "Tap/click hero or orbital brain, or press Enter/Space. Original crystallizer glyphs, faceted pixel shards and extra pulses along six nearby original neural paths; 1.2 second finite effect, up to three concurrent bursts. Cancelled/drifting scroll gestures do not fire.",
+    "guided_assembly": "Starts at zero. Presentation pins below navigation; native scroll drives smootherstep (slow-normal-slow) expansion and all real anchored callouts. A completed 100% view is held before the pin releases. Reverse scrolling reconnects and releases upward.",
+    "controls": "Existing native range seeks the same scroll timeline, including Home/End/arrows. Side labels still focus their layer. No wheel/touch cancellation, scroll snapping or timer-based lock.",
+    "viewport_fit": "Viewport-fitting pinned composition; short-landscape shows concise layer titles with the complete guide outside the pin. Resize rebuild preserves the active story position.",
+    "continuity": "All ten bridges retained; assembly receives and holds the shared crystal throughout its pinned interval, then passes it onward.",
+    "preserved": "Always-on ambient motion, phone-only brain-first layout, desktop/tablet composition, 34 skills, original workbench and contact destinations."
+  },
+  "live_checks": {
+    "chromium": 68,
+    "webkit": 68
+  },
+  "total_live_checks": 136,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "additional_local_energy_regression_checks": 85,
+  "original_source_images_unchanged": 37,
+  "verified_live_asset_matches": 19,
+  "new_runtime_dependencies": 0,
+  "viewports": [
+    "320x740",
+    "390x844",
+    "430x932",
+    "680x960",
+    "768x1000",
+    "1024x900",
+    "1440x1000",
+    "844x390"
+  ],
+  "recording": {
+    "source": "Published page in a phone-sized WebKit viewport with touch capability",
+    "interactions": "Three native touch taps, then native wheel events down and back up",
+    "values": [
+      0,
+      100,
+      0
+    ],
+    "frames": 55,
+    "physical_phone": false
+  },
+  "limitations": "Not tested on a physical iPhone; no independent flash-safety or motion-accessibility certification claimed."
+}
