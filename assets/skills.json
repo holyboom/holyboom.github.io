@@ -1,0 +1,342 @@
+[
+  {
+    "id": "goal-driven-execution",
+    "name": "Goal-driven execution",
+    "category": "build",
+    "purpose": "Keep the business outcome in sight.",
+    "description": "Turn an ambition into a clear result, a next action, and a way to see progress.",
+    "example": "Example: define what a useful first automation should accomplish before adding features.",
+    "concept": "Goal-directed behavior",
+    "concept_th": "มุ่งสู่เป้าหมาย"
+  },
+  {
+    "id": "angle-agents",
+    "name": "Angle agents",
+    "category": "reason",
+    "purpose": "See a challenge from several perspectives.",
+    "description": "Look at the same question through different professional or user perspectives to uncover overlooked trade-offs.",
+    "example": "Example: review an AI support workflow from the customer, operations, and engineering viewpoints.",
+    "concept": "Perspective taking",
+    "concept_th": "มองหลายมุม"
+  },
+  {
+    "id": "mcp-orchestrator",
+    "name": "MCP orchestration",
+    "category": "build",
+    "purpose": "Coordinate tools around a shared goal.",
+    "description": "Connect the roles of tools and information sources into a coherent workflow with clear boundaries.",
+    "example": "Example: plan how an approved knowledge source and a drafting tool should work together.",
+    "concept": "Distributed cognition",
+    "concept_th": "กระจายและประสานความคิด"
+  },
+  {
+    "id": "chain-of-verification",
+    "name": "Chain of verification",
+    "category": "verify",
+    "purpose": "Check a claim against its evidence.",
+    "description": "Break a complex answer into checkable claims and inspect the evidence behind the parts that matter.",
+    "example": "Example: verify names, dates, and source support before sharing a research summary.",
+    "concept": "Reality testing",
+    "concept_th": "ตรวจเทียบหลักฐาน"
+  },
+  {
+    "id": "spec-before-build",
+    "name": "Spec before build",
+    "category": "reason",
+    "purpose": "Make the intended outcome explicit.",
+    "description": "Describe what a system should do, where its boundaries lie, and what would count as a useful result.",
+    "example": "Example: agree on inputs, outputs, and acceptance criteria for a small prototype.",
+    "concept": "Mental modeling",
+    "concept_th": "สร้างแบบจำลองก่อนทำ"
+  },
+  {
+    "id": "subagent-fanout",
+    "name": "Subagent fanout",
+    "category": "build",
+    "purpose": "Explore independent tasks in parallel.",
+    "description": "Divide a broad problem into independent parts, then bring the findings back into one coherent result.",
+    "example": "Example: explore user needs, integration options, and evaluation methods at the same time.",
+    "concept": "Parallel processing",
+    "concept_th": "แยกคิดพร้อมกัน"
+  },
+  {
+    "id": "source-grounded-synthesis",
+    "name": "Grounded synthesis",
+    "category": "verify",
+    "purpose": "Bring sources together without losing them.",
+    "description": "Combine relevant evidence into a useful explanation while keeping the sources and uncertainties visible.",
+    "example": "Example: compare several documents and clearly separate agreement, conflict, and missing information.",
+    "concept": "Grounded integration",
+    "concept_th": "รวมความคิดบนฐานหลักฐาน"
+  },
+  {
+    "id": "decision-card",
+    "name": "Decision card",
+    "category": "reason",
+    "purpose": "Make the trade-offs easy to inspect.",
+    "description": "Put the question, options, evidence, and trade-offs in one concise view that supports a deliberate choice.",
+    "example": "Example: compare a manual process, a rule-based automation, and an AI-assisted workflow.",
+    "concept": "Deliberate choice",
+    "concept_th": "ตัดสินใจอย่างใคร่ครวญ"
+  },
+  {
+    "id": "anti-harking-reviewer",
+    "name": "Hindsight review",
+    "category": "verify",
+    "purpose": "Judge a result against the original question.",
+    "description": "Revisit a conclusion without quietly rewriting the expectations to fit what happened.",
+    "example": "Example: compare a pilot result with the success criteria agreed before the trial.",
+    "concept": "Hindsight-bias resistance",
+    "concept_th": "ต้านอคติการมองย้อนหลัง"
+  },
+  {
+    "id": "choose",
+    "name": "Choose a skill",
+    "category": "reason",
+    "purpose": "Find a useful place to start.",
+    "description": "Match a challenge to a suitable way of thinking or working before moving into detailed execution.",
+    "example": "Example: decide whether the next step needs planning, exploration, or evidence checking.",
+    "concept": "Selective attention",
+    "concept_th": "เลือกจุดสนใจ"
+  },
+  {
+    "id": "claude-environment-config",
+    "name": "Environment setup",
+    "category": "build",
+    "purpose": "Prepare the context for focused work.",
+    "description": "Make the working environment and relevant context clear enough to support the task ahead.",
+    "example": "Example: identify the project context and available tools before beginning an engineering session.",
+    "concept": "Context scaffolding",
+    "concept_th": "สร้างบริบทสนับสนุน"
+  },
+  {
+    "id": "codex-offload",
+    "name": "Task offload",
+    "category": "build",
+    "purpose": "Hand over a well-defined piece of work.",
+    "description": "Reduce cognitive load by giving a bounded task a clear outcome, useful context, and a review point.",
+    "example": "Example: delegate an isolated implementation task with explicit acceptance criteria.",
+    "concept": "Cognitive offloading",
+    "concept_th": "ฝากภาระความจำ"
+  },
+  {
+    "id": "constraint-discovery-loop",
+    "name": "Constraint discovery",
+    "category": "verify",
+    "purpose": "Learn what the system must respect.",
+    "description": "Use a mismatch or failed result to identify the constraint that was missing from the original understanding.",
+    "example": "Example: turn a failed import into an explicit validation requirement for the next attempt.",
+    "concept": "Boundary awareness",
+    "concept_th": "รู้ขอบเขตข้อจำกัด"
+  },
+  {
+    "id": "context-thrift",
+    "name": "Context thrift",
+    "category": "build",
+    "purpose": "Keep the useful context close.",
+    "description": "Distill working information so the next step has the essentials without repeating everything.",
+    "example": "Example: carry forward the current goal, decisions, and open questions after a long session.",
+    "concept": "Working-memory efficiency",
+    "concept_th": "ใช้ความจำทำงานอย่างคุ้มค่า"
+  },
+  {
+    "id": "controlled-gap-fill-inference",
+    "name": "Calibrated inference",
+    "category": "reason",
+    "purpose": "Keep assumptions visible.",
+    "description": "Bridge a gap in the available information with a clearly labeled inference, while preserving what remains uncertain.",
+    "example": "Example: outline a tentative workflow while marking integration details that still need confirmation.",
+    "concept": "Calibrated inference",
+    "concept_th": "อนุมานตามระดับหลักฐาน"
+  },
+  {
+    "id": "debate-deadlock-resolver",
+    "name": "Resolve a deadlock",
+    "category": "reason",
+    "purpose": "Find a way forward when options clash.",
+    "description": "Reframe a disagreement to reveal new information, alternatives, or a useful next experiment.",
+    "example": "Example: turn an architecture debate into a small test that can distinguish the options.",
+    "concept": "Cognitive flexibility",
+    "concept_th": "ยืดหยุ่นทางความคิด"
+  },
+  {
+    "id": "dual-agent-debate",
+    "name": "Dual-agent debate",
+    "category": "reason",
+    "purpose": "Give a proposal a thoughtful challenge.",
+    "description": "Explore contrasting arguments around a proposal so that strengths, weaknesses, and unresolved questions become clearer.",
+    "example": "Example: compare the case for a simpler workflow with the case for a more capable agent.",
+    "concept": "Dialectical thinking",
+    "concept_th": "คิดจากมุมที่แตกต่าง"
+  },
+  {
+    "id": "dynamic-skill-sequencer",
+    "name": "Skill sequencing",
+    "category": "build",
+    "purpose": "Put the next steps in a useful order.",
+    "description": "Arrange different ways of working into a sequence that fits the current problem and dependencies.",
+    "example": "Example: clarify the goal, gather evidence, draft a solution, then review the result.",
+    "concept": "Executive sequencing",
+    "concept_th": "จัดลำดับการทำงาน"
+  },
+  {
+    "id": "enhancement-engine",
+    "name": "Enhancement engine",
+    "category": "build",
+    "purpose": "Improve what matters most.",
+    "description": "Examine an existing result for focused improvements that make the work more useful and complete.",
+    "example": "Example: refine a prototype around the point where users struggle most.",
+    "concept": "Growth orientation",
+    "concept_th": "พัฒนาอย่างต่อเนื่อง"
+  },
+  {
+    "id": "evaluator-optimizer",
+    "name": "Evaluate and improve",
+    "category": "verify",
+    "purpose": "Turn feedback into a better next version.",
+    "description": "Compare an output with a clear expectation, identify a gap, and use the feedback to guide a revision.",
+    "example": "Example: review a generated answer for source support and clarity, then address the weakest part.",
+    "concept": "Metacognitive feedback",
+    "concept_th": "ตรวจทวนและปรับความคิด"
+  },
+  {
+    "id": "evidence-manifest-builder",
+    "name": "Evidence manifest",
+    "category": "verify",
+    "purpose": "Keep the proof easy to trace.",
+    "description": "Organize supporting material so someone can find what backs a claim or a completed piece of work.",
+    "example": "Example: gather the relevant sources and check results for a prototype review.",
+    "concept": "Memory traceability",
+    "concept_th": "สืบย้อนร่องรอยหลักฐาน"
+  },
+  {
+    "id": "fleet-pause-resume",
+    "name": "Pause and resume",
+    "category": "build",
+    "purpose": "Keep coordinated work under control.",
+    "description": "Think about where a group of tasks can pause safely and what context is needed to continue.",
+    "example": "Example: pause several workstreams while a shared dependency is being clarified.",
+    "concept": "Inhibitory control",
+    "concept_th": "หยุดและควบคุมการทำงาน"
+  },
+  {
+    "id": "plan-mode",
+    "name": "Plan mode",
+    "category": "reason",
+    "purpose": "Look ahead before taking action.",
+    "description": "Map the intended steps, dependencies, and unknowns before beginning a piece of work.",
+    "example": "Example: outline an AI pilot from the initial question through a small evaluation.",
+    "concept": "Prospective thinking",
+    "concept_th": "คิดล่วงหน้า"
+  },
+  {
+    "id": "pre-registered-triggers",
+    "name": "Pre-registered triggers",
+    "category": "verify",
+    "purpose": "Set decision criteria before the result.",
+    "description": "Make the conditions for continuing, changing direction, or stopping explicit in advance.",
+    "example": "Example: agree on the evidence needed to expand a pilot before seeing its results.",
+    "concept": "Precommitment",
+    "concept_th": "กำหนดเงื่อนไขไว้ก่อน"
+  },
+  {
+    "id": "scope-bridge",
+    "name": "Scope bridge",
+    "category": "reason",
+    "purpose": "Connect related contexts clearly.",
+    "description": "Bring relevant ideas from one area into another while making the relationship and limits explicit.",
+    "example": "Example: connect a business requirement with the engineering decisions it affects.",
+    "concept": "Context integration",
+    "concept_th": "เชื่อมบริบท"
+  },
+  {
+    "id": "seed-expansion-via-search",
+    "name": "Seed expansion",
+    "category": "reason",
+    "purpose": "Grow a useful lead into a wider view.",
+    "description": "Start from a known idea or source and explore related questions that may improve understanding.",
+    "example": "Example: use one promising workflow as a starting point for investigating adjacent use cases.",
+    "concept": "Associative expansion",
+    "concept_th": "ขยายความคิดเชื่อมโยง"
+  },
+  {
+    "id": "skill-md-inspector",
+    "name": "Skill inspection",
+    "category": "verify",
+    "purpose": "Look closely at how a capability is defined.",
+    "description": "Read a capability with focused attention to its purpose, expectations, and limits.",
+    "example": "Example: inspect whether a tool or skill actually fits the task before relying on it.",
+    "concept": "Focused attention",
+    "concept_th": "เจาะจุดตรวจสอบ"
+  },
+  {
+    "id": "skill-triad-techniques",
+    "name": "Triad techniques",
+    "category": "reason",
+    "purpose": "Examine a problem through three lenses.",
+    "description": "Use three complementary perspectives or techniques to reveal different aspects of the same problem.",
+    "example": "Example: consider a proposed automation through usefulness, feasibility, and risk.",
+    "concept": "Triangulation",
+    "concept_th": "ตรวจด้วยสามมุม"
+  },
+  {
+    "id": "structured-output-thai",
+    "name": "Structured Thai output",
+    "category": "build",
+    "purpose": "Make the answer clear in Thai.",
+    "description": "Organize ideas into a Thai-language response that is easier to read, compare, and act on.",
+    "example": "Example: turn a technical analysis into a concise Thai decision brief.",
+    "concept": "Cognitive clarity",
+    "concept_th": "จัดความคิดให้ชัด"
+  },
+  {
+    "id": "the-crystallizer",
+    "name": "The crystallizer",
+    "category": "reason",
+    "purpose": "Turn scattered thinking into a clear takeaway.",
+    "description": "Distill a discussion into the durable idea, decision, or useful pattern that should carry forward.",
+    "example": "Example: capture the key lesson from a prototype review in a concise working principle.",
+    "concept": "Cognitive closure",
+    "concept_th": "กลั่นความคิดให้ชัด"
+  },
+  {
+    "id": "token-aware-handoff",
+    "name": "Context handoff",
+    "category": "build",
+    "purpose": "Carry the important context forward.",
+    "description": "Summarize the goal, decisions, evidence, and next steps so work can continue with less context loss.",
+    "example": "Example: prepare a compact handoff for the next engineering session.",
+    "concept": "Memory continuity",
+    "concept_th": "ส่งต่อบริบทไม่สูญหาย"
+  },
+  {
+    "id": "watcher-boost",
+    "name": "Watcher",
+    "category": "verify",
+    "purpose": "Keep attention on important changes.",
+    "description": "Maintain focused awareness of a process and the signals that may deserve a closer look.",
+    "example": "Example: identify which changes in a running workflow should prompt a review.",
+    "concept": "Vigilant attention",
+    "concept_th": "เฝ้าตรวจอย่างมีสมาธิ"
+  },
+  {
+    "id": "workflow-blueprint",
+    "name": "Workflow blueprint",
+    "category": "reason",
+    "purpose": "Give the work a practical structure.",
+    "description": "Translate a goal into a coherent outline of steps, responsibilities, and expected outputs.",
+    "example": "Example: map how a request moves from intake through review to an approved action.",
+    "concept": "Implementation intention",
+    "concept_th": "วางโครงก่อนลงมือ"
+  },
+  {
+    "id": "workflow-executor",
+    "name": "Workflow execution",
+    "category": "build",
+    "purpose": "Move from a plan to the next action.",
+    "description": "Follow a defined sequence of work while keeping its intended outcome and checkpoints visible.",
+    "example": "Example: work through a small implementation plan and review the result at each checkpoint.",
+    "concept": "Action initiation",
+    "concept_th": "เริ่มและเดินงานจริง"
+  }
+]

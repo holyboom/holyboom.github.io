@@ -41,19 +41,73 @@
    measure: "Task completion, user feedback, operating cost, and evidence for the original assumption."
   }
  };
+ // These pairings illustrate how a business workflow relates to HolyMind concepts.
+ // They do not run any agents, models, or third-party services.
+ const stageSkills = {
+  operations: [
+   ["workflow-blueprint", "Workflow blueprint"],
+   ["constraint-discovery-loop", "Constraint discovery"],
+   ["workflow-executor", "Workflow execution"],
+   ["decision-card", "Decision card"]
+  ],
+  knowledge: [
+   ["spec-before-build", "Spec before build"],
+   ["seed-expansion-via-search", "Seed expansion"],
+   ["source-grounded-synthesis", "Grounded synthesis"],
+   ["chain-of-verification", "Chain of verification"]
+  ],
+  venture: [
+   ["goal-driven-execution", "Goal-driven execution"],
+   ["workflow-blueprint", "Workflow blueprint"],
+   ["evaluator-optimizer", "Evaluate and improve"],
+   ["decision-card", "Decision card"]
+  ]
+ };
+ const byId = id => document.getElementById(id);
+ const setText = (id, text) => { const node = byId(id); if (node) node.textContent = text; };
  const tabs = [...document.querySelectorAll("[data-challenge]")];
  const stepButtons = [...document.querySelectorAll("[data-step]")];
- const panel = document.getElementById("strategy-panel");
- const brief = document.getElementById("project-brief");
- const drawer = document.getElementById("brief-drawer");
- const status = document.getElementById("copy-status");
+ const panel = byId("strategy-panel");
+ const brief = byId("project-brief");
+ const drawer = byId("brief-drawer");
  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+ document.documentElement.classList.add("js");
  let current = "operations";
- const setText = (id, text) => { const node = document.getElementById(id); if(node) node.textContent = text; };
+
+ // The visitor can always pause decorative movement. System preference is the default.
+ const motionButton = byId("motion-toggle");
+ let motionPreference = null;
+ try { motionPreference = localStorage.getItem("holyboom-motion"); } catch (_) { /* Storage can be unavailable in private browsing. */ }
+ let motionEnabled = motionPreference === "on" || (motionPreference !== "off" && !reduced.matches);
+ function applyMotion() {
+  document.body.dataset.motion = motionEnabled ? "on" : "off";
+  if (!motionButton) return;
+  motionButton.setAttribute("aria-pressed", String(motionEnabled));
+  motionButton.setAttribute("aria-label", motionEnabled ? "Turn animations off" : "Turn animations on");
+  const label = motionButton.querySelector(".motion-label");
+  if (label) label.textContent = motionEnabled ? "Motion on" : "Motion off";
+ }
+ motionButton?.addEventListener("click", () => {
+  motionEnabled = !motionEnabled;
+  motionPreference = motionEnabled ? "on" : "off";
+  try { localStorage.setItem("holyboom-motion", motionPreference); } catch (_) { /* Keep the setting for this page even without storage. */ }
+  applyMotion();
+ });
+ reduced.addEventListener("change", () => {
+  if (motionPreference === null) { motionEnabled = !reduced.matches; applyMotion(); }
+ });
+ applyMotion();
+
  function selectStep(index) {
   const row = challenges[current].stages[index];
+  if (!row) return;
   stepButtons.forEach((button, i) => button.setAttribute("aria-pressed", String(i === index)));
-  setText("step-title", row[1]); setText("step-description", row[2]);
+  setText("step-title", row[1]);
+  setText("step-description", row[2]);
+  const skill = stageSkills[current][index];
+  const stageIcon = byId("stage-icon");
+  if (stageIcon) { stageIcon.src = "assets/skills/" + skill[0] + ".webp"; stageIcon.alt = ""; }
+  setText("workbench-skill-name", skill[1]);
  }
  function makeBrief() {
   const c = challenges[current];
@@ -62,41 +116,256 @@
  function selectChallenge(key, focus = false) {
   if (!Object.prototype.hasOwnProperty.call(challenges, key)) return;
   current = key;
-  tabs.forEach((tab) => {const selected = tab.dataset.challenge === key; tab.setAttribute("aria-selected", String(selected)); tab.tabIndex = selected ? 0 : -1; if (selected && focus) tab.focus(); });
-  panel.setAttribute("aria-labelledby", "tab-" + key);
+  tabs.forEach(tab => {
+   const selected = tab.dataset.challenge === key;
+   tab.setAttribute("aria-selected", String(selected));
+   tab.tabIndex = selected ? 0 : -1;
+   if (selected && focus) tab.focus();
+  });
+  panel?.setAttribute("aria-labelledby", "tab-" + key);
   const c = challenges[key];
-  setText("scenario-title", c.title); setText("scenario-question", c.question);
+  setText("scenario-title", c.title);
+  setText("scenario-question", c.question);
   setText("scenario-count", (Object.keys(challenges).indexOf(key) + 1) + " of 3");
-  setText("guardrail", c.guardrail); setText("measure", c.measure);
-  stepButtons.forEach((button, index) => {button.querySelector(".step-label").textContent = c.stages[index][0];});
-  selectStep(0); brief.value = makeBrief();
+  setText("guardrail", c.guardrail);
+  setText("measure", c.measure);
+  stepButtons.forEach((button, index) => {
+   const label = button.querySelector(".step-label");
+   if (label) label.textContent = c.stages[index][0];
+  });
+  selectStep(0);
+  if (brief) brief.value = makeBrief();
   setText("copy-status", "Nothing is sent. The brief stays in your browser.");
  }
  tabs.forEach((tab, index) => {
   tab.addEventListener("click", () => selectChallenge(tab.dataset.challenge));
-  tab.addEventListener("keydown", (event) => {
+  tab.addEventListener("keydown", event => {
    let target = null;
    if (event.key === "ArrowDown" || event.key === "ArrowRight") target = (index + 1) % tabs.length;
    else if (event.key === "ArrowUp" || event.key === "ArrowLeft") target = (index + tabs.length - 1) % tabs.length;
    else if (event.key === "Home") target = 0;
    else if (event.key === "End") target = tabs.length - 1;
-   if (target !== null) {event.preventDefault(); selectChallenge(tabs[target].dataset.challenge, true);}
+   if (target !== null) { event.preventDefault(); selectChallenge(tabs[target].dataset.challenge, true); }
   });
  });
  stepButtons.forEach((button, index) => button.addEventListener("click", () => selectStep(index)));
- document.getElementById("open-brief").addEventListener("click", () => {drawer.open = true; brief.value = makeBrief(); drawer.scrollIntoView({behavior: reduced.matches ? "auto" : "smooth", block: "center"}); drawer.querySelector("summary").focus({preventScroll:true});});
- document.getElementById("copy-brief").addEventListener("click", async () => {
-  const text = makeBrief(); brief.value = text;
+ byId("open-brief")?.addEventListener("click", () => {
+  if (!drawer || !brief) return;
+  drawer.open = true;
+  brief.value = makeBrief();
+  drawer.scrollIntoView({ behavior: motionEnabled ? "smooth" : "auto", block: "center" });
+  drawer.querySelector("summary")?.focus({ preventScroll: true });
+ });
+ byId("copy-brief")?.addEventListener("click", async () => {
+  if (!brief) return;
+  const text = makeBrief();
+  brief.value = text;
   try {
    if (!navigator.clipboard || !window.isSecureContext) throw new Error("Clipboard unavailable");
    await navigator.clipboard.writeText(text);
    setText("copy-status", "Project brief copied. Ready to paste into your notes or a conversation.");
   } catch (_) {
-   brief.focus(); brief.select();
+   brief.focus();
+   brief.select();
    setText("copy-status", "Automatic copy is unavailable. The brief is selected — use your device’s Copy command.");
   }
  });
- const updateOrientation = () => {document.querySelector(".challenge-picker").setAttribute("aria-orientation", matchMedia("(min-width:541px) and (max-width:780px)").matches ? "horizontal" : "vertical");};
- window.addEventListener("resize",updateOrientation,{passive:true});
- updateOrientation(); selectChallenge("operations");
+ function updateOrientation() {
+  if (tabs.length < 2) return;
+  const first = tabs[0].getBoundingClientRect();
+  const second = tabs[1].getBoundingClientRect();
+  document.querySelector(".challenge-picker")?.setAttribute("aria-orientation", Math.abs(first.top - second.top) < 4 ? "horizontal" : "vertical");
+ }
+ window.addEventListener("resize", updateOrientation, { passive: true });
+ updateOrientation();
+ selectChallenge("operations");
+
+ // The compact navigation has the same links and destinations as the desktop version.
+ const menuToggle = byId("menu-toggle");
+ const primaryNav = byId("primary-nav");
+ function setMenu(open, restoreFocus = false) {
+  if (!menuToggle || !primaryNav) return;
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  primaryNav.classList.toggle("is-open", open);
+  primaryNav.dataset.open = String(open);
+  const label = menuToggle.querySelector(".menu-label");
+  if (label) label.textContent = open ? "Close" : "Menu";
+  if (restoreFocus) menuToggle.focus();
+ }
+ menuToggle?.addEventListener("click", () => setMenu(menuToggle.getAttribute("aria-expanded") !== "true"));
+ primaryNav?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => setMenu(false)));
+ document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") setMenu(false, true);
+ });
+ document.addEventListener("click", event => {
+  if (menuToggle?.getAttribute("aria-expanded") !== "true") return;
+  if (!primaryNav?.contains(event.target) && !menuToggle.contains(event.target)) setMenu(false);
+ });
+ window.matchMedia("(min-width: 681px)").addEventListener("change", event => { if (event.matches) setMenu(false); });
+
+ // Small orientation cues, with no continuous animation loop.
+ const progress = byId("scroll-progress");
+ let progressQueued = false;
+ function updateProgress() {
+  const length = document.documentElement.scrollHeight - window.innerHeight;
+  const fraction = length > 0 ? Math.max(0, Math.min(1, window.scrollY / length)) : 0;
+  if (progress) progress.style.transform = "scaleX(" + fraction + ")";
+  progressQueued = false;
+ }
+ function queueProgress() {
+  if (!progressQueued) { progressQueued = true; requestAnimationFrame(updateProgress); }
+ }
+ window.addEventListener("scroll", queueProgress, { passive: true });
+ window.addEventListener("resize", queueProgress, { passive: true });
+ updateProgress();
+ const navLinks = [...(primaryNav?.querySelectorAll('a[href^="#"]') || [])];
+ if ("IntersectionObserver" in window && navLinks.length) {
+  const visibleSections = new Set();
+  const navObserver = new IntersectionObserver(entries => {
+   entries.forEach(entry => entry.isIntersecting ? visibleSections.add(entry.target.id) : visibleSections.delete(entry.target.id));
+   const currentLink = navLinks.find(link => visibleSections.has(link.hash.slice(1)));
+   navLinks.forEach(link => {
+    if (link === currentLink) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+   });
+  }, { rootMargin: "-10% 0px -55% 0px", threshold: 0 });
+  navLinks.forEach(link => { const target = byId(link.hash.slice(1)); if (target) navObserver.observe(target); });
+ }
+
+ // Skill explorer: public concept summaries, loaded from the site's own static file.
+ const grid = byId("skills-grid");
+ const search = byId("skill-search");
+ const filters = [...document.querySelectorAll("[data-filter]")];
+ const showSkills = byId("show-skills");
+ const empty = byId("skills-empty");
+ const dialog = byId("skill-dialog");
+ const categoryLabels = { reason: "Reason", build: "Build", verify: "Verify" };
+ let skills = [];
+ let category = "all";
+ let expanded = false;
+ let dialogOpener = null;
+ let dialogNavigation = false;
+ let previousOverflow = "";
+
+ function openSkill(skill, opener) {
+  if (!dialog || typeof dialog.showModal !== "function") return;
+  dialogOpener = opener;
+  dialogNavigation = false;
+  const icon = byId("skill-dialog-icon");
+  if (icon) { icon.src = "assets/skills/" + skill.id + ".webp"; icon.alt = ""; }
+  setText("skill-dialog-category", categoryLabels[skill.category]);
+  setText("skill-dialog-title", skill.name);
+  setText("skill-dialog-description", skill.description);
+  setText("skill-dialog-example", skill.example);
+  const source = byId("skill-source");
+  if (source) { source.href = "#workbench"; source.textContent = "Try a business scenario"; }
+  previousOverflow = document.body.style.overflow;
+  document.body.style.overflow = "hidden";
+  dialog.showModal();
+  byId("close-skill-dialog")?.focus();
+ }
+ byId("close-skill-dialog")?.addEventListener("click", () => dialog?.close());
+ byId("skill-source")?.addEventListener("click", () => { dialogNavigation = true; dialog?.close(); });
+ dialog?.addEventListener("click", event => {
+  if (event.target !== dialog) return;
+  const bounds = dialog.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+ });
+ dialog?.addEventListener("close", () => {
+  document.body.style.overflow = previousOverflow;
+  if (!dialogNavigation && dialogOpener?.isConnected) dialogOpener.focus({ preventScroll: true });
+  if (dialogNavigation) {
+   const workbench = byId("workbench");
+   if (workbench) {
+    workbench.tabIndex = -1;
+    workbench.focus({ preventScroll: true });
+   }
+  }
+ });
+ function normalize(value) { return String(value).normalize("NFKC").toLocaleLowerCase().trim(); }
+ function makeCard(skill) {
+  const card = document.createElement("button");
+  card.type = "button";
+  card.className = "skill-card";
+  card.dataset.skill = skill.id;
+  card.setAttribute("aria-haspopup", "dialog");
+  const icon = document.createElement("img");
+  icon.src = "assets/skills/" + skill.id + ".webp";
+  icon.alt = "";
+  icon.width = 128;
+  icon.height = 128;
+  icon.loading = "lazy";
+  icon.decoding = "async";
+  card.append(icon);
+  [["skill-category", categoryLabels[skill.category]], ["skill-name", skill.name], ["skill-purpose", skill.purpose]].forEach(([className, text]) => {
+   const element = document.createElement("span");
+   element.className = className;
+   element.textContent = text;
+   card.append(element);
+  });
+  card.addEventListener("click", () => openSkill(skill, card));
+  return card;
+ }
+ function renderSkills() {
+  if (!grid) return;
+  const terms = normalize(search?.value || "").split(/\s+/).filter(Boolean);
+  const matches = skills.filter(skill => {
+   if (category !== "all" && skill.category !== category) return false;
+   const haystack = normalize([skill.id.replaceAll("-", " "), skill.name, skill.purpose, skill.concept, skill.concept_th, categoryLabels[skill.category]].join(" "));
+   return terms.every(term => haystack.includes(term));
+  });
+  const limited = !expanded && category === "all" && terms.length === 0;
+  const displayed = limited ? matches.slice(0, 8) : matches;
+  const fragment = document.createDocumentFragment();
+  displayed.forEach(skill => fragment.append(makeCard(skill)));
+  grid.replaceChildren(fragment);
+  if (empty) empty.hidden = displayed.length > 0;
+  if (showSkills) {
+   showSkills.hidden = category !== "all" || terms.length > 0 || skills.length <= 8;
+   showSkills.setAttribute("aria-expanded", String(expanded));
+   showSkills.textContent = expanded ? "Show featured skills" : "Explore all " + skills.length + " skills";
+  }
+  const total = matches.length;
+  setText("skills-count", limited ? "8 featured · " + skills.length + " skills to explore" : total + (total === 1 ? " skill" : " skills") + (category === "all" ? "" : " · " + categoryLabels[category]));
+  queueProgress();
+ }
+ search?.addEventListener("input", renderSkills);
+ filters.forEach(button => button.addEventListener("click", () => {
+  const key = button.dataset.filter;
+  if (key !== "all" && !Object.prototype.hasOwnProperty.call(categoryLabels, key)) return;
+  category = key;
+  filters.forEach(filter => filter.setAttribute("aria-pressed", String(filter === button)));
+  renderSkills();
+ }));
+ showSkills?.addEventListener("click", () => {
+  expanded = !expanded;
+  renderSkills();
+  if (!expanded) byId("framework")?.scrollIntoView({ behavior: motionEnabled ? "smooth" : "auto", block: "start" });
+ });
+ byId("clear-search")?.addEventListener("click", () => {
+  if (search) search.value = "";
+  category = "all";
+  expanded = false;
+  filters.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.filter === "all")));
+  renderSkills();
+  search?.focus();
+ });
+ if (grid) {
+  grid.setAttribute("aria-busy", "true");
+  fetch("assets/skills.json")
+   .then(response => { if (!response.ok) throw new Error("Skill summaries unavailable"); return response.json(); })
+   .then(data => {
+    if (!Array.isArray(data) || !data.every(skill => typeof skill.id === "string" && /^[a-z0-9-]+$/.test(skill.id) && Object.prototype.hasOwnProperty.call(categoryLabels, skill.category) && [skill.name, skill.purpose, skill.description, skill.example].every(value => typeof value === "string"))) throw new Error("Invalid skill summaries");
+    skills = data;
+    renderSkills();
+   })
+   .catch(() => {
+    setText("skills-count", "The skill explorer could not load. Refresh this page to try again.");
+    if (showSkills) showSkills.hidden = true;
+    if (search) search.disabled = true;
+    filters.forEach(button => { button.disabled = true; });
+   })
+   .finally(() => grid.setAttribute("aria-busy", "false"));
+ }
 })();

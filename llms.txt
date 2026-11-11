@@ -1,6 +1,6 @@
 # Theerawee Rangram (Boom / @holyboom)
 
-> AI Engineer and AI Solutions Architect in Bangkok, Thailand. I turn ambitious business strategies into working AI systems, agentic workflows, and automation.
+> AI Engineer and AI Solutions Architect in Bangkok, Thailand, and creator of HolyMind Framework. I turn ambitious business strategies into working AI systems, agentic workflows, and automation.
 
 ## Public identity
 - Website: https://holyboom.github.io/
@@ -10,6 +10,9 @@
 
 ## Areas of work
 AI Engineering, Agentic AI, AI Solutions Architecture, AI Strategy Execution, Business Process Automation, AI Transformation, LLM Evaluation & Guardrails, and Software Integration.
+
+## HolyMind Framework
+HolyMind is Boom’s framework for goal-directed work, connected capabilities, evidence and verification. The website presents 34 original skill symbols with public concept summaries, grouped into Reason, Build and Verify. Visitors can search the collection and read illustrative use cases. The site does not run the framework or execute agents.
 
 ## Reading the website
 The interactive workbench contains illustrative architecture sketches and planning briefs. They are not client case studies, performance claims, or a live AI service. No information is submitted by the workbench.
