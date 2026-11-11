@@ -28,7 +28,11 @@ Display: self-hosted Sora variable, weight 500 for large headings, tracking no t
 - The existing three-scenario workbench remains functional. Each of four steps has an illustrative HolyMind skill pairing.
 - The collection initially shows eight featured skills; search and purpose filters expose all 34 without forcing a long first scroll.
 - Skill details use a native dialog with a close control, Escape dismissal, and focus return.
-- Motion is limited to one slow brain movement, with a persistent pause control. System reduced motion wins.
+- Living Mind v4 adds one scroll-linked orchestration chapter, with restrained supporting motion in the workbench, open skills gallery, approach symbol and contact symbol. Native scrolling is never hijacked.
+- Original brain artwork is unchanged. A Canvas overlay follows 46 image-derived bright-pixel paths; a masked light sweep stays on the original luminous lines.
+- System reduced motion is the default. An explicit visitor choice in the persistent, visibly labelled Motion control is shared by Canvas, CSS and GSAP. No content is hidden when motion or JavaScript is disabled.
+- A separate hero wrapper owns scroll transforms; the inner artwork owns breathing. Rebuilt skill cards are registered after asynchronous rendering.
+- GSAP and ScrollTrigger 3.15.1 are served locally. Every changed stylesheet and first-party script carries the same release key. No third-party runtime requests.
 - Mobile navigation is an explicit menu. Without JavaScript, its links remain visible.
 - Use original artwork and unmodified Phosphor UI icons. No generated substitute logo, decorative pseudo-code, invented business statistics, or gradient text.
 

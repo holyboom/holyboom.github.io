@@ -58,3 +58,26 @@ Desktop Chrome captures measured 1348 × 926px; the dialog capture measured 1363
 - `social-preview.png` — final share image.
 
 All listed evidence files are present. Browser screenshots use `.jpg`, matching their JPEG content. No automated Lighthouse run, accessibility certification, Safari test, or physical-device test is claimed. Clipboard paste roundtrip and reduced-motion preference emulation remain outside the verified scope.
+
+
+## Living Mind v4 — 2026-11-11
+
+### Regression diagnosis
+- Previous skill art was collected before the asynchronous skills fetch rendered its cards: live baseline had 8 cards and 0 registered motion-art nodes.
+- The old brain breathing animation wrote the same CSS transform as the scroll tilt. The new version separates them into parent and child layers.
+- Previous CSS kept the same `holymind-2` cache URL across releases. All changed first-party assets now use `living-mind-v4`. Caching on the owner's device was not observed directly.
+
+### Changes
+Original 960px and 480px brain images remain byte-identical. 27 bright artwork nodes and 46 weighted bright-pixel routes drive continuous pixel traces. A light sweep is masked to the original luminous artwork.
+
+Added a native-scroll, sticky Reason/Build/Verify orbit. The gallery uses an open staggered composition. Scroll-linked icon and panel transforms are handled by locally served GSAP/ScrollTrigger 3.15.1. Motion works on rebuilt and filtered cards, not just initial DOM nodes.
+
+### Local verification
+Automated Chromium and WebKit rendering, screenshots inspected at desktop and mobile sizes. Tested 320, 390, 680, 768, 1024 and 1440px without horizontal page overflow. Canvas frames change; orbit matrices differ at three scroll positions. Tested skill filters (13 Reason / 12 Build / 9 Verify), all 34 cards, empty search, dialog, all 12 scenario steps, global pause and explicit resume. System Reduce Motion defaults to off; a visitor can explicitly enable motion. Physical iOS hardware has not been tested.
+
+A short early Chromium filter sample returned before a queued frame; rerun with a DOM-ready assertion confirmed all 9 Verify cards were registered. The reusable test now waits for registration rather than relying on a 100ms delay.
+
+### Reproduce
+`npm ci`, `npx playwright install chromium webkit`, start `npm run dev`, then set `TEST_URL` to the preview URL and run `npm run test:motion`. Set `ENGINE=webkit` for WebKit and `QA_DIR` for output. `CHROME_PATH` can select an installed Chromium browser.
+
+Deployment verification is recorded separately after checking the public URL; local checks alone are not a claim about the live release.

@@ -74,13 +74,14 @@
  document.documentElement.classList.add("js");
  let current = "operations";
 
- // The visitor can always pause decorative movement. System preference is the default.
+ // System reduced-motion is the default. A saved, explicit visitor choice takes precedence for all effects.
  const motionButton = byId("motion-toggle");
  let motionPreference = null;
  try { motionPreference = localStorage.getItem("holyboom-motion"); } catch (_) { /* Storage can be unavailable in private browsing. */ }
  let motionEnabled = motionPreference === "on" || (motionPreference !== "off" && !reduced.matches);
  function applyMotion() {
   document.body.dataset.motion = motionEnabled ? "on" : "off";
+  document.dispatchEvent(new CustomEvent("holymind:motion", { detail: { enabled: motionEnabled } }));
   if (!motionButton) return;
   motionButton.setAttribute("aria-pressed", String(motionEnabled));
   motionButton.setAttribute("aria-label", motionEnabled ? "Turn animations off" : "Turn animations on");

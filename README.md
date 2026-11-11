@@ -30,3 +30,10 @@ Run `npm run dev -- --host 0.0.0.0 --port 4173 --strictPort` for the dependency-
 Product Design, Impeccable 4.8.2, Anthropic frontend-design and UI/UX Pro Max informed the redesign. Their guidance is not a certification. The supplied HolyMind theme and the original artwork are the visual authority. See `DESIGN.md` for deliberate choices and `assets/brand-attribution.md` for ownership and license notices.
 
 Original public identity and section anchors remain. Search inclusion and ranking are not guaranteed.
+
+
+## Living Mind v4
+
+Adds an original-artwork neural pulse overlay, sticky Reason → Build → Verify orbital narrative, staggered open skill gallery, and scroll-linked symbol movement. Motion is optional and never hides content. The same preference controls every effect.
+
+All libraries, paths, images and fonts are same-origin. See `design-qa.md` for verification scope and `docs/evidence/living-v4/` for browser evidence.

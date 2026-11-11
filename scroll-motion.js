@@ -1,29 +1,60 @@
-/* HolyMind motion: progressive enhancement, content never hidden. */
-(()=>{
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const hero=document.querySelector('.neural-core');
- const sections=[...document.querySelectorAll('main>section:not(.hero)')];
- const headings=[...document.querySelectorAll('.section-head h2,.framework-head h2,.approach-intro h2,.about-name h2,.connect h2')];
- const art=[...document.querySelectorAll('.principles img,.challenge-picker img,.step-detail img,.skill-card img,.approach-intro img,.connect-action>img')];
- sections.forEach((s,i)=>{s.classList.add('motion-section');s.style.setProperty('--motion-index',i);});
- headings.forEach(h=>h.classList.add('motion-heading'));
- art.forEach((a,i)=>{a.classList.add('motion-art');a.style.setProperty('--motion-seed',i%5);});
- const io=new IntersectionObserver(entries=>{
-  for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('in-view');io.unobserve(entry.target);}}
- },{threshold:.12,rootMargin:'0px 0px -5% 0px'});
- [...sections,...headings,...art].forEach(el=>io.observe(el));
- let raf=0;
- function update(){raf=0;if(reduced.matches||document.body.dataset.motion==='off'){document.documentElement.style.setProperty('--scroll-rotation','0deg');return;}
-  if(hero){const r=hero.getBoundingClientRect();const progress=Math.max(-1,Math.min(1,(innerHeight*.6-r.top)/innerHeight));hero.style.setProperty('--brain-tilt',`${progress*9}deg`);hero.style.setProperty('--brain-shift',`${progress*-18}px`);}
-  const viewport=innerHeight;
-  for(const el of art){const r=el.getBoundingClientRect();if(r.bottom<0||r.top>viewport)continue;
-   const progress=Math.max(-1,Math.min(1,(viewport*.55-(r.top+r.height/2))/viewport));
-   el.style.setProperty('--art-turn',`${progress*(el.closest('.skill-card')?11:19)}deg`);
-   el.style.setProperty('--art-shift',`${progress*-12}px`);
-  }
+/* Living Mind v4: self-hosted GSAP, native scrolling, source artwork and zero hidden content. */
+(() => {
+ 'use strict';
+ const {gsap,ScrollTrigger}=window;
+ if(!gsap||!ScrollTrigger){document.body.dataset.scrollEngine='static';return;}
+ gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true});
+ const grid=document.getElementById('skills-grid'),scene=document.getElementById('mind-flow');
+ const chapters=[...document.querySelectorAll('.flow-chapter')];
+ let sceneContext=null,galleryContext=null,scheduled=0,resizeTimer=0,width=innerWidth;
+ const allowed=()=>document.body.dataset.motion==='on';
+ const small=()=>innerWidth<=680;
+ const scroll=(trigger,start='top 92%',end='top 40%')=>({trigger,start,end,scrub:.55,invalidateOnRefresh:true});
+ function phase(name){scene.dataset.phase=name;chapters.forEach(el=>el.classList.toggle('is-current',el.dataset.phase===name));}
+ function gallery(){
+  if(galleryContext)galleryContext.revert();galleryContext=null;
+  if(!allowed()||!grid)return;
+  galleryContext=gsap.context(()=>{
+   [...grid.children].forEach((el,i)=>{
+    el.dataset.motionReady='true';
+    gsap.fromTo(el,{y:small()?32:60,rotation:(i%2?1:-1)*(small()?2.5:4)},{y:0,rotation:0,ease:'none',scrollTrigger:scroll(el,'top 98%',small()?'top 66%':'top 52%')});
+    const art=el.querySelector('img');
+    if(art)gsap.fromTo(art,{rotation:-12},{rotation:12,ease:'none',scrollTrigger:scroll(el,'top bottom','bottom top')});
+   });
+  },grid);
  }
- function queue(){if(!raf)raf=requestAnimationFrame(update);}
- addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue,{passive:true});
- new MutationObserver(queue).observe(document.body,{attributes:true,attributeFilter:['data-motion']});
- queue();
+ function build(){
+  if(sceneContext)sceneContext.revert();sceneContext=null;
+  if(galleryContext)galleryContext.revert();galleryContext=null;
+  document.body.dataset.scrollEngine=allowed()?'gsap-3.15.1':'paused';
+  if(!allowed()){phase('reason');return;}
+  sceneContext=gsap.context(()=>{
+   gsap.fromTo('.neural-stage',{rotation:-3,y:0},{rotation:9,y:-45,ease:'none',scrollTrigger:scroll('.hero','top top','bottom top')});
+   const journey=scroll(scene,'top 65%','bottom 75%');
+   gsap.fromTo('.orbit-track',{rotation:-25},{rotation:125,ease:'none',scrollTrigger:journey});
+   gsap.fromTo('.orbit-item img',{rotation:25},{rotation:-125,ease:'none',scrollTrigger:{...journey}});
+   gsap.fromTo('.orbit-outer',{rotation:0,svgOrigin:'260 260'},{rotation:175,svgOrigin:'260 260',ease:'none',scrollTrigger:{...journey}});
+   gsap.fromTo('.orbit-inner',{rotation:0,svgOrigin:'260 260'},{rotation:-115,svgOrigin:'260 260',ease:'none',scrollTrigger:{...journey}});
+   gsap.fromTo('.orbit-brain',{scale:.9,rotation:-5},{scale:1.08,rotation:6,ease:'none',scrollTrigger:{...journey}});
+   chapters.forEach((el,i)=>{
+    gsap.fromTo(el.querySelector('.chapter-content'),{y:small()?30:54,rotation:(i%2?-1:1)*(small()?2:3.5)},{y:0,rotation:0,ease:'none',scrollTrigger:scroll(el,'top 95%',small()?'top 58%':'top 46%')});
+    gsap.fromTo(el.querySelector('img'),{rotation:-18},{rotation:22,ease:'none',scrollTrigger:scroll(el,'top bottom','bottom 25%')});
+    ScrollTrigger.create({trigger:el,start:'top 60%',end:'bottom 60%',onEnter:()=>phase(el.dataset.phase),onEnterBack:()=>phase(el.dataset.phase)});
+   });
+   gsap.fromTo('.strategy-panel',{y:small()?32:65,rotation:small()?1.2:2.2},{y:0,rotation:0,ease:'none',scrollTrigger:scroll('.bench-layout','top 90%','top 38%')});
+   gsap.fromTo('.approach-intro>img',{rotation:-30},{rotation:100,ease:'none',scrollTrigger:scroll('.approach','top bottom','bottom top')});
+   gsap.fromTo('.signature>span',{x:small()?-12:-28},{x:0,ease:'none',scrollTrigger:scroll('.about','top 90%','top 30%')});
+   gsap.fromTo('.connect-action>img',{rotation:-30,scale:.85},{rotation:65,scale:1.06,ease:'none',scrollTrigger:scroll('.connect','top bottom','bottom bottom')});
+  });
+  gallery();ScrollTrigger.refresh();
+ }
+ function queueGallery(){if(scheduled)cancelAnimationFrame(scheduled);scheduled=requestAnimationFrame(()=>{scheduled=0;gallery();ScrollTrigger.refresh();});}
+ if(grid)new MutationObserver(queueGallery).observe(grid,{childList:true});
+ document.addEventListener('holymind:motion',build);
+ document.querySelectorAll('[data-explore-category]').forEach(link=>link.addEventListener('click',()=>document.querySelector('[data-filter="'+link.dataset.exploreCategory+'"]')?.click()));
+ addEventListener('resize',()=>{if(width===innerWidth)return;width=innerWidth;clearTimeout(resizeTimer);resizeTimer=setTimeout(build,160);},{passive:true});
+ document.addEventListener('load',e=>{if(e.target.tagName==='IMG')ScrollTrigger.refresh();},true);
+ document.fonts?.ready.then(()=>ScrollTrigger.refresh());
+ addEventListener('pageshow',()=>ScrollTrigger.refresh());
+ phase('reason');build();
 })();
