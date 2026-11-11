@@ -65,3 +65,6 @@ The range now means **expanded percentage**; `data-expanded` is the range value 
 Brain-first entrance on phones only; stronger shared neural electricity on all screens. The two hero shortcuts and site Motion control have been removed. Old `holyboom-motion=off` values no longer disable the experience. System Reduce Motion selects a calm profile.
 
 Run `npm run check` and `npm run test:energy` with `TEST_URL`, `QA_DIR` and optionally `ENGINE=webkit`. Existing motion/showcase/assembly/continuity scripts now exercise OS-profile changes in place of the removed site control. Browser simulation is not a physical-device performance benchmark.
+
+### Always Active v9
+Full motion is now the fixed showcase policy, including with OS Reduce Motion and old stored off preferences. The new `test:always` suite checks real Canvas frame changes without input, continuous visible linework, foreground recovery, and unchanged controls/layout. `test:energy` keeps the 85-case end-to-end regression with the intentional always-on expectations updated.

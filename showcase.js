@@ -3,7 +3,7 @@
  'use strict';
  const {gsap, ScrollTrigger} = window;
  const body = document.body;
- const allowed = () => body.dataset.motion === 'on' && body.dataset.motionProfile !== 'calm';
+ const allowed = () => body.dataset.motion === 'on';
  const small = () => innerWidth <= 680;
  const exhibit = document.querySelector('.assembly-exhibit');
  const slider = document.getElementById('assembly-control');

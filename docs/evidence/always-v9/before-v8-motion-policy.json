@@ -1,0 +1,110 @@
+[
+  {
+    "reducedMotion": "reduce",
+    "before": {
+      "neural": {
+        "ready": true,
+        "frames": 13,
+        "elapsed": 1093.3333333333333,
+        "active": true,
+        "running": true,
+        "transporting": false,
+        "heroInside": true,
+        "orbitInside": false,
+        "paths": 46,
+        "branches": 3,
+        "contour": 96,
+        "profile": "calm",
+        "meanPaintMs": 0.876,
+        "targets": {
+          "hero": "12",
+          "orbit": "0",
+          "transit": "0"
+        }
+      },
+      "profile": "calm",
+      "triggers": 0,
+      "breathe": "none"
+    },
+    "after": {
+      "neural": {
+        "ready": true,
+        "frames": 41,
+        "elapsed": 3459.333333333333,
+        "active": true,
+        "running": true,
+        "transporting": false,
+        "heroInside": true,
+        "orbitInside": false,
+        "paths": 46,
+        "branches": 3,
+        "contour": 96,
+        "profile": "calm",
+        "meanPaintMs": 1.097,
+        "targets": {
+          "hero": "40",
+          "orbit": "0",
+          "transit": "0"
+        }
+      },
+      "profile": "calm",
+      "triggers": 0,
+      "breathe": "none"
+    },
+    "errors": []
+  },
+  {
+    "reducedMotion": "no-preference",
+    "before": {
+      "neural": {
+        "ready": true,
+        "frames": 25,
+        "elapsed": 1020.3333333333334,
+        "active": true,
+        "running": true,
+        "transporting": false,
+        "heroInside": true,
+        "orbitInside": false,
+        "paths": 46,
+        "branches": 12,
+        "contour": 96,
+        "profile": "full",
+        "meanPaintMs": 1.195,
+        "targets": {
+          "hero": "24",
+          "orbit": "0",
+          "transit": "0"
+        }
+      },
+      "profile": "full",
+      "triggers": 60,
+      "breathe": "mind-breathe"
+    },
+    "after": {
+      "neural": {
+        "ready": true,
+        "frames": 92,
+        "elapsed": 3437.3333333333335,
+        "active": true,
+        "running": true,
+        "transporting": false,
+        "heroInside": true,
+        "orbitInside": false,
+        "paths": 46,
+        "branches": 12,
+        "contour": 96,
+        "profile": "full",
+        "meanPaintMs": 1.345,
+        "targets": {
+          "hero": "91",
+          "orbit": "0",
+          "transit": "0"
+        }
+      },
+      "profile": "full",
+      "triggers": 60,
+      "breathe": "mind-breathe"
+    },
+    "errors": []
+  }
+]

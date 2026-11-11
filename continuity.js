@@ -40,7 +40,7 @@
   {id:'portal',s:'.contact-portal',x:.50,y:.50,shape:octagon,w:150,h:150,angle:0,spread:68,hold:0}
  ];
  let keys=[],raf=0,until=0,needsMeasure=true,lastY=scrollY,restored=false;
- const enabled=()=>body.dataset.motion==='on'&&body.dataset.motionProfile!=='calm'&&!document.hidden;
+ const enabled=()=>body.dataset.motion==='on'&&!document.hidden;
  const svgPath=points=>points.map((v,i)=>`${i?'L':'M'}${v[0].toFixed(2)} ${v[1].toFixed(2)}`).join(' ')+'Z';
  const diamondPath=(x,y,r)=>`M${x} ${y-r}l${r} ${r}l${-r} ${r}l${-r} ${-r}Z`;
  // offset geometry avoids measuring our own overlays and ignores scene transforms.

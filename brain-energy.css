@@ -36,8 +36,6 @@
 .energy-pool{position:absolute;width:260px;height:180px;left:0;top:0;opacity:0;background:radial-gradient(ellipse,rgba(103,232,249,.17),rgba(119,59,201,.07) 40%,transparent 68%);transform-origin:center}
 .energy-pool.is-gold{background:radial-gradient(ellipse,rgba(242,204,143,.15),rgba(119,59,201,.05) 43%,transparent 68%)}
 body:has(dialog[open]) .energy-reception{display:none}
-body[data-motion-profile=calm] .energy-reception{display:none}
-body[data-motion-profile=calm] .neural-core{animation:none!important}
 @media(max-width:680px){
  .hero-layout{display:flex;flex-direction:column;gap:0;min-height:0}
  .hero-visual{order:-1;align-self:center;width:100%;max-width:440px;margin:0;padding:0;justify-content:flex-start}
@@ -54,5 +52,3 @@ body[data-motion-profile=calm] .neural-core{animation:none!important}
  .hero-layout{display:flex;flex-direction:column;min-height:0}.hero-visual{order:-1;width:100%;margin:0;padding:0;max-width:440px;align-self:center}.neural-stage{width:min(70svh,340px);margin:-24px auto -22px}.hero-visual figcaption{margin-top:-24px}.hero-visual .framework-caption{display:none}.hero-copy{padding:24px 0;align-self:stretch}.hero h1{font-size:44px}.hero-description{font-size:16px}.hero-identity{display:none}
 }
 @media print{.energy-reception,.orbit-sparks,.neural-transit-sparks,.energy-scroll-hint{display:none!important}}
-
-body[data-motion-profile=calm] .continuity-layer{display:none}

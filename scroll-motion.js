@@ -7,7 +7,7 @@
  const grid=document.getElementById('skills-grid'),scene=document.getElementById('mind-flow');
  const chapters=[...document.querySelectorAll('.flow-chapter')];
  let sceneContext=null,galleryContext=null,scheduled=0,resizeTimer=0,width=innerWidth;
- const allowed=()=>document.body.dataset.motion==='on'&&document.body.dataset.motionProfile!=='calm';
+ const allowed=()=>document.body.dataset.motion==='on';
  const small=()=>innerWidth<=680;
  const scroll=(trigger,start='top 92%',end='top 40%')=>({trigger,start,end,scrub:.55,invalidateOnRefresh:true});
  function phase(name){scene.dataset.phase=name;chapters.forEach(el=>el.classList.toggle('is-current',el.dataset.phase===name));}

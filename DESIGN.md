@@ -87,3 +87,14 @@ This revision supersedes the earlier mobile text-first arrangement and persisten
 - Always-on is the normal experience; legacy localStorage off is ignored. System Reduce Motion uses a low-amplitude 12 fps light field and disables spatial scroll choreography, without showing a site toggle. The no-pause-control choice is NOT represented as WCAG 2.2.2 compliance. Flash safety has not been independently certified.
 - No new runtime dependencies, WebGL contexts, audio, analytics or external network calls. Adapted regression tests exercise OS profile changes instead of the intentionally removed toggle.
 - Release key: spark-v8. Validate pixel movement, handoff rendering, geometry, reversibility, phone ordering, desktop preservation and existing interactive controls before publication.
+
+## Always Active v9 — explicit owner correction
+
+The owner requires full visible animation without the previous system-level calm exception. This supersedes the Spark v8 motion-policy paragraph only, not the layout or artwork.
+
+- Always resolve to `data-motion=on`, `data-motion-profile=full`, `data-motion-policy=always`. Neither an OS preference nor legacy localStorage off disables choreography or reduces the brain to the three-trace calm field. There is no site toggle.
+- Source-aligned brain electricity runs automatically on a visible hero, transferred brain, or orbital brain without hover, touch, or scroll. Foreground/pageshow/focus and viewport reentry resynchronize the renderer.
+- Ambient current on decorative cloned SVG paths continues while the page is stationary: orbit, assembly circuitry, ribbon, skill-frame edges, service outlines, signature point and portal. Scroll still owns spatial composition and reversible transfers; the ambient layer never overwrites GSAP transforms or input state.
+- Ambient animations are parked offscreen and on pagehide; they resume automatically on visibility/focus. No new timer or JavaScript frame loop is introduced for this layer.
+- Phone-only brain-first layout, tablet/desktop layout, original images, range direction, callout geometry, skill dialogs and destinations remain unchanged.
+- This deliberate no-pause/no-system-reduction policy is not represented as WCAG conformance; no independent flash-safety or physical-device performance certification is claimed. Bounded local glows only; no fullscreen flashing.

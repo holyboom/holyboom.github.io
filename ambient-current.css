@@ -1,0 +1,16 @@
+/* Continuous subtle current, independent of scroll. Identity/layout are unchanged. */
+.ambient-trace{pointer-events:none;stroke-linecap:square;stroke-linejoin:bevel;animation-play-state:paused}
+.ambient-orbit{stroke:#67e8f9;stroke-width:2;stroke-dasharray:18 200;opacity:.8;animation:ambient-long-current 7s linear infinite paused}
+.ambient-circuit{stroke:#67e8f9;stroke-width:1.6;stroke-dasharray:.12 .88;opacity:.72;animation:ambient-unit-current 3.6s linear infinite paused}
+.ambient-portal{stroke:#f2cc8f;stroke-width:1.5;stroke-dasharray:14 170;opacity:.65;animation:ambient-long-current 9s linear infinite paused}
+.ambient-band-light{position:absolute;top:0;bottom:0;left:-28%;width:24%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(103,232,249,.12),transparent);animation:ambient-band-current 7s linear infinite paused}
+.ambient-scene .shard-surface::after,.ambient-scene .service-outline{animation:ambient-edge-current 4.6s ease-in-out infinite alternate paused}
+.ambient-scene .signature-period{animation:ambient-signature-current 4.4s ease-in-out infinite alternate paused}
+.ambient-scene[data-ambient-state=playing] .ambient-trace,.ambient-scene[data-ambient-state=playing] .ambient-band-light,.ambient-scene[data-ambient-state=playing] .shard-surface::after,.ambient-scene[data-ambient-state=playing] .service-outline,.ambient-scene[data-ambient-state=playing] .signature-period{animation-play-state:running}
+body[data-ambient=parked] .neural-core{animation-play-state:paused}
+@keyframes ambient-long-current{from{stroke-dashoffset:0}to{stroke-dashoffset:-436}}
+@keyframes ambient-unit-current{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes ambient-band-current{from{transform:translateX(0)}to{transform:translateX(650%)}}
+@keyframes ambient-edge-current{from{border-color:rgba(103,232,249,.35)}to{border-color:rgba(242,204,143,.82)}}
+@keyframes ambient-signature-current{from{text-shadow:0 0 3px rgba(103,232,249,.24)}to{text-shadow:0 0 14px rgba(242,204,143,.62)}}
+@media print{.ambient-trace,.ambient-band-light{display:none!important}.ambient-scene *{animation:none!important}}

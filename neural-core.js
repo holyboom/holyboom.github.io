@@ -18,7 +18,6 @@
  let transit=null,transitCtx=null,paths=[],nodes=[],outline=[],ready=false,heroInside=true,orbitInside=false;
  let transporting=false,raf=0,last=0,elapsed=0,frames=0,dead=false,frameCost=0,engaged=false;
  const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n)),fract=n=>n-Math.floor(n);
- const calm=()=>body.dataset.motionProfile==='calm';
  const active=()=>ready&&!document.hidden&&!dead&&(heroInside||orbitInside||transporting);
  const colors=['#67e8f9','#c48aff','#f2cc8f','#ff7ac6'];
  const sprites=new Map();
@@ -55,22 +54,22 @@
   }catch(_){canvas.dataset.state='fallback';}
  }
  function paint(t){
-  const quiet=calm(),speed=quiet?.14:engaged?1.12:1;
+  const speed=engaged?1.12:1;
   const tick=t*speed,charge=.68+.17*Math.sin(t*.0009);
   ctx.clearRect(0,0,W,W);ctx.globalCompositeOperation='lighter';
   // Broad, low-luminance field stays within the source's bright line mask.
   const x=235+Math.sin(tick*.00052)*100,y=220+Math.cos(tick*.00071)*75;
   bc.clearRect(0,0,W,W);bc.globalCompositeOperation='source-over';
   const g=bc.createRadialGradient(x,y,4,x,y,145);g.addColorStop(0,'rgba(103,232,249,.9)');g.addColorStop(.38,'rgba(178,114,255,.62)');g.addColorStop(1,'rgba(103,232,249,0)');bc.fillStyle=g;bc.fillRect(0,0,W,W);bc.globalCompositeOperation='destination-in';bc.drawImage(mask,0,0);
-  ctx.globalAlpha=quiet?.17:.6;ctx.drawImage(beam,0,0);ctx.globalAlpha=1;
-  const count=quiet?3:small.matches?12:18;
+  ctx.globalAlpha=.6;ctx.drawImage(beam,0,0);ctx.globalAlpha=1;
+  const count=small.matches?12:18;
   for(let i=0;i<count&&paths.length;i++){
    const time=tick/3100+i*.647,phase=fract(time),id=(Math.floor(time)+i*7)%paths.length,path=paths[id],n=path.length;
-   const head=Math.min(n-1,Math.floor(phase*n)),tail=Math.max(0,head-(quiet?8:22));
-   const alpha=clamp(phase*6)*clamp((1-phase)*6)*(quiet?.28:1),c=i%7===0?colors[2]:i%3===0?colors[1]:colors[0];
-   line(path.slice(tail,head+1),c,alpha,quiet?1:1.7);
-   const [px,py]=path[head];star(px,py,quiet?2:4,alpha,c);
-   if(!quiet){
+   const head=Math.min(n-1,Math.floor(phase*n)),tail=Math.max(0,head-22);
+   const alpha=clamp(phase*6)*clamp((1-phase)*6),c=i%7===0?colors[2]:i%3===0?colors[1]:colors[0];
+   line(path.slice(tail,head+1),c,alpha,1.7);
+   const [px,py]=path[head];star(px,py,4,alpha,c);
+   {
     // Three sparse pixels peel away from a synapse, keeping the 8-bit edge.
     for(let j=0;j<3;j++){const a=i*2.4+j*2.094,travel=fract(phase*1.25+j*.27),r=6+travel*22;
      const sx=Math.round((px+Math.cos(a)*r)/2)*2,sy=Math.round((py+Math.sin(a)*r)/2)*2;
@@ -78,7 +77,7 @@
     ctx.globalAlpha=1;
    }
   }
-  if(!quiet&&outline.length){
+  if(outline.length){
    // Edge discharges follow a radial contour sampled from the actual brain, not an oval mask.
    for(let i=0;i<6;i++){
     const cycle=tick/4400+i*.159,phase=fract(cycle),idx=(Math.floor(cycle)*11+i*15)%outline.length;
@@ -88,7 +87,7 @@
     const rim=[];for(let j=0;j<6;j++){const v=outline[(idx+j)%outline.length];rim.push([v[0],v[1]]);}line(rim,colors[1],alpha*.6,1.2);
    }
   }
-  if(nodes.length&&!quiet)for(let i=0;i<6;i++){
+  if(nodes.length)for(let i=0;i<6;i++){
    const [nx,ny]=nodes[(i*5)%nodes.length],wave=(Math.sin(tick*.0011+i*1.8)+1)/2;
    if(wave>.45)star(nx,ny,3.5,(wave-.45)*1.3,i%3===0?colors[2]:colors[0]);
   }
@@ -99,27 +98,37 @@
   if(orbitInside&&!transporting&&orbitCtx){orbit.style.transform=orbitImage?.style.transform||'';copy(orbitCtx,orbit);}
   if(transporting){if(!transit){transit=document.querySelector('.neural-transit-sparks');transitCtx=transit?.getContext('2d');}copy(transitCtx,transit);}
   orbit.style.opacity=transporting?'0':'1';
-  window.HolyMindEnergy?.brain({x:x/W,y:y/W,charge,hero:heroInside&&!transporting,orbit:orbitInside&&!transporting,quiet});
+  window.HolyMindEnergy?.brain({x:x/W,y:y/W,charge,hero:heroInside&&!transporting,orbit:orbitInside&&!transporting,quiet:false});
   frames++;
  }
  function tick(t){
   raf=0;if(!active())return;
-  const interval=calm()?1000/12:1000/30;if(!last)last=t-interval;
+  const interval=1000/30;if(!last)last=t-interval;
   const dt=t-last;if(dt>=interval-1){elapsed+=Math.min(dt,90);last=t;const start=performance.now();paint(elapsed);frameCost=frameCost*.9+(performance.now()-start)*.1;}
   raf=requestAnimationFrame(tick);
  }
  function sync(){
-  const enabled=active();canvas.dataset.state=enabled?(calm()?'calm':'running'):ready?'offscreen':'loading';
+  const enabled=active();canvas.dataset.state=enabled?'running':ready?'offscreen':'loading';
   if(enabled&&!raf){last=0;raf=requestAnimationFrame(tick);}
   if(!enabled&&raf){cancelAnimationFrame(raf);raf=0;last=0;}
  }
- window.HolyMindNeural=Object.freeze({version:'spark-v8',transport(value){if(transporting===value)return;transporting=value;orbit.style.opacity=value?'0':'1';sync();},snapshot:()=>({ready,frames,elapsed,active:active(),running:!!raf,transporting,heroInside,orbitInside,paths:paths.length,branches:calm()?3:small.matches?12:18,contour:outline.length,profile:body.dataset.motionProfile,meanPaintMs:Number(frameCost.toFixed(3)),targets:{hero:canvas.dataset.frames||'0',orbit:orbit.dataset.frames||'0',transit:transit?.dataset.frames||'0'}})});
+ window.HolyMindNeural=Object.freeze({version:'always-v9',transport(value){if(transporting===value)return;transporting=value;orbit.style.opacity=value?'0':'1';sync();},snapshot:()=>({ready,frames,elapsed,active:active(),running:!!raf,transporting,heroInside,orbitInside,paths:paths.length,branches:small.matches?12:18,contour:outline.length,profile:body.dataset.motionProfile,meanPaintMs:Number(frameCost.toFixed(3)),targets:{hero:canvas.dataset.frames||'0',orbit:orbit.dataset.frames||'0',transit:transit?.dataset.frames||'0'}})});
  image.addEventListener('load',loadMask);if(image.complete&&image.naturalWidth)loadMask();
  fetch('assets/neural-paths.json?v=spark-v8').then(r=>{if(!r.ok)throw Error('paths');return r.json();}).then(data=>{
   if(Array.isArray(data.paths)&&data.paths.every(p=>Array.isArray(p)&&p.length>1&&p.every(v=>v.length===2&&v.every(n=>Number.isFinite(n)&&n>=0&&n<W)))){paths=data.paths;nodes=(data.nodes||[]).filter(v=>v.length===2&&v.every(Number.isFinite));canvas.dataset.paths=String(paths.length);sync();}
  }).catch(()=>{canvas.dataset.paths='fallback';});
- if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>{for(const e of es){if(e.target===canvas)heroInside=e.isIntersecting;else orbitInside=e.isIntersecting;}sync();},{rootMargin:'40px'});io.observe(canvas);io.observe(orbit);}
- document.addEventListener('holymind:motion',sync);document.addEventListener('visibilitychange',sync);
+ let visibilityFrame=0;
+ const inView=el=>{if(!el)return false;const r=el.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>-40&&r.top<innerHeight+40;};
+ function refreshVisibility(){visibilityFrame=0;heroInside=inView(canvas);orbitInside=inView(orbit);sync();}
+ function queueVisibility(){if(!visibilityFrame)visibilityFrame=requestAnimationFrame(refreshVisibility);}
+ function resume(){dead=false;last=0;refreshVisibility();}
+ if('IntersectionObserver'in window){const io=new IntersectionObserver(()=>refreshVisibility(),{rootMargin:'40px'});io.observe(canvas);io.observe(orbit);}
+ document.addEventListener('holymind:motion',resume);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)sync();else resume();});
+ addEventListener('scroll',queueVisibility,{passive:true});addEventListener('resize',queueVisibility,{passive:true});
+ addEventListener('focus',resume);document.addEventListener('resume',resume);
  const stage=document.querySelector('.neural-stage');stage?.addEventListener('pointerenter',()=>{engaged=true;});stage?.addEventListener('pointerleave',()=>{engaged=false;});
- addEventListener('pagehide',()=>{dead=true;sync();});addEventListener('pageshow',()=>{dead=false;sync();});
+ addEventListener('pagehide',()=>{dead=true;if(visibilityFrame)cancelAnimationFrame(visibilityFrame);visibilityFrame=0;sync();});
+ addEventListener('pageshow',resume);
+ refreshVisibility();
 })();

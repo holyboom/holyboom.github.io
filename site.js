@@ -70,20 +70,17 @@
  const panel = byId("strategy-panel");
  const brief = byId("project-brief");
  const drawer = byId("brief-drawer");
- const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
  document.documentElement.classList.add("js");
  let current = "operations";
 
- // Always-on showcase. Old localStorage off choices are intentionally not read.
- // System Reduce Motion remains an automatic calm rendering profile, not a site toggle.
- let motionEnabled = !reduced.matches;
+ // Owner-selected always-active showcase policy. No persisted or OS setting gates it.
+ const motionEnabled = true;
  function applyMotion() {
-  motionEnabled = !reduced.matches;
   document.body.dataset.motion = 'on';
-  document.body.dataset.motionProfile = motionEnabled ? 'full' : 'calm';
-  document.dispatchEvent(new CustomEvent('holymind:motion', {detail:{enabled:true,profile:document.body.dataset.motionProfile}}));
+  document.body.dataset.motionProfile = 'full';
+  document.body.dataset.motionPolicy = 'always';
+  document.dispatchEvent(new CustomEvent('holymind:motion', {detail:{enabled:true,profile:'full',policy:'always'}}));
  }
- reduced.addEventListener('change', applyMotion);
  applyMotion();
 
  function selectStep(index) {

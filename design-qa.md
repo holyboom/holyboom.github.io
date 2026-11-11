@@ -160,3 +160,15 @@ Final harness correction also waits for resize debounces and matching measured v
 ### Spark v8 — published-page verification
 
 Production acceptance suite: Chromium 85/85 and WebKit 85/85, with zero failed checks and zero runtime errors. Nine runtime assets matched local SHA-256 hashes. The mobile film was captured from the public page. See `qa/spark-v8.html` and `docs/evidence/spark-v8/summary.json`. No physical-device performance claim is made.
+
+## Always Active v9 — root cause and local correction
+
+Live v8 reproduction with simulated OS Reduce Motion produced `motionProfile=calm`, zero ScrollTriggers, no brain breathing animation, and only three slow traces. With no OS reduction v8 produced 60 ScrollTriggers and twelve phone traces. This is a verified software branch, not a claim about the owner's actual device settings.
+
+The owner explicitly removed that exception: v9 always uses full motion, adds continuous ambient current independent of scroll, and resynchronizes visible brain rendering after pageshow/focus/viewport reentry. Mobile-only brain-first ordering and desktop/tablet composition are unchanged.
+
+Local tests: 38 always-active checks in Chromium, 38 in WebKit, and 85 energy/interaction regression checks in WebKit passed with zero recorded runtime errors. The always-active suite emulates both OS profiles and old localStorage off; samples actual changing Canvas pixels without input; tests seven ambient scene types; exercises lifecycle return, controls, leader endpoints and six viewport widths.
+
+Harness correction: scroll the stable scene or use its live coordinates to view decorative objects; do not wait for the continuously translating ribbon highlight to become stable. Interactive controls still use ordinary Playwright click/tap checks. No coordinate or motion assertion was removed.
+
+37 original image files are byte-identical to v8. No new runtime dependency. Browser tests are not a physical iPhone benchmark or a flash-safety/WCAG certification.

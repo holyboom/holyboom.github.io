@@ -37,3 +37,14 @@ Apply the approved cyan/champagne highlights without replacing the violet identi
 - Remove both hero shortcut buttons and the Motion on/off control. Play automatically, ignore the legacy saved-off preference. A non-clickable scroll hint replaces the jump link in the artwork caption.
 - System Reduce Motion is an automatic calm lighting profile with no travel/large rotation; no site switch is added. Hidden/offscreen render work is suspended and resumes automatically.
 - Original image bytes, six showcase scenes, three assembly layers plus two inner circuits, actual controls, semantic profile and public destinations remain intact.
+
+## Always Active v9 — explicit owner correction
+
+The owner requires full visible animation without the previous system-level calm exception. This supersedes the Spark v8 motion-policy paragraph only, not the layout or artwork.
+
+- Always resolve to `data-motion=on`, `data-motion-profile=full`, `data-motion-policy=always`. Neither an OS preference nor legacy localStorage off disables choreography or reduces the brain to the three-trace calm field. There is no site toggle.
+- Source-aligned brain electricity runs automatically on a visible hero, transferred brain, or orbital brain without hover, touch, or scroll. Foreground/pageshow/focus and viewport reentry resynchronize the renderer.
+- Ambient current on decorative cloned SVG paths continues while the page is stationary: orbit, assembly circuitry, ribbon, skill-frame edges, service outlines, signature point and portal. Scroll still owns spatial composition and reversible transfers; the ambient layer never overwrites GSAP transforms or input state.
+- Ambient animations are parked offscreen and on pagehide; they resume automatically on visibility/focus. No new timer or JavaScript frame loop is introduced for this layer.
+- Phone-only brain-first layout, tablet/desktop layout, original images, range direction, callout geometry, skill dialogs and destinations remain unchanged.
+- This deliberate no-pause/no-system-reduction policy is not represented as WCAG conformance; no independent flash-safety or physical-device performance certification is claimed. Bounded local glows only; no fullscreen flashing.
