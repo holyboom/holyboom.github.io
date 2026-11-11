@@ -295,3 +295,14 @@ A first implementation scaled the automated envelope value and failed an exact-w
 Before/after use identical notes, tempo, current motion and master, without separate normalization. Rendered QA page inspected on 390 px viewport; no horizontal overflow. Physical iPhone listening remains untested.
 
 Published verification: {'mix_chromium': 25, 'mix_webkit': 25, 'piano_score_webkit': 37}, total 87 checks; no failures or runtime errors in the final runs. 33 public files match source hashes. Static post-envelope gain measured +8 dB with waveform difference < 3e-8; the ambient-only render is identical. Piano pause/resume and natural tails remain verified.
+
+
+## Line Current v19 — visual-path-gated scroll sound
+
+The owner clarified that the non-piano electrical current must only be heard while the shared object travels on the visible connector. A scrolling page is not sufficient. The continuity renderer now reports visible-path/progress motion in the drawing frame; audio gates only the current branch and fails closed without fresh evidence.
+
+The gate opens in 8 ms and reaches exact zero 12 ms after closing. A 50 ms movement-cadence allowance bridges render/input intervals; a 100 ms audio-clock lease closes stale reports. The prior +8 dB gain and waveform are unchanged during open travel. Ambient, piano and their tails are not gated.
+
+Verification samples throughout native-input gestures in the page, not only after awaited browser calls; short sound windows were missed by the first endpoint-only fixture. Fixture navigation waits for the previous compositor motion to settle, and live route keys are re-read for narrow holds. Runtime gates/thresholds were not loosened for the fixture.
+
+Local suites cover ten paths both ways, exact zero at midline stops, real holds, pinned layers, reflow/navigation, lifecycle, mobile touch emulation, musical continuation, default-closed and stale-gate offline rendering. Open-gate waveform and ambient waveform are compared against b6cb59f. All piano/score sources, original audio assets and original art are byte-preserved. Production results follow separately. No physical iPhone audio test is claimed.

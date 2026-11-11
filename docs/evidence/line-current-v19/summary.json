@@ -1,0 +1,14 @@
+{
+  "release": "line-current-v19",
+  "status": "Local checks passed; production verification pending",
+  "local_checks": {
+    "local_line_chromium": 92,
+    "local_line_webkit": 92,
+    "local_native_touch": 6,
+    "local_visual_webkit": 68,
+    "local_score_webkit": 37
+  },
+  "total_local_checks": 295,
+  "change": "The +8 dB non-piano current is audible only with fresh visible line-travel evidence and trusted scroll intent. Docked, pinned, offscreen, stationary or absent paths close the gate. Piano/ambient are independent.",
+  "physical_iphone_tested": false
+}

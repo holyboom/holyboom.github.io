@@ -1,0 +1,4922 @@
+{
+  "base": "http://127.0.0.1:8782/",
+  "engine": "chromium",
+  "checks": [
+    {
+      "name": "release-v19",
+      "pass": true
+    },
+    {
+      "name": "initial-silent-no-context",
+      "pass": true
+    },
+    {
+      "name": "scroll-does-not-unlock",
+      "pass": true
+    },
+    {
+      "name": "resting-current-gate-closed",
+      "pass": true
+    },
+    {
+      "name": "ambient-remains-audible",
+      "pass": true
+    },
+    {
+      "name": "plus-eight-db-preserved",
+      "pass": true
+    },
+    {
+      "name": "all-ten-visual-transfers",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-orbit",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-orbit",
+      "pass": true,
+      "movingSamples": 15,
+      "audibleSamples": 11
+    },
+    {
+      "name": "no-open-gate-without-visible-path-orbit",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-orbit",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-orbit",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-orbit",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-ribbon",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-ribbon",
+      "pass": true,
+      "movingSamples": 19,
+      "audibleSamples": 11
+    },
+    {
+      "name": "no-open-gate-without-visible-path-ribbon",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-ribbon",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-ribbon",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-ribbon",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-assembly",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-assembly",
+      "pass": true,
+      "movingSamples": 53,
+      "audibleSamples": 55
+    },
+    {
+      "name": "no-open-gate-without-visible-path-assembly",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-assembly",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-assembly",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-assembly",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-system",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-system",
+      "pass": true,
+      "movingSamples": 20,
+      "audibleSamples": 12
+    },
+    {
+      "name": "no-open-gate-without-visible-path-system",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-system",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-system",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-system",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-skills",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-skills",
+      "pass": true,
+      "movingSamples": 22,
+      "audibleSamples": 30
+    },
+    {
+      "name": "no-open-gate-without-visible-path-skills",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-skills",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-skills",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-skills",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-gallery",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-gallery",
+      "pass": true,
+      "movingSamples": 18,
+      "audibleSamples": 19
+    },
+    {
+      "name": "no-open-gate-without-visible-path-gallery",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-gallery",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-gallery",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-gallery",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-services",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-services",
+      "pass": true,
+      "movingSamples": 26,
+      "audibleSamples": 29
+    },
+    {
+      "name": "no-open-gate-without-visible-path-services",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-services",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-services",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-services",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-delivery",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-delivery",
+      "pass": true,
+      "movingSamples": 22,
+      "audibleSamples": 25
+    },
+    {
+      "name": "no-open-gate-without-visible-path-delivery",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-delivery",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-delivery",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-delivery",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-signature",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-signature",
+      "pass": true,
+      "movingSamples": 17,
+      "audibleSamples": 17
+    },
+    {
+      "name": "no-open-gate-without-visible-path-signature",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-signature",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-signature",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-signature",
+      "pass": true
+    },
+    {
+      "name": "silent-scripted-jump-portal",
+      "pass": true
+    },
+    {
+      "name": "audible-only-real-travel-portal",
+      "pass": true,
+      "movingSamples": 19,
+      "audibleSamples": 19
+    },
+    {
+      "name": "no-open-gate-without-visible-path-portal",
+      "pass": true
+    },
+    {
+      "name": "mid-line-stop-is-silent-portal",
+      "pass": true
+    },
+    {
+      "name": "reverse-line-travel-audible-portal",
+      "pass": true
+    },
+    {
+      "name": "reverse-stop-is-silent-portal",
+      "pass": true
+    },
+    {
+      "name": "pinned-layers-no-current",
+      "pass": true
+    },
+    {
+      "name": "pinned-layers-piano-still-plays",
+      "pass": true
+    },
+    {
+      "name": "piano-beat-order-not-altered",
+      "pass": true
+    },
+    {
+      "name": "piano-rings-while-current-is-silent",
+      "pass": true,
+      "pianoRms": 0.03168457303179669,
+      "currentRms": 0
+    },
+    {
+      "name": "docked-scroll-silent-orbit",
+      "pass": true,
+      "keys": [
+        {
+          "id": "orbit",
+          "at": 1169.8
+        },
+        {
+          "id": "orbit",
+          "at": 1821.48
+        }
+      ],
+      "maxRms": 0,
+      "rows": [
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.19979130861772654,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 91211.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1300,
+          "wire": "",
+          "score": false,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.19979130861772654,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 91211.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1300,
+          "wire": "",
+          "score": false,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.19979130861772654,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 91211.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1327,
+          "wire": "",
+          "score": false,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.24122268598084953,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 91996.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1327,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.24122268598084953,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92015.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1354,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.28265406334397253,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92095.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1354,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.28265406334397253,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92106.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1381,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.32408544070709555,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92143.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1381,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.32408544070709555,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92164.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1381,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.32408544070709555,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92244,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1409,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.367051313528112,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92265.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1409,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.367051313528112,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92344.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1409,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.367051313528112,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92365.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1436,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.408482690891235,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92448.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1436,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.408482690891235,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92528.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1463,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.449914068254358,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92550.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1463,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.449914068254358,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92628.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1463,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.449914068254358,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92643.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1490,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.491345445617481,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92665.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1490,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.491345445617481,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92747,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1490,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.491345445617481,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92829.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1517,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.532776822980604,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92849.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1517,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.532776822980604,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 92930,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1517,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.532776822980604,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93010.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1544,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.574208200343727,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93031.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1544,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.574208200343727,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93110.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1544,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.574208200343727,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93131.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1572,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.6171740731647435,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93210.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1572,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.6171740731647435,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93231.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1599,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.6586054505278665,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93310.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1599,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.6586054505278665,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93331.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1626,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "orbit",
+            "to": "orbit",
+            "progress": 0.7000368278909894,
+            "x": 295.5,
+            "y": 162.5,
+            "at": 93410.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 1626,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        }
+      ]
+    },
+    {
+      "name": "docked-scroll-silent-ribbon",
+      "pass": true,
+      "keys": [
+        {
+          "id": "ribbon",
+          "at": 2153.36
+        },
+        {
+          "id": "ribbon",
+          "at": 2188.36
+        }
+      ],
+      "maxRms": 0,
+      "rows": [
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.1897142857142821,
+            "x": 72.14076805114746,
+            "y": 488.75714111328125,
+            "at": 95331.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2160,
+          "wire": "",
+          "score": false,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.1897142857142821,
+            "x": 72.14076805114746,
+            "y": 488.75714111328125,
+            "at": 95331.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2160,
+          "wire": "",
+          "score": false,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.1897142857142821,
+            "x": 72.14076805114746,
+            "y": 488.75714111328125,
+            "at": 95331.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2161,
+          "wire": "",
+          "score": false,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.21828571428571064,
+            "x": 72.22987937927246,
+            "y": 487.7414245605469,
+            "at": 96063.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2161,
+          "wire": "",
+          "score": false,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.21828571428571064,
+            "x": 72.26675415039062,
+            "y": 487.73492431640625,
+            "at": 96147.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2163,
+          "wire": "",
+          "score": false,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.2754285714285678,
+            "x": 72.45848655700684,
+            "y": 485.7011413574219,
+            "at": 96230.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2163,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.2754285714285678,
+            "x": 72.53652000427246,
+            "y": 485.68736267089844,
+            "at": 96309.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2164,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.3039999999999964,
+            "x": 72.57892608642578,
+            "y": 484.6799011230469,
+            "at": 96330.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2164,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.3039999999999964,
+            "x": 72.67663192749023,
+            "y": 484.6626434326172,
+            "at": 96413.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2164,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.3039999999999964,
+            "x": 72.71903800964355,
+            "y": 484.6551818847656,
+            "at": 96497.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2166,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.3611428571428535,
+            "x": 72.91384696960449,
+            "y": 482.62083435058594,
+            "at": 96581.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2166,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.3611428571428535,
+            "x": 72.99188232421875,
+            "y": 482.6070861816406,
+            "at": 96662.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2167,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.38971428571428207,
+            "x": 73.02445983886719,
+            "y": 481.60133361816406,
+            "at": 96676.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2167,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.38971428571428207,
+            "x": 73.05949020385742,
+            "y": 481.59515380859375,
+            "at": 96697.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2167,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.38971428571428207,
+            "x": 73.13998985290527,
+            "y": 481.5809631347656,
+            "at": 96776.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2167,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.38971428571428207,
+            "x": 73.15228080749512,
+            "y": 481.5787811279297,
+            "at": 96797.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2169,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.44685714285713923,
+            "x": 73.35936546325684,
+            "y": 479.5422668457031,
+            "at": 96881.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2169,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.44685714285713923,
+            "x": 73.44232940673828,
+            "y": 479.5276336669922,
+            "at": 96960.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2170,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.4754285714285678,
+            "x": 73.48103904724121,
+            "y": 478.5208282470703,
+            "at": 96978.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2170,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.4754285714285678,
+            "x": 73.5007095336914,
+            "y": 478.5173645019531,
+            "at": 96989.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2170,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.4754285714285678,
+            "x": 73.55048179626465,
+            "y": 478.5085754394531,
+            "at": 97026.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2170,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.4754285714285678,
+            "x": 73.56830406188965,
+            "y": 478.50543212890625,
+            "at": 97042.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2172,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5325714285714249,
+            "x": 73.64635276794434,
+            "y": 476.4916687011719,
+            "at": 97064,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2172,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5325714285714249,
+            "x": 73.82332420349121,
+            "y": 476.4604797363281,
+            "at": 97144.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2172,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5325714285714249,
+            "x": 73.84852409362793,
+            "y": 476.4560241699219,
+            "at": 97162.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2173,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5611428571428535,
+            "x": 74.00031089782715,
+            "y": 475.42926025390625,
+            "at": 97245,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2173,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5611428571428535,
+            "x": 74.01690292358398,
+            "y": 475.42633056640625,
+            "at": 97259.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2174,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5897142857142821,
+            "x": 74.05746078491211,
+            "y": 474.41917419433594,
+            "at": 97276.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2174,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5897142857142821,
+            "x": 74.09125518798828,
+            "y": 474.4132385253906,
+            "at": 97293,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2174,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5897142857142821,
+            "x": 74.11768913269043,
+            "y": 474.40855407714844,
+            "at": 97310,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2174,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5897142857142821,
+            "x": 74.14165496826172,
+            "y": 474.4043273925781,
+            "at": 97326.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2174,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.5897142857142821,
+            "x": 74.16131210327148,
+            "y": 474.40086364746094,
+            "at": 97343.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2176,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6468571428571392,
+            "x": 74.2246208190918,
+            "y": 472.38970947265625,
+            "at": 97359.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2176,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6468571428571392,
+            "x": 74.28053665161133,
+            "y": 472.3798522949219,
+            "at": 97376.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2176,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6468571428571392,
+            "x": 74.32723808288574,
+            "y": 472.3716125488281,
+            "at": 97392.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2176,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6468571428571392,
+            "x": 74.36473083496094,
+            "y": 472.36500549316406,
+            "at": 97409.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2176,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6468571428571392,
+            "x": 74.39729690551758,
+            "y": 472.35926818847656,
+            "at": 97426.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2177,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6754285714285678,
+            "x": 74.4556770324707,
+            "y": 471.3489685058594,
+            "at": 97445.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2177,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6754285714285678,
+            "x": 74.48455619812012,
+            "y": 471.3438720703125,
+            "at": 97456,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2177,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6754285714285678,
+            "x": 74.55952835083008,
+            "y": 471.3306579589844,
+            "at": 97493.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2177,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6754285714285678,
+            "x": 74.5841121673584,
+            "y": 471.3263244628906,
+            "at": 97509.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2177,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "ribbon",
+            "to": "ribbon",
+            "progress": 0.6754285714285678,
+            "x": 74.60622978210449,
+            "y": 471.3224182128906,
+            "at": 97527,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 2177,
+          "wire": "",
+          "score": true,
+          "scope": "orbit"
+        }
+      ]
+    },
+    {
+      "name": "docked-scroll-silent-skills",
+      "pass": true,
+      "keys": [
+        {
+          "id": "skills",
+          "at": 7152.04
+        },
+        {
+          "id": "skills",
+          "at": 7282.04
+        }
+      ],
+      "maxRms": 0,
+      "rows": [
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.19969230769230797,
+            "x": 173.97708129882812,
+            "y": 417.7071075439453,
+            "at": 99225.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7178,
+          "wire": "",
+          "score": false,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.19969230769230797,
+            "x": 173.97708129882812,
+            "y": 417.7071075439453,
+            "at": 99225.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7178,
+          "wire": "",
+          "score": false,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.19969230769230797,
+            "x": 173.97708129882812,
+            "y": 417.7071075439453,
+            "at": 99225.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7184,
+          "wire": "",
+          "score": false,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.24584615384615413,
+            "x": 173.96858978271484,
+            "y": 411.70579528808594,
+            "at": 100035.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7184,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.24584615384615413,
+            "x": 173.95611572265625,
+            "y": 411.70384216308594,
+            "at": 100094.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7184,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.24584615384615413,
+            "x": 173.95455932617188,
+            "y": 411.70359802246094,
+            "at": 100106,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7189,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.2843076923076926,
+            "x": 173.94070053100586,
+            "y": 406.70143127441406,
+            "at": 100143.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7189,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.2843076923076926,
+            "x": 173.93637084960938,
+            "y": 406.7007598876953,
+            "at": 100159.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7189,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.2843076923076926,
+            "x": 173.93209075927734,
+            "y": 406.70008850097656,
+            "at": 100178.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7195,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.33046153846153875,
+            "x": 173.92713928222656,
+            "y": 400.69932556152344,
+            "at": 100187.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7195,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.33046153846153875,
+            "x": 173.90785598754883,
+            "y": 400.6963195800781,
+            "at": 100234.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7195,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.33046153846153875,
+            "x": 173.8939666748047,
+            "y": 400.6941223144531,
+            "at": 100293.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7200,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.3689230769230772,
+            "x": 173.8869285583496,
+            "y": 395.6930389404297,
+            "at": 100309.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7200,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.3689230769230772,
+            "x": 173.88066482543945,
+            "y": 395.6920623779297,
+            "at": 100326.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7200,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.3689230769230772,
+            "x": 173.87547302246094,
+            "y": 395.6912384033203,
+            "at": 100343,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7200,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.3689230769230772,
+            "x": 173.87113571166992,
+            "y": 395.6905517578125,
+            "at": 100360.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7200,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.3689230769230772,
+            "x": 173.86852645874023,
+            "y": 395.6901397705078,
+            "at": 100372.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7205,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.4073846153846157,
+            "x": 173.8528060913086,
+            "y": 390.6876983642578,
+            "at": 100409.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7205,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.4073846153846157,
+            "x": 173.8465919494629,
+            "y": 390.6867218017578,
+            "at": 100429.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7205,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.4073846153846157,
+            "x": 173.83147430419922,
+            "y": 390.6843566894531,
+            "at": 100509.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7211,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.45353846153846183,
+            "x": 173.8238868713379,
+            "y": 384.68316650390625,
+            "at": 100526.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7211,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.45353846153846183,
+            "x": 173.81726455688477,
+            "y": 384.68212890625,
+            "at": 100544.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7211,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.45353846153846183,
+            "x": 173.8137969970703,
+            "y": 384.68157958984375,
+            "at": 100555.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7211,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.45353846153846183,
+            "x": 173.80452728271484,
+            "y": 384.6801300048828,
+            "at": 100593,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7211,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.45353846153846183,
+            "x": 173.8016014099121,
+            "y": 384.67967224121094,
+            "at": 100609.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7216,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.49200000000000027,
+            "x": 173.79345321655273,
+            "y": 379.6783905029297,
+            "at": 100628.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7216,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.49200000000000027,
+            "x": 173.79085540771484,
+            "y": 379.67799377441406,
+            "at": 100635.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7216,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.49200000000000027,
+            "x": 173.77619552612305,
+            "y": 379.6756896972656,
+            "at": 100689.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7216,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.49200000000000027,
+            "x": 173.76984405517578,
+            "y": 379.6747131347656,
+            "at": 100727.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7222,
+          "wire": "",
+          "score": true,
+          "scope": "workbench"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5381538461538464,
+            "x": 173.76421356201172,
+            "y": 373.6737976074219,
+            "at": 100739.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7222,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5381538461538464,
+            "x": 173.7508087158203,
+            "y": 373.6717071533203,
+            "at": 100776.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7222,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5381538461538464,
+            "x": 173.74647521972656,
+            "y": 373.6710205078125,
+            "at": 100792.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7222,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5381538461538464,
+            "x": 173.74260711669922,
+            "y": 373.67041015625,
+            "at": 100809.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7227,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5766153846153849,
+            "x": 173.73463821411133,
+            "y": 368.66917419433594,
+            "at": 100826.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7227,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5766153846153849,
+            "x": 173.72801971435547,
+            "y": 368.6681365966797,
+            "at": 100843,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7227,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5766153846153849,
+            "x": 173.72280883789062,
+            "y": 368.6673126220703,
+            "at": 100859.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7227,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5766153846153849,
+            "x": 173.71791076660156,
+            "y": 368.6665496826172,
+            "at": 100877,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7227,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.5766153846153849,
+            "x": 173.7151336669922,
+            "y": 368.6660919189453,
+            "at": 100889.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7233,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.6227692307692311,
+            "x": 173.69738388061523,
+            "y": 362.663330078125,
+            "at": 100926.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7233,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.6227692307692311,
+            "x": 173.69166946411133,
+            "y": 362.6624298095703,
+            "at": 100943,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7233,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.6227692307692311,
+            "x": 173.68575286865234,
+            "y": 362.6614990234375,
+            "at": 100962.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7238,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.6612307692307695,
+            "x": 173.6829833984375,
+            "y": 357.6610565185547,
+            "at": 100967.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7238,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.6612307692307695,
+            "x": 173.65948104858398,
+            "y": 357.65736389160156,
+            "at": 101026.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7238,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.6612307692307695,
+            "x": 173.65526962280273,
+            "y": 357.6567077636719,
+            "at": 101042.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7243,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.699692307692308,
+            "x": 173.6463623046875,
+            "y": 352.65528869628906,
+            "at": 101060,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7243,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.699692307692308,
+            "x": 173.63943481445312,
+            "y": 352.6542205810547,
+            "at": 101077.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7243,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "skills",
+            "to": "skills",
+            "progress": 0.699692307692308,
+            "x": 173.6346092224121,
+            "y": 352.65345764160156,
+            "at": 101091,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 7243,
+          "wire": "",
+          "score": true,
+          "scope": "instrument"
+        }
+      ]
+    },
+    {
+      "name": "docked-scroll-silent-services",
+      "pass": true,
+      "keys": [
+        {
+          "id": "services",
+          "at": 9638.36
+        },
+        {
+          "id": "services",
+          "at": 9738.36
+        }
+      ],
+      "maxRms": 0,
+      "rows": [
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.1963999999999942,
+            "x": 337,
+            "y": 453.234375,
+            "at": 102909.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9658,
+          "wire": "",
+          "score": false,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.1963999999999942,
+            "x": 337,
+            "y": 453.234375,
+            "at": 102909.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9658,
+          "wire": "",
+          "score": false,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.1963999999999942,
+            "x": 337,
+            "y": 453.234375,
+            "at": 102909.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9663,
+          "wire": "",
+          "score": false,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.24639999999999418,
+            "x": 337,
+            "y": 448.234375,
+            "at": 103577.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9663,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.24639999999999418,
+            "x": 337,
+            "y": 448.234375,
+            "at": 103594.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9663,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.24639999999999418,
+            "x": 337,
+            "y": 448.234375,
+            "at": 103606.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9663,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.24639999999999418,
+            "x": 337,
+            "y": 448.234375,
+            "at": 103639.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9663,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.24639999999999418,
+            "x": 337,
+            "y": 448.234375,
+            "at": 103676.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9667,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.28639999999999416,
+            "x": 337,
+            "y": 444.234375,
+            "at": 103694,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9667,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.28639999999999416,
+            "x": 337,
+            "y": 444.234375,
+            "at": 103711.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9667,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.28639999999999416,
+            "x": 337,
+            "y": 444.234375,
+            "at": 103723.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9667,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.28639999999999416,
+            "x": 337,
+            "y": 444.234375,
+            "at": 103760,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9667,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.28639999999999416,
+            "x": 337,
+            "y": 444.234375,
+            "at": 103776.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9671,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3263999999999942,
+            "x": 337,
+            "y": 440.234375,
+            "at": 103794.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9671,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3263999999999942,
+            "x": 337,
+            "y": 440.234375,
+            "at": 103806.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9671,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3263999999999942,
+            "x": 337,
+            "y": 440.234375,
+            "at": 103843.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9671,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3263999999999942,
+            "x": 337,
+            "y": 440.234375,
+            "at": 103860.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9675,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3663999999999942,
+            "x": 337,
+            "y": 436.234375,
+            "at": 103877.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9675,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3663999999999942,
+            "x": 337,
+            "y": 436.234375,
+            "at": 103893.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9675,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3663999999999942,
+            "x": 337,
+            "y": 436.234375,
+            "at": 103911,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9675,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3663999999999942,
+            "x": 337,
+            "y": 436.234375,
+            "at": 103922.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9675,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.3663999999999942,
+            "x": 337,
+            "y": 436.234375,
+            "at": 103960.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9679,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.40639999999999415,
+            "x": 337,
+            "y": 432.234375,
+            "at": 103977,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9679,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.40639999999999415,
+            "x": 337,
+            "y": 432.234375,
+            "at": 103993.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9679,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.40639999999999415,
+            "x": 337,
+            "y": 432.234375,
+            "at": 104010.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9679,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.40639999999999415,
+            "x": 337,
+            "y": 432.234375,
+            "at": 104027.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9679,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.40639999999999415,
+            "x": 337,
+            "y": 432.234375,
+            "at": 104043.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9683,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4463999999999942,
+            "x": 337,
+            "y": 428.234375,
+            "at": 104060.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9683,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4463999999999942,
+            "x": 337,
+            "y": 428.234375,
+            "at": 104077,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9683,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4463999999999942,
+            "x": 337,
+            "y": 428.234375,
+            "at": 104094.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9683,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4463999999999942,
+            "x": 337,
+            "y": 428.234375,
+            "at": 104106.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9683,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4463999999999942,
+            "x": 337,
+            "y": 428.234375,
+            "at": 104143.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9688,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4963999999999942,
+            "x": 337,
+            "y": 423.234375,
+            "at": 104160,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9688,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4963999999999942,
+            "x": 337,
+            "y": 423.234375,
+            "at": 104176.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9688,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4963999999999942,
+            "x": 337,
+            "y": 423.234375,
+            "at": 104195.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9688,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4963999999999942,
+            "x": 337,
+            "y": 423.234375,
+            "at": 104210,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9688,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.4963999999999942,
+            "x": 337,
+            "y": 423.234375,
+            "at": 104227.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9692,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.5363999999999942,
+            "x": 337,
+            "y": 419.234375,
+            "at": 104243.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9692,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.5363999999999942,
+            "x": 337,
+            "y": 419.234375,
+            "at": 104260,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9692,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.5363999999999942,
+            "x": 337,
+            "y": 419.234375,
+            "at": 104279.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9692,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.5363999999999942,
+            "x": 337,
+            "y": 419.234375,
+            "at": 104290,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9692,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.5363999999999942,
+            "x": 337,
+            "y": 419.234375,
+            "at": 104328.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9696,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.5763999999999941,
+            "x": 337,
+            "y": 415.234375,
+            "at": 104411.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9696,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.5763999999999941,
+            "x": 337,
+            "y": 415.234375,
+            "at": 104427.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9700,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6163999999999942,
+            "x": 337,
+            "y": 411.234375,
+            "at": 104444.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9700,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6163999999999942,
+            "x": 337,
+            "y": 411.234375,
+            "at": 104460.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9700,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6163999999999942,
+            "x": 337,
+            "y": 411.234375,
+            "at": 104479.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9700,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6163999999999942,
+            "x": 337,
+            "y": 411.234375,
+            "at": 104489.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9700,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6163999999999942,
+            "x": 337,
+            "y": 411.234375,
+            "at": 104527.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9704,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6563999999999942,
+            "x": 337,
+            "y": 407.234375,
+            "at": 104544.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9704,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6563999999999942,
+            "x": 337,
+            "y": 407.234375,
+            "at": 104560.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9704,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6563999999999942,
+            "x": 337,
+            "y": 407.234375,
+            "at": 104576.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9704,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6563999999999942,
+            "x": 337,
+            "y": 407.234375,
+            "at": 104595.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9704,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6563999999999942,
+            "x": 337,
+            "y": 407.234375,
+            "at": 104603.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9708,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6963999999999941,
+            "x": 337,
+            "y": 403.234375,
+            "at": 104657.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9708,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6963999999999941,
+            "x": 337,
+            "y": 403.234375,
+            "at": 104693.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9708,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "services",
+            "to": "services",
+            "progress": 0.6963999999999941,
+            "x": 337,
+            "y": 403.234375,
+            "at": 104712.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 9708,
+          "wire": "",
+          "score": true,
+          "scope": "services"
+        }
+      ]
+    },
+    {
+      "name": "docked-scroll-silent-signature",
+      "pass": true,
+      "keys": [
+        {
+          "id": "signature",
+          "at": 10661.86
+        },
+        {
+          "id": "signature",
+          "at": 10771.86
+        }
+      ],
+      "maxRms": 0,
+      "rows": [
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.20127272727272197,
+            "x": 292.07664489746094,
+            "y": 450.44219360351565,
+            "at": 106442.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10684,
+          "wire": "",
+          "score": false,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.20127272727272197,
+            "x": 292.07664489746094,
+            "y": 450.44219360351565,
+            "at": 106442.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10684,
+          "wire": "",
+          "score": false,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.20127272727272197,
+            "x": 292.07664489746094,
+            "y": 450.44219360351565,
+            "at": 106442.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10689,
+          "wire": "",
+          "score": false,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.24672727272726744,
+            "x": 292.0780944824219,
+            "y": 445.44249755859374,
+            "at": 107178.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10689,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.24672727272726744,
+            "x": 292.0980682373047,
+            "y": 445.44657836914064,
+            "at": 107194,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10689,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.24672727272726744,
+            "x": 292.11802673339844,
+            "y": 445.4507727050781,
+            "at": 107211.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10689,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.24672727272726744,
+            "x": 292.1293029785156,
+            "y": 445.4530822753906,
+            "at": 107223.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10689,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.24672727272726744,
+            "x": 292.1546325683594,
+            "y": 445.4583312988281,
+            "at": 107257.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10694,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.2921818181818129,
+            "x": 292.2121124267578,
+            "y": 440.47022705078126,
+            "at": 107290.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10694,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.2921818181818129,
+            "x": 292.2523193359375,
+            "y": 440.47854980468753,
+            "at": 107323.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10694,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.2921818181818129,
+            "x": 292.2808074951172,
+            "y": 440.48441040039063,
+            "at": 107356.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10698,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.32854545454544926,
+            "x": 292.3342590332031,
+            "y": 436.4955419921875,
+            "at": 107390,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10698,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.32854545454544926,
+            "x": 292.3705139160156,
+            "y": 436.5031005859375,
+            "at": 107423.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10698,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.32854545454544926,
+            "x": 292.3979034423828,
+            "y": 436.508818359375,
+            "at": 107459.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10703,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.3739999999999947,
+            "x": 292.43853759765625,
+            "y": 431.5172229003906,
+            "at": 107481.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10703,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.3739999999999947,
+            "x": 292.5254821777344,
+            "y": 431.53533935546875,
+            "at": 107560.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10703,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.3739999999999947,
+            "x": 292.53648376464844,
+            "y": 431.53767944335937,
+            "at": 107577.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10707,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.41036363636363105,
+            "x": 292.56495666503906,
+            "y": 427.5436096191406,
+            "at": 107595.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10707,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.41036363636363105,
+            "x": 292.5797424316406,
+            "y": 427.54669189453125,
+            "at": 107606,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10707,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.41036363636363105,
+            "x": 292.619384765625,
+            "y": 427.555009765625,
+            "at": 107644.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10707,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.41036363636363105,
+            "x": 292.6319122314453,
+            "y": 427.5576318359375,
+            "at": 107660.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10712,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4558181818181765,
+            "x": 292.66529846191406,
+            "y": 422.564638671875,
+            "at": 107678,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10712,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4558181818181765,
+            "x": 292.69154357910156,
+            "y": 422.57017822265624,
+            "at": 107693.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10712,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4558181818181765,
+            "x": 292.7148895263672,
+            "y": 422.57501831054685,
+            "at": 107710.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10712,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4558181818181765,
+            "x": 292.73435974121094,
+            "y": 422.5791076660156,
+            "at": 107727.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10712,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4558181818181765,
+            "x": 292.7497253417969,
+            "y": 422.5823986816406,
+            "at": 107743.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10716,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4921818181818129,
+            "x": 292.7813262939453,
+            "y": 418.58894897460937,
+            "at": 107760.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10716,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4921818181818129,
+            "x": 292.8074645996094,
+            "y": 418.5944885253906,
+            "at": 107777.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10716,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4921818181818129,
+            "x": 292.82456970214844,
+            "y": 418.5981176757813,
+            "at": 107790,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10716,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4921818181818129,
+            "x": 292.85850524902344,
+            "y": 418.6052282714844,
+            "at": 107822.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10716,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.4921818181818129,
+            "x": 292.8832702636719,
+            "y": 418.610419921875,
+            "at": 107857.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10721,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.5376363636363584,
+            "x": 292.93934631347656,
+            "y": 413.62229736328123,
+            "at": 107890.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10721,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.5376363636363584,
+            "x": 292.97865295410156,
+            "y": 413.6306103515625,
+            "at": 107923.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10721,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.5376363636363584,
+            "x": 293.0071563720703,
+            "y": 413.6366662597656,
+            "at": 107957.59999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10726,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.5830909090909038,
+            "x": 293.07012939453125,
+            "y": 408.64998413085937,
+            "at": 107993.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10726,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.5830909090909038,
+            "x": 293.09703063964844,
+            "y": 408.65567504882813,
+            "at": 108014.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10726,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.5830909090909038,
+            "x": 293.16001892089844,
+            "y": 408.6690930175781,
+            "at": 108096.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10730,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.6194545454545402,
+            "x": 293.2446594238281,
+            "y": 404.6870812988281,
+            "at": 108175,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10730,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.6194545454545402,
+            "x": 293.26422119140625,
+            "y": 404.6912048339844,
+            "at": 108207.40000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10735,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.6649090909090856,
+            "x": 293.31678771972656,
+            "y": 399.7025,
+            "at": 108240.90000000596,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10735,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.6649090909090856,
+            "x": 293.3535461425781,
+            "y": 399.7102783203125,
+            "at": 108274.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10735,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.6649090909090856,
+            "x": 293.38018798828125,
+            "y": 399.71604736328123,
+            "at": 108307.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10739,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.7012727272727219,
+            "x": 293.4306182861328,
+            "y": 395.7268078613281,
+            "at": 108342,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10739,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        },
+        {
+          "line": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "signature",
+            "to": "signature",
+            "progress": 0.7012727272727219,
+            "x": 293.4646453857422,
+            "y": 395.7340783691406,
+            "at": 108374.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "gate": 0,
+          "requested": false,
+          "scrollY": 10739,
+          "wire": "",
+          "score": true,
+          "scope": "about"
+        }
+      ]
+    },
+    {
+      "name": "gallery-reflow-silent",
+      "pass": true
+    },
+    {
+      "name": "filter-reflow-silent",
+      "pass": true
+    },
+    {
+      "name": "flow-switch-blocks-even-real-travel",
+      "pass": true
+    },
+    {
+      "name": "hidden-stops-score-and-current",
+      "pass": true
+    },
+    {
+      "name": "return-scroll-does-not-resume",
+      "pass": true
+    },
+    {
+      "name": "fresh-gesture-no-stale-current",
+      "pass": true
+    },
+    {
+      "name": "resize-silent-and-layout-320",
+      "pass": true
+    },
+    {
+      "name": "resize-silent-and-layout-390",
+      "pass": true
+    },
+    {
+      "name": "resize-silent-and-layout-768",
+      "pass": true
+    },
+    {
+      "name": "resize-silent-and-layout-1440",
+      "pass": true
+    },
+    {
+      "name": "default-closed-is-exact-silence",
+      "pass": true,
+      "closedRms": 0,
+      "dockRms": 0,
+      "staleRms": 0,
+      "openRms": 0.018776741474337142,
+      "afterCloseRms": 0,
+      "openMaxDiff": 1.4901161193847656e-8,
+      "ambientMaxDiff": 4.6566128730773926e-9
+    },
+    {
+      "name": "dock-cannot-open-gate",
+      "pass": true
+    },
+    {
+      "name": "stale-renderer-fails-closed",
+      "pass": true
+    },
+    {
+      "name": "gate-closes-to-exact-zero",
+      "pass": true
+    },
+    {
+      "name": "moving-current-original-waveform-preserved",
+      "pass": true,
+      "maxDifference": 1.4901161193847656e-8
+    },
+    {
+      "name": "ambient-waveform-unchanged",
+      "pass": true,
+      "maxDifference": 4.6566128730773926e-9
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "offline": {
+    "closedRms": 0,
+    "dockRms": 0,
+    "staleRms": 0,
+    "openRms": 0.018776741474337142,
+    "afterCloseRms": 0,
+    "openMaxDiff": 1.4901161193847656e-8,
+    "ambientMaxDiff": 4.6566128730773926e-9
+  },
+  "physicalDevice": false
+}

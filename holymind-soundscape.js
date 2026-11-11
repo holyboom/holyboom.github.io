@@ -1,4 +1,4 @@
-/* HolyMind Quiet Current v18 — scroll-forward mix — authored Web Audio instrument, not a music loop.
+/* HolyMind Quiet Current v19 — visible-line-only current — authored Web Audio instrument, not a music loop.
  * Three independent buses: quiet field, continuous scroll current, brief resolution.
  * Browser and OfflineAudioContext use this SAME graph. No samples, no network,
  * no generative-audio service, no repeating tap presets, no JS audio callback.
@@ -30,10 +30,11 @@
   const nodes=[],sources=[],oneshots=new Set(),params=new Map();let disposed=false,updates=0,ducks=0,resolves=0,last={};
   const own=n=>(nodes.push(n),n),gain=(v=1)=>{const n=own(ctx.createGain());n.gain.value=v;return n;};
   const filter=(type,hz,q=.6)=>{const n=own(ctx.createBiquadFilter());n.type=type;n.frequency.value=hz;n.Q.value=q;return n;};
-  const master=gain(1),ambient=gain(0),scroll=gain(0),resolveBus=gain(1),ambientDuck=gain(1),scrollDuck=gain(1),scrollPresence=gain(SCROLL_BOOST_GAIN);
+  const master=gain(1),ambient=gain(0),scroll=gain(0),resolveBus=gain(1),ambientDuck=gain(1),scrollDuck=gain(1),scrollPresence=gain(SCROLL_BOOST_GAIN),lineGate=gain(0);
+  let lineAllowed=false,lastLineLease=-1e6,lineUpdates=0;
   const meterA=own(ctx.createAnalyser()),meterS=own(ctx.createAnalyser()),meterR=own(ctx.createAnalyser());[meterA,meterS,meterR].forEach(n=>n.fftSize=1024);
   ambient.connect(ambientDuck);ambientDuck.connect(meterA);meterA.connect(master);
-  scroll.connect(scrollDuck);scrollDuck.connect(scrollPresence);scrollPresence.connect(meterS);meterS.connect(master);resolveBus.connect(meterR);meterR.connect(master);master.connect(destination);
+  scroll.connect(scrollDuck);scrollDuck.connect(scrollPresence);scrollPresence.connect(lineGate);lineGate.connect(meterS);meterS.connect(master);resolveBus.connect(meterR);meterR.connect(master);master.connect(destination);
   const bedLow=filter('lowpass',1250,.5),motionLow=filter('lowpass',1600,.58),motionPan=ctx.createStereoPanner?own(ctx.createStereoPanner()):gain(1);
   bedLow.connect(ambient);motionLow.connect(motionPan);motionPan.connect(scroll);
   function osc(hz,level,dest,type='sine'){
@@ -58,6 +59,21 @@
    const prev=params.get(param);if(prev!==undefined&&Math.abs(prev-value)<1e-5)return;params.set(param,value);
    if(typeof param.cancelAndHoldAtTime==='function')param.cancelAndHoldAtTime(at);else{const v=param.value;param.cancelScheduledValues(at);param.setValueAtTime(v,at);}
    param.setTargetAtTime(value,at,Math.max(.008,tau));
+  }
+  // Post-envelope gate affects ONLY the electrical current, never piano or ambience.
+  // Fail closed on startup, missing visual evidence, and a stalled visual renderer.
+  function setLineTravel(input={},at=ctx.currentTime){
+   if(disposed)return;lineUpdates++;
+   const allow=input.allowed!==false&&input.moving===true&&input.lineVisible===true&&
+    typeof input.from==='string'&&typeof input.to==='string'&&input.from!==input.to;
+   if(!allow&&!lineAllowed)return;
+   if(allow&&lineAllowed&&at-lastLineLease<.025)return;
+   const p=lineGate.gain;
+   if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(at);else{const v=p.value;p.cancelScheduledValues(at);p.setValueAtTime(v,at);}
+   p.linearRampToValueAtTime(allow?1:0,at+(allow?.008:.012));
+   // Each moving frame renews a short lease; audio closes even if JS stops reporting.
+   if(allow){p.setValueAtTime(1,at+.085);p.linearRampToValueAtTime(0,at+.100);lastLineLease=at;}
+   lineAllowed=allow;
   }
   function update(input={},at=ctx.currentTime){
    if(disposed)return;updates++;
@@ -93,11 +109,12 @@
    s.onended=()=>{oneshots.delete(s);s.disconnect();g.disconnect();};s.start(at);duck(at,.30);return true;
   }
   function silence(at=ctx.currentTime){
+   setLineTravel({moving:false},at);
    target(ambient.gain,0,at,.035);target(scroll.gain,0,at,.025);last={...last,enabled:false,activity:0,ambientGain:0,scrollGain:0};
    for(const s of oneshots){try{s.stop(at);}catch(_){}}oneshots.clear();
   }
   function dispose(){if(disposed)return;silence();disposed=true;for(const s of sources){try{s.stop();}catch(_){}}for(const n of nodes){try{n.disconnect();}catch(_){}}}
-  return Object.freeze({update,duck,settle,silence,dispose,snapshot:()=>({version:'current-mix-v18',scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN,disposed,updates,ducks,resolves,continuousSources:sources.length,oneShots:oneshots.size,...last,actual:{ambient:ambient.gain.value,scroll:scroll.gain.value,ambientDuck:ambientDuck.gain.value,scrollDuck:scrollDuck.gain.value},rms:{ambient:rms(meterA),scroll:rms(meterS),resolve:rms(meterR)}})});
+  return Object.freeze({update,setLineTravel,duck,settle,silence,dispose,snapshot:()=>({version:'line-current-v19',scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN,disposed,updates,ducks,resolves,lineGate:{requested:lineAllowed,value:lineGate.gain.value,leaseFresh:ctx.currentTime-lastLineLease<.100,updates:lineUpdates,closeMs:12},continuousSources:sources.length,oneShots:oneshots.size,...last,actual:{ambient:ambient.gain.value,scroll:scroll.gain.value,ambientDuck:ambientDuck.gain.value,scrollDuck:scrollDuck.gain.value},rms:{ambient:rms(meterA),scroll:rms(meterS),resolve:rms(meterR)}})});
  }
- root.HolyMindSoundscape=Object.freeze({version:'current-mix-v18',create,mix:Object.freeze({scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN}),description:'Quiet Electric Field / Reversible Filament / Settled Current',scope:'Entire showcase, Hero through Footer',resolution});
+ root.HolyMindSoundscape=Object.freeze({version:'line-current-v19',create,mix:Object.freeze({scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN}),description:'Quiet Electric Field / Reversible Filament / Settled Current',scope:'Entire showcase, Hero through Footer',resolution});
 })(globalThis);

@@ -103,3 +103,7 @@ An ordered K.545 opening with a closing cadence follows real scrolling. Longer s
 
 ### Current Mix v18
 The approved Scroll Sonata remains unchanged. Only its accompanying electrical scroll filament is +8 dB, with the original attack/release/ducking intact. Compare the controlled mix at `qa/current-mix-v18.html`.
+
+
+## Line-only current
+`line-current-v19` gates the non-piano electrical scroll sound on actual visible carrier travel. Pinned/docked/stationary states are silent on that bus; the Mozart score and its natural tails still follow scrolling independently. Evidence: `docs/evidence/line-current-v19/summary.json`.

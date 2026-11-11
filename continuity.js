@@ -40,6 +40,31 @@
   {id:'portal',s:'.contact-portal',x:.50,y:.50,shape:octagon,w:150,h:150,angle:0,spread:68,hold:0}
  ];
  let keys=[],raf=0,until=0,needsMeasure=true,lastY=scrollY,restored=false;
+ // Read-only sonification evidence comes from the SAME frame as the visible path.
+ // Progress changes mean travel; ambient spins, docked transforms and layout shifts do not.
+ let lastTravelFrame=null,lastTravelAt=-1e6,travelHeader=0;
+ let lineTravel={moving:false,lineVisible:false,from:null,to:null,progress:0,at:0,reason:'initial'};
+ function quietLine(reason='stationary'){
+  lastTravelFrame=null;lastTravelAt=-1e6;
+  lineTravel={...lineTravel,moving:false,lineVisible:false,at:performance.now(),reason};
+  window.HolyMindAudio?.updateLineTravel?.(lineTravel);
+ }
+ function reportLine(a,b,p,y,pos,segment){
+  const now=performance.now(),same=a.id===b.id;
+  const onScreen=pos.x>=-8&&pos.x<=innerWidth+8&&pos.y>=travelHeader&&pos.y<=innerHeight+8;
+  const lineVisible=!same&&!!segment&&p>0&&p<1&&onScreen;
+  const previous=lastTravelFrame;
+  const progressed=previous&&now-previous.at<180&&Math.abs(y-previous.y)>.05&&
+   (a.id!==previous.from||b.id!==previous.to||Math.abs(p-previous.progress)>1e-7);
+  if(lineVisible&&progressed)lastTravelAt=now;
+  if(!lineVisible)lastTravelAt=-1e6;
+  // 50 ms bridges render/input cadence only; it is not an audible decay tail.
+  const moving=lineVisible&&now-lastTravelAt<50;
+  lineTravel={moving,lineVisible,from:a.id,to:b.id,progress:p,x:pos.x,y:pos.y,at:now,
+   reason:same||p<=0||p>=1?'docked':!segment?'no-line':!onScreen?'offscreen':moving?'moving':'stationary'};
+  lastTravelFrame={from:a.id,to:b.id,progress:p,y,at:now};
+  window.HolyMindAudio?.updateLineTravel?.(lineTravel);
+ }
  const enabled=()=>body.dataset.motion==='on'&&!document.hidden;
  const svgPath=points=>points.map((v,i)=>`${i?'L':'M'}${v[0].toFixed(2)} ${v[1].toFixed(2)}`).join(' ')+'Z';
  const diamondPath=(x,y,r)=>`M${x} ${y-r}l${r} ${r}l${-r} ${r}l${-r} ${-r}Z`;
@@ -50,7 +75,7 @@
   const r=el.getBoundingClientRect();return {x:r.left+r.width*station.x,y:r.top+r.height*station.y};
  }
  function measure(){
-  needsMeasure=false;
+  needsMeasure=false;travelHeader=document.querySelector('.masthead')?.offsetHeight||0;
   const H=innerHeight,max=Math.max(1,document.documentElement.scrollHeight-H);
   const assemblyPin=window.ScrollTrigger?.getById('assembly-story');
   stations.forEach(st=>{
@@ -110,8 +135,8 @@
  }
  function render(){
   raf=0;
-  if(!enabled()){layer.style.visibility='hidden';restore();body.dataset.continuity='paused';return;}
-  if(needsMeasure)measure();if(!keys.length)return;
+  if(!enabled()){quietLine('inactive');layer.style.visibility='hidden';restore();body.dataset.continuity='paused';return;}
+  if(needsMeasure){quietLine('remeasure');measure();}if(!keys.length){quietLine('no-route');return;}
   layer.style.visibility='visible';body.dataset.continuity='ready';
   const y=clamp(scrollY,0,document.documentElement.scrollHeight-innerHeight);
   let i=0;while(i<keys.length-2&&y>keys[i+1].at)i++;
@@ -149,6 +174,7 @@
   wire.setAttribute('d',brainTransit?pos.wire:showWire?polyline(path,0,1):'');
   const segment=brainTransit?pos.lit:showWire?polyline(path,Math.max(0,t-.14),Math.min(1,t+.025),15):'';
   current.setAttribute('d',segment);shadow.setAttribute('d',segment);
+  reportLine(a,b,p,y,pos,segment);
   const arrival=showWire?Math.max(0,(p-.70)/.30):0;
   const dock=same?1:1-Math.min(1,Math.sin(Math.PI*p)*3);
   layer.style.setProperty('--carrier-accent',`rgb(${Math.round(lerp(103,242,dock))} ${Math.round(lerp(232,204,dock))} ${Math.round(lerp(249,143,dock))})`);
@@ -163,19 +189,19 @@
   if(performance.now()<until||scrubActive)raf=requestAnimationFrame(render);
  }
  function queue(ms=850){until=Math.max(until,performance.now()+ms);if(!raf)raf=requestAnimationFrame(render);}
- function refresh(){needsMeasure=true;queue();}
+ function refresh(){quietLine('refresh');needsMeasure=true;queue();}
  document.addEventListener('holymind:motion',()=>{restore();refresh();});
  addEventListener('scroll',()=>queue(),{passive:true});
  addEventListener('resize',refresh,{passive:true});
- document.addEventListener('visibilitychange',()=>{if(document.hidden){if(raf)cancelAnimationFrame(raf);raf=0;restore();layer.style.visibility='hidden';}else refresh();});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){quietLine('hidden');if(raf)cancelAnimationFrame(raf);raf=0;restore();layer.style.visibility='hidden';}else refresh();});
  addEventListener('pageshow',refresh);
- addEventListener('pagehide',()=>{if(raf)cancelAnimationFrame(raf);raf=0;restore();});
+ addEventListener('pagehide',()=>{quietLine('pagehide');if(raf)cancelAnimationFrame(raf);raf=0;restore();});
  document.addEventListener('click',()=>queue());document.addEventListener('input',()=>queue());
  document.addEventListener('holymind:step',()=>queue());
  document.fonts?.ready.then(refresh);
  if(window.ScrollTrigger)window.ScrollTrigger.addEventListener('refresh',refresh);
  if(window.ResizeObserver){const observer=new ResizeObserver(refresh);observer.observe(main);}
  // Read-only diagnostics make reversal and geometry testable without driving state.
- window.HolyMindContinuity=Object.freeze({version:'spark-v8',snapshot:()=>({stations:stations.map(s=>({id:s.id,at:s.at})),keys:keys.map(k=>({id:k.station.id,at:k.at})),state:body.dataset.continuity,renderedScrollY:lastY,from:layer.dataset.from,to:layer.dataset.to,progress:Number(layer.dataset.progress),x:Number(layer.dataset.x),y:Number(layer.dataset.y),running:!!raf})});
+ window.HolyMindContinuity=Object.freeze({version:'line-current-v19',snapshot:()=>({lineTravel:{...lineTravel},stations:stations.map(s=>({id:s.id,at:s.at})),keys:keys.map(k=>({id:k.station.id,at:k.at})),state:body.dataset.continuity,renderedScrollY:lastY,from:layer.dataset.from,to:layer.dataset.to,progress:Number(layer.dataset.progress),x:Number(layer.dataset.x),y:Number(layer.dataset.y),running:!!raf})});
  refresh();
 })();

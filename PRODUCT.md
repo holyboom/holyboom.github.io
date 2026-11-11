@@ -158,3 +158,15 @@ Owner approved v17's musical progression/release and requested only the earlier 
 - Do not alter piano level, source, written Mozart melody/harmony, bounded tempo, overlapping natural release or room. Do not raise the background ambience or brain-tap sounds. Existing scene material ratios, smooth fades, global volume, independent flow toggle and lifecycle behavior stay intact.
 - Compare against the exact v17 graph with identical gestures and score using OfflineAudioContext. A first implementation multiplied the gain automation target and introduced a tiny numerical envelope difference; the final implementation uses a constant post-envelope GainNode so the original waveform is preserved up to floating-point precision.
 - Publish equal-master fourteen-second before/after previews, without independent normalization. Check a combined full-master stress mix with piano/current/three brain bursts for sample clipping. Such a test does not certify all possible playback situations or real-device listening comfort.
+
+
+## Line Current v19 — audible only during actual visible line travel
+
+The owner clarified: the non-piano scrolling current must sound only while the shared visual carrier is moving along its line. Mere scrolling, a parked carrier, a pinned layer reveal or a stationary visible line must be silent on the current bus. This supersedes the general scroll-velocity audio rule, not the music behavior.
+
+- The continuity renderer reports visible-path existence, route endpoints, actual progress movement, viewport visibility and a monotonic timestamp from the same frame that draws the line. Decorative spinning or changing layer transforms is not route travel.
+- A normally closed post-envelope gain gates only the existing +8 dB current bus. Genuine scroll intent and fresh moving/visible route evidence are both required. Missing evidence, docking, zero progress motion, offscreen carrier, navigation/reflow suppression and hidden pages close it.
+- Eight-millisecond opening and twelve-millisecond closing edges prevent abrupt signal discontinuities. A fifty-millisecond movement-cadence window bridges input/render timing; no audible long decay is added. A 100 ms audio-clock lease fails closed if rendering stalls.
+- The pianist reads the unchanged generic scroll stream. Pinned Assemble can continue the ordered Mozart score while the docked electrical-current bus stays exactly zero. Natural piano tails, score cursor, cues and ambient field remain independent.
+- No new render loop, AudioContext, oscillator, runtime library, UI toggle or image. Layout, always-on motion, fourteen original brain effects, musical source/score and all existing controls are preserved.
+- Tests include ten line transfers in both directions, stationary midline, real docked holds, pinned layer scrolling, native mobile input emulation, source retention, exact-zero gate output and stale-renderer closure. Physical iPhone loudspeaker testing is not claimed.

@@ -1,0 +1,1012 @@
+{
+  "base": "http://127.0.0.1:8782/",
+  "engine": "chromium",
+  "input": "DevTools native touch in mobile emulation",
+  "checks": [
+    {
+      "name": "native-touch-line-down-audible",
+      "pass": true,
+      "rows": [
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.31978190672807144,
+            "x": 232.75062371173027,
+            "y": 411.9901473394656,
+            "at": 3240.7000000029802,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": false,
+          "input": "none"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.31978190672807144,
+            "x": 232.75062371173027,
+            "y": 411.9901473394656,
+            "at": 3240.7000000029802,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": false,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.3396326292943729,
+            "x": 254.3480427130285,
+            "y": 418.516511862788,
+            "at": 5140.399999991059,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.35948335186067426,
+            "x": 275.80802267920046,
+            "y": 425.69546446207755,
+            "at": 5356.5999999940395,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.39918479699327714,
+            "x": 315.4204668446236,
+            "y": 441.8379789668028,
+            "at": 5548,
+            "reason": "moving"
+          },
+          "rms": 0.00826183268746339,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.39918479699327714,
+            "x": 315.5923190510091,
+            "y": 441.65658565548654,
+            "at": 5673.0999999940395,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.43888624212587996,
+            "x": 346.37865315569064,
+            "y": 459.39759403952144,
+            "at": 5998.0999999940395,
+            "reason": "moving"
+          },
+          "rms": 0.010090718373365228,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.4587369646921814,
+            "x": 356.9060803172161,
+            "y": 468.60465914276136,
+            "at": 6119.399999991059,
+            "reason": "moving"
+          },
+          "rms": 0.010658825013374786,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.4785876872584828,
+            "x": 363.5274561926073,
+            "y": 478.011954332939,
+            "at": 6202.79999999702,
+            "reason": "moving"
+          },
+          "rms": 0.01238674372810004,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.4984384098247842,
+            "x": 365.9868240719162,
+            "y": 487.4969784903674,
+            "at": 6286.20000000298,
+            "reason": "moving"
+          },
+          "rms": 0.013037391592140091,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.5182891323910856,
+            "x": 364.2028657485186,
+            "y": 496.9924116327729,
+            "at": 6369.399999991059,
+            "reason": "moving"
+          },
+          "rms": 0.013911472027377917,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.538139854957387,
+            "x": 358.2863652860706,
+            "y": 506.4245040409232,
+            "at": 6452.70000000298,
+            "reason": "moving"
+          },
+          "rms": 0.014644212140546212,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.5579905775236884,
+            "x": 348.5279106059822,
+            "y": 515.7202038317155,
+            "at": 6536,
+            "reason": "moving"
+          },
+          "rms": 0.014484802233384506,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.5778413000899899,
+            "x": 335.3778595795631,
+            "y": 524.7998028020576,
+            "at": 6619.5,
+            "reason": "moving"
+          },
+          "rms": 0.014098023581838594,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.5976920226562913,
+            "x": 319.3357377568401,
+            "y": 533.7107960501138,
+            "at": 6664.899999991059,
+            "reason": "moving"
+          },
+          "rms": 0.015686373269156756,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.5976920226562913,
+            "x": 319.49046471089696,
+            "y": 533.4673296161097,
+            "at": 6760.899999991059,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.6175427452225927,
+            "x": 301.48802913277194,
+            "y": 541.7874044796919,
+            "at": 6973.29999999702,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.6373934677888942,
+            "x": 281.9704529013138,
+            "y": 549.7801780757596,
+            "at": 7115.20000000298,
+            "reason": "moving"
+          },
+          "rms": 0.009246565218177884,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        }
+      ]
+    },
+    {
+      "name": "native-touch-stop-silent",
+      "pass": true
+    },
+    {
+      "name": "native-touch-line-up-audible",
+      "pass": true,
+      "rows": [
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.6797416759303372,
+            "x": 238.97557473389455,
+            "y": 564.8511207548407,
+            "at": 8989.5,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": false,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.6797416759303372,
+            "x": 238.97557473389455,
+            "y": 564.8511207548407,
+            "at": 8989.5,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": false,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.6598909533640357,
+            "x": 259.14477393203015,
+            "y": 558.0982806895189,
+            "at": 10889.89999999106,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.6201895082314329,
+            "x": 299.1604575653928,
+            "y": 542.6405207519783,
+            "at": 11073.20000000298,
+            "reason": "moving"
+          },
+          "rms": 0.006810296948791781,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.6201895082314329,
+            "x": 299.01557772737465,
+            "y": 542.8081596496467,
+            "at": 11244.59999999404,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.6003387856651314,
+            "x": 317.3232266911905,
+            "y": 534.4084489870195,
+            "at": 11382.09999999404,
+            "reason": "moving"
+          },
+          "rms": 0.008486135931764392,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.58048806309883,
+            "x": 333.53360655893914,
+            "y": 525.697775484951,
+            "at": 11604.29999999702,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.5606373405325287,
+            "x": 347.04816480618126,
+            "y": 516.6300736819214,
+            "at": 11777.5,
+            "reason": "moving"
+          },
+          "rms": 0.008168993885243744,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.5407866179662272,
+            "x": 357.23742570658453,
+            "y": 507.39054217490013,
+            "at": 12088.5,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.5209358953999258,
+            "x": 363.65953540140174,
+            "y": 497.9541456928751,
+            "at": 12323.20000000298,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.481234450267323,
+            "x": 364.11539586676395,
+            "y": 478.78692532734465,
+            "at": 12519.5,
+            "reason": "moving"
+          },
+          "rms": 0.009144799295801058,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.46138372770102154,
+            "x": 358.093527653041,
+            "y": 469.3368019459303,
+            "at": 12602.79999999702,
+            "reason": "moving"
+          },
+          "rms": 0.01165735505828235,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.44153300513472016,
+            "x": 348.1669471969724,
+            "y": 460.0781553638912,
+            "at": 12686.20000000298,
+            "reason": "moving"
+          },
+          "rms": 0.012024729617052865,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.4216822825684187,
+            "x": 334.7352894601118,
+            "y": 451.0750619362277,
+            "at": 12769.5,
+            "reason": "moving"
+          },
+          "rms": 0.01283976211153181,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.4018315600021173,
+            "x": 318.33463505024366,
+            "y": 442.399623088026,
+            "at": 12852.89999999106,
+            "reason": "moving"
+          },
+          "rms": 0.013495860907087327,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.3819808374358159,
+            "x": 299.60750419917485,
+            "y": 434.1232598937948,
+            "at": 12936.09999999404,
+            "reason": "moving"
+          },
+          "rms": 0.015534562485427386,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": true,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.36213011486951446,
+            "x": 279.24711972363,
+            "y": 426.32841475235085,
+            "at": 13019.79999999702,
+            "reason": "moving"
+          },
+          "rms": 0.014859772374421232,
+          "requested": true,
+          "gate": 1,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": true,
+            "from": "ribbon",
+            "to": "assembly",
+            "progress": 0.36213011486951446,
+            "x": 278.8726086365469,
+            "y": 426.5499667435693,
+            "at": 13123.20000000298,
+            "reason": "stationary"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        }
+      ]
+    },
+    {
+      "name": "native-touch-pinned-current-silent",
+      "pass": true,
+      "rows": [
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.11019283746556474,
+            "x": 115.94180297851562,
+            "y": 519.7307586669922,
+            "at": 14189.39999999106,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": false,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.11019283746556474,
+            "x": 115.94180297851562,
+            "y": 519.7307586669922,
+            "at": 14189.39999999106,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": false,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.1184573002754821,
+            "x": 115.86969757080078,
+            "y": 518.2547149658203,
+            "at": 16091.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.12672176308539945,
+            "x": 115.91862487792969,
+            "y": 518.0964660644531,
+            "at": 16298.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.1349862258953168,
+            "x": 115.97229766845703,
+            "y": 517.9230804443359,
+            "at": 16523.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.15151515151515152,
+            "x": 115.9265365600586,
+            "y": 516.3933563232422,
+            "at": 16706.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.15977961432506887,
+            "x": 115.97235107421875,
+            "y": 516.2518005371094,
+            "at": 16883.29999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.16804407713498623,
+            "x": 116.0279312133789,
+            "y": 516.0800628662109,
+            "at": 17040,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.16804407713498623,
+            "x": 116.07392883300781,
+            "y": 515.9380798339844,
+            "at": 17211.20000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.1763085399449036,
+            "x": 116.01507568359375,
+            "y": 514.4833984375,
+            "at": 17331.79999999702,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.18457300275482094,
+            "x": 116.05342102050781,
+            "y": 514.3699340820312,
+            "at": 17398.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.20110192837465565,
+            "x": 116.04226684570312,
+            "y": 512.795166015625,
+            "at": 17511.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.20110192837465565,
+            "x": 116.08746337890625,
+            "y": 512.6667175292969,
+            "at": 17614.89999999106,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.21763085399449036,
+            "x": 115.97828674316406,
+            "y": 509.8119354248047,
+            "at": 17815.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.21763085399449036,
+            "x": 116.0114517211914,
+            "y": 509.7244873046875,
+            "at": 17881.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.22589531680440772,
+            "x": 116.06156921386719,
+            "y": 509.5926513671875,
+            "at": 17948.09999999404,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.23415977961432508,
+            "x": 116.0293197631836,
+            "y": 508.12794494628906,
+            "at": 18014.70000000298,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        },
+        {
+          "l": {
+            "moving": false,
+            "lineVisible": false,
+            "from": "assembly",
+            "to": "assembly",
+            "progress": 0.24242424242424243,
+            "x": 116.00466918945312,
+            "y": 506.6548767089844,
+            "at": 18081.5,
+            "reason": "docked"
+          },
+          "rms": 0,
+          "requested": false,
+          "gate": 0,
+          "piano": true,
+          "input": "touch"
+        }
+      ]
+    },
+    {
+      "name": "native-touch-piano-continues-in-pin",
+      "pass": true
+    },
+    {
+      "name": "same-context-and-no-extra-sources",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}
