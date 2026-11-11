@@ -14,7 +14,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
  const wheel=async(d,count=8,ms=55)=>{for(let i=0;i<count;i++){await p.mouse.wheel(0,d);await p.waitForTimeout(ms);}};
  const jump=async y=>{await p.waitForTimeout(180);await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await p.waitForFunction(target=>{const c=HolyMindContinuity.snapshot(),wanted=Math.max(0,Math.min(target,document.documentElement.scrollHeight-innerHeight));return Math.abs(scrollY-wanted)<1.5&&Math.abs(c.renderedScrollY-scrollY)<1.5&&!c.running;},y,{timeout:12000});await p.waitForTimeout(100);};
  const story=()=>p.evaluate(()=>HolyMindAssemblyScroll.snapshot());
- check('release-v15',await p.locator('html').getAttribute('data-build')==='piano-v16');
+ check('release-v15',await p.locator('html').getAttribute('data-build')==='scroll-score-v17');
  let v=await snap();check('load-has-no-context-or-sound',v.a.context==='uncreated'&&v.a.played===0&&v.a.soundscape===null);
  await wheel(25,5);v=await snap();check('scroll-cannot-unlock-audio',v.a.context==='uncreated'&&v.a.soundscape===null);
  await jump(0);await p.locator('#sound-toggle').click();await p.waitForTimeout(2000);v=await snap();

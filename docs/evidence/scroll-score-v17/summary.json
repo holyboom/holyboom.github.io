@@ -1,0 +1,13 @@
+{
+  "release": "scroll-score-v17",
+  "status": "Local checks passed; live verification pending",
+  "piece": "Mozart K.545, 12 opening bars plus 2-bar HolyMind cadence",
+  "score_notes": 204,
+  "local_checks": {
+    "chromium": 37,
+    "webkit": 37,
+    "visual_webkit": 68
+  },
+  "offline_checks": 6,
+  "physical_iphone_tested": false
+}

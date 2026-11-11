@@ -1,0 +1,63 @@
+/* Native scroll plus measured piano: order, resonance, pause/resume and lifecycle. */
+const {chromium,webkit}=require('playwright'),fs=require('fs');
+(async()=>{
+ const engine=process.env.ENGINE||'webkit',base=process.env.TEST_URL||'http://127.0.0.1:8780/',out=process.env.QA_DIR||'qa-output/score-'+engine;fs.mkdirSync(out,{recursive:true});fs.rmSync(out+'/result.json',{force:true});
+ const checks=[],errors=[];const check=(name,pass,data={})=>{checks.push({name,pass:!!pass,...data});console.log(name,!!pass);};
+ const b=await(engine==='webkit'?webkit.launch({headless:true}):chromium.launch({headless:true,executablePath:process.platform==='darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':undefined}));
+ try{
+ const p=await b.newPage({viewport:{width:390,height:844},hasTouch:true,reducedMotion:'reduce'});p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
+ await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>HolyMindCueTimbres.snapshot().ready&&HolyMindScrollSound.snapshot().stations.length===11);
+ const audio=()=>p.evaluate(()=>HolyMindAudio.snapshot());const wheel=async(d,n=20,delay=70)=>{for(let i=0;i<n;i++){await p.mouse.wheel(0,d);await p.waitForTimeout(delay);}};
+ const jump=async(y)=>{await p.evaluate(y=>{HolyMindScrollSound.suppressForNavigation();scrollTo({top:y,behavior:'instant'});},y);await p.waitForTimeout(1600);await p.waitForFunction(()=>!HolyMindContinuity.snapshot().running,null,{timeout:15000});};
+ check('release-v17',await p.locator('html').getAttribute('data-build')==='scroll-score-v17');
+ check('no-audio-on-load',(await audio()).context==='uncreated');
+ const score=await p.evaluate(()=>HolyMindMozartScore);
+ check('mozart-source-and-arranged-cadence',score.sourceBars===12&&score.arrangedCadenceBars===2&&score.totalBeats===56&&score.events.length===204&&score.license==='CC BY-SA 3.0');
+ check('recognizable-score-opening',JSON.stringify(score.events.filter(x=>x.hand==='melody').slice(0,8).map(x=>x.midi))===JSON.stringify([72,76,79,71,72,74,72,81]));
+ check('long-recorded-keys',await p.evaluate(()=>HolyMindCueTimbres.key(72).samples.length/HolyMindCueTimbres.key(72).sampleRate===6&&HolyMindCueTimbres.snapshot().notes===11));
+ await wheel(15,4);check('scroll-alone-cannot-unlock',(await audio()).context==='uncreated');await jump(0);
+ await p.locator('#sound-toggle').click();await p.waitForTimeout(1100);let a=await audio();
+ check('one-gesture-unlocked-context',a.context==='running'&&a.contextCount===1&&a.score);
+ check('piano-waits-for-scroll',!a.score.running&&a.score.played===0);
+ check('approved-ambient-continues',a.soundscape.rms.ambient>.0002);
+ await wheel(15,50,85);a=await audio();
+ check('native-scroll-plays-melody-and-harmony',a.score.running&&a.score.played>=12&&a.score.rms>.0002,{score:a.score});
+ check('written-beat-order-not-random',a.score.history.every((x,i,h)=>!i||x.beat===(h[i-1].beat+1)%56));
+ check('scheduled-notes-match-score',a.score.history.every(x=>JSON.stringify(x.notes)===JSON.stringify(score.events.filter(e=>e.beat>=x.beat&&e.beat<x.beat+1).map(e=>e.midi))));
+ check('bounded-musical-tempo',a.score.history.every(x=>x.bpm>=78&&x.bpm<=100));
+ check('tempo-changes-only-smoothly',a.score.history.every((x,i,h)=>!i||Math.abs(x.bpm-h[i-1].bpm)<=2.001));
+ check('natural-note-overlap',a.score.activeVoices>1&&a.score.peakVoices<=36&&a.score.skipped===0);
+ await p.waitForFunction(()=>!HolyMindAudio.snapshot().score.running,null,{timeout:5000});a=await audio();
+ check('pause-keeps-ringing-not-hard-cut',a.score.activeVoices>0&&a.score.rms>.00001,{rms:a.score.rms,voices:a.score.activeVoices});
+ const stoppedCursor=a.score.cursor,notes=a.score.played;await p.waitForTimeout(4700);a=await audio();
+ check('pause-does-not-advance-score',a.score.cursor===stoppedCursor&&a.score.played===notes);
+ check('tails-clean-up-and-no-idle-scheduler',a.score.activeVoices===0&&!a.score.timer&&a.score.rms<.0001,{rms:a.score.rms});
+ const beforeReverse=a.score.history.length;await wheel(-12,26,80);a=await audio();
+ check('reverse-scroll-resumes-next-beat',a.score.history[beforeReverse]?.beat===stoppedCursor&&a.score.direction===-1);
+ check('no-reversed-or-scrambled-recording',a.score.history.every((x,i,h)=>!i||x.beat===(h[i-1].beat+1)%56));
+ await p.waitForFunction(()=>!HolyMindAudio.snapshot().score.running);await p.waitForTimeout(4500);
+ const cursor=(await audio()).score.cursor,services=await p.evaluate(()=>HolyMindScrollSound.snapshot().stations.find(x=>x.id==='services').at);await jump(services+60);a=await audio();
+ check('section-navigation-does-not-start-or-reset-song',!a.score.running&&a.score.cursor===cursor);
+ await wheel(12,22,75);a=await audio();check('new-section-continues-same-score',a.score.scene==='services'&&a.score.cursor>cursor&&a.contextCount===1);
+ await p.waitForFunction(()=>!HolyMindAudio.snapshot().score.running);await p.waitForTimeout(4500);
+ await p.locator('[data-challenge=knowledge]').click();await p.waitForTimeout(350);const first=await audio();await p.locator('[data-step="2"]').click();await p.waitForTimeout(220);a=await audio();
+ check('action-piano-tails-overlap',a.feedback.retiring>=1&&a.feedback.active&&a.feedback.rms>.00005,{feedback:a.feedback});
+ const harmony=await p.evaluate(()=>HolyMindMozartScore.chords[Math.floor(HolyMindAudio.snapshot().score.lastBeat/4)]);
+ check('action-keys-follow-current-harmony',a.history.filter(x=>x.kind==='cue').slice(-2).every(x=>x.notes.every(n=>harmony.some(c=>c%12===n%12))));
+ await p.waitForTimeout(3700);a=await audio();check('action-tails-eventually-end',!a.feedback.active&&a.feedback.retiring===0);
+ await jump(0);await p.locator('.sonic-settings summary').click();await p.screenshot({path:out+'/mobile-controls.jpg',quality:85});await p.locator('#sound-cues').uncheck();await p.locator('.sonic-settings summary').click();
+ await wheel(15,15);a=await audio();check('piano-preference-stops-score-only',!a.cues&&!a.score.running&&a.soundscape.rms.scroll>.00005&&await p.evaluate(()=>document.body.dataset.motion==='on'));
+ await jump(0);await p.locator('.sonic-settings summary').click();await p.locator('#sound-cues').check();await p.locator('.sonic-settings summary').click();await wheel(15,12);
+ await p.evaluate(()=>dispatchEvent(new PageTransitionEvent('pagehide',{persisted:true})));await p.waitForTimeout(160);a=await audio();check('background-disposes-score-and-stops-audio',a.score===null&&a.soundscape===null&&a.context==='suspended');
+ await p.evaluate(()=>dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true})));await wheel(10,5);a=await audio();check('return-scroll-cannot-restart-audio',a.needsGesture&&a.context==='suspended'&&a.score===null);
+ await p.locator('[data-challenge=venture]').click();await p.waitForTimeout(600);a=await audio();check('meaningful-action-resumes-single-context',a.context==='running'&&a.contextCount===1&&a.score&&!a.score.running,{audio:a,scroll:await p.evaluate(()=>HolyMindScrollSound.snapshot())});
+ for(const width of [320,390,768,1440]){await p.setViewportSize({width,height:width<700?844:1000});await jump(0);check('layout-and-always-motion-'+width,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.body.dataset.motion==='on'));}
+ const q=await b.newPage({viewport:{width:390,height:844}});q.on('pageerror',e=>errors.push('studio: '+e.message));await q.goto(new URL('qa/scroll-score-v17.html',base).href,{waitUntil:'networkidle'});await q.waitForFunction(()=>!document.querySelector('#preview').disabled);
+ await q.locator('#preview').click();await q.waitForTimeout(1500);check('studio-uses-production-score',await q.evaluate(()=>document.getElementById('showcase').contentWindow.HolyMindAudio.snapshot().score.running));
+ await q.locator('#pause').click();await q.waitForTimeout(100);check('studio-pause-keeps-tail',await q.evaluate(()=>{const s=document.getElementById('showcase').contentWindow.HolyMindAudio.snapshot().score;return !s.running&&s.activeVoices>0&&s.rms>0;}));
+ await q.locator('#restart').click();await q.waitForTimeout(650);check('explicit-restart-only',await q.evaluate(()=>document.getElementById('showcase').contentWindow.HolyMindAudio.snapshot().score.lastBeat<=1));
+ await q.screenshot({path:out+'/mobile-studio.jpg',fullPage:true,quality:82});await q.setViewportSize({width:1440,height:1000});await q.waitForTimeout(600);await q.screenshot({path:out+'/desktop-studio.jpg',quality:82});await q.close();
+ const noBank=await b.newPage({viewport:{width:390,height:844}});noBank.on('pageerror',e=>errors.push('no-bank: '+e.message));await noBank.route('**/assets/audio/scroll-score-v17/keys.pcm',r=>r.abort());await noBank.goto(base,{waitUntil:'networkidle'});await noBank.locator('[data-challenge=knowledge]').click();await noBank.waitForTimeout(600);check('missing-bank-does-not-crash-or-play-beeps',await noBank.evaluate(()=>HolyMindAudio.snapshot().score===null&&HolyMindCueTimbres.snapshot().status==='failed'&&document.body.dataset.motion==='on'));await noBank.close();
+ const failed=checks.filter(x=>!x.pass);fs.writeFileSync(out+'/result.json',JSON.stringify({base,engine,checks,failed,errors,physicalDevice:false},null,2));console.log(JSON.stringify({count:checks.length,failed:failed.map(x=>x.name),errors}));if(failed.length||errors.length)process.exitCode=1;
+ }finally{await b.close();}
+})().catch(e=>{console.error(e);process.exit(1)});

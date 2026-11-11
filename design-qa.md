@@ -269,3 +269,12 @@ No claim of physical iPhone output, listening-comfort certification or guarantee
 
 
 Published Piano v16: {'piano_chromium': 32, 'piano_webkit': 32, 'events_webkit': 69, 'continuous_audio_webkit': 48}; 181 live checks, zero final assertion failures or captured runtime errors. Thirty-four public assets match the implementation, including piano bank, Studio, attribution and previews. All 21 individual waveform checks pass. No physical-iPhone listening test was performed.
+
+
+## Scroll Sonata v17
+
+Local score tests: 37 Chromium + 37 WebKit, plus 68 established visual-function tests. Six OfflineAudioContext signal/decay/source-count checks passed. All 204 score notes rendered; full musical preview peak 0.290, no per-file normalization. Six-second piano bank replaces the clipped 1.8-second bank in the foreground instrument; all existing source piano samples remain attributed.
+
+Found and fixed: Studio Pause was calling mute(false), which disposed the instrument and removed tails; it now only stops scheduling. Cleared stale pre-resume scroll intent before recreating audio after background return, so a meaningful action resumes sound without unexpectedly replaying prior motion.
+
+Exact preserved modules: 22 visual/control/ambient/tap modules and 37 artwork images. Twenty-two includes the original v14 continuous soundscape and v12 electric brain synth. No physical iPhone listening or speaker assessment was performed.

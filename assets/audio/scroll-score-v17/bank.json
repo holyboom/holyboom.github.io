@@ -1,0 +1,142 @@
+{
+  "sampleRate": 24000,
+  "framesPerNote": 144000,
+  "durationPerNote": 6,
+  "format": "PCM16 little endian mono",
+  "notes": [
+    {
+      "note": "A2",
+      "midi": 45,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 165,
+      "sourceChannel": "left",
+      "gain": 1.596113241522168,
+      "peak": 0.40259223875800837,
+      "rms": 0.05891667200833074,
+      "sha256": "20601d890f44a3c22499c7b61f52e571795df1fe5a01fac553dded7b6379e1d4"
+    },
+    {
+      "note": "C3",
+      "midi": 48,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 179,
+      "sourceChannel": "left",
+      "gain": 1.0650708430355205,
+      "peak": 0.3785027163685001,
+      "rms": 0.04117847968096636,
+      "sha256": "bb70dd921d81b3dda561c19b5c029292ae5a6fba1947e364bf274218ce19a9d1"
+    },
+    {
+      "note": "Fs3",
+      "midi": 54,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 169,
+      "sourceChannel": "left",
+      "gain": 1.526948951414231,
+      "peak": 0.4801540970208027,
+      "rms": 0.04426855926852621,
+      "sha256": "960fefd90f56608b7edf958dadfeca893cff5744ab9034d61e419401fe45ce9c"
+    },
+    {
+      "note": "A3",
+      "midi": 57,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 152,
+      "sourceChannel": "left",
+      "gain": 2.4846040044453956,
+      "peak": 0.49667027037231637,
+      "rms": 0.055087141543968876,
+      "sha256": "8e108fe228e34e32f6b4e61efff732eec53058a9e6f05a8d8e719598b132c4f9"
+    },
+    {
+      "note": "C4",
+      "midi": 60,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 153,
+      "sourceChannel": "left",
+      "gain": 1.9485070853089759,
+      "peak": 0.45508320264942337,
+      "rms": 0.03884591880469909,
+      "sha256": "689eaa4c2fd7f29a2cc0e386eec462156d523a87d701269e5e2458e66056f4f6"
+    },
+    {
+      "note": "Fs4",
+      "midi": 66,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 214,
+      "sourceChannel": "left",
+      "gain": 1.9804268617956906,
+      "peak": 0.3615010096256976,
+      "rms": 0.04325516273736543,
+      "sha256": "613652f5c96e35736ce6a46bc4ddb6ba1076d1fb16a35a4c22c14e67efdde57c"
+    },
+    {
+      "note": "A4",
+      "midi": 69,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 164,
+      "sourceChannel": "left",
+      "gain": 2.7610670796217134,
+      "peak": 0.5505135144580429,
+      "rms": 0.03513408286951011,
+      "sha256": "a62df24a2c84cea8d18c1fa8aca7c18c877ba2b76a00a591256fa74d3ce54ac3"
+    },
+    {
+      "note": "C5",
+      "midi": 72,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 175,
+      "sourceChannel": "left",
+      "gain": 2.3368266839556853,
+      "peak": 0.4655074811205294,
+      "rms": 0.03418254805951254,
+      "sha256": "2f5b0f7422063010fb379e684bfdf2daa3911dcd2251413d79fa2a53029fdc30"
+    },
+    {
+      "note": "Ds5",
+      "midi": 75,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 210,
+      "sourceChannel": "left",
+      "gain": 3.2,
+      "peak": 0.32989387512207036,
+      "rms": 0.017578247714642205,
+      "sha256": "bf71096e653ab7ceca3914b9fd44d8c27fe83c162564c5db34bd06b94eb14b8c"
+    },
+    {
+      "note": "Fs5",
+      "midi": 78,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 242,
+      "sourceChannel": "left",
+      "gain": 2.062796811230232,
+      "peak": 0.45229646660575384,
+      "rms": 0.03265807112517155,
+      "sha256": "ed2fdf543274ea72ddd4eb634a16356531a5f4040b2a60d34fb12a5c72cbf22f"
+    },
+    {
+      "note": "A5",
+      "midi": 81,
+      "frames": 144000,
+      "sampleRate": 24000,
+      "trimmedStartSamples": 75,
+      "sourceChannel": "left",
+      "gain": 3.2,
+      "peak": 0.4884357452392578,
+      "rms": 0.028927678224185446,
+      "sha256": "9e5cee1fe9cf68b7193623d46a27c8956e572c1ff234ca0e11599b556050dec6"
+    }
+  ],
+  "bytes": 3168000,
+  "sha256": "3cfe7587a216d5821f68ae46c0e42f3d5d31c562acffc07a8b7f1cd3d67ea2f7"
+}

@@ -85,6 +85,6 @@
  function park(){if(raf)cancelAnimationFrame(raf);raf=0;speed=0;intentUntil=0;state={...state,activity:0};window.HolyMindAudio?.updateSoundscape({...state,scope:0});}
  addEventListener('pagehide',park);addEventListener('pageshow',()=>{lastY=scrollY;measure();});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)park();else{lastY=scrollY;suppress(400);measure();}});
- window.HolyMindScrollSound=Object.freeze({version:'full-current-v14',suppressForNavigation:()=>suppress(1400),snapshot:()=>({...state,gesturePeak,updates,running:!!raf,lastScroll,completionArmed,reconnectArmed,scopeName:'Full journey · 11 scenes',stations:route.profiles.map(p=>({id:p.id,name:p.name,at:p.id==='hero'?0:p.id==='orbit'?layout.orbit-innerHeight*.25:p.id==='ribbon'?layout.ribbon-innerHeight*.25:p.id==='assembly'?layout.start:layout.positions[p.id]})),measuredHeight:layout.measuredHeight})});
+ window.HolyMindScrollSound=Object.freeze({version:'full-current-v14',clearGesture:()=>suppress(0),suppressForNavigation:()=>suppress(1400),snapshot:()=>({...state,gesturePeak,updates,running:!!raf,lastScroll,completionArmed,reconnectArmed,scopeName:'Full journey · 11 scenes',stations:route.profiles.map(p=>({id:p.id,name:p.name,at:p.id==='hero'?0:p.id==='orbit'?layout.orbit-innerHeight*.25:p.id==='ribbon'?layout.ribbon-innerHeight*.25:p.id==='assembly'?layout.start:layout.positions[p.id]})),measuredHeight:layout.measuredHeight})});
  measure();
 })();

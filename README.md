@@ -95,3 +95,7 @@ Adds event sounds at actual visual docking, phase changes, layer connections and
 
 ## Piano Moments v16
 Arrival and action feedback now uses real licensed piano keys with eleven section-specific arrangements/textures. The approved field/current and fourteen Electric v12 brain presets are unchanged. Audition at `qa/piano-v16.html`; attribution at `audio-credits.html` and `assets/audio/piano-v16/ATTRIBUTION.md`.
+
+
+## Scroll Sonata v17
+An ordered K.545 opening with a closing cadence follows real scrolling. Longer sampled-piano decay, non-preempted voices and smooth release replace discontinuous section chords. Audition: `qa/scroll-score-v17.html`. Credits: `audio-credits.html`. Score and derived music: CC BY-SA 3.0; piano samples: CC BY 3.0.

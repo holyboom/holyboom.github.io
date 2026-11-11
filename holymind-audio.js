@@ -1,4 +1,4 @@
-/* Piano Moments v16. One gesture-unlocked AudioContext, separate sound buses.
+/* Scroll Sonata v17. One gesture-unlocked AudioContext, separate sound buses.
  * Electric v12 tap PCM is unchanged. Muting sound never changes visual motion.
  * A suspended/interrupted page requires a new explicit gesture: scroll cannot wake it.
  */
@@ -8,6 +8,7 @@
  let context=null,master=null,compressor=null,analyser=null,landscape=null;
  let enabled=true,volume=.48,ambience=true,flow=true,unlocked=false,needsGesture=false,disposed=false;
  let played=0,dropped=0,lastStyle=null,token=0,pending=0,peakVoices=0,maxRms=0,lastSynthesisMs=0,lastScheduleMs=0,meterTimer=0;
+ let music=null,musicLoading=false,musicResume=0;
  let latest={scope:1,activity:0,progress:0,direction:1,morph:0},contextCount=0;
  const cache=new Map(),pcm=new Map(),voices=new Set(),history=[];
  let cues=true,cueVoice=null,cueMeter=null,cuePlayed=0,cueDropped=0,cueMaxRms=0,cuePeakVoices=0,lastCueAt=-1e6,lastCueKey='',lastCuePriority=0,lastBrainAt=-1e6,feedbackUnlock=null;
@@ -25,11 +26,16 @@
   document.body.dataset.sound=enabled?(needsGesture?'needs-gesture':unlocked?'enabled':'armed'):'muted';
   document.dispatchEvent(new CustomEvent('holymind:audio-state',{detail:{enabled,unlocked,needsGesture,ambience,flow,cues}}));
  }
- function stop(){stopCue();for(const v of retiringCues){try{v.source.stop();v.source.disconnect();v.gain.disconnect();}catch(_){}}retiringCues.clear();pendingPianoKey=null;feedbackUnlock=null;token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
+ function stop(){if(music){musicResume=music.snapshot().cursor;music.dispose();music=null;}stopCue(.04);for(const v of retiringCues){try{v.source.stop();v.source.disconnect();v.gain.disconnect();}catch(_){}}retiringCues.clear();pendingPianoKey=null;feedbackUnlock=null;token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
  function field(){
   if(!ready()||!fieldEnabled||!window.HolyMindSoundscape)return;
   if(!landscape){try{landscape=HolyMindSoundscape.create(context,master);}catch(_){document.body.dataset.soundscape='unavailable';return;}}
   landscape.update({...latest,enabled,ambience,flow});document.body.dataset.soundscape='ready';
+  if(!music&&window.HolyMindScrollScore){
+   if(window.HolyMindCueTimbres?.snapshot().ready)music=HolyMindScrollScore.create(context,master,{startBeat:musicResume});
+   else if(!musicLoading){musicLoading=true;window.HolyMindCueTimbres?.prepare().then(ok=>{musicLoading=false;if(ok&&ready())field();});}
+  }
+  music?.update({...latest,enabled:enabled&&cues});
  }
  function make(){
   if(context)return true;const AC=window.AudioContext||window.webkitAudioContext;if(!AC){document.body.dataset.sound='unsupported';return false;}
@@ -53,7 +59,7 @@
  function play(id,{gain=1,gesture=false,variation=true,kind='brain'}={}){
   if(!enabled||document.hidden||disposed||!timbres.presets.some(p=>p.id===id))return false;
   if((!unlocked||needsGesture)&&!gesture)return false;if(!make())return false;
-  if(gesture){unlocked=true;needsGesture=false;}
+  if(gesture){if(!unlocked||needsGesture){latest={...latest,activity:0,intent:false};window.HolyMindScrollSound?.clearGesture?.();}unlocked=true;needsGesture=false;}
   if(pending>=3){dropped++;return false;}
   const generation=token,requestAt=performance.now();pending++;
   // Called in the trusted click handler before an await; required on mobile browsers.
@@ -67,7 +73,7 @@
    const now=context.currentTime;g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(Math.max(0,Math.min(1,gain))/Math.sqrt(1+voices.size*.65),now+.004);g.gain.setTargetAtTime(0,now+source.buffer.duration*.83,.035);
    source.connect(g);g.connect(master);const voice={source,gain:g};voices.add(voice);peakVoices=Math.max(peakVoices,voices.size);
    source.onended=()=>{voices.delete(voice);source.disconnect();g.disconnect();};source.start(now+.002);
-   stopCue();lastBrainAt=performance.now();landscape?.duck(now);played++;lastStyle=id;lastScheduleMs=performance.now()-requestAt;
+   stopCue(.8);music?.duck();lastBrainAt=performance.now();landscape?.duck(now);played++;lastStyle=id;lastScheduleMs=performance.now()-requestAt;
    history.push({id,kind,time:performance.now(),rate:source.playbackRate.value});if(history.length>80)history.shift();if(!meterTimer)meter();
   }).catch(()=>{pending=Math.max(0,pending-1);dropped++;needsGesture=true;ui();});return true;
  }
@@ -78,7 +84,7 @@
  }
  function setVolume(n){volume=Math.max(0,Math.min(1,Number(n)||0));if(master)master.gain.setTargetAtTime(enabled?volume:0,context.currentTime,.02);try{localStorage.setItem('holymind-volume',String(volume));}catch(_){}ui();}
  function setLayer(name,on,persist=true){
-  if(name==='ambience')ambience=!!on;else if(name==='flow')flow=!!on;else if(name==='cues'){cues=!!on;if(!cues)stopCue();}else return;
+  if(name==='ambience')ambience=!!on;else if(name==='flow')flow=!!on;else if(name==='cues'){cues=!!on;if(!cues){stopCue(.35);music?.stopTransport('mute');}}else return;
   if(persist)try{localStorage.setItem('holymind-'+name,on?'on':'off');}catch(_){}field();ui();
  }
  button?.addEventListener('click',e=>{
@@ -94,17 +100,16 @@
  function beginFeedback(gesture=false){
   if(!gesture||!enabled||!cues||document.hidden||disposed)return false;
   window.HolyMindCueTimbres?.prepare?.();if(ready())return true;if(!make())return false;
-  const generation=token;unlocked=true;needsGesture=false;
+  const generation=token;latest={...latest,activity:0,intent:false};window.HolyMindScrollSound?.clearGesture?.();unlocked=true;needsGesture=false;
   const resumed=context.state==='running'?Promise.resolve():context.resume();
   feedbackUnlock=Promise.resolve(resumed).then(()=>{if(generation!==token||!enabled||disposed||document.hidden||context.state!=='running')return false;needsGesture=false;ui();field();return true;}).catch(()=>{needsGesture=true;ui();return false;});
   return true;
  }
  function readCueRms(){if(!cueMeter)return 0;const d=new Float32Array(512);cueMeter.getFloatTimeDomainData(d);let sum=0;for(const n of d)sum+=n*n;return Math.sqrt(sum/d.length);}
- function stopCue(){
-  if(!cueVoice)return;const v=cueVoice;cueVoice=null;
-  // One sounding key phrase plus at most one short release; never chop a piano to a click.
-  for(const old of retiringCues){try{old.source.stop();old.source.disconnect();old.gain.disconnect();}catch(_){}}retiringCues.clear();retiringCues.add(v);
-  try{const now=context.currentTime,p=v.gain.gain;if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(now);else{p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);}p.linearRampToValueAtTime(0,now+.065);v.source.stop(now+.070);}catch(_){}
+ function stopCue(release=1.25){
+  if(!cueVoice)return;const v=cueVoice;cueVoice=null;retiringCues.add(v);
+  const now=context.currentTime,p=v.gain.gain;
+  try{if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(now);else{const n=p.value;p.cancelScheduledValues(now);p.setValueAtTime(n,now);}p.setTargetAtTime(.000001,now,release/5);v.source.stop(now+release+.04);}catch(_){}
  }
  function cue(id,{variant=0,priority=2,key=id,kind='action',direction=1,scene=null}={}){
   const registry=window.HolyMindCueTimbres;if(!registry||!registry.presets.some(p=>p.id===id)||!enabled||!cues||document.hidden||disposed)return false;
@@ -119,12 +124,20 @@
   }
   const wall=performance.now();
   if(wall-lastBrainAt<230||(key===lastCueKey&&wall-lastCueAt<750)||wall-lastCueAt<(priority>lastCuePriority?70:priority>=3?145:280)){cueDropped++;return false;}
-  const v=Math.max(0,Math.min(5,Math.round(variant))),chosenScene=registry.resolveScene(key,kind,scene||latest.scene||'hero'),cacheKey=id+':'+v+':'+chosenScene;
-  let b=cueCache.get(cacheKey);if(!b){const d=registry.render(id,v,32000,{scene:chosenScene,key,kind});cueMeta.set(cacheKey,{scene:d.scene,notes:d.notes,texture:d.texture});b=context.createBuffer(1,d.samples.length,d.sampleRate);b.copyToChannel(d.samples,0);cueCache.set(cacheKey,b);}
-  stopCue();const source=context.createBufferSource(),g=context.createGain(),now=context.currentTime;source.buffer=b;
+  if(music?.snapshot().running){
+   const accepted=music.accent(kind,variant);if(!accepted){cueDropped++;return false;}
+   cuePlayed++;lastCueAt=wall;lastCueKey=key;lastCuePriority=priority;
+   history.push({id,kind:'cue',eventKind:kind,key,variant,direction,scene:scene||latest.scene||'hero',notes:music.harmony(),source:'score-aligned accent',time:wall});if(history.length>120)history.shift();return true;
+  }
+  const harmony=music?.harmony()||window.HolyMindMozartScore?.chords?.[0]||[60,64,67];
+  const v=Math.max(0,Math.min(5,Math.round(variant))),chosenScene=registry.resolveScene(key,kind,scene||latest.scene||'hero'),cacheKey=id+':'+v+':'+chosenScene+':'+harmony.join('-');
+  let b=cueCache.get(cacheKey);if(!b){const d=registry.render(id,v,32000,{scene:chosenScene,key,kind,harmony});cueMeta.set(cacheKey,{scene:d.scene,notes:d.notes,texture:d.texture});b=context.createBuffer(1,d.samples.length,d.sampleRate);b.copyToChannel(d.samples,0);cueCache.set(cacheKey,b);if(cueCache.size>48){const first=cueCache.keys().next().value;cueCache.delete(first);cueMeta.delete(first);}}
+  if(cueVoice){retiringCues.add(cueVoice);cueVoice=null;}
+  if(retiringCues.size>=6){cueDropped++;return false;}
+  const source=context.createBufferSource(),g=context.createGain(),now=context.currentTime;source.buffer=b;
   const level=kind==='arrival'?.72:kind==='layer'?.66:kind==='phase'?.67:.70;
-  g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(level,now+.004);g.gain.setTargetAtTime(0,now+Math.max(.1,b.duration-.10),.035);source.connect(g);g.connect(cueMeter);
-  const voice={source,gain:g};cueVoice=voice;cuePeakVoices=Math.max(cuePeakVoices,1);
+  g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(level,now+.004);g.gain.setTargetAtTime(.000001,now+Math.max(.2,b.duration-1.20),.26);source.connect(g);g.connect(cueMeter);
+  const voice={source,gain:g};cueVoice=voice;cuePeakVoices=Math.max(cuePeakVoices,1+retiringCues.size);
   source.onended=()=>{if(cueVoice===voice)cueVoice=null;retiringCues.delete(voice);source.disconnect();g.disconnect();};source.start(now+.002);
   cuePlayed++;lastCueAt=wall;lastCueKey=key;lastCuePriority=priority;landscape?.duck(now,.38);
   history.push({id,kind:'cue',eventKind:kind,key,variant:v,direction,...cueMeta.get(cacheKey),time:wall});if(history.length>120)history.shift();if(!meterTimer)meter();
@@ -137,8 +150,9 @@
  let warm=0;function warmOne(){if(warm>=timbres.presets.length)return;const p=timbres.presets[warm++];pcm.set(p.id,timbres.render(p.id));if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1500});else setTimeout(warmOne,90);}
  if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1200});else setTimeout(warmOne,300);
  window.HolyMindAudio=Object.freeze({play,mute,setVolume,setLayer,beginFeedback,cue,
+  scorePreview(command,gesture=false){if(!gesture)return false;if(command==='pause'){music?.preview('pause');return true;}beginFeedback(true);const run=()=>{field();music?.preview(command);};if(ready())run();else feedbackUnlock?.then(ok=>{if(ok)run();});return true;},
   setMix(mode){if(!['taps','bed','full'].includes(mode))return;setLayer('ambience',mode!=='taps',false);setLayer('flow',mode==='full',false);setLayer('cues',mode==='full',false);},
   updateSoundscape(state){latest={...latest,...state};if(ready())field();},
-  settle(reverse=false){if(!ready()||!flow||!landscape)return false;const ok=landscape.settle(reverse);if(ok){stopCue();lastCueAt=performance.now();lastCuePriority=3;history.push({id:reverse?'current-reconnect':'current-resolve',kind:'resolution',time:performance.now()});if(history.length>80)history.shift();}return ok;},
-  snapshot:()=>({version:'piano-v16',character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey,retiring:retiringCues.size,piano:window.HolyMindCueTimbres?.snapshot()},soundscape:landscape?.snapshot()||null})});ui();
+  settle(reverse=false){if(!ready()||!flow||!landscape)return false;const ok=landscape.settle(reverse);if(ok){lastCueAt=performance.now();lastCuePriority=3;history.push({id:reverse?'current-reconnect':'current-resolve',kind:'resolution',time:performance.now()});if(history.length>80)history.shift();}return ok;},
+  snapshot:()=>({version:'scroll-score-v17',character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],score:music?.snapshot()||null,feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey,retiring:retiringCues.size,piano:window.HolyMindCueTimbres?.snapshot()},soundscape:landscape?.snapshot()||null})});ui();
 })();

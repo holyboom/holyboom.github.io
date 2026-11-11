@@ -1,0 +1,612 @@
+{
+  "base": "http://127.0.0.1:8780/",
+  "engine": "chromium",
+  "checks": [
+    {
+      "name": "release-v17",
+      "pass": true
+    },
+    {
+      "name": "no-audio-on-load",
+      "pass": true
+    },
+    {
+      "name": "mozart-source-and-arranged-cadence",
+      "pass": true
+    },
+    {
+      "name": "recognizable-score-opening",
+      "pass": true
+    },
+    {
+      "name": "long-recorded-keys",
+      "pass": true
+    },
+    {
+      "name": "scroll-alone-cannot-unlock",
+      "pass": true
+    },
+    {
+      "name": "one-gesture-unlocked-context",
+      "pass": true
+    },
+    {
+      "name": "piano-waits-for-scroll",
+      "pass": true
+    },
+    {
+      "name": "approved-ambient-continues",
+      "pass": true
+    },
+    {
+      "name": "native-scroll-plays-melody-and-harmony",
+      "pass": true,
+      "score": {
+        "version": "scroll-score-v17",
+        "title": "Sonata in C major, K.545 — opening with HolyMind cadence",
+        "enabled": true,
+        "running": true,
+        "demo": false,
+        "cursor": 12,
+        "lastBeat": 11,
+        "bar": 3,
+        "loops": 0,
+        "tempo": 86.87579002703153,
+        "targetTempo": 89.76416602744766,
+        "scene": "hero",
+        "direction": 1,
+        "played": 34,
+        "peakVoices": 14,
+        "activeVoices": 10,
+        "skipped": 0,
+        "pauses": 0,
+        "starts": 1,
+        "duckCount": 1,
+        "timer": true,
+        "rms": 0.056071831229645,
+        "naturalReleaseSeconds": {
+          "melody": 2.45,
+          "accompaniment": 1.7
+        },
+        "history": [
+          {
+            "beat": 0,
+            "bar": 1,
+            "at": 1.2436666666666665,
+            "bpm": 89.93143156380185,
+            "notes": [
+              72,
+              60,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 1,
+            "bar": 1,
+            "at": 1.910841634936053,
+            "bpm": 89.12784609643703,
+            "notes": [
+              64,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 2,
+            "bar": 1,
+            "at": 2.584031918644688,
+            "bpm": 87.12784609643703,
+            "notes": [
+              76,
+              60,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 3,
+            "bar": 1,
+            "at": 3.2726751330492916,
+            "bpm": 89.12784609643703,
+            "notes": [
+              79,
+              64,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 4,
+            "bar": 2,
+            "at": 3.9458654167579263,
+            "bpm": 87.91727014790155,
+            "notes": [
+              71,
+              62,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 5,
+            "bar": 2,
+            "at": 4.628325187165528,
+            "bpm": 88.22805629034673,
+            "notes": [
+              65,
+              72,
+              67,
+              74
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 6,
+            "bar": 2,
+            "at": 5.30838097126382,
+            "bpm": 88.87579002703153,
+            "notes": [
+              72,
+              60,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 7,
+            "bar": 2,
+            "at": 5.9834804554062515,
+            "bpm": 86.87579002703153,
+            "notes": [
+              64,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 8,
+            "bar": 3,
+            "at": 6.674121656842589,
+            "bpm": 88.87579002703153,
+            "notes": [
+              81,
+              60,
+              69
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 9,
+            "bar": 3,
+            "at": 7.34922114098502,
+            "bpm": 90.87579002703153,
+            "notes": [
+              65,
+              69
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 10,
+            "bar": 3,
+            "at": 8.00946299398187,
+            "bpm": 88.87579002703153,
+            "notes": [
+              79,
+              60,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          },
+          {
+            "beat": 11,
+            "bar": 3,
+            "at": 8.6845624781243,
+            "bpm": 86.87579002703153,
+            "notes": [
+              84,
+              64,
+              67
+            ],
+            "scene": "hero",
+            "direction": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "written-beat-order-not-random",
+      "pass": true
+    },
+    {
+      "name": "scheduled-notes-match-score",
+      "pass": true
+    },
+    {
+      "name": "bounded-musical-tempo",
+      "pass": true
+    },
+    {
+      "name": "tempo-changes-only-smoothly",
+      "pass": true
+    },
+    {
+      "name": "natural-note-overlap",
+      "pass": true
+    },
+    {
+      "name": "pause-keeps-ringing-not-hard-cut",
+      "pass": true,
+      "rms": 0.01625020955425776,
+      "voices": 9
+    },
+    {
+      "name": "pause-does-not-advance-score",
+      "pass": true
+    },
+    {
+      "name": "tails-clean-up-and-no-idle-scheduler",
+      "pass": true,
+      "rms": 1.4896578700266777e-12
+    },
+    {
+      "name": "reverse-scroll-resumes-next-beat",
+      "pass": true
+    },
+    {
+      "name": "no-reversed-or-scrambled-recording",
+      "pass": true
+    },
+    {
+      "name": "section-navigation-does-not-start-or-reset-song",
+      "pass": true
+    },
+    {
+      "name": "new-section-continues-same-score",
+      "pass": true
+    },
+    {
+      "name": "action-piano-tails-overlap",
+      "pass": true,
+      "feedback": {
+        "played": 2,
+        "dropped": 0,
+        "active": true,
+        "maxVoices": 2,
+        "maxRms": 0.08911469323713186,
+        "rms": 0.06708302151645518,
+        "lastKey": "step:2",
+        "retiring": 1,
+        "piano": {
+          "status": "ready",
+          "error": null,
+          "ready": true,
+          "notes": 11,
+          "source": "Salamander Grand Piano / Alexander Holm / CC BY 3.0"
+        }
+      }
+    },
+    {
+      "name": "action-keys-follow-current-harmony",
+      "pass": true
+    },
+    {
+      "name": "action-tails-eventually-end",
+      "pass": true
+    },
+    {
+      "name": "piano-preference-stops-score-only",
+      "pass": true
+    },
+    {
+      "name": "background-disposes-score-and-stops-audio",
+      "pass": true
+    },
+    {
+      "name": "return-scroll-cannot-restart-audio",
+      "pass": true
+    },
+    {
+      "name": "meaningful-action-resumes-single-context",
+      "pass": true,
+      "audio": {
+        "version": "scroll-score-v17",
+        "character": "digital-electric",
+        "enabled": true,
+        "volume": 0.48,
+        "ambience": true,
+        "flow": true,
+        "cues": true,
+        "unlocked": true,
+        "needsGesture": false,
+        "context": "running",
+        "contextCount": 1,
+        "played": 1,
+        "dropped": 0,
+        "lastStyle": "insight-pulse",
+        "voices": 0,
+        "peakVoices": 1,
+        "pending": 0,
+        "maxRms": 0.07064839777217621,
+        "lastSynthesisMs": 0,
+        "lastScheduleMs": 21.799999997019768,
+        "warm": 14,
+        "history": [
+          {
+            "id": "insight-pulse",
+            "kind": "enable",
+            "time": 3171.7999999970198,
+            "rate": 1.0080955028533936
+          },
+          {
+            "id": "switch",
+            "kind": "cue",
+            "eventKind": "action",
+            "key": "scenario:knowledge",
+            "variant": 0,
+            "direction": 1,
+            "scene": "workbench",
+            "notes": [
+              62,
+              65
+            ],
+            "texture": "focus",
+            "time": 37850.59999999404
+          },
+          {
+            "id": "select",
+            "kind": "cue",
+            "eventKind": "action",
+            "key": "step:2",
+            "variant": 2,
+            "direction": 1,
+            "scene": "workbench",
+            "notes": [
+              62
+            ],
+            "texture": "focus",
+            "time": 38309.19999998808
+          },
+          {
+            "id": "switch",
+            "kind": "cue",
+            "eventKind": "action",
+            "key": "scenario:venture",
+            "variant": 0,
+            "direction": 1,
+            "scene": "workbench",
+            "notes": [
+              60,
+              64
+            ],
+            "texture": "focus",
+            "time": 51692.29999999702
+          }
+        ],
+        "score": {
+          "version": "scroll-score-v17",
+          "title": "Sonata in C major, K.545 — opening with HolyMind cadence",
+          "enabled": true,
+          "running": false,
+          "demo": false,
+          "cursor": 29,
+          "lastBeat": 29,
+          "bar": 8,
+          "loops": 0,
+          "tempo": 88,
+          "targetTempo": 88,
+          "scene": "assembly",
+          "direction": 1,
+          "played": 0,
+          "peakVoices": 0,
+          "activeVoices": 0,
+          "skipped": 0,
+          "pauses": 0,
+          "starts": 0,
+          "duckCount": 0,
+          "timer": false,
+          "rms": 0,
+          "naturalReleaseSeconds": {
+            "melody": 2.45,
+            "accompaniment": 1.7
+          },
+          "history": []
+        },
+        "feedback": {
+          "played": 3,
+          "dropped": 0,
+          "active": true,
+          "maxVoices": 2,
+          "maxRms": 0.08911469323713186,
+          "rms": 0.04634838495428899,
+          "lastKey": "scenario:venture",
+          "retiring": 0,
+          "piano": {
+            "status": "ready",
+            "error": null,
+            "ready": true,
+            "notes": 11,
+            "source": "Salamander Grand Piano / Alexander Holm / CC BY 3.0"
+          }
+        },
+        "soundscape": {
+          "version": "full-current-v14",
+          "disposed": false,
+          "updates": 12,
+          "ducks": 1,
+          "resolves": 0,
+          "continuousSources": 13,
+          "oneShots": 0,
+          "scope": 1,
+          "enabled": true,
+          "ambience": true,
+          "flow": true,
+          "activity": 0,
+          "progress": 0.552083696584287,
+          "direction": 1,
+          "morph": 0.7810186961078737,
+          "scene": "assembly",
+          "fieldLevel": 0.9402778262112382,
+          "currentLevel": 0.9004630436853971,
+          "openness": 0.9203704349483177,
+          "textureLevel": 0.8805556524224765,
+          "focus": 1,
+          "ambientGain": 0.7675278744354291,
+          "scrollGain": 0,
+          "at": 47.94133333333333,
+          "actual": {
+            "ambient": 0.4119725227355957,
+            "scroll": 0,
+            "ambientDuck": 0.981482744216919,
+            "scrollDuck": 0.975736141204834
+          },
+          "rms": {
+            "ambient": 0.00232942727448287,
+            "scroll": 0,
+            "resolve": 0
+          }
+        }
+      },
+      "scroll": {
+        "scope": 1,
+        "raw": 1,
+        "progress": 1,
+        "start": 2944,
+        "end": 4759,
+        "fieldLevel": 0.9402778262112382,
+        "currentLevel": 0.9004630436853971,
+        "openness": 0.9203704349483177,
+        "textureLevel": 0.8805556524224765,
+        "voiceProgress": 0.552083696584287,
+        "id": "assembly",
+        "name": "System unfolding",
+        "selector": "#system-assembly",
+        "morph": 0.7810186961078737,
+        "scene": "assembly",
+        "label": "System unfolding",
+        "sceneNext": "workbench",
+        "blend": 0.995369563146029,
+        "sceneProgress": 0.960180787177502,
+        "focus": 1,
+        "activity": 0,
+        "direction": 1,
+        "intent": false,
+        "lastInput": "wheel",
+        "speed": 0,
+        "renderedScrollY": 5476,
+        "gesturePeak": 0.22195741114805154,
+        "updates": 670,
+        "running": true,
+        "lastScroll": 51708.5,
+        "completionArmed": true,
+        "reconnectArmed": true,
+        "scopeName": "Full journey · 11 scenes",
+        "stations": [
+          {
+            "id": "hero",
+            "name": "Neural origin",
+            "at": 0
+          },
+          {
+            "id": "orbit",
+            "name": "Connected intelligence",
+            "at": 790.453125
+          },
+          {
+            "id": "ribbon",
+            "name": "Signal crossing",
+            "at": 2311.09375
+          },
+          {
+            "id": "assembly",
+            "name": "System unfolding",
+            "at": 2944
+          },
+          {
+            "id": "workbench",
+            "name": "Working intention",
+            "at": 5505.734375
+          },
+          {
+            "id": "instrument",
+            "name": "Capability constellation",
+            "at": 7212.171875
+          },
+          {
+            "id": "gallery",
+            "name": "Evidence atlas",
+            "at": 7813.359375
+          },
+          {
+            "id": "services",
+            "name": "Applied intelligence",
+            "at": 9629.40625
+          },
+          {
+            "id": "about",
+            "name": "The human behind the mind",
+            "at": 10635.421875
+          },
+          {
+            "id": "contact",
+            "name": "The next possibility",
+            "at": 11394.44375
+          },
+          {
+            "id": "footer",
+            "name": "A quiet return",
+            "at": 11953
+          }
+        ],
+        "measuredHeight": 12937
+      }
+    },
+    {
+      "name": "layout-and-always-motion-320",
+      "pass": true
+    },
+    {
+      "name": "layout-and-always-motion-390",
+      "pass": true
+    },
+    {
+      "name": "layout-and-always-motion-768",
+      "pass": true
+    },
+    {
+      "name": "layout-and-always-motion-1440",
+      "pass": true
+    },
+    {
+      "name": "studio-uses-production-score",
+      "pass": true
+    },
+    {
+      "name": "studio-pause-keeps-tail",
+      "pass": true
+    },
+    {
+      "name": "explicit-restart-only",
+      "pass": true
+    },
+    {
+      "name": "missing-bank-does-not-crash-or-play-beeps",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

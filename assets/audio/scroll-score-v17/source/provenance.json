@@ -1,0 +1,68 @@
+[
+  {
+    "note": "A2",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/A2.mp3",
+    "bytes": 81678,
+    "sha256": "20601d890f44a3c22499c7b61f52e571795df1fe5a01fac553dded7b6379e1d4"
+  },
+  {
+    "note": "C3",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/C3.mp3",
+    "bytes": 78036,
+    "sha256": "bb70dd921d81b3dda561c19b5c029292ae5a6fba1947e364bf274218ce19a9d1"
+  },
+  {
+    "note": "Fs3",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/Fs3.mp3",
+    "bytes": 77933,
+    "sha256": "960fefd90f56608b7edf958dadfeca893cff5744ab9034d61e419401fe45ce9c"
+  },
+  {
+    "note": "A3",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/A3.mp3",
+    "bytes": 74526,
+    "sha256": "8e108fe228e34e32f6b4e61efff732eec53058a9e6f05a8d8e719598b132c4f9"
+  },
+  {
+    "note": "C4",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/C4.mp3",
+    "bytes": 78718,
+    "sha256": "689eaa4c2fd7f29a2cc0e386eec462156d523a87d701269e5e2458e66056f4f6"
+  },
+  {
+    "note": "Fs4",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/Fs4.mp3",
+    "bytes": 68219,
+    "sha256": "613652f5c96e35736ce6a46bc4ddb6ba1076d1fb16a35a4c22c14e67efdde57c"
+  },
+  {
+    "note": "A4",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/A4.mp3",
+    "bytes": 61148,
+    "sha256": "a62df24a2c84cea8d18c1fa8aca7c18c877ba2b76a00a591256fa74d3ce54ac3"
+  },
+  {
+    "note": "C5",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/C5.mp3",
+    "bytes": 68920,
+    "sha256": "2f5b0f7422063010fb379e684bfdf2daa3911dcd2251413d79fa2a53029fdc30"
+  },
+  {
+    "note": "Ds5",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/Ds5.mp3",
+    "bytes": 58179,
+    "sha256": "bf71096e653ab7ceca3914b9fd44d8c27fe83c162564c5db34bd06b94eb14b8c"
+  },
+  {
+    "note": "Fs5",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/Fs5.mp3",
+    "bytes": 51597,
+    "sha256": "ed2fdf543274ea72ddd4eb634a16356531a5f4040b2a60d34fb12a5c72cbf22f"
+  },
+  {
+    "note": "A5",
+    "url": "https://raw.githubusercontent.com/Tonejs/audio/master/salamander/A5.mp3",
+    "bytes": 45747,
+    "sha256": "9e5cee1fe9cf68b7193623d46a27c8956e572c1ff234ca0e11599b556050dec6"
+  }
+]

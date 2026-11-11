@@ -4,7 +4,7 @@
  * See assets/audio/piano-v16/ATTRIBUTION.md for sources, license and modifications. */
 (function(root){
  'use strict';
- const SR=32000,FRAMES=57600,PITCHES=[57,60,63,66,69,72,75],TAU=Math.PI*2;
+ const SR=24000,FRAMES=144000,PITCHES=[45,48,54,57,60,66,69,72,75,78,81],TAU=Math.PI*2;
  const presets=[
  {id:'dock',name:'Piano arrival',duration:1.25},{id:'return',name:'A note returning',duration:1.05},
  {id:'phase',name:'Thought into harmony',duration:1.00},{id:'layer',name:'Keys unfolding',duration:.95},
@@ -28,7 +28,7 @@
  const map=Object.fromEntries(presets.map(p=>[p.id,p])),scenes=Object.fromEntries(profiles.map(p=>[p.id,p]));
  const alias={neural:'hero',system:'workbench',skills:'instrument',signature:'about',portal:'contact',delivery:'services'};
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));let bank=null,loadPromise=null,status='unloaded',error=null,lastAttempt=0;
- const bankURL=typeof document!=='undefined'?new URL('assets/audio/piano-v16/keys.pcm',document.currentScript?.src||location.href).href:null;
+ const bankURL=typeof document!=='undefined'?new URL('assets/audio/scroll-score-v17/keys.pcm',document.currentScript?.src||location.href).href:null;
  function loadBank(data){
   const bytes=data instanceof ArrayBuffer?new Uint8Array(data):new Uint8Array(data.buffer,data.byteOffset,data.byteLength);
   if(bytes.length!==PITCHES.length*FRAMES*2)throw new RangeError('Invalid piano bank size');
@@ -61,15 +61,16 @@
   else if(id==='open')notes=[notes[0],notes.at(-1)];
   else if(id==='close')notes=[notes[0]];
   else if(id==='confirm')notes=[57,64,69];
+  if(Array.isArray(options.harmony)&&options.harmony.length){const tones=options.harmony.map(n=>n<60?n+12:n);notes=notes.map(n=>tones.reduce((a,b)=>Math.abs(b-n)<Math.abs(a-n)?b:a));notes=[...new Set(notes)];}
   if(scene==='about')step=.125;if(id==='confirm')step=.045;
-  const duration=id==='dock'?profile.length:id==='return'?Math.min(1.25,profile.length*.88):p.duration;
+  const duration=(id==='dock'?profile.length:id==='return'?Math.min(1.25,profile.length*.88):p.duration)+1.65;
   const count=Math.ceil(duration*sampleRate),piano=new Float32Array(count),texture=new Float32Array(count);
   notes.forEach((midi,j)=>{
    const source=bank.reduce((a,b)=>Math.abs(b.midi-midi)<Math.abs(a.midi-midi)?b:a),rate=2**((midi-source.midi)/12)*SR/sampleRate,at=Math.round(j*step*sampleRate);
    const strength=(j===0?.88:.56)*((scene==='about'||scene==='footer')?.86:1),release=duration-j*step;
    for(let i=at;i<count;i++){const z=i-at,index=z*rate,k=Math.floor(index);if(k+1>=source.samples.length)break;const t=z/sampleRate;
     const sample=source.samples[k]+(source.samples[k+1]-source.samples[k])*(index-k);
-    const env=Math.min(1,t/.0018,Math.max(0,(release-t)/.13));piano[i]+=sample*strength*env;
+    const env=Math.min(1,t/.0018,Math.max(0,(release-t)/1.25));piano[i]+=sample*strength*env;
    }
   });
   // Preserve recorded hammer and string decay; soften only the top end by scene.
@@ -93,10 +94,10 @@
   let pEnergy=0,tEnergy=0;for(let i=0;i<count;i++){pEnergy+=piano[i]**2;tEnergy+=texture[i]**2;}
   const limit=scene==='about'?.035:scene==='footer'?.045:['join','focus','etch'].includes(profile.texture)?.065:.095,textureScale=Math.min(14,Math.sqrt(pEnergy/Math.max(1e-12,tEnergy))*limit);
   const out=new Float32Array(count);let peak=0,sum=0;
-  for(let i=0;i<count;i++){const fade=Math.min(1,(count-1-i)/(sampleRate*.075));out[i]=(piano[i]+texture[i]*textureScale)*Math.max(0,fade);peak=Math.max(peak,Math.abs(out[i]));sum+=out[i]**2;}
+  for(let i=0;i<count;i++){const fade=Math.min(1,(count-1-i)/(sampleRate*.5));out[i]=(piano[i]+texture[i]*textureScale)*Math.max(0,fade);peak=Math.max(peak,Math.abs(out[i]));sum+=out[i]**2;}
   const gain=Math.min(1.20,.32/Math.max(.001,peak));for(let i=0;i<count;i++)out[i]*=gain;
   return {id,name:p.name,variant:v,scene,notes,texture:profile.texture,source:'recorded-piano + authored texture',samples:out,sampleRate,duration:count/sampleRate,textureRmsRatio:Math.sqrt(tEnergy/Math.max(pEnergy,1e-12))*textureScale,gain};
  }
- const api=Object.freeze({version:'piano-v16',presets:Object.freeze(presets),profiles:Object.freeze(profiles),render,resolveScene,loadBank,prepare,snapshot:()=>({status,error,ready:!!bank,notes:bank?.length||0,source:'Salamander Grand Piano / Alexander Holm / CC BY 3.0'})});
+ const api=Object.freeze({version:'scroll-score-v17',presets:Object.freeze(presets),profiles:Object.freeze(profiles),render,resolveScene,loadBank,prepare,key(midi){if(!bank)return null;const v=bank.reduce((a,b)=>Math.abs(b.midi-midi)<Math.abs(a.midi-midi)?b:a);return {midi:v.midi,samples:v.samples,sampleRate:SR};},snapshot:()=>({status,error,ready:!!bank,notes:bank?.length||0,source:'Salamander Grand Piano / Alexander Holm / CC BY 3.0'})});
  if(typeof module!=='undefined'&&module.exports)module.exports=api;else{root.HolyMindCueTimbres=api;prepare();}
 })(globalThis);
