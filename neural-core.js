@@ -21,6 +21,55 @@
  const active=()=>ready&&!document.hidden&&!dead&&(heroInside||orbitInside||transporting);
  const colors=['#67e8f9','#c48aff','#f2cc8f','#ff7ac6'];
  const sprites=new Map();
+ const bursts=[];let burstCount=0,lastBurstAt=-1000,lastBurstPoint=null;
+ const crystal=new Image();crystal.src='assets/skills/the-crystallizer.webp';
+ function burst(options={}){
+  if(!ready||document.hidden||transporting)return false;
+  const now=performance.now();if(now-lastBurstAt<180)return false;lastBurstAt=now;
+  const x=clamp(Number.isFinite(options.x)?options.x:.5,.10,.90)*W;
+  const y=clamp(Number.isFinite(options.y)?options.y:.46,.10,.90)*W;
+  const selected=paths.map((path,id)=>({id,d:Math.min(...path.filter((_,j)=>j%4===0).map(v=>(v[0]-x)**2+(v[1]-y)**2))})).sort((a,b)=>a.d-b.d).slice(0,6).map(o=>o.id);
+  if(bursts.length>=3)bursts.shift();
+  bursts.push({x,y,start:elapsed,seed:burstCount++,paths:selected});lastBurstPoint={x,y};
+  document.dispatchEvent(new CustomEvent('holymind:brain-burst',{detail:{x:x/W,y:y/W,target:options.target||'hero',count:burstCount}}));
+  sync();return true;
+ }
+ function paintBursts(t){
+  while(bursts.length&&t-bursts[0].start>1200)bursts.shift();
+  let charge=0;
+  for(const b of bursts){
+   const u=clamp((t-b.start)/1200),e=1-(1-u)**3,a=(1-u)**1.4/Math.sqrt(Math.max(1,bursts.length));
+   charge=Math.max(charge,a);
+   // A tiny pearl nucleus; faceted violet shards, no full-screen white flash.
+   star(b.x,b.y,3+5*(1-u),a,'#67e8f9');
+   for(let ring=0;ring<2;ring++){
+    const r=10+e*(ring?156:112),pts=[];
+    for(let j=0;j<=8;j++){const angle=j*Math.PI/4+Math.PI/8+ring*.12;pts.push([b.x+Math.cos(angle)*r,b.y+Math.sin(angle)*r*.68]);}
+    line(pts,ring?'#b57bff':'#67e8f9',a*(ring?.26:.5),1.2);
+   }
+   for(let j=0;j<20;j++){
+    const angle=j*Math.PI*2/20+b.seed*.37,dist=10+e*(125+(j%5)*20);
+    const x=clamp(b.x+Math.cos(angle)*dist,14,W-14),y=clamp(b.y+Math.sin(angle)*dist*.8,14,W-14);
+    const color=j%9===0?'#f2cc8f':j%7===0?'#ff7ac6':j%3===0?'#67e8f9':'#bd83ff',r=2+(1-u)*(j%3+3);
+    const pts=[[x,y-r*1.3],[x+r,y],[x,y+r*1.3],[x-r,y],[x,y-r*1.3]];
+    line([[b.x+Math.cos(angle)*dist*.74,b.y+Math.sin(angle)*dist*.74*.8],[x,y]],color,a*.3,1);
+    line(pts,color,a*.8,1.1);line([[x,y-r*1.3],[x,y+r*1.3],[x-r,y],[x+r,y]],color,a*.38,1);
+    if(j%5===0)star(x,y,2,a*.7,color);
+   }
+   // Three fragments carry HolyMind's own crystallizer, not unrelated confetti.
+   if(crystal.complete&&crystal.naturalWidth)for(let j=0;j<3;j++){
+    const angle=(j*120-90+b.seed*7)*Math.PI/180,r=28+e*166,size=34+(1-u)*18;
+    const x=clamp(b.x+Math.cos(angle)*r,24,W-24),y=clamp(b.y+Math.sin(angle)*r*.7,24,W-24);
+    ctx.save();ctx.translate(x,y);ctx.rotate(angle*.2+u*(j%2?1:-1));ctx.globalAlpha=a*.9;ctx.drawImage(crystal,-size/2,-size/2,size,size);ctx.restore();
+   }
+   b.paths.forEach((id,j)=>{
+    const path=paths[id];if(!path)return;const p=clamp((u-j*.025)/.8),head=Math.floor(p*(path.length-1));
+    const tail=Math.max(0,head-24);line(path.slice(tail,head+1),j%3===0?'#f2cc8f':'#67e8f9',a*.85,2);
+   });
+  }
+  return charge;
+ }
+
  function sprite(color){
   if(sprites.has(color))return sprites.get(color);
   const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d');
@@ -91,6 +140,7 @@
    const [nx,ny]=nodes[(i*5)%nodes.length],wave=(Math.sin(tick*.0011+i*1.8)+1)/2;
    if(wave>.45)star(nx,ny,3.5,(wave-.45)*1.3,i%3===0?colors[2]:colors[0]);
   }
+  const burstCharge=paintBursts(t);
   ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
   // All three displays copy the SAME rendered frame and time. No spark restart at a seam.
   const copy=(c,target)=>{if(!c)return;c.clearRect(0,0,W,W);c.imageSmoothingEnabled=false;c.drawImage(surface,0,0);target.dataset.frames=String(frames);};
@@ -98,7 +148,7 @@
   if(orbitInside&&!transporting&&orbitCtx){orbit.style.transform=orbitImage?.style.transform||'';copy(orbitCtx,orbit);}
   if(transporting){if(!transit){transit=document.querySelector('.neural-transit-sparks');transitCtx=transit?.getContext('2d');}copy(transitCtx,transit);}
   orbit.style.opacity=transporting?'0':'1';
-  window.HolyMindEnergy?.brain({x:x/W,y:y/W,charge,hero:heroInside&&!transporting,orbit:orbitInside&&!transporting,quiet:false});
+  window.HolyMindEnergy?.brain({x:x/W,y:y/W,charge,hero:heroInside&&!transporting,orbit:orbitInside&&!transporting,quiet:false,burst:burstCharge});
   frames++;
  }
  function tick(t){
@@ -112,7 +162,7 @@
   if(enabled&&!raf){last=0;raf=requestAnimationFrame(tick);}
   if(!enabled&&raf){cancelAnimationFrame(raf);raf=0;last=0;}
  }
- window.HolyMindNeural=Object.freeze({version:'always-v9',transport(value){if(transporting===value)return;transporting=value;orbit.style.opacity=value?'0':'1';sync();},snapshot:()=>({ready,frames,elapsed,active:active(),running:!!raf,transporting,heroInside,orbitInside,paths:paths.length,branches:small.matches?12:18,contour:outline.length,profile:body.dataset.motionProfile,meanPaintMs:Number(frameCost.toFixed(3)),targets:{hero:canvas.dataset.frames||'0',orbit:orbit.dataset.frames||'0',transit:transit?.dataset.frames||'0'}})});
+ window.HolyMindNeural=Object.freeze({version:'interaction-v10',burst,transport(value){if(transporting===value)return;transporting=value;orbit.style.opacity=value?'0':'1';sync();},snapshot:()=>({ready,frames,elapsed,burstCount,activeBursts:bursts.length,lastBurstPoint,active:active(),running:!!raf,transporting,heroInside,orbitInside,paths:paths.length,branches:small.matches?12:18,contour:outline.length,profile:body.dataset.motionProfile,meanPaintMs:Number(frameCost.toFixed(3)),targets:{hero:canvas.dataset.frames||'0',orbit:orbit.dataset.frames||'0',transit:transit?.dataset.frames||'0'}})});
  image.addEventListener('load',loadMask);if(image.complete&&image.naturalWidth)loadMask();
  fetch('assets/neural-paths.json?v=spark-v8').then(r=>{if(!r.ok)throw Error('paths');return r.json();}).then(data=>{
   if(Array.isArray(data.paths)&&data.paths.every(p=>Array.isArray(p)&&p.length>1&&p.every(v=>v.length===2&&v.every(n=>Number.isFinite(n)&&n>=0&&n<W)))){paths=data.paths;nodes=(data.nodes||[]).filter(v=>v.length===2&&v.every(Number.isFinite));canvas.dataset.paths=String(paths.length);sync();}
@@ -127,6 +177,17 @@
  document.addEventListener('visibilitychange',()=>{if(document.hidden)sync();else resume();});
  addEventListener('scroll',queueVisibility,{passive:true});addEventListener('resize',queueVisibility,{passive:true});
  addEventListener('focus',resume);document.addEventListener('resume',resume);
+ document.querySelectorAll('.brain-trigger').forEach(button=>{
+  let down=null,cancelled=false;
+  button.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY,scroll:scrollY};cancelled=false;},{passive:true});
+  button.addEventListener('pointercancel',()=>{cancelled=true;});
+  button.addEventListener('click',e=>{
+   if(e.detail!==0&&(cancelled||(down&&(Math.hypot(e.clientX-down.x,e.clientY-down.y)>12||Math.abs(scrollY-down.scroll)>8))))return;
+   const target=button.dataset.brainTarget==='orbit'?orbitImage:image,r=target.getBoundingClientRect();
+   const x=e.detail===0?.5:(e.clientX-r.left)/r.width,y=e.detail===0?.46:(e.clientY-r.top)/r.height;
+   burst({x,y,target:button.dataset.brainTarget});down=null;
+  });
+ });
  const stage=document.querySelector('.neural-stage');stage?.addEventListener('pointerenter',()=>{engaged=true;});stage?.addEventListener('pointerleave',()=>{engaged=false;});
  addEventListener('pagehide',()=>{dead=true;if(visibilityFrame)cancelAnimationFrame(visibilityFrame);visibilityFrame=0;sync();});
  addEventListener('pageshow',resume);

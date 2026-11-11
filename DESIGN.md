@@ -98,3 +98,14 @@ The owner requires full visible animation without the previous system-level calm
 - Ambient animations are parked offscreen and on pagehide; they resume automatically on visibility/focus. No new timer or JavaScript frame loop is introduced for this layer.
 - Phone-only brain-first layout, tablet/desktop layout, original images, range direction, callout geometry, skill dialogs and destinations remain unchanged.
 - This deliberate no-pause/no-system-reduction policy is not represented as WCAG conformance; no independent flash-safety or physical-device performance certification is claimed. Bounded local glows only; no fullscreen flashing.
+
+## Interaction v10 — tap discharge and guided exploded-system reveal
+
+- The owner approved two additions to v9: a HolyMind-specific brain tap discharge, and a pinned scroll demonstration that starts at 0%, unfolds slow-normal-slow to 100%, then releases. Reverse scrolling reconnects the same layers.
+- Hero and orbital brains expose native, labelled keyboard-focusable buttons. A real click/tap, Enter or Space releases a finite 1.2-second discharge of original crystallizer glyphs, faceted pixel shards, and extra light along the six nearest source-derived paths. Cancelled/drifting scroll gestures do not fire. Three concurrent bursts maximum, short repeat cooldown; no new render loop or fullscreen flash.
+- All ambient motion remains always active in visible scenes. Phone-only image-first layout and desktop/tablet placement are retained. Original image bytes unchanged.
+- The guided assembly pins only its presentation below the actual masthead, with a viewport-fitting responsive composition. Native scroll is never intercepted. The guide and subsequent workbench remain outside the pin.
+- One scroll progress drives all layer transforms, real anchored leaders, callouts and percentage via smootherstep. The opening 4% holds at 0; the last 7% holds the completed view. Native range input seeks the same timeline using inverse easing, including keyboard Home/End/arrows.
+- Pin interval is 1200–2400 CSS scroll pixels, derived from viewport size. A resize rebuild restores natural dimensions before remeasuring to avoid stale pinned sizes on orientation change.
+- Continuity docks at assembly for the entire pin interval, then resumes the ten existing reversible transfers. Slider, scroll and geometry have a single source of progress, rather than competing writers.
+- No external runtime library, audio or analytics added. No-JS content/guide and missing-GSAP manual range remain available. Always-on policy remains as explicitly requested; no WCAG motion conformance or physical-iPhone performance certification is claimed.

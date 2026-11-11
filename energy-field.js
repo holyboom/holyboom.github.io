@@ -27,9 +27,11 @@
   q('.orbit-dashes')?.style.setProperty('stroke-dashoffset',String(-p*150));
   const portal=surfaces.portal;if(portal)portal.querySelectorAll('.portal-highlight').forEach((el,i)=>{el.style.strokeDashoffset=String((1-(levels.portal||0))*200+i*12);});
  }
- function brain({x,y,charge,hero,orbit,quiet}){
+ function brain({x,y,charge,hero,orbit,quiet,burst=0}){
+  q('.hero-visual')?.style.setProperty('--burst-charge',String(burst));
+  q('.orbit-stage')?.style.setProperty('--burst-charge',String(burst));
   q('.neural-core')?.style.setProperty('--neural-charge',String(quiet?.5:charge));
-  if(hero)level('neural',(quiet?.1:.3)*charge,innerWidth*x,innerHeight*y);
+  if(hero)level('neural',(quiet?.1:.3)*charge+burst*.55,innerWidth*x,innerHeight*y);
   if(orbit&&state?.from==='orbit'&&state?.to==='orbit')level('orbit',.55+charge*.35,innerWidth*x,innerHeight*y);
  }
  document.addEventListener('visibilitychange',()=>{if(document.hidden)pools.forEach(el=>el.style.opacity='0');});

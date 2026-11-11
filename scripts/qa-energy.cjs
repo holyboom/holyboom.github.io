@@ -17,7 +17,7 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
  };
  const go=async sel=>{const top=await p.locator(sel).evaluate(e=>e.getBoundingClientRect().top+scrollY);await scroll(top-105);};
  await p.addInitScript(()=>localStorage.setItem('holyboom-motion','off'));await goto();
- check('release-v9',await p.locator('html').getAttribute('data-build')==='always-v9');
+ check('release-v10',await p.locator('html').getAttribute('data-build')==='interaction-v10');
  check('legacy-off-does-not-disable',await p.locator('body').getAttribute('data-motion')==='on'&&await p.locator('body').getAttribute('data-motion-profile')==='full');
  check('motion-toggle-removed',await p.locator('#motion-toggle,.motion-toggle').count()===0);
  check('two-hero-shortcuts-removed',await p.locator('.hero-actions').count()===0);

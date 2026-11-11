@@ -68,3 +68,7 @@ Run `npm run check` and `npm run test:energy` with `TEST_URL`, `QA_DIR` and opti
 
 ### Always Active v9
 Full motion is now the fixed showcase policy, including with OS Reduce Motion and old stored off preferences. The new `test:always` suite checks real Canvas frame changes without input, continuous visible linework, foreground recovery, and unchanged controls/layout. `test:energy` keeps the 85-case end-to-end regression with the intentional always-on expectations updated.
+
+## Interaction v10
+
+Tap the hero/orbit brain to release a HolyMind charge. Scroll through the pinned assembly to uncover its layers, then reverse to reconnect. The range remains a manual scrubber. Run `npm run test:interaction` with `TEST_URL` and `ENGINE=webkit` or `ENGINE=chromium` for the reusable acceptance suite.

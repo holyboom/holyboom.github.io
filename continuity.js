@@ -52,9 +52,11 @@
  function measure(){
   needsMeasure=false;
   const H=innerHeight,max=Math.max(1,document.documentElement.scrollHeight-H);
+  const assemblyPin=window.ScrollTrigger?.getById('assembly-story');
   stations.forEach(st=>{
    const el=q(st.s);st.at=el?layoutTop(el)+el.offsetHeight*st.y-H*.56:0;
    if(st.id==='neural')st.at=0;
+   if(st.id==='assembly'&&assemblyPin)st.at=assemblyPin.start;
    if(st.id==='orbit'){const section=q('#mind-flow');st.at=layoutTop(section)+Math.min(200,H*.2);}
    if(st.id==='skills'){const stage=q('.deck-stage');st.at=layoutTop(stage)+stage.offsetHeight*.46-H*.56;}
    if(st.id==='signature'){const sculpture=q('.signature-sculpture');st.at=layoutTop(sculpture)+sculpture.offsetHeight*.65-H*.56;}
@@ -67,6 +69,7 @@
    keys.push({at:st.at,station:st});
    if(i===stations.length-1)return;
    let end=st.at+st.hold;
+   if(st.id==='assembly'&&assemblyPin)end=assemblyPin.end;
    if(st.id==='neural')end=Math.max(0,layoutTop(origin)+origin.offsetHeight*.46-H*.56);
    if(st.id==='orbit')end=layoutTop(q('#mind-flow'))+q('#mind-flow').offsetHeight-H*.83;
    end=clamp(end,st.at,stations[i+1].at-40);

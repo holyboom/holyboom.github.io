@@ -31,11 +31,11 @@
   if(complete&&!lastComplete&&changed&&allowed()&&inside)scanStart=performance.now();
   if(!complete||!allowed())scanStart=0;
   lastComplete=complete;root.dataset.complete=String(complete);root.dataset.expanded=String(amount);root.dataset.assembled=String(100-amount);
-  if(output)output.textContent=`${amount}% expanded`;
+  if(output)output.textContent=`${Math.round(amount)}% expanded`;
   slider.setAttribute('aria-valuetext',`${amount} percent expanded${next>=0?'; '+titles[next]+' revealed':'; connected system'}`);
   const hint=root.querySelector('.assembly-instruction');
   hint.firstChild.textContent=complete?'Three layers. One connected system.':'One system. Three layers.';
-  hint.querySelector('span').textContent=complete?'Tap a label to inspect its layer. Drag left to reconnect.':'Keep dragging to reveal the next connection.';
+  hint.querySelector('span').textContent=root.dataset.assemblyMode==='guided'?(complete?'Scroll onward, or scroll up to reconnect.':'Keep scrolling. Follow the next connection.'):(complete?'Tap a label to inspect its layer. Drag left to reconnect.':'Keep dragging to reveal the next connection.');
   rows.forEach((r,i)=>{
    const reveal=reveals[i],visible=reveal>.015;
    root.style.setProperty(`--${r.kind}-reveal`,reveal.toFixed(4));

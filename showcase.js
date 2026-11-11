@@ -21,8 +21,11 @@
   if(exhibit){exhibit.dataset.assembled=String(100-amount);exhibit.dataset.expanded=String(amount);}
   document.dispatchEvent(new CustomEvent('holymind:assembly',{detail:{expanded:amount}}));
  }
- slider?.addEventListener('input', () => assemble(slider.value));
- assemble(slider?.value || 35);
+ slider?.addEventListener('input', () => {
+  if(window.HolyMindAssemblyScroll?.enabled())window.HolyMindAssemblyScroll.seek(Number(slider.value));
+  else assemble(slider.value);
+ });
+ assemble(slider?.value ?? 0);
  function select(index, focus = false) {
   selected = (index + shards.length) % shards.length;
   shards.forEach((el,i) => el.setAttribute('aria-pressed', String(i === selected)));

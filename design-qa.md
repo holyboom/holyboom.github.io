@@ -176,3 +176,9 @@ Harness correction: scroll the stable scene or use its live coordinates to view 
 ### Always Active v9 — published verification
 
 38/38 always-active checks passed in Chromium and 38/38 in WebKit. The 85-case published energy regression passed in WebKit. Zero failed assertions or runtime errors. All 17 published HTML/CSS/script assets match source. The video captures eight seconds of a stationary mobile page with OS Reduce Motion and stored off active: Canvas frames increased from 23 to 256. See `qa/always-v9.html`.
+
+## Interaction v10 — local pre-publication review
+
+Both Chromium and WebKit passed 68 acceptance checks, with zero failed assertions or captured runtime errors. Tests cover native touch, keyboard burst, repeat bounds, gesture cancellation, pin geometry, nonlinear progress, endpoint hold/release, reversal, real leader endpoints, manual scrubbing, eight viewport/orientation combinations, single-pin rebuilding, continuity interval, all twelve workbench steps, 34 skills, dialogs, direct anchors and fallbacks. Rendered portrait, landscape and desktop views were inspected. A stale inline pin-size issue found during rotation was fixed by rebuilding from natural styles before refresh. Live verification is recorded separately after deployment.
+
+The existing energy/continuity regression suite also passed all 85 checks in WebKit, including all ten reversed bridges and original assembly controls.

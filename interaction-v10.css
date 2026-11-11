@@ -1,0 +1,41 @@
+/* Interaction v10: finite HolyMind discharges and a reversible native scroll demo. */
+.brain-trigger{position:absolute;inset:15% 12% 18%;z-index:5;display:block;width:auto;height:auto;min-height:44px;padding:0;border:0;border-radius:34%;background:transparent;cursor:crosshair;touch-action:pan-y pinch-zoom;-webkit-tap-highlight-color:transparent}
+.brain-trigger:hover{background:transparent}.brain-trigger:focus-visible{outline:2px solid var(--accent-cyan);outline-offset:6px}
+.continuity-transferred .brain-trigger{visibility:hidden;pointer-events:none}.orbit-brain-trigger{inset:32%;z-index:4}
+.hero-visual .framework-name{text-shadow:0 0 calc(var(--burst-charge,0)*22px) rgba(103,232,249,.65)}
+.core-orbit{box-shadow:0 0 calc(12px + var(--burst-charge,0)*30px) rgba(103,232,249,.16)}.orbit-stage .orbit-cross{stroke-width:calc(2px + var(--burst-charge,0)*2px)}
+.assembly-pin.is-guided{display:flex;flex-direction:column;box-sizing:border-box;height:var(--assembly-pin-height,740px);min-height:0;padding:14px 0 10px;background:var(--night);position:relative;z-index:2}
+.assembly-pin.is-guided .assembly-console{flex:none;min-height:0;gap:5%;align-items:center}
+.assembly-pin.is-guided .assembly-console h3{font-size:clamp(22px,2.7vw,36px);line-height:1.13}
+.assembly-pin.is-guided .assembly-console #assembly-help{font-size:12px;line-height:1.5;margin-top:7px}
+.assembly-pin.is-guided .assembly-console .exhibit-note{display:none}
+.assembly-pin.is-guided .assembly-view{flex:1;min-height:0;height:auto;margin-top:12px;margin-bottom:0}
+.assembly-pin.is-guided .assembly-stack{width:var(--guided-sheet,260px);height:var(--guided-sheet,260px);margin:calc(var(--guided-sheet,260px)*-.5);--plane-distance:var(--guided-distance,140px);left:47%;top:49%}
+.assembly-pin.is-guided .assembly-plane img{width:44%;height:44%}
+.assembly-pin.is-guided .assembly-callouts{top:9%;height:78%}
+.assembly-pin.is-guided .assembly-instruction{bottom:0;max-width:95%;line-height:1.5}
+.assembly-pin.is-guided .layer-callout{min-height:90px}.assembly-pin.is-guided .assembly-stage{height:100%}.assembly-pin.is-guided .assembly-shadow{bottom:2%}.assembly-guide{position:relative;z-index:3}
+@media(max-width:680px){
+ .assembly-pin.is-guided{padding-top:10px;padding-bottom:8px}
+ .assembly-pin.is-guided .assembly-console h3{font-size:24px;max-width:20em}
+ .assembly-pin.is-guided .assembly-console h3 br{display:none}
+ .assembly-pin.is-guided .assembly-console #assembly-help{display:none}
+ .assembly-pin.is-guided .assembly-controls{margin-top:12px}
+ .assembly-pin.is-guided .assembly-control-title label{font-size:12px}
+ .assembly-pin.is-guided #assembly-control{height:44px;margin:3px 0}
+ .assembly-pin.is-guided .range-captions{font-size:10px}
+ .assembly-pin.is-guided .assembly-view{margin-top:6px}
+ .assembly-pin.is-guided .assembly-stack{left:49%;top:47%}
+ .assembly-pin.is-guided .layer-callout{padding-top:7px;padding-bottom:8px;min-height:85px}
+ .assembly-pin.is-guided .callout-title{font-size:15px}
+ .assembly-pin.is-guided .callout-brief{font-size:11px;margin-top:6px}
+ .assembly-pin.is-guided .callout-terms{font-size:10px;line-height:1.4}
+ .assembly-pin.is-guided .assembly-callouts{top:7%;height:77%}
+ .assembly-pin.is-guided .assembly-instruction{font-size:11px}
+ .assembly-pin.is-guided .assembly-instruction span{font-size:10px;margin-top:3px}
+}
+.assembly-pin.is-short .assembly-console{display:block}.assembly-pin.is-short .assembly-console>div:first-child{display:none}.assembly-pin.is-short .assembly-controls{margin:0}.assembly-pin.is-short .assembly-view{margin-top:4px}
+.assembly-pin.is-short .assembly-callouts{top:2%;height:79%}.assembly-pin.is-short .layer-callout{min-height:0;padding:4px 0 5px 15px}.assembly-pin.is-short .callout-title{font-size:14px}
+.assembly-pin.is-short .callout-brief,.assembly-pin.is-short .callout-terms,.assembly-pin.is-short .callout-check,.assembly-pin.is-short .layer-number{display:none}
+.assembly-pin.is-short .callout-port{top:13px}.assembly-pin.is-short .assembly-instruction{font-size:10px}.assembly-pin.is-short .assembly-instruction span{display:none}
+@media print{.brain-trigger{display:none}.assembly-pin.is-guided{height:auto!important;position:static!important;transform:none!important}.pin-spacer{height:auto!important;padding:0!important}}
