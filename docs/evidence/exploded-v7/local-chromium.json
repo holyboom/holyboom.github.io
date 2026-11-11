@@ -1,0 +1,552 @@
+{
+  "engine": "chromium",
+  "base": "http://127.0.0.1:8770/",
+  "checks": [
+    {
+      "name": "release-v7",
+      "pass": true
+    },
+    {
+      "name": "primary-and-intermediate-layers",
+      "pass": true
+    },
+    {
+      "name": "connected-no-callouts",
+      "pass": true
+    },
+    {
+      "name": "stage-35",
+      "pass": true,
+      "reveals": [
+        0.7944155092592593,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "stage-55",
+      "pass": true,
+      "reveals": [
+        1,
+        0.529984,
+        0
+      ]
+    },
+    {
+      "name": "stage-80",
+      "pass": true,
+      "reveals": [
+        1,
+        1,
+        0.5972713076354071
+      ]
+    },
+    {
+      "name": "stage-100",
+      "pass": true,
+      "reveals": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "right-increases-separation",
+      "pass": true,
+      "z0": 12,
+      "z1": 167
+    },
+    {
+      "name": "both-inner-circuits-revealed",
+      "pass": true
+    },
+    {
+      "name": "full-expansion-all-lines-complete",
+      "pass": true
+    },
+    {
+      "name": "finite-scan-stops",
+      "pass": true
+    },
+    {
+      "name": "pins-and-line-endpoints-aligned",
+      "pass": true,
+      "error": [
+        {
+          "kind": "intent",
+          "start": 0.0051604493698276886,
+          "end": 0.00250244140625
+        },
+        {
+          "kind": "tools",
+          "start": 0.004360597780800727,
+          "end": 0.0035389865757627505
+        },
+        {
+          "kind": "evidence",
+          "start": 0.0012256521989760256,
+          "end": 0.0025757992976085443
+        }
+      ]
+    },
+    {
+      "name": "focus-intent",
+      "pass": true
+    },
+    {
+      "name": "focus-tools",
+      "pass": true
+    },
+    {
+      "name": "focus-evidence",
+      "pass": true
+    },
+    {
+      "name": "reverse-80",
+      "pass": true
+    },
+    {
+      "name": "reverse-55",
+      "pass": true
+    },
+    {
+      "name": "reverse-35",
+      "pass": true
+    },
+    {
+      "name": "reverse-0",
+      "pass": true
+    },
+    {
+      "name": "keyboard-end",
+      "pass": true
+    },
+    {
+      "name": "keyboard-right-expands",
+      "pass": true
+    },
+    {
+      "name": "lines-track-scroll-rotation",
+      "pass": true,
+      "error": [
+        {
+          "kind": "intent",
+          "start": 0.005891098136265839,
+          "end": 0.00250244140625
+        },
+        {
+          "kind": "tools",
+          "start": 0.0031100990755852714,
+          "end": 0.0035389865757627505
+        },
+        {
+          "kind": "evidence",
+          "start": 0.0015295366316090903,
+          "end": 0.0025757992976085443
+        }
+      ]
+    },
+    {
+      "name": "guide-keeps-continuity-measured",
+      "pass": true
+    },
+    {
+      "name": "responsive-320",
+      "pass": true,
+      "overflow": false,
+      "boxes": [
+        {
+          "kind": "evidence",
+          "left": 20.755144119262695,
+          "right": 180.58535957336426
+        },
+        {
+          "kind": "tools",
+          "left": 20.552095413208008,
+          "right": 180.3832721710205
+        },
+        {
+          "kind": "intent",
+          "left": 20.34904670715332,
+          "right": 180.1811695098877
+        },
+        {
+          "kind": "intent",
+          "left": 176.5625,
+          "right": 298
+        },
+        {
+          "kind": "tools",
+          "left": 176.5625,
+          "right": 298
+        },
+        {
+          "kind": "evidence",
+          "left": 176.5625,
+          "right": 298
+        }
+      ]
+    },
+    {
+      "name": "anchors-320",
+      "pass": true,
+      "error": [
+        {
+          "kind": "intent",
+          "start": 0.004656931425642822,
+          "end": 0.00250244140625
+        },
+        {
+          "kind": "tools",
+          "start": 0.004173913380917337,
+          "end": 0.005043831904300545
+        },
+        {
+          "kind": "evidence",
+          "start": 0.0014424197141231047,
+          "end": 0.003993957067622776
+        }
+      ]
+    },
+    {
+      "name": "responsive-390",
+      "pass": true,
+      "overflow": false,
+      "boxes": [
+        {
+          "kind": "evidence",
+          "left": 25.24827003479004,
+          "right": 212.7362003326416
+        },
+        {
+          "kind": "tools",
+          "left": 24.64023208618164,
+          "right": 212.13127517700195
+        },
+        {
+          "kind": "intent",
+          "left": 24.03219223022461,
+          "right": 211.5263328552246
+        },
+        {
+          "kind": "intent",
+          "left": 219.234375,
+          "right": 368
+        },
+        {
+          "kind": "tools",
+          "left": 219.234375,
+          "right": 368
+        },
+        {
+          "kind": "evidence",
+          "left": 219.234375,
+          "right": 368
+        }
+      ]
+    },
+    {
+      "name": "anchors-390",
+      "pass": true,
+      "error": [
+        {
+          "kind": "intent",
+          "start": 0.004196506833273199,
+          "end": 0.0043792724609375
+        },
+        {
+          "kind": "tools",
+          "start": 0.005605383192798417,
+          "end": 0.006193226507584813
+        },
+        {
+          "kind": "evidence",
+          "start": 0.001355200397410554,
+          "end": 0.0045545121072464185
+        }
+      ]
+    },
+    {
+      "name": "responsive-680",
+      "pass": true,
+      "overflow": false,
+      "boxes": [
+        {
+          "kind": "evidence",
+          "left": 110.03742980957031,
+          "right": 297.54119873046875
+        },
+        {
+          "kind": "tools",
+          "left": 109.42935943603516,
+          "right": 296.9362258911133
+        },
+        {
+          "kind": "intent",
+          "left": 108.82129669189453,
+          "right": 296.3312759399414
+        },
+        {
+          "kind": "intent",
+          "left": 383.328125,
+          "right": 649.40625
+        },
+        {
+          "kind": "tools",
+          "left": 383.328125,
+          "right": 649.40625
+        },
+        {
+          "kind": "evidence",
+          "left": 383.328125,
+          "right": 649.40625
+        }
+      ]
+    },
+    {
+      "name": "anchors-680",
+      "pass": true,
+      "error": [
+        {
+          "kind": "intent",
+          "start": 0.0056454271790164125,
+          "end": 0.004364013671875
+        },
+        {
+          "kind": "tools",
+          "start": 0.003908491981370174,
+          "end": 0.00575626567834299
+        },
+        {
+          "kind": "evidence",
+          "start": 0.0026159924476067296,
+          "end": 0.005030589261709447
+        }
+      ]
+    },
+    {
+      "name": "responsive-768",
+      "pass": true,
+      "overflow": false,
+      "boxes": [
+        {
+          "kind": "evidence",
+          "left": 83.8946304321289,
+          "right": 372.45694732666016
+        },
+        {
+          "kind": "tools",
+          "left": 86.309326171875,
+          "right": 374.8331298828125
+        },
+        {
+          "kind": "intent",
+          "left": 88.72402954101562,
+          "right": 377.20928955078125
+        },
+        {
+          "kind": "intent",
+          "left": 488.84375,
+          "right": 733.453125
+        },
+        {
+          "kind": "tools",
+          "left": 488.84375,
+          "right": 733.453125
+        },
+        {
+          "kind": "evidence",
+          "left": 488.84375,
+          "right": 733.453125
+        }
+      ]
+    },
+    {
+      "name": "anchors-768",
+      "pass": true,
+      "error": [
+        {
+          "kind": "intent",
+          "start": 0.004513023866829254,
+          "end": 0.003993957067622776
+        },
+        {
+          "kind": "tools",
+          "start": 0.003431701320921261,
+          "end": 0.003993957067622776
+        },
+        {
+          "kind": "evidence",
+          "start": 0.004951471172969957,
+          "end": 0.003993957067622776
+        }
+      ]
+    },
+    {
+      "name": "responsive-1024",
+      "pass": true,
+      "overflow": false,
+      "boxes": [
+        {
+          "kind": "evidence",
+          "left": 159.1155242919922,
+          "right": 496.33958435058594
+        },
+        {
+          "kind": "tools",
+          "left": 160.87722778320312,
+          "right": 498.0732727050781
+        },
+        {
+          "kind": "intent",
+          "left": 162.63894653320312,
+          "right": 499.8070068359375
+        },
+        {
+          "kind": "intent",
+          "left": 670.421875,
+          "right": 977.921875
+        },
+        {
+          "kind": "tools",
+          "left": 670.421875,
+          "right": 977.921875
+        },
+        {
+          "kind": "evidence",
+          "left": 670.421875,
+          "right": 977.921875
+        }
+      ]
+    },
+    {
+      "name": "anchors-1024",
+      "pass": true,
+      "error": [
+        {
+          "kind": "intent",
+          "start": 0.0025219044117589197,
+          "end": 0.00372314453125
+        },
+        {
+          "kind": "tools",
+          "start": 0.001445966521054948,
+          "end": 0.005286944716179123
+        },
+        {
+          "kind": "evidence",
+          "start": 0.004526102537712301,
+          "end": 0.004852966645967827
+        }
+      ]
+    },
+    {
+      "name": "responsive-1440",
+      "pass": true,
+      "overflow": false,
+      "boxes": [
+        {
+          "kind": "evidence",
+          "left": 286.21258544921875,
+          "right": 686.01611328125
+        },
+        {
+          "kind": "tools",
+          "left": 286.8041076660156,
+          "right": 686.59912109375
+        },
+        {
+          "kind": "intent",
+          "left": 287.3956604003906,
+          "right": 687.1820678710938
+        },
+        {
+          "kind": "intent",
+          "left": 934.5625,
+          "right": 1316
+        },
+        {
+          "kind": "tools",
+          "left": 934.5625,
+          "right": 1316
+        },
+        {
+          "kind": "evidence",
+          "left": 934.5625,
+          "right": 1316
+        }
+      ]
+    },
+    {
+      "name": "anchors-1440",
+      "pass": true,
+      "error": [
+        {
+          "kind": "intent",
+          "start": 0.0051604493698276886,
+          "end": 0.00250244140625
+        },
+        {
+          "kind": "tools",
+          "start": 0.004360597780800727,
+          "end": 0.0035389865757627505
+        },
+        {
+          "kind": "evidence",
+          "start": 0.0012256521989760256,
+          "end": 0.0025757992976085443
+        }
+      ]
+    },
+    {
+      "name": "paused-input-and-lines-work",
+      "pass": true
+    },
+    {
+      "name": "paused-no-loop",
+      "pass": true
+    },
+    {
+      "name": "offscreen-no-frames",
+      "pass": true
+    },
+    {
+      "name": "reduced-motion-explicit-control",
+      "pass": true
+    },
+    {
+      "name": "touch-right-reveals",
+      "pass": true
+    },
+    {
+      "name": "touch-left-connects",
+      "pass": true
+    },
+    {
+      "name": "touch-callout-focus",
+      "pass": true
+    },
+    {
+      "name": "nojs-layer-guide",
+      "pass": true
+    },
+    {
+      "name": "missing-gsap-diagram-works",
+      "pass": true
+    },
+    {
+      "name": "direct-link-initialized",
+      "pass": true
+    },
+    {
+      "name": "workbench-symbol-preserved",
+      "pass": true
+    },
+    {
+      "name": "approved-accent-tokens",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

@@ -16,9 +16,10 @@
  // Static equivalents remain available with JS/motion disabled.
  function assemble(value) {
   const amount = Math.min(100, Math.max(0, Number(value) || 0));
-  exhibit?.style.setProperty('--separation', String(1 - amount / 100));
-  slider?.setAttribute('aria-valuetext', `${amount} percent assembled`);
-  if(exhibit)exhibit.dataset.assembled = String(amount);
+  exhibit?.style.setProperty('--separation', String(amount / 100));
+  slider?.setAttribute('aria-valuetext', `${amount} percent expanded`);
+  if(exhibit){exhibit.dataset.assembled=String(100-amount);exhibit.dataset.expanded=String(amount);}
+  document.dispatchEvent(new CustomEvent('holymind:assembly',{detail:{expanded:amount}}));
  }
  slider?.addEventListener('input', () => assemble(slider.value));
  assemble(slider?.value || 35);

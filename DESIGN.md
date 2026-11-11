@@ -65,3 +65,12 @@ See `design-qa.md` for the observed review outcome and its limits.
 - Source art, existing geometry and interactive state are never repainted or reparented. All new visuals use a pointer-transparent, aria-hidden viewport layer below the navigation and native dialog.
 - Resize, fonts, gallery height, disclosure changes and ScrollTrigger refreshes remeasure the route. The layer uses input-driven rendering and stops after the existing scrub has settled. Motion off restores all originals and removes the enhancement.
 - Release key: continuity-v6. No new runtime library or external network service.
+
+## Exploded System v7 — approved layer storytelling and accent roles
+
+- Preserve every existing scene, original artwork, shared-object continuity, actions and public profile. Experience is the surface mode.
+- Native range moves right to expand, left to connect. Three primary layers reveal Human Intent, Connections and Evidence in order; two intermediate circuit sheets appear between them.
+- Real DOM pins on the transformed planes drive projected SVG leader lines to side explanations. Recompute on input, scroll settling, resize and layout changes. No invented fixed anchor coordinates.
+- Violet remains identity. Cyan carries energy/leader lines, champagne gold marks arrivals/confirmed focus, pearl is the small bright core, orchid pink is a sparse glint. Do not recolor original images.
+- Focal moment: the exploded diagram unpacks into three short anchored explanations. A finite scan acknowledges full expansion, not a perpetual light show. Every state reverses with the slider.
+- Phone: the illustration and side annotations share the same viewport; short copy, generous touch target, no horizontal scrolling. Reduced motion still allows immediate explicit slider input and static lines. No background loops or new library.

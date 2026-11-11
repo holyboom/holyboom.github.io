@@ -23,7 +23,7 @@
  }
  function star(x,y,size,alpha,color){
   x=Math.round(x);y=Math.round(y);ctx.globalAlpha=alpha;ctx.fillStyle=color;
-  ctx.fillRect(x-size,y-1,size*2+1,2);ctx.fillRect(x-1,y-size,2,size*2+1);ctx.fillStyle='#fff4ff';ctx.fillRect(x-1,y-1,3,3);ctx.globalAlpha=1;
+  ctx.fillRect(x-size,y-1,size*2+1,2);ctx.fillRect(x-1,y-size,2,size*2+1);ctx.fillStyle='#f8f2ff';ctx.fillRect(x-1,y-1,3,3);ctx.globalAlpha=1;
  }
  function paint(t,animate){
   ctx.clearRect(0,0,W,W);if(!ready)return;
@@ -39,16 +39,16 @@
     const clock=t/(engaged?1700:2500)+i*.732,phase=clock%1;
     const path=paths[(Math.floor(clock)+i*7)%paths.length];
     const n=path.length,head=Math.min(n-1,Math.floor(phase*n)),tail=Math.max(0,head-14);
-    const cyan=i%3===0,color=cyan?'#8ee9ff':'#d693ff',opacity=Math.min(1,phase*8,(1-phase)*8);
+    const cyan=i%3===0,color=cyan?'#67e8f9':'#d693ff',opacity=Math.min(1,phase*8,(1-phase)*8);
     if(head>0){
      ctx.beginPath();ctx.moveTo(...path[tail]);for(let j=tail+1;j<=head;j++)ctx.lineTo(...path[j]);
-     ctx.lineJoin='miter';ctx.lineCap='square';ctx.strokeStyle=cyan?'rgba(85,202,255,.25)':'rgba(172,78,255,.3)';ctx.lineWidth=7;ctx.globalAlpha=opacity;ctx.stroke();
+     ctx.lineJoin='miter';ctx.lineCap='square';ctx.strokeStyle=cyan?'rgba(103,232,249,.25)':'rgba(172,78,255,.3)';ctx.lineWidth=7;ctx.globalAlpha=opacity;ctx.stroke();
      ctx.strokeStyle=color;ctx.lineWidth=2;ctx.stroke();ctx.globalAlpha=1;
     }
     const [px,py]=path[head];star(px,py,3+Math.sin(phase*Math.PI)*2,opacity,color);
     if(phase>.35&&phase<.65){ctx.globalAlpha=.5*opacity;ctx.fillStyle=color;ctx.fillRect(px+5,py-7,2,2);ctx.fillRect(px-8,py+4,2,2);ctx.globalAlpha=1;}
    }
-   nodes.forEach(([nx,ny],i)=>{const a=(Math.sin(t*.0015+i*1.9)+1)/2;if(i%4===0&&a>.8)star(nx,ny,4,(a-.8)*3,'#d0a5ff');});
+   nodes.forEach(([nx,ny],i)=>{const a=(Math.sin(t*.0015+i*1.9)+1)/2;if(i%4===0&&a>.8)star(nx,ny,4,(a-.8)*3,i%12===0?'#ff7ac6':'#d0a5ff');});
   }
   ctx.globalCompositeOperation='source-over';frames++;if(frames%20===0)canvas.dataset.frames=String(frames);
  }

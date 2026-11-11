@@ -146,6 +146,8 @@
   const segment=brainTransit?pos.lit:showWire?polyline(path,Math.max(0,t-.14),Math.min(1,t+.025),15):'';
   current.setAttribute('d',segment);shadow.setAttribute('d',segment);
   const arrival=showWire?Math.max(0,(p-.70)/.30):0;
+  const dock=same?1:1-Math.min(1,Math.sin(Math.PI*p)*3);
+  layer.style.setProperty('--carrier-accent',`rgb(${Math.round(lerp(103,242,dock))} ${Math.round(lerp(232,204,dock))} ${Math.round(lerp(249,143,dock))})`);
   receiver.setAttribute('d',arrival?diamondPath(B.x,B.y,(18+22*(1-arrival))*factor):'');
   receiver.style.opacity=String(arrival*.6);
   layer.dataset.from=a.id;layer.dataset.to=b.id;layer.dataset.progress=p.toFixed(5);

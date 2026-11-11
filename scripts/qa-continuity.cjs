@@ -8,7 +8,7 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
  const check=(name,pass,detail={})=>{checks.push({name,pass,...detail});console.log(name,pass);};
  const go=async y=>{await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await page.waitForTimeout(1020);return await page.evaluate(()=>HolyMindContinuity.snapshot());};
  await page.goto(base,{waitUntil:'networkidle'});await page.waitForTimeout(1100);
- check('release-v6',await page.locator('html').getAttribute('data-build')==='continuity-v6');
+ check('release-v6',await page.locator('html').getAttribute('data-build')===(process.env.EXPECT_BUILD||'exploded-v7'));
  check('single-shared-carrier',await page.locator('.continuity-carrier').count()===1&&await page.locator('.continuity-brain').count()===1);
  check('pointer-transparent',await page.locator('.continuity-layer').evaluate(el=>getComputedStyle(el).pointerEvents==='none'));
  const initial=await page.evaluate(()=>HolyMindContinuity.snapshot());check('eleven-stations',initial.stations.length===11);

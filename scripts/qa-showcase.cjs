@@ -41,7 +41,7 @@ const fs=require('fs');
   await go(scene,700);a=await page.locator(target).first().evaluate(e=>e instanceof SVGGraphicsElement ? JSON.stringify(['a','b','c','d','e','f'].map(k=>e.getCTM()[k])) : getComputedStyle(e).transform);await go(scene,140);b=await page.locator(target).first().evaluate(e=>e instanceof SVGGraphicsElement ? JSON.stringify(['a','b','c','d','e','f'].map(k=>e.getCTM()[k])) : getComputedStyle(e).transform);check(name,a!==b,{a,b});
  }
  await page.locator('#motion-toggle').click();await page.waitForTimeout(300);check('pause-all',await page.locator('body').getAttribute('data-showcase-engine')==='paused'&&await page.evaluate(()=>ScrollTrigger.getAll().length===0));
- await page.locator('#assembly-control').fill('80');check('static-interaction',await page.locator('.assembly-exhibit').getAttribute('data-assembled')==='80');await page.locator('#motion-toggle').click();
+ await page.locator('#assembly-control').fill('80');check('static-interaction',await page.locator('.assembly-exhibit').getAttribute('data-expanded')==='80');await page.locator('#motion-toggle').click();
  for(const w of [320,390,680,768,1024,1440]){
   await page.setViewportSize({width:w,height:w<=680?844:1000});await page.waitForTimeout(500);
   let over=[],missing=[];for(const sel of ['#top','#mind-flow','.signal-crossing','.assembly-exhibit','.skill-instrument','#framework','#what-i-do','#about','#connect']){
@@ -55,7 +55,7 @@ const fs=require('fs');
  }
  await go('.skill-instrument');for(let i=0;i<6;i++){const old=await page.locator('.deck-shard[aria-pressed=true]').getAttribute('data-skill');await page.locator('#next-skill').click();check('mobile-deck-next-'+i,(await page.locator('.deck-shard[aria-pressed=true]').getAttribute('data-skill'))!==old);}
  const reduced=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce',isMobile:true,hasTouch:true});await reduced.goto(base,{waitUntil:'networkidle'});check('reduced-motion',await reduced.locator('body').getAttribute('data-showcase-engine')==='paused'&&await reduced.evaluate(()=>ScrollTrigger.getAll().length===0));
- await reduced.locator('#assembly-control').fill('100');check('reduced-motion-slider',await reduced.locator('.assembly-exhibit').getAttribute('data-assembled')==='100');
+ await reduced.locator('#assembly-control').fill('100');check('reduced-motion-slider',await reduced.locator('.assembly-exhibit').getAttribute('data-expanded')==='100');
  const nojs=await browser.newPage({viewport:{width:390,height:844},javaScriptEnabled:false});await nojs.goto(base,{waitUntil:'networkidle'});check('nojs-content',await nojs.locator('#hero-heading').isVisible()&&await nojs.locator('.connect-action a').isVisible());
  await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await page.waitForTimeout(300);
  check('all-images-load',await page.locator('img').evaluateAll(es=>es.filter(e=>e.complete&&!e.naturalWidth).length===0));
@@ -65,7 +65,7 @@ const fs=require('fs');
  const fallback=await browser.newPage({viewport:{width:390,height:844}});
  await fallback.route('**/assets/vendor/**',route=>route.abort());
  await fallback.goto(base,{waitUntil:'networkidle'});await fallback.locator('#assembly-control').fill('70');
- check('missing-library-static-fallback',await fallback.locator('body').getAttribute('data-showcase-engine')==='static'&&await fallback.locator('.assembly-exhibit').getAttribute('data-assembled')==='70');
+ check('missing-library-static-fallback',await fallback.locator('body').getAttribute('data-showcase-engine')==='static'&&await fallback.locator('.assembly-exhibit').getAttribute('data-expanded')==='70');
  const touch=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
  touch.on('pageerror',e=>errors.push('touch: '+e.message));
  await touch.goto(base,{waitUntil:'networkidle'});await touch.locator('#next-skill').tap();

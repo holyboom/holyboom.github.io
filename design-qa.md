@@ -118,3 +118,13 @@ Live video and the 71-frame GIF were captured from the published site, not gener
 - Live index and five key assets hash-matched local files. All 36 original brain/skill WebP files unchanged against the v5 baseline.
 - Browser-rendered desktop and mobile captures reviewed. Physical iPhone performance was not measured.
 - See qa/continuity-v6.html and docs/evidence/continuity-v6 for the live recording and inspectable results.
+
+## Exploded System v7 — local verification
+
+- Approved scope implemented: right expands / left connects, progressive Human Intent → Connections → Evidence callouts, two intermediate routing/check sheets, projected SVG lines, focus interaction, bounded full-expansion scan, accent colors across existing energy and arrival effects.
+- Reviewed actual rendered desktop and phone images. Caught a WebKit compositor issue that hid nested translateZ planes and replaced it with individually projected sheets; verified all five sheets visually.
+- Assembly checks: 47 passed in Chromium and 47 in WebKit; no observed runtime errors. Exact leader endpoints are tested against real DOM pin/label coordinates (tolerance 1 CSS px). Viewports 320, 390, 680, 768, 1024 and 1440 checked for clipped plane bounds and horizontal overflow.
+- Existing Showcase regression: 55 checks passed in WebKit. Existing Continuity: 43 checks passed in WebKit, including all ten forward/reverse seams. Range expectations updated for the explicitly requested direction change.
+- Static/no-JS, missing-GSAP, reduced-motion and offscreen/idle cases covered. No physical iPhone performance test; viewport simulation is not a device benchmark.
+- Prior design guidance was reused from Product Design, Impeccable animate/craft floor and frontend guidance. The Impeccable launcher was unavailable; no tool certification claimed.
+- Live deployment evidence is recorded separately after publication.

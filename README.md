@@ -49,3 +49,13 @@ Test output and captured live evidence are linked from `qa/showcase-v5.html` aft
 ## Continuous Mind v6
 
 Shared brain transfer, reversible crystal-to-system transfer, and one shape-shifting visual thread connect the approved v5 scenes. `continuity.js` owns only its own overlay and temporary source opacity classes. See DESIGN.md and `scripts/qa-continuity.cjs` for the contract and reversal checks. Native controls continue to work with motion disabled.
+
+## Exploded System v7
+
+Visit `#system-assembly`. Drag the native slider right to expand. Three primary planes and two intermediate circuit sheets reveal in sequence. Side labels connect to actual projected pins, and can focus a layer. Drag left to reverse. The existing shared brain/crystal and all eleven continuity stations remain.
+
+Accent roles: violet identity, cyan movement, champagne gold arrivals, pearl spark core, sparse orchid glints. Original image bytes are unchanged. No new runtime dependencies or external services.
+
+The range now means **expanded percentage**; `data-expanded` is the range value and `data-assembled` is its complement. This deliberate direction change is reflected in regression tests.
+
+`npm run test:assembly` verifies the native range, staged reveals, endpoint alignment, reversal, keyboard/touch input, six viewport widths, offscreen/idle behavior, and static fallbacks. Set `TEST_URL`, `QA_DIR`, and optionally `ENGINE=webkit`. Tests require the installed Playwright browser engine.
