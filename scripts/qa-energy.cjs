@@ -1,7 +1,7 @@
 /* Spark v8 acceptance: real pixels, responsive ordering, all handoffs, controls and lifecycle. */
 const {chromium,webkit}=require('playwright');const fs=require('fs');
 (async()=>{
- const engine=process.env.ENGINE||'chromium',base=process.env.TEST_URL||'http://127.0.0.1:8771/',out=process.env.QA_DIR||'qa-output/energy-'+engine;fs.mkdirSync(out,{recursive:true});
+ const engine=process.env.ENGINE||'chromium',base=process.env.TEST_URL||'http://127.0.0.1:8771/',out=process.env.QA_DIR||'qa-output/energy-'+engine;fs.mkdirSync(out,{recursive:true});fs.rmSync(out+'/result.json',{force:true});
  const browser=await(engine==='webkit'?webkit.launch({headless:true}):chromium.launch({headless:true,executablePath:process.platform==='darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':undefined}));
  const checks=[],errors=[],p=await browser.newPage({viewport:{width:1440,height:1000}});p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
  const check=(name,pass,detail={})=>{checks.push({name,pass,...detail});console.log(name,pass);};
@@ -11,8 +11,9 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
    const snapshot=HolyMindContinuity.snapshot();
    const target=Math.max(0,Math.min(targetY,document.documentElement.scrollHeight-innerHeight));
    const images=[...document.images].filter(im=>{const r=im.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight;});
-   return Math.abs(scrollY-target)<1.1&&Math.abs(snapshot.renderedScrollY-scrollY)<1.1&&images.every(im=>im.complete)&&!snapshot.running&&ScrollTrigger.getAll().every(st=>!st.getTween?.()?.isActive());
-  },y,{timeout:15000});
+   const viewport=document.querySelector('.continuity-field').viewBox.baseVal;
+   return viewport.width===innerWidth&&viewport.height===innerHeight&&Number(document.querySelector('.continuity-layer').dataset.measuredHeight)===document.documentElement.scrollHeight&&Math.abs(scrollY-target)<1.1&&Math.abs(snapshot.renderedScrollY-scrollY)<1.1&&images.every(im=>im.complete)&&!snapshot.running&&ScrollTrigger.getAll().every(st=>!st.getTween?.()?.isActive());
+  },y,{timeout:15000}).catch(async error=>{console.error('SETTLEMENT',JSON.stringify(await p.evaluate(target=>({target,actual:scrollY,route:HolyMindContinuity.snapshot(),height:document.documentElement.scrollHeight,measured:document.querySelector('.continuity-layer').dataset.measuredHeight,viewport:document.querySelector('.continuity-field').getAttribute('viewBox'),hidden:document.hidden,tweens:ScrollTrigger.getAll().filter(st=>st.getTween?.()?.isActive()).length,incomplete:[...document.images].filter(im=>{const r=im.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&!im.complete;}).map(im=>im.src)}),y)));throw error;});
  };
  const go=async sel=>{const top=await p.locator(sel).evaluate(e=>e.getBoundingClientRect().top+scrollY);await scroll(top-105);};
  await p.addInitScript(()=>localStorage.setItem('holyboom-motion','off'));await goto();
@@ -25,12 +26,13 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
  check('more-source-aligned-pulses',await p.evaluate(()=>{const s=HolyMindNeural.snapshot();return s.paths===46&&s.branches===18&&s.contour===96;}));
  await p.screenshot({path:out+'/desktop-hero.jpg',quality:86});
  for(const [w,h] of [[320,740],[390,844],[430,932],[680,960],[768,1000],[1024,1000],[1440,1000]]){
-  await p.setViewportSize({width:w,height:h});await scroll(0);
+  await p.setViewportSize({width:w,height:h});await p.waitForTimeout(400);await scroll(0);
   const box=await p.evaluate(()=>{const a=document.querySelector('.neural-stage').getBoundingClientRect(),b=document.querySelector('.hero-copy').getBoundingClientRect();return {brain:a.toJSON(),copy:b.toJSON(),overflow:document.documentElement.scrollWidth>innerWidth};});
   check('hero-layout-'+w,!box.overflow&&(w<=680?box.brain.top<box.copy.top&&box.brain.bottom<h:box.copy.left<box.brain.left&&box.brain.top<box.copy.bottom),{brain:box.brain,copy:box.copy});
   if(w===390||w===768)await p.screenshot({path:out+'/hero-'+w+'.jpg',quality:86});
  }
  // Every reversible bridge still connects, and its receiver really responds.
+ await p.waitForTimeout(400);await scroll(0);
  const keys=await p.evaluate(()=>HolyMindContinuity.snapshot().keys);const bridges=[];for(let i=0;i<keys.length-1;i++)if(keys[i].id!==keys[i+1].id)bridges.push([keys[i],keys[i+1]]);
  check('all-ten-bridges-retained',bridges.length===10);
  for(const [from,to] of bridges){
@@ -67,4 +69,4 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
  await p.goto(new URL('profile-schema.json',base).href);await p.goBack({waitUntil:'networkidle'});await p.waitForTimeout(1200);check('back-navigation-resumes',await p.evaluate(()=>HolyMindNeural.snapshot().running));
  const perf=await p.evaluate(()=>HolyMindNeural.snapshot());check('original-art-loads',await p.locator('img').evaluateAll(es=>es.filter(e=>e.complete&&!e.naturalWidth).length===0));
  const failed=checks.filter(c=>!c.pass);fs.writeFileSync(out+'/result.json',JSON.stringify({engine,base,checks,errors,failed,renderer:perf,physicalDevice:false},null,2));console.log(JSON.stringify({count:checks.length,failed,errors,renderer:perf}));await browser.close();if(failed.length||errors.length)process.exitCode=1;
-})().catch(e=>{console.error(e);process.exitCode=1});
+})().catch(e=>{console.error(e);process.exit(1)});

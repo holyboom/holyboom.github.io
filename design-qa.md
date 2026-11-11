@@ -154,3 +154,9 @@ Scope: stronger source-aligned brain electricity on all viewports; phone-only im
 The first production WebKit pass had two reversal assertions outside the position tolerance. Fresh targeted captures agreed after settling. Removed the fixed-duration assumption: continuity and assembly leader loops now also wait for actual active ScrollTrigger scrub tweens. The acceptance suite waits for visible images and actual motion settlement rather than a one-second snapshot, keeping the same 1.6 px reversal tolerance. Final production rerun required before handoff.
 
 A second production run exposed a sampling race: reverse captures sometimes contained the previous 96% arrival state rather than the requested midpoint. Added a read-only `renderedScrollY` diagnostic and require it to match the requested and actual scroll positions before testing reversal. No coordinate tolerance was relaxed.
+
+Final harness correction also waits for resize debounces and matching measured viewport dimensions before retaining route keys. Reusing route keys measured at the preceding viewport caused false arrival-state assertions. The completed production runs pass the original coordinate and receiver-light thresholds.
+
+### Spark v8 — published-page verification
+
+Production acceptance suite: Chromium 85/85 and WebKit 85/85, with zero failed checks and zero runtime errors. Nine runtime assets matched local SHA-256 hashes. The mobile film was captured from the public page. See `qa/spark-v8.html` and `docs/evidence/spark-v8/summary.json`. No physical-device performance claim is made.

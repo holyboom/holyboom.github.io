@@ -1,0 +1,47 @@
+[
+  {
+    "path": "index.html",
+    "sha256": "b892c8ad4815baa17abcd457d23d24653c2c42c2c1d0e2912119df5886b56f00",
+    "matches": true
+  },
+  {
+    "path": "site.js",
+    "sha256": "c11fee08d4057380a15490158b4284ea9b1a5f0cc7bc702d688dfd0e00c2947b",
+    "matches": true
+  },
+  {
+    "path": "neural-core.js",
+    "sha256": "b922b80b46e750da37b8208fcb722d3eacb5006d3129db535e67c3845f58281e",
+    "matches": true
+  },
+  {
+    "path": "continuity.js",
+    "sha256": "9376da82584ceafe6f18ab00797288c4220e0a6e3f09accec92e7d698af2a024",
+    "matches": true
+  },
+  {
+    "path": "energy-field.js",
+    "sha256": "21e4471743234fd914fce48a013b8c395315dd115cc14a86d7f7ebe05b138a5b",
+    "matches": true
+  },
+  {
+    "path": "brain-energy.css",
+    "sha256": "63f402ada81bffb2e8d131b0c3066136b2237cd87f4cd04fa19155ab6cc12347",
+    "matches": true
+  },
+  {
+    "path": "showcase.js",
+    "sha256": "0aef1380871c4df5870a2c333e97616b16bf3480387fa5493ca4bffa4c6309f9",
+    "matches": true
+  },
+  {
+    "path": "scroll-motion.js",
+    "sha256": "b955718ae2ce4d4cd904465acefc716cdf75994184a0d05630d952110a26bc1f",
+    "matches": true
+  },
+  {
+    "path": "assembly-lab.js",
+    "sha256": "8530bfd165382c19d558ecd121bac4eb64030a26d16751a113ca0d3628672717",
+    "matches": true
+  }
+]

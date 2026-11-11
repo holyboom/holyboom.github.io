@@ -1,0 +1,44 @@
+{
+  "release": "spark-v8",
+  "implementation_commit": "5f8b96eaa83c30ea2c01f44072609509b5a6705f",
+  "verified_at": "2026-11-11T10:18:53.538026+00:00",
+  "url": "https://holyboom.github.io/?v=spark-v8-r3",
+  "scope": {
+    "mobile_hero": "Brain above copy; phone portrait and narrow touch landscape only. Tablet/desktop retain left copy / right artwork.",
+    "all_screen_sparks": "46 source-derived paths; 12 moving traces on narrow screens, 18 on wider screens; 96 contour samples, six edge discharges, sparse pixel debris.",
+    "single_clock": "Hero, shared travelling brain and orbit use one rendered light field; no spark restart during transfer.",
+    "receiving_light": "Reversible illumination of orbit, ribbon, assembly circuits, workbench, selected skill plate, gallery exit, services, Boom punctuation and portal.",
+    "controls": "Removed both hero shortcut buttons and Motion toggle; the artwork scroll hint is not a jump link.",
+    "motion_policy": "Automatic full mode, ignores legacy off setting; OS Reduce Motion selects calm lighting with no large spatial choreography; no site toggle.",
+    "preserved": "37 original images byte-identical; 34 skills, native range and callouts, all ten reversible bridges, contact destinations."
+  },
+  "live_checks": {
+    "chromium": 85,
+    "webkit": 85
+  },
+  "total_live_checks": 170,
+  "live_failures": 0,
+  "live_runtime_errors": 0,
+  "additional_local_regression": {
+    "assembly_webkit": 47,
+    "motion_webkit": 31
+  },
+  "viewport_widths": [
+    320,
+    390,
+    430,
+    680,
+    768,
+    1024,
+    1440
+  ],
+  "phone_landscape_tested": "844x390 simulated touch viewport",
+  "live_asset_hash_matches": 9,
+  "new_runtime_dependencies": 0,
+  "physical_iphone_tested": false,
+  "independent_flash_audit": false,
+  "wcag_pause_stop_hide_certified": false,
+  "recording": "Captured from the published page using scripted scrolling and touch controls; simulated phone viewport, not a physical device or performance benchmark.",
+  "recording_visual_revision": "291ba679dca9113872ec48e5b7711b0152ff0853 (same final visuals; subsequent change adds read-only scroll diagnostics)",
+  "test_sampling": "Waits for viewport remeasurement, visible-image loading, requested scroll position, matching renderedScrollY and actual scrub settlement; reversal tolerance unchanged."
+}
