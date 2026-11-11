@@ -1,0 +1,35 @@
+{
+  "release": "836573b30c975853861b18bdccb1a543425c010d",
+  "assets": [
+    {
+      "file": "index.html",
+      "sha256": "5691813e5900beb0de1416c53a23722001d06af31a0c19124aeb30264926539d",
+      "matches": true
+    },
+    {
+      "file": "style.css",
+      "sha256": "e24b34c51fa63a39bf46afe9eb4c8b3dc8ee9181beddd126e4bc0811a2f6c362",
+      "matches": true
+    },
+    {
+      "file": "site.js",
+      "sha256": "cc324740f266a04584fceb00603f423e72f62373c690c97fe438b8866ef07937",
+      "matches": true
+    },
+    {
+      "file": "scroll-motion.js",
+      "sha256": "eacc3dac207612c011ba2a3764a585c5aab5944d0452d3e644ae7a2eece8dd00",
+      "matches": true
+    },
+    {
+      "file": "showcase.css",
+      "sha256": "75c3d286fb94f0d9bf06fc8a1017b3752ba4b35251f1ddece9d22ddc6caee493",
+      "matches": true
+    },
+    {
+      "file": "showcase.js",
+      "sha256": "73268ea878aa9d38932911df677c8d41ac29eb37171af40d5311023d4254eb85",
+      "matches": true
+    }
+  ]
+}

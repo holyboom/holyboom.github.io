@@ -98,3 +98,11 @@ Implementation adds the signal crossing, exploded assembly slider, six-skill opt
 Local review: 52 showcase checks passed in WebKit, including keyboard/focus, all six skill dialogs, SVG screen-transform motion, pause/resume, repeated motion toggles without trigger growth, reduced motion, no-JavaScript content and missing-library fallback. The original 31-item motion/interaction regression suite passed in Chromium. Layout inspected at 320, 390, 680, 768, 1024 and 1440 CSS pixels. No horizontal overflow or page runtime errors were recorded in those runs.
 
 First-pass fixes: added accessible previous/next controls for overlapping fan plates on touch screens; used native SVG transform attributes to keep the portal centered in both engines; removed a mobile line-break spacing defect. Original brain WebP hashes match v4. Browser emulation does not establish physical-device frame rate or battery use.
+
+### Published-site verification
+
+Implementation commit `836573b30c975853861b18bdccb1a543425c010d` completed GitHub Pages deployment. Live first-party HTML, CSS and scripts matched all six source SHA-256 comparisons. On the published `showcase-v5` URL, **55/55 showcase checks passed in Chromium and 55/55 in WebKit**, with zero captured page errors and zero failed assertions. The original **31/31** regression checks also passed in WebKit on the published URL.
+
+The new suite exercises the assembly control (keyboard and emulated touch), six skill selections and dialogs, focus return, service disclosures, workbench-to-art synchronization, scroll transforms including SVG CTM, six viewport widths, native mobile menu, reduced motion, repeated pause/resume without accumulating ScrollTriggers, no-JavaScript content and missing-library fallback. Responsive sections did not overflow horizontally at the checked positions.
+
+Live video and the 71-frame GIF were captured from the published site, not generated mockups. See [showcase evidence](qa/showcase-v5.html) and `docs/evidence/showcase-v5/summary.json`. The desktop screenshots and mobile WebKit screenshots are from live verification runs. No physical iPhone frame-rate/battery measurement is claimed.
