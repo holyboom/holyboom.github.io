@@ -21,9 +21,9 @@ GitHub Pages serves `main` from the repository root, with no production build st
 - `assets/`: optimized original artwork, local fonts, licensed UI icons and attribution.
 - `profile-schema.json`, `llms.txt`, `robots.txt`, `sitemap.xml`: public discovery metadata.
 - `PRODUCT.md`, `DESIGN.md`: product constraints and durable design decisions.
-- `design-qa.md`: review evidence, findings and verification limits when completed.
+- `design-qa.md`: review evidence, findings and verification limits.
 
-Run `npm run dev -- --host 0.0.0.0 --port 4173 --strictPort` for the dependency-free development server. `npm run check` checks JavaScript syntax. The development-only `/__review?width=390&height=852` route frames the page at a real mobile CSS viewport for responsive inspection; GitHub Pages does not serve that development route.
+Run `npm run dev -- --host 0.0.0.0 --port 4173 --strictPort` for the dependency-free development server. `npm run check` checks JavaScript syntax. The development-only `/__review?width=390&height=852` route frames the page at a real mobile CSS viewport for responsive inspection. The noindex `qa/responsive.html` fixture supports the same review on GitHub Pages; it is not linked from the public navigation.
 
 ## Design references
 
