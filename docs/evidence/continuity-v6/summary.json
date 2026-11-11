@@ -1,0 +1,36 @@
+{
+  "release": "continuity-v6",
+  "implementation_commit": "e4e8da9ca286fee52062a43965840b3c74f6bfbc",
+  "verified_at": "2026-11-11T08:17:19.809268+00:00",
+  "url": "https://holyboom.github.io/?v=continuity-v6",
+  "artifacts": {
+    "shared_brain": "Original hero brain travels into orbit; source and destination restored on pause and completion",
+    "shared_crystal": "Ribbon crystallizer travels into system assembly; both original image instances are muted only during the shared overlay transfer",
+    "continuous_thread": "One carrier morphs between eleven existing artifact stations, including the skill fan, service symbols, Boom punctuation and contact aperture",
+    "reverse": "All ten bridges retrace at the same tested scroll positions in both engines"
+  },
+  "live_checks": {
+    "chromium": 43,
+    "webkit": 43
+  },
+  "live_failures": 0,
+  "live_runtime_errors": 0,
+  "local_showcase_regression_checks": 55,
+  "local_showcase_regression_failures": 0,
+  "viewport_widths": [
+    320,
+    390,
+    680,
+    768,
+    1024,
+    1440
+  ],
+  "source_images_byte_identical": 36,
+  "live_assets_hash_matched": 6,
+  "extra_runtime_libraries": 0,
+  "physical_iphone_tested": false,
+  "recording": "Live published page captured using scripted forward/reverse scrolling",
+  "controls": "Pointer-transparent enhancement; existing deck, dialogs, slider and motion control preserved; no scroll interception",
+  "dynamic_layout": "Gallery expansion, details, fonts and resize remeasure route",
+  "reduced_motion": "Static original compositions, no hidden images; explicit opt-in continues to work"
+}

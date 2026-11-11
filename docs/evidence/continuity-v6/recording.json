@@ -1,0 +1,37 @@
+{
+  "source": "https://holyboom.github.io/?v=continuity-v6",
+  "build": "continuity-v6",
+  "kind": "Live-browser capture with scripted forward and reverse scrolling",
+  "segments": [
+    {
+      "from": "neural",
+      "to": "orbit",
+      "direction": "forward"
+    },
+    {
+      "from": "neural",
+      "to": "orbit",
+      "direction": "reverse"
+    },
+    {
+      "from": "ribbon",
+      "to": "assembly",
+      "direction": "forward"
+    },
+    {
+      "from": "ribbon",
+      "to": "assembly",
+      "direction": "reverse"
+    },
+    {
+      "from": "signature",
+      "to": "portal",
+      "direction": "forward"
+    },
+    {
+      "from": "signature",
+      "to": "portal",
+      "direction": "reverse"
+    }
+  ]
+}

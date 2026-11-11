@@ -1,0 +1,38 @@
+[
+  {
+    "asset": "index.html",
+    "status": 200,
+    "sha256": "44a491bac81ec6de1676193167193c2fb11d9add4572ee9f2d2343ac31467cde",
+    "matches": true
+  },
+  {
+    "asset": "continuity.js",
+    "status": 200,
+    "sha256": "5016011812a2d2dca43a89326d1d8049b0191040a80e04d99c0f51fb75bf7a62",
+    "matches": true
+  },
+  {
+    "asset": "continuity.css",
+    "status": 200,
+    "sha256": "84e11102898e3401519616534280c2ea4e10474a329814fad6b7ee40d5270e5e",
+    "matches": true
+  },
+  {
+    "asset": "showcase.js",
+    "status": 200,
+    "sha256": "73268ea878aa9d38932911df677c8d41ac29eb37171af40d5311023d4254eb85",
+    "matches": true
+  },
+  {
+    "asset": "scroll-motion.js",
+    "status": 200,
+    "sha256": "eacc3dac207612c011ba2a3764a585c5aab5944d0452d3e644ae7a2eece8dd00",
+    "matches": true
+  },
+  {
+    "asset": "style.css",
+    "status": 200,
+    "sha256": "e24b34c51fa63a39bf46afe9eb4c8b3dc8ee9181beddd126e4bc0811a2f6c362",
+    "matches": true
+  }
+]

@@ -106,3 +106,15 @@ Implementation commit `836573b30c975853861b18bdccb1a543425c010d` completed GitHu
 The new suite exercises the assembly control (keyboard and emulated touch), six skill selections and dialogs, focus return, service disclosures, workbench-to-art synchronization, scroll transforms including SVG CTM, six viewport widths, native mobile menu, reduced motion, repeated pause/resume without accumulating ScrollTriggers, no-JavaScript content and missing-library fallback. Responsive sections did not overflow horizontally at the checked positions.
 
 Live video and the 71-frame GIF were captured from the published site, not generated mockups. See [showcase evidence](qa/showcase-v5.html) and `docs/evidence/showcase-v5/summary.json`. The desktop screenshots and mobile WebKit screenshots are from live verification runs. No physical iPhone frame-rate/battery measurement is claimed.
+
+
+## Continuous Mind v6 — live verification
+
+- Implementation: e4e8da9ca286fee52062a43965840b3c74f6bfbc.
+- Live continuity suites: Chromium 43/43, WebKit 43/43; zero failed checks and runtime errors. All ten bridges tested in both directions at matched scroll positions.
+- The hero brain and ribbon crystallizer use actual shared-image handoffs, not separate fade-ins. Temporary source/destination opacity is restored on pause and completion.
+- Six responsive widths, dynamic gallery expansion, disclosures, direct navigation, reduced motion, original restoration, pointer-transparent overlay and idle-loop termination checked.
+- Existing local showcase suite: 55/55; slider, deck, keyboard, dialog focus, touch controls and previous scenes intact.
+- Live index and five key assets hash-matched local files. All 36 original brain/skill WebP files unchanged against the v5 baseline.
+- Browser-rendered desktop and mobile captures reviewed. Physical iPhone performance was not measured.
+- See qa/continuity-v6.html and docs/evidence/continuity-v6 for the live recording and inspectable results.
