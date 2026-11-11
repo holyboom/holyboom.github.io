@@ -1,0 +1,159 @@
+{
+  "base": "https://holyboom.github.io/?v=living-mind-v4",
+  "engine": "webkit",
+  "errors": [],
+  "checks": [
+    {
+      "type": "init",
+      "data": {
+        "build": "living-mind-v4",
+        "engine": "gsap-3.15.1",
+        "motion": "on",
+        "canvas": "running",
+        "cards": 8,
+        "animatedCards": 8,
+        "triggers": 35
+      }
+    },
+    {
+      "type": "canvasMoves",
+      "pass": true
+    },
+    {
+      "type": "orbitMoves",
+      "pass": true,
+      "matrices": [
+        "matrix(0.808091, 0.589058, -0.589058, 0.808091, 0, 0)",
+        "matrix(0.31226, 0.949997, -0.949997, 0.31226, 0, 0)",
+        "matrix(-0.438018, 0.898966, -0.898966, -0.438018, 0, 0)"
+      ]
+    },
+    {
+      "type": "filter-reason",
+      "cards": 13,
+      "animated": 13
+    },
+    {
+      "type": "filter-build",
+      "cards": 12,
+      "animated": 12
+    },
+    {
+      "type": "filter-verify",
+      "cards": 9,
+      "animated": 9
+    },
+    {
+      "type": "filter-all",
+      "cards": 8,
+      "animated": 8
+    },
+    {
+      "type": "expandAll",
+      "pass": true,
+      "animated": 34
+    },
+    {
+      "type": "empty",
+      "pass": true
+    },
+    {
+      "type": "dialog",
+      "pass": true
+    },
+    {
+      "type": "step-operations-0",
+      "pass": true
+    },
+    {
+      "type": "step-operations-1",
+      "pass": true
+    },
+    {
+      "type": "step-operations-2",
+      "pass": true
+    },
+    {
+      "type": "step-operations-3",
+      "pass": true
+    },
+    {
+      "type": "step-knowledge-0",
+      "pass": true
+    },
+    {
+      "type": "step-knowledge-1",
+      "pass": true
+    },
+    {
+      "type": "step-knowledge-2",
+      "pass": true
+    },
+    {
+      "type": "step-knowledge-3",
+      "pass": true
+    },
+    {
+      "type": "step-venture-0",
+      "pass": true
+    },
+    {
+      "type": "step-venture-1",
+      "pass": true
+    },
+    {
+      "type": "step-venture-2",
+      "pass": true
+    },
+    {
+      "type": "step-venture-3",
+      "pass": true
+    },
+    {
+      "type": "pause",
+      "pass": true,
+      "engine": "paused",
+      "triggers": 0
+    },
+    {
+      "type": "responsive",
+      "width": 320,
+      "overflowSections": []
+    },
+    {
+      "type": "responsive",
+      "width": 390,
+      "overflowSections": []
+    },
+    {
+      "type": "responsive",
+      "width": 680,
+      "overflowSections": []
+    },
+    {
+      "type": "responsive",
+      "width": 768,
+      "overflowSections": []
+    },
+    {
+      "type": "responsive",
+      "width": 1024,
+      "overflowSections": []
+    },
+    {
+      "type": "responsive",
+      "width": 1440,
+      "overflowSections": []
+    },
+    {
+      "type": "reducedMotionDefault",
+      "pass": true,
+      "engine": "paused"
+    },
+    {
+      "type": "explicitMotionOptIn",
+      "pass": true
+    }
+  ],
+  "failed": []
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "asset": "style.css",
+    "sha256": "e24b34c51fa63a39bf46afe9eb4c8b3dc8ee9181beddd126e4bc0811a2f6c362",
+    "matches": true
+  },
+  {
+    "asset": "site.js",
+    "sha256": "ea145649a5f9d048e36182fd67abae3db7210e5445d8391761b4ace7a736880d",
+    "matches": true
+  },
+  {
+    "asset": "neural-core.js",
+    "sha256": "7468d4b58db622136632c9fc954623323ec956487dc8a991322d36b341ab41af",
+    "matches": true
+  },
+  {
+    "asset": "scroll-motion.js",
+    "sha256": "c3a5480d619a241a0917c3f3d14d503d515ce2fc9c519f0b307eec06cda98a1d",
+    "matches": true
+  },
+  {
+    "asset": "assets/neural-paths.json",
+    "sha256": "530579b4f55061055c3e202ba3a80faa0bd5ab1d6da2ec4c1658cc1f8ef99cbe",
+    "matches": true
+  }
+]

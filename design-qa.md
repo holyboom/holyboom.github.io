@@ -81,3 +81,10 @@ A short early Chromium filter sample returned before a queued frame; rerun with 
 `npm ci`, `npx playwright install chromium webkit`, start `npm run dev`, then set `TEST_URL` to the preview URL and run `npm run test:motion`. Set `ENGINE=webkit` for WebKit and `QA_DIR` for output. `CHROME_PATH` can select an installed Chromium browser.
 
 Deployment verification is recorded separately after checking the public URL; local checks alone are not a claim about the live release.
+
+### Public deployment verification — completed
+The public release at `https://holyboom.github.io/?v=living-mind-v4` was tested after the GitHub Pages deployment of `f6838f1` completed successfully. Chromium and WebKit each completed 31 recorded checks, with no failed checks, no page JavaScript errors and no HTTP error responses observed. All six viewport widths were checked on the public release.
+
+The five changed first-party assets match local SHA-256 hashes. Canvas output changes over time; the orbital transform changes at three scroll positions. Global pause removes ScrollTriggers and freezes the Canvas. Back-navigation resumes Canvas correctly. The original brain image files remain byte-identical to the previous release.
+
+See `qa/living-v4.html` for actual public-page recordings, and `docs/evidence/living-v4/chromium.json`, `webkit.json` and `live-asset-check.json` for raw observations. The GIF is a sequence of screenshots captured while scrolling the public page; the MP4 is a browser video recording. These are not generated mockups. Physical iPhone hardware and real-world battery use have not been measured.
