@@ -30,3 +30,9 @@ body[data-motion=off] .neural-core{animation:none}
 @media(max-width:680px){.neural-core{width:100%;max-width:400px;margin:-6px auto -2px}}
 @media(max-width:360px){.neural-core{max-width:320px}}
 @media(prefers-reduced-motion:reduce){.neural-core{animation:none}}
+
+/* Brighter halo behind, without blurring or repainting the pixel-art brain. */
+.neural-core::before{content:"";position:absolute;inset:16%;border-radius:50%;background:radial-gradient(ellipse,rgba(140,43,235,.26) 0%,rgba(116,48,212,.13) 38%,transparent 72%);filter:blur(17px);pointer-events:none;z-index:-1;animation:neural-halo 5s ease-in-out infinite alternate}
+@keyframes neural-halo{from{opacity:.55;transform:scale(.93)}to{opacity:1;transform:scale(1.08)}}
+body[data-motion=off] .neural-core::before{animation:none;opacity:.55}
+@media(prefers-reduced-motion:reduce){.neural-core::before{animation:none;opacity:.55}}
