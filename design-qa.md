@@ -278,3 +278,7 @@ Local score tests: 37 Chromium + 37 WebKit, plus 68 established visual-function 
 Found and fixed: Studio Pause was calling mute(false), which disposed the instrument and removed tails; it now only stops scheduling. Cleared stale pre-resume scroll intent before recreating audio after background return, so a meaningful action resumes sound without unexpectedly replaying prior motion.
 
 Exact preserved modules: 22 visual/control/ambient/tap modules and 37 artwork images. Twenty-two includes the original v14 continuous soundscape and v12 electric brain synth. No physical iPhone listening or speaker assessment was performed.
+
+
+### Production Scroll Sonata verification
+37 score checks on Chromium + 37 on WebKit + 68 original visual/control checks = 142 live assertions, zero failed checks or runtime errors in the final runs. Verified 36 live asset hashes, including the long sample bank and musical preview files. Pauses preserve ringing voices, resumption continues the next beat, scene changes do not reset the score, and note history exactly matches the selected score. Six offline signal/decay gates passed. Physical iPhone speaker and subjective listening remain untested.

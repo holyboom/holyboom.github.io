@@ -1,0 +1,218 @@
+[
+  {
+    "asset": "index.html",
+    "match": true,
+    "bytes": 40957,
+    "sha256": "217783095bac44814b9b5cf010f12d9482a746216fe40d16f79ce42dd3a7b761"
+  },
+  {
+    "asset": "style.css?v=scroll-score-v17",
+    "match": true,
+    "bytes": 44582,
+    "sha256": "e24b34c51fa63a39bf46afe9eb4c8b3dc8ee9181beddd126e4bc0811a2f6c362"
+  },
+  {
+    "asset": "showcase.css?v=scroll-score-v17",
+    "match": true,
+    "bytes": 18984,
+    "sha256": "75c3d286fb94f0d9bf06fc8a1017b3752ba4b35251f1ddece9d22ddc6caee493"
+  },
+  {
+    "asset": "continuity.css?v=scroll-score-v17",
+    "match": true,
+    "bytes": 1914,
+    "sha256": "84e11102898e3401519616534280c2ea4e10474a329814fad6b7ee40d5270e5e"
+  },
+  {
+    "asset": "site.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 18737,
+    "sha256": "e8e1e4a92f95b162c4163d40f34846342ef88df3952e8c7c3a34f4540d0bf5d6"
+  },
+  {
+    "asset": "assembly-lab.css?v=scroll-score-v17",
+    "match": true,
+    "bytes": 14465,
+    "sha256": "7dd9448cf3bc635cb2f490dac92224fa8b4a9ff7b57fc13198903a12f56be0a6"
+  },
+  {
+    "asset": "brain-energy.css?v=scroll-score-v17",
+    "match": true,
+    "bytes": 6176,
+    "sha256": "78ad65214abed2e4fcb760fdc3ac003643578dad4bddd31a55c7de3f8b08b034"
+  },
+  {
+    "asset": "ambient-current.css?v=scroll-score-v17",
+    "match": true,
+    "bytes": 2133,
+    "sha256": "184a1432dc2851d85ba4779e0b7d7897fc17b03c6e1053f76f08826fb0ef1029"
+  },
+  {
+    "asset": "interaction-v10.css?v=scroll-score-v17",
+    "match": true,
+    "bytes": 4289,
+    "sha256": "5c082946a8b51008635406f6a7e98e6737dac2b00751d148ab36732065d5a154"
+  },
+  {
+    "asset": "resonance.css?v=scroll-score-v17",
+    "match": true,
+    "bytes": 2602,
+    "sha256": "1439f307353fa7cef70665405828c62c550be5b40966249b562cd3c8dd90ace7"
+  },
+  {
+    "asset": "assets/vendor/gsap-3.15.1.min.js",
+    "match": true,
+    "bytes": 73357,
+    "sha256": "3d1bea374ab1b703cc5c4105358eec63c4465efdc573931dc116e34a0a190c1b"
+  },
+  {
+    "asset": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "match": true,
+    "bytes": 44683,
+    "sha256": "b5bb360661f478f0ff6ffa11500d8ce5e2b6aaf6f7288237cdca3aac9548035a"
+  },
+  {
+    "asset": "brain-reactions.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 9704,
+    "sha256": "25bca55c46775c3100c12edbb8dc2f4db6a92869faa0f142d8fb8cbe45fe92d7"
+  },
+  {
+    "asset": "holymind-timbres.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 8918,
+    "sha256": "dca3244a87ab62f7bb23a1d74d7d72777c818c9560d2658a77aacf1a4957eb70"
+  },
+  {
+    "asset": "holymind-soundscape.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 8634,
+    "sha256": "06bb93acb3bd8296e552fe6ff91e43ddecac0b49209ad94b4219954e814dee0b"
+  },
+  {
+    "asset": "holymind-cues.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 10086,
+    "sha256": "f3a7ef9046b3b218207df422b82689f65dc061cdd5090ca49e1a2b5f19103844"
+  },
+  {
+    "asset": "mozart-score-data.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 21574,
+    "sha256": "949292750ad7cd1f8fac10185647a0c0ba45ac710c17b22c38cabf33fa449012"
+  },
+  {
+    "asset": "holymind-scroll-score.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 8139,
+    "sha256": "535a8ca5544407712790c4cc0150f6e5aed74ac27e35b52ce6e96752404f2b2d"
+  },
+  {
+    "asset": "holymind-audio.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 16034,
+    "sha256": "ecbb2797723a2f022892e66736865c446341196be172fe500cc0b8b6bbc5ea0f"
+  },
+  {
+    "asset": "neural-core.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 15388,
+    "sha256": "cd3d0bcb2c3ddea7640b6f86ad0e83a7fab14acec11276b54aa39493ed80c1ff"
+  },
+  {
+    "asset": "scroll-motion.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 4168,
+    "sha256": "eacc3dac207612c011ba2a3764a585c5aab5944d0452d3e644ae7a2eece8dd00"
+  },
+  {
+    "asset": "showcase.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 7561,
+    "sha256": "ddc35b3234bc0512f2761c73af887dab89b8cc96055edfefc23876e8536299c6"
+  },
+  {
+    "asset": "energy-field.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 3323,
+    "sha256": "5a70f6237e943f46edc2a28152cf583dd1a701ad61cef3a38fd79eca6a2d5062"
+  },
+  {
+    "asset": "continuity.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 15019,
+    "sha256": "145085d39bb11db14ae64f77fd2aea416eacffe5b042816768f385cb68d6ad9c"
+  },
+  {
+    "asset": "assembly-lab.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 8307,
+    "sha256": "c0ac938e94e5e27d45d6f57d8d8b81adaa177d89b37f336512af502243fa8d7d"
+  },
+  {
+    "asset": "ambient-current.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 2682,
+    "sha256": "aa990dc5ca74961705d687b2de94900667668b991b32dd43f28381f84a7470c8"
+  },
+  {
+    "asset": "assembly-scroll.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 4265,
+    "sha256": "985cef2bd15619a873c46de7739cd4ac57b3b91e96655b69180cab3581d05c22"
+  },
+  {
+    "asset": "soundscape-scenes.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 3247,
+    "sha256": "4c9825fc46df5fe8cb2dc6421a355d9444aae2cb1d5d5fa804b28640a2614a4d"
+  },
+  {
+    "asset": "interaction-feedback.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 8434,
+    "sha256": "121ad285a5232381f6c6f2b205192de53bebde54f92c21781eb194bdddd4f4b8"
+  },
+  {
+    "asset": "scroll-sonification.js?v=scroll-score-v17",
+    "match": true,
+    "bytes": 8004,
+    "sha256": "12b994dfbdec47d61e123ccdbf91f73681c65e99b19886222b7be8b6d1bb1a20"
+  },
+  {
+    "asset": "qa/scroll-score-v17.html",
+    "match": true,
+    "bytes": 9642,
+    "sha256": "e5121a5620ffd5e004b378bdd154879fb55b32622c8cc585f9122429cb9e64bf"
+  },
+  {
+    "asset": "audio-credits.html",
+    "match": true,
+    "bytes": 2617,
+    "sha256": "965c590bb2ffacbdef3baf31f43296c53b5c5836434d986542901c788dcfb859"
+  },
+  {
+    "asset": "assets/audio/scroll-score-v17/keys.pcm",
+    "match": true,
+    "bytes": 3168000,
+    "sha256": "3cfe7587a216d5821f68ae46c0e42f3d5d31c562acffc07a8b7f1cd3d67ea2f7"
+  },
+  {
+    "asset": "assets/audio/scroll-score-v17/score-preview.wav",
+    "match": true,
+    "bytes": 4224044,
+    "sha256": "478a8481cb72302b1f842f2aabf8f349e05ce274a5107dd14cc9b0942bccb8dc"
+  },
+  {
+    "asset": "assets/audio/scroll-score-v17/pause-resume.wav",
+    "match": true,
+    "bytes": 2304044,
+    "sha256": "4f13bcba8051b97dd20bf54490632f7b19d9cb7e1bb0909fcef3c3d8a7f933a5"
+  },
+  {
+    "asset": "assets/score/mozart-k545/opening.json",
+    "match": true,
+    "bytes": 33675,
+    "sha256": "96bdaf8f08a16f3f4f2f4e665ffefc82af65ae9d4ff66dd392b2df7750001c40"
+  }
+]

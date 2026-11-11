@@ -1,13 +1,57 @@
 {
   "release": "scroll-score-v17",
-  "status": "Local checks passed; live verification pending",
-  "piece": "Mozart K.545, 12 opening bars plus 2-bar HolyMind cadence",
-  "score_notes": 204,
-  "local_checks": {
-    "chromium": 37,
-    "webkit": 37,
-    "visual_webkit": 68
+  "name": "HolyMind Scroll Sonata",
+  "status": "Published and verified",
+  "implementation_commit": "abb049b25980de6daaec2f602c72cf1ed0db68a7",
+  "verified_at": "2026-11-11T16:11:45.363817+00:00",
+  "url": "https://holyboom.github.io/?v=scroll-score-v17",
+  "studio": "https://holyboom.github.io/qa/scroll-score-v17.html",
+  "music": {
+    "title": "Mozart — Piano Sonata in C major K.545, first movement opening",
+    "source": "Alejandro Sierra / Mutopia Project, Mutopia-2013/09/01-998",
+    "source_measures": 12,
+    "holymind_closing_measures": 2,
+    "beats": 56,
+    "notes": 204,
+    "arrangement": "Source melody/accompaniment in order, with a two-bar G-to-C HolyMind cadence, softer dynamics and a slower bounded performance. Not the complete sonata.",
+    "score_and_rendered_music_license": "CC BY-SA 3.0",
+    "piano_samples": "Alexander Holm / Salamander Grand Piano, CC BY 3.0",
+    "source_notice": "assets/score/mozart-k545/ATTRIBUTION.md"
   },
-  "offline_checks": 6,
-  "physical_iphone_tested": false
+  "behavior": {
+    "scroll": "Trusted scroll advances an ordered, time-scheduled score at 78–100 BPM. Speed changes tempo gently, at most two BPM per beat. No random chords, note skipping or rapid scroll-event triggering.",
+    "pause": "Stops scheduling new beats after the current scheduled beat. Sounding notes retain natural decays and room resonance. Next scroll resumes at the next score beat.",
+    "reverse": "Upward scrolling also continues the chronological score, not reversed audio or backwards note order. The approved directional electric current still responds to direction.",
+    "sections": "Section changes affect warmth, room and dynamics without resetting the musical cursor. Action keys use the current harmonic context; while the score moves they become restrained aligned accents.",
+    "release": "Eleven six-second recorded piano keys; per-note overlapping releases, approximately 2.45 s for melody and 1.70 s accompaniment, plus a 2.8 s room response. Foreground cue tails no longer forcibly preempt at 65 ms.",
+    "resources": "Maximum 36 score voices, six foreground cue tails, a 48-phrase cache and one AudioContext. Paused score scheduler stops; sources clean up.",
+    "controls": "Existing sound preference independently controls the score/action keys; always-on visual motion is unchanged. Mute/background stop audio intentionally; a fresh gesture resumes after interruption without old scroll intent.",
+    "preserved": "Original Quiet Current ambient/scroll graph, fourteen Electric v12 brain sounds, original artwork, mobile-only brain-first layout, all original controls and pinned assembly."
+  },
+  "live_checks": {
+    "score_chromium": 37,
+    "score_webkit": 37,
+    "existing_visual_webkit": 68
+  },
+  "total_live_checks": 142,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "matched_live_assets": 36,
+  "offline_audio_checks": 6,
+  "offline_audio": {
+    "full_score_peak": 0.2895672619342804,
+    "all_score_notes_rendered": 204,
+    "tail_rms_at_1_second": 0.002037888445501478,
+    "tail_rms_at_2_seconds": 2.1313329071135196e-05,
+    "normalization": "None; production graph, 0.48 master gain and shared compressor"
+  },
+  "unchanged_modules": 22,
+  "unchanged_original_images": 37,
+  "new_runtime_dependencies": 0,
+  "limitations": {
+    "physical_iphone_audio_tested": false,
+    "subjective_listening_certified": false,
+    "motion_accessibility_certified": false,
+    "preview_method": "OfflineAudioContext renders of the production piano score/room, not microphone recordings."
+  }
 }
