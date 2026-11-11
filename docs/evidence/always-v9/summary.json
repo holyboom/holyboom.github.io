@@ -1,0 +1,46 @@
+{
+  "release": "always-v9",
+  "implementation_commit": "4c6b02b4eccb7a930327d9f48e269ece84001204",
+  "verified_at": "2026-11-11T11:03:22.533744+00:00",
+  "url": "https://holyboom.github.io/?v=always-v9",
+  "root_cause_reproduced": "v8 with emulated OS Reduce Motion selected calm, removed all 60 scroll triggers and breathing, and reduced phone electricity from 12 traces to 3 slow traces. The actual owner device setting is unknown.",
+  "fixed_policy": "Full motion always while the page is visible. OS Reduce Motion and old localStorage off no longer gate motion. No toggle. Mobile-only brain-first ordering and desktop/tablet layout retained.",
+  "continuous_without_input": [
+    "Source-aligned brain sparks",
+    "Brain breathing",
+    "Orbit light current",
+    "Ribbon highlight",
+    "Layer circuit current",
+    "Skill frame light",
+    "Service outline light",
+    "Signature point light",
+    "Portal line current"
+  ],
+  "lifecycle": "Viewport reentry, focus and pageshow restore the renderer automatically; pagehide and offscreen views do not waste rendering work.",
+  "scroll": "Spatial choreography and all ten reversible bridges remain scroll-controlled; new ambient traces do not overwrite their transforms or slider/selection state.",
+  "live_checks": {
+    "live-chromium": 38,
+    "live-webkit": 38,
+    "live-regression": 85
+  },
+  "total_live_checks": 161,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "verified_runtime_asset_matches": 17,
+  "original_images_byte_identical": 37,
+  "new_runtime_dependencies": 0,
+  "recording": {
+    "source": "Published page in emulated mobile WebKit",
+    "os_preference": "reduce",
+    "stored_motion": "off",
+    "interaction": "No scrolling, hover, tap or click",
+    "observed_seconds": 8,
+    "canvas_frames_before": 23,
+    "canvas_frames_after": 256,
+    "scrollY": 0,
+    "output_profile": "full"
+  },
+  "physical_iphone_tested": false,
+  "independent_flash_safety_audit": false,
+  "wcag_motion_compliance_claimed": false
+}

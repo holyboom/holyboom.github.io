@@ -1,0 +1,55 @@
+{
+  "url": "https://holyboom.github.io/?v=always-v9",
+  "osPreference": "reduce",
+  "storedPreference": "off",
+  "interaction": "None: no scrolling, hover, click or tap",
+  "before": {
+    "snapshot": {
+      "ready": true,
+      "frames": 23,
+      "elapsed": 788.6666666666667,
+      "active": true,
+      "running": true,
+      "transporting": false,
+      "heroInside": true,
+      "orbitInside": false,
+      "paths": 46,
+      "branches": 12,
+      "contour": 96,
+      "profile": "full",
+      "meanPaintMs": 0.494,
+      "targets": {
+        "hero": "22",
+        "orbit": "0",
+        "transit": "0"
+      }
+    },
+    "scrollY": 0,
+    "profile": "full"
+  },
+  "after": {
+    "snapshot": {
+      "ready": true,
+      "frames": 256,
+      "elapsed": 8805.666666666668,
+      "active": true,
+      "running": true,
+      "transporting": false,
+      "heroInside": true,
+      "orbitInside": false,
+      "paths": 46,
+      "branches": 12,
+      "contour": 96,
+      "profile": "full",
+      "meanPaintMs": 0.466,
+      "targets": {
+        "hero": "255",
+        "orbit": "0",
+        "transit": "0"
+      }
+    },
+    "scrollY": 0,
+    "profile": "full"
+  },
+  "physicalDevice": false
+}

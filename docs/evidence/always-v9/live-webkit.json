@@ -1,0 +1,280 @@
+{
+  "base": "https://holyboom.github.io/?v=always-v9",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "reduce-always-full-policy",
+      "pass": true,
+      "state": {
+        "build": "always-v9",
+        "policy": "always",
+        "profile": "full",
+        "branches": 12,
+        "triggers": 60,
+        "breathe": "mind-breathe"
+      }
+    },
+    {
+      "name": "reduce-no-ui-toggle-or-hero-shortcuts",
+      "pass": true
+    },
+    {
+      "name": "reduce-brain-breathing",
+      "pass": true
+    },
+    {
+      "name": "reduce-continuous-six-seconds-with-zero-input",
+      "pass": true,
+      "frames": [
+        33,
+        77,
+        125,
+        171
+      ]
+    },
+    {
+      "name": "reduce-mobile-brain-first",
+      "pass": true
+    },
+    {
+      "name": "reduce-system-setting-cannot-stop-motion",
+      "pass": true
+    },
+    {
+      "name": "reduce-pagehide-stops-hidden-work",
+      "pass": true
+    },
+    {
+      "name": "reduce-pageshow-resumes-without-tap",
+      "pass": true
+    },
+    {
+      "name": "no-preference-always-full-policy",
+      "pass": true,
+      "state": {
+        "build": "always-v9",
+        "policy": "always",
+        "profile": "full",
+        "branches": 12,
+        "triggers": 60,
+        "breathe": "mind-breathe"
+      }
+    },
+    {
+      "name": "no-preference-no-ui-toggle-or-hero-shortcuts",
+      "pass": true
+    },
+    {
+      "name": "no-preference-brain-breathing",
+      "pass": true
+    },
+    {
+      "name": "no-preference-continuous-six-seconds-with-zero-input",
+      "pass": true,
+      "frames": [
+        26,
+        73,
+        120,
+        169
+      ]
+    },
+    {
+      "name": "no-preference-mobile-brain-first",
+      "pass": true
+    },
+    {
+      "name": "no-preference-system-setting-cannot-stop-motion",
+      "pass": true
+    },
+    {
+      "name": "no-preference-pagehide-stops-hidden-work",
+      "pass": true
+    },
+    {
+      "name": "no-preference-pageshow-resumes-without-tap",
+      "pass": true
+    },
+    {
+      "name": "orbit-ambient-moves-without-scroll",
+      "pass": true,
+      "a": {
+        "v": "-142.198288px",
+        "play": "running"
+      },
+      "b": {
+        "v": "-199.251999px",
+        "play": "running"
+      }
+    },
+    {
+      "name": "ribbon-ambient-moves-without-scroll",
+      "pass": true,
+      "a": {
+        "v": "matrix(1, 0, 0, 1, 318.849854, 0)",
+        "play": "running"
+      },
+      "b": {
+        "v": "matrix(1, 0, 0, 1, 444.693329, 0)",
+        "play": "running"
+      }
+    },
+    {
+      "name": "assembly-ambient-moves-without-scroll",
+      "pass": true,
+      "a": {
+        "v": "0.365833px",
+        "play": "running"
+      },
+      "b": {
+        "v": "0.115833px",
+        "play": "running"
+      }
+    },
+    {
+      "name": "skill-ambient-moves-without-scroll",
+      "pass": true,
+      "a": {
+        "v": "rgba(200, 213, 175, 0.58)",
+        "play": "running"
+      },
+      "b": {
+        "v": "rgba(229, 207, 153, 0.73)",
+        "play": "running"
+      }
+    },
+    {
+      "name": "service-ambient-moves-without-scroll",
+      "pass": true,
+      "a": {
+        "v": "rgba(200, 213, 175, 0.58)",
+        "play": "running"
+      },
+      "b": {
+        "v": "rgba(229, 207, 153, 0.73)",
+        "play": "running"
+      }
+    },
+    {
+      "name": "signature-ambient-moves-without-scroll",
+      "pass": true,
+      "a": {
+        "v": "rgba(207, 211, 170, 0.443) 0px 0px 8.857434px",
+        "play": "running"
+      },
+      "b": {
+        "v": "rgba(233, 206, 150, 0.56) 0px 0px 12.25865px",
+        "play": "running"
+      }
+    },
+    {
+      "name": "portal-ambient-moves-without-scroll",
+      "pass": true,
+      "a": {
+        "v": "-110.598663px",
+        "play": "running"
+      },
+      "b": {
+        "v": "-154.198669px",
+        "play": "running"
+      }
+    },
+    {
+      "name": "slider-right-opens-callouts",
+      "pass": true
+    },
+    {
+      "name": "callout-still-focuses",
+      "pass": true
+    },
+    {
+      "name": "line-anchors-remain-attached",
+      "pass": true,
+      "errors": [
+        0.005716651917272657,
+        0.00481097302580128,
+        0.003840344993438477
+      ]
+    },
+    {
+      "name": "slider-left-retracts",
+      "pass": true
+    },
+    {
+      "name": "skill-control-unaffected",
+      "pass": true
+    },
+    {
+      "name": "dialog-still-opens",
+      "pass": true
+    },
+    {
+      "name": "layout-preserved-320",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "first": true,
+        "side": false
+      }
+    },
+    {
+      "name": "layout-preserved-390",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "first": true,
+        "side": false
+      }
+    },
+    {
+      "name": "layout-preserved-680",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "first": true,
+        "side": true
+      }
+    },
+    {
+      "name": "layout-preserved-768",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "first": true,
+        "side": true
+      }
+    },
+    {
+      "name": "layout-preserved-1024",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "first": true,
+        "side": true
+      }
+    },
+    {
+      "name": "layout-preserved-1440",
+      "pass": true,
+      "layout": {
+        "overflow": false,
+        "first": true,
+        "side": true
+      }
+    },
+    {
+      "name": "offscreen-brain-stops-work",
+      "pass": true
+    },
+    {
+      "name": "brain-resumes-on-return",
+      "pass": true
+    },
+    {
+      "name": "real-back-navigation-resumes",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

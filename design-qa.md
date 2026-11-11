@@ -172,3 +172,7 @@ Local tests: 38 always-active checks in Chromium, 38 in WebKit, and 85 energy/in
 Harness correction: scroll the stable scene or use its live coordinates to view decorative objects; do not wait for the continuously translating ribbon highlight to become stable. Interactive controls still use ordinary Playwright click/tap checks. No coordinate or motion assertion was removed.
 
 37 original image files are byte-identical to v8. No new runtime dependency. Browser tests are not a physical iPhone benchmark or a flash-safety/WCAG certification.
+
+### Always Active v9 — published verification
+
+38/38 always-active checks passed in Chromium and 38/38 in WebKit. The 85-case published energy regression passed in WebKit. Zero failed assertions or runtime errors. All 17 published HTML/CSS/script assets match source. The video captures eight seconds of a stationary mobile page with OS Reduce Motion and stored off active: Canvas frames increased from 23 to 256. See `qa/always-v9.html`.
