@@ -121,3 +121,16 @@ The owner reported that motion stops at a point or changes action without any so
 - Use the existing scroll-update loop and actual DOM state; no second perpetual rendering loop. Hidden/interrupted pages cancel pending cues and require a new explicit gesture.
 - Main-site layout preserved. The dedicated event Studio exposes ten audition buttons through the same production cue bus, displays the latest semantic event, and retains old-mix comparisons.
 - Tests exercise native input and measured cue-bus output, all ten forward landings, five reverse landings, layer and phase changes, state deduplication, preferences, first-action unlock and lifecycle. Physical iPhone speaker quality and perceived comfort remain untested.
+
+
+## Piano Moments v16 — owner-directed sonic revision
+
+The owner clarified that arrival/action sounds should be piano keys, mixed with a detail that expresses the moment of each section. Replace v15 electronic beeps, not the approved Quiet Current field, scrolling current or fourteen Electric v12 brain-tap sounds.
+
+- The foreground uses actual Salamander Grand Piano recordings by Alexander Holm (CC BY 3.0), selected from the Tonejs/audio distribution, self-hosted with attribution and source hashes. Seven recorded keys become a 32 kHz mono bank. No new runtime library, external runtime CDN or generative-audio model.
+- Eleven scene profiles use an A-based open-interval palette. Orbit is spacious; ribbon carries a thin filament; assembly aligns keys with a soft circuit join; Workbench is close and dry; Skills brighter; gallery restrained; Services grounded; About warm with very little electronics; Contact gently opens; footer gathers. Piano remains foreground; texture RMS is explicitly capped below it, with a quieter About. This is design intent, not a clinical or guaranteed emotional response.
+- Arrival phrases are roughly one second, not a continuous tune. Everyday actions use shorter one/two-key gestures. Reverse uses reversed note order, never time-reversed piano audio. First recorded attack and natural string decay are preserved. Old v15 pitch sweeps/clock gates are removed from the cue path.
+- Real docking keys choose the actual scene even during transfer. Manual actions use their originating section. Existing event routing, state-change deduplication, user-gesture policy and master mute persist. The new sampled bank can load without creating an AudioContext. Late or failed samples do not replay stale cues or fall back to rejected beeps.
+- One foreground piano phrase; at most one short retiring tail to avoid abrupt note cuts. Brain discharges take priority. Mute/background cleans all voices. Always-on motion remains independent.
+- Piano credits are linked from the site footer, Studio and exported assets. Modifications are disclosed: channel selection, trim, resampling, nearby-note repitch, envelopes, EQ, short reflections and original textures/arrangement.
+- Studio offers all eleven scene moments and forward/return comparisons through the live production cue bus, plus a short four-scene preview and a full moment reel. Automated waveform/browser tests do not establish perceived emotion, listening comfort or physical-iPhone speaker quality.

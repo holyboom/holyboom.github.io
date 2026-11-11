@@ -1,0 +1,30 @@
+{
+  "baseline": "971efe59f6837c9d1d552b6a2cbda9a564438d6b",
+  "unchanged_modules": [
+    "holymind-timbres.js",
+    "holymind-soundscape.js",
+    "brain-reactions.js",
+    "neural-core.js",
+    "site.js",
+    "style.css",
+    "showcase.js",
+    "showcase.css",
+    "scroll-motion.js",
+    "continuity.js",
+    "continuity.css",
+    "assembly-lab.js",
+    "assembly-lab.css",
+    "assembly-scroll.js",
+    "ambient-current.js",
+    "ambient-current.css",
+    "energy-field.js",
+    "brain-energy.css",
+    "interaction-v10.css",
+    "resonance.css",
+    "scroll-sonification.js",
+    "soundscape-scenes.js"
+  ],
+  "unchanged_images": 37,
+  "original_brain_presets": 14,
+  "source_license": "Salamander Grand Piano / Alexander Holm / CC BY 3.0"
+}

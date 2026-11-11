@@ -1,6 +1,6 @@
 {
   "name": "holyboom-holymind-profile",
-  "version": "15.0.0",
+  "version": "16.0.0",
   "private": true,
   "description": "Static GitHub Pages profile and interactive HolyMind skill collection",
   "scripts": {
@@ -21,7 +21,9 @@
     "test:full-current": "node scripts/qa-full-current.cjs",
     "render:full-current": "node scripts/render-full-current.cjs",
     "test:feedback": "node scripts/qa-feedback.cjs",
-    "build:feedback": "node scripts/build-feedback-cues.cjs"
+    "build:feedback": "node scripts/build-feedback-cues.cjs",
+    "build:piano": "node scripts/build-piano-bank.cjs && node scripts/build-piano-cues.cjs",
+    "test:piano": "node scripts/qa-piano.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

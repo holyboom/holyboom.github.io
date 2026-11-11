@@ -69,12 +69,14 @@
   }
   if(e.type==='keydown'&&e.key!=='Escape'&&!e.target.closest('[data-challenge],.deck-shard'))return;
   if(!action)return;
+  const section=e.target.closest('#about,#what-i-do,#framework,#workbench,#connect,#mind-flow,#top');
+  const scene=e.target.closest('#connect footer')?'footer':({'about':'about','what-i-do':'services','framework':'gallery','workbench':'workbench','connect':'contact','mind-flow':'orbit','top':'hero'})[section?.id]||window.HolyMindScrollSound?.snapshot().scene||'hero';
   const before=action.read();window.HolyMindAudio?.beginFeedback(true);actions++;
   if(action.copy){copyArmed=performance.now()+1600;return;}
   schedule(()=>{
    if(document.hidden)return;const after=action.read();if(after===before)return;
    const id=action.choose?action.choose(after):action.id,variant=action.key==='step'?Number(after)||0:action.key==='filter'?['all','reason','build','verify'].indexOf(after):0;
-   emit(id,{priority:3,key:action.key+':'+after,kind:'action',variant});
+   emit(id,{priority:3,key:action.key+':'+after,kind:'action',variant,scene});
   });
  }
  document.addEventListener('click',capture,true);document.addEventListener('keydown',capture,true);
@@ -91,5 +93,5 @@
  }).observe(copy,{childList:true,characterData:true,subtree:true});
  function reset(){clearTimeout(searchTimer);for(const t of timers)clearTimeout(t);timers.clear();dockCandidate=null;lastDock=null;rearmed=true;copyArmed=0;lastPhase=q('#mind-flow')?.dataset.phase||null;lastReveals=window.HolyMindAssembly?.snapshot().reveals||[0,0,0];}
  addEventListener('pagehide',reset);addEventListener('pageshow',reset);document.addEventListener('visibilitychange',reset);
- window.HolyMindFeedback=Object.freeze({version:'feedback-v15',onScroll,snapshot:()=>({scrollCalls,actions,lastDock,dockCandidate:lastDock?dockCandidate:null,phase:lastPhase,reveals:[...lastReveals],history:[...history]})});reset();
+ window.HolyMindFeedback=Object.freeze({version:'piano-v16',onScroll,snapshot:()=>({scrollCalls,actions,lastDock,dockCandidate:lastDock?dockCandidate:null,phase:lastPhase,reveals:[...lastReveals],history:[...history]})});reset();
 })();

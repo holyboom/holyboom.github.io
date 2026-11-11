@@ -1,0 +1,15 @@
+{
+  "release": "piano-v16",
+  "status": "Local validation complete; live verification pending",
+  "local_checks": {
+    "local-events-chromium": 69,
+    "local-events-webkit": 69,
+    "local-piano-chromium": 32,
+    "local-piano-webkit": 32,
+    "local-continuous-audio": 48,
+    "local-visual": 68
+  },
+  "total_local_checks": 318,
+  "piano_source": "Salamander Grand Piano / Alexander Holm / CC BY 3.0",
+  "physical_iphone_tested": false
+}

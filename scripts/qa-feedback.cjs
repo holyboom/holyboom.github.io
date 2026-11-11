@@ -1,15 +1,15 @@
 const {chromium,webkit}=require('playwright'),fs=require('fs');
 (async()=>{
-const engine=process.env.ENGINE||'webkit',base=process.env.TEST_URL||'http://127.0.0.1:8778/',out=process.env.QA_DIR||'qa-output/feedback-'+engine;
+const engine=process.env.ENGINE||'webkit',base=process.env.TEST_URL||'http://127.0.0.1:8779/',out=process.env.QA_DIR||'qa-output/feedback-'+engine;
 fs.mkdirSync(out,{recursive:true});fs.rmSync(out+'/result.json',{force:true});const checks=[],errors=[];const check=(name,pass,data={})=>{checks.push({name,pass:!!pass,...data});console.log(name,!!pass);};
 const browser=await(engine==='webkit'?webkit.launch({headless:true}):chromium.launch({headless:true,executablePath:process.platform==='darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':undefined}));
 try{
 const p=await browser.newPage({viewport:{width:390,height:844},hasTouch:true,reducedMotion:'reduce'});p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
-await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>window.HolyMindFeedback&&window.HolyMindContinuity?.snapshot().keys.length>10);
+await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>window.HolyMindFeedback&&window.HolyMindContinuity?.snapshot().keys.length>10&&HolyMindCueTimbres.snapshot().ready);
 const audio=()=>p.evaluate(()=>HolyMindAudio.snapshot());const events=()=>p.evaluate(()=>HolyMindAudio.snapshot().history.filter(x=>x.kind==='cue'));
 const wheel=async(d,n=12,delay=45)=>{for(let i=0;i<n;i++){await p.mouse.wheel(0,d);await p.waitForTimeout(delay);}};
 const jump=async y=>{await p.evaluate(y=>{HolyMindScrollSound.suppressForNavigation();scrollTo({top:y,behavior:'instant'});},y);await p.waitForTimeout(1650);await p.waitForFunction(()=>!HolyMindContinuity.snapshot().running,null,{timeout:12000});};
-check('release-feedback-v15',await p.locator('html').getAttribute('data-build')==='feedback-v15');
+check('release-piano-v16',await p.locator('html').getAttribute('data-build')==='piano-v16');
 check('no-context-on-load',(await audio()).context==='uncreated');await wheel(10,4);check('scroll-cannot-unlock',(await audio()).context==='uncreated');
 await p.locator('[data-challenge=knowledge]').click();await p.waitForTimeout(180);let a=await audio();check('first-real-action-unlocks-and-responds',a.context==='running'&&a.contextCount===1&&a.feedback.played===1&&a.history.at(-1).key==='scenario:knowledge',{history:a.history});
 check('cue-bus-has-measured-output',a.feedback.maxRms>.001,{maxRms:a.feedback.maxRms});

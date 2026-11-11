@@ -91,3 +91,7 @@ Release `full-current-v14`: the approved ambient/scroll instrument now spans all
 
 ## Responsive Current v15
 Adds event sounds at actual visual docking, phase changes, layer connections and meaningful controls. The original accepted soundscape is unchanged. See `qa/feedback-v15.html` and `docs/evidence/feedback-v15/summary.json`.
+
+
+## Piano Moments v16
+Arrival and action feedback now uses real licensed piano keys with eleven section-specific arrangements/textures. The approved field/current and fourteen Electric v12 brain presets are unchanged. Audition at `qa/piano-v16.html`; attribution at `audio-credits.html` and `assets/audio/piano-v16/ATTRIBUTION.md`.

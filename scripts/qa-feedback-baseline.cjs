@@ -1,7 +1,7 @@
 /* Test real output buses, trusted input, suppression, lifecycle and preservation. */
 const {chromium,webkit}=require('playwright'),fs=require('fs');
 (async()=>{
- const engine=process.env.ENGINE||'webkit',base=process.env.TEST_URL||'http://127.0.0.1:8778/',out=process.env.QA_DIR||'qa-output/soundscape-'+engine;
+ const engine=process.env.ENGINE||'webkit',base=process.env.TEST_URL||'http://127.0.0.1:8779/',out=process.env.QA_DIR||'qa-output/soundscape-'+engine;
  fs.mkdirSync(out,{recursive:true});fs.rmSync(out+'/result.json',{force:true});const checks=[],errors=[];
  const check=(name,pass,data={})=>{checks.push({name,pass:!!pass,...data});console.log(name,pass);};
  const browser=await(engine==='webkit'?webkit.launch({headless:true}):chromium.launch({headless:true,executablePath:process.platform==='darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':undefined}));
@@ -14,7 +14,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
  const wheel=async(d,count=8,ms=55)=>{for(let i=0;i<count;i++){await p.mouse.wheel(0,d);await p.waitForTimeout(ms);}};
  const jump=async y=>{await p.waitForTimeout(180);await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await p.waitForFunction(target=>{const c=HolyMindContinuity.snapshot(),wanted=Math.max(0,Math.min(target,document.documentElement.scrollHeight-innerHeight));return Math.abs(scrollY-wanted)<1.5&&Math.abs(c.renderedScrollY-scrollY)<1.5&&!c.running;},y,{timeout:12000});await p.waitForTimeout(100);};
  const story=()=>p.evaluate(()=>HolyMindAssemblyScroll.snapshot());
- check('release-v15',await p.locator('html').getAttribute('data-build')==='feedback-v15');
+ check('release-v15',await p.locator('html').getAttribute('data-build')==='piano-v16');
  let v=await snap();check('load-has-no-context-or-sound',v.a.context==='uncreated'&&v.a.played===0&&v.a.soundscape===null);
  await wheel(25,5);v=await snap();check('scroll-cannot-unlock-audio',v.a.context==='uncreated'&&v.a.soundscape===null);
  await jump(0);await p.locator('#sound-toggle').click();await p.waitForTimeout(2000);v=await snap();

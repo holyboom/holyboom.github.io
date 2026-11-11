@@ -1,0 +1,517 @@
+{
+  "version": "piano-v16",
+  "piano": "Salamander Grand Piano by Alexander Holm; CC BY 3.0",
+  "arrangement": "Original short piano phrases + authored section textures; not a background song",
+  "attribution": "ATTRIBUTION.md",
+  "gain": 0.33599999999999997,
+  "normalization": "One shared cue and master gain, no per-file loudness normalization",
+  "presets": [
+    {
+      "id": "dock",
+      "scene": "hero",
+      "name": "Neural origin",
+      "file": "moment-hero.wav",
+      "notes": [
+        69,
+        76
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.09499999999999999,
+      "duration": 1.18,
+      "peak": 0.10751999914646149,
+      "rms": 0.016115787142273838,
+      "dc": -0.000008536721141482336,
+      "finite": true,
+      "sha256": "a9fb15defdffe1760ad5f297de1bb687222083b5b18149f7fe5b0838d967c1c4",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "orbit",
+      "name": "Connected intelligence",
+      "file": "moment-orbit.wav",
+      "notes": [
+        64,
+        69,
+        76
+      ],
+      "texture": "air",
+      "textureRmsRatio": 0.095,
+      "duration": 1.34,
+      "peak": 0.10751999914646149,
+      "rms": 0.018662367217481355,
+      "dc": 0.000001509957602279763,
+      "finite": true,
+      "sha256": "59f0fe594dde1a05b20866a1b4f8258737f21779f9114d78dc346f888c703b5c",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "ribbon",
+      "name": "Signal crossing",
+      "file": "moment-ribbon.wav",
+      "notes": [
+        69,
+        72
+      ],
+      "texture": "filament",
+      "textureRmsRatio": 0.09499999999999999,
+      "duration": 1.08,
+      "peak": 0.10751999914646149,
+      "rms": 0.01718158106085011,
+      "dc": -0.00003090900747414095,
+      "finite": true,
+      "sha256": "7e3fabf40e526605a78051d325e086903e81909c567f012b200aeba1f969a01b",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "assembly",
+      "name": "System unfolding",
+      "file": "moment-assembly.wav",
+      "notes": [
+        57,
+        64,
+        69
+      ],
+      "texture": "join",
+      "textureRmsRatio": 0.06378806102759794,
+      "duration": 1.22,
+      "peak": 0.10751999914646149,
+      "rms": 0.02162376591360049,
+      "dc": -0.0000030837710469764395,
+      "finite": true,
+      "sha256": "e8741711dc0bfef1aac9b73de061303591b358b947f6e74de0c106270e6baea4",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "workbench",
+      "name": "Working intention",
+      "file": "moment-workbench.wav",
+      "notes": [
+        60,
+        64
+      ],
+      "texture": "focus",
+      "textureRmsRatio": 0.06469843991990223,
+      "duration": 0.97,
+      "peak": 0.10751999914646149,
+      "rms": 0.021645432807793154,
+      "dc": 0.000027565869419782402,
+      "finite": true,
+      "sha256": "cfbca23474ffd89944bbf66db736e43c793918d4f5d54b71636e46a2eff46d28",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "instrument",
+      "name": "Capability constellation",
+      "file": "moment-instrument.wav",
+      "notes": [
+        72,
+        76
+      ],
+      "texture": "particles",
+      "textureRmsRatio": 0.095,
+      "duration": 1.13,
+      "peak": 0.10751999914646149,
+      "rms": 0.01721885569157443,
+      "dc": -0.000013128488941219281,
+      "finite": true,
+      "sha256": "fb953ee044c566f957834c45fa3932daedacc6defa2181d2acd8f2a4c77b5185",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "gallery",
+      "name": "Evidence atlas",
+      "file": "moment-gallery.wav",
+      "notes": [
+        69,
+        72
+      ],
+      "texture": "etch",
+      "textureRmsRatio": 0.065,
+      "duration": 1.02,
+      "peak": 0.10751999914646149,
+      "rms": 0.017900736746672162,
+      "dc": -0.000021951219741330194,
+      "finite": true,
+      "sha256": "759efe73bc767418f1b721997ad0ea7b0ce78c1185a3fde52d11ad51ee8022af",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "services",
+      "name": "Applied intelligence",
+      "file": "moment-services.wav",
+      "notes": [
+        57,
+        64,
+        72
+      ],
+      "texture": "weight",
+      "textureRmsRatio": 0.09499999999999999,
+      "duration": 1.25,
+      "peak": 0.10751999914646149,
+      "rms": 0.022739278268636733,
+      "dc": 0.000003645748100319146,
+      "finite": true,
+      "sha256": "5696b49d48b7a66a2de057b004e7b3af952837dd9a7967f8ebd6ea98fc7efb45",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "about",
+      "name": "The human behind the mind",
+      "file": "moment-about.wav",
+      "notes": [
+        57,
+        64
+      ],
+      "texture": "warmth",
+      "textureRmsRatio": 0.035,
+      "duration": 1.4,
+      "peak": 0.10751999914646149,
+      "rms": 0.023121701036622172,
+      "dc": -1.602858110464186e-7,
+      "finite": true,
+      "sha256": "86505c6f07c820f1ac342a9bd36bff8298ddf7561b4dc3bca0d89e9659c2aaf2",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "contact",
+      "name": "The next possibility",
+      "file": "moment-contact.wav",
+      "notes": [
+        64,
+        69,
+        72
+      ],
+      "texture": "opening",
+      "textureRmsRatio": 0.095,
+      "duration": 1.45,
+      "peak": 0.10751999914646149,
+      "rms": 0.017832429896311213,
+      "dc": -0.0000013522348433428764,
+      "finite": true,
+      "sha256": "4fbd3e2e524d94eba889349fd35917bcc31bb0aa60a26052b91926d57acbbe0d",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "footer",
+      "name": "A quiet return",
+      "file": "moment-footer.wav",
+      "notes": [
+        64,
+        57
+      ],
+      "texture": "warmth",
+      "textureRmsRatio": 0.045,
+      "duration": 1.18,
+      "peak": 0.10751999914646149,
+      "rms": 0.022634706560745583,
+      "dc": 0.000031473252120205635,
+      "finite": true,
+      "sha256": "d75968e492bb6991bf6ee9231ecf9e0c9b8ec0e1f46cd0c32c0559a181c684ef",
+      "pass": true
+    },
+    {
+      "id": "dock",
+      "scene": "hero",
+      "name": "Piano arrival",
+      "file": "action-dock.wav",
+      "notes": [
+        69,
+        76
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.09499999999999999,
+      "duration": 1.18,
+      "peak": 0.10751999914646149,
+      "rms": 0.016115787142273838,
+      "dc": -0.000008536721141482336,
+      "finite": true,
+      "sha256": "a9fb15defdffe1760ad5f297de1bb687222083b5b18149f7fe5b0838d967c1c4",
+      "pass": true
+    },
+    {
+      "id": "return",
+      "scene": "hero",
+      "name": "A note returning",
+      "file": "action-return.wav",
+      "notes": [
+        76,
+        69
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.095,
+      "duration": 1.03840625,
+      "peak": 0.10751999914646149,
+      "rms": 0.018134649646300603,
+      "dc": -0.00002251611437796628,
+      "finite": true,
+      "sha256": "bcee0708d8c8488af3a97cd5c8c4c9920eaa868686f5fa95969e3966af4e24c6",
+      "pass": true
+    },
+    {
+      "id": "phase",
+      "scene": "hero",
+      "name": "Thought into harmony",
+      "file": "action-phase.wav",
+      "notes": [
+        60,
+        64
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.09500000000000001,
+      "duration": 1,
+      "peak": 0.10751999914646149,
+      "rms": 0.020899647158184965,
+      "dc": 0.000025407069129451064,
+      "finite": true,
+      "sha256": "ca6c6f5610410e6f7696df7dab1de3584978bd8ee4076788ba5dc2fe9b481374",
+      "pass": true
+    },
+    {
+      "id": "layer",
+      "scene": "hero",
+      "name": "Keys unfolding",
+      "file": "action-layer.wav",
+      "notes": [
+        57,
+        64
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.09500000000000001,
+      "duration": 0.95,
+      "peak": 0.10751999914646149,
+      "rms": 0.02778798385845381,
+      "dc": -0.00001342149127245641,
+      "finite": true,
+      "sha256": "97a61d2038cb6879a989b8542f58c56c4bf830db490fcd8d6128f31bdfbea79d",
+      "pass": true
+    },
+    {
+      "id": "select",
+      "scene": "hero",
+      "name": "One deliberate key",
+      "file": "action-select.wav",
+      "notes": [
+        69
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.095,
+      "duration": 0.62,
+      "peak": 0.10751999914646149,
+      "rms": 0.020708287136450173,
+      "dc": -0.00002517736381541925,
+      "finite": true,
+      "sha256": "6858cec8451b2096392a345d21fd37d7c57efebf314f647eddb981705737d968",
+      "pass": true
+    },
+    {
+      "id": "switch",
+      "scene": "hero",
+      "name": "A new direction",
+      "file": "action-switch.wav",
+      "notes": [
+        69,
+        76
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.09500000000000001,
+      "duration": 0.86,
+      "peak": 0.10751999914646149,
+      "rms": 0.018578778503235464,
+      "dc": -0.00001401077064884715,
+      "finite": true,
+      "sha256": "8d65cbb9220758d78cabb16453298014942a1f607d24806fc370f42a7f6cbf2b",
+      "pass": true
+    },
+    {
+      "id": "open",
+      "scene": "hero",
+      "name": "Space opens",
+      "file": "action-open.wav",
+      "notes": [
+        69,
+        76
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.095,
+      "duration": 0.98,
+      "peak": 0.10751999914646149,
+      "rms": 0.017519227931757884,
+      "dc": -0.000013204770280586446,
+      "finite": true,
+      "sha256": "86b8d76f5b7d2d67597042d523f41a52f6c52910d15e884600f61f6472e74797",
+      "pass": true
+    },
+    {
+      "id": "close",
+      "scene": "hero",
+      "name": "A gentle release",
+      "file": "action-close.wav",
+      "notes": [
+        69
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.09500000000000001,
+      "duration": 0.72,
+      "peak": 0.10751999914646149,
+      "rms": 0.019876654311836515,
+      "dc": -0.000024201413883592452,
+      "finite": true,
+      "sha256": "679591f9619d979c69513779cdac68023f46c3457c853bf2c772191266f41ff7",
+      "pass": true
+    },
+    {
+      "id": "confirm",
+      "scene": "hero",
+      "name": "A grounded resolution",
+      "file": "action-confirm.wav",
+      "notes": [
+        57,
+        64,
+        69
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.09500000000000001,
+      "duration": 1.08,
+      "peak": 0.10751999914646149,
+      "rms": 0.024640394585553307,
+      "dc": 0.00002051139735413983,
+      "finite": true,
+      "sha256": "26a096cc27292a1387677c1980d473b52b395aba3b35e45dc40c699f9c009b12",
+      "pass": true
+    },
+    {
+      "id": "filter",
+      "scene": "hero",
+      "name": "Clarity in one note",
+      "file": "action-filter.wav",
+      "notes": [
+        69
+      ],
+      "texture": "pulse",
+      "textureRmsRatio": 0.095,
+      "duration": 0.58,
+      "peak": 0.10751999914646149,
+      "rms": 0.021291743425923663,
+      "dc": -0.000004590751100760042,
+      "finite": true,
+      "sha256": "773285d191ee3fa9282f1712cbd53246224a50c575ba8b4ccff3d96bb466eb3e",
+      "pass": true
+    }
+  ],
+  "timeline": [
+    {
+      "scene": "hero",
+      "start": 0,
+      "end": 1.18,
+      "notes": [
+        69,
+        76
+      ]
+    },
+    {
+      "scene": "orbit",
+      "start": 1.48,
+      "end": 2.82,
+      "notes": [
+        64,
+        69,
+        76
+      ]
+    },
+    {
+      "scene": "ribbon",
+      "start": 3.12,
+      "end": 4.2,
+      "notes": [
+        69,
+        72
+      ]
+    },
+    {
+      "scene": "assembly",
+      "start": 4.5,
+      "end": 5.72,
+      "notes": [
+        57,
+        64,
+        69
+      ]
+    },
+    {
+      "scene": "workbench",
+      "start": 6.02,
+      "end": 6.99,
+      "notes": [
+        60,
+        64
+      ]
+    },
+    {
+      "scene": "instrument",
+      "start": 7.29,
+      "end": 8.42,
+      "notes": [
+        72,
+        76
+      ]
+    },
+    {
+      "scene": "gallery",
+      "start": 8.72,
+      "end": 9.74,
+      "notes": [
+        69,
+        72
+      ]
+    },
+    {
+      "scene": "services",
+      "start": 10.04,
+      "end": 11.29,
+      "notes": [
+        57,
+        64,
+        72
+      ]
+    },
+    {
+      "scene": "about",
+      "start": 11.59,
+      "end": 12.99,
+      "notes": [
+        57,
+        64
+      ]
+    },
+    {
+      "scene": "contact",
+      "start": 13.29,
+      "end": 14.74,
+      "notes": [
+        64,
+        69,
+        72
+      ]
+    },
+    {
+      "scene": "footer",
+      "start": 15.04,
+      "end": 16.22,
+      "notes": [
+        64,
+        57
+      ]
+    }
+  ],
+  "unique": 20
+}

@@ -255,3 +255,14 @@ The initial test expected the first service panel to open, but it starts open; t
 ### Production feedback-v15 verification
 
 {'feedback_chromium': 69, 'feedback_webkit': 69, 'touch_phase_webkit': 9, 'existing_visual_webkit': 68, 'continuous_audio_webkit': 48}; total 263, zero failed assertions or captured runtime errors in the final live runs. 40 public assets match the local build, including all eleven cue WAVs (ten individual sounds plus audition reel). Continuous audio was independently regression-tested with the new cue lane muted, while separate feedback suites exercise its production default-on behavior. Physical iPhone playback and subjective listening remain unverified.
+
+
+## Piano Moments v16
+
+Replaced rejected digital-electric event beeps with real recorded piano keys plus quieter section textures. Preserved the exact accepted continuous field, scrolling instrument and all fourteen brain-tap presets. Piano library source and transformed bank are credited on-site and in exported assets.
+
+Local checks: event routing 69 Chromium + 69 WebKit; piano/provenance/moment behavior 32 + 32; prior continuous-audio 48 and visual-interaction 68. All final assertions pass with no captured runtime errors. An initial test used locator.tap on the always-moving brain and timed out waiting for it to become stationary; changed the harness to a native coordinate touch, without disabling animation or changing production behavior.
+
+Twenty-one exported cue/moment waveforms are finite, nonzero and bounded; the eleven scene arrangements have distinct PCM. The captured cue bus has measured output and exposes the scene/notes/texture chosen by actual event routing. The single sounding phrase permits at most one brief release tail, with cleanup checked. Sample fetch failure keeps the visual site and other sounds working but never substitutes the rejected beeps or replays a late note.
+
+No claim of physical iPhone output, listening-comfort certification or guaranteed emotion follows from these automated checks. The owner can audition a 6.81-second Orbit → Assemble → About → Contact preview, or all eleven moments in the Studio.

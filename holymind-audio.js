@@ -1,4 +1,4 @@
-/* Quiet Current v15. One gesture-unlocked AudioContext, separate sound buses.
+/* Piano Moments v16. One gesture-unlocked AudioContext, separate sound buses.
  * Electric v12 tap PCM is unchanged. Muting sound never changes visual motion.
  * A suspended/interrupted page requires a new explicit gesture: scroll cannot wake it.
  */
@@ -11,7 +11,7 @@
  let latest={scope:1,activity:0,progress:0,direction:1,morph:0},contextCount=0;
  const cache=new Map(),pcm=new Map(),voices=new Set(),history=[];
  let cues=true,cueVoice=null,cueMeter=null,cuePlayed=0,cueDropped=0,cueMaxRms=0,cuePeakVoices=0,lastCueAt=-1e6,lastCueKey='',lastCuePriority=0,lastBrainAt=-1e6,feedbackUnlock=null;
- const cueCache=new Map();
+ const cueCache=new Map(),cueMeta=new Map(),retiringCues=new Set();let pendingPianoKey=null;
  const button=document.getElementById('sound-toggle'),control=document.getElementById('sound-volume');
  const bedControl=document.getElementById('sound-ambience'),flowControl=document.getElementById('sound-flow'),cueControl=document.getElementById('sound-cues');
  const fieldEnabled=!!document.getElementById('system-assembly');
@@ -25,7 +25,7 @@
   document.body.dataset.sound=enabled?(needsGesture?'needs-gesture':unlocked?'enabled':'armed'):'muted';
   document.dispatchEvent(new CustomEvent('holymind:audio-state',{detail:{enabled,unlocked,needsGesture,ambience,flow,cues}}));
  }
- function stop(){stopCue();feedbackUnlock=null;token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
+ function stop(){stopCue();for(const v of retiringCues){try{v.source.stop();v.source.disconnect();v.gain.disconnect();}catch(_){}}retiringCues.clear();pendingPianoKey=null;feedbackUnlock=null;token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
  function field(){
   if(!ready()||!fieldEnabled||!window.HolyMindSoundscape)return;
   if(!landscape){try{landscape=HolyMindSoundscape.create(context,master);}catch(_){document.body.dataset.soundscape='unavailable';return;}}
@@ -93,31 +93,41 @@
  // Only an actual relevant input may unlock the feedback instrument. Scroll cannot.
  function beginFeedback(gesture=false){
   if(!gesture||!enabled||!cues||document.hidden||disposed)return false;
-  if(ready())return true;if(!make())return false;
+  window.HolyMindCueTimbres?.prepare?.();if(ready())return true;if(!make())return false;
   const generation=token;unlocked=true;needsGesture=false;
   const resumed=context.state==='running'?Promise.resolve():context.resume();
   feedbackUnlock=Promise.resolve(resumed).then(()=>{if(generation!==token||!enabled||disposed||document.hidden||context.state!=='running')return false;needsGesture=false;ui();field();return true;}).catch(()=>{needsGesture=true;ui();return false;});
   return true;
  }
  function readCueRms(){if(!cueMeter)return 0;const d=new Float32Array(512);cueMeter.getFloatTimeDomainData(d);let sum=0;for(const n of d)sum+=n*n;return Math.sqrt(sum/d.length);}
- function stopCue(){if(!cueVoice)return;const v=cueVoice;cueVoice=null;try{const now=context.currentTime;v.gain.gain.cancelScheduledValues(now);v.gain.gain.setValueAtTime(v.gain.gain.value,now);v.gain.gain.linearRampToValueAtTime(0,now+.009);v.source.stop(now+.012);}catch(_){};}
- function cue(id,{variant=0,priority=2,key=id,kind='action',direction=1}={}){
+ function stopCue(){
+  if(!cueVoice)return;const v=cueVoice;cueVoice=null;
+  // One sounding key phrase plus at most one short release; never chop a piano to a click.
+  for(const old of retiringCues){try{old.source.stop();old.source.disconnect();old.gain.disconnect();}catch(_){}}retiringCues.clear();retiringCues.add(v);
+  try{const now=context.currentTime,p=v.gain.gain;if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(now);else{p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);}p.linearRampToValueAtTime(0,now+.065);v.source.stop(now+.070);}catch(_){}
+ }
+ function cue(id,{variant=0,priority=2,key=id,kind='action',direction=1,scene=null}={}){
   const registry=window.HolyMindCueTimbres;if(!registry||!registry.presets.some(p=>p.id===id)||!enabled||!cues||document.hidden||disposed)return false;
   if(!ready()){
-   if(feedbackUnlock&&!needsGesture){const generation=token,at=performance.now();feedbackUnlock.then(ok=>{if(ok&&generation===token&&performance.now()-at<350)cue(id,{variant,priority,key,kind,direction});});}
+   if(feedbackUnlock&&!needsGesture){const generation=token,at=performance.now();feedbackUnlock.then(ok=>{if(ok&&generation===token&&performance.now()-at<350)cue(id,{variant,priority,key,kind,direction,scene});});}
+   return false;
+  }
+  if(!registry.snapshot().ready){
+   const request=key,at=performance.now(),generation=token;pendingPianoKey=request;
+   registry.prepare().then(ok=>{if(ok&&pendingPianoKey===request&&token===generation&&performance.now()-at<300){pendingPianoKey=null;cue(id,{variant,priority,key,kind,direction,scene});}});
    return false;
   }
   const wall=performance.now();
   if(wall-lastBrainAt<230||(key===lastCueKey&&wall-lastCueAt<750)||wall-lastCueAt<(priority>lastCuePriority?70:priority>=3?145:280)){cueDropped++;return false;}
-  const v=Math.max(0,Math.min(5,Math.round(variant))),cacheKey=id+':'+v;
-  let b=cueCache.get(cacheKey);if(!b){const d=registry.render(id,v);b=context.createBuffer(1,d.samples.length,d.sampleRate);b.copyToChannel(d.samples,0);cueCache.set(cacheKey,b);}
+  const v=Math.max(0,Math.min(5,Math.round(variant))),chosenScene=registry.resolveScene(key,kind,scene||latest.scene||'hero'),cacheKey=id+':'+v+':'+chosenScene;
+  let b=cueCache.get(cacheKey);if(!b){const d=registry.render(id,v,32000,{scene:chosenScene,key,kind});cueMeta.set(cacheKey,{scene:d.scene,notes:d.notes,texture:d.texture});b=context.createBuffer(1,d.samples.length,d.sampleRate);b.copyToChannel(d.samples,0);cueCache.set(cacheKey,b);}
   stopCue();const source=context.createBufferSource(),g=context.createGain(),now=context.currentTime;source.buffer=b;
   const level=kind==='arrival'?.72:kind==='layer'?.66:kind==='phase'?.67:.70;
-  g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(level,now+.004);g.gain.setTargetAtTime(0,now+b.duration*.78,.018);source.connect(g);g.connect(cueMeter);
+  g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(level,now+.004);g.gain.setTargetAtTime(0,now+Math.max(.1,b.duration-.10),.035);source.connect(g);g.connect(cueMeter);
   const voice={source,gain:g};cueVoice=voice;cuePeakVoices=Math.max(cuePeakVoices,1);
-  source.onended=()=>{if(cueVoice===voice)cueVoice=null;source.disconnect();g.disconnect();};source.start(now+.002);
+  source.onended=()=>{if(cueVoice===voice)cueVoice=null;retiringCues.delete(voice);source.disconnect();g.disconnect();};source.start(now+.002);
   cuePlayed++;lastCueAt=wall;lastCueKey=key;lastCuePriority=priority;landscape?.duck(now,.38);
-  history.push({id,kind:'cue',eventKind:kind,key,variant:v,direction,time:wall});if(history.length>120)history.shift();if(!meterTimer)meter();
+  history.push({id,kind:'cue',eventKind:kind,key,variant:v,direction,...cueMeta.get(cacheKey),time:wall});if(history.length>120)history.shift();if(!meterTimer)meter();
   return true;
  }
  // No 25/50/75 tap-preset milestones: continuous layer opening owns that story.
@@ -130,5 +140,5 @@
   setMix(mode){if(!['taps','bed','full'].includes(mode))return;setLayer('ambience',mode!=='taps',false);setLayer('flow',mode==='full',false);setLayer('cues',mode==='full',false);},
   updateSoundscape(state){latest={...latest,...state};if(ready())field();},
   settle(reverse=false){if(!ready()||!flow||!landscape)return false;const ok=landscape.settle(reverse);if(ok){stopCue();lastCueAt=performance.now();lastCuePriority=3;history.push({id:reverse?'current-reconnect':'current-resolve',kind:'resolution',time:performance.now()});if(history.length>80)history.shift();}return ok;},
-  snapshot:()=>({version:'feedback-v15',character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey},soundscape:landscape?.snapshot()||null})});ui();
+  snapshot:()=>({version:'piano-v16',character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey,retiring:retiringCues.size,piano:window.HolyMindCueTimbres?.snapshot()},soundscape:landscape?.snapshot()||null})});ui();
 })();
