@@ -99,3 +99,7 @@ Arrival and action feedback now uses real licensed piano keys with eleven sectio
 
 ## Scroll Sonata v17
 An ordered K.545 opening with a closing cadence follows real scrolling. Longer sampled-piano decay, non-preempted voices and smooth release replace discontinuous section chords. Audition: `qa/scroll-score-v17.html`. Credits: `audio-credits.html`. Score and derived music: CC BY-SA 3.0; piano samples: CC BY 3.0.
+
+
+### Current Mix v18
+The approved Scroll Sonata remains unchanged. Only its accompanying electrical scroll filament is +8 dB, with the original attack/release/ducking intact. Compare the controlled mix at `qa/current-mix-v18.html`.

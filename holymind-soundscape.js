@@ -1,10 +1,13 @@
-/* HolyMind Quiet Current v14 — authored Web Audio instrument, not a music loop.
+/* HolyMind Quiet Current v18 — scroll-forward mix — authored Web Audio instrument, not a music loop.
  * Three independent buses: quiet field, continuous scroll current, brief resolution.
  * Browser and OfflineAudioContext use this SAME graph. No samples, no network,
  * no generative-audio service, no repeating tap presets, no JS audio callback.
  */
 (function(root){
  'use strict';
+ // Static post-envelope presence gain preserves the exact attack, decay and ducking.
+ // Only the scroll filament changes; piano, ambience, master and taps stay untouched.
+ const SCROLL_BOOST_DB=8,SCROLL_BOOST_GAIN=10**(SCROLL_BOOST_DB/20);
  const TAU=Math.PI*2,clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,Number.isFinite(n)?n:a));
  function texture(ctx,seconds,seed){
   const n=Math.round(ctx.sampleRate*seconds),over=Math.round(ctx.sampleRate*.08),raw=new Float32Array(n+over);
@@ -27,10 +30,10 @@
   const nodes=[],sources=[],oneshots=new Set(),params=new Map();let disposed=false,updates=0,ducks=0,resolves=0,last={};
   const own=n=>(nodes.push(n),n),gain=(v=1)=>{const n=own(ctx.createGain());n.gain.value=v;return n;};
   const filter=(type,hz,q=.6)=>{const n=own(ctx.createBiquadFilter());n.type=type;n.frequency.value=hz;n.Q.value=q;return n;};
-  const master=gain(1),ambient=gain(0),scroll=gain(0),resolveBus=gain(1),ambientDuck=gain(1),scrollDuck=gain(1);
+  const master=gain(1),ambient=gain(0),scroll=gain(0),resolveBus=gain(1),ambientDuck=gain(1),scrollDuck=gain(1),scrollPresence=gain(SCROLL_BOOST_GAIN);
   const meterA=own(ctx.createAnalyser()),meterS=own(ctx.createAnalyser()),meterR=own(ctx.createAnalyser());[meterA,meterS,meterR].forEach(n=>n.fftSize=1024);
   ambient.connect(ambientDuck);ambientDuck.connect(meterA);meterA.connect(master);
-  scroll.connect(scrollDuck);scrollDuck.connect(meterS);meterS.connect(master);resolveBus.connect(meterR);meterR.connect(master);master.connect(destination);
+  scroll.connect(scrollDuck);scrollDuck.connect(scrollPresence);scrollPresence.connect(meterS);meterS.connect(master);resolveBus.connect(meterR);meterR.connect(master);master.connect(destination);
   const bedLow=filter('lowpass',1250,.5),motionLow=filter('lowpass',1600,.58),motionPan=ctx.createStereoPanner?own(ctx.createStereoPanner()):gain(1);
   bedLow.connect(ambient);motionLow.connect(motionPan);motionPan.connect(scroll);
   function osc(hz,level,dest,type='sine'){
@@ -94,7 +97,7 @@
    for(const s of oneshots){try{s.stop(at);}catch(_){}}oneshots.clear();
   }
   function dispose(){if(disposed)return;silence();disposed=true;for(const s of sources){try{s.stop();}catch(_){}}for(const n of nodes){try{n.disconnect();}catch(_){}}}
-  return Object.freeze({update,duck,settle,silence,dispose,snapshot:()=>({version:'full-current-v14',disposed,updates,ducks,resolves,continuousSources:sources.length,oneShots:oneshots.size,...last,actual:{ambient:ambient.gain.value,scroll:scroll.gain.value,ambientDuck:ambientDuck.gain.value,scrollDuck:scrollDuck.gain.value},rms:{ambient:rms(meterA),scroll:rms(meterS),resolve:rms(meterR)}})});
+  return Object.freeze({update,duck,settle,silence,dispose,snapshot:()=>({version:'current-mix-v18',scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN,disposed,updates,ducks,resolves,continuousSources:sources.length,oneShots:oneshots.size,...last,actual:{ambient:ambient.gain.value,scroll:scroll.gain.value,ambientDuck:ambientDuck.gain.value,scrollDuck:scrollDuck.gain.value},rms:{ambient:rms(meterA),scroll:rms(meterS),resolve:rms(meterR)}})});
  }
- root.HolyMindSoundscape=Object.freeze({version:'full-current-v14',create,description:'Quiet Electric Field / Reversible Filament / Settled Current',scope:'Entire showcase, Hero through Footer',resolution});
+ root.HolyMindSoundscape=Object.freeze({version:'current-mix-v18',create,mix:Object.freeze({scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN}),description:'Quiet Electric Field / Reversible Filament / Settled Current',scope:'Entire showcase, Hero through Footer',resolution});
 })(globalThis);

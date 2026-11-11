@@ -282,3 +282,14 @@ Exact preserved modules: 22 visual/control/ambient/tap modules and 37 artwork im
 
 ### Production Scroll Sonata verification
 37 score checks on Chromium + 37 on WebKit + 68 original visual/control checks = 142 live assertions, zero failed checks or runtime errors in the final runs. Verified 36 live asset hashes, including the long sample bank and musical preview files. Pauses preserve ringing voices, resumption continues the next beat, scene changes do not reset the score, and note history exactly matches the selected score. Six offline signal/decay gates passed. Physical iPhone speaker and subjective listening remain untested.
+
+
+## Current Mix v18 — scoped balance correction
+
+The only changed runtime audio processing is a constant +8 dB GainNode on the existing scroll filament after the original motion envelope/ducking. Existing piano score, transport, samples, level, releases and room; ambience; tap sounds; all visual modules and user controls are byte-identical to v17.
+
+Local checks: 25 mix checks each on Chromium/WebKit and 37 score regression checks on WebKit. Offline matched-gesture stem test measures +8 dB; old/current waveforms match after scaling within float precision; ambient difference is zero. Same-score default mix increases about 0.65 dB RMS, not an across-the-board volume increase. Full-master three-burst stress render remains below sample clipping; this does not prove all possible inputs or real speaker safety.
+
+A first implementation scaled the automated envelope value and failed an exact-waveform tolerance (around 3e-6); the final static post-envelope gain passes the original test without loosening the threshold.
+
+Before/after use identical notes, tempo, current motion and master, without separate normalization. Rendered QA page inspected on 390 px viewport; no horizontal overflow. Physical iPhone listening remains untested.

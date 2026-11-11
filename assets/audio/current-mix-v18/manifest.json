@@ -1,0 +1,78 @@
+{
+  "release": "current-mix-v18",
+  "source": "Actual production graph via OfflineAudioContext; identical Mozart beats and current gestures; only scroll gain differs.",
+  "masterGain": 0.48,
+  "normalization": "None; neither file independently normalized",
+  "duration": 14,
+  "sampleRate": 24000,
+  "measurements": {
+    "measuredBoostDb": 7.999999749533847,
+    "totalMixChangeDb": 0.6528814486926318,
+    "metrics": [
+      {
+        "id": "before-current",
+        "finite": true,
+        "peak": 0.031389955431222916,
+        "rms": 0.0056362759873516445,
+        "lateRms": 0
+      },
+      {
+        "id": "after-current",
+        "finite": true,
+        "peak": 0.07884800434112549,
+        "rms": 0.014157684768621115,
+        "lateRms": 0
+      },
+      {
+        "id": "before-ambient",
+        "finite": true,
+        "peak": 0.014890417456626892,
+        "rms": 0.004797095276911139,
+        "lateRms": 0.002346694893186305
+      },
+      {
+        "id": "after-ambient",
+        "finite": true,
+        "peak": 0.014890417456626892,
+        "rms": 0.004797095276911139,
+        "lateRms": 0.002346694893186305
+      },
+      {
+        "id": "before-mix",
+        "finite": true,
+        "peak": 0.1705431491136551,
+        "rms": 0.0257455745354055,
+        "lateRms": 0.0018796609473231286
+      },
+      {
+        "id": "after-mix",
+        "finite": true,
+        "peak": 0.1728406697511673,
+        "rms": 0.027755346941262513,
+        "lateRms": 0.0018796609466478187
+      },
+      {
+        "id": "after-stress",
+        "finite": true,
+        "peak": 0.7835076451301575,
+        "rms": 0.06356551380661919,
+        "lateRms": 0.003915960162019511
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "before-mix.wav",
+      "bytes": 1344044,
+      "sha256": "8ca3afd3fb4397c2484ce0d576aaf1c81051594d9747ead0730f92171a7ad9ad"
+    },
+    {
+      "file": "after-mix.wav",
+      "bytes": 1344044,
+      "sha256": "d0ae988a0a21cf18239a034c96d77029a0aa9567a53875596001de84384d6101"
+    }
+  ],
+  "rendered_music_license": "CC BY-SA 3.0",
+  "piano_samples": "Alexander Holm / Salamander Grand Piano / CC BY 3.0",
+  "attribution": "ATTRIBUTION.md"
+}

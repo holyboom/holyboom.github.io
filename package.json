@@ -1,6 +1,6 @@
 {
   "name": "holyboom-holymind-profile",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "private": true,
   "description": "Static GitHub Pages profile and interactive HolyMind skill collection",
   "scripts": {
@@ -26,7 +26,8 @@
     "test:piano": "node scripts/qa-piano.cjs",
     "test:score": "node scripts/qa-scroll-score.cjs",
     "render:score": "node scripts/render-scroll-score.cjs",
-    "build:score": "python3 scripts/build-scroll-score.py && node scripts/build-long-piano.cjs"
+    "build:score": "python3 scripts/build-scroll-score.py && node scripts/build-long-piano.cjs",
+    "test:current-mix": "node scripts/qa-current-mix.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

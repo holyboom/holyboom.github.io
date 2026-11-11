@@ -1,0 +1,131 @@
+{
+  "base": "http://127.0.0.1:8781/",
+  "engine": "chromium",
+  "checks": [
+    {
+      "name": "release-v18",
+      "pass": true
+    },
+    {
+      "name": "only-scroll-boost-config",
+      "pass": true
+    },
+    {
+      "name": "no-autoplay",
+      "pass": true
+    },
+    {
+      "name": "scroll-stem-plus-eight-db",
+      "pass": true,
+      "measuredDb": 7.999999749533847
+    },
+    {
+      "name": "original-current-timbre-preserved",
+      "pass": true,
+      "maxError": 2.2744689159859277e-8
+    },
+    {
+      "name": "ambient-stem-identical",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "finite-unclipped-before-current",
+      "pass": true,
+      "peak": 0.031389955431222916,
+      "rms": 0.0056362759873516445
+    },
+    {
+      "name": "finite-unclipped-after-current",
+      "pass": true,
+      "peak": 0.07884800434112549,
+      "rms": 0.014157684768621115
+    },
+    {
+      "name": "finite-unclipped-before-ambient",
+      "pass": true,
+      "peak": 0.014890417456626892,
+      "rms": 0.004797095276911139
+    },
+    {
+      "name": "finite-unclipped-after-ambient",
+      "pass": true,
+      "peak": 0.014890417456626892,
+      "rms": 0.004797095276911139
+    },
+    {
+      "name": "finite-unclipped-before-mix",
+      "pass": true,
+      "peak": 0.1705431491136551,
+      "rms": 0.0257455745354055
+    },
+    {
+      "name": "finite-unclipped-after-mix",
+      "pass": true,
+      "peak": 0.1728406697511673,
+      "rms": 0.027755346941262513
+    },
+    {
+      "name": "finite-unclipped-after-stress",
+      "pass": true,
+      "peak": 0.7835076451301575,
+      "rms": 0.06356551380661919
+    },
+    {
+      "name": "scroll-decays-after-pause",
+      "pass": true
+    },
+    {
+      "name": "master-mix-not-just-turned-up",
+      "pass": true,
+      "totalMixChangeDb": 0.6528814486926318
+    },
+    {
+      "name": "live-scroll-and-piano-both-have-signal",
+      "pass": true,
+      "currentRms": 0.00922523884405963,
+      "pianoRms": 0.022798193235562262
+    },
+    {
+      "name": "one-context-no-new-source-bank",
+      "pass": true
+    },
+    {
+      "name": "live-mix-includes-eight-db",
+      "pass": true
+    },
+    {
+      "name": "music-order-unchanged",
+      "pass": true
+    },
+    {
+      "name": "piano-still-rings-at-scroll-stop",
+      "pass": true,
+      "voices": 7,
+      "rms": 0.01859663536314419
+    },
+    {
+      "name": "current-quiets-without-cutting-ambient",
+      "pass": true
+    },
+    {
+      "name": "up-scroll-current-and-score",
+      "pass": true
+    },
+    {
+      "name": "flow-toggle-still-independent",
+      "pass": true
+    },
+    {
+      "name": "mute-still-cleans-every-bus",
+      "pass": true
+    },
+    {
+      "name": "no-ui-overflow",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

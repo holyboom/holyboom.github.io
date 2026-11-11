@@ -9,7 +9,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
  await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>HolyMindCueTimbres.snapshot().ready&&HolyMindScrollSound.snapshot().stations.length===11);
  const audio=()=>p.evaluate(()=>HolyMindAudio.snapshot());const wheel=async(d,n=20,delay=70)=>{for(let i=0;i<n;i++){await p.mouse.wheel(0,d);await p.waitForTimeout(delay);}};
  const jump=async(y)=>{await p.evaluate(y=>{HolyMindScrollSound.suppressForNavigation();scrollTo({top:y,behavior:'instant'});},y);await p.waitForTimeout(1600);await p.waitForFunction(()=>!HolyMindContinuity.snapshot().running,null,{timeout:15000});};
- check('release-v17',await p.locator('html').getAttribute('data-build')==='scroll-score-v17');
+ check('release-v17',await p.locator('html').getAttribute('data-build')===(process.env.EXPECTED_BUILD||'scroll-score-v17'));
  check('no-audio-on-load',(await audio()).context==='uncreated');
  const score=await p.evaluate(()=>HolyMindMozartScore);
  check('mozart-source-and-arranged-cadence',score.sourceBars===12&&score.arrangedCadenceBars===2&&score.totalBeats===56&&score.events.length===204&&score.license==='CC BY-SA 3.0');

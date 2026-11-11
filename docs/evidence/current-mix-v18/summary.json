@@ -1,0 +1,12 @@
+{
+  "release": "current-mix-v18",
+  "status": "Local checks passed; live verification pending",
+  "scroll_boost_db": 8,
+  "local_checks": {
+    "mix_chromium": 25,
+    "mix_webkit": 25,
+    "score_webkit": 37
+  },
+  "piano_score_and_release_unchanged": true,
+  "physical_iphone_tested": false
+}
