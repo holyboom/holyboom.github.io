@@ -1,0 +1,337 @@
+{
+  "version": "boom-v20",
+  "method": "Same authored cue renderer as production; illustrative timed out-and-back score, default bus and master gains, mono before live panning/compression",
+  "sampleRate": 24000,
+  "comparisons": [
+    {
+      "file": "outward.wav",
+      "peak": 0.13767220079898834,
+      "rms": 0.010119283854201971,
+      "finite": true,
+      "sha256": "9747a3b2ee9d92ed0be34233ad08b5ef50e12fc4a44649e9ece81027d7dcfdf7",
+      "pass": true,
+      "last": 0,
+      "events": [
+        {
+          "kind": "charge",
+          "index": 0,
+          "t": 0.1
+        },
+        {
+          "kind": "launch",
+          "index": 0,
+          "t": 0.5
+        },
+        {
+          "kind": "launch",
+          "index": 1,
+          "t": 0.6
+        },
+        {
+          "kind": "launch",
+          "index": 2,
+          "t": 0.7
+        },
+        {
+          "kind": "launch",
+          "index": 3,
+          "t": 0.8
+        },
+        {
+          "kind": "launch",
+          "index": 4,
+          "t": 0.9
+        },
+        {
+          "kind": "burst",
+          "index": 0,
+          "t": 1.12
+        },
+        {
+          "kind": "burst",
+          "index": 1,
+          "t": 1.28
+        },
+        {
+          "kind": "burst",
+          "index": 2,
+          "t": 1.4400000000000002
+        },
+        {
+          "kind": "burst",
+          "index": 3,
+          "t": 1.6
+        },
+        {
+          "kind": "burst",
+          "index": 4,
+          "t": 1.7600000000000002
+        },
+        {
+          "kind": "glitter",
+          "index": 0,
+          "t": 2.2
+        }
+      ]
+    },
+    {
+      "file": "return.wav",
+      "peak": 0.0347459577023983,
+      "rms": 0.0058194369298756815,
+      "finite": true,
+      "sha256": "bcec0a2b33c838277f492ba051809a4a869b33e0012cf3769aa2e8cc283c6fcd",
+      "pass": true,
+      "last": 0,
+      "events": [
+        {
+          "kind": "recall",
+          "index": 0,
+          "t": 0.1
+        },
+        {
+          "kind": "gather",
+          "index": 4,
+          "t": 0.55
+        },
+        {
+          "kind": "gather",
+          "index": 3,
+          "t": 0.7100000000000001
+        },
+        {
+          "kind": "gather",
+          "index": 2,
+          "t": 0.8700000000000001
+        },
+        {
+          "kind": "gather",
+          "index": 1,
+          "t": 1.03
+        },
+        {
+          "kind": "gather",
+          "index": 0,
+          "t": 1.19
+        },
+        {
+          "kind": "return",
+          "index": 4,
+          "t": 1.5
+        },
+        {
+          "kind": "return",
+          "index": 3,
+          "t": 1.61
+        },
+        {
+          "kind": "return",
+          "index": 2,
+          "t": 1.72
+        },
+        {
+          "kind": "return",
+          "index": 1,
+          "t": 1.83
+        },
+        {
+          "kind": "return",
+          "index": 0,
+          "t": 1.94
+        },
+        {
+          "kind": "seal",
+          "index": 0,
+          "t": 2.25
+        }
+      ]
+    },
+    {
+      "file": "out-and-back.wav",
+      "peak": 0.13767220079898834,
+      "rms": 0.008254264107196783,
+      "finite": true,
+      "sha256": "f56224b2c38f75a6b6d34cea2765d2602acb3e71861a8a4e74c55f0602e3ae6f",
+      "pass": true,
+      "last": 0,
+      "events": [
+        {
+          "kind": "charge",
+          "index": 0,
+          "t": 0.1
+        },
+        {
+          "kind": "launch",
+          "index": 0,
+          "t": 0.5
+        },
+        {
+          "kind": "launch",
+          "index": 1,
+          "t": 0.6
+        },
+        {
+          "kind": "launch",
+          "index": 2,
+          "t": 0.7
+        },
+        {
+          "kind": "launch",
+          "index": 3,
+          "t": 0.8
+        },
+        {
+          "kind": "launch",
+          "index": 4,
+          "t": 0.9
+        },
+        {
+          "kind": "burst",
+          "index": 0,
+          "t": 1.12
+        },
+        {
+          "kind": "burst",
+          "index": 1,
+          "t": 1.28
+        },
+        {
+          "kind": "burst",
+          "index": 2,
+          "t": 1.4400000000000002
+        },
+        {
+          "kind": "burst",
+          "index": 3,
+          "t": 1.6
+        },
+        {
+          "kind": "burst",
+          "index": 4,
+          "t": 1.7600000000000002
+        },
+        {
+          "kind": "glitter",
+          "index": 0,
+          "t": 2.2
+        },
+        {
+          "kind": "recall",
+          "index": 0,
+          "t": 4.1
+        },
+        {
+          "kind": "gather",
+          "index": 4,
+          "t": 4.55
+        },
+        {
+          "kind": "gather",
+          "index": 3,
+          "t": 4.71
+        },
+        {
+          "kind": "gather",
+          "index": 2,
+          "t": 4.87
+        },
+        {
+          "kind": "gather",
+          "index": 1,
+          "t": 5.03
+        },
+        {
+          "kind": "gather",
+          "index": 0,
+          "t": 5.1899999999999995
+        },
+        {
+          "kind": "return",
+          "index": 4,
+          "t": 5.5
+        },
+        {
+          "kind": "return",
+          "index": 3,
+          "t": 5.61
+        },
+        {
+          "kind": "return",
+          "index": 2,
+          "t": 5.72
+        },
+        {
+          "kind": "return",
+          "index": 1,
+          "t": 5.83
+        },
+        {
+          "kind": "return",
+          "index": 0,
+          "t": 5.9399999999999995
+        },
+        {
+          "kind": "seal",
+          "index": 0,
+          "t": 6.25
+        }
+      ]
+    }
+  ],
+  "individual": [
+    {
+      "kind": "charge",
+      "finite": true,
+      "last": 0,
+      "notes": [
+        60
+      ]
+    },
+    {
+      "kind": "launch",
+      "finite": true,
+      "last": 0,
+      "notes": []
+    },
+    {
+      "kind": "burst",
+      "finite": true,
+      "last": 0,
+      "notes": [
+        79
+      ]
+    },
+    {
+      "kind": "glitter",
+      "finite": true,
+      "last": 0,
+      "notes": []
+    },
+    {
+      "kind": "recall",
+      "finite": true,
+      "last": 0,
+      "notes": []
+    },
+    {
+      "kind": "gather",
+      "finite": true,
+      "last": 0,
+      "notes": []
+    },
+    {
+      "kind": "return",
+      "finite": true,
+      "last": 0,
+      "notes": []
+    },
+    {
+      "kind": "seal",
+      "finite": true,
+      "last": 0,
+      "notes": [
+        60
+      ]
+    }
+  ],
+  "physicalRecording": false
+}

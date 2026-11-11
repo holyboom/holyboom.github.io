@@ -1,0 +1,15 @@
+{
+  "release": "boom-v20",
+  "status": "Local verification passed; production check pending",
+  "local_checks": {
+    "local_boom_chromium": 51,
+    "local_boom_webkit": 51,
+    "local_line_webkit": 92,
+    "local_visual_webkit": 68,
+    "local_score_webkit": 37,
+    "local_native_touch": 8,
+    "local_screen_reversal": 5
+  },
+  "local_total": 312,
+  "physical_iphone_audio_tested": false
+}

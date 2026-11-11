@@ -107,3 +107,7 @@ The approved Scroll Sonata remains unchanged. Only its accompanying electrical s
 
 ## Line-only current
 `line-current-v19` gates the non-piano electrical scroll sound on actual visible carrier travel. Pinned/docked/stationary states are silent on that bus; the Mozart score and its natural tails still follow scrolling independently. Evidence: `docs/evidence/line-current-v19/summary.json`.
+
+
+## Boom Signature Celebration v20
+Five deterministic full-stop fireworks scrub outward and inward with the existing continuity route. See `qa/boom-v20.html` for the real live scene and `docs/evidence/boom-v20/summary.json` for scope and test evidence.

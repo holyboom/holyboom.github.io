@@ -84,7 +84,7 @@
    if(st.id==='assembly'&&assemblyPin)st.at=assemblyPin.start;
    if(st.id==='orbit'){const section=q('#mind-flow');st.at=layoutTop(section)+Math.min(200,H*.2);}
    if(st.id==='skills'){const stage=q('.deck-stage');st.at=layoutTop(stage)+stage.offsetHeight*.46-H*.56;}
-   if(st.id==='signature'){const sculpture=q('.signature-sculpture');st.at=layoutTop(sculpture)+sculpture.offsetHeight*.65-H*.56;}
+   if(st.id==='signature'){const sculpture=q('.signature-sculpture');st.at=layoutTop(sculpture)+sculpture.offsetHeight*.65-H*.56-(H<540?Math.min(150,(540-H)*.85):0);}
    st.at=clamp(st.at,0,max);
   });
   // Responsive compositions are allowed to differ in height, never in story order.
@@ -95,11 +95,14 @@
    if(i===stations.length-1)return;
    let end=st.at+st.hold;
    if(st.id==='assembly'&&assemblyPin)end=assemblyPin.end;
+   if(st.id==='signature')end=st.at+Math.min(300,Math.max(120,innerHeight*.34));
    if(st.id==='neural')end=Math.max(0,layoutTop(origin)+origin.offsetHeight*.46-H*.56);
    if(st.id==='orbit')end=layoutTop(q('#mind-flow'))+q('#mind-flow').offsetHeight-H*.83;
    end=clamp(end,st.at,stations[i+1].at-40);
    if(end>st.at+1)keys.push({at:end,station:st});
   });
+  const boomKeys=keys.filter(k=>k.station.id==='signature');
+  if(boomKeys.length===2)window.HolyMindBoomCelebration?.setRange(boomKeys[0].at,boomKeys[1].at);
   field.setAttribute('viewBox',`0 0 ${innerWidth} ${innerHeight}`);
   layer.dataset.stations=String(stations.length);layer.dataset.measuredHeight=String(document.documentElement.scrollHeight);
  }
@@ -183,6 +186,7 @@
   window.HolyMindEnergy?.receive({from:a.id,to:b.id,progress:p,same,x:pos.x,y:pos.y,brainTransit});
   layer.dataset.from=a.id;layer.dataset.to=b.id;layer.dataset.progress=p.toFixed(5);
   layer.dataset.x=pos.x.toFixed(3);layer.dataset.y=pos.y.toFixed(3);
+  window.HolyMindBoomCelebration?.render({y,from:a.id,to:b.id,progress:p});
   layer.dataset.direction=y<lastY?'reverse':y>lastY?'forward':layer.dataset.direction||'forward';lastY=y;
   // Stop after the existing GSAP scrub settles. No idle animation loop is added.
   const scrubActive=window.ScrollTrigger?.getAll().some(st=>st.getTween?.()?.isActive());

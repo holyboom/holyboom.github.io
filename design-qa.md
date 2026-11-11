@@ -313,3 +313,14 @@ Local suites cover ten paths both ways, exact zero at midline stops, real holds,
 Live suites: {'line_chromium': 92, 'line_webkit': 92, 'native_touch_chromium': 6}; 190 passing assertions with zero captured runtime errors. Local regression/targeted suites: 295 assertions. Thirty served runtime assets match the implementation commit.
 
 Exact offline current output is zero in default-closed, docked, stale-renderer and post-close windows. The open-gate current and the independent ambient field match the v18 baseline waveform in the same deterministic render. All ten forward and reverse transfers have sampled audible visible travel; all tested dock/stop/pin intervals are silent on that bus. Piano continues in the pin and retains its natural tail. Native mobile input is emulated, not physical iPhone output.
+
+
+## Boom Signature Celebration v20
+
+Local acceptance: 51 new-behavior assertions in Chromium and 51 in WebKit, 92 line-only-current checks, 68 existing visual/interaction checks, 37 Mozart continuity/release checks, 8 native-touch/Studio checks, and 5 direct screen-geometry reversal comparisons. All final runs passed without detected runtime errors.
+
+The reverse test compares actual rendered particle coordinates after traversing down and back, not merely the same model called twice. All five sampled progress positions matched exactly in the WebKit run. Five forward bursts and all five inward gather cues were observed on the live audio graph in each tested engine.
+
+A landscape visual review found insufficient overhead space. The signature arrival now occurs earlier in short viewports, and radius/vertical centers shrink to fit above the word, instead of drawing over the letters. The secondary heading recedes only during the moment. No new scroll pin/spacer was introduced.
+
+The original +8 dB line current stays exactly silent while the carrier is docked, including the new effect. Piano score, natural releases, existing ambient/current graphs and original brain timbres are unchanged. Dedicated new voices are bounded and cleaned up on mute/hidden. Physical iPhone audio, frame rate and subjective comfort were not tested.

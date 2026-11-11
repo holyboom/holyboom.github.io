@@ -22,7 +22,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs'),cp=require('child
   for(let i=0;i<n;i++){await p.mouse.wheel(0,d);await p.waitForTimeout(delay);}
   await p.waitForTimeout(65);return p.evaluate(()=>{window.__lineRecording=false;return window.__lineSamples;});
  };
- check('release-v19',await p.locator('html').getAttribute('data-build')==='line-current-v19');
+ check('release-v19',await p.locator('html').getAttribute('data-build')===(process.env.EXPECTED_BUILD||'line-current-v19'));
  check('initial-silent-no-context',(await snap()).a.context==='uncreated');await wheel(8,4);check('scroll-does-not-unlock',(await snap()).a.context==='uncreated');await jump(0);
  await p.locator('#sound-toggle').click();await p.waitForTimeout(1100);let v=await snap();
  check('resting-current-gate-closed',v.a.soundscape.lineGate.value===0&&v.a.soundscape.rms.scroll===0);

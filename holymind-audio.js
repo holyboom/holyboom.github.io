@@ -8,7 +8,7 @@
  let context=null,master=null,compressor=null,analyser=null,landscape=null;
  let enabled=true,volume=.48,ambience=true,flow=true,unlocked=false,needsGesture=false,disposed=false;
  let played=0,dropped=0,lastStyle=null,token=0,pending=0,peakVoices=0,maxRms=0,lastSynthesisMs=0,lastScheduleMs=0,meterTimer=0;
- let music=null,musicLoading=false,musicResume=0;
+ let music=null,musicLoading=false,musicResume=0,celebration=null;
  let lineTravel={moving:false,lineVisible:false,at:0,reason:'initial'};
  let latest={scope:1,activity:0,progress:0,direction:1,morph:0},contextCount=0;
  const cache=new Map(),pcm=new Map(),voices=new Set(),history=[];
@@ -27,7 +27,7 @@
   document.body.dataset.sound=enabled?(needsGesture?'needs-gesture':unlocked?'enabled':'armed'):'muted';
   document.dispatchEvent(new CustomEvent('holymind:audio-state',{detail:{enabled,unlocked,needsGesture,ambience,flow,cues}}));
  }
- function stop(){lineTravel={moving:false,lineVisible:false,at:0,reason:'stopped'};landscape?.setLineTravel({moving:false});if(music){musicResume=music.snapshot().cursor;music.dispose();music=null;}stopCue(.04);for(const v of retiringCues){try{v.source.stop();v.source.disconnect();v.gain.disconnect();}catch(_){}}retiringCues.clear();pendingPianoKey=null;feedbackUnlock=null;token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
+ function stop(){celebration?.dispose();celebration=null;lineTravel={moving:false,lineVisible:false,at:0,reason:'stopped'};landscape?.setLineTravel({moving:false});if(music){musicResume=music.snapshot().cursor;music.dispose();music=null;}stopCue(.04);for(const v of retiringCues){try{v.source.stop();v.source.disconnect();v.gain.disconnect();}catch(_){}}retiringCues.clear();pendingPianoKey=null;feedbackUnlock=null;token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
  function syncLineTravel(){
   if(!landscape)return;
   const fresh=performance.now()-Number(lineTravel.at||0)<100;
@@ -90,7 +90,7 @@
  }
  function setVolume(n){volume=Math.max(0,Math.min(1,Number(n)||0));if(master)master.gain.setTargetAtTime(enabled?volume:0,context.currentTime,.02);try{localStorage.setItem('holymind-volume',String(volume));}catch(_){}ui();}
  function setLayer(name,on,persist=true){
-  if(name==='ambience')ambience=!!on;else if(name==='flow')flow=!!on;else if(name==='cues'){cues=!!on;if(!cues){stopCue(.35);music?.stopTransport('mute');}}else return;
+  if(name==='ambience')ambience=!!on;else if(name==='flow')flow=!!on;else if(name==='cues'){cues=!!on;if(!cues){celebration?.silence();stopCue(.35);music?.stopTransport('mute');}}else return;
   if(persist)try{localStorage.setItem('holymind-'+name,on?'on':'off');}catch(_){}field();ui();
  }
  button?.addEventListener('click',e=>{
@@ -156,10 +156,13 @@
  let warm=0;function warmOne(){if(warm>=timbres.presets.length)return;const p=timbres.presets[warm++];pcm.set(p.id,timbres.render(p.id));if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1500});else setTimeout(warmOne,90);}
  if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1200});else setTimeout(warmOne,300);
  window.HolyMindAudio=Object.freeze({play,mute,setVolume,setLayer,beginFeedback,cue,
+  boomCue(event){if(!ready()||!cues||latest.intent!==true||!window.HolyMindBoomAudio)return false;if(!celebration)celebration=HolyMindBoomAudio.create(context,master);return celebration.play(event,music?.harmony()||[60,64,67]);},
+  boomDirection(direction){celebration?.reverse(direction);},
+  boomPreview(event,gesture=false){if(!gesture||!ready()||!cues||!window.HolyMindBoomAudio)return false;if(!celebration)celebration=HolyMindBoomAudio.create(context,master);return celebration.play(event,music?.harmony()||[60,64,67]);},
   scorePreview(command,gesture=false){if(!gesture)return false;if(command==='pause'){music?.preview('pause');return true;}beginFeedback(true);const run=()=>{field();music?.preview(command);};if(ready())run();else feedbackUnlock?.then(ok=>{if(ok)run();});return true;},
   setMix(mode){if(!['taps','bed','full'].includes(mode))return;setLayer('ambience',mode!=='taps',false);setLayer('flow',mode==='full',false);setLayer('cues',mode==='full',false);},
   updateLineTravel(state){lineTravel={...state};syncLineTravel();},
   updateSoundscape(state){latest={...latest,...state};if(ready())field();},
   settle(reverse=false){if(!ready()||!flow||!landscape)return false;const ok=landscape.settle(reverse);if(ok){lastCueAt=performance.now();lastCuePriority=3;history.push({id:reverse?'current-reconnect':'current-resolve',kind:'resolution',time:performance.now()});if(history.length>80)history.shift();}return ok;},
-  snapshot:()=>({version:'line-current-v19',lineTravel:{...lineTravel},character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],score:music?.snapshot()||null,feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey,retiring:retiringCues.size,piano:window.HolyMindCueTimbres?.snapshot()},soundscape:landscape?.snapshot()||null})});ui();
+  snapshot:()=>({version:'boom-v20',celebration:celebration?.snapshot()||null,lineTravel:{...lineTravel},character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],score:music?.snapshot()||null,feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey,retiring:retiringCues.size,piano:window.HolyMindCueTimbres?.snapshot()},soundscape:landscape?.snapshot()||null})});ui();
 })();
