@@ -1,12 +1,51 @@
 {
   "release": "current-mix-v18",
-  "status": "Local checks passed; live verification pending",
+  "status": "Published and verified",
+  "implementation_commit": "2ef39484b505982468cb3bc44a888dd880da7a3e",
+  "verified_at": "2026-11-11T16:43:42.594826+00:00",
+  "url": "https://holyboom.github.io/?v=current-mix-v18",
+  "comparison": "https://holyboom.github.io/qa/current-mix-v18.html",
+  "change": "Static +8 dB gain on the existing electrical scroll filament after its unchanged motion envelope and ducking, before its meter/master. No new sound layer or oscillator.",
   "scroll_boost_db": 8,
-  "local_checks": {
+  "scroll_gain_factor": 2.51188643150958,
+  "preserved": [
+    "Mozart melody/harmony order",
+    "Piano source gain and score transport",
+    "Piano overlapping natural release and room resonance",
+    "Background ambience waveform",
+    "All fourteen original Electric brain sounds",
+    "Eleven scene materials and direction behavior",
+    "Master mute/volume and independent flow control",
+    "Always-on visuals and existing layouts"
+  ],
+  "live_checks": {
     "mix_chromium": 25,
     "mix_webkit": 25,
-    "score_webkit": 37
+    "piano_score_webkit": 37
   },
-  "piano_score_and_release_unchanged": true,
-  "physical_iphone_tested": false
+  "total_live_checks": 87,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "measurements": {
+    "scroll_boost_db_chromium": 7.999999749533847,
+    "scroll_boost_db_webkit": 7.99999974566448,
+    "scaled_waveform_max_difference": 2.2744689159859277e-08,
+    "ambient_max_difference": 4.6566128730773926e-09,
+    "default_mix_rms_change_db": 0.6528814498623609,
+    "default_mix_peak_before": 0.1705431193113327,
+    "default_mix_peak_after": 0.1728406697511673,
+    "full_master_three_bursts_stress_peak": 0.7835076451301575
+  },
+  "unchanged_source_style_modules": 26,
+  "original_images_unchanged": 37,
+  "matched_live_assets": 33,
+  "new_runtime_dependencies": 0,
+  "before_after": "Fourteen-second actual-production-graph OfflineAudioContext renders. Same piano beats, current gesture, 0.48 master and compressor; no independent normalization.",
+  "limitations": {
+    "physical_iphone_audio_tested": false,
+    "subjective_loudness_or_balance_certified": false,
+    "all_possible_inputs_clipping_certified": false,
+    "speaker_safety_certified": false,
+    "sample_checks": "Finite/non-clipped signal in tested renders, not a certification of device speaker performance or hearing safety."
+  }
 }

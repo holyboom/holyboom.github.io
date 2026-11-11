@@ -293,3 +293,5 @@ Local checks: 25 mix checks each on Chromium/WebKit and 37 score regression chec
 A first implementation scaled the automated envelope value and failed an exact-waveform tolerance (around 3e-6); the final static post-envelope gain passes the original test without loosening the threshold.
 
 Before/after use identical notes, tempo, current motion and master, without separate normalization. Rendered QA page inspected on 390 px viewport; no horizontal overflow. Physical iPhone listening remains untested.
+
+Published verification: {'mix_chromium': 25, 'mix_webkit': 25, 'piano_score_webkit': 37}, total 87 checks; no failures or runtime errors in the final runs. 33 public files match source hashes. Static post-envelope gain measured +8 dB with waveform difference < 3e-8; the ambient-only render is identical. Piano pause/resume and natural tails remain verified.

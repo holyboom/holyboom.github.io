@@ -1,0 +1,58 @@
+{
+  "sr": 24000,
+  "duration": 14,
+  "measuredBoostDb": 7.999999749533847,
+  "maxRelativeError": 2.2744689159859277e-08,
+  "ambientMaxDifference": 4.6566128730773926e-09,
+  "metrics": [
+    {
+      "id": "before-current",
+      "finite": true,
+      "peak": 0.031389955431222916,
+      "rms": 0.0056362759873516445,
+      "lateRms": 0
+    },
+    {
+      "id": "after-current",
+      "finite": true,
+      "peak": 0.07884800434112549,
+      "rms": 0.014157684768621115,
+      "lateRms": 0
+    },
+    {
+      "id": "before-ambient",
+      "finite": true,
+      "peak": 0.014890417456626892,
+      "rms": 0.0047970952761869886,
+      "lateRms": 0.0023466948951290146
+    },
+    {
+      "id": "after-ambient",
+      "finite": true,
+      "peak": 0.014890417456626892,
+      "rms": 0.004797095276911139,
+      "lateRms": 0.002346694893186305
+    },
+    {
+      "id": "before-mix",
+      "finite": true,
+      "peak": 0.1705431193113327,
+      "rms": 0.025745574520894807,
+      "lateRms": 0.0018796609462030647
+    },
+    {
+      "id": "after-mix",
+      "finite": true,
+      "peak": 0.1728406697511673,
+      "rms": 0.027755346929356887,
+      "lateRms": 0.0018796609464354084
+    },
+    {
+      "id": "after-stress",
+      "finite": true,
+      "peak": 0.7835076451301575,
+      "rms": 0.06356551270489029,
+      "lateRms": 0.003915960162880958
+    }
+  ]
+}

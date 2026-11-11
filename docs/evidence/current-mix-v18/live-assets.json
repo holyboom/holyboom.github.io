@@ -1,0 +1,167 @@
+[
+  {
+    "asset": "index.html",
+    "match": true,
+    "bytes": 40944
+  },
+  {
+    "asset": "style.css?v=current-mix-v18",
+    "match": true,
+    "bytes": 44582
+  },
+  {
+    "asset": "showcase.css?v=current-mix-v18",
+    "match": true,
+    "bytes": 18984
+  },
+  {
+    "asset": "continuity.css?v=current-mix-v18",
+    "match": true,
+    "bytes": 1914
+  },
+  {
+    "asset": "site.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 18737
+  },
+  {
+    "asset": "assembly-lab.css?v=current-mix-v18",
+    "match": true,
+    "bytes": 14465
+  },
+  {
+    "asset": "brain-energy.css?v=current-mix-v18",
+    "match": true,
+    "bytes": 6176
+  },
+  {
+    "asset": "ambient-current.css?v=current-mix-v18",
+    "match": true,
+    "bytes": 2133
+  },
+  {
+    "asset": "interaction-v10.css?v=current-mix-v18",
+    "match": true,
+    "bytes": 4289
+  },
+  {
+    "asset": "resonance.css?v=current-mix-v18",
+    "match": true,
+    "bytes": 2602
+  },
+  {
+    "asset": "assets/vendor/gsap-3.15.1.min.js",
+    "match": true,
+    "bytes": 73357
+  },
+  {
+    "asset": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "match": true,
+    "bytes": 44683
+  },
+  {
+    "asset": "brain-reactions.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 9704
+  },
+  {
+    "asset": "holymind-timbres.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 8918
+  },
+  {
+    "asset": "holymind-soundscape.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 9124
+  },
+  {
+    "asset": "holymind-cues.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 10086
+  },
+  {
+    "asset": "mozart-score-data.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 21574
+  },
+  {
+    "asset": "holymind-scroll-score.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 8139
+  },
+  {
+    "asset": "holymind-audio.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 16034
+  },
+  {
+    "asset": "neural-core.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 15388
+  },
+  {
+    "asset": "scroll-motion.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 4168
+  },
+  {
+    "asset": "showcase.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 7561
+  },
+  {
+    "asset": "energy-field.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 3323
+  },
+  {
+    "asset": "continuity.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 15019
+  },
+  {
+    "asset": "assembly-lab.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 8307
+  },
+  {
+    "asset": "ambient-current.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 2682
+  },
+  {
+    "asset": "assembly-scroll.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 4265
+  },
+  {
+    "asset": "soundscape-scenes.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 3247
+  },
+  {
+    "asset": "interaction-feedback.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 8434
+  },
+  {
+    "asset": "scroll-sonification.js?v=current-mix-v18",
+    "match": true,
+    "bytes": 8004
+  },
+  {
+    "asset": "qa/current-mix-v18.html",
+    "match": true,
+    "bytes": 3152
+  },
+  {
+    "asset": "assets/audio/current-mix-v18/before-mix.wav",
+    "match": true,
+    "bytes": 1344044
+  },
+  {
+    "asset": "assets/audio/current-mix-v18/after-mix.wav",
+    "match": true,
+    "bytes": 1344044
+  }
+]
