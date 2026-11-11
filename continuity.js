@@ -156,7 +156,8 @@
   layer.dataset.x=pos.x.toFixed(3);layer.dataset.y=pos.y.toFixed(3);
   layer.dataset.direction=y<lastY?'reverse':y>lastY?'forward':layer.dataset.direction||'forward';lastY=y;
   // Stop after the existing GSAP scrub settles. No idle animation loop is added.
-  if(performance.now()<until)raf=requestAnimationFrame(render);
+  const scrubActive=window.ScrollTrigger?.getAll().some(st=>st.getTween?.()?.isActive());
+  if(performance.now()<until||scrubActive)raf=requestAnimationFrame(render);
  }
  function queue(ms=850){until=Math.max(until,performance.now()+ms);if(!raf)raf=requestAnimationFrame(render);}
  function refresh(){needsMeasure=true;queue();}

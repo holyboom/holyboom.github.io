@@ -73,7 +73,8 @@
    return {kind:r.kind,reveal,anchor:a,endpoint:b,path:d,visible:reveal>.015};
   });
   frames++;root.dataset.rendered=String(frames);
-  if((now<until&&allowed())||scanStart)raf=requestAnimationFrame(draw);
+  const scrubActive=allowed()&&window.ScrollTrigger?.getAll().some(st=>st.getTween?.()?.isActive());
+  if((now<until&&allowed())||scanStart||scrubActive)raf=requestAnimationFrame(draw);
  }
  function queue(ms=900){
   if(document.hidden||!inside)return;

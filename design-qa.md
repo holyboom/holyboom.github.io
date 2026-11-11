@@ -148,3 +148,7 @@ Scope: stronger source-aligned brain electricity on all viewports; phone-only im
 - Visual inspection: desktop preserves left-copy/right-brain composition; mobile shows complete visible brain art before the headline. Source sparks survive the shared-object transfer and keep animating in the orbit.
 - OS reduced motion selects a calm light field and removes large spatial choreography without showing a toggle. The absence of a manual pause mechanism is not certified as WCAG compliance.
 - No physical iPhone performance test or independent flash-safety audit is claimed. Headless renderer paint measurements are diagnostic only.
+
+### Release-candidate timing correction
+
+The first production WebKit pass had two reversal assertions outside the position tolerance. Fresh targeted captures agreed after settling. Removed the fixed-duration assumption: continuity and assembly leader loops now also wait for actual active ScrollTrigger scrub tweens. The acceptance suite waits for visible images and actual motion settlement rather than a one-second snapshot, keeping the same 1.6 px reversal tolerance. Final production rerun required before handoff.

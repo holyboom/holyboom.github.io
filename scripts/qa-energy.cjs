@@ -6,7 +6,12 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
  const checks=[],errors=[],p=await browser.newPage({viewport:{width:1440,height:1000}});p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
  const check=(name,pass,detail={})=>{checks.push({name,pass,...detail});console.log(name,pass);};
  const goto=async()=>{await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>window.HolyMindNeural?.snapshot().paths===46);await p.waitForTimeout(1100);};
- const scroll=async y=>{await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await p.waitForTimeout(1000);};
+ const scroll=async y=>{await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await p.waitForTimeout(100);
+  await p.waitForFunction(()=>{
+   const images=[...document.images].filter(im=>{const r=im.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight;});
+   return images.every(im=>im.complete)&&!HolyMindContinuity.snapshot().running&&ScrollTrigger.getAll().every(st=>!st.getTween?.()?.isActive());
+  },null,{timeout:15000});
+ };
  const go=async sel=>{const top=await p.locator(sel).evaluate(e=>e.getBoundingClientRect().top+scrollY);await scroll(top-105);};
  await p.addInitScript(()=>localStorage.setItem('holyboom-motion','off'));await goto();
  check('release-v8',await p.locator('html').getAttribute('data-build')==='spark-v8');
@@ -36,7 +41,7 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
   await scroll(from.at+(to.at-from.at)*.96);const glow=await p.evaluate(()=>HolyMindEnergy.snapshot());check('receiver-'+to.id,glow.levels[to.id]>.85,{level:glow.levels[to.id]});
   if(['orbit','assembly','skills','signature','portal'].includes(to.id))await p.screenshot({path:out+'/receiver-'+to.id+'.jpg',quality:80});
   await scroll(mid);const r=await p.evaluate(()=>({c:HolyMindContinuity.snapshot(),e:HolyMindEnergy.snapshot()}));
-  check('reverse-'+from.id+'-'+to.id,Math.abs(f.c.x-r.c.x)<1.6&&Math.abs(f.c.y-r.c.y)<1.6&&Math.abs((f.e.levels[to.id]||0)-(r.e.levels[to.id]||0))<.01);
+  check('reverse-'+from.id+'-'+to.id,Math.abs(f.c.x-r.c.x)<1.6&&Math.abs(f.c.y-r.c.y)<1.6&&Math.abs((f.e.levels[to.id]||0)-(r.e.levels[to.id]||0))<.01,{forward:{x:f.c.x,y:f.c.y,level:f.e.levels[to.id]},reverse:{x:r.c.x,y:r.c.y,level:r.e.levels[to.id]}});
  }
  const station=await p.evaluate(()=>HolyMindContinuity.snapshot().stations.find(s=>s.id==='orbit').at);await scroll(station+10);
  a=await p.locator('.orbit-sparks').evaluate(c=>c.toDataURL());await p.waitForTimeout(600);b=await p.locator('.orbit-sparks').evaluate(c=>c.toDataURL());check('orbit-keeps-brain-sparking',a!==b&&await p.locator('.continuity-transferred').count()===0);
