@@ -224,7 +224,7 @@
   const visibleSections = new Set();
   const navObserver = new IntersectionObserver(entries => {
    entries.forEach(entry => entry.isIntersecting ? visibleSections.add(entry.target.id) : visibleSections.delete(entry.target.id));
-   const currentLink = navLinks.find(link => visibleSections.has(link.hash.slice(1)));
+   const currentLink = navLinks.filter(link => visibleSections.has(link.hash.slice(1))).pop();
    navLinks.forEach(link => {
     if (link === currentLink) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
