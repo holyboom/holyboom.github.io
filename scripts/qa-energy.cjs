@@ -7,10 +7,12 @@ const {chromium,webkit}=require('playwright');const fs=require('fs');
  const check=(name,pass,detail={})=>{checks.push({name,pass,...detail});console.log(name,pass);};
  const goto=async()=>{await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>window.HolyMindNeural?.snapshot().paths===46);await p.waitForTimeout(1100);};
  const scroll=async y=>{await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await p.waitForTimeout(100);
-  await p.waitForFunction(()=>{
+  await p.waitForFunction(targetY=>{
+   const snapshot=HolyMindContinuity.snapshot();
+   const target=Math.max(0,Math.min(targetY,document.documentElement.scrollHeight-innerHeight));
    const images=[...document.images].filter(im=>{const r=im.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight;});
-   return images.every(im=>im.complete)&&!HolyMindContinuity.snapshot().running&&ScrollTrigger.getAll().every(st=>!st.getTween?.()?.isActive());
-  },null,{timeout:15000});
+   return Math.abs(scrollY-target)<1.1&&Math.abs(snapshot.renderedScrollY-scrollY)<1.1&&images.every(im=>im.complete)&&!snapshot.running&&ScrollTrigger.getAll().every(st=>!st.getTween?.()?.isActive());
+  },y,{timeout:15000});
  };
  const go=async sel=>{const top=await p.locator(sel).evaluate(e=>e.getBoundingClientRect().top+scrollY);await scroll(top-105);};
  await p.addInitScript(()=>localStorage.setItem('holyboom-motion','off'));await goto();

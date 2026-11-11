@@ -173,6 +173,6 @@
  if(window.ScrollTrigger)window.ScrollTrigger.addEventListener('refresh',refresh);
  if(window.ResizeObserver){const observer=new ResizeObserver(refresh);observer.observe(main);}
  // Read-only diagnostics make reversal and geometry testable without driving state.
- window.HolyMindContinuity=Object.freeze({version:'spark-v8',snapshot:()=>({stations:stations.map(s=>({id:s.id,at:s.at})),keys:keys.map(k=>({id:k.station.id,at:k.at})),state:body.dataset.continuity,from:layer.dataset.from,to:layer.dataset.to,progress:Number(layer.dataset.progress),x:Number(layer.dataset.x),y:Number(layer.dataset.y),running:!!raf})});
+ window.HolyMindContinuity=Object.freeze({version:'spark-v8',snapshot:()=>({stations:stations.map(s=>({id:s.id,at:s.at})),keys:keys.map(k=>({id:k.station.id,at:k.at})),state:body.dataset.continuity,renderedScrollY:lastY,from:layer.dataset.from,to:layer.dataset.to,progress:Number(layer.dataset.progress),x:Number(layer.dataset.x),y:Number(layer.dataset.y),running:!!raf})});
  refresh();
 })();

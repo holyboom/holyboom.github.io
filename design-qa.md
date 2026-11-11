@@ -152,3 +152,5 @@ Scope: stronger source-aligned brain electricity on all viewports; phone-only im
 ### Release-candidate timing correction
 
 The first production WebKit pass had two reversal assertions outside the position tolerance. Fresh targeted captures agreed after settling. Removed the fixed-duration assumption: continuity and assembly leader loops now also wait for actual active ScrollTrigger scrub tweens. The acceptance suite waits for visible images and actual motion settlement rather than a one-second snapshot, keeping the same 1.6 px reversal tolerance. Final production rerun required before handoff.
+
+A second production run exposed a sampling race: reverse captures sometimes contained the previous 96% arrival state rather than the requested midpoint. Added a read-only `renderedScrollY` diagnostic and require it to match the requested and actual scroll positions before testing reversal. No coordinate tolerance was relaxed.
