@@ -1,14 +1,78 @@
 {
   "release": "full-current-v14",
-  "name": "HolyMind Quiet Current \u2014 Complete Journey",
-  "status": "Local checks passed; production verification pending",
-  "scope": "All eleven listening zones, Hero to Footer",
-  "local_checks": {
+  "name": "HolyMind Quiet Current — Complete Journey",
+  "status": "Published and verified",
+  "implementation_commit": "b89e658cbdda0a1ec5f3933a0f30f56a26f009c1",
+  "verified_at": "2026-11-11T14:57:10.198071+00:00",
+  "url": "https://holyboom.github.io/?v=full-current-v14",
+  "studio": "https://holyboom.github.io/qa/full-current-v14.html",
+  "scope": [
+    "Hero",
+    "Orbit",
+    "Ribbon",
+    "Assemble",
+    "Workbench",
+    "Skill instrument",
+    "Skill gallery",
+    "Services",
+    "About",
+    "Contact",
+    "Footer"
+  ],
+  "features": {
+    "continuity": "The approved quiet field and directional filament now continue to the footer. One existing audio instrument; no extra track, oscillator bank or chime at each chapter boundary.",
+    "scene_material": "Deterministic, reversible blends. Open skill exploration, restrained gallery, structured services, softer About and gentle Contact/Footer. Scene changes smooth parameters on existing nodes, never restart sources.",
+    "reading": "Open dialogs/navigation lower the field and suppress page-scroll current. Visible optional reading disclosures soften the field. Closing them restores the same running instrument.",
+    "dynamic_layout": "Gallery expansion, filtering, search, disclosures, fonts and orientation remeasure all downstream scene coordinates. Layout/navigation changes do not create scroll swooshes.",
+    "preserved": "Fourteen Electric v12 tap presets, all visual/motion/control modules, original images, 34 skills, mobile-only brain-first layout, pinned 0–100–0 assembly and ten reversible visual bridges.",
+    "control": "Persistent master sound mute/volume and independent Background ambience / Scroll response controls. Motion remains always active independently of sound.",
+    "lifecycle": "No playback or AudioContext until an explicit sound/brain gesture; hidden/interrupted audio stops. Return requires a fresh gesture, with no missed-event replay.",
+    "studio": "All eleven chapters selectable on the real live page; Taps only / Field + taps / Full mix comparisons and five forty-second production-graph audio previews at the same master gain."
+  },
+  "live_checks": {
     "coverage_chromium": 82,
     "coverage_webkit": 82,
     "core_audio_webkit": 48,
     "existing_interaction_webkit": 68,
     "native_touch_chromium": 7
   },
-  "physical_iphone_tested": false
+  "total_live_checks": 287,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "native_touch_method": "Chromium mobile emulation with DevTools native touch input. Each swipe is sampled during motion; at least three samples must meet unchanged input/direction/peak/output thresholds.",
+  "approved_v13_sound_comparison": {
+    "sampleRate": 24000,
+    "seconds": 12,
+    "maxDifference": 4.6566128730773926e-09,
+    "rmsDifference": 3.85978330278775e-10,
+    "pass": true,
+    "method": "Same OfflineAudioContext, original v13 graph vs v14 defaults, approved Hero-to-Assembly parameter score"
+  },
+  "unchanged_visual_control_and_tap_modules": 19,
+  "original_images_byte_identical": 37,
+  "electric_v12_wav_files_unchanged": 17,
+  "tap_presets_unchanged": 14,
+  "new_runtime_dependencies": 0,
+  "audio_contexts_during_journey": 1,
+  "continuous_sources_during_journey": 13,
+  "matched_live_assets": 32,
+  "offline_signal_checks": 7,
+  "preview_duration_seconds": 40,
+  "preview_master_gain": 0.48,
+  "viewports": [
+    320,
+    390,
+    430,
+    680,
+    768,
+    1024,
+    1440
+  ],
+  "limitations": {
+    "physical_iphone_audio_tested": false,
+    "subjective_pleasantness_certified": false,
+    "physical_device_performance_certified": false,
+    "motion_accessibility_certified": false,
+    "preview_method": "Scripted OfflineAudioContext renders of the production route and graph, not microphone recordings."
+  }
 }

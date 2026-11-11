@@ -234,3 +234,12 @@ Approved v13 field and current are extended to eleven reachable zones. All 19 vi
 - Optional reading fields reduce ambience when their open summary/content is visible. Dialog/menu scroll does not generate the page current. Gallery/search/disclosure reflows are remeasured without a false swipe sound.
 - Offline sample comparison of the original v13 instrument versus the new default graph over twelve seconds at 24 kHz: max delta 4.66e-9. Five forty-second whole-journey audition stems/comparisons use the actual production scene mapper and graph at identical master gain. All samples finite, peaks below 0.5, fades below 0.001.
 - No physical iPhone speaker or listener fatigue test was performed. Automated graph checks do not certify subjective pleasantness, hearing safety, accessibility or real-device performance. Production results are recorded after publication.
+
+
+### Published full-current-v14 verification
+
+Production checks: {'coverage_chromium': 82, 'coverage_webkit': 82, 'core_audio_webkit': 48, 'existing_interaction_webkit': 68, 'native_touch_chromium': 7}; total 287, zero failed assertions and runtime errors in the final runs. 32 public assets, including the five forty-second WAVs, match the local release hashes.
+
+The initial native-swipe harness read only the final sample: resetting per-input gesturePeak between render frames produced two false end-sample assertions despite measured current. The final harness samples throughout every swipe and requires at least three observations with the same strict input/direction/peak/RMS thresholds; all six directions/zones and one-context check pass. Runtime sound code was not changed for this harness correction.
+
+See qa/full-current-v14.html and docs/evidence/full-current-v14/summary.json for the full route, comparisons, measured signal and scope/limitations. No physical iPhone listening/performance test was performed.
