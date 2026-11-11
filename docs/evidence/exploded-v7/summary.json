@@ -1,0 +1,71 @@
+{
+  "release": "exploded-v7",
+  "implementation_commit": "4211be57d82e482b083b50f8348d2b9ac9175db8",
+  "url": "https://holyboom.github.io/?v=exploded-v7#system-assembly",
+  "verified_at": "2026-11-11T09:13:52.566957+00:00",
+  "features": {
+    "range": "Right expands, left connects; native mouse, touch and keyboard input",
+    "primary_layers": [
+      "Human Intent",
+      "Connections",
+      "Evidence"
+    ],
+    "intermediate_sheets": [
+      "Routing / permissions",
+      "Checks / trace"
+    ],
+    "callouts": "Three progressive side explanations, each connected to a real projected plane pin. Tap a visible label to focus its plane.",
+    "thresholds_percent": {
+      "intent": [
+        18,
+        42
+      ],
+      "connections": [
+        42,
+        67
+      ],
+      "evidence": [
+        67,
+        90
+      ],
+      "full_scan": [
+        96,
+        100
+      ]
+    },
+    "reversal": "Reveal amount, lines and layers retrace the range position; all ten scroll bridges remain reversible.",
+    "full_state": "Finite sequential focus and light scan; no new idle loop.",
+    "colors": {
+      "identity": "Original violet unchanged",
+      "motion": "#67E8F9",
+      "arrival": "#F2CC8F",
+      "glint": "#FF7AC6",
+      "spark_core": "#F8F2FF"
+    }
+  },
+  "live_checks": {
+    "assembly_chromium": 47,
+    "assembly_webkit": 47,
+    "showcase_regression_webkit": 55,
+    "continuity_regression_webkit": 43
+  },
+  "total_live_checks": 192,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "leader_endpoint_tolerance_css_px": 1,
+  "viewport_widths": [
+    320,
+    390,
+    680,
+    768,
+    1024,
+    1440
+  ],
+  "original_images_byte_identical": 37,
+  "live_assets_hash_matched": 6,
+  "new_runtime_dependencies": 0,
+  "physical_iphone_tested": false,
+  "recording": "Published page, native pointer drag right, focus side labels, then drag left. Not a device performance benchmark.",
+  "accessibility": "Native range, keyboard control, reduced-motion explicit interaction, static/no-JS guide, readable labels and pointer-transparent leaders.",
+  "compatibility_fix": "Individually projected planes avoid a WebKit nested-translateZ compositing failure discovered during visual QA."
+}

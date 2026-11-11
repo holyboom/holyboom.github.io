@@ -1,0 +1,258 @@
+{
+  "base": "https://holyboom.github.io/?v=exploded-v7",
+  "engine": "webkit",
+  "errors": [],
+  "checks": [
+    {
+      "name": "release-key",
+      "pass": true
+    },
+    {
+      "name": "six-scenes",
+      "pass": true
+    },
+    {
+      "name": "slider-connects",
+      "pass": true,
+      "a": "matrix3d(0.848048, -0.311479, -0.428714, 0, 0.529919, 0.49847, 0.686085, 0, 0, -0.809017, 0.587785, 0, 0, -12, 0, 1)",
+      "b": "matrix3d(0.848048, -0.311479, -0.428714, 0, 0.529919, 0.49847, 0.686085, 0, 0, -0.809017, 0.587785, 0, 0, -167, 0, 1)"
+    },
+    {
+      "name": "slider-keyboard",
+      "pass": true
+    },
+    {
+      "name": "deck-0",
+      "pass": true
+    },
+    {
+      "name": "deck-dialog-0",
+      "pass": true,
+      "want": "The crystallizer",
+      "actual": "The crystallizer"
+    },
+    {
+      "name": "deck-focus-return-0",
+      "pass": true
+    },
+    {
+      "name": "deck-1",
+      "pass": true
+    },
+    {
+      "name": "deck-dialog-1",
+      "pass": true,
+      "want": "Angle agents",
+      "actual": "Angle agents"
+    },
+    {
+      "name": "deck-focus-return-1",
+      "pass": true
+    },
+    {
+      "name": "deck-2",
+      "pass": true
+    },
+    {
+      "name": "deck-dialog-2",
+      "pass": true,
+      "want": "MCP orchestration",
+      "actual": "MCP orchestration"
+    },
+    {
+      "name": "deck-focus-return-2",
+      "pass": true
+    },
+    {
+      "name": "deck-3",
+      "pass": true
+    },
+    {
+      "name": "deck-dialog-3",
+      "pass": true,
+      "want": "Chain of verification",
+      "actual": "Chain of verification"
+    },
+    {
+      "name": "deck-focus-return-3",
+      "pass": true
+    },
+    {
+      "name": "deck-4",
+      "pass": true
+    },
+    {
+      "name": "deck-dialog-4",
+      "pass": true,
+      "want": "Subagent fanout",
+      "actual": "Subagent fanout"
+    },
+    {
+      "name": "deck-focus-return-4",
+      "pass": true
+    },
+    {
+      "name": "deck-5",
+      "pass": true
+    },
+    {
+      "name": "deck-dialog-5",
+      "pass": true,
+      "want": "Goal-driven execution",
+      "actual": "Goal-driven execution"
+    },
+    {
+      "name": "deck-focus-return-5",
+      "pass": true
+    },
+    {
+      "name": "deck-keyboard-end",
+      "pass": true
+    },
+    {
+      "name": "deck-keyboard-home",
+      "pass": true
+    },
+    {
+      "name": "service-open-0",
+      "pass": true
+    },
+    {
+      "name": "service-open-1",
+      "pass": true
+    },
+    {
+      "name": "service-open-2",
+      "pass": true
+    },
+    {
+      "name": "workbench-updates-art",
+      "pass": true
+    },
+    {
+      "name": "assembly-scroll",
+      "pass": true,
+      "a": "matrix3d(0.974134, -0.139618, 0.177679, 0, 0.141876, 0.989884, 0, 0, -0.175882, 0.025208, 0.984088, 0, 0, 13.9143, 0, 1)",
+      "b": "matrix3d(0.999812, -0.016713, -0.009835, 0, 0.016714, 0.99986, 0, 0, 0.009833, -0.000164, 0.999952, 0, 0, 2.5164, 0, 1)"
+    },
+    {
+      "name": "deck-scroll",
+      "pass": true,
+      "a": "matrix3d(0.993023, 0, 0.11792, 0, -0.020605, 0.984615, 0.173517, 0, -0.116106, -0.174736, 0.977746, 0, 0, 0, 0, 1)",
+      "b": "matrix3d(0.999186, 0, -0.040331, 0, 0.003244, 0.996761, 0.080361, 0, 0.0402, -0.080427, 0.99595, 0, 0, 0, 0, 1)"
+    },
+    {
+      "name": "signature-scroll",
+      "pass": true,
+      "a": "matrix3d(0.93738, -0.047482, 0.345056, 0, -0.003591, 0.989294, 0.14589, 0, -0.348289, -0.137993, 0.927175, 0, 0, 0, 0, 1)",
+      "b": "matrix3d(0.99404, -0.050352, 0.096695, 0, 0.045094, 0.997422, 0.055817, 0, -0.099256, -0.051124, 0.993748, 0, 0, 0, 0, 1)"
+    },
+    {
+      "name": "portal-scroll",
+      "pass": true,
+      "a": "[0.695658321181933,0,0,0.695658321181933,53.04200291633606,53.04200291633606]",
+      "b": "[0.9166666666666666,0,0,0.9166666666666666,0,0]"
+    },
+    {
+      "name": "pause-all",
+      "pass": true
+    },
+    {
+      "name": "static-interaction",
+      "pass": true
+    },
+    {
+      "name": "responsive-320",
+      "pass": true,
+      "overflow": []
+    },
+    {
+      "name": "responsive-390",
+      "pass": true,
+      "overflow": []
+    },
+    {
+      "name": "responsive-680",
+      "pass": true,
+      "overflow": []
+    },
+    {
+      "name": "responsive-768",
+      "pass": true,
+      "overflow": []
+    },
+    {
+      "name": "responsive-1024",
+      "pass": true,
+      "overflow": []
+    },
+    {
+      "name": "responsive-1440",
+      "pass": true,
+      "overflow": []
+    },
+    {
+      "name": "mobile-deck-next-0",
+      "pass": true
+    },
+    {
+      "name": "mobile-deck-next-1",
+      "pass": true
+    },
+    {
+      "name": "mobile-deck-next-2",
+      "pass": true
+    },
+    {
+      "name": "mobile-deck-next-3",
+      "pass": true
+    },
+    {
+      "name": "mobile-deck-next-4",
+      "pass": true
+    },
+    {
+      "name": "mobile-deck-next-5",
+      "pass": true
+    },
+    {
+      "name": "reduced-motion",
+      "pass": true
+    },
+    {
+      "name": "reduced-motion-slider",
+      "pass": true
+    },
+    {
+      "name": "nojs-content",
+      "pass": true
+    },
+    {
+      "name": "all-images-load",
+      "pass": true
+    },
+    {
+      "name": "no-trigger-leak",
+      "pass": true,
+      "before": 60,
+      "after": 60
+    },
+    {
+      "name": "missing-library-static-fallback",
+      "pass": true
+    },
+    {
+      "name": "touch-deck-navigation",
+      "pass": true
+    },
+    {
+      "name": "touch-slider",
+      "pass": true
+    },
+    {
+      "name": "touch-menu",
+      "pass": true
+    }
+  ],
+  "failed": []
+}

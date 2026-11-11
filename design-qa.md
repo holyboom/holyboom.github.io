@@ -128,3 +128,10 @@ Live video and the 71-frame GIF were captured from the published site, not gener
 - Static/no-JS, missing-GSAP, reduced-motion and offscreen/idle cases covered. No physical iPhone performance test; viewport simulation is not a device benchmark.
 - Prior design guidance was reused from Product Design, Impeccable animate/craft floor and frontend guidance. The Impeccable launcher was unavailable; no tool certification claimed.
 - Live deployment evidence is recorded separately after publication.
+
+### Published v7 verification
+
+- Implementation commit: `4211be57d82e482b083b50f8348d2b9ac9175db8`.
+- Live Assembly: 47 Chromium + 47 WebKit checks passed. Live existing Showcase: 55 WebKit checks passed. Live Continuity: 43 WebKit checks passed. Zero failed checks or observed runtime errors.
+- Six published asset hashes match the local implementation exactly. Evidence includes desktop/phone renders, native forward/reverse pointer recording, and raw JSON results at `docs/evidence/exploded-v7/`.
+- `qa/exploded-v7.html` is the evidence viewer. Existing site routes and the physical-device-testing limitation are unchanged.

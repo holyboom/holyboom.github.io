@@ -1,0 +1,32 @@
+[
+  {
+    "path": "index.html",
+    "sha256": "29f917efb37e6f63c8f3632732919dda0df51c95cea909ce523a5f92623f7da7",
+    "matches": true
+  },
+  {
+    "path": "assembly-lab.css",
+    "sha256": "7dd9448cf3bc635cb2f490dac92224fa8b4a9ff7b57fc13198903a12f56be0a6",
+    "matches": true
+  },
+  {
+    "path": "assembly-lab.js",
+    "sha256": "ed8f2d0b8689fb4595d5b5bffdf82fbc381cd36cbeb18b7c1369ccb200e6505d",
+    "matches": true
+  },
+  {
+    "path": "showcase.js",
+    "sha256": "15b59e08148aff46c7852110f17efc9787878be999fa17fcfa862f5652940ab0",
+    "matches": true
+  },
+  {
+    "path": "continuity.js",
+    "sha256": "b7d2967bcc2aebd4564175798cecde66a625cb57df1e154c6f293f025b710622",
+    "matches": true
+  },
+  {
+    "path": "neural-core.js",
+    "sha256": "2dfff8100dad68af4065bc23b3d2eadc5c06fc3b27301f1003a6f9584f1fad1f",
+    "matches": true
+  }
+]

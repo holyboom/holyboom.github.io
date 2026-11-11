@@ -1,0 +1,7 @@
+{
+  "source": "https://holyboom.github.io/?v=exploded-v7",
+  "build": "exploded-v7",
+  "frames": 84,
+  "interaction": "Native pointer drag right, focus labels, drag left; captured from published page",
+  "physicalDeviceBenchmark": false
+}
