@@ -9,7 +9,7 @@ const fs=require('fs');
  await page.goto(base,{waitUntil:'networkidle'});await page.waitForFunction(()=>document.body.dataset.showcaseEngine==='ready');await page.waitForTimeout(800);
  const check=(name,pass,extra={})=>{checks.push({name,pass,...extra});console.log(name,pass);};
  const go=async(sel,offset=100)=>{const y=await page.locator(sel).evaluate(el=>el.getBoundingClientRect().top+scrollY);await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y-offset);await page.waitForTimeout(850);};
- check('release-v5',await page.locator('html').getAttribute('data-build')==='showcase-v5');
+ check('release-key',await page.locator('html').getAttribute('data-build')===(process.env.EXPECT_BUILD||'continuity-v6'));
  check('six-scenes',await page.locator('[data-scene]').count()===6);
  for(const [name,sel] of Object.entries({hero:'.hero',crossing:'.signal-crossing',assembly:'.assembly-exhibit',instrument:'.skill-instrument',services:'.approach-list',signature:'.about',portal:'.connect'})){
   await go(sel);await page.screenshot({path:out+'/desktop-'+name+'.jpg',quality:80});

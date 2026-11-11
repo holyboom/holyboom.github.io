@@ -55,3 +55,13 @@ See `design-qa.md` for the observed review outcome and its limits.
 - Contact: a seven-plane octagonal aperture opens around the original goal symbol. Desktop pointer movement tilts its own parent; touch scroll is never captured. The public contact destination is unchanged.
 - Bound motion to scroll and control input; add no constant new render loop, sound, network service, analytics or extra runtime dependency. The shared motion switch reverts all contexts and clears pointer effects. Reduced motion defaults to the static compositions; explicit opt-in remains available.
 - Every release asset uses the same showcase-v5 key. Capability prose and simulations remain labelled illustrative; there is no live model execution.
+
+## Continuous Mind v6 — shared spatial narrative
+
+- The original hero brain is visually transferred into the orbital scene: one overlay while source and destination are temporarily muted, restored exactly on pause and completion.
+- A single luminous shard and three small fragments carry the intention across eleven artifact stations. Its outline transitions between crystal, plane, plate, signature point and octagonal aperture. Ten bridges are derived from scroll position, not play-once entrance events.
+- The ribbon crystallizer is actually borrowed during the ribbon-to-assembly handoff; the source and destination images are muted only for that transfer. Different workbench symbol choices crossfade within the same carrier.
+- The thread routes through outer margins while in flight, reconnecting to live positions of the original transformed artwork. Long galleries have an exit station so optional expansion does not break the narrative.
+- Source art, existing geometry and interactive state are never repainted or reparented. All new visuals use a pointer-transparent, aria-hidden viewport layer below the navigation and native dialog.
+- Resize, fonts, gallery height, disclosure changes and ScrollTrigger refreshes remeasure the route. The layer uses input-driven rendering and stops after the existing scrub has settled. Motion off restores all originals and removes the enhancement.
+- Release key: continuity-v6. No new runtime library or external network service.

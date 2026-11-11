@@ -1,0 +1,288 @@
+{
+  "base": "http://127.0.0.1:8769/",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "release-v6",
+      "pass": true
+    },
+    {
+      "name": "single-shared-carrier",
+      "pass": true
+    },
+    {
+      "name": "pointer-transparent",
+      "pass": true
+    },
+    {
+      "name": "eleven-stations",
+      "pass": true
+    },
+    {
+      "name": "visible-neural-orbit",
+      "pass": true,
+      "x": 1342.931,
+      "y": 392.44
+    },
+    {
+      "name": "original-brain-transferred",
+      "pass": true
+    },
+    {
+      "name": "reversible-neural-orbit",
+      "pass": true,
+      "forward": {
+        "x": 1342.931,
+        "y": 392.44
+      },
+      "reverse": {
+        "x": 1342.931,
+        "y": 392.44
+      }
+    },
+    {
+      "name": "visible-orbit-ribbon",
+      "pass": true,
+      "x": 42.01,
+      "y": 545.278
+    },
+    {
+      "name": "reversible-orbit-ribbon",
+      "pass": true,
+      "forward": {
+        "x": 42.01,
+        "y": 545.278
+      },
+      "reverse": {
+        "x": 42.01,
+        "y": 545.278
+      }
+    },
+    {
+      "name": "visible-ribbon-assembly",
+      "pass": true,
+      "x": 42.007,
+      "y": 516.527
+    },
+    {
+      "name": "reversible-ribbon-assembly",
+      "pass": true,
+      "forward": {
+        "x": 42.007,
+        "y": 516.527
+      },
+      "reverse": {
+        "x": 42.007,
+        "y": 516.527
+      }
+    },
+    {
+      "name": "visible-assembly-system",
+      "pass": true,
+      "x": 1397.983,
+      "y": 452.597
+    },
+    {
+      "name": "reversible-assembly-system",
+      "pass": true,
+      "forward": {
+        "x": 1397.983,
+        "y": 452.597
+      },
+      "reverse": {
+        "x": 1397.983,
+        "y": 452.597
+      }
+    },
+    {
+      "name": "visible-system-skills",
+      "pass": true,
+      "x": 1398,
+      "y": 531.019
+    },
+    {
+      "name": "reversible-system-skills",
+      "pass": true,
+      "forward": {
+        "x": 1398,
+        "y": 531.019
+      },
+      "reverse": {
+        "x": 1398,
+        "y": 531.019
+      }
+    },
+    {
+      "name": "visible-skills-gallery",
+      "pass": true,
+      "x": 1397.999,
+      "y": 475.72
+    },
+    {
+      "name": "reversible-skills-gallery",
+      "pass": true,
+      "forward": {
+        "x": 1397.999,
+        "y": 475.72
+      },
+      "reverse": {
+        "x": 1397.999,
+        "y": 475.72
+      }
+    },
+    {
+      "name": "visible-gallery-services",
+      "pass": true,
+      "x": 1397.99,
+      "y": 546.563
+    },
+    {
+      "name": "reversible-gallery-services",
+      "pass": true,
+      "forward": {
+        "x": 1397.99,
+        "y": 546.563
+      },
+      "reverse": {
+        "x": 1397.99,
+        "y": 546.563
+      }
+    },
+    {
+      "name": "visible-services-delivery",
+      "pass": true,
+      "x": 1398,
+      "y": 509.013
+    },
+    {
+      "name": "reversible-services-delivery",
+      "pass": true,
+      "forward": {
+        "x": 1398,
+        "y": 509.013
+      },
+      "reverse": {
+        "x": 1398,
+        "y": 509.013
+      }
+    },
+    {
+      "name": "visible-delivery-signature",
+      "pass": true,
+      "x": 42,
+      "y": 533.658
+    },
+    {
+      "name": "reversible-delivery-signature",
+      "pass": true,
+      "forward": {
+        "x": 42,
+        "y": 533.658
+      },
+      "reverse": {
+        "x": 42,
+        "y": 533.658
+      }
+    },
+    {
+      "name": "visible-signature-portal",
+      "pass": true,
+      "x": 1398,
+      "y": 504.243
+    },
+    {
+      "name": "reversible-signature-portal",
+      "pass": true,
+      "forward": {
+        "x": 1398,
+        "y": 504.243
+      },
+      "reverse": {
+        "x": 1398,
+        "y": 504.243
+      }
+    },
+    {
+      "name": "original-brain-restored",
+      "pass": true
+    },
+    {
+      "name": "pause-restores-art",
+      "pass": true
+    },
+    {
+      "name": "resume-current-position",
+      "pass": true
+    },
+    {
+      "name": "no-idle-loop",
+      "pass": true
+    },
+    {
+      "name": "expanded-gallery-remeasured",
+      "pass": true
+    },
+    {
+      "name": "disclosure-remeasured",
+      "pass": true
+    },
+    {
+      "name": "deck-control-still-works",
+      "pass": true
+    },
+    {
+      "name": "overlay-yields-to-dialog",
+      "pass": true
+    },
+    {
+      "name": "responsive-320",
+      "pass": true,
+      "overflow": [],
+      "offscreen": []
+    },
+    {
+      "name": "responsive-390",
+      "pass": true,
+      "overflow": [],
+      "offscreen": []
+    },
+    {
+      "name": "responsive-680",
+      "pass": true,
+      "overflow": [],
+      "offscreen": []
+    },
+    {
+      "name": "responsive-768",
+      "pass": true,
+      "overflow": [],
+      "offscreen": []
+    },
+    {
+      "name": "responsive-1024",
+      "pass": true,
+      "overflow": [],
+      "offscreen": []
+    },
+    {
+      "name": "responsive-1440",
+      "pass": true,
+      "overflow": [],
+      "offscreen": []
+    },
+    {
+      "name": "reduced-motion-static",
+      "pass": true
+    },
+    {
+      "name": "nojs-preserves-originals",
+      "pass": true
+    },
+    {
+      "name": "direct-anchor-load",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

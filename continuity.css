@@ -1,0 +1,21 @@
+/* Continuous Mind: one carrier crosses scene boundaries, never captures input. */
+.continuity-layer{position:fixed;inset:0;z-index:8;pointer-events:none!important;overflow:hidden;contain:strict;isolation:isolate;color:#d3b4ff;opacity:1}
+.continuity-layer *{pointer-events:none!important}
+.continuity-field{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+.continuity-wire{fill:none;stroke:#c695f4;stroke-width:1;opacity:.24;stroke-linejoin:bevel}
+.continuity-current{fill:none;stroke:#e1c8ff;stroke-width:1.8;stroke-linejoin:bevel;opacity:.9}
+.continuity-shadow{fill:none;stroke:#9353db;stroke-width:7;opacity:.13;stroke-linejoin:bevel}
+.continuity-form{fill:#28133d;fill-opacity:.22;stroke:#d9b5ff;stroke-width:1.2;stroke-linejoin:bevel}
+.continuity-echo{fill:none;stroke:#ab7cdb;stroke-width:1;opacity:.36}
+.continuity-facet{fill:none;stroke:#b98ae5;stroke-width:.8;opacity:.6}
+.continuity-core{fill:#f6e9ff;stroke:#d1a5ff;stroke-width:1;filter:drop-shadow(0 0 6px #c586ff)}
+.continuity-fragment{fill:#cc9af2;stroke:#f2deff;stroke-width:.8}
+.continuity-receiver{fill:none;stroke:#abdfef;stroke-width:1;opacity:.65}
+.continuity-brain{position:absolute;left:0;top:0;display:block;max-width:none;height:auto;image-rendering:pixelated;transform-origin:center;visibility:hidden}
+.continuity-transferred{opacity:0!important}
+.continuity-glyph,.continuity-glyph-next{image-rendering:pixelated}
+.signature-period{display:inline-block}
+body[data-motion=off] .continuity-layer,body:has(dialog[open]) .continuity-layer{display:none}
+@media(max-width:680px){.continuity-wire{opacity:.19}.continuity-current{stroke-width:1.3}.continuity-form{fill-opacity:.15}.continuity-shadow{stroke-width:5}}
+@media(prefers-reduced-motion:reduce){body:not([data-motion=on]) .continuity-layer{display:none}}
+@media print{.continuity-layer{display:none!important}.continuity-transferred{opacity:1!important}}

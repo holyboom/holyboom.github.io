@@ -21,3 +21,7 @@ No authentication, payment, model execution, lead capture, third-party analytics
 ## Showcase v5 brief — owner approved direction
 
 The primary surface mode is Experience: a showcase of authored AI engineering and the HolyMind visual world, not a document visitors are expected to read in full. Build on the approved Living Mind v4 hero and orbital journey without replacing them. Other zones should offer distinct, reversible, scroll-linked spatial exhibits with optional depth, using original pixel-neon artwork. Keep real workbench controls, all 34 skills, accessibility, native scrolling, public identity and no-submission behavior.
+
+## Continuous Mind v6 — owner requested continuity
+
+Keep the approved showcase scenes. Their boundaries must share a visible visual object/material that moves from the preceding scene into the next, and retraces that transfer when scrolling upward. The experience is a connected journey, not separate section reveals. Preserve native scrolling, touch interaction, the original pixel-neon artwork, existing actions and optional reading depth.

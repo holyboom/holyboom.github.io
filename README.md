@@ -45,3 +45,7 @@ Six new experience surfaces extend the approved v4 orbit without replacing it: a
 `npm run check` validates all first-party JavaScript. Start preview with `npm run dev -- --host 127.0.0.1 --port 8768`, then run `npm run test:showcase` (Playwright browsers required). Set `TEST_URL`, `QA_DIR`, `ENGINE=webkit` and optionally `CHROME_PATH` to change the test target. `npm run test:motion` retains the v4 functional regressions.
 
 Test output and captured live evidence are linked from `qa/showcase-v5.html` after release. Browser-engine testing is not a physical iPhone performance certification.
+
+## Continuous Mind v6
+
+Shared brain transfer, reversible crystal-to-system transfer, and one shape-shifting visual thread connect the approved v5 scenes. `continuity.js` owns only its own overlay and temporary source opacity classes. See DESIGN.md and `scripts/qa-continuity.cjs` for the contract and reversal checks. Native controls continue to work with motion disabled.
