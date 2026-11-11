@@ -1,6 +1,28 @@
 {
   "release": "line-current-v19",
-  "status": "Local checks passed; production verification pending",
+  "name": "HolyMind — Line-only Current",
+  "status": "Published and verified",
+  "implementation_commit": "b16957154b54731be49f43372db5354a8c9107e6",
+  "verified_at": "2026-11-11T17:04:48.014444+00:00",
+  "url": "https://holyboom.github.io/?v=line-current-v19",
+  "request": "The non-piano scrolling electricity must sound only while the visual carrier is actually moving along its line. Otherwise that sound must be silent.",
+  "behavior": {
+    "audible": "Only during fresh, visible connector travel in either direction, with trusted scroll intent and sound enabled. The existing +8 dB current level is retained.",
+    "silent": "Docked at a station, stopped midline, pinned Assemble/layer scrolling, absent line, offscreen carrier, programmatic navigation/reflow, or stale renderer evidence.",
+    "piano": "The ordered Mozart score still follows scrolling independently. It can play during the pinned Assemble while current is zero. Natural piano releases and room resonance are not gated.",
+    "ambient_and_cues": "Background ambience, brain-tap sounds, action/arrival cues and their own controls remain separate and unchanged in their source assets.",
+    "source_of_truth": "The same continuity render frame that writes the visible connector reports route endpoints, visible segment, in-viewport position and progress movement. Generic scroll speed alone no longer authorizes this sound.",
+    "gate": "Normally closed post-envelope gain, after unchanged +8 dB presence stage. 8 ms open edge, 12 ms close to exact zero; 50 ms movement-cadence tolerance; 100 ms audio-clock lease fails closed on missing reports. No new permanent frame loop.",
+    "unchanged_controls": "Master mute/volume, independent flow/ambient/piano controls, gesture unlock, lifecycle policy, always-on visual motion and mobile-only brain-first layout remain."
+  },
+  "live_checks": {
+    "line_chromium": 92,
+    "line_webkit": 92,
+    "native_touch_chromium": 6
+  },
+  "total_live_checks": 190,
+  "failed_checks": 0,
+  "runtime_errors": 0,
   "local_checks": {
     "local_line_chromium": 92,
     "local_line_webkit": 92,
@@ -9,6 +31,30 @@
     "local_score_webkit": 37
   },
   "total_local_checks": 295,
-  "change": "The +8 dB non-piano current is audible only with fresh visible line-travel evidence and trusted scroll intent. Docked, pinned, offscreen, stationary or absent paths close the gate. Piano/ambient are independent.",
-  "physical_iphone_tested": false
+  "coverage": "All ten visual line transfers down and up; stationary midline and real hold intervals; pinned layer scroll with piano continuing; navigation/reflow, flow mute, visibility lifecycle and widths 320–1440. In-page frame sampling captures brief travel rather than a late endpoint snapshot.",
+  "native_touch": "Chromium DevTools native touch input in mobile emulation; not a physical device.",
+  "offline_measurements": {
+    "closedRms": 0,
+    "dockRms": 0,
+    "staleRms": 0,
+    "openRms": 0.018778488987520974,
+    "afterCloseRms": 0,
+    "openMaxDiff": 0,
+    "ambientMaxDiff": 0
+  },
+  "matched_live_assets": 30,
+  "preserved": {
+    "source_style_modules": 24,
+    "original_images": 37,
+    "audio_assets": 125,
+    "piano_score_source_byte_identical": true,
+    "scroll_current_boost_db": 8,
+    "new_runtime_dependencies": 0
+  },
+  "limitations": {
+    "physical_iphone_audio_tested": false,
+    "subjective_loudness_certified": false,
+    "speaker_performance_certified": false,
+    "note": "Measured bus silence and visual gating in browser automation; not a microphone recording or a physical iPhone listening test."
+  }
 }

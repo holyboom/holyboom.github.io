@@ -306,3 +306,10 @@ The gate opens in 8 ms and reaches exact zero 12 ms after closing. A 50 ms movem
 Verification samples throughout native-input gestures in the page, not only after awaited browser calls; short sound windows were missed by the first endpoint-only fixture. Fixture navigation waits for the previous compositor motion to settle, and live route keys are re-read for narrow holds. Runtime gates/thresholds were not loosened for the fixture.
 
 Local suites cover ten paths both ways, exact zero at midline stops, real holds, pinned layers, reflow/navigation, lifecycle, mobile touch emulation, musical continuation, default-closed and stale-gate offline rendering. Open-gate waveform and ambient waveform are compared against b6cb59f. All piano/score sources, original audio assets and original art are byte-preserved. Production results follow separately. No physical iPhone audio test is claimed.
+
+
+### Published v19 verification
+
+Live suites: {'line_chromium': 92, 'line_webkit': 92, 'native_touch_chromium': 6}; 190 passing assertions with zero captured runtime errors. Local regression/targeted suites: 295 assertions. Thirty served runtime assets match the implementation commit.
+
+Exact offline current output is zero in default-closed, docked, stale-renderer and post-close windows. The open-gate current and the independent ambient field match the v18 baseline waveform in the same deterministic render. All ten forward and reverse transfers have sampled audible visible travel; all tested dock/stop/pin intervals are silent on that bus. Piano continues in the pin and retains its natural tail. Native mobile input is emulated, not physical iPhone output.
