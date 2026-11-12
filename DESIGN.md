@@ -287,3 +287,11 @@ Piano is separated from Reactions & fireworks; energy-on-line and atmosphere rem
 A draw-cost moving average may choose a lower Canvas DPR at the next effect boundary; no particle identities, geometry, source artwork, animation or scroll control are disabled. This observes JS draw cost, not real-device frame rate. All source PCM, Mozart note order, line-only +8 dB gate, 259 fixed particle trajectories and v21 viewport/pin stabilization are preserved.
 
 Tests must cover new choices, reload/reset, gallery filtering, clipboard success/failure, four audio controls, spatial stereo, default gain preservation, deterministic reflection, responsive layouts, prior firework/tail and scroll stability. Physical iPhone listening/performance is not available in this session and is not claimed.
+
+
+## Living Workflow v25 — finish the approved intent-to-artifact experience
+Continue v24 rather than introduce another theme. Existing three scenarios/four steps gain finite, interruptible source transfer; blocked data does not enter the output, and the final operations state waits for a person. Fictional source snippets and two explicitly linked sample claims are inspectable with native buttons; they are never represented as retrieved client evidence or inserted into the user's planning brief.
+
+Selections still change only through explicit controls. The Portal can return to the selected question or remove just the carried skill without losing the challenge/step. Repeated choices are no-ops and layout refresh is batched by measured geometry, not invoked on every click. Default audio, all recorded samples/long releases, Mozart, five crowns/259 particles, motion policy, viewport stability, pin geometry and existing site sections are not redesigned.
+
+Reflected colors keep their existing luminance caps but use separate spatial centroids from the actual particle frame, so cyan/gold/violet originate at their corresponding source. New source details receive the existing reading-space mix. No new sound, image, library, backend, account, analytics or submission. Quality assertions must be behavior-specific, with real browser state and exact preserved-file hashes; no physical iPhone/flash/frame-rate certification.

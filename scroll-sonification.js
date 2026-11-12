@@ -29,7 +29,7 @@
  function overlayOpen(){return !!document.querySelector('dialog[open]')||document.getElementById('menu-toggle')?.getAttribute('aria-expanded')==='true';}
  function readingFocus(){
   if(overlayOpen())return .38;
-  return [...document.querySelectorAll('.about-story[open],#brief-drawer[open],.assembly-guide[open]')].some(el=>{const r=el.getBoundingClientRect();return r.bottom>80&&r.top<innerHeight-4;})?.78:1;
+  return [...document.querySelectorAll('.about-story[open],#brief-drawer[open],.assembly-guide[open],#demo-evidence[open],#journey-brief[open]')].some(el=>{const r=el.getBoundingClientRect();return r.bottom>80&&r.top<innerHeight-4;})?.78:1;
  }
  function tick(now){
   raf=0;if(document.hidden)return;

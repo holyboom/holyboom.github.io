@@ -1,0 +1,28 @@
+{
+  "method": "Same WebKit viewport and the same four repeated selected-step clicks, with a ScrollTrigger refresh listener. No native scroll input in the repeated-input block.",
+  "baseline": {
+    "before": {
+      "updates": 3,
+      "y": 5478
+    },
+    "after": {
+      "refreshes": 20,
+      "updates": 7,
+      "y": 5478,
+      "sourceButtons": 0
+    }
+  },
+  "fixed": {
+    "before": {
+      "updates": 3,
+      "y": 5478
+    },
+    "after": {
+      "refreshes": 0,
+      "updates": 3,
+      "y": 5478,
+      "sourceButtons": 3
+    }
+  },
+  "frame_rate_claim": false
+}

@@ -71,7 +71,7 @@
  const brief = byId("project-brief");
  const drawer = byId("brief-drawer");
  document.documentElement.classList.add("js");
- let current = "operations", currentStep = 0;
+ let current = "operations", currentStep = 0, renderedStage = "";
 
  // Owner-selected always-active showcase policy. No persisted or OS setting gates it.
  const motionEnabled = true;
@@ -86,6 +86,9 @@
  function selectStep(index) {
   const row = challenges[current].stages[index];
   if (!row) return;
+  const stamp = current + ":" + index;
+  if (stamp === renderedStage) return;
+  renderedStage = stamp;
   currentStep = index;
   stepButtons.forEach((button, i) => button.setAttribute("aria-pressed", String(i === index)));
   setText("step-title", row[1]);

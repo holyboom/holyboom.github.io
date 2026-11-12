@@ -7,7 +7,7 @@ const b=await(engine==='webkit'?webkit.launch({headless:true}):chromium.launch({
  await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>window.HolyMindJourney&&HolyMindSkills.list().length===34&&HolyMindBoomAudio.snapshot().ready&&HolyMindCueTimbres.snapshot().ready);await p.waitForTimeout(1000);
  const state=()=>p.evaluate(()=>HolyMindJourney.snapshot()),audio=()=>p.evaluate(()=>HolyMindAudio.snapshot());
  const jump=async y=>{await p.evaluate(y=>{HolyMindScrollSound.suppressForNavigation();scrollTo({top:y,behavior:'instant'});},y);await p.waitForTimeout(1450);};
- check('release-v24',await p.locator('html').getAttribute('data-build')==='intent-v24');
+ check('release-v24',await p.locator('html').getAttribute('data-build')===(process.env.EXPECTED_BUILD||'intent-v24'));
  check('initial-is-generic-no-invented-choice',!(await state()).active&&await p.locator('#journey-receipt').isHidden());
  check('load-silent-no-audio-context',(await audio()).context==='uncreated');
  check('four-independent-controls',await p.locator('#sound-piano,#sound-cues,#sound-flow,#sound-ambience').count()===4);

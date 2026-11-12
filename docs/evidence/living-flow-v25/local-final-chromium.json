@@ -1,0 +1,214 @@
+{
+  "base": "http://127.0.0.1:8788/",
+  "engine": "chromium",
+  "checks": [
+    {
+      "name": "release-v25",
+      "pass": true
+    },
+    {
+      "name": "generic-load-no-choice-or-audio",
+      "pass": true
+    },
+    {
+      "name": "initial-label-is-illustrative",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-operations-0",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-operations-1",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-operations-2",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-operations-3",
+      "pass": true
+    },
+    {
+      "name": "blocked-source-operations",
+      "pass": true
+    },
+    {
+      "name": "no-approval-or-success-claim-operations",
+      "pass": true
+    },
+    {
+      "name": "claim-traces-to-source-operations",
+      "pass": true
+    },
+    {
+      "name": "keyboard-source-operations",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-knowledge-0",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-knowledge-1",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-knowledge-2",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-knowledge-3",
+      "pass": true
+    },
+    {
+      "name": "blocked-source-knowledge",
+      "pass": true
+    },
+    {
+      "name": "no-approval-or-success-claim-knowledge",
+      "pass": true
+    },
+    {
+      "name": "claim-traces-to-source-knowledge",
+      "pass": true
+    },
+    {
+      "name": "keyboard-source-knowledge",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-venture-0",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-venture-1",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-venture-2",
+      "pass": true
+    },
+    {
+      "name": "scenario-stage-venture-3",
+      "pass": true
+    },
+    {
+      "name": "blocked-source-venture",
+      "pass": true
+    },
+    {
+      "name": "no-approval-or-success-claim-venture",
+      "pass": true
+    },
+    {
+      "name": "claim-traces-to-source-venture",
+      "pass": true
+    },
+    {
+      "name": "keyboard-source-venture",
+      "pass": true
+    },
+    {
+      "name": "finite-visible-packet-transfer",
+      "pass": true,
+      "visibleFrames": 5
+    },
+    {
+      "name": "no-idle-js-paint-loop",
+      "pass": true
+    },
+    {
+      "name": "rapid-input-settles-at-last-stage",
+      "pass": true
+    },
+    {
+      "name": "evidence-inspection-never-overwrites-intent",
+      "pass": true
+    },
+    {
+      "name": "fictional-source-not-in-real-brief",
+      "pass": true
+    },
+    {
+      "name": "reading-focus-softens-field",
+      "pass": true
+    },
+    {
+      "name": "same-choice-no-redundant-refresh",
+      "pass": true,
+      "refreshes": 0,
+      "updatesBefore": 22,
+      "updatesAfter": 22
+    },
+    {
+      "name": "receipt-shows-selected-stage",
+      "pass": true
+    },
+    {
+      "name": "return-to-question-keeps-choice",
+      "pass": true
+    },
+    {
+      "name": "remove-only-skill-keeps-question",
+      "pass": true
+    },
+    {
+      "name": "reload-restores-question-without-removed-skill",
+      "pass": true
+    },
+    {
+      "name": "clear-restores-original-contact",
+      "pass": true
+    },
+    {
+      "name": "independent-reflection-origins",
+      "pass": true
+    },
+    {
+      "name": "reflection-exact-reverse-and-clear",
+      "pass": true
+    },
+    {
+      "name": "responsive-interactive-proof-320",
+      "pass": true
+    },
+    {
+      "name": "responsive-interactive-proof-390",
+      "pass": true
+    },
+    {
+      "name": "responsive-interactive-proof-768",
+      "pass": true
+    },
+    {
+      "name": "responsive-interactive-proof-1440",
+      "pass": true
+    },
+    {
+      "name": "responsive-interactive-proof-844",
+      "pass": true
+    },
+    {
+      "name": "pagehide-stops-new-transition",
+      "pass": true
+    },
+    {
+      "name": "resume-without-replaying-transfer",
+      "pass": true
+    },
+    {
+      "name": "no-new-submission",
+      "pass": true,
+      "writes": []
+    },
+    {
+      "name": "motion-stays-on",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

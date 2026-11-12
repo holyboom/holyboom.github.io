@@ -41,6 +41,9 @@
  function describe(target){
   if(!(target instanceof Element)||target.closest('.sonic-settings,.brain-trigger,#sound-toggle'))return null;
   let e;
+  if((e=target.closest('#return-to-question')))return {id:'switch',key:'journey-return',read:()=>document.activeElement?.id||''};
+  if((e=target.closest('[data-evidence-source],[data-proof-claim]')))return {id:'select',key:'proof-source',read:()=>String(window.HolyMindWorkflowProof?.snapshot().source??-1)};
+  if((e=target.closest('#remove-carried-skill')))return {id:'close',key:'journey-remove-skill',read:()=>window.HolyMindJourney?.snapshot().skill||''};
   if((e=target.closest('#carry-skill,#carry-featured')))return {id:'select',key:'journey-skill',read:()=>window.HolyMindJourney?.snapshot().skill||''};
   if((e=target.closest('#reset-journey')))return {id:'close',key:'journey-reset',read:()=>String(window.HolyMindJourney?.snapshot().active)};
   if((e=target.closest('[data-challenge]')))return {id:'switch',key:'scenario',read:()=>selected('[data-challenge][aria-selected=true]','data-challenge')};

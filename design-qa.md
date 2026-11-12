@@ -384,3 +384,14 @@ The public release must be opened and checked again; physical-iPhone or general 
 Production suites: {'live-webkit': 66, 'live-chromium': 66, 'live-stability': 25, 'live-touch': 7, 'live-reversal': 5}; total 169, zero failed checks and captured runtime errors. 42 public assets match local release bytes. Five actual screen reversal samples remain exact at the same scroll coordinates. The source-aware reflection is separately tested as a pure frame mapping. Physical iPhone testing is not claimed.
 
 A final review caught the carried indicator remaining selected when opening a different skill. The dialog now resets its status from the actual stored selection; simply inspecting another skill does not replace the carried skill. Both cases are covered in the 66-check production suites.
+
+
+## Living Workflow v25
+
+Same three-by-four Workbench becomes a finite source/gate/output interaction with real inspectable fictional snippets, output-to-source links and a visible excluded-input boundary. No example is presented as retrieved/client evidence; no approval/action is executed. Portal Return to this question and Remove this skill preserve the remaining explicit state. Source inspection is ephemeral and does not rewrite the brief.
+
+The native control test covers each scenario/stage, blocked source, claim lookup, keyboard input, finite packet motion, rapid step changes, hidden/page-return behavior, no-op repeated selections, optional reading mix, Portal return/remove/reload/reset, 320–1440 px layouts and no POST. Reused v24 suite covers four audio channels/copy fallback and state lifecycle; stability and actual reverse-particle suites retain the prior fixes. Mobile touch is emulated, not a physical phone.
+
+In the identical four-repeat same-step reproduction, v24 caused 20 global ScrollTrigger refresh events; v25 caused zero, with the choice unchanged. This measures redundant work, not user-device FPS. Default source audio, 259-particle model, Mozart and 19 core modules are byte-identical; preservation manifest lists exact scope. Color-specific material light is bounded and reverses deterministically.
+
+No physical iPhone audio, total-frame-rate, flash-threshold or full accessibility certification is claimed. Final production evidence follows publication.

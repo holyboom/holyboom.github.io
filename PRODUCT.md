@@ -230,3 +230,11 @@ Approved request: extend firework fade-out, add richer nonuniform glitter and mo
 
 ## Intent Journey v24
 One explicit Workbench challenge and carried skill persist through the scroll story to a personal, reviewable starting brief. Illustrative three-scenario source/permission/artifact visualization; four separate sound controls and optional balance levels; particle-position-based material light. All source audio/art, reversible afterglow, line-only current, always-on motion and viewport stabilization are retained. No AI request or automatic submission. Details: `docs/evidence/intent-v24/design.md`; review: `qa/intent-v24.html`.
+
+
+## Living Workflow v25 — finish the approved intent-to-artifact experience
+Continue v24 rather than introduce another theme. Existing three scenarios/four steps gain finite, interruptible source transfer; blocked data does not enter the output, and the final operations state waits for a person. Fictional source snippets and two explicitly linked sample claims are inspectable with native buttons; they are never represented as retrieved client evidence or inserted into the user's planning brief.
+
+Selections still change only through explicit controls. The Portal can return to the selected question or remove just the carried skill without losing the challenge/step. Repeated choices are no-ops and layout refresh is batched by measured geometry, not invoked on every click. Default audio, all recorded samples/long releases, Mozart, five crowns/259 particles, motion policy, viewport stability, pin geometry and existing site sections are not redesigned.
+
+Reflected colors keep their existing luminance caps but use separate spatial centroids from the actual particle frame, so cyan/gold/violet originate at their corresponding source. New source details receive the existing reading-space mix. No new sound, image, library, backend, account, analytics or submission. Quality assertions must be behavior-specific, with real browser state and exact preserved-file hashes; no physical iPhone/flash/frame-rate certification.

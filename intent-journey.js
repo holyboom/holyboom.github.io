@@ -18,7 +18,7 @@
    sources:['Hypothesis','Constraint','Unproven'],outputs:['QUESTION','PROTOTYPE','NOTES','DECIDE'],
    evidence:['Hypothesis: an illustrative assumption that needs user research.','Constraint: approved data and a narrow integration boundary.','No trial, customer result, conversion uplift or return on investment is claimed.']}
  };
- let selected={version:1,challenge:null,skill:null,step:0},pendingSkill=null,updates=0,carrier=null,carrierIcon=null,lastCarrier='';
+ let selected={version:1,challenge:null,skill:null,step:0},pendingSkill=null,updates=0,carrier=null,carrierIcon=null,lastCarrier='',lastDemo='';
  try{const s=JSON.parse(sessionStorage.getItem(key)||'null');if(s?.version===1){selected.challenge=Object.hasOwn(stories,s.challenge)?s.challenge:null;selected.step=Number.isInteger(s.step)&&s.step>=0&&s.step<4?s.step:0;if(typeof s.skill==='string'&&/^[a-z0-9-]{1,70}$/.test(s.skill))pendingSkill=s.skill;}}catch(_){}
  const receipt=q('#journey-receipt'),thread=q('#journey-thread'),heading=q('#connect-heading'),intro=q('#connect-heading')?.nextElementSibling,portalIcon=q('.portal-depth>img'),portalLabel=q('.portal-caption');
  const defaults={heading:heading?.innerHTML,intro:intro?.innerHTML,icon:portalIcon?.getAttribute('src'),label:portalLabel?.textContent};
@@ -26,7 +26,14 @@
  const skill=()=>catalog().find(x=>x.id===selected.skill)||null;
  const hasChoice=()=>!!(selected.challenge||selected.skill);
  const save=()=>{if(pendingSkill)return;try{if(hasChoice())sessionStorage.setItem(key,JSON.stringify(selected));else sessionStorage.removeItem(key);}catch(_){}};
- const refresh=()=>requestAnimationFrame(()=>window.ScrollTrigger?.refresh());
+ let refreshFrame=0,layoutStamp='',layoutRefreshes=0;
+ // Batch actual layout changes; repeating a choice must not rebuild scroll geometry.
+ function refresh(){if(refreshFrame)return;refreshFrame=requestAnimationFrame(()=>{
+  refreshFrame=0;const nodes=[q('#strategy-panel'),q('#framework'),q('#about'),q('#connect'),q('.contact-portal'),receipt];
+  const top=el=>{let n=0;for(let x=el;x;x=x.offsetParent)n+=x.offsetTop;return n;};
+  const stamp=nodes.map(el=>el?[top(el),el.offsetWidth,el.offsetHeight].join(':'):'-').join('|');
+  if(stamp===layoutStamp)return;layoutStamp=stamp;layoutRefreshes++;window.ScrollTrigger?.refresh();
+ });}
  host.hidden=false;
  host.innerHTML=`<div class="demo-topline"><span id="demo-phase">REQUESTS</span><span>Illustrative · no AI request</span></div>
  <svg viewBox="0 0 600 235" class="intent-diagram" aria-hidden="true" focusable="false">
@@ -45,6 +52,7 @@
  const positions=[[[22,12,-9],[58,100,7],[166,90,-5]],[[54,33,0],[54,120,0],[210,153,0]],[[56,35,0],[56,120,0],[210,153,0]],[[56,35,0],[56,120,0],[210,153,0]]];
  function renderDemo(){
   const s=work.snapshot(),story=stories[s.challenge],stage=story.stages[s.step];
+  const stamp=s.challenge+':'+s.step+':'+(innerWidth<=680);if(stamp===lastDemo)return;lastDemo=stamp;
   host.dataset.demoChallenge=s.challenge;host.dataset.stage=String(s.step);
   q('#demo-phase').textContent=stage[0];q('#demo-meaning').textContent=stage[1];q('#demo-boundary').textContent=stage[2];q('#demo-output').textContent=story.outputs[s.step];
   q('#demo-artifact-icon').setAttribute('href','assets/skills/'+s.skills[s.step][0]+'.webp');
@@ -61,7 +69,7 @@
   host.querySelectorAll('[data-source-label]').forEach((el,i)=>el.textContent=story.sources[i]);
   const evidence=q('.demo-evidence-content');evidence.replaceChildren();story.evidence.forEach((text,i)=>{const p=document.createElement('p');const b=document.createElement('strong');b.textContent=story.sources[i]+'. ';p.append(b,document.createTextNode(text));evidence.append(p);});
  }
- receipt.innerHTML=`<div class="receipt-heading"><img id="receipt-icon" src="assets/skills/the-crystallizer.webp" width="42" height="42" alt=""><div><p>Your next step</p><h3 id="receipt-title"></h3></div></div><p id="receipt-interest"></p><div class="receipt-actions"><button id="copy-journey" type="button">Copy this starting brief</button><button id="reset-journey" type="button">Clear choices</button></div><details id="journey-brief"><summary>Review the brief</summary><label class="sr-journey" for="journey-brief-text">Your illustrative starting brief</label><textarea id="journey-brief-text" readonly rows="7"></textarea></details><p id="journey-copy-status" class="journey-status" role="status">Nothing is sent. Choices stay in this tab.</p>`;
+ receipt.innerHTML=`<div class="receipt-heading"><img id="receipt-icon" src="assets/skills/the-crystallizer.webp" width="42" height="42" alt=""><div><p>Your next step</p><h3 id="receipt-title"></h3></div></div><p id="receipt-interest"></p><p id="receipt-context" class="receipt-context"></p><div class="receipt-edit"><a id="return-to-question" href="#strategy-panel">Return to this question</a><button type="button" id="remove-carried-skill" hidden>Remove this skill</button></div><div class="receipt-actions"><button id="copy-journey" type="button">Copy this starting brief</button><button id="reset-journey" type="button">Clear choices</button></div><details id="journey-brief"><summary>Review the brief</summary><label class="sr-journey" for="journey-brief-text">Your illustrative starting brief</label><textarea id="journey-brief-text" readonly rows="7"></textarea></details><p id="journey-copy-status" class="journey-status" role="status">Nothing is sent. Choices stay in this tab.</p>`;
  const caption=q('.instrument-caption'),carryFeatured=document.createElement('button');carryFeatured.type='button';carryFeatured.id='carry-featured';carryFeatured.className='text-button carry-featured';carryFeatured.textContent='Carry this skill into my brief';caption?.append(carryFeatured);
  function related(){
   const ids=selected.challenge?work.snapshot().skills.map(x=>x[0]):[];
@@ -83,6 +91,9 @@
   if(active){
    heading.innerHTML=story?.heading||'Start with<br>a better question.';intro.textContent=story?.intro||'Bring the skill that caught your attention. We can find the question it should serve.';
    q('#receipt-icon').src='assets/skills/'+icon+'.webp';q('#receipt-title').textContent=story?.label||info?.name||'Your next question';
+   q('#receipt-context').textContent=story?'Explored: '+work.snapshot().stages[selected.step][0]+' · '+(selected.step+1)+' / 4. Illustration, not an executed result.':'Your question is still open. No workflow has been chosen.';
+   q('#return-to-question').textContent=story?'Return to this question':'Choose a question';
+   q('#remove-carried-skill').hidden=!info;
    q('#receipt-interest').textContent=info?'Interested skill: '+info.name+'.': 'Choose a skill as you explore, or begin with this question.';
    portalIcon.src='assets/skills/'+icon+'.webp';portalLabel.textContent='YOUR INTENT, READY TO DISCUSS';
    thread.textContent='Carrying: '+(story?.label||'An open question')+(info?' · '+info.name:'')+'. Kept in this tab.';
@@ -96,12 +107,13 @@
  }
  function chooseSkill(id){
   const found=catalog().find(s=>s.id===id);if(!found)return false;
+  if(selected.skill===id)return true;
   selected.skill=id;update();q('#carry-skill-status').textContent=found.name+' is carried in your brief.';return true;
  }
  function onChoice(e){
   if(!e.isTrusted)return;
   if(e.type==='keydown'&&!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(e.key))return;
-  if(e.target.closest('[data-challenge],[data-step]')){const s=work.snapshot();selected.challenge=s.challenge;selected.step=s.step;update();}
+  if(e.target.closest('[data-challenge],[data-step]')){const s=work.snapshot();if(selected.challenge===s.challenge&&selected.step===s.step)return;selected.challenge=s.challenge;selected.step=s.step;update();}
  }
  document.addEventListener('click',onChoice);document.addEventListener('keydown',onChoice);
  document.addEventListener('holymind:step',renderDemo);
@@ -115,6 +127,8 @@
   try{if(!navigator.clipboard||!isSecureContext)throw Error('unavailable');await navigator.clipboard.writeText(text);status.textContent='Brief copied. Paste it into a conversation with Boom.';}
   catch(_){q('#journey-brief').open=true;area.focus();area.select();status.textContent='Select and copy the brief here. Nothing has been sent.';refresh();}
  });
+ q('#remove-carried-skill').addEventListener('click',()=>{if(!selected.skill)return;selected.skill=null;pendingSkill=null;update();q('#return-to-question').focus({preventScroll:true});});
+ q('#return-to-question').addEventListener('click',e=>{e.preventDefault();window.HolyMindScrollSound?.suppressForNavigation();const el=q('[data-challenge][aria-selected=true]');if(el){el.focus({preventScroll:true});el.scrollIntoView({behavior:'smooth',block:'center'});}});
  q('#reset-journey').addEventListener('click',()=>{selected={version:1,challenge:null,skill:null,step:0};pendingSkill=null;work.selectChallenge('operations');q('#connect .button-primary')?.focus({preventScroll:true});update();});
  q('#demo-evidence').addEventListener('toggle',refresh);q('#journey-brief').addEventListener('toggle',refresh);
  if('IntersectionObserver'in window)new IntersectionObserver(rows=>rows.forEach(r=>host.dataset.playing=String(r.isIntersecting&&!document.hidden)),{rootMargin:'50px'}).observe(host);
@@ -133,7 +147,7 @@
   const id=selected.skill||stories[selected.challenge]?.icon||'',stamp=active+':'+id;
   if(stamp===lastCarrier)return;lastCarrier=stamp;carrier.setAttribute('opacity',active?'0.85':'0');if(active)carrierIcon.setAttribute('href','assets/skills/'+id+'.webp');
  }
- window.HolyMindJourney=Object.freeze({version:'intent-v24',renderCarrier,enrichBrief(text){const info=skill();return info?text+'\nInterested HolyMind skill: '+info.name+'.\nThis preference is exploratory, not a validated system recommendation.':text;},snapshot:()=>({...selected,active:hasChoice(),updates,storage:'sessionStorage',transmitsData:false,brief:brief()})});
+ window.HolyMindJourney=Object.freeze({version:'living-flow-v25',renderCarrier,enrichBrief(text){const info=skill();return info?text+'\nInterested HolyMind skill: '+info.name+'.\nThis preference is exploratory, not a validated system recommendation.':text;},snapshot:()=>({...selected,active:hasChoice(),updates,storage:'sessionStorage',transmitsData:false,layoutRefreshes,brief:brief()})});
  if(selected.challenge){work.selectChallenge(selected.challenge);work.selectStep(selected.step);}
  if(pendingSkill&&catalog().length){if(catalog().some(s=>s.id===pendingSkill))selected.skill=pendingSkill;pendingSkill=null;}
  renderDemo();update();invitation();

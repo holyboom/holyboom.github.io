@@ -1,0 +1,18 @@
+{
+  "release": "living-flow-v25",
+  "name": "HolyMind \u2014 Living Workflow",
+  "status": "Local verification passed; production verification pending",
+  "baseline": "0519c55ba3d4120c411f3f9851fdd53347886e68",
+  "local_checks": {
+    "final-webkit": 50,
+    "final-chromium": 50,
+    "regression-intent": 66,
+    "regression-stability": 25,
+    "regression-reversal": 5,
+    "regression-touch": 7
+  },
+  "total_local_checks": 203,
+  "new_source_to_artifact_examples": 3,
+  "steps_per_example": 4,
+  "physical_iphone_tested": false
+}

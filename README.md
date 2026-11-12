@@ -126,3 +126,7 @@ Afterglow v23: longer real-firework tails and a deterministic falling glitter fi
 
 ## Intent Journey v24
 One explicit Workbench challenge and carried skill persist through the scroll story to a personal, reviewable starting brief. Illustrative three-scenario source/permission/artifact visualization; four separate sound controls and optional balance levels; particle-position-based material light. All source audio/art, reversible afterglow, line-only current, always-on motion and viewport stabilization are retained. No AI request or automatic submission. Details: `docs/evidence/intent-v24/design.md`; review: `qa/intent-v24.html`.
+
+
+## Living Workflow v25
+The approved intent journey now includes finite source transfers, fictional source/claim inspection, an explicit excluded-input boundary, and a return path from Portal without resetting choices. The sound/particle/viewport baseline is retained. Review `qa/living-flow-v25.html` and `docs/evidence/living-flow-v25/summary.json`.
