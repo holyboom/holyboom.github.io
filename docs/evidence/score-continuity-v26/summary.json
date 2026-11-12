@@ -1,6 +1,6 @@
 {
   "release": "score-continuity-v26",
-  "status": "Local verification passed; production verification pending",
+  "status": "Published and verified",
   "local_checks": {
     "check-webkit": 21,
     "check-chromium": 21,
@@ -51,5 +51,33 @@
       }
     }
   ],
-  "physical_iphone_tested": false
+  "physical_iphone_tested": false,
+  "implementation_commit": "79af978f89823ca5d14c84f757b7c92d6a31a643",
+  "verified_at": "2026-11-12T04:53:13.546392+00:00",
+  "url": "https://holyboom.github.io/?v=score-continuity-v26#about",
+  "live_checks": {
+    "live-webkit": 21,
+    "live-chromium": 21,
+    "live-touch": 6
+  },
+  "total_live_checks": 48,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "matched_public_runtime_files": 8,
+  "preserved": {
+    "score_order_and_tempo": true,
+    "piano_gain": true,
+    "natural_piano_release": true,
+    "firework_recordings_and_long_tails": true,
+    "line_only_current_plus_8db": true,
+    "all_visual_effects": true,
+    "one_audio_context": true,
+    "mute_and_no_autoplay": true
+  },
+  "limitations": {
+    "physical_iphone_tested": false,
+    "subjective_listening_tested": false,
+    "all_device_cases_guaranteed": false,
+    "note": "Reproduced with real browser input and simulated mobile viewport height changes. Native touch emulation was also tested. This fixes a demonstrated cause; the specific physical iPhone session was not instrumented."
+  }
 }

@@ -1,0 +1,50 @@
+[
+  {
+    "file": "index.html",
+    "match": true,
+    "sha256": "84ce15345f5421c599e971bb632c4f847933faa37d70b41349fc09d980899194",
+    "bytes": 43143
+  },
+  {
+    "file": "scroll-sonification.js",
+    "match": true,
+    "sha256": "be2998cf7d88aab2c7e9ce46a5db5b49401845aae1d7a235c1d5c257334f1d7d",
+    "bytes": 8743
+  },
+  {
+    "file": "holymind-scroll-score.js",
+    "match": true,
+    "sha256": "5876069240b24c49179de01ba0c8cd034db651eba723ea13a61283ce3a7ba000",
+    "bytes": 9132
+  },
+  {
+    "file": "holymind-audio.js",
+    "match": true,
+    "sha256": "90c345444b3bd473e1251f0df88aa98970a9bb069a9ce53b8fc54a98aa11a91d",
+    "bytes": 19321
+  },
+  {
+    "file": "holymind-soundscape.js",
+    "match": true,
+    "sha256": "e7f352c141796dfba217ae68fdd3ed67f0902644e8a42efb2a3ba5d225a80b88",
+    "bytes": 10666
+  },
+  {
+    "file": "viewport-stability.js",
+    "match": true,
+    "sha256": "2aa9862ee88a188ba28d07e2061c284326f7d50168ce0731ff2b90e6cbe4b376",
+    "bytes": 1134
+  },
+  {
+    "file": "boom-audio.js",
+    "match": true,
+    "sha256": "f4fe31fb21c48e8ba760adc6ecdf95111bd36716fb8393a7950933930ec4b293",
+    "bytes": 6610
+  },
+  {
+    "file": "boom-particles.js",
+    "match": true,
+    "sha256": "580ba8603ec99d8de17a1bf41a3092ee8dcd8830d633f55ffeabc66a3c141445",
+    "bytes": 6017
+  }
+]

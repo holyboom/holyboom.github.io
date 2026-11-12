@@ -402,3 +402,12 @@ No physical iPhone audio, total-frame-rate, flash-threshold or full accessibilit
 Live checks: {'live-webkit': 50, 'live-chromium': 50, 'live-stability': 25, 'live-touch': 7, 'live-reversal': 5}; total 137, zero failed assertions/runtime errors. 42 public runtime/Studio assets match the final implementation. Five actual reverse-particle coordinate samples have maximum difference 0 CSS pixels. Current mobile/desktop screenshots in this release directory were replaced with production captures.
 
 The source/claim inspection, latest-step transfer, independent skill removal, return-to-question focus, no-op repeated input, hidden/resume behavior and optional reading mix were checked alongside retained viewport, touch and reverse behavior. Original recorded sound assets and nineteen core modules are byte-identical. No physical iPhone or subjective/flash certification claimed.
+
+
+## Scroll Continuity v26 — piano after Boom
+
+Reproduced: native scroll after fireworks plus repeated height-only viewport changes cleared the audio input lease. WebKit added no notes in the affected sampled interval (52 → 52), even while scrollY advanced; the repaired identical input sequence added notes (52 → 75) and all eight sampled scroll states remained accepted. Chromium's intermittent rejected input was also eliminated in that sequence. These are browser reproductions, not a physical iPhone observation.
+
+The audio resize handler now uses the existing stable viewport revision. It does not reset the current gesture/inertial scroll lease for browser chrome changes; it neither invents nor extends a gesture. Actual width/orientation changes still remeasure and suppress layout-only movement. Score engine, audio routing/gains, all sixteen listed core modules and 160 audio assets are unchanged.
+
+Local: 177 passed checks, including score pause/resume and line-only electrical gate regression. Production: 21 WebKit + 21 Chromium + 6 native touch emulation checks; no failed assertion/runtime error. Eight public runtime files match the release. Sound still requires first gesture, explicit mute wins, pause preserves piano decay, and orientation/no-input resize does not start a song. Physical iPhone sound/performance remains unverified.
