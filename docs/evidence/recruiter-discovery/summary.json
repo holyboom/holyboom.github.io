@@ -1,17 +1,127 @@
 {
-  "status": "Local verification passed; publication pending",
-  "readme_words": 349,
-  "readme_contains_version_history": false,
-  "profile_urls": [
-    "https://holyboom.github.io/profile/",
-    "https://holyboom.github.io/th/profile/"
-  ],
-  "local_checks": {
-    "local-webkit": 48,
-    "local-chromium": 48
+  "status": "Published and verified",
+  "updated_at": "2026-11-12T10:32:38.349033+00:00",
+  "implementation_commit": "0217e90234e19c6f44b25bc3eaec21f6d0ba1cbf",
+  "readme": {
+    "url": "https://github.com/holyboom/holyboom.github.io#readme",
+    "words": 349,
+    "version_history_visible": false,
+    "release_history_link_visible": false,
+    "version_specific_verification_link_visible": false,
+    "original_editorial_artwork_retained": true,
+    "focus": "Professional identity, role fit, engineering capabilities, inspectable public work and LinkedIn contact."
   },
-  "total_local_checks": 96,
-  "search_ranking_verified": false,
-  "indexing_verified": false,
-  "private_material_published": false
+  "profiles": {
+    "english": "https://holyboom.github.io/profile/",
+    "thai": "https://holyboom.github.io/th/profile/",
+    "plain_text": "https://holyboom.github.io/profile/summary.txt",
+    "languages_fully_translated": true,
+    "server_rendered_and_usable_without_javascript": true,
+    "separate_from_long_scroll_showcase": true
+  },
+  "positioning": {
+    "name": "Theerawee Rangram (Boom)",
+    "thai_name": "ธีรวีร์ รางแรม",
+    "primary_role": "AI Engineer and AI Solutions Architect",
+    "location": "Bangkok, Thailand",
+    "role_fit": [
+      "AI Solutions Architect",
+      "AI Engineer",
+      "GenAI Engineer",
+      "Forward Deployed Engineer",
+      "AI Transformation Consultant"
+    ],
+    "experience_scope": "9+ years of enterprise software delivery, not nine years of foundation-model research. Career history is self-reported; public examples are labeled illustrative.",
+    "contact": "https://www.linkedin.com/in/boom-theerawee"
+  },
+  "github_profile": {
+    "login": "holyboom",
+    "name": "Theerawee Rangram (Boom)",
+    "bio": "AI Engineer & AI Solutions Architect in Bangkok. Creator of HolyMind. GenAI, agentic workflows, evaluation and enterprise automation.",
+    "blog": "https://holyboom.github.io/profile/",
+    "location": "Bangkok, Thailand"
+  },
+  "github_repository": {
+    "full_name": "holyboom/holyboom.github.io",
+    "description": "Theerawee Rangram (Boom) — AI Engineer & AI Solutions Architect, Bangkok. GenAI, agentic workflows, LLM evaluation and enterprise automation. Recruiter profile and HolyMind portfolio.",
+    "homepage": "https://holyboom.github.io/",
+    "topics": [
+      "agentic-ai",
+      "ai-engineering",
+      "ai-governance",
+      "ai-solutions-architect",
+      "bangkok",
+      "generative-ai",
+      "holymind",
+      "llm-evaluation",
+      "portfolio",
+      "workflow-automation"
+    ]
+  },
+  "discovery": {
+    "main_title_and_description_updated": true,
+    "consistent_person_entity": true,
+    "self_canonical_and_reciprocal_hreflang": true,
+    "curated_sitemap_urls": 3,
+    "oai_searchbot": "Already allowed, confirmed and preserved; not newly enabled.",
+    "training_policy_changed": false,
+    "llms_txt": "Factual convenience summary only; no ranking or model-obedience instructions.",
+    "indexnow": {
+      "submitted_at": "2026-11-12T10:30:56.195133+00:00",
+      "endpoint": "https://api.indexnow.org/indexnow",
+      "urlList": [
+        "https://holyboom.github.io/",
+        "https://holyboom.github.io/profile/",
+        "https://holyboom.github.io/th/profile/"
+      ],
+      "ownership_file_verified": true,
+      "http_status": 202,
+      "response": "",
+      "accepted": true,
+      "indexing_confirmed": false,
+      "rank_confirmed": false,
+      "interpretation": "HTTP 202 means URLs received and IndexNow ownership-key validation pending. No proof of crawling, indexing or placement."
+    },
+    "google_search_console_property_connected": false,
+    "bing_webmaster_property_connected": false,
+    "new_indexing_verified": false,
+    "rank_improvement_measured": false,
+    "first_place_guaranteed": false
+  },
+  "safety": {
+    "private_contact_or_cv_files_published": false,
+    "private_framework_repository_published": false,
+    "paid_ads_or_mass_outreach": false,
+    "fabricated_credentials_or_results": false,
+    "no_model_prompt_injection": true
+  },
+  "verification": {
+    "local_checks": 96,
+    "live_checks": {
+      "live-webkit": 48,
+      "live-chromium": 48
+    },
+    "total_live_checks": 96,
+    "failed": 0,
+    "runtime_errors": 0,
+    "actual_github_profile_and_readme": {
+      "readme": {
+        "name": true,
+        "role": true,
+        "no_versions": true,
+        "profile_link": true,
+        "images": 2
+      },
+      "profile": {
+        "name": true,
+        "role": true,
+        "link": true
+      },
+      "all_pass": true
+    },
+    "public_runtime_files_hash_matched": 10,
+    "unchanged_original_runtime_and_assets": 306,
+    "physical_device_tested": false
+  },
+  "limits": "A public HTTP/browser pass and IndexNow receipt do not prove Google/Bing indexing, AI citation or rank. Owner-authorized Search Console/Bing Webmaster property access is not connected in this session. No promise that all HR searches will return this profile first."
 }

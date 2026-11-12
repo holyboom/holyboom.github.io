@@ -1,0 +1,15 @@
+{
+  "readme": {
+    "name": true,
+    "role": true,
+    "no_versions": true,
+    "profile_link": true,
+    "images": 2
+  },
+  "profile": {
+    "name": true,
+    "role": true,
+    "link": true
+  },
+  "all_pass": true
+}

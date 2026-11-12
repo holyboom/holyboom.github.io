@@ -1,0 +1,16 @@
+{
+  "submitted_at": "2026-11-12T10:30:56.195133+00:00",
+  "endpoint": "https://api.indexnow.org/indexnow",
+  "urlList": [
+    "https://holyboom.github.io/",
+    "https://holyboom.github.io/profile/",
+    "https://holyboom.github.io/th/profile/"
+  ],
+  "ownership_file_verified": true,
+  "http_status": 202,
+  "response": "",
+  "accepted": true,
+  "indexing_confirmed": false,
+  "rank_confirmed": false,
+  "interpretation": "HTTP 202 means URLs received and IndexNow ownership-key validation pending. No proof of crawling, indexing or placement."
+}

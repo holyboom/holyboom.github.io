@@ -1,0 +1,62 @@
+[
+  {
+    "path": "README.md",
+    "status": 200,
+    "content_type": "text/markdown; charset=utf-8",
+    "matches_source": true
+  },
+  {
+    "path": "profile/",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "matches_source": true
+  },
+  {
+    "path": "th/profile/",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "matches_source": true
+  },
+  {
+    "path": "profile/summary.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "matches_source": true
+  },
+  {
+    "path": "profile/person.json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "matches_source": true
+  },
+  {
+    "path": "profile-schema.json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "matches_source": true
+  },
+  {
+    "path": "sitemap.xml",
+    "status": 200,
+    "content_type": "application/xml",
+    "matches_source": true
+  },
+  {
+    "path": "robots.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "matches_source": true
+  },
+  {
+    "path": "llms.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "matches_source": true
+  },
+  {
+    "path": "assets/profile/profile.css",
+    "status": 200,
+    "content_type": "text/css; charset=utf-8",
+    "matches_source": true
+  }
+]
