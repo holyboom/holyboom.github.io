@@ -1,0 +1,32 @@
+{
+  "base": "http://127.0.0.1:8786/",
+  "checks": [
+    {
+      "name": "actual-screen-reverse-0.82",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.64",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.5",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.38",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.22",
+      "pass": true,
+      "maxDifference": 0
+    }
+  ],
+  "failed": [],
+  "errors": []
+}

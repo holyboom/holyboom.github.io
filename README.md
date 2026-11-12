@@ -119,3 +119,6 @@ Fixes transient mobile viewport changes rebuilding the distant pin/scroll geomet
 
 ## Grand Boom v22
 Larger alternating fireworks with real recorded high-toned rocket/crackle cues. Try `qa/grand-boom-v22.html`; source credits are linked in `audio-credits.html`. Native-scroll reversal and v21 viewport stability are retained.
+
+
+Afterglow v23: longer real-firework tails and a deterministic falling glitter finale. Review `qa/afterglow-v23.html` and `docs/evidence/afterglow-v23/summary.json`.

@@ -1,0 +1,33 @@
+{
+  "baseline": "9f74d18cbffbdd96c74b4dc730aada3f197ab691",
+  "unchanged_modules": [
+    "energy-field.js",
+    "viewport-stability.js",
+    "holymind-timbres.js",
+    "holymind-scroll-score.js",
+    "ambient-current.js",
+    "interaction-feedback.js",
+    "assembly-lab.js",
+    "brain-reactions.js",
+    "neural-core.js",
+    "continuity.js",
+    "soundscape-scenes.js",
+    "scroll-motion.js",
+    "assembly-scroll.js",
+    "holymind-soundscape.js",
+    "holymind-audio.js",
+    "site.js",
+    "showcase.js",
+    "scroll-sonification.js",
+    "mozart-score-data.js",
+    "holymind-cues.js",
+    "style.css",
+    "showcase.css",
+    "boom-celebration.css",
+    "continuity.css",
+    "assembly-lab.css"
+  ],
+  "images": 37,
+  "no_pin_or_viewport_edits": true,
+  "all_previous_audio_assets_unchanged": true
+}

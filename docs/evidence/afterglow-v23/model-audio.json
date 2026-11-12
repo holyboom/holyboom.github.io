@@ -1,0 +1,361 @@
+{
+  "release": "afterglow-v23",
+  "checks": [
+    {
+      "name": "finite-fade-launch:0",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-launch:1",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-launch:2",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-launch:3",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-launch:4",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-burst:0",
+      "pass": true
+    },
+    {
+      "name": "audible-extended-tail-burst:0",
+      "pass": true,
+      "before": 1.35,
+      "after": 2.25,
+      "extendedRms": 0.0002974486582397633
+    },
+    {
+      "name": "accepted-attack-preserved-0",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "finite-fade-gather:0",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-return:0",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-burst:1",
+      "pass": true
+    },
+    {
+      "name": "audible-extended-tail-burst:1",
+      "pass": true,
+      "before": 0.85,
+      "after": 1.45,
+      "extendedRms": 0.0010984107201751094
+    },
+    {
+      "name": "accepted-attack-preserved-1",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "finite-fade-gather:1",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-return:1",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-burst:2",
+      "pass": true
+    },
+    {
+      "name": "audible-extended-tail-burst:2",
+      "pass": true,
+      "before": 1.6,
+      "after": 2.75,
+      "extendedRms": 0.0003280248374102703
+    },
+    {
+      "name": "accepted-attack-preserved-2",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "finite-fade-gather:2",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-return:2",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-burst:3",
+      "pass": true
+    },
+    {
+      "name": "audible-extended-tail-burst:3",
+      "pass": true,
+      "before": 1,
+      "after": 1.75,
+      "extendedRms": 0.0007031998219239597
+    },
+    {
+      "name": "accepted-attack-preserved-3",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "finite-fade-gather:3",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-return:3",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-burst:4",
+      "pass": true
+    },
+    {
+      "name": "audible-extended-tail-burst:4",
+      "pass": true,
+      "before": 1.85,
+      "after": 3.7,
+      "extendedRms": 0.00236682340884733
+    },
+    {
+      "name": "accepted-attack-preserved-4",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "finite-fade-gather:4",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-return:4",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-charge:0",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-glitter:0",
+      "pass": true
+    },
+    {
+      "name": "audible-extended-tail-glitter:0",
+      "pass": true,
+      "before": 1.4,
+      "after": 4.2,
+      "extendedRms": 0.0017592529327704225
+    },
+    {
+      "name": "finite-fade-recall:0",
+      "pass": true
+    },
+    {
+      "name": "finite-fade-seal:0",
+      "pass": true
+    },
+    {
+      "name": "finale-longest-burst",
+      "pass": true
+    },
+    {
+      "name": "all-five-bursts-unique",
+      "pass": true
+    },
+    {
+      "name": "bank-hash",
+      "pass": true
+    },
+    {
+      "name": "same-source-provenance",
+      "pass": true
+    },
+    {
+      "name": "glitter-increased",
+      "pass": true
+    },
+    {
+      "name": "large-small-order-unchanged",
+      "pass": true
+    },
+    {
+      "name": "deterministic-0.2",
+      "pass": true
+    },
+    {
+      "name": "deterministic-0.4",
+      "pass": true
+    },
+    {
+      "name": "deterministic-0.6",
+      "pass": true
+    },
+    {
+      "name": "deterministic-0.8",
+      "pass": true
+    },
+    {
+      "name": "deterministic-0.87",
+      "pass": true
+    },
+    {
+      "name": "deterministic-0.93",
+      "pass": true
+    },
+    {
+      "name": "deterministic-0.97",
+      "pass": true
+    },
+    {
+      "name": "deterministic-0.995",
+      "pass": true
+    },
+    {
+      "name": "finale-has-falling-trails",
+      "pass": true
+    },
+    {
+      "name": "substantial-final-fall",
+      "pass": true,
+      "meanFall": 164.31256544546693
+    },
+    {
+      "name": "late-sparkle-lingers",
+      "pass": true,
+      "before": 125,
+      "after": 231
+    },
+    {
+      "name": "twinkle-multiple-peaks",
+      "pass": true,
+      "peaks": 6
+    },
+    {
+      "name": "endpoints-fully-clear",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "rows": [
+    {
+      "key": "burst:0",
+      "duration": 2.25,
+      "tailValues": [
+        {
+          "remaining": 0.25,
+          "rms": 0.00003232379175463083
+        },
+        {
+          "remaining": 0.5,
+          "rms": 0.0001533426058004658
+        },
+        {
+          "remaining": 0.75,
+          "rms": 0.0004785751880935071
+        }
+      ]
+    },
+    {
+      "key": "burst:1",
+      "duration": 1.45,
+      "tailValues": [
+        {
+          "remaining": 0.25,
+          "rms": 0.0005817209737025766
+        },
+        {
+          "remaining": 0.5,
+          "rms": 0.00024321433351555844
+        },
+        {
+          "remaining": 0.75,
+          "rms": 0.008482294119930687
+        }
+      ]
+    },
+    {
+      "key": "burst:2",
+      "duration": 2.75,
+      "tailValues": [
+        {
+          "remaining": 0.25,
+          "rms": 0.00019322612133265465
+        },
+        {
+          "remaining": 0.5,
+          "rms": 0.00011536682817759309
+        },
+        {
+          "remaining": 0.75,
+          "rms": 0.00016737785754887611
+        }
+      ]
+    },
+    {
+      "key": "burst:3",
+      "duration": 1.75,
+      "tailValues": [
+        {
+          "remaining": 0.25,
+          "rms": 0.000050080968776397667
+        },
+        {
+          "remaining": 0.5,
+          "rms": 0.0005301203231511715
+        },
+        {
+          "remaining": 0.75,
+          "rms": 0.0036407129538906674
+        }
+      ]
+    },
+    {
+      "key": "burst:4",
+      "duration": 3.7,
+      "tailValues": [
+        {
+          "remaining": 0.25,
+          "rms": 0.00022728824389415799
+        },
+        {
+          "remaining": 0.5,
+          "rms": 0.0002979227278068942
+        },
+        {
+          "remaining": 0.75,
+          "rms": 0.00032012813791311835
+        }
+      ]
+    },
+    {
+      "key": "glitter:0",
+      "duration": 4.2,
+      "tailValues": [
+        {
+          "remaining": 0.25,
+          "rms": 0.0000375445804582739
+        },
+        {
+          "remaining": 0.5,
+          "rms": 0.0002713909794684709
+        },
+        {
+          "remaining": 0.75,
+          "rms": 0.0007433580365277221
+        }
+      ]
+    }
+  ],
+  "particleCount": 259,
+  "source": "Production PCM and deterministic geometry, compared with v22"
+}

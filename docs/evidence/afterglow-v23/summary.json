@@ -1,0 +1,26 @@
+{
+  "release": "afterglow-v23",
+  "status": "Local verification passed; production verification pending",
+  "local_checks": {
+    "local-chromium": 58,
+    "local-webkit": 58,
+    "playback-webkit": 12,
+    "stability": 25,
+    "reversal": 5,
+    "native-touch": 7
+  },
+  "total_local_checks": 165,
+  "model_audio_checks": 54,
+  "particle_count": 259,
+  "glitter_before": 64,
+  "glitter_after": 91,
+  "burst_durations": [
+    2.25,
+    1.45,
+    2.75,
+    1.75,
+    3.7
+  ],
+  "glitter_duration": 4.2,
+  "physical_iphone_tested": false
+}

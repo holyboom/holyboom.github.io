@@ -31,7 +31,7 @@
   if(f.halo>.005){const x=box.wordLeft+box.wordWidth*.52,y=box.wordTop-55;ctx.globalAlpha=f.halo*.12;ctx.drawImage(glows[0],x-140,y-90,280,180);}
   if(f.charge>.001){const a=box.anchor,r=10+f.charge*8;ctx.globalAlpha=f.charge*.7;ctx.strokeStyle=model.palette[1];ctx.lineWidth=1;ctx.beginPath();ctx.arc(a.x,a.y,r*(1.8-f.charge*.8),0,Math.PI*2);ctx.stroke();shape(a.x,a.y,3+f.charge*2,4,f.charge*.9,true);}
   for(const trail of f.trails){ctx.globalAlpha=trail.alpha*.68;ctx.strokeStyle=model.palette[trail.color];ctx.lineWidth=1.65;ctx.beginPath();trail.points.forEach((p,i)=>i?ctx.lineTo(Math.round(p.x*2)/2,Math.round(p.y*2)/2):ctx.moveTo(p.x,p.y));ctx.stroke();}
-  for(const p of f.particles){if(p.alpha<.007)continue;if(p.shape==='line'){ctx.globalAlpha=p.alpha*.65;ctx.strokeStyle=model.palette[p.color];ctx.lineWidth=1.05;ctx.beginPath();ctx.moveTo(p.x-p.dx,p.y-p.dy);ctx.lineTo(p.x,p.y);ctx.stroke();}shape(p.x,p.y,p.size,p.color,p.alpha,p.shape==='diamond');}
+  for(const p of f.particles){if(p.alpha<.007)continue;if(p.shape==='line'||p.shape==='fall'){ctx.globalAlpha=p.alpha*(p.shape==='fall'?.34:.65);ctx.strokeStyle=model.palette[p.color];ctx.lineWidth=p.shape==='fall'?.75:1.05;ctx.beginPath();ctx.moveTo(p.x-p.dx,p.y-p.dy);ctx.lineTo(p.x,p.y);ctx.stroke();}shape(p.x,p.y,p.size,p.color,p.alpha,p.shape==='diamond');}
   f.heads.forEach(p=>shape(p.x,p.y,3.6,p.color,p.alpha,true));ctx.restore();ctx.globalAlpha=1;dirty=true;draws++;
  }
  function render(input){
@@ -60,5 +60,5 @@
  function setRange(start,end){if(Math.abs(start-range.start)>.5||Math.abs(end-range.end)>.5){range={start,end};lastY=null;lastReset=performance.now();cueSides=model.cues.map(c=>progress>=c.at);}}
  function reset(){lastY=null;lastDirection=0;lastReset=performance.now();cueSides=model.cues.map(c=>progress>=c.at);if(document.hidden)clear();}
  document.addEventListener('visibilitychange',reset);addEventListener('pagehide',()=>{reset();clear();});addEventListener('resize',reset,{passive:true});
- window.HolyMindBoomCelebration=Object.freeze({version:'grand-boom-v22',render,measureFrame,setRange,snapshot:()=>({range:{...range},progress,phase:lastFrame?.phase||'rest',visible,frameCount,draws,reads,skippedDraws,particleCount:lastFrame?.particles.length||0,litParticles:lastFrame?.particles.filter(p=>p.alpha>.02).length||0,box:lastBox,geometry:lastFrame,events:[...eventHistory],lastDirection,meanPaintMs:paint.reduce((a,b)=>a+b,0)/Math.max(1,paint.length),lastAt,ownFrameLoop:false})});
+ window.HolyMindBoomCelebration=Object.freeze({version:'afterglow-v23',render,measureFrame,setRange,snapshot:()=>({range:{...range},progress,phase:lastFrame?.phase||'rest',visible,frameCount,draws,reads,skippedDraws,particleCount:lastFrame?.particles.length||0,litParticles:lastFrame?.particles.filter(p=>p.alpha>.02).length||0,box:lastBox,geometry:lastFrame,events:[...eventHistory],lastDirection,meanPaintMs:paint.reduce((a,b)=>a+b,0)/Math.max(1,paint.length),lastAt,ownFrameLoop:false})});
 })();

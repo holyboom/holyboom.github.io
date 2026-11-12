@@ -1,0 +1,359 @@
+{
+  "base": "http://127.0.0.1:8786/",
+  "engine": "chromium",
+  "checks": [
+    {
+      "name": "release-v23",
+      "pass": true
+    },
+    {
+      "name": "docked-signature-window",
+      "pass": true
+    },
+    {
+      "name": "silent-no-autoplay",
+      "pass": true
+    },
+    {
+      "name": "exact-deterministic-reversal",
+      "pass": true
+    },
+    {
+      "name": "zero-and-complete-are-clear",
+      "pass": true
+    },
+    {
+      "name": "five-authored-bursts",
+      "pass": true
+    },
+    {
+      "name": "finite-particle-geometry",
+      "pass": true
+    },
+    {
+      "name": "large-small-alternation",
+      "pass": true
+    },
+    {
+      "name": "large-small-radius-contrast",
+      "pass": true,
+      "radii": [
+        90.91499999999999,
+        39.09345,
+        107.27969999999999,
+        48.18495,
+        118.1895
+      ]
+    },
+    {
+      "name": "three-grand-bursts-expanded",
+      "pass": true
+    },
+    {
+      "name": "recorded-bank-loaded-before-first-gesture",
+      "pass": true
+    },
+    {
+      "name": "scroll-does-not-unlock",
+      "pass": true
+    },
+    {
+      "name": "five-forward-burst-sounds",
+      "pass": true,
+      "events": [
+        {
+          "kind": "charge",
+          "index": 0
+        },
+        {
+          "kind": "launch",
+          "index": 0
+        },
+        {
+          "kind": "launch",
+          "index": 1
+        },
+        {
+          "kind": "launch",
+          "index": 2
+        },
+        {
+          "kind": "launch",
+          "index": 3
+        },
+        {
+          "kind": "launch",
+          "index": 4
+        },
+        {
+          "kind": "burst",
+          "index": 0
+        },
+        {
+          "kind": "burst",
+          "index": 1
+        },
+        {
+          "kind": "burst",
+          "index": 2
+        },
+        {
+          "kind": "burst",
+          "index": 3
+        },
+        {
+          "kind": "burst",
+          "index": 4
+        },
+        {
+          "kind": "glitter",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "name": "charge-launch-glitter-mapped",
+      "pass": true
+    },
+    {
+      "name": "firework-bus-real-output",
+      "pass": true,
+      "peakRms": 0.04762769430110047
+    },
+    {
+      "name": "all-effects-use-real-recordings",
+      "pass": true
+    },
+    {
+      "name": "five-distinct-recorded-bursts",
+      "pass": true
+    },
+    {
+      "name": "line-current-stays-zero-at-boom",
+      "pass": true
+    },
+    {
+      "name": "piano-score-keeps-moving",
+      "pass": true
+    },
+    {
+      "name": "idle-no-cue-repeat",
+      "pass": true
+    },
+    {
+      "name": "reverse-gathers-five-original-bursts",
+      "pass": true,
+      "events": [
+        {
+          "kind": "recall",
+          "index": 0
+        },
+        {
+          "kind": "gather",
+          "index": 4
+        },
+        {
+          "kind": "gather",
+          "index": 3
+        },
+        {
+          "kind": "gather",
+          "index": 2
+        },
+        {
+          "kind": "gather",
+          "index": 1
+        },
+        {
+          "kind": "gather",
+          "index": 0
+        },
+        {
+          "kind": "return",
+          "index": 4
+        },
+        {
+          "kind": "return",
+          "index": 3
+        },
+        {
+          "kind": "return",
+          "index": 2
+        },
+        {
+          "kind": "return",
+          "index": 1
+        },
+        {
+          "kind": "return",
+          "index": 0
+        },
+        {
+          "kind": "seal",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "name": "return-flight-and-dot-seal",
+      "pass": true
+    },
+    {
+      "name": "reverse-has-audible-output",
+      "pass": true
+    },
+    {
+      "name": "returns-to-rest",
+      "pass": true
+    },
+    {
+      "name": "reverse-same-particles-0.8",
+      "pass": true
+    },
+    {
+      "name": "reverse-same-particles-0.64",
+      "pass": true
+    },
+    {
+      "name": "reverse-same-particles-0.48",
+      "pass": true
+    },
+    {
+      "name": "reverse-same-particles-0.27",
+      "pass": true
+    },
+    {
+      "name": "reverse-same-particles-0.1",
+      "pass": true
+    },
+    {
+      "name": "no-perpetual-celebration-loop",
+      "pass": true
+    },
+    {
+      "name": "paused-visual-does-not-randomize",
+      "pass": true
+    },
+    {
+      "name": "scripted-navigation-does-not-explode-audio",
+      "pass": true
+    },
+    {
+      "name": "tiny-jitter-not-audio-avalanche",
+      "pass": true
+    },
+    {
+      "name": "rapid-reverse-voices-bounded",
+      "pass": true
+    },
+    {
+      "name": "all-effect-voices-clean-up",
+      "pass": true
+    },
+    {
+      "name": "muted-celebration-still-visual",
+      "pass": true
+    },
+    {
+      "name": "hidden-disposes-celebration",
+      "pass": true
+    },
+    {
+      "name": "return-needs-new-gesture",
+      "pass": true
+    },
+    {
+      "name": "one-context-after-resume",
+      "pass": true
+    },
+    {
+      "name": "bounded-responsive-canvas-320",
+      "pass": true
+    },
+    {
+      "name": "particles-horizontal-safe-320",
+      "pass": true
+    },
+    {
+      "name": "fireworks-above-word-320",
+      "pass": true,
+      "lowest": 297.41756836124597,
+      "wordTop": 352.4024353027344
+    },
+    {
+      "name": "bounded-responsive-canvas-390",
+      "pass": true
+    },
+    {
+      "name": "particles-horizontal-safe-390",
+      "pass": true
+    },
+    {
+      "name": "fireworks-above-word-390",
+      "pass": true,
+      "lowest": 334.3789143955991,
+      "wordTop": 399.2970275878906
+    },
+    {
+      "name": "bounded-responsive-canvas-768",
+      "pass": true
+    },
+    {
+      "name": "particles-horizontal-safe-768",
+      "pass": true
+    },
+    {
+      "name": "fireworks-above-word-768",
+      "pass": true,
+      "lowest": 404.46846672945907,
+      "wordTop": 486.7519226074219
+    },
+    {
+      "name": "bounded-responsive-canvas-1440",
+      "pass": true
+    },
+    {
+      "name": "particles-horizontal-safe-1440",
+      "pass": true
+    },
+    {
+      "name": "fireworks-above-word-1440",
+      "pass": true,
+      "lowest": 400.61438399910645,
+      "wordTop": 479.3826599121094
+    },
+    {
+      "name": "bounded-responsive-canvas-844",
+      "pass": true
+    },
+    {
+      "name": "particles-horizontal-safe-844",
+      "pass": true
+    },
+    {
+      "name": "fireworks-above-word-844",
+      "pass": true,
+      "lowest": 223.80563967292375,
+      "wordTop": 258.1797180175781
+    },
+    {
+      "name": "no-extra-audio-context",
+      "pass": true
+    },
+    {
+      "name": "missing-recording-stays-silent-without-old-synth",
+      "pass": true
+    },
+    {
+      "name": "missing-recording-keeps-visual-motion",
+      "pass": true
+    },
+    {
+      "name": "always-on-motion-preserved",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}
