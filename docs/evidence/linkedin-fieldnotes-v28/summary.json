@@ -1,0 +1,17 @@
+{
+  "release": "linkedin-fieldnotes-v28",
+  "status": "Local checks passed; publication and GitHub page verification pending",
+  "linkedin": "https://www.linkedin.com/in/boom-theerawee",
+  "url_provenance": "Existing public GitHub LinkedIn social account, independently matching the current CV contact record",
+  "readonly_account_check": true,
+  "readme_prior_words": 1462,
+  "readme_current_words": 434,
+  "local_checks": {
+    "final-webkit": 37,
+    "final-chromium": 37,
+    "regression-edited": 61,
+    "regression-score": 21
+  },
+  "total_local_checks": 156,
+  "note": "GitHub Markdown API retains the responsive picture media selectors and native disclosures. Actual repository-page checks follow publishing."
+}

@@ -82,7 +82,7 @@
  }
  function brief(){
   const info=skill();
-  if(!selected.challenge)return ['HolyMind — starting conversation','Goal: to be clarified with Boom.',info?'Interested skill: '+info.name+'.':'No skill selected.','Next step: agree the problem, approved sources, permissions and evidence for success.','This is an illustrative brief, not an AI result or implementation commitment.','No information is sent by this page.'].join('\n');
+  if(!selected.challenge)return ['HolyMind — starting conversation','Goal: to be clarified with Boom.',info?'Interested skill: '+info.name+'.':'No skill selected.','Next step: agree the problem, approved sources, permissions and evidence for success.','This is an illustrative brief, not an AI result or implementation commitment.','Discuss with Boom: https://www.linkedin.com/in/boom-theerawee','No information is sent by this page.'].join('\n');
   return work.brief();
  }
  function update(){

@@ -101,7 +101,7 @@
  }
  function makeBrief() {
   const c = challenges[current];
-  const text = ["Project: " + c.title, "Goal: " + c.goal, "Workflow: " + c.stages.map(s => s[0]).join(" → ") + ".", "Guardrail: " + c.guardrail, "Measure: " + c.measure, "To establish: Systems, permissions, volume, budget, and baseline performance.", "Discuss with Boom: https://www.instagram.com/holyboom/", "Illustrative planning brief. No information is sent by this page."].join("\n");
+  const text = ["Project: " + c.title, "Goal: " + c.goal, "Workflow: " + c.stages.map(s => s[0]).join(" → ") + ".", "Guardrail: " + c.guardrail, "Measure: " + c.measure, "To establish: Systems, permissions, volume, budget, and baseline performance.", "Discuss with Boom: https://www.linkedin.com/in/boom-theerawee", "Illustrative planning brief. No information is sent by this page."].join("\n");
   return window.HolyMindJourney?.enrichBrief(text) || text;
  }
  function selectChallenge(key, focus = false) {

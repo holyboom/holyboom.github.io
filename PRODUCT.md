@@ -2,14 +2,14 @@
 
 ## Purpose
 
-Help business owners, collaborators and engineering teams understand how Theerawee Rangram (Boom) turns ambitious business strategies into working AI systems and automation, and start a conversation through his existing public Instagram profile.
+Help business owners, collaborators and engineering teams understand how Theerawee Rangram (Boom) turns ambitious business strategies into working AI systems and automation, and start a conversation through his existing public LinkedIn profile.
 
 ## Established truth
 
 - Public identity: Theerawee Rangram, Boom, ธีรวีร์ รางแรม, @holyboom.
 - AI Engineer and AI Solutions Architect, based in Bangkok.
 - Creator of HolyMind Framework; original brand and skill artwork supplied by the owner.
-- Existing public destinations: GitHub and Instagram.
+- Existing public destinations: GitHub and LinkedIn.
 - Workbench scenarios are illustrative architecture sketches, not client case studies, measured performance, or a live AI service.
 
 ## Scope
@@ -252,3 +252,9 @@ Remove the duplicated three-principle hero strip because Reason/Build/Verify alr
 The six-skill optical fan is the default visual. The complete searchable 34-skill library is a clearly labeled native details disclosure, closed initially and populated with all skills. It is optional depth, not deleted content. The gallery continuity/audio anchor is its always-visible summary so the route does not read hidden geometry. Gallery animations build only while open. Three service doors become short typographic rails with optional copy, all closed initially. Longer duplicate About copy remains behind the existing disclosure; the Boom stage/overhead firework space is preserved. No type-size squeeze or new fullscreen scroll takeover.
 
 Validate mobile/desktop default page height and distance to Boom before/after from clean sessions; these are content/pixel measurements, not visitor analytics or conversion claims. Check keyboard/search/carry/brief, disclosure open/close geometry, 11 route stations, assembly endpoints, source evidence, all four sound controls, score continuation after fireworks and mobile viewport stability. No physical iPhone, human-listening or full accessibility/flash certification.
+
+
+## LinkedIn / Engineering fieldnotes v28
+Owner-directed contact migration: replace active Instagram destinations with the LinkedIn profile already set on the owner’s GitHub account, https://www.linkedin.com/in/boom-theerawee. Website identity links, final CTA, both generated/static briefs, JSON-LD, structured profile and llms.txt agree. Repository About retains the live website homepage and adds LinkedIn in the description. The account-level social link is already correct and is not changed. Archived screenshots/test traces remain historical evidence, not current contact surfaces.
+
+README becomes a compact public-facing Engineering Fieldnotes edition, with responsive static plates and ordinary accessible Markdown. Detailed build instructions and old release notes move to docs rather than expanding the first view. No source artwork, audio, motion, score, application layout, framework behavior or sound gate is redesigned.

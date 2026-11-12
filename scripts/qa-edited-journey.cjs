@@ -7,7 +7,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
   await p.goto(base,{waitUntil:'networkidle'});await p.waitForFunction(()=>window.HolyMindEdit&&HolyMindSkills.list().length===34&&HolyMindBoomAudio.snapshot().ready&&HolyMindCueTimbres.snapshot().ready);await p.waitForTimeout(1200);
   const jump=async y=>{await p.evaluate(y=>{HolyMindScrollSound.suppressForNavigation();scrollTo({top:y,behavior:'instant'});},y);await p.waitForTimeout(1400);};
   const height=()=>p.evaluate(()=>document.documentElement.scrollHeight);
-  check('current-release',await p.locator('html').getAttribute('data-build')==='edited-journey-v27');
+  check('current-release',await p.locator('html').getAttribute('data-build')===(process.env.EXPECTED_BUILD||'edited-journey-v27'));
   check('silent-unselected-load',await p.evaluate(()=>HolyMindAudio.snapshot().context==='uncreated'&&!HolyMindJourney.snapshot().active));
   const defaultHeight=await height();check('default-mobile-route-under-nine-thousand',defaultHeight<9000,{height:defaultHeight});
   check('principle-duplication-removed',await p.locator('.principles').count()===0&&await p.locator('.flow-chapter').count()===3);

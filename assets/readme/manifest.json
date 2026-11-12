@@ -1,0 +1,53 @@
+{
+  "design": "Engineering fieldnotes",
+  "source": "Authored HTML/CSS composition with unchanged HolyMind source artwork",
+  "font": {
+    "name": "Instrument Serif",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/instrumentserif/InstrumentSerif-Regular.ttf",
+    "license": "SIL Open Font License",
+    "sha256": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88",
+    "binaryDistributed": false
+  },
+  "files": [
+    {
+      "file": "cover-desktop-light.png",
+      "bytes": 150496,
+      "sha256": "cf843d9147862711fe93a62fae08b578d4148245628b5bfbf5af4dab8d06f9d9"
+    },
+    {
+      "file": "method-desktop-light.png",
+      "bytes": 80737,
+      "sha256": "3705f4860ea40c49c90a2acb1da60f818d16d96812098bf2238287b09d86a013"
+    },
+    {
+      "file": "cover-desktop-dark.png",
+      "bytes": 149657,
+      "sha256": "0fc0e8e455b8accb73927fd2842c28e46ccf62f5693fdc395bf41e85bf87c6fd"
+    },
+    {
+      "file": "method-desktop-dark.png",
+      "bytes": 77901,
+      "sha256": "7a2be7128875680251b3f3fa204639e28a9e83591da98e3f36300f549781a627"
+    },
+    {
+      "file": "cover-mobile-light.png",
+      "bytes": 130912,
+      "sha256": "3c4de2619cdab149c6e2ee4140eb381d1de16b3f4a62e984b6d8cd3f20cab2c7"
+    },
+    {
+      "file": "method-mobile-light.png",
+      "bytes": 101728,
+      "sha256": "a8d372527e35a53e29e289d831de639838413538fc77e666d2a5143e84538942"
+    },
+    {
+      "file": "cover-mobile-dark.png",
+      "bytes": 130221,
+      "sha256": "2dd4e90df5002689aa33650e43750247ff843d3858aff40ffa61a38da34fbd0f"
+    },
+    {
+      "file": "method-mobile-dark.png",
+      "bytes": 97994,
+      "sha256": "49d58c8cf93ad1449cc914023cbf39af41e9682611edee5c3ff9d657131b9c46"
+    }
+  ]
+}
