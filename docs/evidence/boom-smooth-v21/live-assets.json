@@ -1,0 +1,146 @@
+[
+  {
+    "path": "index.html",
+    "match": true
+  },
+  {
+    "path": "qa/boom-smooth-v21.html",
+    "match": true
+  },
+  {
+    "path": "style.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "showcase.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "continuity.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "site.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "assembly-lab.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "brain-energy.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "ambient-current.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "interaction-v10.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "resonance.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "boom-celebration.css?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "viewport-stability.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "assets/vendor/gsap-3.15.1.min.js",
+    "match": true
+  },
+  {
+    "path": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "match": true
+  },
+  {
+    "path": "brain-reactions.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "holymind-timbres.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "holymind-soundscape.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "holymind-cues.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "mozart-score-data.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "holymind-scroll-score.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "boom-audio.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "holymind-audio.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "neural-core.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "scroll-motion.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "showcase.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "energy-field.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "boom-particles.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "boom-celebration.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "continuity.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "assembly-lab.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "ambient-current.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "assembly-scroll.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "soundscape-scenes.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "interaction-feedback.js?v=boom-smooth-v21",
+    "match": true
+  },
+  {
+    "path": "scroll-sonification.js?v=boom-smooth-v21",
+    "match": true
+  }
+]

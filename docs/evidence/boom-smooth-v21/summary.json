@@ -1,7 +1,55 @@
 {
   "release": "boom-smooth-v21",
-  "status": "Local checks passed; production verification pending",
+  "name": "HolyMind — Boom boundary stability",
+  "status": "Published and verified",
+  "implementation_commit": "08667aac9c4d7785531709acf99d83c81c607701",
   "baseline": "cf36b54ac470162f126cc8a775fd1240560f2cd0",
+  "verified_at": "2026-11-12T00:52:31.372837+00:00",
+  "url": "https://holyboom.github.io/?v=boom-smooth-v21#about",
+  "verification": "https://holyboom.github.io/qa/boom-smooth-v21.html",
+  "reported_issue": "Stutter after fireworks end and while scrolling back above Boom.",
+  "reproduced_cause": "In touch WebKit, height-only viewport changes rebuilt the earlier Assemble pin and changed the page spacer/story geometry. This produced involuntary scroll movement after Boom. This mechanism is verified in simulation; the physical phone cause is not directly observed.",
+  "reproduction": {
+    "viewport_width": 390,
+    "height_sequence": [
+      844,
+      790,
+      750,
+      790,
+      844
+    ],
+    "before_scroll_y": 10998,
+    "first_resized_scroll_y_before_fix": 10304,
+    "unexpected_first_jump_before_css_px": 694,
+    "first_resized_scroll_y_after_fix": 10998,
+    "unexpected_first_jump_after_css_px": 0,
+    "input": "No native scroll input during the viewport-height perturbation",
+    "method": "Touch-enabled WebKit viewport simulation, not a physical Safari browser-toolbar recording"
+  },
+  "changes": {
+    "viewport": "Shared stable document-story dimensions ignore small touch height-only/browser-chrome or keyboard changes. Width/orientation changes, substantial resizes and desktop height resizing still rebuild.",
+    "pin": "The offscreen Assemble pin is not killed/recreated for those transient height changes. Its spacer, document height, instance and downstream Boom range remain stable.",
+    "exit": "Completed and not-yet-entered fireworks exit before DOM geometry reads; transparent canvas clears only once if needed. No boundary visibility toggle.",
+    "frame": "Signature geometry is read before continuity style/SVG writes; identical particle frames are not rasterized again, and unchanged decoration values are not rewritten.",
+    "native_scroll": "No added scroll interception, corrective scrollTo, spacer or new independent animation loop."
+  },
+  "preserved": {
+    "five_fireworks": true,
+    "particle_count": 135,
+    "particle_model_byte_identical": true,
+    "all_audio_engines_byte_identical": true,
+    "original_images": 37,
+    "unchanged_js_modules": 19,
+    "details": "Original deterministic outward/inward paths, Mozart order and ringing tails, five firework sounds, +8 dB line-only current, ambient field, brain effects, always-on motion and responsive hero."
+  },
+  "live_checks": {
+    "smooth_webkit": 25,
+    "smooth_chromium": 25,
+    "reversal_webkit": 5
+  },
+  "total_live_checks": 55,
+  "failed_checks": 0,
+  "runtime_errors": 0,
   "local_checks": {
     "local_smooth_webkit": 25,
     "local_smooth_chromium": 25,
@@ -11,10 +59,13 @@
     "local_touch_chromium": 8
   },
   "total_local_checks": 182,
-  "viewport_reproduction": {
-    "before_first_jump_css_px": 694,
-    "after_first_jump_css_px": 0,
-    "method": "Touch-enabled WebKit viewport height 844 \u2192 790 \u2192 750 \u2192 790 \u2192 844, without scroll input"
-  },
-  "physical_iphone_tested": false
+  "live_coverage": "After-firework, above-Boom and mid-reverse viewport perturbations; native down/up exits; no geometry reads or paints outside the celebration; identical paused pixels; actual orientation and desktop resize; five rendered reverse-coordinate samples.",
+  "reversal_max_coordinate_difference_css_px": 0,
+  "matched_live_assets": 36,
+  "limitations": {
+    "physical_iphone_tested": false,
+    "physical_device_fps_certified": false,
+    "all_sources_of_stutter_eliminated": false,
+    "note": "This fixes the reproduced scroll jump and redundant boundary rendering. Browser automation is not a guarantee of perceived smoothness or frame rate on the user’s iPhone."
+  }
 }
