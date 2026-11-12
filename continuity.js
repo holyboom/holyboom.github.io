@@ -76,7 +76,7 @@
  }
  function measure(){
   needsMeasure=false;travelHeader=document.querySelector('.masthead')?.offsetHeight||0;
-  const H=innerHeight,max=Math.max(1,document.documentElement.scrollHeight-H);
+  const H=window.HolyMindViewport?.measure().height||innerHeight,max=Math.max(1,document.documentElement.scrollHeight-H);
   const assemblyPin=window.ScrollTrigger?.getById('assembly-story');
   stations.forEach(st=>{
    const el=q(st.s);st.at=el?layoutTop(el)+el.offsetHeight*st.y-H*.56:0;
@@ -95,7 +95,7 @@
    if(i===stations.length-1)return;
    let end=st.at+st.hold;
    if(st.id==='assembly'&&assemblyPin)end=assemblyPin.end;
-   if(st.id==='signature')end=st.at+Math.min(300,Math.max(120,innerHeight*.34));
+   if(st.id==='signature')end=st.at+Math.min(300,Math.max(120,H*.34));
    if(st.id==='neural')end=Math.max(0,layoutTop(origin)+origin.offsetHeight*.46-H*.56);
    if(st.id==='orbit')end=layoutTop(q('#mind-flow'))+q('#mind-flow').offsetHeight-H*.83;
    end=clamp(end,st.at,stations[i+1].at-40);
@@ -142,6 +142,8 @@
   if(needsMeasure){quietLine('remeasure');measure();}if(!keys.length){quietLine('no-route');return;}
   layer.style.visibility='visible';body.dataset.continuity='ready';
   const y=clamp(scrollY,0,document.documentElement.scrollHeight-innerHeight);
+  // Read the signature before this frame's style/SVG writes, not after them.
+  const boomBox=window.HolyMindBoomCelebration?.measureFrame(y);
   let i=0;while(i<keys.length-2&&y>keys[i+1].at)i++;
   const ka=keys[i],kb=keys[i+1]||ka,a=ka.station,b=kb.station;
   const p=ka===kb?1:clamp((y-ka.at)/Math.max(1,kb.at-ka.at)),t=smooth(p),same=a.id===b.id;
@@ -186,7 +188,7 @@
   window.HolyMindEnergy?.receive({from:a.id,to:b.id,progress:p,same,x:pos.x,y:pos.y,brainTransit});
   layer.dataset.from=a.id;layer.dataset.to=b.id;layer.dataset.progress=p.toFixed(5);
   layer.dataset.x=pos.x.toFixed(3);layer.dataset.y=pos.y.toFixed(3);
-  window.HolyMindBoomCelebration?.render({y,from:a.id,to:b.id,progress:p});
+  window.HolyMindBoomCelebration?.render({y,from:a.id,to:b.id,progress:p,box:boomBox});
   layer.dataset.direction=y<lastY?'reverse':y>lastY?'forward':layer.dataset.direction||'forward';lastY=y;
   // Stop after the existing GSAP scrub settles. No idle animation loop is added.
   const scrubActive=window.ScrollTrigger?.getAll().some(st=>st.getTween?.()?.isActive());

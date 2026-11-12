@@ -1,11 +1,11 @@
 {
   "name": "holyboom-holymind-profile",
-  "version": "20.0.0",
+  "version": "21.0.0",
   "private": true,
   "description": "Static GitHub Pages profile and interactive HolyMind skill collection",
   "scripts": {
     "dev": "node scripts/preview.mjs",
-    "check": "node --check site.js && node --check neural-core.js && node --check scroll-motion.js && node --check showcase.js && node --check continuity.js && node --check assembly-lab.js && node --check scripts/preview.mjs && node --check energy-field.js && node --check ambient-current.js && node --check assembly-scroll.js && node --check brain-reactions.js && node --check holymind-timbres.js && node --check holymind-audio.js && node --check holymind-soundscape.js && node --check scroll-sonification.js && node --check soundscape-scenes.js && node --check holymind-cues.js && node --check interaction-feedback.js && node --check mozart-score-data.js && node --check holymind-scroll-score.js && node --check boom-particles.js && node --check boom-celebration.js && node --check boom-audio.js",
+    "check": "node --check site.js && node --check neural-core.js && node --check scroll-motion.js && node --check showcase.js && node --check continuity.js && node --check assembly-lab.js && node --check scripts/preview.mjs && node --check energy-field.js && node --check ambient-current.js && node --check assembly-scroll.js && node --check brain-reactions.js && node --check holymind-timbres.js && node --check holymind-audio.js && node --check holymind-soundscape.js && node --check scroll-sonification.js && node --check soundscape-scenes.js && node --check holymind-cues.js && node --check interaction-feedback.js && node --check mozart-score-data.js && node --check holymind-scroll-score.js && node --check boom-particles.js && node --check boom-celebration.js && node --check boom-audio.js && node --check viewport-stability.js",
     "test:motion": "node scripts/qa-motion.cjs",
     "test:showcase": "node scripts/qa-showcase.cjs",
     "test:assembly": "node scripts/qa-assembly.cjs",
@@ -31,7 +31,8 @@
     "test:line-current": "node scripts/qa-line-current.cjs",
     "test:boom": "node scripts/qa-boom.cjs",
     "test:boom-touch": "node scripts/qa-boom-touch.cjs",
-    "build:boom-audio": "node scripts/build-boom-audio.cjs"
+    "build:boom-audio": "node scripts/build-boom-audio.cjs",
+    "test:boom-smooth": "node scripts/qa-boom-smooth.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

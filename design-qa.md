@@ -331,3 +331,9 @@ The original +8 dB line current stays exactly silent while the carrier is docked
 Live tests: {'boom_chromium': 51, 'boom_webkit': 51, 'native_touch_chromium': 8, 'screen_reversal_webkit': 5}, total 115, zero failed assertions or detected runtime errors in the final runs. 38 public assets match the implementation release. Actual reverse particle coordinates at five matched scroll positions had a maximum observed difference of zero CSS pixels. The full forward and reverse native-scroll clip is from the published page; it does not capture audio. Its GIF is cropped and time-compressed for mobile viewing.
 
 The 312 local checks also include the 92-case line-gate suite, 68 existing visual interactions and 37 Mozart progression/tail tests. Original current and piano sources remain byte-identical. Physical iPhone sound and performance were not tested.
+
+
+## Boom Smooth v21
+Controlled touch-WebKit height-only resize reproduced a 694 px involuntary jump just after fireworks. Same sequence after repair: 0 px; pin instance, document height and signature range preserved. Browser chrome is simulated, not observed on physical iPhone.
+
+Boundary tests cover native down/up exit, zero geometry reads or canvas paints outside the effect, identical idle canvas pixels, orientation and real desktop resize, always-on motion and nonoverflow. Firework/reversal, touch and assembly suites are retained. The first exact-geometry test exposed approximate memoization allowing box/frame mismatch; final memoization uses exact geometry equality. The initial pin-rebuild test also counted harmless same-position library scrollTo calls; final assertions measure actual scroll position and pin identity/document height separately.

@@ -111,3 +111,7 @@ The approved Scroll Sonata remains unchanged. Only its accompanying electrical s
 
 ## Boom Signature Celebration v20
 Five deterministic full-stop fireworks scrub outward and inward with the existing continuity route. See `qa/boom-v20.html` for the real live scene and `docs/evidence/boom-v20/summary.json` for scope and test evidence.
+
+
+## Boom Smooth v21
+Fixes transient mobile viewport changes rebuilding the distant pin/scroll geometry, and avoids redundant signature rendering at the end and reverse exit. Approved fireworks, sound, particle identities and native scrolling are preserved. Evidence: `docs/evidence/boom-smooth-v21/`.

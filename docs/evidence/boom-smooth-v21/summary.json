@@ -1,0 +1,20 @@
+{
+  "release": "boom-smooth-v21",
+  "status": "Local checks passed; production verification pending",
+  "baseline": "cf36b54ac470162f126cc8a775fd1240560f2cd0",
+  "local_checks": {
+    "local_smooth_webkit": 25,
+    "local_smooth_chromium": 25,
+    "local_boom_webkit": 51,
+    "local_reversal_webkit": 5,
+    "local_assembly_webkit": 68,
+    "local_touch_chromium": 8
+  },
+  "total_local_checks": 182,
+  "viewport_reproduction": {
+    "before_first_jump_css_px": 694,
+    "after_first_jump_css_px": 0,
+    "method": "Touch-enabled WebKit viewport height 844 \u2192 790 \u2192 750 \u2192 790 \u2192 844, without scroll input"
+  },
+  "physical_iphone_tested": false
+}

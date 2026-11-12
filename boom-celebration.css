@@ -1,5 +1,5 @@
 /* Bounded pixel-neon fireworks, above artwork and below the fixed masthead. */
-.boom-fireworks{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:28;visibility:hidden;contain:strict}
+.boom-fireworks{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:28;contain:strict}
 .signature-period{filter:brightness(calc(1 + var(--boom-charge,0)*.6))}
 @media print{.boom-fireworks{display:none!important}}
 

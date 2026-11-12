@@ -1,0 +1,262 @@
+{
+  "base": "http://127.0.0.1:8784/",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "release-v21",
+      "pass": true
+    },
+    {
+      "name": "no-scroll-jump-after-fireworks",
+      "pass": true,
+      "beforeY": 10998,
+      "rows": [
+        {
+          "h": 790,
+          "y": 10998,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 1,
+          "body": 12963,
+          "commands": 210,
+          "pinSame": true
+        },
+        {
+          "h": 750,
+          "y": 10998,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 1,
+          "body": 12963,
+          "commands": 210,
+          "pinSame": true
+        },
+        {
+          "h": 790,
+          "y": 10998,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 1,
+          "body": 12963,
+          "commands": 210,
+          "pinSame": true
+        },
+        {
+          "h": 844,
+          "y": 10998,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 1,
+          "body": 12963,
+          "commands": 210,
+          "pinSame": true
+        }
+      ]
+    },
+    {
+      "name": "same-story-range-after-fireworks",
+      "pass": true
+    },
+    {
+      "name": "no-pin-rebuild-after-fireworks",
+      "pass": true
+    },
+    {
+      "name": "no-scroll-jump-above-boom",
+      "pass": true,
+      "beforeY": 10581,
+      "rows": [
+        {
+          "h": 790,
+          "y": 10581,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 0,
+          "body": 12963,
+          "commands": 211,
+          "pinSame": true
+        },
+        {
+          "h": 750,
+          "y": 10581,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 0,
+          "body": 12963,
+          "commands": 211,
+          "pinSame": true
+        },
+        {
+          "h": 790,
+          "y": 10581,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 0,
+          "body": 12963,
+          "commands": 211,
+          "pinSame": true
+        },
+        {
+          "h": 844,
+          "y": 10581,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 0,
+          "body": 12963,
+          "commands": 211,
+          "pinSame": true
+        }
+      ]
+    },
+    {
+      "name": "same-story-range-above-boom",
+      "pass": true
+    },
+    {
+      "name": "no-pin-rebuild-above-boom",
+      "pass": true
+    },
+    {
+      "name": "no-scroll-jump-mid-reverse",
+      "pass": true,
+      "beforeY": 10842,
+      "rows": [
+        {
+          "h": 790,
+          "y": 10842,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 0.6277529969333704,
+          "body": 12963,
+          "commands": 212,
+          "pinSame": true
+        },
+        {
+          "h": 750,
+          "y": 10842,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 0.6277529969333704,
+          "body": 12963,
+          "commands": 212,
+          "pinSame": true
+        },
+        {
+          "h": 790,
+          "y": 10842,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 0.6277529969333704,
+          "body": 12963,
+          "commands": 212,
+          "pinSame": true
+        },
+        {
+          "h": 844,
+          "y": 10842,
+          "range": {
+            "start": 10661.86,
+            "end": 10948.82
+          },
+          "progress": 0.6277529969333704,
+          "body": 12963,
+          "commands": 212,
+          "pinSame": true
+        }
+      ]
+    },
+    {
+      "name": "same-story-range-mid-reverse",
+      "pass": true
+    },
+    {
+      "name": "no-pin-rebuild-mid-reverse",
+      "pass": true
+    },
+    {
+      "name": "end-forward-does-not-reposition",
+      "pass": true
+    },
+    {
+      "name": "complete-is-transparent",
+      "pass": true
+    },
+    {
+      "name": "no-measure-or-paint-after-completion",
+      "pass": true
+    },
+    {
+      "name": "reverse-exit-does-not-reposition",
+      "pass": true
+    },
+    {
+      "name": "reverse-exit-clears-all-particles",
+      "pass": true
+    },
+    {
+      "name": "no-measure-or-paint-above-boom",
+      "pass": true
+    },
+    {
+      "name": "unchanged-frames-not-repainted",
+      "pass": true
+    },
+    {
+      "name": "paused-pixels-preserved",
+      "pass": true
+    },
+    {
+      "name": "orientation-still-rebuilds",
+      "pass": true
+    },
+    {
+      "name": "one-assembly-pin-after-orientation",
+      "pass": true
+    },
+    {
+      "name": "landscape-still-renders",
+      "pass": true
+    },
+    {
+      "name": "desktop-geometry-rebuilds",
+      "pass": true
+    },
+    {
+      "name": "desktop-height-resize-not-ignored",
+      "pass": true
+    },
+    {
+      "name": "piano-source-still-present",
+      "pass": true
+    },
+    {
+      "name": "always-motion-and-no-overflow",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}
