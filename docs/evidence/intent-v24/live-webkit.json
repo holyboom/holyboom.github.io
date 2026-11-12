@@ -1,0 +1,275 @@
+{
+  "base": "https://holyboom.github.io/?v=intent-v24",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "release-v24",
+      "pass": true
+    },
+    {
+      "name": "initial-is-generic-no-invented-choice",
+      "pass": true
+    },
+    {
+      "name": "load-silent-no-audio-context",
+      "pass": true
+    },
+    {
+      "name": "four-independent-controls",
+      "pass": true
+    },
+    {
+      "name": "new-diagram-marked-illustrative",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-operations-0",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-operations-1",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-operations-2",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-operations-3",
+      "pass": true
+    },
+    {
+      "name": "source-trail-operations",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-knowledge-0",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-knowledge-1",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-knowledge-2",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-knowledge-3",
+      "pass": true
+    },
+    {
+      "name": "source-trail-knowledge",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-venture-0",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-venture-1",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-venture-2",
+      "pass": true
+    },
+    {
+      "name": "explicit-stage-venture-3",
+      "pass": true
+    },
+    {
+      "name": "source-trail-venture",
+      "pass": true
+    },
+    {
+      "name": "skill-carried-only-on-explicit-action",
+      "pass": true
+    },
+    {
+      "name": "skill-and-scenario-in-brief",
+      "pass": true
+    },
+    {
+      "name": "different-skill-dialog-does-not-claim-carried",
+      "pass": true
+    },
+    {
+      "name": "inspection-alone-does-not-overwrite-choice",
+      "pass": true
+    },
+    {
+      "name": "portal-heading-personalized",
+      "pass": true
+    },
+    {
+      "name": "portal-carries-selected-icon",
+      "pass": true
+    },
+    {
+      "name": "portal-brief-matches-workbench",
+      "pass": true
+    },
+    {
+      "name": "copy-confirmed-content",
+      "pass": true
+    },
+    {
+      "name": "copy-fallback-keeps-reviewable-text",
+      "pass": true
+    },
+    {
+      "name": "scroll-and-reverse-never-change-intent",
+      "pass": true
+    },
+    {
+      "name": "reload-restores-tab-choice",
+      "pass": true
+    },
+    {
+      "name": "storage-only-whitelisted-ids",
+      "pass": true
+    },
+    {
+      "name": "all-34-skills-remain",
+      "pass": true
+    },
+    {
+      "name": "related-skills-annotated",
+      "pass": true
+    },
+    {
+      "name": "carried-skill-highlighted",
+      "pass": true
+    },
+    {
+      "name": "filtered-grid-keeps-intent",
+      "pass": true
+    },
+    {
+      "name": "clear-restores-generic-portal",
+      "pass": true
+    },
+    {
+      "name": "clear-removes-session-state",
+      "pass": true
+    },
+    {
+      "name": "keyboard-choice-carried",
+      "pass": true
+    },
+    {
+      "name": "piano-off-keeps-reactions",
+      "pass": true
+    },
+    {
+      "name": "fireworks-play-with-piano-off",
+      "pass": true
+    },
+    {
+      "name": "firework-signal-with-piano-off",
+      "pass": true
+    },
+    {
+      "name": "reaction-off-keeps-piano",
+      "pass": true
+    },
+    {
+      "name": "reaction-off-blocks-firework",
+      "pass": true
+    },
+    {
+      "name": "level-piano",
+      "pass": true
+    },
+    {
+      "name": "level-reactions",
+      "pass": true
+    },
+    {
+      "name": "level-flow",
+      "pass": true
+    },
+    {
+      "name": "level-ambience",
+      "pass": true
+    },
+    {
+      "name": "post-envelope-mix-gains",
+      "pass": true
+    },
+    {
+      "name": "musical-action-keeps-reaction-bus-at-piano-zero",
+      "pass": true,
+      "rms": 0.018694817630380372
+    },
+    {
+      "name": "mix-levels-persist-without-autoplay",
+      "pass": true
+    },
+    {
+      "name": "legacy-taps-audition-still-has-reactions",
+      "pass": true
+    },
+    {
+      "name": "legacy-taps-audition-does-not-add-fireworks",
+      "pass": true
+    },
+    {
+      "name": "full-mix-restores-all-layers",
+      "pass": true
+    },
+    {
+      "name": "budget-changes-only-at-boundary",
+      "pass": true
+    },
+    {
+      "name": "budget-never-removes-particles-or-motion",
+      "pass": true
+    },
+    {
+      "name": "reflection-reverses-deterministically",
+      "pass": true
+    },
+    {
+      "name": "reflection-clears-at-end",
+      "pass": true
+    },
+    {
+      "name": "responsive-layout-320",
+      "pass": true
+    },
+    {
+      "name": "responsive-layout-390",
+      "pass": true
+    },
+    {
+      "name": "responsive-layout-768",
+      "pass": true
+    },
+    {
+      "name": "responsive-layout-1440",
+      "pass": true
+    },
+    {
+      "name": "responsive-layout-844",
+      "pass": true
+    },
+    {
+      "name": "invalid-storage-discarded",
+      "pass": true
+    },
+    {
+      "name": "legacy-cue-preference-migrates-conservatively",
+      "pass": true
+    },
+    {
+      "name": "no-post-or-data-submission",
+      "pass": true,
+      "requests": []
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

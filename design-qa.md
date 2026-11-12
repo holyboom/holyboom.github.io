@@ -378,3 +378,9 @@ Initial QA caught a new demonstration data-challenge attribute colliding with th
 64 journey/mixer checks per engine, 25 stable-viewport checks, 12 long-tail checks, 92 line-only checks, 37 music-order/lifecycle checks, 7 native touch checks and 2 default-waveform comparisons pass locally (303 total). 234 original assets are byte-identical. New illustrative content is labeled; no real approvals or AI outputs claimed.
 
 The public release must be opened and checked again; physical-iPhone or general accessibility/performance certification is not implied.
+
+
+### Published Intent Journey verification
+Production suites: {'live-webkit': 66, 'live-chromium': 66, 'live-stability': 25, 'live-touch': 7, 'live-reversal': 5}; total 169, zero failed checks and captured runtime errors. 42 public assets match local release bytes. Five actual screen reversal samples remain exact at the same scroll coordinates. The source-aware reflection is separately tested as a pure frame mapping. Physical iPhone testing is not claimed.
+
+A final review caught the carried indicator remaining selected when opening a different skill. The dialog now resets its status from the actual stored selection; simply inspecting another skill does not replace the carried skill. Both cases are covered in the 66-check production suites.

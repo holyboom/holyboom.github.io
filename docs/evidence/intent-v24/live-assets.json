@@ -1,0 +1,212 @@
+[
+  {
+    "asset": "index.html",
+    "match": true,
+    "bytes": 42624
+  },
+  {
+    "asset": "style.css?v=intent-v24",
+    "match": true,
+    "bytes": 44582
+  },
+  {
+    "asset": "showcase.css?v=intent-v24",
+    "match": true,
+    "bytes": 18984
+  },
+  {
+    "asset": "continuity.css?v=intent-v24",
+    "match": true,
+    "bytes": 1914
+  },
+  {
+    "asset": "site.js?v=intent-v24",
+    "match": true,
+    "bytes": 19570
+  },
+  {
+    "asset": "assembly-lab.css?v=intent-v24",
+    "match": true,
+    "bytes": 14465
+  },
+  {
+    "asset": "brain-energy.css?v=intent-v24",
+    "match": true,
+    "bytes": 6176
+  },
+  {
+    "asset": "ambient-current.css?v=intent-v24",
+    "match": true,
+    "bytes": 2133
+  },
+  {
+    "asset": "interaction-v10.css?v=intent-v24",
+    "match": true,
+    "bytes": 4289
+  },
+  {
+    "asset": "resonance.css?v=intent-v24",
+    "match": true,
+    "bytes": 2602
+  },
+  {
+    "asset": "boom-celebration.css?v=intent-v24",
+    "match": true,
+    "bytes": 400
+  },
+  {
+    "asset": "intent-journey.css?v=intent-v24",
+    "match": true,
+    "bytes": 7976
+  },
+  {
+    "asset": "viewport-stability.js?v=intent-v24",
+    "match": true,
+    "bytes": 1134
+  },
+  {
+    "asset": "visual-budget.js?v=intent-v24",
+    "match": true,
+    "bytes": 962
+  },
+  {
+    "asset": "material-light.js?v=intent-v24",
+    "match": true,
+    "bytes": 2252
+  },
+  {
+    "asset": "assets/vendor/gsap-3.15.1.min.js",
+    "match": true,
+    "bytes": 73357
+  },
+  {
+    "asset": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "match": true,
+    "bytes": 44683
+  },
+  {
+    "asset": "brain-reactions.js?v=intent-v24",
+    "match": true,
+    "bytes": 9704
+  },
+  {
+    "asset": "holymind-timbres.js?v=intent-v24",
+    "match": true,
+    "bytes": 8918
+  },
+  {
+    "asset": "holymind-soundscape.js?v=intent-v24",
+    "match": true,
+    "bytes": 10666
+  },
+  {
+    "asset": "holymind-cues.js?v=intent-v24",
+    "match": true,
+    "bytes": 10086
+  },
+  {
+    "asset": "mozart-score-data.js?v=intent-v24",
+    "match": true,
+    "bytes": 21574
+  },
+  {
+    "asset": "holymind-scroll-score.js?v=intent-v24",
+    "match": true,
+    "bytes": 9132
+  },
+  {
+    "asset": "boom-audio.js?v=intent-v24",
+    "match": true,
+    "bytes": 6610
+  },
+  {
+    "asset": "holymind-audio.js?v=intent-v24",
+    "match": true,
+    "bytes": 19321
+  },
+  {
+    "asset": "neural-core.js?v=intent-v24",
+    "match": true,
+    "bytes": 15388
+  },
+  {
+    "asset": "scroll-motion.js?v=intent-v24",
+    "match": true,
+    "bytes": 4168
+  },
+  {
+    "asset": "showcase.js?v=intent-v24",
+    "match": true,
+    "bytes": 7561
+  },
+  {
+    "asset": "energy-field.js?v=intent-v24",
+    "match": true,
+    "bytes": 3426
+  },
+  {
+    "asset": "boom-particles.js?v=intent-v24",
+    "match": true,
+    "bytes": 6017
+  },
+  {
+    "asset": "boom-celebration.js?v=intent-v24",
+    "match": true,
+    "bytes": 7672
+  },
+  {
+    "asset": "continuity.js?v=intent-v24",
+    "match": true,
+    "bytes": 17461
+  },
+  {
+    "asset": "assembly-lab.js?v=intent-v24",
+    "match": true,
+    "bytes": 8307
+  },
+  {
+    "asset": "ambient-current.js?v=intent-v24",
+    "match": true,
+    "bytes": 2682
+  },
+  {
+    "asset": "assembly-scroll.js?v=intent-v24",
+    "match": true,
+    "bytes": 4343
+  },
+  {
+    "asset": "soundscape-scenes.js?v=intent-v24",
+    "match": true,
+    "bytes": 3247
+  },
+  {
+    "asset": "interaction-feedback.js?v=intent-v24",
+    "match": true,
+    "bytes": 9293
+  },
+  {
+    "asset": "scroll-sonification.js?v=intent-v24",
+    "match": true,
+    "bytes": 8004
+  },
+  {
+    "asset": "intent-journey.js?v=intent-v24",
+    "match": true,
+    "bytes": 17767
+  },
+  {
+    "asset": "qa/intent-v24.html",
+    "match": true,
+    "bytes": 4191
+  },
+  {
+    "asset": "docs/evidence/intent-v24/mobile-knowledge.jpg",
+    "match": true,
+    "bytes": 70883
+  },
+  {
+    "asset": "docs/evidence/intent-v24/mobile-portal.jpg",
+    "match": true,
+    "bytes": 67708
+  }
+]

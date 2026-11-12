@@ -1,8 +1,31 @@
 {
   "release": "intent-v24",
-  "name": "HolyMind \u2014 Intent Journey",
-  "status": "Local verification passed; production verification pending",
+  "name": "HolyMind — Intent Journey",
+  "status": "Published and verified",
+  "implementation_commits": [
+    "0c28edff16c2e68b4de693e9159a6b798b9812e2",
+    "fcce30734524dfa1f5623fec058637280fe6458b"
+  ],
   "baseline": "0b5f4830c7e3f292b474e3bf9605bdce70dc79e0",
+  "verified_at": "2026-11-12T04:11:49.711912+00:00",
+  "url": "https://holyboom.github.io/?v=intent-v24",
+  "review": "https://holyboom.github.io/qa/intent-v24.html",
+  "features": {
+    "visible_workbench": "Three challenges × four existing steps, with source artifacts, a permission/review boundary and a developing output. Source trail is inspectable. Clearly illustrative; no AI/retrieval request, real approval, fabricated client outcome or invented ROI.",
+    "intent_ownership": "Explicit challenge/step input and Carry this skill set the journey. Scroll, section changes and reversing fireworks do not alter choices. Versioned whitelisted IDs/step live only in current-tab sessionStorage, survive reload, and can be cleared. Invalid entries are discarded.",
+    "connected_destination": "Related skills are annotated without filtering the library away. A selected icon travels with the existing carrier where appropriate. Portal icon/heading and reviewable copyable brief reflect the selection. Unchosen visits retain original generic Contact. Copy fallback selects the visible brief; nothing is automatically sent.",
+    "sound_roles": [
+      "Piano",
+      "Reactions & fireworks",
+      "Energy on the line",
+      "Atmosphere"
+    ],
+    "sound_controls": "Each role has an independent switch and an optional attenuating level, default 100% of the approved original mix. Master volume/mute, gesture unlock and lifecycle retained. Legacy cues-off migrates conservatively; changing piano does not turn off fireworks. Harmony-aligned action keys have a separate reaction route, so piano level zero does not silence them.",
+    "sound_material": "All source audio files, score data, note order and accepted long tails unchanged. Real crown x maps to restrained firework stereo pan within ±0.35. No new sound assets or oscillator synthesis. Prior Studio audition modes retained.",
+    "surface_light": "Gold/cyan/violet reflected light on Boom and its echoes derives from the same deterministic particle positions. The brain field lights a narrow source-positioned orbital rim; layers/portal retain directional energy reception. No full-screen flash or changed body copy.",
+    "render_budget": "JS draw cost may select lower Canvas glow DPR only at the next effect boundary. All 259 particle identities, their trajectories, native scrolling and always-on motion remain. No new permanent animation loop; no real-device frame-rate claim.",
+    "polish": "Sound-start hint reflects armed/playing/muted state. Assemble instructions distinguish native scrolling and slider dragging. Footer/version labels aligned."
+  },
   "local_checks": {
     "release-webkit": 64,
     "release-chromium": 64,
@@ -14,5 +37,47 @@
     "baseline-audio": 2
   },
   "total_local_checks": 303,
-  "physical_iphone_tested": false
+  "live_checks": {
+    "live-webkit": 66,
+    "live-chromium": 66,
+    "live-stability": 25,
+    "live-touch": 7,
+    "live-reversal": 5
+  },
+  "total_live_checks": 169,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "matched_public_assets": 42,
+  "original_assets_byte_identical": 234,
+  "unchanged_core_modules": 17,
+  "default_waveform_comparison": {
+    "name": "default-current-and-ambient-waveform-preserved",
+    "pass": true,
+    "maxAbsoluteDifference": 0,
+    "rms": 0.0019907477820814185,
+    "frames": 72000,
+    "sampleRate": 24000
+  },
+  "actual_reverse_coordinate_samples": 5,
+  "actual_reverse_max_difference_css_px": 0,
+  "coverage": "Explicit choices, twelve workflow steps, inspect vs carry, tab reload/reset/invalid storage, all 34 skills/filtering, clipboard success/fallback, independent audio gains including piano-zero action signal, responsive widths 320–1440, emulated native touch, stable mobile viewport and exact reversed screen particle coordinates.",
+  "preserved": [
+    "Five alternating large/small crowns",
+    "259 particle identities and falling glitter",
+    "Final recorded burst 3.7 seconds and glitter 4.2 seconds",
+    "Mozart melody/order and natural piano release",
+    "Electric line sound at +8 dB only during actual visible line travel",
+    "Ambient field and fourteen brain reactions",
+    "Mobile-only brain-first layout",
+    "v21 stable viewport / existing Assemble pin",
+    "Existing keyboard, menu, dialog and source links"
+  ],
+  "limitations": {
+    "physical_iphone_tested": false,
+    "subjective_listening_certified": false,
+    "frame_rate_certified": false,
+    "full_accessibility_or_flash_audit": false,
+    "demo_is_real_ai_service": false,
+    "note": "Tests are browser automation/OfflineAudioContext and emulated native touch, not a physical iPhone speaker recording, human listening study or complete accessibility certification. The quality governor observes JS draw cost only."
+  }
 }

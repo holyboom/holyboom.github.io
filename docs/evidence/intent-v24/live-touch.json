@@ -1,0 +1,36 @@
+{
+  "base": "https://holyboom.github.io/?v=intent-v24",
+  "checks": [
+    {
+      "name": "native-tap-selects-question",
+      "pass": true
+    },
+    {
+      "name": "diagram-does-not-trap-touch-scroll",
+      "pass": true
+    },
+    {
+      "name": "swipe-keeps-choice",
+      "pass": true
+    },
+    {
+      "name": "native-tap-carries-skill",
+      "pass": true
+    },
+    {
+      "name": "native-destination-receives-choice",
+      "pass": true
+    },
+    {
+      "name": "new-reflection-coexists-with-falling-glitter",
+      "pass": true
+    },
+    {
+      "name": "one-context-and-always-motion",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "method": "Chromium native touchscreen taps and DevTools touch input on an emulated mobile viewport; not physical iPhone."
+}
