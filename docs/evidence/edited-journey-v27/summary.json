@@ -1,6 +1,59 @@
 {
   "release": "edited-journey-v27",
-  "status": "Local verification passed; production verification pending",
+  "name": "HolyMind — Edited Journey",
+  "status": "Published and verified",
+  "implementation_commit": "1fe3b67019cd6409e6ed5fb5490270c063621aab",
+  "baseline": "c01d0401517400a022db9cb5302942e9e93f7fdb",
+  "verified_at": "2026-11-12T05:17:06.283132+00:00",
+  "url": "https://holyboom.github.io/?v=edited-journey-v27",
+  "review": "https://holyboom.github.io/qa/edited-journey-v27.html",
+  "reason": "Owner feedback: repeated design and too much default reading make the lower showcase hard to reach. Editorial refinement rather than adding another effect or section.",
+  "changes": {
+    "hero_and_orbit": "Remove the duplicate three-principle strip under the Hero. Keep the original brain and moving Reason/Build/Verify orbit, but reduce each chapter to a concise statement and remove repetitive jump links.",
+    "assembly": "Keep native pin, the same slow-normal-slow easing, complete 0–100 before moving onward and full reverse. Shorter scroll span: 1.35 mobile / 1.55 desktop viewport heights, bounded 800–1600 CSS px.",
+    "workbench": "Compact horizontal mobile challenge rail. Main route keeps stage controls and live illustrative diagram. Scenario paragraph, step rationale, guardrail and measurement text move into one native Thinking & guardrails disclosure; none of those functional explanations is deleted.",
+    "skills": "Keep the six-skill optical fan visible. Full searchable/filterable 34-skill library is closed by default and opens with keyboard or pointer. Its visible summary owns the gallery continuity/audio anchor; hidden card positions are never used for the main route. Close restores the short route and summary focus.",
+    "services": "Replace oversized repeated service doors with compact typographic rows. All three service descriptions remain available on explicit open, initially closed.",
+    "about_and_contact": "Keep Boom/firework stage and overhead space. Longer Thai/identity copy remains inside the existing About disclosure. Original portal, chosen-intent brief and editing/copy controls retained. A mobile-menu contact link is available without restoring Hero jump buttons."
+  },
+  "measurement_method": "Fresh WebKit contexts, no stored choices, default closed disclosures, same viewport and font-ready wait. Document pixel height includes the native assembly pin spacer. Main word count uses main.innerText split on whitespace; it is not a reading-time estimate.",
+  "default_route_measurements": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "document_height_before": 13496,
+      "document_height_after": 8667,
+      "document_reduction_percent": 35.78,
+      "boom_document_top_before": 11406,
+      "boom_document_top_after": 6669,
+      "distance_to_boom_reduction_percent": 41.53,
+      "main_words_before": 740,
+      "main_words_after": 402,
+      "default_main_word_reduction_percent": 45.68,
+      "assembly_span_before": 1815,
+      "assembly_span_after": 1139
+    },
+    {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "document_height_before": 13669,
+      "document_height_after": 8698,
+      "document_reduction_percent": 36.37,
+      "boom_document_top_before": 12059,
+      "boom_document_top_after": 7104,
+      "distance_to_boom_reduction_percent": 41.09,
+      "main_words_before": 785,
+      "main_words_after": 436,
+      "default_main_word_reduction_percent": 44.46,
+      "assembly_span_before": 2400,
+      "assembly_span_after": 1550
+    }
+  ],
+  "visitor_retention_measured": false,
   "local_checks": {
     "local-webkit": 61,
     "local-chromium": 61,
@@ -10,20 +63,36 @@
     "reversal": 5
   },
   "total_local_checks": 179,
-  "default_route_comparison": [
-    {
-      "width": 390,
-      "height": 844,
-      "document_reduction_percent": 35.78,
-      "distance_to_boom_reduction_percent": 41.53,
-      "default_main_word_reduction_percent": 45.68
-    },
-    {
-      "width": 1440,
-      "height": 1000,
-      "document_reduction_percent": 36.37,
-      "distance_to_boom_reduction_percent": 41.09,
-      "default_main_word_reduction_percent": 44.46
-    }
-  ]
+  "live_checks": {
+    "live-webkit": 61,
+    "live-chromium": 61,
+    "live-score": 21,
+    "live-touch": 6
+  },
+  "total_live_checks": 149,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "public_files_matching": 44,
+  "unchanged_asset_files": 255,
+  "unchanged_core_modules": 18,
+  "new_runtime_dependencies": 0,
+  "preserved": [
+    "Original pixel-neon artwork and all source images",
+    "Always-on motion; brain-first mobile layout",
+    "14 original brain reactions",
+    "Five alternating fireworks with 259 fixed particle identities",
+    "Long recorded final burst 3.7 seconds and glitter 4.2 seconds",
+    "Mozart note order, natural ringing tails and four independent sound roles",
+    "v26 piano continuity through mobile-height changes after fireworks",
+    "Line-only electrical sound at +8 dB",
+    "Choice/carry/copy/source/guardrail workflows",
+    "Keyboard controls, native disclosures and no-JavaScript rationale"
+  ],
+  "coverage": "Default and expanded library, all 34 skills, filtering/empty/reset, 3 scenarios, proof exclusion, copy/return/reset, service and bio disclosures, 0–100–0 assembly, all eleven visual/audio route stations, particle reversal, 320–1440 layouts, physical-size-change simulation and native touch emulation with measured piano output after fireworks.",
+  "limitations": {
+    "physical_iphone_tested": false,
+    "conversion_or_retention_improvement_measured": false,
+    "full_accessibility_or_flash_certification": false,
+    "note": "Measurements compare default unopened content at fixed emulated viewports. Opening optional depth intentionally lengthens the page. Browser/native-touch automation is not a physical iPhone listening or frame-rate test."
+  }
 }

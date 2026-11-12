@@ -417,3 +417,9 @@ Local: 177 passed checks, including score pause/resume and line-only electrical 
 Default-route editorial refinement: remove the duplicated hero-principle strip; shorten orbit narrative and transition; retain full pinned assembly with less travel; show a compact challenge rail and live diagram; put long rationale/guardrails under native details; show the skill fan before an optional full searchable library; compact service doors; retain Boom overhead space and keep deeper bio in its existing disclosure.
 
 Clean-state WebKit comparisons at 390×844 and 1440×1000 measure scroll height, actual document distance to Boom and default displayed text. Actual drawer open/close, search/empty/reset, keyboard, all 34 skills, carry/brief, native no-JS details, 11 visual/audio stations, 0–100–0 assembly, viewport stability and v26 score continuation are asserted. No conversion/retention or physical iPhone claim is made.
+
+
+### Published v27 verification
+Live: {'live-webkit': 61, 'live-chromium': 61, 'live-score': 21, 'live-touch': 6}, total 149; zero failed assertions or runtime errors in final runs. 44 public runtime/review files match the tested implementation. Local checks total 179, including stability and actual reverse geometry. All 255 original asset files and 18 core sound/art/particle modules remain byte-identical. The v26 mobile-height audio fix is preserved and regression-tested on the live page.
+
+No retention or conversion claim: the measured shorter default route is an implementation result, not a user study. Screenshots and pixel/word metrics are the fresh baseline and edited implementation captures documented in comparison.json.
