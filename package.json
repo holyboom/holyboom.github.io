@@ -1,6 +1,6 @@
 {
   "name": "holyboom-holymind-profile",
-  "version": "25.0.0",
+  "version": "26.0.0",
   "private": true,
   "description": "Static GitHub Pages profile and interactive HolyMind skill collection",
   "scripts": {
@@ -40,7 +40,9 @@
     "test:intent": "node scripts/qa-intent.cjs",
     "test:intent-touch": "node scripts/qa-intent-touch.cjs",
     "test:intent-audio": "node scripts/qa-intent-audio.cjs",
-    "test:living-flow": "node scripts/qa-living-flow.cjs"
+    "test:living-flow": "node scripts/qa-living-flow.cjs",
+    "test:score-continuity": "node scripts/qa-score-continuity.cjs",
+    "test:score-continuity-touch": "node scripts/qa-score-continuity-touch.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

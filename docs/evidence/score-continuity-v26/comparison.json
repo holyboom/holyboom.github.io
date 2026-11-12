@@ -1,0 +1,43 @@
+{
+  "method": "Identical native wheel sequence after actual five-firework traversal and a pause; repeat mobile-height 844/790 changes during resumed scroll. WebKit and Chromium contexts are simulated, not physical devices.",
+  "rows": [
+    {
+      "engine": "webkit",
+      "baseline": {
+        "scheduled_notes_first": 52,
+        "scheduled_notes_last": 52,
+        "accepted_scroll_samples": 1,
+        "sample_count": 8,
+        "final_piano_rms": 5.1748999929328e-07,
+        "runtime_errors": []
+      },
+      "fixed": {
+        "scheduled_notes_first": 52,
+        "scheduled_notes_last": 75,
+        "accepted_scroll_samples": 8,
+        "sample_count": 8,
+        "final_piano_rms": 0.06538071159903557,
+        "runtime_errors": []
+      }
+    },
+    {
+      "engine": "chromium",
+      "baseline": {
+        "scheduled_notes_first": 140,
+        "scheduled_notes_last": 178,
+        "accepted_scroll_samples": 3,
+        "sample_count": 8,
+        "final_piano_rms": 0.052765763110585014,
+        "runtime_errors": []
+      },
+      "fixed": {
+        "scheduled_notes_first": 85,
+        "scheduled_notes_last": 123,
+        "accepted_scroll_samples": 8,
+        "sample_count": 8,
+        "final_piano_rms": 0.049422424718145556,
+        "runtime_errors": []
+      }
+    }
+  ]
+}

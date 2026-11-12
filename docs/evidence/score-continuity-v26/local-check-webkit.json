@@ -1,0 +1,2179 @@
+{
+  "engine": "webkit",
+  "base": "http://127.0.0.1:8789/",
+  "checks": [
+    {
+      "name": "release",
+      "pass": true
+    },
+    {
+      "name": "no-autoplay",
+      "pass": true
+    },
+    {
+      "name": "real-fireworks-played-and-completed",
+      "pass": true
+    },
+    {
+      "name": "piano-sounds-during-fireworks",
+      "pass": true
+    },
+    {
+      "name": "stop-retains-natural-tail",
+      "pass": true
+    },
+    {
+      "name": "tails-finish-finitely",
+      "pass": true
+    },
+    {
+      "name": "piano-progresses-after-boom",
+      "pass": true,
+      "before": 32,
+      "after": 66
+    },
+    {
+      "name": "next-beat-not-restart",
+      "pass": true
+    },
+    {
+      "name": "height-changes-retain-input",
+      "pass": true,
+      "accepted": 64,
+      "total": 64
+    },
+    {
+      "name": "measured-piano-after-boom",
+      "pass": true
+    },
+    {
+      "name": "chrome-resizes-ignored",
+      "pass": true
+    },
+    {
+      "name": "reverse-keeps-music",
+      "pass": true
+    },
+    {
+      "name": "written-score-order-preserved",
+      "pass": true
+    },
+    {
+      "name": "one-context-no-dropped-notes",
+      "pass": true
+    },
+    {
+      "name": "piano-mix-unchanged",
+      "pass": true
+    },
+    {
+      "name": "resize-without-scroll-does-not-start-song",
+      "pass": true
+    },
+    {
+      "name": "real-orientation-still-remeasures",
+      "pass": true
+    },
+    {
+      "name": "orientation-alone-is-silent",
+      "pass": true
+    },
+    {
+      "name": "fresh-scroll-resumes-after-orientation",
+      "pass": true
+    },
+    {
+      "name": "explicit-mute-still-wins",
+      "pass": true
+    },
+    {
+      "name": "motion-still-on",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "runs": [
+    {
+      "delta": 4,
+      "resize": false,
+      "rows": [
+        {
+          "y": 11022,
+          "intent": true,
+          "activity": 0.06077241727879118,
+          "scene": "services",
+          "cursor": 1,
+          "notes": 3,
+          "rms": 0.07606482114582992,
+          "playing": true
+        },
+        {
+          "y": 11026,
+          "intent": true,
+          "activity": 0.08928027051539952,
+          "scene": "services",
+          "cursor": 1,
+          "notes": 3,
+          "rms": 0.07012778540567216,
+          "playing": true
+        },
+        {
+          "y": 11030,
+          "intent": true,
+          "activity": 0.10177496030302466,
+          "scene": "services",
+          "cursor": 1,
+          "notes": 3,
+          "rms": 0.05646252198352743,
+          "playing": true
+        },
+        {
+          "y": 11034,
+          "intent": true,
+          "activity": 0.10346263331089095,
+          "scene": "services",
+          "cursor": 1,
+          "notes": 3,
+          "rms": 0.0373959197773755,
+          "playing": true
+        },
+        {
+          "y": 11038,
+          "intent": true,
+          "activity": 0.10968545801946795,
+          "scene": "services",
+          "cursor": 1,
+          "notes": 3,
+          "rms": 0.028208874086000722,
+          "playing": true
+        },
+        {
+          "y": 11042,
+          "intent": true,
+          "activity": 0.11192425172397877,
+          "scene": "services",
+          "cursor": 1,
+          "notes": 3,
+          "rms": 0.029162769203238705,
+          "playing": true
+        },
+        {
+          "y": 11046,
+          "intent": true,
+          "activity": 0.11341294554310088,
+          "scene": "services",
+          "cursor": 1,
+          "notes": 4,
+          "rms": 0.023608809907152573,
+          "playing": true
+        },
+        {
+          "y": 11050,
+          "intent": true,
+          "activity": 0.11467094607932846,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.02033679738736795,
+          "playing": true
+        },
+        {
+          "y": 11054,
+          "intent": true,
+          "activity": 0.11518662366922545,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.018080407145623343,
+          "playing": true
+        },
+        {
+          "y": 11058,
+          "intent": true,
+          "activity": 0.11513866124509581,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.027216555174333888,
+          "playing": true
+        },
+        {
+          "y": 11062,
+          "intent": true,
+          "activity": 0.11541699481553633,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.023338865850546453,
+          "playing": true
+        },
+        {
+          "y": 11066,
+          "intent": true,
+          "activity": 0.11472441703286895,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.019792765217712668,
+          "playing": true
+        },
+        {
+          "y": 11070,
+          "intent": true,
+          "activity": 0.11479152924106746,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.013906030251502166,
+          "playing": true
+        },
+        {
+          "y": 11074,
+          "intent": true,
+          "activity": 0.11588299030828275,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.02803082435679894,
+          "playing": true
+        },
+        {
+          "y": 11078,
+          "intent": true,
+          "activity": 0.11495251233658133,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.023762043921906145,
+          "playing": true
+        },
+        {
+          "y": 11082,
+          "intent": true,
+          "activity": 0.11490392881473199,
+          "scene": "services",
+          "cursor": 2,
+          "notes": 6,
+          "rms": 0.019342008862659417,
+          "playing": true
+        },
+        {
+          "y": 11086,
+          "intent": true,
+          "activity": 0.11530137015953627,
+          "scene": "services",
+          "cursor": 3,
+          "notes": 9,
+          "rms": 0.01700268029525236,
+          "playing": true
+        },
+        {
+          "y": 11090,
+          "intent": true,
+          "activity": 0.11456296155630913,
+          "scene": "services",
+          "cursor": 3,
+          "notes": 9,
+          "rms": 0.04573132630909578,
+          "playing": true
+        },
+        {
+          "y": 11094,
+          "intent": true,
+          "activity": 0.11460693396064761,
+          "scene": "services",
+          "cursor": 3,
+          "notes": 9,
+          "rms": 0.028001433292565124,
+          "playing": true
+        },
+        {
+          "y": 11098,
+          "intent": true,
+          "activity": 0.11526104520751995,
+          "scene": "services",
+          "cursor": 3,
+          "notes": 9,
+          "rms": 0.02208756023032975,
+          "playing": true
+        },
+        {
+          "y": 11102,
+          "intent": true,
+          "activity": 0.11537178899340395,
+          "scene": "services",
+          "cursor": 3,
+          "notes": 9,
+          "rms": 0.016874390131067833,
+          "playing": true
+        },
+        {
+          "y": 11106,
+          "intent": true,
+          "activity": 0.11387828245767934,
+          "scene": "services",
+          "cursor": 3,
+          "notes": 9,
+          "rms": 0.025524089836320277,
+          "playing": true
+        },
+        {
+          "y": 11110,
+          "intent": true,
+          "activity": 0.1152020615000534,
+          "scene": "services",
+          "cursor": 3,
+          "notes": 9,
+          "rms": 0.024302561067696973,
+          "playing": true
+        },
+        {
+          "y": 11114,
+          "intent": true,
+          "activity": 0.11472562234817002,
+          "scene": "services",
+          "cursor": 3,
+          "notes": 9,
+          "rms": 0.02049533529769473,
+          "playing": true
+        },
+        {
+          "y": 11118,
+          "intent": true,
+          "activity": 0.11396751206467116,
+          "scene": "services",
+          "cursor": 4,
+          "notes": 12,
+          "rms": 0.018419164143416003,
+          "playing": true
+        },
+        {
+          "y": 11122,
+          "intent": true,
+          "activity": 0.11524630264655908,
+          "scene": "services",
+          "cursor": 4,
+          "notes": 12,
+          "rms": 0.06921006342679209,
+          "playing": true
+        },
+        {
+          "y": 11126,
+          "intent": true,
+          "activity": 0.11516796580840082,
+          "scene": "services",
+          "cursor": 4,
+          "notes": 12,
+          "rms": 0.05808165618903236,
+          "playing": true
+        },
+        {
+          "y": 11130,
+          "intent": true,
+          "activity": 0.11501011311758666,
+          "scene": "services",
+          "cursor": 4,
+          "notes": 12,
+          "rms": 0.037628155440109334,
+          "playing": true
+        },
+        {
+          "y": 11134,
+          "intent": true,
+          "activity": 0.11482640418306414,
+          "scene": "services",
+          "cursor": 4,
+          "notes": 12,
+          "rms": 0.025786560798910462,
+          "playing": true
+        },
+        {
+          "y": 11138,
+          "intent": true,
+          "activity": 0.11496180292419264,
+          "scene": "services",
+          "cursor": 4,
+          "notes": 12,
+          "rms": 0.02049388943080518,
+          "playing": true
+        },
+        {
+          "y": 11142,
+          "intent": true,
+          "activity": 0.11480268976704085,
+          "scene": "services",
+          "cursor": 4,
+          "notes": 12,
+          "rms": 0.02263859618434431,
+          "playing": true
+        },
+        {
+          "y": 11146,
+          "intent": true,
+          "activity": 0.11525150685054909,
+          "scene": "services",
+          "cursor": 4,
+          "notes": 12,
+          "rms": 0.02752922836633177,
+          "playing": true
+        },
+        {
+          "y": 11150,
+          "intent": true,
+          "activity": 0.11453865618528297,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.023729845726410608,
+          "playing": true
+        },
+        {
+          "y": 11154,
+          "intent": true,
+          "activity": 0.11470000251428258,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.04718530839334984,
+          "playing": true
+        },
+        {
+          "y": 11158,
+          "intent": true,
+          "activity": 0.11520093338828054,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.07007849175675457,
+          "playing": true
+        },
+        {
+          "y": 11162,
+          "intent": true,
+          "activity": 0.11461868144710716,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.05003353544089117,
+          "playing": true
+        },
+        {
+          "y": 11166,
+          "intent": true,
+          "activity": 0.11473943071056099,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.042452054572516336,
+          "playing": true
+        },
+        {
+          "y": 11170,
+          "intent": true,
+          "activity": 0.11585714146453023,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.029178944521560463,
+          "playing": true
+        },
+        {
+          "y": 11174,
+          "intent": true,
+          "activity": 0.11483391715035747,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.03566930516937249,
+          "playing": true
+        },
+        {
+          "y": 11178,
+          "intent": true,
+          "activity": 0.11484548617520669,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.029840295558403656,
+          "playing": true
+        },
+        {
+          "y": 11182,
+          "intent": true,
+          "activity": 0.11485118710115044,
+          "scene": "services",
+          "cursor": 5,
+          "notes": 15,
+          "rms": 0.024000950077685355,
+          "playing": true
+        },
+        {
+          "y": 11186,
+          "intent": true,
+          "activity": 0.11497396944313726,
+          "scene": "services",
+          "cursor": 6,
+          "notes": 19,
+          "rms": 0.019349812312765998,
+          "playing": true
+        },
+        {
+          "y": 11190,
+          "intent": true,
+          "activity": 0.11408907424566218,
+          "scene": "services",
+          "cursor": 6,
+          "notes": 19,
+          "rms": 0.027667930913865827,
+          "playing": true
+        },
+        {
+          "y": 11194,
+          "intent": true,
+          "activity": 0.1154131226398499,
+          "scene": "services",
+          "cursor": 6,
+          "notes": 19,
+          "rms": 0.028044146605159952,
+          "playing": true
+        },
+        {
+          "y": 11198,
+          "intent": true,
+          "activity": 0.11472252195440047,
+          "scene": "about",
+          "cursor": 6,
+          "notes": 19,
+          "rms": 0.023315375807703282,
+          "playing": true
+        },
+        {
+          "y": 11202,
+          "intent": true,
+          "activity": 0.11396599458511968,
+          "scene": "about",
+          "cursor": 6,
+          "notes": 19,
+          "rms": 0.0191918546049168,
+          "playing": true
+        },
+        {
+          "y": 11206,
+          "intent": true,
+          "activity": 0.11524555024149687,
+          "scene": "about",
+          "cursor": 6,
+          "notes": 19,
+          "rms": 0.07381781085255232,
+          "playing": true
+        },
+        {
+          "y": 11210,
+          "intent": true,
+          "activity": 0.1146405147822134,
+          "scene": "about",
+          "cursor": 6,
+          "notes": 19,
+          "rms": 0.051694935905666706,
+          "playing": true
+        },
+        {
+          "y": 11214,
+          "intent": true,
+          "activity": 0.11475018825913955,
+          "scene": "about",
+          "cursor": 6,
+          "notes": 19,
+          "rms": 0.06085937178370728,
+          "playing": true
+        },
+        {
+          "y": 11218,
+          "intent": true,
+          "activity": 0.11439814196275497,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.0382837647087794,
+          "playing": true
+        },
+        {
+          "y": 11222,
+          "intent": true,
+          "activity": 0.11463077623067158,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.06850228818976771,
+          "playing": true
+        },
+        {
+          "y": 11226,
+          "intent": true,
+          "activity": 0.11527283299518443,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.06272212949159119,
+          "playing": true
+        },
+        {
+          "y": 11230,
+          "intent": true,
+          "activity": 0.11548309263147595,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.050412404707934476,
+          "playing": true
+        },
+        {
+          "y": 11234,
+          "intent": true,
+          "activity": 0.11393239181714919,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.03617005663337316,
+          "playing": true
+        },
+        {
+          "y": 11238,
+          "intent": true,
+          "activity": 0.11470204970244198,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.02365321361308526,
+          "playing": true
+        },
+        {
+          "y": 11242,
+          "intent": true,
+          "activity": 0.11478050802683938,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.026163120328585723,
+          "playing": true
+        },
+        {
+          "y": 11246,
+          "intent": true,
+          "activity": 0.11451854829271715,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.02055068959181769,
+          "playing": true
+        },
+        {
+          "y": 11250,
+          "intent": true,
+          "activity": 0.11551956592893957,
+          "scene": "about",
+          "cursor": 7,
+          "notes": 22,
+          "rms": 0.017052329030259366,
+          "playing": true
+        },
+        {
+          "y": 11254,
+          "intent": true,
+          "activity": 0.11519605445964845,
+          "scene": "about",
+          "cursor": 8,
+          "notes": 24,
+          "rms": 0.01372969655979724,
+          "playing": true
+        },
+        {
+          "y": 11258,
+          "intent": true,
+          "activity": 0.11461629397102122,
+          "scene": "about",
+          "cursor": 8,
+          "notes": 24,
+          "rms": 0.022181185711833265,
+          "playing": true
+        },
+        {
+          "y": 11262,
+          "intent": true,
+          "activity": 0.11463310734984661,
+          "scene": "about",
+          "cursor": 8,
+          "notes": 24,
+          "rms": 0.017801984344953645,
+          "playing": true
+        },
+        {
+          "y": 11266,
+          "intent": true,
+          "activity": 0.11444615518942335,
+          "scene": "about",
+          "cursor": 8,
+          "notes": 24,
+          "rms": 0.01523034140323831,
+          "playing": true
+        },
+        {
+          "y": 11270,
+          "intent": true,
+          "activity": 0.11454961309859732,
+          "scene": "about",
+          "cursor": 8,
+          "notes": 24,
+          "rms": 0.011682969943456724,
+          "playing": true
+        },
+        {
+          "y": 11274,
+          "intent": true,
+          "activity": 0.11470540083802463,
+          "scene": "about",
+          "cursor": 8,
+          "notes": 24,
+          "rms": 0.020356783829530017,
+          "playing": true
+        },
+        {
+          "y": 11278,
+          "intent": true,
+          "activity": 0.11520359198367715,
+          "scene": "about",
+          "cursor": 8,
+          "notes": 24,
+          "rms": 0.017446149752805055,
+          "playing": true
+        },
+        {
+          "y": 11282,
+          "intent": true,
+          "activity": 0.11451530126455882,
+          "scene": "about",
+          "cursor": 8,
+          "notes": 24,
+          "rms": 0.01463545897951981,
+          "playing": true
+        },
+        {
+          "y": 11286,
+          "intent": true,
+          "activity": 0.11521574293345964,
+          "scene": "about",
+          "cursor": 9,
+          "notes": 27,
+          "rms": 0.013925127014476893,
+          "playing": true
+        },
+        {
+          "y": 11290,
+          "intent": true,
+          "activity": 0.11556209794935215,
+          "scene": "about",
+          "cursor": 9,
+          "notes": 27,
+          "rms": 0.04481106060550314,
+          "playing": true
+        },
+        {
+          "y": 11294,
+          "intent": true,
+          "activity": 0.11551953282807012,
+          "scene": "about",
+          "cursor": 9,
+          "notes": 27,
+          "rms": 0.03840855621103483,
+          "playing": true
+        },
+        {
+          "y": 11298,
+          "intent": true,
+          "activity": 0.11424999841795941,
+          "scene": "about",
+          "cursor": 9,
+          "notes": 27,
+          "rms": 0.03741146365915971,
+          "playing": true
+        },
+        {
+          "y": 11302,
+          "intent": true,
+          "activity": 0.11497934359474137,
+          "scene": "about",
+          "cursor": 9,
+          "notes": 27,
+          "rms": 0.030518843299180077,
+          "playing": true
+        },
+        {
+          "y": 11306,
+          "intent": true,
+          "activity": 0.11451025492803467,
+          "scene": "about",
+          "cursor": 9,
+          "notes": 27,
+          "rms": 0.032614326456321105,
+          "playing": true
+        },
+        {
+          "y": 11310,
+          "intent": true,
+          "activity": 0.11396804788413875,
+          "scene": "about",
+          "cursor": 9,
+          "notes": 27,
+          "rms": 0.019870182928891658,
+          "playing": true
+        },
+        {
+          "y": 11314,
+          "intent": true,
+          "activity": 0.11524656831968032,
+          "scene": "about",
+          "cursor": 9,
+          "notes": 27,
+          "rms": 0.013193374269879125,
+          "playing": true
+        },
+        {
+          "y": 11318,
+          "intent": true,
+          "activity": 0.11464101298751066,
+          "scene": "about",
+          "cursor": 10,
+          "notes": 29,
+          "rms": 0.011431515194267347,
+          "playing": true
+        },
+        {
+          "y": 11322,
+          "intent": true,
+          "activity": 0.11475043373258625,
+          "scene": "about",
+          "cursor": 10,
+          "notes": 29,
+          "rms": 0.013855071961615837,
+          "playing": true
+        },
+        {
+          "y": 11326,
+          "intent": true,
+          "activity": 0.11522577036443683,
+          "scene": "about",
+          "cursor": 10,
+          "notes": 29,
+          "rms": 0.020653781915251686,
+          "playing": true
+        },
+        {
+          "y": 11330,
+          "intent": true,
+          "activity": 0.11515788358566305,
+          "scene": "about",
+          "cursor": 10,
+          "notes": 29,
+          "rms": 0.020815645543709654,
+          "playing": true
+        },
+        {
+          "y": 11334,
+          "intent": true,
+          "activity": 0.10846210720512597,
+          "scene": "about",
+          "cursor": 10,
+          "notes": 29,
+          "rms": 0.01604159075171546,
+          "playing": true
+        },
+        {
+          "y": 11338,
+          "intent": true,
+          "activity": 0.111618476852108,
+          "scene": "about",
+          "cursor": 10,
+          "notes": 29,
+          "rms": 0.02335431832193248,
+          "playing": true
+        },
+        {
+          "y": 11342,
+          "intent": true,
+          "activity": 0.11286754200480831,
+          "scene": "about",
+          "cursor": 10,
+          "notes": 29,
+          "rms": 0.02055007293862145,
+          "playing": true
+        },
+        {
+          "y": 11346,
+          "intent": true,
+          "activity": 0.11440153549684018,
+          "scene": "about",
+          "cursor": 10,
+          "notes": 29,
+          "rms": 0.015869742012906446,
+          "playing": true
+        },
+        {
+          "y": 11350,
+          "intent": true,
+          "activity": 0.11463244803279696,
+          "scene": "about",
+          "cursor": 11,
+          "notes": 32,
+          "rms": 0.011788198179414134,
+          "playing": true
+        },
+        {
+          "y": 11354,
+          "intent": true,
+          "activity": 0.11527365955240787,
+          "scene": "about",
+          "cursor": 11,
+          "notes": 32,
+          "rms": 0.030966183371551746,
+          "playing": true
+        }
+      ]
+    },
+    {
+      "delta": 9,
+      "resize": true,
+      "rows": [
+        {
+          "y": 11363,
+          "intent": true,
+          "activity": 0.13208645714595277,
+          "scene": "about",
+          "cursor": 12,
+          "notes": 35,
+          "rms": 0.05033365053908915,
+          "playing": true
+        },
+        {
+          "y": 11372,
+          "intent": true,
+          "activity": 0.18993160266286754,
+          "scene": "about",
+          "cursor": 12,
+          "notes": 35,
+          "rms": 0.03960000571895935,
+          "playing": true
+        },
+        {
+          "y": 11381,
+          "intent": true,
+          "activity": 0.22211339990414877,
+          "scene": "about",
+          "cursor": 12,
+          "notes": 35,
+          "rms": 0.03446096269259194,
+          "playing": true
+        },
+        {
+          "y": 11390,
+          "intent": true,
+          "activity": 0.23781911664755864,
+          "scene": "about",
+          "cursor": 12,
+          "notes": 35,
+          "rms": 0.02773692228075341,
+          "playing": true
+        },
+        {
+          "y": 11399,
+          "intent": true,
+          "activity": 0.24825611337426165,
+          "scene": "about",
+          "cursor": 12,
+          "notes": 35,
+          "rms": 0.022202618555398304,
+          "playing": true
+        },
+        {
+          "y": 11408,
+          "intent": true,
+          "activity": 0.23084796577262473,
+          "scene": "about",
+          "cursor": 12,
+          "notes": 35,
+          "rms": 0.019225525561207234,
+          "playing": true
+        },
+        {
+          "y": 11417,
+          "intent": true,
+          "activity": 0.2358575619429727,
+          "scene": "about",
+          "cursor": 12,
+          "notes": 35,
+          "rms": 0.017867776712265804,
+          "playing": true
+        },
+        {
+          "y": 11426,
+          "intent": true,
+          "activity": 0.23654315256171296,
+          "scene": "about",
+          "cursor": 13,
+          "notes": 38,
+          "rms": 0.017003867088213255,
+          "playing": true
+        },
+        {
+          "y": 11435,
+          "intent": true,
+          "activity": 0.2388490306845223,
+          "scene": "about",
+          "cursor": 13,
+          "notes": 38,
+          "rms": 0.07803912902878078,
+          "playing": true
+        },
+        {
+          "y": 11444,
+          "intent": true,
+          "activity": 0.23467519414195948,
+          "scene": "about",
+          "cursor": 13,
+          "notes": 38,
+          "rms": 0.052366358982253884,
+          "playing": true
+        },
+        {
+          "y": 11453,
+          "intent": true,
+          "activity": 0.2449116271969981,
+          "scene": "about",
+          "cursor": 13,
+          "notes": 38,
+          "rms": 0.030836799690393962,
+          "playing": true
+        },
+        {
+          "y": 11462,
+          "intent": true,
+          "activity": 0.24930853940327485,
+          "scene": "about",
+          "cursor": 13,
+          "notes": 38,
+          "rms": 0.023842674135825585,
+          "playing": true
+        },
+        {
+          "y": 11471,
+          "intent": true,
+          "activity": 0.25226310105254407,
+          "scene": "about",
+          "cursor": 13,
+          "notes": 38,
+          "rms": 0.021038444703313557,
+          "playing": true
+        },
+        {
+          "y": 11480,
+          "intent": true,
+          "activity": 0.23491430166962082,
+          "scene": "about",
+          "cursor": 13,
+          "notes": 38,
+          "rms": 0.026280134994532616,
+          "playing": true
+        },
+        {
+          "y": 11489,
+          "intent": true,
+          "activity": 0.23551585526960583,
+          "scene": "about",
+          "cursor": 14,
+          "notes": 43,
+          "rms": 0.023882435056363165,
+          "playing": true
+        },
+        {
+          "y": 11498,
+          "intent": true,
+          "activity": 0.23733672167864067,
+          "scene": "about",
+          "cursor": 14,
+          "notes": 43,
+          "rms": 0.014584442938570613,
+          "playing": true
+        },
+        {
+          "y": 11507,
+          "intent": true,
+          "activity": 0.23803329418851865,
+          "scene": "about",
+          "cursor": 14,
+          "notes": 43,
+          "rms": 0.05558128858535808,
+          "playing": true
+        },
+        {
+          "y": 11516,
+          "intent": true,
+          "activity": 0.23418127030425107,
+          "scene": "about",
+          "cursor": 14,
+          "notes": 43,
+          "rms": 0.035832808035761894,
+          "playing": true
+        },
+        {
+          "y": 11525,
+          "intent": true,
+          "activity": 0.24467175641105743,
+          "scene": "about",
+          "cursor": 14,
+          "notes": 43,
+          "rms": 0.02872139933805391,
+          "playing": true
+        },
+        {
+          "y": 11534,
+          "intent": true,
+          "activity": 0.24814574899746436,
+          "scene": "about",
+          "cursor": 14,
+          "notes": 43,
+          "rms": 0.024892161853863004,
+          "playing": true
+        },
+        {
+          "y": 11543,
+          "intent": true,
+          "activity": 0.251486204392776,
+          "scene": "about",
+          "cursor": 14,
+          "notes": 43,
+          "rms": 0.03510603584973589,
+          "playing": true
+        },
+        {
+          "y": 11552,
+          "intent": true,
+          "activity": 0.23184280974470373,
+          "scene": "about",
+          "cursor": 14,
+          "notes": 43,
+          "rms": 0.03559954764426328,
+          "playing": true
+        },
+        {
+          "y": 11561,
+          "intent": true,
+          "activity": 0.2363445571438381,
+          "scene": "about",
+          "cursor": 15,
+          "notes": 46,
+          "rms": 0.047852269314062654,
+          "playing": true
+        },
+        {
+          "y": 11570,
+          "intent": true,
+          "activity": 0.23597435051259505,
+          "scene": "about",
+          "cursor": 15,
+          "notes": 46,
+          "rms": 0.03184937507136228,
+          "playing": true
+        },
+        {
+          "y": 11579,
+          "intent": true,
+          "activity": 0.2383706962653441,
+          "scene": "about",
+          "cursor": 15,
+          "notes": 46,
+          "rms": 0.034226742565024885,
+          "playing": true
+        },
+        {
+          "y": 11588,
+          "intent": true,
+          "activity": 0.23332209047108998,
+          "scene": "about",
+          "cursor": 15,
+          "notes": 46,
+          "rms": 0.022870000522262228,
+          "playing": true
+        },
+        {
+          "y": 11597,
+          "intent": true,
+          "activity": 0.24391128961925618,
+          "scene": "about",
+          "cursor": 15,
+          "notes": 46,
+          "rms": 0.01573355924403498,
+          "playing": true
+        },
+        {
+          "y": 11606,
+          "intent": true,
+          "activity": 0.24758385169702576,
+          "scene": "about",
+          "cursor": 15,
+          "notes": 46,
+          "rms": 0.018031302224012172,
+          "playing": true
+        },
+        {
+          "y": 11615,
+          "intent": true,
+          "activity": 0.2514138671750787,
+          "scene": "about",
+          "cursor": 15,
+          "notes": 46,
+          "rms": 0.0205152458084949,
+          "playing": true
+        },
+        {
+          "y": 11624,
+          "intent": true,
+          "activity": 0.23353666302168685,
+          "scene": "about",
+          "cursor": 15,
+          "notes": 46,
+          "rms": 0.016595395184708664,
+          "playing": true
+        },
+        {
+          "y": 11633,
+          "intent": true,
+          "activity": 0.23484823990839318,
+          "scene": "about",
+          "cursor": 16,
+          "notes": 48,
+          "rms": 0.014829093638204553,
+          "playing": true
+        },
+        {
+          "y": 11642,
+          "intent": true,
+          "activity": 0.23700865028607368,
+          "scene": "about",
+          "cursor": 16,
+          "notes": 48,
+          "rms": 0.018504434260905596,
+          "playing": true
+        },
+        {
+          "y": 11651,
+          "intent": true,
+          "activity": 0.23787246040188942,
+          "scene": "about",
+          "cursor": 16,
+          "notes": 48,
+          "rms": 0.018855964790863614,
+          "playing": true
+        },
+        {
+          "y": 11660,
+          "intent": true,
+          "activity": 0.23411135800285257,
+          "scene": "about",
+          "cursor": 16,
+          "notes": 48,
+          "rms": 0.016144878263861826,
+          "playing": true
+        },
+        {
+          "y": 11669,
+          "intent": true,
+          "activity": 0.24199915794039648,
+          "scene": "about",
+          "cursor": 16,
+          "notes": 48,
+          "rms": 0.012534346513883491,
+          "playing": true
+        },
+        {
+          "y": 11678,
+          "intent": true,
+          "activity": 0.24782150244313525,
+          "scene": "about",
+          "cursor": 16,
+          "notes": 48,
+          "rms": 0.02050288556919253,
+          "playing": true
+        },
+        {
+          "y": 11687,
+          "intent": true,
+          "activity": 0.2521303696247638,
+          "scene": "about",
+          "cursor": 16,
+          "notes": 48,
+          "rms": 0.017111512737382123,
+          "playing": true
+        },
+        {
+          "y": 11696,
+          "intent": true,
+          "activity": 0.2325611453918674,
+          "scene": "about",
+          "cursor": 17,
+          "notes": 52,
+          "rms": 0.014028905304035635,
+          "playing": true
+        },
+        {
+          "y": 11705,
+          "intent": true,
+          "activity": 0.23688789846471764,
+          "scene": "about",
+          "cursor": 17,
+          "notes": 52,
+          "rms": 0.015252849320518845,
+          "playing": true
+        },
+        {
+          "y": 11714,
+          "intent": true,
+          "activity": 0.23723989441958818,
+          "scene": "about",
+          "cursor": 17,
+          "notes": 52,
+          "rms": 0.04889336082702088,
+          "playing": true
+        },
+        {
+          "y": 11723,
+          "intent": true,
+          "activity": 0.23919274286893508,
+          "scene": "about",
+          "cursor": 17,
+          "notes": 52,
+          "rms": 0.03797262177578485,
+          "playing": true
+        },
+        {
+          "y": 11732,
+          "intent": true,
+          "activity": 0.23367870717481976,
+          "scene": "about",
+          "cursor": 17,
+          "notes": 52,
+          "rms": 0.028600529097033606,
+          "playing": true
+        },
+        {
+          "y": 11741,
+          "intent": true,
+          "activity": 0.24384962142856878,
+          "scene": "about",
+          "cursor": 17,
+          "notes": 52,
+          "rms": 0.03431178355036795,
+          "playing": true
+        },
+        {
+          "y": 11750,
+          "intent": true,
+          "activity": 0.23584971088772727,
+          "scene": "about",
+          "cursor": 17,
+          "notes": 52,
+          "rms": 0.05515275736938995,
+          "playing": true
+        },
+        {
+          "y": 11759,
+          "intent": true,
+          "activity": 0.2446271144546172,
+          "scene": "about",
+          "cursor": 17,
+          "notes": 52,
+          "rms": 0.058676277593634314,
+          "playing": true
+        },
+        {
+          "y": 11768,
+          "intent": true,
+          "activity": 0.22881454659651634,
+          "scene": "about",
+          "cursor": 18,
+          "notes": 56,
+          "rms": 0.04648797010852619,
+          "playing": true
+        },
+        {
+          "y": 11777,
+          "intent": true,
+          "activity": 0.23386753769503674,
+          "scene": "about",
+          "cursor": 18,
+          "notes": 56,
+          "rms": 0.04946818868272282,
+          "playing": true
+        },
+        {
+          "y": 11786,
+          "intent": true,
+          "activity": 0.2371460642323646,
+          "scene": "about",
+          "cursor": 18,
+          "notes": 56,
+          "rms": 0.03116092090801833,
+          "playing": true
+        },
+        {
+          "y": 11795,
+          "intent": true,
+          "activity": 0.22650385433034304,
+          "scene": "about",
+          "cursor": 18,
+          "notes": 56,
+          "rms": 0.038634691400344465,
+          "playing": true
+        },
+        {
+          "y": 11804,
+          "intent": true,
+          "activity": 0.23018925168552298,
+          "scene": "about",
+          "cursor": 18,
+          "notes": 56,
+          "rms": 0.014338537983582372,
+          "playing": true
+        },
+        {
+          "y": 11813,
+          "intent": true,
+          "activity": 0.2292465570906738,
+          "scene": "about",
+          "cursor": 18,
+          "notes": 56,
+          "rms": 0.05140852276606555,
+          "playing": true
+        },
+        {
+          "y": 11822,
+          "intent": true,
+          "activity": 0.24142070613769337,
+          "scene": "about",
+          "cursor": 18,
+          "notes": 56,
+          "rms": 0.04145306106507125,
+          "playing": true
+        },
+        {
+          "y": 11831,
+          "intent": true,
+          "activity": 0.24715371241734255,
+          "scene": "about",
+          "cursor": 19,
+          "notes": 60,
+          "rms": 0.0674282168798606,
+          "playing": true
+        },
+        {
+          "y": 11840,
+          "intent": true,
+          "activity": 0.22992807160022827,
+          "scene": "about",
+          "cursor": 19,
+          "notes": 60,
+          "rms": 0.04834796548823067,
+          "playing": true
+        },
+        {
+          "y": 11849,
+          "intent": true,
+          "activity": 0.2338466322614444,
+          "scene": "about",
+          "cursor": 19,
+          "notes": 60,
+          "rms": 0.045371881806702125,
+          "playing": true
+        },
+        {
+          "y": 11858,
+          "intent": true,
+          "activity": 0.236516743698395,
+          "scene": "about",
+          "cursor": 19,
+          "notes": 60,
+          "rms": 0.07153650374365109,
+          "playing": true
+        },
+        {
+          "y": 11867,
+          "intent": true,
+          "activity": 0.23883600617133097,
+          "scene": "about",
+          "cursor": 19,
+          "notes": 60,
+          "rms": 0.06725191684104824,
+          "playing": true
+        },
+        {
+          "y": 11876,
+          "intent": true,
+          "activity": 0.23466950652776392,
+          "scene": "about",
+          "cursor": 19,
+          "notes": 60,
+          "rms": 0.06292988295443112,
+          "playing": true
+        },
+        {
+          "y": 11885,
+          "intent": true,
+          "activity": 0.24329620894702766,
+          "scene": "about",
+          "cursor": 19,
+          "notes": 60,
+          "rms": 0.049360045825422416,
+          "playing": true
+        },
+        {
+          "y": 11894,
+          "intent": true,
+          "activity": 0.24722005680715142,
+          "scene": "about",
+          "cursor": 19,
+          "notes": 60,
+          "rms": 0.045146138098191464,
+          "playing": true
+        },
+        {
+          "y": 11903,
+          "intent": true,
+          "activity": 0.2510323645787501,
+          "scene": "about",
+          "cursor": 20,
+          "notes": 66,
+          "rms": 0.02388440378823467,
+          "playing": true
+        },
+        {
+          "y": 11912,
+          "intent": true,
+          "activity": 0.23164191944499213,
+          "scene": "about",
+          "cursor": 20,
+          "notes": 66,
+          "rms": 0.05017283991273756,
+          "playing": true
+        },
+        {
+          "y": 11921,
+          "intent": true,
+          "activity": 0.2352468040757274,
+          "scene": "about",
+          "cursor": 20,
+          "notes": 66,
+          "rms": 0.03516975906994879,
+          "playing": true
+        },
+        {
+          "y": 11930,
+          "intent": true,
+          "activity": 0.2362460540397138,
+          "scene": "about",
+          "cursor": 20,
+          "notes": 66,
+          "rms": 0.06963929122565814,
+          "playing": true
+        }
+      ]
+    },
+    {
+      "delta": -9,
+      "resize": true,
+      "rows": [
+        {
+          "y": 11921,
+          "intent": true,
+          "activity": 0.22513701108315284,
+          "scene": "about",
+          "cursor": 20,
+          "notes": 66,
+          "rms": 0.04591344801056041,
+          "playing": true
+        },
+        {
+          "y": 11912,
+          "intent": true,
+          "activity": 0.22761309072672217,
+          "scene": "about",
+          "cursor": 20,
+          "notes": 66,
+          "rms": 0.061692441132918795,
+          "playing": true
+        },
+        {
+          "y": 11903,
+          "intent": true,
+          "activity": 0.24165598552441467,
+          "scene": "about",
+          "cursor": 20,
+          "notes": 66,
+          "rms": 0.049929122112192435,
+          "playing": true
+        },
+        {
+          "y": 11894,
+          "intent": true,
+          "activity": 0.23590232825836677,
+          "scene": "about",
+          "cursor": 21,
+          "notes": 71,
+          "rms": 0.04752364543755013,
+          "playing": true
+        },
+        {
+          "y": 11885,
+          "intent": true,
+          "activity": 0.24550794050580738,
+          "scene": "about",
+          "cursor": 21,
+          "notes": 71,
+          "rms": 0.046307696853139624,
+          "playing": true
+        },
+        {
+          "y": 11876,
+          "intent": true,
+          "activity": 0.2301855892928579,
+          "scene": "about",
+          "cursor": 21,
+          "notes": 71,
+          "rms": 0.0491908578525988,
+          "playing": true
+        },
+        {
+          "y": 11867,
+          "intent": true,
+          "activity": 0.234968729251542,
+          "scene": "about",
+          "cursor": 21,
+          "notes": 71,
+          "rms": 0.039841334978902514,
+          "playing": true
+        },
+        {
+          "y": 11858,
+          "intent": true,
+          "activity": 0.23687325363844836,
+          "scene": "about",
+          "cursor": 21,
+          "notes": 71,
+          "rms": 0.034901212007487685,
+          "playing": true
+        },
+        {
+          "y": 11849,
+          "intent": true,
+          "activity": 0.23723273661345676,
+          "scene": "about",
+          "cursor": 21,
+          "notes": 71,
+          "rms": 0.05542694065296357,
+          "playing": true
+        },
+        {
+          "y": 11840,
+          "intent": true,
+          "activity": 0.23296397952459919,
+          "scene": "about",
+          "cursor": 21,
+          "notes": 71,
+          "rms": 0.04259414614094383,
+          "playing": true
+        },
+        {
+          "y": 11831,
+          "intent": true,
+          "activity": 0.24322399774655304,
+          "scene": "about",
+          "cursor": 21,
+          "notes": 71,
+          "rms": 0.0663443702682442,
+          "playing": true
+        },
+        {
+          "y": 11822,
+          "intent": true,
+          "activity": 0.24927176678144303,
+          "scene": "about",
+          "cursor": 22,
+          "notes": 75,
+          "rms": 0.05510514686224387,
+          "playing": true
+        },
+        {
+          "y": 11813,
+          "intent": true,
+          "activity": 0.2503878353154479,
+          "scene": "about",
+          "cursor": 22,
+          "notes": 75,
+          "rms": 0.075660332690119,
+          "playing": true
+        },
+        {
+          "y": 11804,
+          "intent": true,
+          "activity": 0.23407412349567525,
+          "scene": "about",
+          "cursor": 22,
+          "notes": 75,
+          "rms": 0.042105636841346564,
+          "playing": true
+        },
+        {
+          "y": 11795,
+          "intent": true,
+          "activity": 0.23586601009598054,
+          "scene": "about",
+          "cursor": 22,
+          "notes": 75,
+          "rms": 0.047058894238853045,
+          "playing": true
+        },
+        {
+          "y": 11786,
+          "intent": true,
+          "activity": 0.23731258623569113,
+          "scene": "about",
+          "cursor": 22,
+          "notes": 75,
+          "rms": 0.030629827500533908,
+          "playing": true
+        },
+        {
+          "y": 11777,
+          "intent": true,
+          "activity": 0.23644620555832768,
+          "scene": "about",
+          "cursor": 22,
+          "notes": 75,
+          "rms": 0.038306392736858846,
+          "playing": true
+        },
+        {
+          "y": 11768,
+          "intent": true,
+          "activity": 0.23262197336590323,
+          "scene": "about",
+          "cursor": 22,
+          "notes": 75,
+          "rms": 0.014970795165675347,
+          "playing": true
+        },
+        {
+          "y": 11759,
+          "intent": true,
+          "activity": 0.24305789555611704,
+          "scene": "about",
+          "cursor": 22,
+          "notes": 75,
+          "rms": 0.052446744262976096,
+          "playing": true
+        },
+        {
+          "y": 11750,
+          "intent": true,
+          "activity": 0.24814453359058392,
+          "scene": "about",
+          "cursor": 23,
+          "notes": 79,
+          "rms": 0.03760950238603631,
+          "playing": true
+        },
+        {
+          "y": 11741,
+          "intent": true,
+          "activity": 0.2514856083153311,
+          "scene": "about",
+          "cursor": 23,
+          "notes": 79,
+          "rms": 0.07123317960189597,
+          "playing": true
+        },
+        {
+          "y": 11732,
+          "intent": true,
+          "activity": 0.23382789385052083,
+          "scene": "about",
+          "cursor": 23,
+          "notes": 79,
+          "rms": 0.04399381009059829,
+          "playing": true
+        },
+        {
+          "y": 11723,
+          "intent": true,
+          "activity": 0.2357459147342882,
+          "scene": "about",
+          "cursor": 23,
+          "notes": 79,
+          "rms": 0.058844058846276644,
+          "playing": true
+        },
+        {
+          "y": 11714,
+          "intent": true,
+          "activity": 0.23668196364746666,
+          "scene": "about",
+          "cursor": 23,
+          "notes": 79,
+          "rms": 0.033943774639724304,
+          "playing": true
+        },
+        {
+          "y": 11705,
+          "intent": true,
+          "activity": 0.23969554759358006,
+          "scene": "about",
+          "cursor": 23,
+          "notes": 79,
+          "rms": 0.03343388408926097,
+          "playing": true
+        },
+        {
+          "y": 11696,
+          "intent": true,
+          "activity": 0.2333461941408687,
+          "scene": "about",
+          "cursor": 23,
+          "notes": 79,
+          "rms": 0.026916612127034834,
+          "playing": true
+        },
+        {
+          "y": 11687,
+          "intent": true,
+          "activity": 0.24340967554205037,
+          "scene": "about",
+          "cursor": 24,
+          "notes": 85,
+          "rms": 0.025878914303516833,
+          "playing": true
+        },
+        {
+          "y": 11678,
+          "intent": true,
+          "activity": 0.24831665818065501,
+          "scene": "about",
+          "cursor": 24,
+          "notes": 85,
+          "rms": 0.039492491668990916,
+          "playing": true
+        },
+        {
+          "y": 11669,
+          "intent": true,
+          "activity": 0.25157002936355416,
+          "scene": "about",
+          "cursor": 24,
+          "notes": 85,
+          "rms": 0.06430084495926991,
+          "playing": true
+        },
+        {
+          "y": 11660,
+          "intent": true,
+          "activity": 0.23269658826922907,
+          "scene": "about",
+          "cursor": 24,
+          "notes": 85,
+          "rms": 0.07171611432901787,
+          "playing": true
+        },
+        {
+          "y": 11651,
+          "intent": true,
+          "activity": 0.2351944058750209,
+          "scene": "about",
+          "cursor": 24,
+          "notes": 85,
+          "rms": 0.060827272916202546,
+          "playing": true
+        },
+        {
+          "y": 11642,
+          "intent": true,
+          "activity": 0.23698372448577068,
+          "scene": "about",
+          "cursor": 24,
+          "notes": 85,
+          "rms": 0.054976333412087554,
+          "playing": true
+        },
+        {
+          "y": 11633,
+          "intent": true,
+          "activity": 0.2378602423129588,
+          "scene": "about",
+          "cursor": 24,
+          "notes": 85,
+          "rms": 0.04846481305823032,
+          "playing": true
+        },
+        {
+          "y": 11624,
+          "intent": true,
+          "activity": 0.23410604732890358,
+          "scene": "about",
+          "cursor": 24,
+          "notes": 85,
+          "rms": 0.04281964544864433,
+          "playing": true
+        },
+        {
+          "y": 11615,
+          "intent": true,
+          "activity": 0.2430240527752187,
+          "scene": "about",
+          "cursor": 25,
+          "notes": 90,
+          "rms": 0.039045860387398566,
+          "playing": true
+        }
+      ]
+    },
+    {
+      "delta": 8,
+      "resize": false,
+      "rows": [
+        {
+          "y": 11388,
+          "intent": true,
+          "activity": 0.11892261770662518,
+          "scene": "about",
+          "cursor": 26,
+          "notes": 94,
+          "rms": 0.052478028601647894,
+          "playing": true
+        },
+        {
+          "y": 11396,
+          "intent": true,
+          "activity": 0.16324480797695198,
+          "scene": "about",
+          "cursor": 26,
+          "notes": 94,
+          "rms": 0.056652551580218174,
+          "playing": true
+        },
+        {
+          "y": 11404,
+          "intent": true,
+          "activity": 0.19122437798229977,
+          "scene": "about",
+          "cursor": 26,
+          "notes": 94,
+          "rms": 0.07608584245567765,
+          "playing": true
+        },
+        {
+          "y": 11412,
+          "intent": true,
+          "activity": 0.19446887975964805,
+          "scene": "about",
+          "cursor": 26,
+          "notes": 94,
+          "rms": 0.046044180696131615,
+          "playing": true
+        },
+        {
+          "y": 11420,
+          "intent": true,
+          "activity": 0.20612996338808395,
+          "scene": "about",
+          "cursor": 26,
+          "notes": 94,
+          "rms": 0.05212869634789626,
+          "playing": true
+        },
+        {
+          "y": 11428,
+          "intent": true,
+          "activity": 0.21038162336442284,
+          "scene": "about",
+          "cursor": 26,
+          "notes": 94,
+          "rms": 0.03353398654995853,
+          "playing": true
+        },
+        {
+          "y": 11436,
+          "intent": true,
+          "activity": 0.21297321763260263,
+          "scene": "about",
+          "cursor": 26,
+          "notes": 94,
+          "rms": 0.045382325749958236,
+          "playing": true
+        },
+        {
+          "y": 11444,
+          "intent": true,
+          "activity": 0.20292000572274954,
+          "scene": "about",
+          "cursor": 27,
+          "notes": 98,
+          "rms": 0.016902866090721048,
+          "playing": true
+        },
+        {
+          "y": 11452,
+          "intent": true,
+          "activity": 0.21040464623371788,
+          "scene": "about",
+          "cursor": 27,
+          "notes": 98,
+          "rms": 0.05468720737445168,
+          "playing": true
+        },
+        {
+          "y": 11460,
+          "intent": true,
+          "activity": 0.21229022741114775,
+          "scene": "about",
+          "cursor": 27,
+          "notes": 98,
+          "rms": 0.04107811546231028,
+          "playing": true
+        },
+        {
+          "y": 11468,
+          "intent": true,
+          "activity": 0.21408630595530861,
+          "scene": "about",
+          "cursor": 27,
+          "notes": 98,
+          "rms": 0.038370612555400384,
+          "playing": true
+        },
+        {
+          "y": 11476,
+          "intent": true,
+          "activity": 0.2157113420064218,
+          "scene": "about",
+          "cursor": 27,
+          "notes": 98,
+          "rms": 0.02349550495945672,
+          "playing": true
+        },
+        {
+          "y": 11484,
+          "intent": true,
+          "activity": 0.2148728489386748,
+          "scene": "about",
+          "cursor": 27,
+          "notes": 98,
+          "rms": 0.042703143755990894,
+          "playing": true
+        },
+        {
+          "y": 11492,
+          "intent": true,
+          "activity": 0.21517309239067917,
+          "scene": "about",
+          "cursor": 27,
+          "notes": 98,
+          "rms": 0.023327864562120076,
+          "playing": true
+        }
+      ]
+    },
+    {
+      "delta": 8,
+      "resize": true,
+      "rows": [
+        {
+          "y": 11416,
+          "intent": true,
+          "activity": 0.43669388885510146,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11424,
+          "intent": true,
+          "activity": 0.3385815620587874,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11432,
+          "intent": true,
+          "activity": 0.2846919575327679,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11440,
+          "intent": true,
+          "activity": 0.25787972436795936,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11448,
+          "intent": true,
+          "activity": 0.24211130500488576,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11456,
+          "intent": true,
+          "activity": 0.21504742936274904,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11464,
+          "intent": true,
+          "activity": 0.2163696287154613,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11472,
+          "intent": true,
+          "activity": 0.21683491815764722,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11480,
+          "intent": true,
+          "activity": 0.2154208892335259,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        },
+        {
+          "y": 11488,
+          "intent": true,
+          "activity": 0.2107649879351469,
+          "scene": "about",
+          "rms": 0,
+          "playing": false
+        }
+      ]
+    }
+  ],
+  "physicalDevice": false
+}

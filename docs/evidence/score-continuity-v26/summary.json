@@ -1,0 +1,55 @@
+{
+  "release": "score-continuity-v26",
+  "status": "Local verification passed; production verification pending",
+  "local_checks": {
+    "check-webkit": 21,
+    "check-chromium": 21,
+    "touch": 6,
+    "score-regression": 37,
+    "line-regression": 92
+  },
+  "total_local_checks": 177,
+  "root_cause": "The sound scroll controller treated every mobile-height resize as navigation, clearing gesture intent and suppressing motion input for 450 ms. Repeated browser-chrome resizes starved the score transport even while scrolling continued. The visual controller already ignored the same transient geometry changes.",
+  "fix": "Use the existing stable viewport revision in the audio resize handler. Same-revision height changes preserve the current native input lease. Genuine structural/orientation changes still suppress layout-generated motion and remeasure.",
+  "comparison": [
+    {
+      "engine": "webkit",
+      "baseline": {
+        "scheduled_notes_first": 52,
+        "scheduled_notes_last": 52,
+        "accepted_scroll_samples": 1,
+        "sample_count": 8,
+        "final_piano_rms": 5.1748999929328e-07,
+        "runtime_errors": []
+      },
+      "fixed": {
+        "scheduled_notes_first": 52,
+        "scheduled_notes_last": 75,
+        "accepted_scroll_samples": 8,
+        "sample_count": 8,
+        "final_piano_rms": 0.06538071159903557,
+        "runtime_errors": []
+      }
+    },
+    {
+      "engine": "chromium",
+      "baseline": {
+        "scheduled_notes_first": 140,
+        "scheduled_notes_last": 178,
+        "accepted_scroll_samples": 3,
+        "sample_count": 8,
+        "final_piano_rms": 0.052765763110585014,
+        "runtime_errors": []
+      },
+      "fixed": {
+        "scheduled_notes_first": 85,
+        "scheduled_notes_last": 123,
+        "accepted_scroll_samples": 8,
+        "sample_count": 8,
+        "final_piano_rms": 0.049422424718145556,
+        "runtime_errors": []
+      }
+    }
+  ],
+  "physical_iphone_tested": false
+}

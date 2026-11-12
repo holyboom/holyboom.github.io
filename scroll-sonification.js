@@ -8,6 +8,7 @@
  const route=window.HolyMindSoundScenes;
  const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n)),smooth=t=>t*t*(3-2*t),ease=t=>t*t*t*(t*(t*6-15)+10);
  let raf=0,measureTimer=0,lastTick=performance.now(),lastY=scrollY,lastScroll=0,intentUntil=0,suppressUntil=0,activeUntil=0;
+ let viewportRevision=window.HolyMindViewport?.snapshot().revision??null,ignoredViewportResizes=0,structuralResizes=0;
  let speed=0,direction=1,candidate=1,reverseDistance=0,lastInput='none',gesturePeak=0,updates=0,completionArmed=true,reconnectArmed=false,lastCue=-1e6;
  let layout={orbit:1000,ribbon:2400,start:3000,end:5000,height:innerHeight,positions:{}},state={scene:'hero',scope:1,activity:0,progress:0,raw:0,direction:1,morph:0};
  function measure(){
@@ -77,7 +78,18 @@
  const dialog=document.getElementById('skill-dialog'),menu=document.getElementById('menu-toggle');
  if(window.MutationObserver){const watcher=new MutationObserver(()=>{suppress(280);queue(300);});if(dialog)watcher.observe(dialog,{attributes:true,attributeFilter:['open']});if(menu)watcher.observe(menu,{attributes:true,attributeFilter:['aria-expanded']});}
  addEventListener('hashchange',()=>suppress(900));addEventListener('popstate',()=>suppress(900));
- addEventListener('resize',()=>{suppress(450);scheduleMeasure();},{passive:true});
+ function resized(){
+  // The visual story already distinguishes mobile browser chrome from a real
+  // layout resize. Audio must use that SAME decision: a moving address bar is
+  // not navigation and must not erase the active wheel/touch/inertia lease.
+  const viewport=window.HolyMindViewport?.snapshot();
+  if(viewport&&viewportRevision!==null&&viewport.revision===viewportRevision){
+   ignoredViewportResizes++;queue(220);return;
+  }
+  if(viewport)viewportRevision=viewport.revision;
+  structuralResizes++;suppress(450);scheduleMeasure();
+ }
+ addEventListener('resize',resized,{passive:true});
  window.ScrollTrigger?.addEventListener('refresh',scheduleMeasure);
  if(window.ResizeObserver)new ResizeObserver(()=>{if(Math.abs(document.documentElement.scrollHeight-(layout.measuredHeight||0))>2)suppress(180);scheduleMeasure();}).observe(document.querySelector('main'));
  document.fonts?.ready.then(measure);
@@ -85,6 +97,6 @@
  function park(){if(raf)cancelAnimationFrame(raf);raf=0;speed=0;intentUntil=0;state={...state,activity:0};window.HolyMindAudio?.updateSoundscape({...state,scope:0});}
  addEventListener('pagehide',park);addEventListener('pageshow',()=>{lastY=scrollY;measure();});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)park();else{lastY=scrollY;suppress(400);measure();}});
- window.HolyMindScrollSound=Object.freeze({version:'full-current-v14',clearGesture:()=>suppress(0),suppressForNavigation:()=>suppress(1400),snapshot:()=>({...state,gesturePeak,updates,running:!!raf,lastScroll,completionArmed,reconnectArmed,scopeName:'Full journey · 11 scenes',stations:route.profiles.map(p=>({id:p.id,name:p.name,at:p.id==='hero'?0:p.id==='orbit'?layout.orbit-innerHeight*.25:p.id==='ribbon'?layout.ribbon-innerHeight*.25:p.id==='assembly'?layout.start:layout.positions[p.id]})),measuredHeight:layout.measuredHeight})});
+ window.HolyMindScrollSound=Object.freeze({version:'score-continuity-v26',clearGesture:()=>suppress(0),suppressForNavigation:()=>suppress(1400),snapshot:()=>({...state,gesturePeak,updates,running:!!raf,lastScroll,viewportRevision,ignoredViewportResizes,structuralResizes,completionArmed,reconnectArmed,scopeName:'Full journey · 11 scenes',stations:route.profiles.map(p=>({id:p.id,name:p.name,at:p.id==='hero'?0:p.id==='orbit'?layout.orbit-innerHeight*.25:p.id==='ribbon'?layout.ribbon-innerHeight*.25:p.id==='assembly'?layout.start:layout.positions[p.id]})),measuredHeight:layout.measuredHeight})});
  measure();
 })();

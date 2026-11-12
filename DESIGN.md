@@ -295,3 +295,7 @@ Continue v24 rather than introduce another theme. Existing three scenarios/four 
 Selections still change only through explicit controls. The Portal can return to the selected question or remove just the carried skill without losing the challenge/step. Repeated choices are no-ops and layout refresh is batched by measured geometry, not invoked on every click. Default audio, all recorded samples/long releases, Mozart, five crowns/259 particles, motion policy, viewport stability, pin geometry and existing site sections are not redesigned.
 
 Reflected colors keep their existing luminance caps but use separate spatial centroids from the actual particle frame, so cyan/gold/violet originate at their corresponding source. New source details receive the existing reading-space mix. No new sound, image, library, backend, account, analytics or submission. Quality assertions must be behavior-specific, with real browser state and exact preserved-file hashes; no physical iPhone/flash/frame-rate certification.
+
+
+## Scroll Continuity v26 — repair missing piano after Boom
+A reproduced mobile-height resize erased audio scroll intent while the visual scene correctly remained stable. Audio now shares the existing viewport revision decision: browser chrome changes keep the current native input lease; actual orientation/structural changes still remeasure and suppress false movement. No score, instrument, recorded sound, gain, firework, motion or user-choice changes. Evidence and limits: docs/evidence/score-continuity-v26/summary.json.
