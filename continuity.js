@@ -84,7 +84,7 @@
    if(st.id==='assembly'&&assemblyPin)st.at=assemblyPin.start;
    if(st.id==='orbit'){const section=q('#mind-flow');st.at=layoutTop(section)+Math.min(200,H*.2);}
    if(st.id==='skills'){const stage=q('.deck-stage');st.at=layoutTop(stage)+stage.offsetHeight*.46-H*.56;}
-   if(st.id==='signature'){const sculpture=q('.signature-sculpture');st.at=layoutTop(sculpture)+sculpture.offsetHeight*.65-H*.56-(H<540?Math.min(150,(540-H)*.85):0);}
+   if(st.id==='signature'){const sculpture=q('.signature-sculpture');st.at=layoutTop(sculpture)+sculpture.offsetHeight*.65-H*.56-(H<540?Math.min(150,(540-H)*.85):0)-Math.min(H<540?65:180,H*.20);}
    st.at=clamp(st.at,0,max);
   });
   // Responsive compositions are allowed to differ in height, never in story order.

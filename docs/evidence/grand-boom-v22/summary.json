@@ -1,0 +1,19 @@
+{
+  "release": "grand-boom-v22",
+  "status": "Local verification passed; production verification pending",
+  "local_checks": {
+    "local_chromium": 58,
+    "local_webkit": 58,
+    "local_stability_webkit": 25,
+    "local_native_touch": 8,
+    "local_reversal_webkit": 5
+  },
+  "total_local_checks": 154,
+  "audio_checks": 29,
+  "new_particle_count": 232,
+  "real_recording_sources": 3,
+  "recorded_clips": 24,
+  "piano_and_line_current_unchanged": true,
+  "stable_viewport_fix_preserved": true,
+  "physical_iphone_tested": false
+}

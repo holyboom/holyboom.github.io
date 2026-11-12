@@ -1,6 +1,6 @@
 {
   "name": "holyboom-holymind-profile",
-  "version": "21.0.0",
+  "version": "22.0.0",
   "private": true,
   "description": "Static GitHub Pages profile and interactive HolyMind skill collection",
   "scripts": {
@@ -32,7 +32,9 @@
     "test:boom": "node scripts/qa-boom.cjs",
     "test:boom-touch": "node scripts/qa-boom-touch.cjs",
     "build:boom-audio": "node scripts/build-boom-audio.cjs",
-    "test:boom-smooth": "node scripts/qa-boom-smooth.cjs"
+    "test:boom-smooth": "node scripts/qa-boom-smooth.cjs",
+    "build:real-fireworks": "python3 scripts/build-real-fireworks.py",
+    "test:grand-boom": "node scripts/qa-grand-boom.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

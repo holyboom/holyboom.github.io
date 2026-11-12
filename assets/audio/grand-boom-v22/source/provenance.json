@@ -1,0 +1,38 @@
+[
+  {
+    "id": 336008,
+    "name": "whistle-pop",
+    "author": "Rudmer_Rotteveel",
+    "page": "https://freesound.org/people/Rudmer_Rotteveel/sounds/336008/",
+    "download": "https://cdn.freesound.org/previews/336/336008_4921277-hq.mp3",
+    "license": "CC0 1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha256": "662c9cc0565d1256f29145a2ceca6868815df2a193c36cbb1e55858602dc0fa2",
+    "bytes": 57712,
+    "representation": "Freesound public high-quality MP3 preview"
+  },
+  {
+    "id": 505264,
+    "name": "crackle",
+    "author": "16FThumaF",
+    "page": "https://freesound.org/people/16FThumaF/sounds/505264/",
+    "download": "https://cdn.freesound.org/previews/505/505264_10791958-hq.mp3",
+    "license": "CC0 1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha256": "766b8c07556014415f8e34165bd90c1955e68ba0d2618d65b668b32e67a6aae0",
+    "bytes": 1657920,
+    "representation": "Freesound public high-quality MP3 preview"
+  },
+  {
+    "id": 456316,
+    "name": "whistles",
+    "author": "cupido-1",
+    "page": "https://freesound.org/people/cupido-1/sounds/456316/",
+    "download": "https://cdn.freesound.org/previews/456/456316_1030167-hq.mp3",
+    "license": "CC0 1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha256": "0f4abed33a42b19fe807d565cf632dbc85d1be8134ff48ac05921294a4b0aafb",
+    "bytes": 348720,
+    "representation": "Freesound public high-quality MP3 preview"
+  }
+]

@@ -1,0 +1,391 @@
+{
+  "release": "grand-boom-v22",
+  "checks": [
+    {
+      "name": "finite-bounded-faded-launch:0",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-launch:1",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-launch:2",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-launch:3",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-launch:4",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-burst:0",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-gather:0",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-return:0",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-burst:1",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-gather:1",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-return:1",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-burst:2",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-gather:2",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-return:2",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-burst:3",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-gather:3",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-return:3",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-burst:4",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-gather:4",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-return:4",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-charge:0",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-glitter:0",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-recall:0",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-faded-seal:0",
+      "pass": true
+    },
+    {
+      "name": "five-real-source-bursts",
+      "pass": true
+    },
+    {
+      "name": "brighter-than-rejected-synth",
+      "pass": true,
+      "before": {
+        "centroidHz": 1860.829866763046,
+        "below600": 0.2520413176369012,
+        "above1800": 0.33198289063238634
+      },
+      "after": [
+        {
+          "key": "burst:0",
+          "peak": 0.459991455078125,
+          "rms": 0.020539317151496535,
+          "centroidHz": 2479.026817274137,
+          "below600": 0.01918005262885708,
+          "above1800": 0.611835774878464
+        },
+        {
+          "key": "burst:1",
+          "peak": 0.1378173828125,
+          "rms": 0.02866920375571492,
+          "centroidHz": 2439.5503909463505,
+          "below600": 0.030850848968135967,
+          "above1800": 0.6182425399220445
+        },
+        {
+          "key": "burst:2",
+          "peak": 0.459991455078125,
+          "rms": 0.01770919891168447,
+          "centroidHz": 2567.7783846621164,
+          "below600": 0.01940788381597823,
+          "above1800": 0.5489511503753971
+        },
+        {
+          "key": "burst:3",
+          "peak": 0.459991455078125,
+          "rms": 0.01996831389675839,
+          "centroidHz": 2561.088913873496,
+          "below600": 0.020443004522814927,
+          "above1800": 0.4602973742735702
+        },
+        {
+          "key": "burst:4",
+          "peak": 0.345184326171875,
+          "rms": 0.041816185679943656,
+          "centroidHz": 2930.9605372625715,
+          "below600": 0.01142080186584956,
+          "above1800": 0.7853523325317695
+        }
+      ]
+    },
+    {
+      "name": "no-low-thud-dominance",
+      "pass": true,
+      "values": [
+        {
+          "key": "burst:0",
+          "low": 0.01918005262885708
+        },
+        {
+          "key": "burst:1",
+          "low": 0.030850848968135967
+        },
+        {
+          "key": "burst:2",
+          "low": 0.01940788381597823
+        },
+        {
+          "key": "burst:3",
+          "low": 0.020443004522814927
+        },
+        {
+          "key": "burst:4",
+          "low": 0.01142080186584956
+        }
+      ]
+    },
+    {
+      "name": "manifest-bank-hash",
+      "pass": true
+    },
+    {
+      "name": "source-provenance",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "rows": [
+    {
+      "key": "launch:0",
+      "peak": 0.258056640625,
+      "rms": 0.05489974135429912,
+      "centroidHz": 5214.345553885455,
+      "below600": 0.0001031072401804307,
+      "above1800": 0.9995449985534666
+    },
+    {
+      "key": "launch:1",
+      "peak": 0.287384033203125,
+      "rms": 0.0522218034940982,
+      "centroidHz": 4499.129159250367,
+      "below600": 0.0006776587581535278,
+      "above1800": 0.9967289961165862
+    },
+    {
+      "key": "launch:2",
+      "peak": 0.25103759765625,
+      "rms": 0.056593099472463895,
+      "centroidHz": 4869.370507605478,
+      "below600": 0.00006995333414597235,
+      "above1800": 0.9996745849570021
+    },
+    {
+      "key": "launch:3",
+      "peak": 0.29998779296875,
+      "rms": 0.033084678782255614,
+      "centroidHz": 3988.5117020281486,
+      "below600": 0.020073958217606998,
+      "above1800": 0.9165375031871864
+    },
+    {
+      "key": "launch:4",
+      "peak": 0.25091552734375,
+      "rms": 0.055639084282241624,
+      "centroidHz": 4951.883991568102,
+      "below600": 0.00008250838677646344,
+      "above1800": 0.9995478679265973
+    },
+    {
+      "key": "burst:0",
+      "peak": 0.459991455078125,
+      "rms": 0.020539317151496535,
+      "centroidHz": 2479.026817274137,
+      "below600": 0.01918005262885708,
+      "above1800": 0.611835774878464
+    },
+    {
+      "key": "gather:0",
+      "peak": 0.1199951171875,
+      "rms": 0.0034969465921665774,
+      "centroidHz": 2624.815736510688,
+      "below600": 0.011462937733066421,
+      "above1800": 0.7747243575622277
+    },
+    {
+      "key": "return:0",
+      "peak": 0.164520263671875,
+      "rms": 0.03389600334747148,
+      "centroidHz": 5057.455323747769,
+      "below600": 0.000071641022727674,
+      "above1800": 0.9996617876019704
+    },
+    {
+      "key": "burst:1",
+      "peak": 0.1378173828125,
+      "rms": 0.02866920375571492,
+      "centroidHz": 2439.5503909463505,
+      "below600": 0.030850848968135967,
+      "above1800": 0.6182425399220445
+    },
+    {
+      "key": "gather:1",
+      "peak": 0.171783447265625,
+      "rms": 0.019176259037596476,
+      "centroidHz": 2582.563238882947,
+      "below600": 0.02594156974330234,
+      "above1800": 0.6585661750017516
+    },
+    {
+      "key": "return:1",
+      "peak": 0.192596435546875,
+      "rms": 0.03451539685251108,
+      "centroidHz": 4240.787637514914,
+      "below600": 0.008660988024849593,
+      "above1800": 0.970682029498626
+    },
+    {
+      "key": "burst:2",
+      "peak": 0.459991455078125,
+      "rms": 0.01770919891168447,
+      "centroidHz": 2567.7783846621164,
+      "below600": 0.01940788381597823,
+      "above1800": 0.5489511503753971
+    },
+    {
+      "key": "gather:2",
+      "peak": 0.036285400390625,
+      "rms": 0.00358723470635882,
+      "centroidHz": 2516.527606317356,
+      "below600": 0.0319337899556553,
+      "above1800": 0.6390361247497787
+    },
+    {
+      "key": "return:2",
+      "peak": 0.155242919921875,
+      "rms": 0.033726590944899076,
+      "centroidHz": 4830.742362720219,
+      "below600": 0.00006292705705811895,
+      "above1800": 0.99971379570139
+    },
+    {
+      "key": "burst:3",
+      "peak": 0.459991455078125,
+      "rms": 0.01996831389675839,
+      "centroidHz": 2561.088913873496,
+      "below600": 0.020443004522814927,
+      "above1800": 0.4602973742735702
+    },
+    {
+      "key": "gather:3",
+      "peak": 0.259979248046875,
+      "rms": 0.011121359562466782,
+      "centroidHz": 2474.222118437404,
+      "below600": 0.014861827239990855,
+      "above1800": 0.6778547818967073
+    },
+    {
+      "key": "return:3",
+      "peak": 0.199981689453125,
+      "rms": 0.021965096829550355,
+      "centroidHz": 3958.4689751626743,
+      "below600": 0.021685828297186422,
+      "above1800": 0.9099752381407145
+    },
+    {
+      "key": "burst:4",
+      "peak": 0.345184326171875,
+      "rms": 0.041816185679943656,
+      "centroidHz": 2930.9605372625715,
+      "below600": 0.01142080186584956,
+      "above1800": 0.7853523325317695
+    },
+    {
+      "key": "gather:4",
+      "peak": 0.259979248046875,
+      "rms": 0.01418193668809509,
+      "centroidHz": 3088.0229909932427,
+      "below600": 0.009055009069478127,
+      "above1800": 0.8296538616456824
+    },
+    {
+      "key": "return:4",
+      "peak": 0.1578369140625,
+      "rms": 0.03421824286004006,
+      "centroidHz": 4931.234604142141,
+      "below600": 0.00009897342237990043,
+      "above1800": 0.9995890253387926
+    },
+    {
+      "key": "charge:0",
+      "peak": 0.065155029296875,
+      "rms": 0.014970673059195928,
+      "centroidHz": 5614.154221551184,
+      "below600": 0.00002512131468908402,
+      "above1800": 0.9991628356412307
+    },
+    {
+      "key": "glitter:0",
+      "peak": 0.220001220703125,
+      "rms": 0.0030922215616112944,
+      "centroidHz": 2443.6649335632997,
+      "below600": 0.04849072874075495,
+      "above1800": 0.6042172900133245
+    },
+    {
+      "key": "recall:0",
+      "peak": 0.079345703125,
+      "rms": 0.001389293743067774,
+      "centroidHz": 3021.259939319935,
+      "below600": 0.01184681187819507,
+      "above1800": 0.7715294841622665
+    },
+    {
+      "key": "seal:0",
+      "peak": 0.074310302734375,
+      "rms": 0.011671833150218781,
+      "centroidHz": 1336.1187946871864,
+      "below600": 0.22940782020449466,
+      "above1800": 0.27005006657432434
+    }
+  ],
+  "oldBurstSpectrum": {
+    "centroidHz": 1860.829866763046,
+    "below600": 0.2520413176369012,
+    "above1800": 0.33198289063238634
+  },
+  "method": "Hann-windowed 2048-point FFT, energy-weighted spectral centroid of edited source PCM. Spectrum is not a listener-quality or hearing-safety certification."
+}

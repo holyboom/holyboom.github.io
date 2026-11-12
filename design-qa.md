@@ -339,3 +339,14 @@ Controlled touch-WebKit height-only resize reproduced a 694 px involuntary jump 
 Boundary tests cover native down/up exit, zero geometry reads or canvas paints outside the effect, identical idle canvas pixels, orientation and real desktop resize, always-on motion and nonoverflow. Firework/reversal, touch and assembly suites are retained. The first exact-geometry test exposed approximate memoization allowing box/frame mismatch; final memoization uses exact geometry equality. The initial pin-rebuild test also counted harmless same-position library scrollTo calls; final assertions measure actual scroll position and pin identity/document height separately.
 
 Published verification: {'smooth_webkit': 25, 'smooth_chromium': 25, 'reversal_webkit': 5}, 55 assertions, zero failures/runtime errors. Exact reverse-coordinate max difference: 0 CSS px. 36 served assets match release hashes. Physical iPhone testing remains unavailable.
+
+
+## Grand Boom v22 — alternating scale and recorded high-frequency fireworks
+
+Local gates: {'local_chromium': 58, 'local_webkit': 58, 'local_stability_webkit': 25, 'local_native_touch': 8, 'local_reversal_webkit': 5}; total 154 browser assertions. Recorded-signal/provenance checks: 29, all passing.
+
+- The first choreography had a late launch threshold close to a burst, causing one Chrome run to coalesce a firework. All five launch thresholds are now before the first explosion; each explosion then has a separate, evenly spaced crossing. Final native wheel tests hear all five distinct recorded bursts and all reverse gathers.
+- Real recorded bursts initially retained too much impact body. Final edits high-pass impact at 1.9 kHz and crackle at 2.2 kHz, roll off above 7.4–7.6 kHz, and apply recorded-transient compression/finite fades. All five bursts have higher energy-weighted spectral centroid than the old synthesized burst; measured energy below 600 Hz is approximately 1.1–3.1%. No implication of physical listening comfort or hearing safety.
+- Browser geometry tests verify alternating size classes, >2.1× large-to-adjacent-small radius contrasts, exact same deterministic reverse geometry, 320–1440 px and short landscape clipping, paused frames, muted visual motion, missing-bank silence and one AudioContext.
+- The v21 viewport-height stability tests still pass: no pin rebuild or scroll jump in tested height-only perturbations after, above or mid-Boom. Score, line-only current, source images and viewport-stability code are unchanged.
+- Real MP3 recordings are CC0; all provenance and editing are disclosed, no claim that these are newly recorded by HolyMind. No physical iPhone speaker or frame-rate test performed.

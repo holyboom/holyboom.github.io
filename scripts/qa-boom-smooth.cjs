@@ -13,7 +13,7 @@ const {chromium,webkit}=require('playwright'),fs=require('fs');
   await p.locator('#sound-toggle').click();await p.waitForTimeout(1000);
   const snap=()=>p.evaluate(()=>{const v=HolyMindBoomCelebration.snapshot(),c=HolyMindContinuity.snapshot(),dot=document.querySelector('.signature-period').getBoundingClientRect();return {y:scrollY,h:innerHeight,v,pin:HolyMindAssemblyScroll.snapshot(),viewport:HolyMindViewport.snapshot(),height:document.documentElement.scrollHeight,dot:dot.top,commands:__scrollCommands.length,route:c.from+'-'+c.to,carrier:{x:c.x,y:c.y},audio:HolyMindAudio.snapshot()};});
   const go=async y=>{await p.evaluate(y=>{HolyMindScrollSound.suppressForNavigation();scrollTo({top:y,behavior:'instant'});},y);await p.waitForTimeout(1300);};
-  let a=await snap(),r=a.v.range;check('release-v21',await p.locator('html').getAttribute('data-build')==='boom-smooth-v21');
+  let a=await snap(),r=a.v.range;check('release-v21',await p.locator('html').getAttribute('data-build')===(process.env.EXPECTED_BUILD||'boom-smooth-v21'));
   for(const [label,y] of [['after-fireworks',r.end+50],['above-boom',r.start-80],['mid-reverse',r.start+(r.end-r.start)*.63]]){
    await go(y);a=await snap();await p.evaluate(()=>window.__pinBefore=ScrollTrigger.getById('assembly-story'));
    const rows=[];
