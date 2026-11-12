@@ -14,7 +14,7 @@
   if(v>.01){const r=el.getBoundingClientRect();el.style.setProperty('--energy-x',(clamp((x-r.left)/Math.max(r.width,1))*100).toFixed(2)+'%');el.style.setProperty('--energy-y',(clamp((y-r.top)/Math.max(r.height,1))*100).toFixed(2)+'%');}
  }
  function receive(next){
-  state=next;updates++;const {from,to,progress:p,same,x,y}=next;
+  window.HolyMindLighting?.travel(next);state=next;updates++;const {from,to,progress:p,same,x,y}=next;
   const depart=same?.85:1-smooth(clamp(p*2.1)),arrival=same?0:smooth(clamp((p-.36)/.64));
   for(const id of Object.keys(surfaces))level(id,id===from?depart:id===to?arrival:0,x,y);
   const dims=innerWidth<=680?[180,140]:[260,180];
@@ -28,6 +28,7 @@
   const portal=surfaces.portal;if(portal)portal.querySelectorAll('.portal-highlight').forEach((el,i)=>{el.style.strokeDashoffset=String((1-(levels.portal||0))*200+i*12);});
  }
  function brain({x,y,charge,hero,orbit,quiet,burst=0}){
+  window.HolyMindLighting?.brain({x,y,charge,hero,orbit,burst});
   q('.hero-visual')?.style.setProperty('--burst-charge',String(burst));
   q('.orbit-stage')?.style.setProperty('--burst-charge',String(burst));
   q('.neural-core')?.style.setProperty('--neural-charge',String(quiet?.5:charge));

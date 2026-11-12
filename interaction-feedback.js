@@ -41,6 +41,8 @@
  function describe(target){
   if(!(target instanceof Element)||target.closest('.sonic-settings,.brain-trigger,#sound-toggle'))return null;
   let e;
+  if((e=target.closest('#carry-skill,#carry-featured')))return {id:'select',key:'journey-skill',read:()=>window.HolyMindJourney?.snapshot().skill||''};
+  if((e=target.closest('#reset-journey')))return {id:'close',key:'journey-reset',read:()=>String(window.HolyMindJourney?.snapshot().active)};
   if((e=target.closest('[data-challenge]')))return {id:'switch',key:'scenario',read:()=>selected('[data-challenge][aria-selected=true]','data-challenge')};
   if((e=target.closest('[data-step]')))return {id:'select',key:'step',read:()=>selected('[data-step][aria-pressed=true]','data-step')};
   if((e=target.closest('[data-callout]')))return {id:'select',key:'layer-focus',read:()=>selected('[data-callout][aria-pressed=true]','data-callout')};
@@ -51,7 +53,7 @@
   if((e=target.closest('#show-skills')))return {id:'open',key:'gallery-expand',read:()=>e.getAttribute('aria-expanded'),choose:v=>v==='true'?'open':'close'};
   if((e=target.closest('#clear-search')))return {id:'filter',key:'search-reset',read:()=>q('#skill-search').value+'|'+selected('[data-filter][aria-pressed=true]','data-filter')};
   if((e=target.closest('#open-brief')))return {id:'open',key:'brief-open',read:()=>String(q('#brief-drawer').open)};
-  if((e=target.closest('#copy-brief')))return {id:'confirm',key:'copy',copy:true,read:()=>''};
+  if((e=target.closest('#copy-brief,#copy-journey')))return {id:'confirm',key:'copy',copy:true,read:()=>''};
   if((e=target.closest('#menu-toggle')))return {id:'open',key:'navigation',read:()=>e.getAttribute('aria-expanded'),choose:v=>v==='true'?'open':'close'};
   if((e=target.closest('summary'))){const d=e.closest('details');if(!d)return null;return {id:'open',key:'disclosure:'+(d.id||[...document.querySelectorAll('details')].indexOf(d)),read:()=>String(d.open),choose:v=>v==='true'?'open':'close'};}
   if((e=target.closest('a[href^="#"]')))return {id:'switch',key:'navigate',read:()=>location.hash};
@@ -88,9 +90,10 @@
    searchTimer=setTimeout(()=>{if(document.hidden)return;const count=document.querySelectorAll('.skill-card').length;emit(count?'filter':'close',{priority:3,key:'search-result:'+e.target.value.length+':'+count,kind:'action',variant:count%3});},420);
   }
  },true);
- const copy=q('#copy-status');if(copy&&window.MutationObserver)new MutationObserver(()=>{
-  if(performance.now()<copyArmed&&copy.textContent.startsWith('Project brief copied.')){copyArmed=0;emit('confirm',{priority:3,key:'copy-success',kind:'action'});}
+ for(const copy of [q('#copy-status'),q('#journey-copy-status')].filter(Boolean))if(window.MutationObserver)new MutationObserver(()=>{
+  if(performance.now()<copyArmed&&(copy.textContent.startsWith('Project brief copied.')||copy.textContent.startsWith('Brief copied.'))){copyArmed=0;emit('confirm',{priority:3,key:'copy-success',kind:'action'});}
  }).observe(copy,{childList:true,characterData:true,subtree:true});
+ let receiptObserved=false;document.addEventListener('holymind:intent',()=>{const el=q('#journey-copy-status');if(receiptObserved||!el||!window.MutationObserver)return;receiptObserved=true;new MutationObserver(()=>{if(performance.now()<copyArmed&&el.textContent.startsWith('Brief copied.')){copyArmed=0;emit('confirm',{priority:3,key:'journey-copy-success',kind:'action',scene:'contact'});}}).observe(el,{childList:true,characterData:true,subtree:true});});
  function reset(){clearTimeout(searchTimer);for(const t of timers)clearTimeout(t);timers.clear();dockCandidate=null;lastDock=null;rearmed=true;copyArmed=0;lastPhase=q('#mind-flow')?.dataset.phase||null;lastReveals=window.HolyMindAssembly?.snapshot().reveals||[0,0,0];}
  addEventListener('pagehide',reset);addEventListener('pageshow',reset);document.addEventListener('visibilitychange',reset);
  window.HolyMindFeedback=Object.freeze({version:'piano-v16',onScroll,snapshot:()=>({scrollCalls,actions,lastDock,dockCandidate:lastDock?dockCandidate:null,phase:lastPhase,reveals:[...lastReveals],history:[...history]})});reset();

@@ -369,3 +369,12 @@ Approved request: extend firework fade-out, add richer nonuniform glitter and mo
 
 
 Published v23: 166 passing live assertions across Chromium/WebKit, cue overlap, touch, viewport stability and six real-screen reverse samples (including 0.90, 0.94 and 0.97). Zero runtime errors in those runs. Forty live assets match local hashes. Production sound-bank checks: 54 passed. Physical iPhone remains untested.
+
+
+## Intent Journey v24
+
+Initial QA caught a new demonstration data-challenge attribute colliding with the existing tab selector. It is now namespaced data-demo-challenge; all stage, old control and related-skill selectors remain unambiguous. A reaction-key routing edge case was also addressed: when music gain is zero, harmony-aligned action notes use the independent reaction output with the original sampled instrument and room. No score notes or ordering were changed.
+
+64 journey/mixer checks per engine, 25 stable-viewport checks, 12 long-tail checks, 92 line-only checks, 37 music-order/lifecycle checks, 7 native touch checks and 2 default-waveform comparisons pass locally (303 total). 234 original assets are byte-identical. New illustrative content is labeled; no real approvals or AI outputs claimed.
+
+The public release must be opened and checked again; physical-iPhone or general accessibility/performance certification is not implied.

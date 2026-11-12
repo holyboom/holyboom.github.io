@@ -47,10 +47,10 @@
    if(!entry){const d=render(kind,index),b=ctx.createBuffer(1,d.samples.length,SR);b.copyToChannel(d.samples,0);entry={buffer:b,clip:d.key};cache.set(key,entry);}
    const source=ctx.createBufferSource(),gain=ctx.createGain(),pan=ctx.createStereoPanner?ctx.createStereoPanner():null;source.buffer=entry.buffer;
    gain.gain.value=kind==='burst'?(index%2===0?.88:.66):kind==='launch'?.56:kind==='glitter'?.50:.64;
-   source.connect(gain);if(pan){pan.pan.value=(index-2)*.15;gain.connect(pan);pan.connect(bus);}else gain.connect(bus);
+   source.connect(gain);if(pan){pan.pan.value=Number.isFinite(event.x)?Math.max(-.35,Math.min(.35,(event.x-.5)*.7)):(index-2)*.15;gain.connect(pan);pan.connect(bus);}else gain.connect(bus);
    const voice={source,gain,pan,releasing:false,kind,index,start:now,end:now+entry.buffer.duration};voices.add(voice);peakVoices=Math.max(peakVoices,voices.size);
    source.onended=()=>{voices.delete(voice);try{source.disconnect();gain.disconnect();pan?.disconnect();}catch(_){}};
-   source.start(now+.002);played++;lastAt=now;history.push({kind,index,direction,notes:[],harmony:[...harmony],recorded:true,clip:entry.clip,at:now,duration:entry.buffer.duration,progress:event.progress});if(history.length>100)history.shift();return true;
+   source.start(now+.002);played++;lastAt=now;history.push({kind,index,direction,notes:[],harmony:[...harmony],recorded:true,pan:pan?.pan.value||0,clip:entry.clip,at:now,duration:entry.buffer.duration,progress:event.progress});if(history.length>100)history.shift();return true;
   }
   function rms(){meter.getFloatTimeDomainData(samples);let sum=0;for(const n of samples)sum+=n*n;const v=Math.sqrt(sum/samples.length);maxRms=Math.max(maxRms,v);return v;}
   function silence(){for(const v of voices)release(v,.04);}

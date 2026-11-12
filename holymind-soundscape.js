@@ -30,11 +30,11 @@
   const nodes=[],sources=[],oneshots=new Set(),params=new Map();let disposed=false,updates=0,ducks=0,resolves=0,last={};
   const own=n=>(nodes.push(n),n),gain=(v=1)=>{const n=own(ctx.createGain());n.gain.value=v;return n;};
   const filter=(type,hz,q=.6)=>{const n=own(ctx.createBiquadFilter());n.type=type;n.frequency.value=hz;n.Q.value=q;return n;};
-  const master=gain(1),ambient=gain(0),scroll=gain(0),resolveBus=gain(1),ambientDuck=gain(1),scrollDuck=gain(1),scrollPresence=gain(SCROLL_BOOST_GAIN),lineGate=gain(0);
+  const master=gain(1),ambient=gain(0),scroll=gain(0),resolveBus=gain(1),ambientDuck=gain(1),scrollDuck=gain(1),scrollPresence=gain(SCROLL_BOOST_GAIN),lineGate=gain(0),ambientLevel=gain(1),flowLevel=gain(1);
   let lineAllowed=false,lastLineLease=-1e6,lineUpdates=0;
   const meterA=own(ctx.createAnalyser()),meterS=own(ctx.createAnalyser()),meterR=own(ctx.createAnalyser());[meterA,meterS,meterR].forEach(n=>n.fftSize=1024);
-  ambient.connect(ambientDuck);ambientDuck.connect(meterA);meterA.connect(master);
-  scroll.connect(scrollDuck);scrollDuck.connect(scrollPresence);scrollPresence.connect(lineGate);lineGate.connect(meterS);meterS.connect(master);resolveBus.connect(meterR);meterR.connect(master);master.connect(destination);
+  ambient.connect(ambientDuck);ambientDuck.connect(ambientLevel);ambientLevel.connect(meterA);meterA.connect(master);
+  scroll.connect(scrollDuck);scrollDuck.connect(scrollPresence);scrollPresence.connect(lineGate);lineGate.connect(flowLevel);flowLevel.connect(meterS);meterS.connect(master);resolveBus.connect(meterR);meterR.connect(master);master.connect(destination);
   const bedLow=filter('lowpass',1250,.5),motionLow=filter('lowpass',1600,.58),motionPan=ctx.createStereoPanner?own(ctx.createStereoPanner()):gain(1);
   bedLow.connect(ambient);motionLow.connect(motionPan);motionPan.connect(scroll);
   function osc(hz,level,dest,type='sine'){
@@ -77,6 +77,7 @@
   }
   function update(input={},at=ctx.currentTime){
    if(disposed)return;updates++;
+   target(ambientLevel.gain,clamp(input.ambientLevel??1),at,.04);target(flowLevel.gain,clamp(input.flowLevel??1),at,.04);
    const scope=clamp(input.scope??1),enabled=input.enabled!==false,amb=input.ambience!==false,flow=input.flow!==false;
    const activity=clamp(input.activity??0),p=clamp(input.voiceProgress??input.progress??0),direction=clamp(input.direction??1,-1,1),scene=clamp(input.morph??0);
    const fieldLevel=clamp(input.fieldLevel??1,.45,1.1),currentLevel=clamp(input.currentLevel??1,.45,1.1),openness=clamp(input.openness??1,.6,1.15),textureLevel=clamp(input.textureLevel??1,.3,1.15);
@@ -114,7 +115,7 @@
    for(const s of oneshots){try{s.stop(at);}catch(_){}}oneshots.clear();
   }
   function dispose(){if(disposed)return;silence();disposed=true;for(const s of sources){try{s.stop();}catch(_){}}for(const n of nodes){try{n.disconnect();}catch(_){}}}
-  return Object.freeze({update,setLineTravel,duck,settle,silence,dispose,snapshot:()=>({version:'line-current-v19',scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN,disposed,updates,ducks,resolves,lineGate:{requested:lineAllowed,value:lineGate.gain.value,leaseFresh:ctx.currentTime-lastLineLease<.100,updates:lineUpdates,closeMs:12},continuousSources:sources.length,oneShots:oneshots.size,...last,actual:{ambient:ambient.gain.value,scroll:scroll.gain.value,ambientDuck:ambientDuck.gain.value,scrollDuck:scrollDuck.gain.value},rms:{ambient:rms(meterA),scroll:rms(meterS),resolve:rms(meterR)}})});
+  return Object.freeze({update,setLineTravel,duck,settle,silence,dispose,snapshot:()=>({version:'line-current-v19',scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN,disposed,updates,ducks,resolves,lineGate:{requested:lineAllowed,value:lineGate.gain.value,leaseFresh:ctx.currentTime-lastLineLease<.100,updates:lineUpdates,closeMs:12},continuousSources:sources.length,oneShots:oneshots.size,...last,actual:{ambientLevel:ambientLevel.gain.value,flowLevel:flowLevel.gain.value,ambient:ambient.gain.value,scroll:scroll.gain.value,ambientDuck:ambientDuck.gain.value,scrollDuck:scrollDuck.gain.value},rms:{ambient:rms(meterA),scroll:rms(meterS),resolve:rms(meterR)}})});
  }
  root.HolyMindSoundscape=Object.freeze({version:'line-current-v19',create,mix:Object.freeze({scrollBoostDb:SCROLL_BOOST_DB,scrollBoostGain:SCROLL_BOOST_GAIN}),description:'Quiet Electric Field / Reversible Filament / Settled Current',scope:'Entire showcase, Hero through Footer',resolution});
 })(globalThis);

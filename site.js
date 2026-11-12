@@ -71,7 +71,7 @@
  const brief = byId("project-brief");
  const drawer = byId("brief-drawer");
  document.documentElement.classList.add("js");
- let current = "operations";
+ let current = "operations", currentStep = 0;
 
  // Owner-selected always-active showcase policy. No persisted or OS setting gates it.
  const motionEnabled = true;
@@ -86,6 +86,7 @@
  function selectStep(index) {
   const row = challenges[current].stages[index];
   if (!row) return;
+  currentStep = index;
   stepButtons.forEach((button, i) => button.setAttribute("aria-pressed", String(i === index)));
   setText("step-title", row[1]);
   setText("step-description", row[2]);
@@ -97,7 +98,8 @@
  }
  function makeBrief() {
   const c = challenges[current];
-  return ["Project: " + c.title, "Goal: " + c.goal, "Workflow: " + c.stages.map(s => s[0]).join(" → ") + ".", "Guardrail: " + c.guardrail, "Measure: " + c.measure, "To establish: Systems, permissions, volume, budget, and baseline performance.", "Discuss with Boom: https://www.instagram.com/holyboom/", "Illustrative planning brief. No information is sent by this page."].join("\n");
+  const text = ["Project: " + c.title, "Goal: " + c.goal, "Workflow: " + c.stages.map(s => s[0]).join(" → ") + ".", "Guardrail: " + c.guardrail, "Measure: " + c.measure, "To establish: Systems, permissions, volume, budget, and baseline performance.", "Discuss with Boom: https://www.instagram.com/holyboom/", "Illustrative planning brief. No information is sent by this page."].join("\n");
+  return window.HolyMindJourney?.enrichBrief(text) || text;
  }
  function selectChallenge(key, focus = false) {
   if (!Object.prototype.hasOwnProperty.call(challenges, key)) return;
@@ -165,6 +167,7 @@
  window.addEventListener("resize", updateOrientation, { passive: true });
  updateOrientation();
  selectChallenge("operations");
+ window.HolyMindWorkbench=Object.freeze({selectChallenge,selectStep,brief:makeBrief,snapshot:()=>({challenge:current,step:currentStep,...challenges[current],stages:challenges[current].stages.map(s=>[...s]),skills:stageSkills[current].map(s=>[...s])})});
 
  // The compact navigation has the same links and destinations as the desktop version.
  const menuToggle = byId("menu-toggle");
@@ -236,6 +239,7 @@
 
  function openSkill(skill, opener) {
   if (!dialog || typeof dialog.showModal !== "function") return;
+  dialog.dataset.skill=skill.id;
   dialogOpener = opener;
   dialogNavigation = false;
   const icon = byId("skill-dialog-icon");
@@ -318,6 +322,7 @@
   }
   const total = matches.length;
   setText("skills-count", limited ? "8 featured · " + skills.length + " skills to explore" : total + (total === 1 ? " skill" : " skills") + (category === "all" ? "" : " · " + categoryLabels[category]));
+  document.dispatchEvent(new CustomEvent("holymind:skills-rendered"));
   queueProgress();
  }
  search?.addEventListener("input", renderSkills);
@@ -348,6 +353,8 @@
    .then(data => {
     if (!Array.isArray(data) || !data.every(skill => typeof skill.id === "string" && /^[a-z0-9-]+$/.test(skill.id) && Object.prototype.hasOwnProperty.call(categoryLabels, skill.category) && [skill.name, skill.purpose, skill.description, skill.example].every(value => typeof value === "string"))) throw new Error("Invalid skill summaries");
     skills = data;
+    window.HolyMindSkills=Object.freeze({list:()=>skills.map(s=>({...s}))});
+    document.dispatchEvent(new CustomEvent("holymind:skills-ready"));
     byId("instrument-open")?.removeAttribute("disabled");
     renderSkills();
    })

@@ -16,6 +16,15 @@
    for(const [s,g] of [[.023,.22],[.047,.12],[.083,.065]])d[Math.round((s+c*.003)*ctx.sampleRate)]+=g;
   }
   room.normalize=false;room.buffer=impulse;colour.connect(dry);colour.connect(room);room.connect(wet);dry.connect(out);wet.connect(out);out.connect(meter);meter.connect(destination);
+  // An action key may share the score harmony, but belongs to the reaction mixer.
+  // Reuse the room impulse; no additional sample, composition or oscillator.
+  let accentColour=null,accentWet=null;
+  if(options.accentDestination){
+   accentColour=own(ctx.createBiquadFilter());accentColour.type='lowpass';accentColour.frequency.value=4900;accentColour.Q.value=.5;
+   const ad=own(ctx.createGain()),ar=own(ctx.createConvolver()),ao=own(ctx.createGain());accentWet=own(ctx.createGain());
+   ad.gain.value=.92;accentWet.gain.value=.16;ao.gain.value=.88;ar.normalize=false;ar.buffer=impulse;
+   accentColour.connect(ad);accentColour.connect(ar);ar.connect(accentWet);ad.connect(ao);accentWet.connect(ao);ao.connect(options.accentDestination);
+  }
   function target(p,value,tau=.24,at=ctx.currentTime){if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(at);else{const v=p.value;p.cancelScheduledValues(at);p.setValueAtTime(v,at);}p.setTargetAtTime(value,at,tau);}
   function sample(midi){const k=keys.key(midi);if(!k)return null;if(!buffers.has(k.midi)){const b=ctx.createBuffer(1,k.samples.length,k.sampleRate);b.copyToChannel(k.samples,0);buffers.set(k.midi,b);}return {buffer:buffers.get(k.midi),rate:2**((midi-k.midi)/12)};}
   function note(event,at,secondsPerBeat,{accent=false}={}){
@@ -27,7 +36,7 @@
    const available=source.buffer.duration/sampled.rate,tailEnd=at+Math.min(available-.035,hold+release);
    gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(level,at+.004);
    const releaseAt=Math.min(tailEnd-.16,at+hold);gain.gain.setValueAtTime(level,releaseAt);gain.gain.exponentialRampToValueAtTime(.000008,tailEnd-.065);gain.gain.linearRampToValueAtTime(0,tailEnd);
-   source.connect(gain);gain.connect(colour);const voice={source,gain,at,end:tailEnd,midi:event.midi,accent};voices.add(voice);peakVoices=Math.max(peakVoices,voices.size);
+   source.connect(gain);gain.connect(accent&&accentColour?accentColour:colour);const voice={source,gain,at,end:tailEnd,midi:event.midi,accent};voices.add(voice);peakVoices=Math.max(peakVoices,voices.size);
    source.onended=()=>{voices.delete(voice);try{source.disconnect();gain.disconnect();}catch(_){}};
    source.start(at);source.stop(tailEnd+.005);played++;return true;
   }
@@ -54,18 +63,19 @@
    if(disposed)return;enabled=state.enabled!==false;scene=state.scene||scene;direction=state.direction<0?-1:1;
    const p=keys.profiles.find(x=>x.id===scene)||keys.profiles[0];material={cutoff:p.cutoff,room:p.room,gain:scene==='about'?.78:scene==='footer'?.76:1};
    target(colour.frequency,p.cutoff,.4);target(wet.gain,clamp(p.room+.10,.12,.30),.65);
-   if(!enabled){demo=false;running=false;clearTimer();fade(.22);return;}
+   if(accentColour){target(accentColour.frequency,p.cutoff,.4);target(accentWet.gain,clamp(p.room+.10,.12,.30),.65);}
+   if(!enabled){demo=false;running=false;clearTimer();fade(.22,true);return;}
    const activity=clamp(state.activity||0,0,1),motion=state.intent===true&&activity>.025&&(state.focus??1)>.4;
    if(motion){driveUntil=ctx.currentTime+.28;targetTempo=78+22*Math.sqrt(activity);start();}
   }
-  function fade(seconds=.85){
+  function fade(seconds=.85,preserveAccents=false){
    const now=ctx.currentTime;
-   for(const v of voices){if(v.at>now){try{v.source.stop();}catch(_){}continue;}
+   for(const v of voices){if(preserveAccents&&v.accent&&accentColour)continue;if(v.at>now){try{v.source.stop();}catch(_){}continue;}
     const p=v.gain.gain;if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(now);else{const n=p.value;p.cancelScheduledValues(now);p.setValueAtTime(n,now);}
     p.setTargetAtTime(.000001,now,Math.max(.015,seconds/5));try{v.source.stop(now+seconds+.04);}catch(_){}
    }
   }
-  function stopTransport(reason='suspend'){demo=false;running=false;clearTimer();driveUntil=-1;nextTime=ctx.currentTime+.025;fade((reason==='mute'||reason==='suspend')?.045:.9);}
+  function stopTransport(reason='suspend'){demo=false;running=false;clearTimer();driveUntil=-1;nextTime=ctx.currentTime+.025;fade((reason==='mute'||reason==='suspend')?.045:.9,reason==='mute');}
   function duck(){if(disposed)return;duckCount++;const t=ctx.currentTime,p=out.gain;if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(t);else p.cancelScheduledValues(t);p.linearRampToValueAtTime(.26,t+.035);p.setTargetAtTime(.88,t+.32,.22);}
   function harmony(){return score.chords[Math.floor(lastBeat/4)]||score.chords[0];}
   function accent(kind='action',variant=0){

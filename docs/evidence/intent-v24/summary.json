@@ -1,0 +1,18 @@
+{
+  "release": "intent-v24",
+  "name": "HolyMind \u2014 Intent Journey",
+  "status": "Local verification passed; production verification pending",
+  "baseline": "0b5f4830c7e3f292b474e3bf9605bdce70dc79e0",
+  "local_checks": {
+    "release-webkit": 64,
+    "release-chromium": 64,
+    "stability": 25,
+    "tails": 12,
+    "line": 92,
+    "score": 37,
+    "touch": 7,
+    "baseline-audio": 2
+  },
+  "total_local_checks": 303,
+  "physical_iphone_tested": false
+}

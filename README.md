@@ -122,3 +122,7 @@ Larger alternating fireworks with real recorded high-toned rocket/crackle cues. 
 
 
 Afterglow v23: longer real-firework tails and a deterministic falling glitter finale. Review `qa/afterglow-v23.html` and `docs/evidence/afterglow-v23/summary.json`.
+
+
+## Intent Journey v24
+One explicit Workbench challenge and carried skill persist through the scroll story to a personal, reviewable starting brief. Illustrative three-scenario source/permission/artifact visualization; four separate sound controls and optional balance levels; particle-position-based material light. All source audio/art, reversible afterglow, line-only current, always-on motion and viewport stabilization are retained. No AI request or automatic submission. Details: `docs/evidence/intent-v24/design.md`; review: `qa/intent-v24.html`.

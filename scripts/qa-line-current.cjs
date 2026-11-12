@@ -59,10 +59,10 @@ const {chromium,webkit}=require('playwright'),fs=require('fs'),cp=require('child
  await p.locator('#show-skills').click();await p.waitForTimeout(1500);v=await snap();check('gallery-reflow-silent',v.a.soundscape.rms.scroll===0&&v.a.soundscape.lineGate.value===0);
  await p.locator('[data-filter=verify]').click();await p.waitForTimeout(1000);v=await snap();check('filter-reflow-silent',v.a.soundscape.rms.scroll===0);
  await p.locator('[data-filter=all]').click();await p.waitForTimeout(1000);
- await jump(0);await p.locator('.sonic-settings summary').click();await p.locator('#sound-flow').uncheck();await p.locator('.sonic-settings summary').click();
+ await jump(0);await p.locator('.sonic-settings>summary').click();await p.locator('#sound-flow').uncheck();await p.locator('.sonic-settings>summary').click();
  let route=await p.evaluate(()=>HolyMindContinuity.snapshot().keys),i=route.findIndex((x,j)=>x.id==='ribbon'&&route[j+1]?.id==='assembly'),a=route[i].at,z=route[i+1].at;
  await jump(a+(z-a)*.3);const muted=await wheel((z-a)*.35/14,14,50);check('flow-switch-blocks-even-real-travel',muted.some(x=>x.line.moving)&&muted.every(x=>x.rms===0));
- await jump(0);await p.locator('.sonic-settings summary').click();await p.locator('#sound-flow').check();await p.locator('.sonic-settings summary').click();
+ await jump(0);await p.locator('.sonic-settings>summary').click();await p.locator('#sound-flow').check();await p.locator('.sonic-settings>summary').click();
  // Hidden interruption, stale motion and fresh gestures still retain lifecycle.
  await p.evaluate(()=>dispatchEvent(new PageTransitionEvent('pagehide',{persisted:true})));await p.waitForTimeout(100);v=await snap();check('hidden-stops-score-and-current',v.a.context==='suspended'&&v.a.soundscape===null&&v.a.score===null);
  await p.evaluate(()=>dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true})));await wheel(10,4);v=await snap();check('return-scroll-does-not-resume',v.a.context==='suspended'&&v.a.needsGesture);

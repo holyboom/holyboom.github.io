@@ -1,11 +1,11 @@
 {
   "name": "holyboom-holymind-profile",
-  "version": "23.0.0",
+  "version": "24.0.0",
   "private": true,
   "description": "Static GitHub Pages profile and interactive HolyMind skill collection",
   "scripts": {
     "dev": "node scripts/preview.mjs",
-    "check": "node --check site.js && node --check neural-core.js && node --check scroll-motion.js && node --check showcase.js && node --check continuity.js && node --check assembly-lab.js && node --check scripts/preview.mjs && node --check energy-field.js && node --check ambient-current.js && node --check assembly-scroll.js && node --check brain-reactions.js && node --check holymind-timbres.js && node --check holymind-audio.js && node --check holymind-soundscape.js && node --check scroll-sonification.js && node --check soundscape-scenes.js && node --check holymind-cues.js && node --check interaction-feedback.js && node --check mozart-score-data.js && node --check holymind-scroll-score.js && node --check boom-particles.js && node --check boom-celebration.js && node --check boom-audio.js && node --check viewport-stability.js",
+    "check": "node --check site.js && node --check neural-core.js && node --check scroll-motion.js && node --check showcase.js && node --check continuity.js && node --check assembly-lab.js && node --check scripts/preview.mjs && node --check energy-field.js && node --check ambient-current.js && node --check assembly-scroll.js && node --check brain-reactions.js && node --check holymind-timbres.js && node --check holymind-audio.js && node --check holymind-soundscape.js && node --check scroll-sonification.js && node --check soundscape-scenes.js && node --check holymind-cues.js && node --check interaction-feedback.js && node --check mozart-score-data.js && node --check holymind-scroll-score.js && node --check boom-particles.js && node --check boom-celebration.js && node --check boom-audio.js && node --check viewport-stability.js && node --check intent-journey.js && node --check visual-budget.js && node --check material-light.js",
     "test:motion": "node scripts/qa-motion.cjs",
     "test:showcase": "node scripts/qa-showcase.cjs",
     "test:assembly": "node scripts/qa-assembly.cjs",
@@ -36,7 +36,10 @@
     "build:real-fireworks": "python3 scripts/build-real-fireworks.py",
     "test:grand-boom": "node scripts/qa-grand-boom.cjs",
     "build:afterglow": "python3 scripts/build-afterglow.py",
-    "test:afterglow": "node scripts/qa-afterglow.cjs"
+    "test:afterglow": "node scripts/qa-afterglow.cjs",
+    "test:intent": "node scripts/qa-intent.cjs",
+    "test:intent-touch": "node scripts/qa-intent-touch.cjs",
+    "test:intent-audio": "node scripts/qa-intent-audio.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

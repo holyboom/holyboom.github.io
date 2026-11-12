@@ -8,24 +8,31 @@
  let context=null,master=null,compressor=null,analyser=null,landscape=null;
  let enabled=true,volume=.48,ambience=true,flow=true,unlocked=false,needsGesture=false,disposed=false;
  let played=0,dropped=0,lastStyle=null,token=0,pending=0,peakVoices=0,maxRms=0,lastSynthesisMs=0,lastScheduleMs=0,meterTimer=0;
- let music=null,musicLoading=false,musicResume=0,celebration=null;
+ let music=null,musicLoading=false,musicResume=0,celebration=null,piano=true;
+ let pianoBus=null,reactionBus=null,auditionMode=null;const levels={piano:1,reactions:1,flow:1,ambience:1};
  let lineTravel={moving:false,lineVisible:false,at:0,reason:'initial'};
  let latest={scope:1,activity:0,progress:0,direction:1,morph:0},contextCount=0;
  const cache=new Map(),pcm=new Map(),voices=new Set(),history=[];
  let cues=true,cueVoice=null,cueMeter=null,cuePlayed=0,cueDropped=0,cueMaxRms=0,cuePeakVoices=0,lastCueAt=-1e6,lastCueKey='',lastCuePriority=0,lastBrainAt=-1e6,feedbackUnlock=null;
  const cueCache=new Map(),cueMeta=new Map(),retiringCues=new Set();let pendingPianoKey=null;
  const button=document.getElementById('sound-toggle'),control=document.getElementById('sound-volume');
- const bedControl=document.getElementById('sound-ambience'),flowControl=document.getElementById('sound-flow'),cueControl=document.getElementById('sound-cues');
+ const bedControl=document.getElementById('sound-ambience'),flowControl=document.getElementById('sound-flow'),cueControl=document.getElementById('sound-cues'),pianoControl=document.getElementById('sound-piano');
  const fieldEnabled=!!document.getElementById('system-assembly');
  try{enabled=localStorage.getItem('holymind-sound')!=='muted';const raw=localStorage.getItem('holymind-volume'),v=Number(raw);if(raw!==null&&v>=0&&v<=1)volume=v;
-  cues=localStorage.getItem('holymind-cues')!=='off';ambience=localStorage.getItem('holymind-ambience')!=='off';flow=localStorage.getItem('holymind-flow')!=='off';}catch(_){}
+  cues=localStorage.getItem('holymind-cues')!=='off';ambience=localStorage.getItem('holymind-ambience')!=='off';flow=localStorage.getItem('holymind-flow')!=='off';
+  piano=localStorage.getItem('holymind-piano')===null?cues:localStorage.getItem('holymind-piano')!=='off';
+  for(const k of Object.keys(levels)){const raw=localStorage.getItem('holymind-level-'+k),n=Number(raw);if(raw!==null&&Number.isFinite(n)&&n>=0&&n<=1)levels[k]=n;}
+ }catch(_){}
+ function syncMix(){if(!context)return;const t=context.currentTime;pianoBus?.gain.setTargetAtTime(piano?levels.piano:0,t,.04);reactionBus?.gain.setTargetAtTime(cues?levels.reactions:0,t,.04);}
+ function setLevel(name,value){if(!(name in levels))return false;const n=Number(value);if(!Number.isFinite(n))return false;levels[name]=Math.max(0,Math.min(1,n));try{localStorage.setItem('holymind-level-'+name,String(levels[name]));}catch(_){}syncMix();field();ui();return true;}
  const ready=()=>enabled&&unlocked&&!needsGesture&&!disposed&&!document.hidden&&context?.state==='running';
  function ui(){
   const waiting=enabled&&(!unlocked||needsGesture),label=waiting?(needsGesture?'Resume sound':'Start sound'):enabled?'Sound on':'Muted';
   if(button){button.setAttribute('aria-pressed',String(enabled&&unlocked&&!needsGesture));button.setAttribute('aria-label',waiting?label:enabled?'Mute HolyMind sound':'Enable HolyMind sound');button.dataset.sound=enabled?'on':'off';const l=button.querySelector('.sound-label');if(l)l.textContent=label;button.title=waiting?'Tap to begin the quiet soundscape':'Mute sound without stopping motion';}
-  if(control)control.value=String(Math.round(volume*100));if(bedControl)bedControl.checked=ambience;if(flowControl)flowControl.checked=flow;if(cueControl)cueControl.checked=cues;
+  if(control)control.value=String(Math.round(volume*100));if(bedControl)bedControl.checked=ambience;if(flowControl)flowControl.checked=flow;if(cueControl)cueControl.checked=cues;if(pianoControl)pianoControl.checked=piano;
+  for(const k of Object.keys(levels)){const input=document.querySelector('[data-sound-level='+k+']');if(input)input.value=String(Math.round(levels[k]*100));}
   document.body.dataset.sound=enabled?(needsGesture?'needs-gesture':unlocked?'enabled':'armed'):'muted';
-  document.dispatchEvent(new CustomEvent('holymind:audio-state',{detail:{enabled,unlocked,needsGesture,ambience,flow,cues}}));
+  document.dispatchEvent(new CustomEvent('holymind:audio-state',{detail:{enabled,unlocked,needsGesture,ambience,flow,cues,piano}}));
  }
  function stop(){celebration?.dispose();celebration=null;lineTravel={moving:false,lineVisible:false,at:0,reason:'stopped'};landscape?.setLineTravel({moving:false});if(music){musicResume=music.snapshot().cursor;music.dispose();music=null;}stopCue(.04);for(const v of retiringCues){try{v.source.stop();v.source.disconnect();v.gain.disconnect();}catch(_){}}retiringCues.clear();pendingPianoKey=null;feedbackUnlock=null;token++;pending=0;for(const v of voices){try{v.source.stop();}catch(_){}try{v.source.disconnect();v.gain.disconnect();}catch(_){}}voices.clear();if(meterTimer)clearTimeout(meterTimer);meterTimer=0;}
  function syncLineTravel(){
@@ -36,12 +43,12 @@
  function field(){
   if(!ready()||!fieldEnabled||!window.HolyMindSoundscape)return;
   if(!landscape){try{landscape=HolyMindSoundscape.create(context,master);}catch(_){document.body.dataset.soundscape='unavailable';return;}}
-  landscape.update({...latest,enabled,ambience,flow});syncLineTravel();document.body.dataset.soundscape='ready';
+  landscape.update({...latest,enabled,ambience,flow,ambientLevel:levels.ambience,flowLevel:levels.flow});syncLineTravel();document.body.dataset.soundscape='ready';
   if(!music&&window.HolyMindScrollScore){
-   if(window.HolyMindCueTimbres?.snapshot().ready)music=HolyMindScrollScore.create(context,master,{startBeat:musicResume});
+   if(window.HolyMindCueTimbres?.snapshot().ready)music=HolyMindScrollScore.create(context,pianoBus,{startBeat:musicResume,accentDestination:cueMeter});
    else if(!musicLoading){musicLoading=true;window.HolyMindCueTimbres?.prepare().then(ok=>{musicLoading=false;if(ok&&ready())field();});}
   }
-  music?.update({...latest,enabled:enabled&&cues});
+  music?.update({...latest,enabled:enabled&&piano});
  }
  function make(){
   if(context)return true;const AC=window.AudioContext||window.webkitAudioContext;if(!AC){document.body.dataset.sound='unsupported';return false;}
@@ -50,7 +57,8 @@
    master=context.createGain();master.gain.value=enabled?volume:0;
    compressor=context.createDynamicsCompressor();compressor.threshold.value=-16;compressor.knee.value=14;compressor.ratio.value=5;compressor.attack.value=.003;compressor.release.value=.14;
    analyser=context.createAnalyser();analyser.fftSize=512;master.connect(compressor);compressor.connect(analyser);analyser.connect(context.destination);
-   cueMeter=context.createAnalyser();cueMeter.fftSize=512;cueMeter.connect(master);
+   pianoBus=context.createGain();reactionBus=context.createGain();pianoBus.gain.value=piano?levels.piano:0;reactionBus.gain.value=cues?levels.reactions:0;pianoBus.connect(master);reactionBus.connect(master);
+   cueMeter=context.createAnalyser();cueMeter.fftSize=512;cueMeter.connect(reactionBus);
    context.addEventListener('statechange',()=>{if(context.state!=='running'&&unlocked){needsGesture=true;landscape?.silence();stop();ui();}});
    return true;
   }catch(_){document.body.dataset.sound='unsupported';return false;}
@@ -72,12 +80,12 @@
   const resume=context.state==='running'?Promise.resolve():context.resume();
   Promise.resolve(resume).then(()=>{
    pending=Math.max(0,pending-1);if(generation!==token||!enabled||document.hidden||disposed||context.state!=='running')return;
-   needsGesture=false;ui();field();
+   needsGesture=false;ui();field();if(!cues)return;
    if(performance.now()-requestAt>600){dropped++;return;}
    if(voices.size>=3){const oldest=voices.values().next().value;try{oldest.source.stop();}catch(_){}voices.delete(oldest);}
    const source=context.createBufferSource(),g=context.createGain();source.buffer=buffer(id);source.playbackRate.value=variation?.985+Math.random()*.03:1;
    const now=context.currentTime;g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(Math.max(0,Math.min(1,gain))/Math.sqrt(1+voices.size*.65),now+.004);g.gain.setTargetAtTime(0,now+source.buffer.duration*.83,.035);
-   source.connect(g);g.connect(master);const voice={source,gain:g};voices.add(voice);peakVoices=Math.max(peakVoices,voices.size);
+   source.connect(g);g.connect(reactionBus);const voice={source,gain:g};voices.add(voice);peakVoices=Math.max(peakVoices,voices.size);
    source.onended=()=>{voices.delete(voice);source.disconnect();g.disconnect();};source.start(now+.002);
    stopCue(.8);music?.duck();lastBrainAt=performance.now();landscape?.duck(now);played++;lastStyle=id;lastScheduleMs=performance.now()-requestAt;
    history.push({id,kind,time:performance.now(),rate:source.playbackRate.value});if(history.length>80)history.shift();if(!meterTimer)meter();
@@ -90,7 +98,9 @@
  }
  function setVolume(n){volume=Math.max(0,Math.min(1,Number(n)||0));if(master)master.gain.setTargetAtTime(enabled?volume:0,context.currentTime,.02);try{localStorage.setItem('holymind-volume',String(volume));}catch(_){}ui();}
  function setLayer(name,on,persist=true){
-  if(name==='ambience')ambience=!!on;else if(name==='flow')flow=!!on;else if(name==='cues'){cues=!!on;if(!cues){celebration?.silence();stopCue(.35);music?.stopTransport('mute');}}else return;
+  auditionMode=null;
+  if(name==='ambience')ambience=!!on;else if(name==='flow')flow=!!on;else if(name==='piano'){piano=!!on;if(!piano)music?.stopTransport('mute');}else if(name==='cues'){cues=!!on;if(!cues){celebration?.silence();stopCue(.35);}}else return;
+  syncMix();
   if(persist)try{localStorage.setItem('holymind-'+name,on?'on':'off');}catch(_){}field();ui();
  }
  button?.addEventListener('click',e=>{
@@ -100,11 +110,12 @@
   else mute(true);
  });
  control?.addEventListener('input',()=>setVolume(Number(control.value)/100));
- bedControl?.addEventListener('change',()=>setLayer('ambience',bedControl.checked));flowControl?.addEventListener('change',()=>setLayer('flow',flowControl.checked));cueControl?.addEventListener('change',()=>setLayer('cues',cueControl.checked));
+ bedControl?.addEventListener('change',()=>setLayer('ambience',bedControl.checked));flowControl?.addEventListener('change',()=>setLayer('flow',flowControl.checked));cueControl?.addEventListener('change',()=>setLayer('cues',cueControl.checked));pianoControl?.addEventListener('change',()=>setLayer('piano',pianoControl.checked));
+ document.querySelectorAll('[data-sound-level]').forEach(input=>input.addEventListener('input',()=>setLevel(input.dataset.soundLevel,Number(input.value)/100)));
  document.addEventListener('holymind:brain-burst',e=>{const d=e.detail||{};play(d.styleId||'neural-discharge',{gesture:d.userGesture===true});});
  // Only an actual relevant input may unlock the feedback instrument. Scroll cannot.
  function beginFeedback(gesture=false){
-  if(!gesture||!enabled||!cues||document.hidden||disposed)return false;
+  if(!gesture||!enabled||document.hidden||disposed)return false;
   window.HolyMindCueTimbres?.prepare?.();if(ready())return true;if(!make())return false;
   const generation=token;latest={...latest,activity:0,intent:false};window.HolyMindScrollSound?.clearGesture?.();unlocked=true;needsGesture=false;
   const resumed=context.state==='running'?Promise.resolve():context.resume();
@@ -118,6 +129,7 @@
   try{if(p.cancelAndHoldAtTime)p.cancelAndHoldAtTime(now);else{const n=p.value;p.cancelScheduledValues(now);p.setValueAtTime(n,now);}p.setTargetAtTime(.000001,now,release/5);v.source.stop(now+release+.04);}catch(_){}
  }
  function cue(id,{variant=0,priority=2,key=id,kind='action',direction=1,scene=null}={}){
+  if(auditionMode&&auditionMode!=='full')return false;
   const registry=window.HolyMindCueTimbres;if(!registry||!registry.presets.some(p=>p.id===id)||!enabled||!cues||document.hidden||disposed)return false;
   if(!ready()){
    if(feedbackUnlock&&!needsGesture){const generation=token,at=performance.now();feedbackUnlock.then(ok=>{if(ok&&generation===token&&performance.now()-at<350)cue(id,{variant,priority,key,kind,direction,scene});});}
@@ -155,14 +167,14 @@
  addEventListener('pagehide',suspend);addEventListener('pageshow',restore);document.addEventListener('visibilitychange',()=>document.hidden?suspend():restore());
  let warm=0;function warmOne(){if(warm>=timbres.presets.length)return;const p=timbres.presets[warm++];pcm.set(p.id,timbres.render(p.id));if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1500});else setTimeout(warmOne,90);}
  if('requestIdleCallback'in window)requestIdleCallback(warmOne,{timeout:1200});else setTimeout(warmOne,300);
- window.HolyMindAudio=Object.freeze({play,mute,setVolume,setLayer,beginFeedback,cue,
-  boomCue(event){if(!ready()||!cues||latest.intent!==true||!window.HolyMindBoomAudio)return false;if(!celebration)celebration=HolyMindBoomAudio.create(context,master);return celebration.play(event,music?.harmony()||[60,64,67]);},
+ window.HolyMindAudio=Object.freeze({play,mute,setVolume,setLayer,setLevel,beginFeedback,cue,
+  boomCue(event){if(auditionMode&&auditionMode!=='full')return false;if(!ready()||!cues||latest.intent!==true||!window.HolyMindBoomAudio)return false;if(!celebration)celebration=HolyMindBoomAudio.create(context,reactionBus);return celebration.play(event,music?.harmony()||[60,64,67]);},
   boomDirection(direction){celebration?.reverse(direction);},
-  boomPreview(event,gesture=false){if(!gesture||!ready()||!cues||!window.HolyMindBoomAudio)return false;if(!celebration)celebration=HolyMindBoomAudio.create(context,master);return celebration.play(event,music?.harmony()||[60,64,67]);},
+  boomPreview(event,gesture=false){if(auditionMode&&auditionMode!=='full')return false;if(!gesture||!ready()||!cues||!window.HolyMindBoomAudio)return false;if(!celebration)celebration=HolyMindBoomAudio.create(context,reactionBus);return celebration.play(event,music?.harmony()||[60,64,67]);},
   scorePreview(command,gesture=false){if(!gesture)return false;if(command==='pause'){music?.preview('pause');return true;}beginFeedback(true);const run=()=>{field();music?.preview(command);};if(ready())run();else feedbackUnlock?.then(ok=>{if(ok)run();});return true;},
-  setMix(mode){if(!['taps','bed','full'].includes(mode))return;setLayer('ambience',mode!=='taps',false);setLayer('flow',mode==='full',false);setLayer('cues',mode==='full',false);},
+  setMix(mode){if(!['taps','bed','full'].includes(mode))return;setLayer('ambience',mode!=='taps',false);setLayer('flow',mode==='full',false);setLayer('cues',true,false);setLayer('piano',mode==='full',false);auditionMode=mode;},
   updateLineTravel(state){lineTravel={...state};syncLineTravel();},
   updateSoundscape(state){latest={...latest,...state};if(ready())field();},
   settle(reverse=false){if(!ready()||!flow||!landscape)return false;const ok=landscape.settle(reverse);if(ok){lastCueAt=performance.now();lastCuePriority=3;history.push({id:reverse?'current-reconnect':'current-resolve',kind:'resolution',time:performance.now()});if(history.length>80)history.shift();}return ok;},
-  snapshot:()=>({version:'boom-v20',celebration:celebration?.snapshot()||null,lineTravel:{...lineTravel},character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],score:music?.snapshot()||null,feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey,retiring:retiringCues.size,piano:window.HolyMindCueTimbres?.snapshot()},soundscape:landscape?.snapshot()||null})});ui();
+  snapshot:()=>({version:'intent-v24',piano,auditionMode,levels:{...levels},mixGains:{piano:pianoBus?.gain.value??0,reactions:reactionBus?.gain.value??0},celebration:celebration?.snapshot()||null,lineTravel:{...lineTravel},character:timbres.character,enabled,volume,ambience,flow,cues,unlocked,needsGesture,context:context?.state||'uncreated',contextCount,played,dropped,lastStyle,voices:voices.size,peakVoices,pending,maxRms,lastSynthesisMs,lastScheduleMs,warm:pcm.size,history:[...history],score:music?.snapshot()||null,feedback:{played:cuePlayed,dropped:cueDropped,active:!!cueVoice,maxVoices:cuePeakVoices,maxRms:cueMaxRms,rms:readCueRms(),lastKey:lastCueKey,retiring:retiringCues.size,piano:window.HolyMindCueTimbres?.snapshot()},soundscape:landscape?.snapshot()||null})});ui();
 })();

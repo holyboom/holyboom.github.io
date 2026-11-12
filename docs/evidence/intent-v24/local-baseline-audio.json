@@ -1,0 +1,20 @@
+{
+  "base": "http://127.0.0.1:8787/",
+  "checks": [
+    {
+      "name": "default-current-and-ambient-waveform-preserved",
+      "pass": true,
+      "maxAbsoluteDifference": 0,
+      "rms": 0.0019907477820814185,
+      "frames": 72000,
+      "sampleRate": 24000
+    },
+    {
+      "name": "non-silent-comparison",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "method": "Same OfflineAudioContext score; old v23 source graph versus current graph with default unity levels. Not a physical listening test."
+}

@@ -276,3 +276,14 @@ Approved request: extend firework fade-out, add richer nonuniform glitter and mo
 - Runtime no longer preempts earlier sounds at the third overlapping cue. Normal cues finish their own tails; a maximum of twelve finite voices prevents pathological scrubbing from accumulating an audio queue. Direction changes crossfade old firework tails over 650 ms. Mute/hidden remain prompt intentional-silence exceptions. The score, line-only current, ambience and brain taps are untouched.
 - No change to the stable viewport/pin modules, signature docking range, native scroll or source artwork. The same read-before-write, no-op-frame skip and boundary early-exit protections remain. Recorded buffer decoding happens before gestures and no synthesis runs in the scroll frame.
 - Studio provides 10.2-second before/after comparisons with identical event schedule/master level; no per-file loudness normalization. These are illustrative mixes, not a physical iPhone microphone recording. Automated signal/geometry checks do not certify listening preference or real-device frame rate.
+
+
+## Intent Journey v24 — approved refinement, not a new theme
+
+One explicit question survives the scroll story. Workbench stages display a deterministic illustrative source → permission → artifact process; the amber boundary never claims approval. A user-selected challenge and intentionally carried skill are stored only as whitelisted IDs and a step number in this tab session. Native scroll, reverse fireworks and section changes never change choices. The portal assembles a reviewable/copyable starting brief; nothing is submitted, no analytics or model requests are added. No selected scenario means the original generic Contact remains.
+
+Piano is separated from Reactions & fireworks; energy-on-line and atmosphere remain independent. Existing muted preferences are migrated conservatively. Four optional attenuators default to unity so the approved mix is retained; no new sounds or score edits. Recorded burst stereo placement follows actual crown x within ±0.35. Quiet source/particle-driven light is clipped to the existing material, not a full-screen flash.
+
+A draw-cost moving average may choose a lower Canvas DPR at the next effect boundary; no particle identities, geometry, source artwork, animation or scroll control are disabled. This observes JS draw cost, not real-device frame rate. All source PCM, Mozart note order, line-only +8 dB gate, 259 fixed particle trajectories and v21 viewport/pin stabilization are preserved.
+
+Tests must cover new choices, reload/reset, gallery filtering, clipboard success/failure, four audio controls, spatial stereo, default gain preservation, deterministic reflection, responsive layouts, prior firework/tail and scroll stability. Physical iPhone listening/performance is not available in this session and is not claimed.

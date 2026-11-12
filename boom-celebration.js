@@ -15,7 +15,7 @@
   if(c!==lastCharge){dot.style.setProperty('--boom-charge',c);lastCharge=c;}
   if(e!==lastEmphasis){aboutName?.style.setProperty('--boom-emphasis',e);lastEmphasis=e;}
  }
- function clear(){if(dirty){ctx.clearRect(0,0,width,height);dirty=false;}visible=false;decoration();}
+ function clear(){window.HolyMindLighting?.boom(null,null);if(dirty){ctx.clearRect(0,0,width,height);dirty=false;}visible=false;decoration();}
  function measureFrame(y){
   if(range.end<=range.start||y<=range.start||y>=range.end||document.hidden)return null;
   reads++;const r=dot.getBoundingClientRect(),w=word.getBoundingClientRect();
@@ -24,7 +24,7 @@
  function sameFrame(t,box){return lastFrame?.progress===t&&lastBox&&
   ['width','height','header','wordLeft','wordTop','wordWidth'].every(k=>box[k]===lastBox[k])&&
   box.anchor.x===lastBox.anchor.x&&box.anchor.y===lastBox.anchor.y;}
- function size(){const dpr=Math.min(innerWidth<=680?1.5:2,devicePixelRatio||1);if(width!==innerWidth||height!==innerHeight||scale!==dpr){width=innerWidth;height=innerHeight;scale=dpr;canvas.width=Math.round(width*scale);canvas.height=Math.round(height*scale);ctx.setTransform(scale,0,0,scale,0,0);}}
+ function size(){const dpr=(window.HolyMindVisualBudget?.canvasDpr(innerWidth<=680?1.5:2)??Math.min(innerWidth<=680?1.5:2,devicePixelRatio||1));if(width!==innerWidth||height!==innerHeight||scale!==dpr){width=innerWidth;height=innerHeight;scale=dpr;canvas.width=Math.round(width*scale);canvas.height=Math.round(height*scale);ctx.setTransform(scale,0,0,scale,0,0);}}
  function shape(x,y,r,color,alpha,diamond=false){if(alpha<.007)return;ctx.globalAlpha=alpha;ctx.drawImage(glows[color],x-r*5,y-r*5,r*10,r*10);ctx.fillStyle=model.palette[color];ctx.beginPath();if(diamond){ctx.moveTo(x,y-r*1.6);ctx.lineTo(x+r,y);ctx.lineTo(x,y+r*1.6);ctx.lineTo(x-r,y);ctx.closePath();ctx.fill();}else ctx.fillRect(Math.round(x-r/2),Math.round(y-r/2),r,r);}
  function draw(f,box){
   size();ctx.clearRect(0,0,width,height);ctx.save();ctx.beginPath();ctx.rect(0,box.header+2,width,height-box.header-2);ctx.clip();ctx.globalCompositeOperation='lighter';
@@ -38,12 +38,12 @@
   const start=performance.now();frameCount++;const y=input.y,t=Math.max(0,Math.min(1,(y-range.start)/Math.max(1,range.end-range.start))),previous=progress;progress=t;
   const dir=lastY===null?0:Math.sign(y-lastY);lastY=y;
   if(range.end<=range.start||t===0||t===1||document.hidden){
-   clear();lastFrame=model.frame(t,lastBox||{});cueSides=model.cues.map(c=>t>=c.at);lastAt=performance.now();return;
+   window.HolyMindVisualBudget?.boundary();clear();lastFrame=model.frame(t,lastBox||{});cueSides=model.cues.map(c=>t>=c.at);lastAt=performance.now();return;
   }
   const box=input.box||measureFrame(y);
   if(!box||box.anchor.y<box.header+8||box.wordTop>innerHeight+100){clear();return;}
   const unchanged=sameFrame(t,box);lastBox=box;visible=true;
-  if(!unchanged){lastFrame=model.frame(t,box);draw(lastFrame,box);decoration(lastFrame.charge,Math.min(1,t/.16,(1-t)/.13));}else skippedDraws++;
+  if(!unchanged){lastFrame=model.frame(t,box);draw(lastFrame,box);window.HolyMindLighting?.boom(lastFrame,box);decoration(lastFrame.charge,Math.min(1,t/.16,(1-t)/.13));}else skippedDraws++;
   const sound=window.HolyMindScrollSound?.snapshot(),trusted=sound?.intent===true&&(sound.focus??1)>.4&&performance.now()-lastReset>250;
   const changed=dir&&Math.abs(t-previous)>1e-7;
   if(changed&&trusted&&visible){
@@ -51,11 +51,11 @@
    const crossed=[];model.cues.forEach((c,i)=>{if(dir>0&&!cueSides[i]&&t>=c.at+.002){cueSides[i]=true;crossed.push(c);}else if(dir<0&&cueSides[i]&&t<=c.at-.002){cueSides[i]=false;crossed.push(c);}});
    // A fast swipe gets the latest visual moment, never a queue of missed explosions.
    const c=dir>0?crossed.at(-1):crossed[0];
-   if(c&&performance.now()-lastEvent>45){const kind=dir>0?c.id:c.id==='charge'?'seal':c.id==='burst'?'gather':c.id==='launch'?'return':'recall';const ok=window.HolyMindAudio?.boomCue?.({kind,index:c.index,direction:dir,progress:t,x:box.anchor.x/innerWidth})||false;lastEvent=performance.now();eventHistory.push({kind,index:c.index,direction:dir,progress:t,played:ok,coalesced:crossed.length,time:lastEvent});if(eventHistory.length>100)eventHistory.shift();}
+   if(c&&performance.now()-lastEvent>45){const kind=dir>0?c.id:c.id==='charge'?'seal':c.id==='burst'?'gather':c.id==='launch'?'return':'recall';const ok=window.HolyMindAudio?.boomCue?.({kind,index:c.index,direction:dir,progress:t,x:(lastFrame.centers[c.index]?.x??box.anchor.x)/innerWidth})||false;lastEvent=performance.now();eventHistory.push({kind,index:c.index,direction:dir,progress:t,played:ok,coalesced:crossed.length,time:lastEvent});if(eventHistory.length>100)eventHistory.shift();}
    lastDirection=dir;
   }else if(changed&&!trusted){cueSides=model.cues.map(c=>t>=c.at);lastDirection=dir;}
   if(t===0||t===1){cueSides=model.cues.map(c=>t>=c.at);}
-  lastAt=performance.now();paint.push(lastAt-start);if(paint.length>90)paint.shift();
+  lastAt=performance.now();window.HolyMindVisualBudget?.observe(lastAt-start);paint.push(lastAt-start);if(paint.length>90)paint.shift();
  }
  function setRange(start,end){if(Math.abs(start-range.start)>.5||Math.abs(end-range.end)>.5){range={start,end};lastY=null;lastReset=performance.now();cueSides=model.cues.map(c=>progress>=c.at);}}
  function reset(){lastY=null;lastDirection=0;lastReset=performance.now();cueSides=model.cues.map(c=>progress>=c.at);if(document.hidden)clear();}

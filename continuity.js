@@ -189,6 +189,7 @@
   layer.dataset.from=a.id;layer.dataset.to=b.id;layer.dataset.progress=p.toFixed(5);
   layer.dataset.x=pos.x.toFixed(3);layer.dataset.y=pos.y.toFixed(3);
   window.HolyMindBoomCelebration?.render({y,from:a.id,to:b.id,progress:p,box:boomBox});
+  window.HolyMindJourney?.renderCarrier({from:a.id,to:b.id,progress:p});
   layer.dataset.direction=y<lastY?'reverse':y>lastY?'forward':layer.dataset.direction||'forward';lastY=y;
   // Stop after the existing GSAP scrub settles. No idle animation loop is added.
   const scrubActive=window.ScrollTrigger?.getAll().some(st=>st.getTween?.()?.isActive());
