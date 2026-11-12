@@ -1,0 +1,17 @@
+{
+  "status": "Local verification passed; publication pending",
+  "readme_words": 349,
+  "readme_contains_version_history": false,
+  "profile_urls": [
+    "https://holyboom.github.io/profile/",
+    "https://holyboom.github.io/th/profile/"
+  ],
+  "local_checks": {
+    "local-webkit": 48,
+    "local-chromium": 48
+  },
+  "total_local_checks": 96,
+  "search_ranking_verified": false,
+  "indexing_verified": false,
+  "private_material_published": false
+}

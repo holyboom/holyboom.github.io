@@ -7,17 +7,29 @@
   </picture>
 </a>
 
-# HolyMind · Engineering fieldnotes
+# Theerawee Rangram (Boom)
 
-**Theerawee “Boom” Rangram** — AI Engineer, Solutions Architect, and creator of HolyMind Framework. Based in Bangkok.
+**AI Engineer & AI Solutions Architect · Bangkok, Thailand**
 
-I turn ambitious business strategies into working AI systems, agentic workflows, and automation. The interesting part is not adding AI. It is finding the right question, connecting the right capabilities, and making the result worth trusting.
+Creator of **HolyMind Framework**.
 
-**[Connect on LinkedIn ↗](https://www.linkedin.com/in/boom-theerawee)** · **[Enter the live experience ↗](https://holyboom.github.io/)**
+I turn ambitious business strategies into practical AI systems, agentic workflows and automation—with explicit permissions, human review and evidence people can inspect. My background spans **9+ years of software delivery** across banking, insurance, fintech and e-commerce.
 
-> ทำให้ความตั้งใจทางธุรกิจ กลายเป็นระบบที่ออกแบบ ลงมือทำ และตรวจสอบได้
+**[Recruiter profile](https://holyboom.github.io/profile/)** · **[โปรไฟล์ภาษาไทย](https://holyboom.github.io/th/profile/)** · **[Connect on LinkedIn ↗](https://www.linkedin.com/in/boom-theerawee)**
 
-## A way of working, not a wall of tools
+> ธีรวีร์ รางแรม — เชื่อมโจทย์ธุรกิจ สถาปัตยกรรมซอฟต์แวร์ และการลงมือพัฒนา AI ให้เป็นระบบที่คนใช้งานและตรวจสอบได้
+
+## Where I can contribute
+
+**AI Solutions Architecture.** Requirements, system boundaries, integrations and a practical delivery plan.
+
+**Applied GenAI & Agentic AI.** Model-and-tool workflows, LLM evaluation, guardrails and human-in-the-loop decisions.
+
+**Enterprise implementation.** TypeScript, React, Angular, FastAPI and PostgreSQL access controls, informed by software delivery experience at ttb spark, Accenture and Allianz Technology.
+
+Relevant conversations include **AI Solutions Architect, AI Engineer, GenAI Engineer, Forward Deployed Engineer** and **AI Transformation Consultant** roles. These describe role fit, not a list of past job titles.
+
+## How I work
 
 <picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/readme/method-mobile-dark.png">
@@ -26,38 +38,19 @@ I turn ambitious business strategies into working AI systems, agentic workflows,
   <img src="assets/readme/method-desktop-light.png" alt="Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols." width="100%">
 </picture>
 
-**Clarify.** Start with the outcome and the constraints—not the tool.<br>
-**Connect.** Give each capability a job, a boundary, and a person accountable for it.<br>
-**Verify.** Keep evidence inspectable and approval in human hands.
+**Clarify the goal. Connect the capabilities. Verify the result.**
 
-## The experience, in three moments
+The HolyMind showcase turns that approach into an inspectable public example: three illustrative business workflows, explicit input boundaries, source-to-output inspection and a planning brief that preserves the visitor’s choices. It is a portfolio demonstration—not a live AI service or a claimed client outcome.
 
-**A thought becomes a system.** Tap the neural brain; follow one visual thread into an exploded architecture. Scroll backward and it reconnects.
-
-**A question becomes a starting brief.** Explore one of three illustrative business scenarios, inspect fictional sources, and carry a chosen skill to the final portal. The full collection contains 34 skill concepts. The workbench is illustrative, not a live AI service.
-
-**Interaction becomes music.** An arranged Mozart K.545 passage follows scrolling. Real recorded firework textures and a reversible `Boom.` finale complete the journey. Sound is gesture-activated and independently controllable; the README itself stays silent.
-
-[Open the showcase](https://holyboom.github.io/) · [Explore the framework](https://holyboom.github.io/#framework) · [Read the audio credits](https://holyboom.github.io/audio-credits.html)
+[Explore the live work](https://holyboom.github.io/) · [Inspect the source](workflow-proof.js) · [Read my experience](https://holyboom.github.io/profile/#fit-heading)
 
 <details>
-<summary><strong>Inside the repository</strong> — setup, architecture, evidence and rights</summary>
+<summary><strong>Technical notes and credits</strong></summary>
 
-This is the source of a static GitHub Pages portfolio—not an installable HolyMind package. The workbench is an **illustration**, not a live AI service, client case study, or measured business result. No information is automatically submitted by it.
-
-```sh
-node scripts/preview.mjs --host 127.0.0.1 --port 4173
-npm run check
-```
-
-[Engineering notes](docs/ENGINEERING.md) · [Design decisions](DESIGN.md) · [Verification](docs/evidence/linkedin-fieldnotes-v28/summary.json) · [Release history](docs/RELEASE-HISTORY.md)
-
-Original HolyMind artwork is retained, not relicensed as an open-source icon set. Fonts, audio and third-party components retain their individual notices. See [brand attribution](assets/brand-attribution.md) and [audio credits](https://holyboom.github.io/audio-credits.html).
-
-Browser automation is not a physical-iPhone performance test or full accessibility certification. The live showcase currently uses always-on motion.
+This repository serves the static portfolio on GitHub Pages. [Engineering notes](docs/ENGINEERING.md) cover local setup and architecture. Original HolyMind artwork and third-party assets retain their [individual notices](assets/brand-attribution.md); see the [audio credits](https://holyboom.github.io/audio-credits.html).
 
 </details>
 
 ---
 
-**Bring the hard question.** [Start a conversation with Boom on LinkedIn →](https://www.linkedin.com/in/boom-theerawee)
+**Hiring for a business problem that needs working AI?** [Let’s discuss the role on LinkedIn →](https://www.linkedin.com/in/boom-theerawee)

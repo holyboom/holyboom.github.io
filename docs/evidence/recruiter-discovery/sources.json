@@ -1,0 +1,34 @@
+{
+  "checked": "2026-11-12",
+  "primary_guidance": [
+    {
+      "url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "use": "Helpful unique content and conventional SEO; no special llms.txt rank signal."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/profile-page",
+      "use": "ProfilePage/Person entity identity, visible factual consistency."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "use": "Reciprocal en/th hreflang, distinct fully translated pages."
+    },
+    {
+      "url": "https://help.openai.com/en/articles/12627856-publishers-and-developers-faq",
+      "use": "Allow OAI-SearchBot; independent from model-training controls."
+    },
+    {
+      "url": "https://www.indexnow.org/documentation",
+      "use": "Ownership key and notification protocol. Receipt is not index/rank."
+    }
+  ],
+  "search_sample": {
+    "queries": [
+      "\"Theerawee Rangram\"",
+      "\"holyboom.github.io\"",
+      "\"boom-theerawee\""
+    ],
+    "scope": "Two search providers; qualitative snapshot, not Search Console or rank tracking.",
+    "result": "Official portfolio was not observed in returned exact-name/site samples; other public mentions were found. This is not proof of absence from an index."
+  }
+}

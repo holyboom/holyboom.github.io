@@ -1,0 +1,41 @@
+THEERAWEE RANGRAM (BOOM)
+AI Engineer & AI Solutions Architect | Bangkok, Thailand
+ธีรวีร์ รางแรม
+
+I connect business requirements, software architecture and hands-on implementation. My focus is practical GenAI integration, agentic workflows and automation with explicit permissions, human review and inspectable evidence.
+9+ years of software delivery across banking, insurance, fintech and e-commerce. Creator of HolyMind Framework.
+
+ROLE FIT
+AI Solutions Architect: Translate business requirements into system boundaries, integrations, access controls and a delivery plan.
+AI Engineer and GenAI Engineer: Build AI-assisted workflows that connect models, tools and existing applications, with evaluation and human review.
+Forward Deployed Engineer: Bring customer-facing requirements, hands-on software delivery and international stakeholder coordination into one implementation conversation.
+AI Transformation Consultant: Identify a useful first use case, define the workflow and governance, and agree how its results will be evaluated.
+These are relevant roles to discuss, not a list of job titles I have held. Scope, availability and commercial terms are agreed in conversation.
+
+CORE CAPABILITIES
+Enterprise software experience plus applied AI architecture: GenAI integration, agent orchestration, LLM evaluation, guardrails, API integration and human-in-the-loop decisions. My application work includes TypeScript, React, Angular, FastAPI and PostgreSQL row-level security.
+
+SELECTED EXPERIENCE
+Independent AI Solutions Architect
+AI-assisted product architecture and development using React, FastAPI and PostgreSQL access controls. Translate requirements into product specifications, source-backed outputs and explicit review paths.
+
+ttb spark
+Senior software engineering in banking, including frontend delivery and GPT-assisted Jira, Confluence and Bitbucket workflows with human review.
+
+Accenture
+Corporate-banking frontend delivery, translating stakeholder requirements and collaborating with distributed engineering squads.
+
+Allianz Technology
+Angular and enterprise frontend development, working with stakeholders and engineering teams in Munich and Bangkok.
+
+PUBLIC WORK
+A working browser-based showcase of intentional interaction, workflow boundaries and software engineering. Visitors explore three illustrative scenarios, inspect fictional source-to-output examples and carry an explicit choice into a planning brief.
+This public example is a portfolio demonstration, not a live agent service or a claimed client result. Client source code, private records and confidential documents are not published here.
+Source: https://github.com/holyboom/holyboom.github.io
+
+CONTACT
+LinkedIn: https://www.linkedin.com/in/boom-theerawee
+English profile: https://holyboom.github.io/profile/
+โปรไฟล์ภาษาไทย: https://holyboom.github.io/th/profile/
+
+Professional history is self-reported. The linked portfolio demonstrates the stated browser behavior; it does not independently verify employment or business outcomes.

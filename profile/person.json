@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://holyboom.github.io/#theerawee-rangram",
+  "name": "Theerawee Rangram",
+  "alternateName": [
+    "Boom",
+    "Boom Theerawee",
+    "holyboom",
+    "ธีรวีร์ รางแรม"
+  ],
+  "jobTitle": "AI Engineer and AI Solutions Architect",
+  "description": "Bangkok-based AI Engineer and AI Solutions Architect, creator of HolyMind Framework, with 9+ years of software delivery across banking, insurance, fintech and e-commerce.",
+  "url": "https://holyboom.github.io/profile/",
+  "sameAs": [
+    "https://www.linkedin.com/in/boom-theerawee",
+    "https://github.com/holyboom"
+  ],
+  "workLocation": {
+    "@type": "Place",
+    "name": "Bangkok, Thailand"
+  },
+  "knowsAbout": [
+    "AI Engineering",
+    "AI Solutions Architecture",
+    "Generative AI",
+    "Agentic AI",
+    "AI Transformation",
+    "Workflow Automation",
+    "LLM Evaluation",
+    "AI Governance",
+    "Human-in-the-loop Systems",
+    "API Integration",
+    "React",
+    "Angular",
+    "TypeScript",
+    "FastAPI",
+    "PostgreSQL Row-Level Security",
+    "HolyMind Framework"
+  ]
+}

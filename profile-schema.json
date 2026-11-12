@@ -1,29 +1,26 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
+  "@id": "https://holyboom.github.io/#profile",
+  "url": "https://holyboom.github.io/",
+  "inLanguage": [
+    "en",
+    "th"
+  ],
+  "dateModified": "2026-11-12",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://holyboom.github.io/#theerawee-rangram",
     "name": "Theerawee Rangram",
     "alternateName": [
       "Boom",
-      "@holyboom",
+      "Boom Theerawee",
+      "holyboom",
       "ธีรวีร์ รางแรม"
     ],
     "jobTitle": "AI Engineer and AI Solutions Architect",
-    "description": "Creator of HolyMind Framework. I turn ambitious business strategies into working AI systems, agentic workflows, and automation.",
-    "knowsAbout": [
-      "AI Engineering",
-      "Agentic AI",
-      "AI Strategy Execution",
-      "Business Process Automation",
-      "AI Agents",
-      "AI Transformation",
-      "Software Architecture",
-      "Production AI Systems",
-      "LLM Evaluation and Guardrails",
-      "HolyMind Framework"
-    ],
+    "description": "Theerawee Rangram (Boom), AI Engineer and AI Solutions Architect in Bangkok and creator of HolyMind Framework. Business strategy, agentic workflows, evaluation and automation.",
+    "url": "https://holyboom.github.io/profile/",
     "sameAs": [
       "https://www.linkedin.com/in/boom-theerawee",
       "https://github.com/holyboom"
@@ -32,13 +29,15 @@
       "@type": "Place",
       "name": "Bangkok, Thailand"
     },
-    "url": "https://holyboom.github.io/"
-  },
-  "@id": "https://holyboom.github.io/#profile",
-  "url": "https://holyboom.github.io/",
-  "inLanguage": [
-    "en",
-    "th"
-  ],
-  "dateModified": "2026-11-12"
+    "knowsAbout": [
+      "AI Engineering",
+      "AI Solutions Architecture",
+      "Agentic AI",
+      "AI Transformation",
+      "Workflow Automation",
+      "LLM Evaluation",
+      "Guardrails",
+      "HolyMind Framework"
+    ]
+  }
 }
