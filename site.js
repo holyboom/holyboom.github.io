@@ -240,6 +240,9 @@
  function openSkill(skill, opener) {
   if (!dialog || typeof dialog.showModal !== "function") return;
   dialog.dataset.skill=skill.id;
+  const carried=window.HolyMindJourney?.snapshot().skill===skill.id;
+  byId("carry-skill")?.setAttribute("aria-pressed",String(carried));
+  setText("carry-skill-status",carried?skill.name+" is carried in your brief.":"");
   dialogOpener = opener;
   dialogNavigation = false;
   const icon = byId("skill-dialog-icon");

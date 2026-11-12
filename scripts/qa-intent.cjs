@@ -21,6 +21,9 @@ const b=await(engine==='webkit'?webkit.launch({headless:true}):chromium.launch({
  await p.locator('#instrument-open').click();await p.locator('#carry-skill').click();let s=await state();const chosen=s.skill;
  check('skill-carried-only-on-explicit-action',chosen==='mcp-orchestrator'&&(await p.locator('#carry-skill-status').innerText()).includes('carried'));
  await p.locator('#close-skill-dialog').click();check('skill-and-scenario-in-brief',s.brief.includes('approved internal knowledge')&&s.brief.includes('MCP orchestration'));
+ await p.locator('.skill-card[data-skill=goal-driven-execution]').click();
+ check('different-skill-dialog-does-not-claim-carried',await p.locator('#carry-skill').getAttribute('aria-pressed')==='false'&&(await p.locator('#carry-skill-status').innerText())==='');
+ check('inspection-alone-does-not-overwrite-choice',(await state()).skill===chosen);await p.locator('#close-skill-dialog').click();
  await p.locator('#journey-receipt').scrollIntoViewIfNeeded();await p.waitForTimeout(1100);
  check('portal-heading-personalized',(await p.locator('#connect-heading').innerText()).includes('Make knowledge'));
  check('portal-carries-selected-icon',(await p.locator('.portal-depth>img').getAttribute('src')).includes(chosen));
