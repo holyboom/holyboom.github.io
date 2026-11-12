@@ -411,3 +411,9 @@ Reproduced: native scroll after fireworks plus repeated height-only viewport cha
 The audio resize handler now uses the existing stable viewport revision. It does not reset the current gesture/inertial scroll lease for browser chrome changes; it neither invents nor extends a gesture. Actual width/orientation changes still remeasure and suppress layout-only movement. Score engine, audio routing/gains, all sixteen listed core modules and 160 audio assets are unchanged.
 
 Local: 177 passed checks, including score pause/resume and line-only electrical gate regression. Production: 21 WebKit + 21 Chromium + 6 native touch emulation checks; no failed assertion/runtime error. Eight public runtime files match the release. Sound still requires first gesture, explicit mute wins, pause preserves piano decay, and orientation/no-input resize does not start a song. Physical iPhone sound/performance remains unverified.
+
+
+## Edited Journey v27
+Default-route editorial refinement: remove the duplicated hero-principle strip; shorten orbit narrative and transition; retain full pinned assembly with less travel; show a compact challenge rail and live diagram; put long rationale/guardrails under native details; show the skill fan before an optional full searchable library; compact service doors; retain Boom overhead space and keep deeper bio in its existing disclosure.
+
+Clean-state WebKit comparisons at 390×844 and 1440×1000 measure scroll height, actual document distance to Boom and default displayed text. Actual drawer open/close, search/empty/reset, keyboard, all 34 skills, carry/brief, native no-JS details, 11 visual/audio stations, 0–100–0 assembly, viewport stability and v26 score continuation are asserted. No conversion/retention or physical iPhone claim is made.

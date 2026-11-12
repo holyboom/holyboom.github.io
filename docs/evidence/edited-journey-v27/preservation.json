@@ -1,0 +1,26 @@
+{
+  "baseline": "c01d0401517400a022db9cb5302942e9e93f7fdb",
+  "unchanged_modules": [
+    "holymind-audio.js",
+    "holymind-scroll-score.js",
+    "mozart-score-data.js",
+    "holymind-soundscape.js",
+    "holymind-cues.js",
+    "holymind-timbres.js",
+    "boom-audio.js",
+    "boom-particles.js",
+    "boom-celebration.js",
+    "brain-reactions.js",
+    "neural-core.js",
+    "viewport-stability.js",
+    "intent-journey.js",
+    "workflow-proof.js",
+    "material-light.js",
+    "visual-budget.js",
+    "energy-field.js",
+    "assembly-lab.js"
+  ],
+  "all_asset_files_byte_identical": 255,
+  "v26_audio_resize_fix_preserved": true,
+  "new_runtime_dependencies": 0
+}

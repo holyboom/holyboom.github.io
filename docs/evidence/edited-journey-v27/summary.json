@@ -1,0 +1,29 @@
+{
+  "release": "edited-journey-v27",
+  "status": "Local verification passed; production verification pending",
+  "local_checks": {
+    "local-webkit": 61,
+    "local-chromium": 61,
+    "score-continuity": 21,
+    "stability": 25,
+    "native-touch": 6,
+    "reversal": 5
+  },
+  "total_local_checks": 179,
+  "default_route_comparison": [
+    {
+      "width": 390,
+      "height": 844,
+      "document_reduction_percent": 35.78,
+      "distance_to_boom_reduction_percent": 41.53,
+      "default_main_word_reduction_percent": 45.68
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "document_reduction_percent": 36.37,
+      "distance_to_boom_reduction_percent": 41.09,
+      "default_main_word_reduction_percent": 44.46
+    }
+  ]
+}

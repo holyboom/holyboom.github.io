@@ -235,7 +235,7 @@
  const categoryLabels = { reason: "Reason", build: "Build", verify: "Verify" };
  let skills = [];
  let category = "all";
- let expanded = false;
+ let expanded = true;
  let dialogOpener = null;
  let dialogNavigation = false;
  let previousOverflow = "";
@@ -347,7 +347,7 @@
  byId("clear-search")?.addEventListener("click", () => {
   if (search) search.value = "";
   category = "all";
-  expanded = false;
+  expanded = true;
   filters.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.filter === "all")));
   renderSkills();
   search?.focus();

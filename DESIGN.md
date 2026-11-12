@@ -299,3 +299,13 @@ Reflected colors keep their existing luminance caps but use separate spatial cen
 
 ## Scroll Continuity v26 — repair missing piano after Boom
 A reproduced mobile-height resize erased audio scroll intent while the visual scene correctly remained stable. Audio now shares the existing viewport revision decision: browser chrome changes keep the current native input lease; actual orientation/structural changes still remeasure and suppress false movement. No score, instrument, recorded sound, gain, firework, motion or user-choice changes. Evidence and limits: docs/evidence/score-continuity-v26/summary.json.
+
+
+## Edited Journey v27 — shorter main route, optional depth
+Owner feedback: repeated design/content and a long scroll route may prevent reaching Boom/Contact. Treat this as editorial refinement, not another effect/theme. Retain original brain, pixel-neon artwork, all section-to-section continuity, native scroll, Apple-like 0–100 assembly, chosen-intent ownership, sound identity and reversible fireworks.
+
+Remove the duplicated three-principle hero strip because Reason/Build/Verify already communicates it. Those three scroll chapters keep their moving orbit but shorter single-sentence copy and reduced dead travel. Assembly still pins to complete 0–100–0 with the same easing; its travel budget becomes 1.35 mobile / 1.55 wide viewport heights, bounded 800–1600 px, instead of 2.15 / 2.5 and 1200–2400. The live demonstration remains visible; long scenario, step rationale, guardrails and measurement notes move under one native Thinking & guardrails disclosure. Mobile challenge selection becomes a compact three-way rail.
+
+The six-skill optical fan is the default visual. The complete searchable 34-skill library is a clearly labeled native details disclosure, closed initially and populated with all skills. It is optional depth, not deleted content. The gallery continuity/audio anchor is its always-visible summary so the route does not read hidden geometry. Gallery animations build only while open. Three service doors become short typographic rails with optional copy, all closed initially. Longer duplicate About copy remains behind the existing disclosure; the Boom stage/overhead firework space is preserved. No type-size squeeze or new fullscreen scroll takeover.
+
+Validate mobile/desktop default page height and distance to Boom before/after from clean sessions; these are content/pixel measurements, not visitor analytics or conversion claims. Check keyboard/search/carry/brief, disclosure open/close geometry, 11 route stations, assembly endpoints, source evidence, all four sound controls, score continuation after fireworks and mobile viewport stability. No physical iPhone, human-listening or full accessibility/flash certification.

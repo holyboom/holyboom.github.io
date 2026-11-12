@@ -15,7 +15,7 @@ const {webkit,chromium}=require('playwright'),fs=require('fs');
   if(resize&&i%4===0)await p.setViewportSize({width:390,height:i%8===0?790:844});
   const d=await snap();rows.push({y:d.y,intent:d.s.intent,activity:d.s.activity,scene:d.s.scene,cursor:d.a.score?.cursor,notes:d.a.score?.played,rms:d.a.score?.rms||0,playing:!!d.a.score?.running});
  }runs.push({delta,resize,rows});return rows;}
- check('release',await p.locator('html').getAttribute('data-build')==='score-continuity-v26');
+ check('release',await p.locator('html').getAttribute('data-build')===(process.env.EXPECTED_BUILD||'score-continuity-v26'));
  check('no-autoplay',(await snap()).a.context==='uncreated');await p.locator('#sound-toggle').click();await p.waitForTimeout(900);
  const range=await p.evaluate(()=>HolyMindBoomCelebration.snapshot().range);await jump(range.start-25);await move(4,84,false);let d=await snap();
  check('real-fireworks-played-and-completed',d.f===1&&d.a.celebration.history.some(x=>x.kind==='burst'&&x.recorded));

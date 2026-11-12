@@ -1,0 +1,340 @@
+{
+  "base": "http://127.0.0.1:8790/",
+  "engine": "chromium",
+  "checks": [
+    {
+      "name": "current-release",
+      "pass": true
+    },
+    {
+      "name": "silent-unselected-load",
+      "pass": true
+    },
+    {
+      "name": "default-mobile-route-under-nine-thousand",
+      "pass": true,
+      "height": 8667
+    },
+    {
+      "name": "principle-duplication-removed",
+      "pass": true
+    },
+    {
+      "name": "depth-closed-by-default",
+      "pass": true
+    },
+    {
+      "name": "only-featured-deck-on-main-route",
+      "pass": true
+    },
+    {
+      "name": "services-start-as-compact-rows",
+      "pass": true
+    },
+    {
+      "name": "full-art-and-motion",
+      "pass": true
+    },
+    {
+      "name": "all-eleven-visual-stations",
+      "pass": true
+    },
+    {
+      "name": "route-keys-in-order-and-reachable",
+      "pass": true,
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 966.8
+        },
+        {
+          "id": "orbit",
+          "at": 1081.48
+        },
+        {
+          "id": "ribbon",
+          "at": 1392.36
+        },
+        {
+          "id": "ribbon",
+          "at": 1427.36
+        },
+        {
+          "id": "assembly",
+          "at": 2073
+        },
+        {
+          "id": "assembly",
+          "at": 3212
+        },
+        {
+          "id": "system",
+          "at": 4579.36
+        },
+        {
+          "id": "system",
+          "at": 4604.36
+        },
+        {
+          "id": "skills",
+          "at": 5097.36
+        },
+        {
+          "id": "skills",
+          "at": 5227.36
+        },
+        {
+          "id": "gallery",
+          "at": 5538.36
+        },
+        {
+          "id": "gallery",
+          "at": 5563.36
+        },
+        {
+          "id": "services",
+          "at": 5719.36
+        },
+        {
+          "id": "services",
+          "at": 5819.36
+        },
+        {
+          "id": "delivery",
+          "at": 6103.36
+        },
+        {
+          "id": "delivery",
+          "at": 6148.36
+        },
+        {
+          "id": "signature",
+          "at": 6364.0599999999995
+        },
+        {
+          "id": "signature",
+          "at": 6651.0199999999995
+        },
+        {
+          "id": "portal",
+          "at": 7644.36
+        }
+      ]
+    },
+    {
+      "name": "all-eleven-audio-stations",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-full-library",
+      "pass": true
+    },
+    {
+      "name": "library-is-optional-depth",
+      "pass": true,
+      "expandedHeight": 13606,
+      "defaultHeight": 8667
+    },
+    {
+      "name": "filter-remains-functional",
+      "pass": true
+    },
+    {
+      "name": "search-empty-state-visible",
+      "pass": true
+    },
+    {
+      "name": "reset-restores-all-34",
+      "pass": true
+    },
+    {
+      "name": "close-restores-short-route",
+      "pass": true,
+      "after": 8667,
+      "defaultHeight": 8667
+    },
+    {
+      "name": "close-restores-summary-focus",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-operations-0",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-operations-2",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-operations-3",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-knowledge-0",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-knowledge-2",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-knowledge-3",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-venture-0",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-venture-2",
+      "pass": true
+    },
+    {
+      "name": "visible-demo-venture-3",
+      "pass": true
+    },
+    {
+      "name": "rationale-and-guardrail-still-readable",
+      "pass": true
+    },
+    {
+      "name": "excluded-source-still-excluded",
+      "pass": true
+    },
+    {
+      "name": "choice-reaches-portal",
+      "pass": true
+    },
+    {
+      "name": "brief-copy-preserved",
+      "pass": true
+    },
+    {
+      "name": "return-keeps-question-and-skill",
+      "pass": true
+    },
+    {
+      "name": "service-detail-0",
+      "pass": true
+    },
+    {
+      "name": "service-detail-1",
+      "pass": true
+    },
+    {
+      "name": "service-detail-2",
+      "pass": true
+    },
+    {
+      "name": "full-bio-not-deleted",
+      "pass": true
+    },
+    {
+      "name": "assembly-shortened-not-removed",
+      "pass": true
+    },
+    {
+      "name": "assembly-scrub-0-37",
+      "pass": true
+    },
+    {
+      "name": "assembly-scrub-50-38",
+      "pass": true
+    },
+    {
+      "name": "assembly-scrub-100-39",
+      "pass": true
+    },
+    {
+      "name": "assembly-scrub-50-40",
+      "pass": true
+    },
+    {
+      "name": "assembly-scrub-0-41",
+      "pass": true
+    },
+    {
+      "name": "all-three-layer-callouts-complete",
+      "pass": true
+    },
+    {
+      "name": "same-particle-model-on-reverse-2",
+      "pass": true
+    },
+    {
+      "name": "same-particle-model-on-reverse-1",
+      "pass": true
+    },
+    {
+      "name": "same-particle-model-on-reverse-0",
+      "pass": true
+    },
+    {
+      "name": "falling-finale-still-present",
+      "pass": true
+    },
+    {
+      "name": "responsive-320",
+      "pass": true
+    },
+    {
+      "name": "expanded-library-responsive-320",
+      "pass": true
+    },
+    {
+      "name": "responsive-390",
+      "pass": true
+    },
+    {
+      "name": "expanded-library-responsive-390",
+      "pass": true
+    },
+    {
+      "name": "responsive-768",
+      "pass": true
+    },
+    {
+      "name": "expanded-library-responsive-768",
+      "pass": true
+    },
+    {
+      "name": "responsive-1440",
+      "pass": true
+    },
+    {
+      "name": "expanded-library-responsive-1440",
+      "pass": true
+    },
+    {
+      "name": "responsive-844",
+      "pass": true
+    },
+    {
+      "name": "expanded-library-responsive-844",
+      "pass": true
+    },
+    {
+      "name": "mobile-contact-discoverable",
+      "pass": true
+    },
+    {
+      "name": "mobile-contact-navigation-works",
+      "pass": true
+    },
+    {
+      "name": "native-disclosure-without-js",
+      "pass": true
+    },
+    {
+      "name": "no-submissions-or-new-network-writes",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

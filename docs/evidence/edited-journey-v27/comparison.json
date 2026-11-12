@@ -1,0 +1,276 @@
+{
+  "method": "Fresh WebKit contexts, no stored choices, default closed disclosures, same viewport and font-ready wait. Document pixel height includes the native assembly pin spacer. Main word count uses main.innerText split on whitespace; it is not a reading-time estimate.",
+  "measurements": [
+    {
+      "width": 390,
+      "height": 844,
+      "before": {
+        "build": "score-continuity-v26",
+        "width": 390,
+        "height": 844,
+        "documentHeight": 13496,
+        "maxScroll": 12652,
+        "mainWords": 740,
+        "aboutTop": 11406,
+        "contactTop": 12460,
+        "pinSpan": 1815,
+        "sections": [
+          {
+            "id": "top",
+            "top": 73,
+            "height": 945,
+            "words": 57
+          },
+          {
+            "id": "mind-flow",
+            "top": 1018,
+            "height": 1521,
+            "words": 99
+          },
+          {
+            "id": "signal-crossing",
+            "top": 2539,
+            "height": 210,
+            "words": 10
+          },
+          {
+            "id": "workbench",
+            "top": 2749,
+            "height": 4831,
+            "words": 232
+          },
+          {
+            "id": "framework",
+            "top": 7580,
+            "height": 2820,
+            "words": 173
+          },
+          {
+            "id": "what-i-do",
+            "top": 10400,
+            "height": 1006,
+            "words": 66
+          },
+          {
+            "id": "about",
+            "top": 11406,
+            "height": 1054,
+            "words": 50
+          },
+          {
+            "id": "connect",
+            "top": 12460,
+            "height": 1036,
+            "words": 53
+          }
+        ],
+        "cardCount": 8,
+        "overflow": false,
+        "errors": []
+      },
+      "after": {
+        "build": "edited-journey-v27",
+        "width": 390,
+        "height": 844,
+        "documentHeight": 8667,
+        "maxScroll": 7823,
+        "mainWords": 402,
+        "aboutTop": 6669,
+        "contactTop": 7631,
+        "pinSpan": 1139,
+        "sections": [
+          {
+            "id": "top",
+            "top": 73,
+            "height": 725,
+            "words": 32
+          },
+          {
+            "id": "mind-flow",
+            "top": 798,
+            "height": 984,
+            "words": 60
+          },
+          {
+            "id": "signal-crossing",
+            "top": 1782,
+            "height": 168,
+            "words": 10
+          },
+          {
+            "id": "workbench",
+            "top": 1958,
+            "height": 3279,
+            "words": 136
+          },
+          {
+            "id": "framework",
+            "top": 5237,
+            "height": 861,
+            "words": 47
+          },
+          {
+            "id": "what-i-do",
+            "top": 6098,
+            "height": 571,
+            "words": 26
+          },
+          {
+            "id": "about",
+            "top": 6669,
+            "height": 962,
+            "words": 38
+          },
+          {
+            "id": "connect",
+            "top": 7631,
+            "height": 1036,
+            "words": 53
+          }
+        ],
+        "cardCount": 34,
+        "overflow": false,
+        "errors": []
+      },
+      "document_reduction_percent": 35.78,
+      "distance_to_boom_reduction_percent": 41.53,
+      "default_main_word_reduction_percent": 45.68
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "before": {
+        "build": "score-continuity-v26",
+        "width": 1440,
+        "height": 1000,
+        "documentHeight": 13669,
+        "maxScroll": 12669,
+        "mainWords": 785,
+        "aboutTop": 12059,
+        "contactTop": 12819,
+        "pinSpan": 2400,
+        "sections": [
+          {
+            "id": "top",
+            "top": 87,
+            "height": 967,
+            "words": 75
+          },
+          {
+            "id": "mind-flow",
+            "top": 1054,
+            "height": 1696,
+            "words": 100
+          },
+          {
+            "id": "signal-crossing",
+            "top": 2770,
+            "height": 300,
+            "words": 10
+          },
+          {
+            "id": "workbench",
+            "top": 3098,
+            "height": 4997,
+            "words": 254
+          },
+          {
+            "id": "framework",
+            "top": 8095,
+            "height": 2656,
+            "words": 173
+          },
+          {
+            "id": "what-i-do",
+            "top": 10751,
+            "height": 1308,
+            "words": 66
+          },
+          {
+            "id": "about",
+            "top": 12059,
+            "height": 760,
+            "words": 50
+          },
+          {
+            "id": "connect",
+            "top": 12819,
+            "height": 850,
+            "words": 57
+          }
+        ],
+        "cardCount": 8,
+        "overflow": false,
+        "errors": []
+      },
+      "after": {
+        "build": "edited-journey-v27",
+        "width": 1440,
+        "height": 1000,
+        "documentHeight": 8698,
+        "maxScroll": 7698,
+        "mainWords": 436,
+        "aboutTop": 7104,
+        "contactTop": 7848,
+        "pinSpan": 1550,
+        "sections": [
+          {
+            "id": "top",
+            "top": 87,
+            "height": 827,
+            "words": 50
+          },
+          {
+            "id": "mind-flow",
+            "top": 914,
+            "height": 932,
+            "words": 61
+          },
+          {
+            "id": "signal-crossing",
+            "top": 1846,
+            "height": 205,
+            "words": 10
+          },
+          {
+            "id": "workbench",
+            "top": 2065,
+            "height": 3642,
+            "words": 147
+          },
+          {
+            "id": "framework",
+            "top": 5707,
+            "height": 924,
+            "words": 47
+          },
+          {
+            "id": "what-i-do",
+            "top": 6631,
+            "height": 473,
+            "words": 26
+          },
+          {
+            "id": "about",
+            "top": 7104,
+            "height": 744,
+            "words": 38
+          },
+          {
+            "id": "connect",
+            "top": 7848,
+            "height": 850,
+            "words": 57
+          }
+        ],
+        "cardCount": 34,
+        "overflow": false,
+        "errors": []
+      },
+      "document_reduction_percent": 36.37,
+      "distance_to_boom_reduction_percent": 41.09,
+      "default_main_word_reduction_percent": 44.46
+    }
+  ],
+  "visitor_retention_measured": false
+}

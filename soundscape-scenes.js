@@ -12,7 +12,7 @@
   {id:'assembly',name:'System unfolding',selector:'#system-assembly',morph:1,voiceProgress:1},
   {id:'workbench',name:'Working intention',selector:'.bench-layout',morph:.78,fieldLevel:.94,currentLevel:.90,openness:.92,textureLevel:.88,voiceProgress:.55},
   {id:'instrument',name:'Capability constellation',selector:'#skill-instrument',morph:.53,fieldLevel:1,currentLevel:1.02,openness:1.08,textureLevel:.98,voiceProgress:.64},
-  {id:'gallery',name:'Evidence atlas',selector:'.atlas-toolbar',morph:.70,fieldLevel:.88,currentLevel:.82,openness:.88,textureLevel:.72,voiceProgress:.44},
+  {id:'gallery',name:'Evidence atlas',selector:'#skill-library>summary',morph:.70,fieldLevel:.88,currentLevel:.82,openness:.88,textureLevel:.72,voiceProgress:.44},
   {id:'services',name:'Applied intelligence',selector:'#what-i-do',morph:.76,fieldLevel:.94,currentLevel:.92,openness:.95,textureLevel:.88,voiceProgress:.55},
   {id:'about',name:'The human behind the mind',selector:'#about',morph:.94,fieldLevel:.76,currentLevel:.64,openness:.78,textureLevel:.50,voiceProgress:.26},
   {id:'contact',name:'The next possibility',selector:'#connect',morph:.84,fieldLevel:.90,currentLevel:.80,openness:.92,textureLevel:.70,voiceProgress:.70},

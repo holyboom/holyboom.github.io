@@ -33,7 +33,7 @@
   {id:'assembly',s:'#assembly-skill',x:.50,y:.50,shape:plate,w:60,h:34,angle:-26,spread:50,hold:130},
   {id:'system',s:'.bench-footer',x:.98,y:.30,shape:plate,w:18,h:13,angle:0,spread:14,hold:25},
   {id:'skills',s:'.deck-shard[aria-pressed=true] .shard-surface',x:.50,y:.50,shape:plate,w:60,h:80,angle:0,spread:38,hold:130},
-  {id:'gallery',s:'.atlas-bottom',x:.98,y:.10,shape:diamond,w:18,h:18,angle:0,spread:18,hold:25},
+  {id:'gallery',s:'#skill-library>summary',x:.98,y:.50,shape:diamond,w:18,h:18,angle:0,spread:18,hold:25},
   {id:'services',s:'.approach-intro>img',x:.50,y:.50,shape:octagon,w:60,h:60,angle:45,spread:30,hold:100},
   {id:'delivery',s:'.approach-list details:last-child .service-art',x:.50,y:.50,shape:plate,w:48,h:48,angle:45,spread:25,hold:45},
   {id:'signature',s:'.signature-period',x:.5,y:.72,shape:diamond,w:7,h:7,angle:0,spread:0,hold:110},

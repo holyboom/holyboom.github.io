@@ -25,7 +25,7 @@
   root.style.setProperty('--guided-sheet',`${Math.max(64,sheet).toFixed(2)}px`);
   root.style.setProperty('--guided-distance',`${Math.max(24,Math.min(155,h*.25-sheet*.08)).toFixed(2)}px`);dimensions=`${viewport().width}x${viewport().height}`;
  }
- function span(){return Math.round(clamp(viewport().height*(innerWidth<=680?2.15:2.5),1200,2400));}
+ function span(){return Math.round(clamp(viewport().height*(innerWidth<=680?1.35:1.55),800,1600));}
  function initialize(){
   if(!gsap||!ScrollTrigger){root.dataset.assemblyMode='manual';return;}
   root.dataset.assemblyMode='guided';root.dataset.pinState='before';pin.classList.add('is-guided');size();

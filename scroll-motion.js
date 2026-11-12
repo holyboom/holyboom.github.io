@@ -13,7 +13,7 @@
  function phase(name){scene.dataset.phase=name;chapters.forEach(el=>el.classList.toggle('is-current',el.dataset.phase===name));}
  function gallery(){
   if(galleryContext)galleryContext.revert();galleryContext=null;
-  if(!allowed()||!grid)return;
+  if(!allowed()||!grid||document.getElementById('skill-library')?.open===false)return;
   galleryContext=gsap.context(()=>{
    [...grid.children].forEach((el,i)=>{
     el.dataset.motionReady='true';
@@ -47,6 +47,7 @@
  }
  function queueGallery(){if(scheduled)cancelAnimationFrame(scheduled);scheduled=requestAnimationFrame(()=>{scheduled=0;gallery();ScrollTrigger.refresh();});}
  if(grid)new MutationObserver(queueGallery).observe(grid,{childList:true});
+ document.getElementById('skill-library')?.addEventListener('toggle',queueGallery);
  document.addEventListener('holymind:motion',build);
  document.querySelectorAll('[data-explore-category]').forEach(link=>link.addEventListener('click',()=>document.querySelector('[data-filter="'+link.dataset.exploreCategory+'"]')?.click()));
  addEventListener('resize',()=>{if(width===innerWidth)return;width=innerWidth;clearTimeout(resizeTimer);resizeTimer=setTimeout(build,160);},{passive:true});
