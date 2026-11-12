@@ -1,6 +1,68 @@
 {
   "release": "grand-boom-v22",
-  "status": "Local verification passed; production verification pending",
+  "name": "HolyMind — Grand Fireworks / Real Recordings",
+  "status": "Published and verified",
+  "implementation_commit": "3f0e0500f630c80f41c8be5dff638918cf5d6141",
+  "verified_at": "2026-11-12T01:12:53.510208+00:00",
+  "url": "https://holyboom.github.io/?v=grand-boom-v22#about",
+  "studio": "https://holyboom.github.io/qa/grand-boom-v22.html",
+  "preview": "https://holyboom.github.io/assets/audio/grand-boom-v22/five-fireworks-preview.wav",
+  "request": "Much bigger alternating large/small fireworks, with realistic high-toned firework sound instead of the disliked synthetic cue.",
+  "visual": {
+    "bursts": 5,
+    "size_sequence": [
+      "large",
+      "small",
+      "larger",
+      "small",
+      "largest"
+    ],
+    "radius_weights": [
+      1,
+      0.43,
+      1.18,
+      0.53,
+      1.3
+    ],
+    "particle_count": 232,
+    "previous_particle_count": 135,
+    "shape": "Pixel-neon radial, fan, diamond, needle and crystal; wider overhead composition and longer streaks, not just increased glow",
+    "placement": "Earlier stable signature arrival creates room above the name; no new pin or spacer. Canvas and radii remain bounded on 320–1440 px and short landscape.",
+    "reverse": "The same fixed-seed identities and paths retrace into the full stop. Paused identical frames are not repainted."
+  },
+  "audio": {
+    "basis": "Real field recordings, not generated noise or oscillators",
+    "source_count": 3,
+    "sources": [
+      "Rudmer_Rotteveel / Freesound 336008",
+      "16FThumaF / Freesound 505264",
+      "cupido-1 / Freesound 456316"
+    ],
+    "license": "CC0 1.0 as listed by each author",
+    "source_representation": "Author-published HQ MP3 previews, self-hosted with source URLs and SHA256 hashes, not original lossless WAVs",
+    "edited_clips": 24,
+    "focus": "Recorded high rocket whistles, bright impact cracks and irregular sparkling crackle. Low synthetic thud and embedded piano from the old firework cue lane are removed.",
+    "processing": "Selected excerpts, high/low-pass EQ, bounded recorded-transient compression, mild whistle-rate variation, level balancing and finite fades. No AI audio model.",
+    "return": "Re-enveloped reversed recorded excerpts for artistic inward recall; not a recording of a physical inward explosion.",
+    "loading": "One same-origin PCM bank plus manifest, prepared before interaction without creating AudioContext. No on-scroll waveform synthesis; missing/late files remain silent without replaying stale cues or old synth fallback.",
+    "maximum_voices": 5,
+    "preview_seconds": 7.1,
+    "preview_note": "Illustrative five launch/burst pairs mixed at production bus/default-master levels. Actual site timing follows the scroll, not this file."
+  },
+  "preserved": {
+    "v21_viewport_stability": true,
+    "mozart_score_and_piano_tails": true,
+    "quiet_current_and_8db_line_only_gate": true,
+    "brain_sounds_and_always_motion": true,
+    "unchanged_modules": 21,
+    "original_images": 37,
+    "new_runtime_dependencies": 0
+  },
+  "live_checks": {
+    "fireworks_webkit": 58,
+    "native_touch_chromium": 8
+  },
+  "total_live_checks": 66,
   "local_checks": {
     "local_chromium": 58,
     "local_webkit": 58,
@@ -9,11 +71,34 @@
     "local_reversal_webkit": 5
   },
   "total_local_checks": 154,
-  "audio_checks": 29,
-  "new_particle_count": 232,
-  "real_recording_sources": 3,
-  "recorded_clips": 24,
-  "piano_and_line_current_unchanged": true,
-  "stable_viewport_fix_preserved": true,
-  "physical_iphone_tested": false
+  "offline_signal_and_provenance_checks": 29,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "matched_live_assets": 42,
+  "audio_measurements": {
+    "burst_spectral_centroid_hz": [
+      2479,
+      2440,
+      2568,
+      2561,
+      2931
+    ],
+    "previous_synth_burst_spectral_centroid_hz": 1861,
+    "burst_energy_below_600_hz_fraction": [
+      0.01918005262885708,
+      0.030850848968135967,
+      0.01940788381597823,
+      0.020443004522814927,
+      0.01142080186584956
+    ],
+    "source_sample_peak_max": 0.459991455078125,
+    "description": "Energy-weighted Hann-windowed FFT of edited PCM, not a perceptual listening score."
+  },
+  "limitations": {
+    "physical_iphone_tested": false,
+    "subjective_sound_quality_certified": false,
+    "physical_device_fps_certified": false,
+    "hearing_or_flash_safety_certified": false,
+    "note": "Browser-emulated touch, waveform and stability checks do not replace listening or frame-rate testing on the user’s actual phone."
+  }
 }

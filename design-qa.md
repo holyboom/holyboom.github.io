@@ -350,3 +350,7 @@ Local gates: {'local_chromium': 58, 'local_webkit': 58, 'local_stability_webkit'
 - Browser geometry tests verify alternating size classes, >2.1× large-to-adjacent-small radius contrasts, exact same deterministic reverse geometry, 320–1440 px and short landscape clipping, paused frames, muted visual motion, missing-bank silence and one AudioContext.
 - The v21 viewport-height stability tests still pass: no pin rebuild or scroll jump in tested height-only perturbations after, above or mid-Boom. Score, line-only current, source images and viewport-stability code are unchanged.
 - Real MP3 recordings are CC0; all provenance and editing are disclosed, no claim that these are newly recorded by HolyMind. No physical iPhone speaker or frame-rate test performed.
+
+
+### Published verification
+Production checks: {'fireworks_webkit': 58, 'native_touch_chromium': 8}, total 66, zero failures/runtime errors in final runs. 42 exact live/local asset matches include the new bank, source manifest, sound preview and Studio. The true-input tests exercise all five recorded burst identities and reverse gathers, sound mute/lifecycle, source failure, viewport bounds, held-frame silence and continuing Mozart. Physical iPhone listening remains untested.
