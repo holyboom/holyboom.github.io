@@ -1,6 +1,72 @@
 {
   "release": "afterglow-v23",
-  "status": "Local verification passed; production verification pending",
+  "name": "HolyMind Grand Boom — Falling Afterglow",
+  "status": "Published and verified",
+  "implementation_commit": "7b99c63fa528fad7cd8bee2d3029caa119032ed4",
+  "verified_at": "2026-11-12T01:46:36.153879+00:00",
+  "url": "https://holyboom.github.io/?v=afterglow-v23#about",
+  "studio": "https://holyboom.github.io/qa/afterglow-v23.html",
+  "audio": {
+    "burst_seconds_before": [
+      1.35,
+      0.85,
+      1.6,
+      1.0,
+      1.85
+    ],
+    "burst_seconds_after": [
+      2.25,
+      1.45,
+      2.75,
+      1.75,
+      3.7
+    ],
+    "glitter_seconds_before": 1.4,
+    "glitter_seconds_after": 4.2,
+    "source": "Same existing three CC0 real firework field recordings; extra recorded upper-band crackle and quiet reflections, no new synthesized noise or piano.",
+    "attacks": "First 180 ms of accepted recorded burst attacks retained within one PCM quantization step; checked per burst.",
+    "overlap": "Normal outgoing cues no longer preempt existing tails at the third overlapping voice. Each recording runs its natural finite fade; maximum twelve temporary voices, no replay queue.",
+    "reverse": "Old outgoing tails crossfade over 650 ms when reversing direction. Mute/hidden remain immediate intentional-silence controls.",
+    "preview": "Before/after 10.2-second edited-sample mixes, identical event timing/master level, no independent normalization. Not a microphone recording.",
+    "max_bank_sample_peak": 0.459991455078125,
+    "bank_bytes": 1417704
+  },
+  "visual": {
+    "burst_count": 5,
+    "size_order": "large / small / larger / small / largest, preserved",
+    "particles_before": 232,
+    "particles_after": 259,
+    "primary_particles": 168,
+    "glitter_before": 64,
+    "glitter_after": 91,
+    "falling_glitter_particles": 67,
+    "final_burst_glitter_before": 18,
+    "final_burst_glitter_after": 26,
+    "behavior": "After the spread, more individually phased glitter falls with short fine trails; late particles have varied twinkle rates, linger times and decay. Final crown remains luminous longer; falling particles are bounded around the word/period.",
+    "reverse": "Same fixed particle identities and scroll-progress mapping retrace their trajectories upward and into the full stop; no rerandomization or wall-clock drift.",
+    "idle": "Visual pause holds the frame; existing skip-identical-frame and boundary early exits remain. No new perpetual frame loop."
+  },
+  "preserved": {
+    "modules": 25,
+    "original_images": 37,
+    "piano_and_its_decay": true,
+    "line_only_current_plus_8db": true,
+    "ambient_and_14_brain_effects": true,
+    "viewport_stability_and_pin_logic": true,
+    "signature_scroll_range_unchanged": true,
+    "always_on_motion": true
+  },
+  "live_checks": {
+    "live-chromium": 58,
+    "live-webkit": 58,
+    "live-playback": 12,
+    "live-stability": 25,
+    "live-touch": 7,
+    "live-reversal": 6
+  },
+  "total_live_checks": 166,
+  "failed_checks": 0,
+  "runtime_errors": 0,
   "local_checks": {
     "local-chromium": 58,
     "local-webkit": 58,
@@ -10,17 +76,15 @@
     "native-touch": 7
   },
   "total_local_checks": 165,
-  "model_audio_checks": 54,
-  "particle_count": 259,
-  "glitter_before": 64,
-  "glitter_after": 91,
-  "burst_durations": [
-    2.25,
-    1.45,
-    2.75,
-    1.75,
-    3.7
-  ],
-  "glitter_duration": 4.2,
-  "physical_iphone_tested": false
+  "model_and_audio_checks": 54,
+  "actual_screen_reverse_samples": 6,
+  "actual_screen_reverse_max_difference_css_px": 0,
+  "matched_public_assets": 40,
+  "limitations": {
+    "physical_iphone_tested": false,
+    "subjective_listening_certified": false,
+    "all_device_frame_rate_certified": false,
+    "hearing_safety_certified": false,
+    "note": "Browser automation and native touch emulation verify behavior and signals, not physical iPhone listening comfort or guaranteed smoothness."
+  }
 }

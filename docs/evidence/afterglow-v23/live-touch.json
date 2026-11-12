@@ -1,0 +1,36 @@
+{
+  "base": "https://holyboom.github.io/?v=afterglow-v23",
+  "checks": [
+    {
+      "name": "touch-finale-falls",
+      "pass": true
+    },
+    {
+      "name": "touch-recorded-bursts-sound",
+      "pass": true
+    },
+    {
+      "name": "touch-docked-current-silent",
+      "pass": true
+    },
+    {
+      "name": "touch-piano-still-runs",
+      "pass": true
+    },
+    {
+      "name": "touch-reverse-reconstructs",
+      "pass": true
+    },
+    {
+      "name": "touch-inward-recorded-sound",
+      "pass": true
+    },
+    {
+      "name": "touch-no-source-leak",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "method": "Native DevTools touch input in Chromium mobile emulation, not a physical phone"
+}

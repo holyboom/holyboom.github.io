@@ -1,0 +1,78 @@
+{
+  "base": "https://holyboom.github.io/?v=afterglow-v23",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "new-cue-does-not-cut-final-burst",
+      "pass": true
+    },
+    {
+      "name": "two-natural-decays-overlap",
+      "pass": true,
+      "rms": 0.018882065355540247
+    },
+    {
+      "name": "tail-still-alive-after-two-seconds",
+      "pass": true,
+      "rms": 0.0011180269975838194,
+      "voices": [
+        {
+          "kind": "burst",
+          "index": 4,
+          "start": 1.0693333333333332,
+          "end": 4.769333333333334,
+          "releasing": false
+        },
+        {
+          "kind": "glitter",
+          "index": 0,
+          "start": 1.3146666666666667,
+          "end": 5.514666666666667,
+          "releasing": false
+        }
+      ]
+    },
+    {
+      "name": "finite-tails-end-without-loop",
+      "pass": true
+    },
+    {
+      "name": "ordinary-sequence-no-truncated-tails",
+      "pass": true,
+      "maxVoices": 7
+    },
+    {
+      "name": "all-normal-cues-played",
+      "pass": true,
+      "played": 13,
+      "dropped": 0
+    },
+    {
+      "name": "reverse-crossfade-not-hard-stop",
+      "pass": true
+    },
+    {
+      "name": "reverse-releases-previous-direction",
+      "pass": true
+    },
+    {
+      "name": "mute-still-stops-long-tails",
+      "pass": true
+    },
+    {
+      "name": "one-context-remains",
+      "pass": true
+    },
+    {
+      "name": "studio-uses-long-recorded-cues",
+      "pass": true
+    },
+    {
+      "name": "studio-exposes-falling-finale",
+      "pass": true
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

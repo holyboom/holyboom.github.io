@@ -1,0 +1,37 @@
+{
+  "base": "https://holyboom.github.io/?v=afterglow-v23",
+  "checks": [
+    {
+      "name": "actual-screen-reverse-0.97",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.94",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.9",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.82",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.64",
+      "pass": true,
+      "maxDifference": 0
+    },
+    {
+      "name": "actual-screen-reverse-0.4",
+      "pass": true,
+      "maxDifference": 0
+    }
+  ],
+  "failed": [],
+  "errors": []
+}

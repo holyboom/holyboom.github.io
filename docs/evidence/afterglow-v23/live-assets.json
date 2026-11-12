@@ -1,0 +1,202 @@
+[
+  {
+    "asset": "index.html",
+    "match": true,
+    "bytes": 41220
+  },
+  {
+    "asset": "style.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 44582
+  },
+  {
+    "asset": "showcase.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 18984
+  },
+  {
+    "asset": "continuity.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 1914
+  },
+  {
+    "asset": "site.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 18737
+  },
+  {
+    "asset": "assembly-lab.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 14465
+  },
+  {
+    "asset": "brain-energy.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 6176
+  },
+  {
+    "asset": "ambient-current.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 2133
+  },
+  {
+    "asset": "interaction-v10.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 4289
+  },
+  {
+    "asset": "resonance.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 2602
+  },
+  {
+    "asset": "boom-celebration.css?v=afterglow-v23",
+    "match": true,
+    "bytes": 400
+  },
+  {
+    "asset": "viewport-stability.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 1134
+  },
+  {
+    "asset": "assets/vendor/gsap-3.15.1.min.js",
+    "match": true,
+    "bytes": 73357
+  },
+  {
+    "asset": "assets/vendor/ScrollTrigger-3.15.1.min.js",
+    "match": true,
+    "bytes": 44683
+  },
+  {
+    "asset": "brain-reactions.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 9704
+  },
+  {
+    "asset": "holymind-timbres.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 8918
+  },
+  {
+    "asset": "holymind-soundscape.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 10373
+  },
+  {
+    "asset": "holymind-cues.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 10086
+  },
+  {
+    "asset": "mozart-score-data.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 21574
+  },
+  {
+    "asset": "holymind-scroll-score.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 8139
+  },
+  {
+    "asset": "boom-audio.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 6518
+  },
+  {
+    "asset": "holymind-audio.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 17221
+  },
+  {
+    "asset": "neural-core.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 15388
+  },
+  {
+    "asset": "scroll-motion.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 4168
+  },
+  {
+    "asset": "showcase.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 7561
+  },
+  {
+    "asset": "energy-field.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 3323
+  },
+  {
+    "asset": "boom-particles.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 6017
+  },
+  {
+    "asset": "boom-celebration.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 7397
+  },
+  {
+    "asset": "continuity.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 17388
+  },
+  {
+    "asset": "assembly-lab.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 8307
+  },
+  {
+    "asset": "ambient-current.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 2682
+  },
+  {
+    "asset": "assembly-scroll.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 4343
+  },
+  {
+    "asset": "soundscape-scenes.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 3247
+  },
+  {
+    "asset": "interaction-feedback.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 8434
+  },
+  {
+    "asset": "scroll-sonification.js?v=afterglow-v23",
+    "match": true,
+    "bytes": 8004
+  },
+  {
+    "asset": "qa/afterglow-v23.html",
+    "match": true,
+    "bytes": 7814
+  },
+  {
+    "asset": "assets/audio/afterglow-v23/fireworks.pcm",
+    "match": true,
+    "bytes": 1417704
+  },
+  {
+    "asset": "assets/audio/afterglow-v23/bank.json",
+    "match": true,
+    "bytes": 13340
+  },
+  {
+    "asset": "assets/audio/afterglow-v23/after-tail-preview.wav",
+    "match": true,
+    "bytes": 489644
+  },
+  {
+    "asset": "assets/audio/afterglow-v23/before-tail-preview.wav",
+    "match": true,
+    "bytes": 489644
+  }
+]
