@@ -1,11 +1,40 @@
 {
   "release": "linkedin-fieldnotes-v28",
-  "status": "Local checks passed; publication and GitHub page verification pending",
+  "name": "HolyMind — LinkedIn & Engineering Fieldnotes",
+  "status": "Published and verified",
+  "implementation_commit": "cec51c2fc248649b0e1e4233316829adac9a7e54",
+  "baseline": "ac9b5c24d77b4c79f452445750d12743ee54ade9",
+  "verified_at": "2026-11-12T06:04:23.689849+00:00",
+  "website": "https://holyboom.github.io/?v=linkedin-fieldnotes-v28",
+  "github": "https://github.com/holyboom/holyboom.github.io#readme",
+  "preview": "https://holyboom.github.io/qa/fieldnotes-v28.html",
   "linkedin": "https://www.linkedin.com/in/boom-theerawee",
-  "url_provenance": "Existing public GitHub LinkedIn social account, independently matching the current CV contact record",
-  "readonly_account_check": true,
-  "readme_prior_words": 1462,
-  "readme_current_words": 434,
+  "linkedin_provenance": "Matches the existing LinkedIn social account on the owner’s public GitHub profile and the supplied contact record. No account-level social link was changed.",
+  "website_changes": [
+    "Final contact CTA: Talk to Boom on LinkedIn",
+    "About identity link and Footer link",
+    "Static planning brief and all three generated scenario briefs",
+    "Skill-only generated brief",
+    "Inline JSON-LD sameAs, profile-schema.json and llms.txt"
+  ],
+  "repository_changes": {
+    "about_description": "HolyMind by Theerawee (Boom) Rangram — AI engineering, agentic workflows and business strategy brought to life. LinkedIn: https://www.linkedin.com/in/boom-theerawee",
+    "homepage_retained": "https://holyboom.github.io/",
+    "account_profile_changed": false,
+    "current_readme_contact": "LinkedIn in primary and final contact links"
+  },
+  "readme": {
+    "concept": "Engineering Fieldnotes — editorial paper/ink composition, serif typography and annotated original HolyMind symbols, distinct from the neon-motion website",
+    "responsive_artwork": "Two authored plates, each with mobile/desktop and light/dark variants; eight static PNGs",
+    "native_text_and_links": true,
+    "api_rendered_and_real_github_page_verified": true,
+    "actual_github_states": 4,
+    "source_words_before": 1462,
+    "source_words_after": 434,
+    "old_release_notes_retained_at": "docs/RELEASE-HISTORY.md",
+    "technical_instructions": "docs/ENGINEERING.md",
+    "no_font_binaries_added": true
+  },
   "local_checks": {
     "final-webkit": 37,
     "final-chromium": 37,
@@ -13,5 +42,26 @@
     "regression-score": 21
   },
   "total_local_checks": 156,
-  "note": "GitHub Markdown API retains the responsive picture media selectors and native disclosures. Actual repository-page checks follow publishing."
+  "live_checks": {
+    "live-webkit": 39,
+    "live-chromium": 39
+  },
+  "total_live_checks": 78,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "unchanged_original_runtime_and_assets": 293,
+  "preserved": [
+    "Shortened v27 website layout",
+    "Always-on motion and mobile brain-first layout",
+    "259 firework particles and long recorded tails",
+    "Mozart score, four audio roles and post-firework scroll continuity",
+    "All 34 skills, source inspection, choice persistence and copy behavior"
+  ],
+  "historical_evidence": "Old screenshots and recorded test traces are retained as historical records, not rewritten to imply earlier LinkedIn use.",
+  "download_bundle": "https://holyboom.github.io/assets/readme/HolyMind-README-and-Artwork-v28.zip",
+  "limitations": {
+    "physical_iphone_or_native_github_app_tested": false,
+    "linkedin_logged_in_profile_inspected": false,
+    "note": "The contact URL is confirmed from the owner-configured public social account. Readme composition was verified on the real GitHub website in mobile/desktop browser viewports; this is not a native GitHub iOS app test."
+  }
 }

@@ -1,0 +1,293 @@
+{
+  "base": "https://holyboom.github.io/?v=linkedin-fieldnotes-v28",
+  "engine": "webkit",
+  "checks": [
+    {
+      "name": "release-v28",
+      "pass": true
+    },
+    {
+      "name": "silent-load",
+      "pass": true
+    },
+    {
+      "name": "no-active-instagram-links",
+      "pass": true
+    },
+    {
+      "name": "three-current-linkedin-destinations",
+      "pass": true,
+      "links": [
+        {
+          "text": "LinkedIn",
+          "url": "https://www.linkedin.com/in/boom-theerawee",
+          "rel": "me noopener noreferrer"
+        },
+        {
+          "text": "Talk to Boom on LinkedIn",
+          "url": "https://www.linkedin.com/in/boom-theerawee",
+          "rel": "me noopener noreferrer"
+        },
+        {
+          "text": "LinkedIn",
+          "url": "https://www.linkedin.com/in/boom-theerawee",
+          "rel": "me noopener noreferrer"
+        }
+      ]
+    },
+    {
+      "name": "primary-contact-is-linkedin",
+      "pass": true
+    },
+    {
+      "name": "inline-sameas-updated",
+      "pass": true
+    },
+    {
+      "name": "external-schema-agrees",
+      "pass": true
+    },
+    {
+      "name": "machine-readable-contact-agrees",
+      "pass": true
+    },
+    {
+      "name": "short-default-route-retained",
+      "pass": true
+    },
+    {
+      "name": "generated-contact-operations",
+      "pass": true
+    },
+    {
+      "name": "generated-contact-knowledge",
+      "pass": true
+    },
+    {
+      "name": "generated-contact-venture",
+      "pass": true
+    },
+    {
+      "name": "clipboard-receives-linkedin-brief",
+      "pass": true
+    },
+    {
+      "name": "skill-only-brief-also-uses-linkedin",
+      "pass": true
+    },
+    {
+      "name": "art-motion-and-sound-preserved",
+      "pass": true
+    },
+    {
+      "name": "website-no-horizontal-overflow-320",
+      "pass": true
+    },
+    {
+      "name": "website-no-horizontal-overflow-390",
+      "pass": true
+    },
+    {
+      "name": "website-no-horizontal-overflow-768",
+      "pass": true
+    },
+    {
+      "name": "website-no-horizontal-overflow-1440",
+      "pass": true
+    },
+    {
+      "name": "static-html-brief-and-cta-agree",
+      "pass": true
+    },
+    {
+      "name": "readme-native-linkedin-actions",
+      "pass": true
+    },
+    {
+      "name": "readme-historical-content-deferred",
+      "pass": true
+    },
+    {
+      "name": "readme-has-text-without-art",
+      "pass": true
+    },
+    {
+      "name": "readme-320-light",
+      "pass": true,
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://holyboom.github.io/assets/readme/cover-mobile-light.png",
+          "alt": "HolyMind — Engineering fieldnotes. A mind at work. From human intent to systems worth trusting.",
+          "width": 720
+        },
+        {
+          "src": "https://holyboom.github.io/assets/readme/method-mobile-light.png",
+          "alt": "Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols.",
+          "width": 720
+        }
+      ]
+    },
+    {
+      "name": "readme-320-dark",
+      "pass": true,
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://holyboom.github.io/assets/readme/cover-mobile-dark.png",
+          "alt": "HolyMind — Engineering fieldnotes. A mind at work. From human intent to systems worth trusting.",
+          "width": 720
+        },
+        {
+          "src": "https://holyboom.github.io/assets/readme/method-mobile-dark.png",
+          "alt": "Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols.",
+          "width": 720
+        }
+      ]
+    },
+    {
+      "name": "readme-390-light",
+      "pass": true,
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://holyboom.github.io/assets/readme/cover-mobile-light.png",
+          "alt": "HolyMind — Engineering fieldnotes. A mind at work. From human intent to systems worth trusting.",
+          "width": 720
+        },
+        {
+          "src": "https://holyboom.github.io/assets/readme/method-mobile-light.png",
+          "alt": "Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols.",
+          "width": 720
+        }
+      ]
+    },
+    {
+      "name": "readme-390-dark",
+      "pass": true,
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://holyboom.github.io/assets/readme/cover-mobile-dark.png",
+          "alt": "HolyMind — Engineering fieldnotes. A mind at work. From human intent to systems worth trusting.",
+          "width": 720
+        },
+        {
+          "src": "https://holyboom.github.io/assets/readme/method-mobile-dark.png",
+          "alt": "Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols.",
+          "width": 720
+        }
+      ]
+    },
+    {
+      "name": "readme-768-light",
+      "pass": true,
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://holyboom.github.io/assets/readme/cover-desktop-light.png",
+          "alt": "HolyMind — Engineering fieldnotes. A mind at work. From human intent to systems worth trusting.",
+          "width": 1400
+        },
+        {
+          "src": "https://holyboom.github.io/assets/readme/method-desktop-light.png",
+          "alt": "Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols.",
+          "width": 1400
+        }
+      ]
+    },
+    {
+      "name": "readme-768-dark",
+      "pass": true,
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://holyboom.github.io/assets/readme/cover-desktop-dark.png",
+          "alt": "HolyMind — Engineering fieldnotes. A mind at work. From human intent to systems worth trusting.",
+          "width": 1400
+        },
+        {
+          "src": "https://holyboom.github.io/assets/readme/method-desktop-dark.png",
+          "alt": "Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols.",
+          "width": 1400
+        }
+      ]
+    },
+    {
+      "name": "readme-1440-light",
+      "pass": true,
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://holyboom.github.io/assets/readme/cover-desktop-light.png",
+          "alt": "HolyMind — Engineering fieldnotes. A mind at work. From human intent to systems worth trusting.",
+          "width": 1400
+        },
+        {
+          "src": "https://holyboom.github.io/assets/readme/method-desktop-light.png",
+          "alt": "Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols.",
+          "width": 1400
+        }
+      ]
+    },
+    {
+      "name": "readme-1440-dark",
+      "pass": true,
+      "overflow": false,
+      "images": [
+        {
+          "src": "https://holyboom.github.io/assets/readme/cover-desktop-dark.png",
+          "alt": "HolyMind — Engineering fieldnotes. A mind at work. From human intent to systems worth trusting.",
+          "width": 1400
+        },
+        {
+          "src": "https://holyboom.github.io/assets/readme/method-desktop-dark.png",
+          "alt": "Intent → system → evidence. Clarify the question, connect the capabilities, then inspect the result. Original HolyMind symbols.",
+          "width": 1400
+        }
+      ]
+    },
+    {
+      "name": "engineering-notes-accessible",
+      "pass": true
+    },
+    {
+      "name": "readme-internal-link-/",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "readme-internal-link-/audio-credits.html",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "readme-internal-link-/docs/ENGINEERING.md",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "readme-internal-link-/DESIGN.md",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "readme-internal-link-/docs/evidence/linkedin-fieldnotes-v28/summary.json",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "readme-internal-link-/docs/RELEASE-HISTORY.md",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "readme-internal-link-/assets/brand-attribution.md",
+      "pass": true,
+      "status": 200
+    }
+  ],
+  "failed": [],
+  "errors": [],
+  "physicalDevice": false
+}

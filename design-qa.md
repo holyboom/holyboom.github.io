@@ -423,3 +423,12 @@ Clean-state WebKit comparisons at 390×844 and 1440×1000 measure scroll height,
 Live: {'live-webkit': 61, 'live-chromium': 61, 'live-score': 21, 'live-touch': 6}, total 149; zero failed assertions or runtime errors in final runs. 44 public runtime/review files match the tested implementation. Local checks total 179, including stability and actual reverse geometry. All 255 original asset files and 18 core sound/art/particle modules remain byte-identical. The v26 mobile-height audio fix is preserved and regression-tested on the live page.
 
 No retention or conversion claim: the measured shorter default route is an implementation result, not a user study. Screenshots and pixel/word metrics are the fresh baseline and edited implementation captures documented in comparison.json.
+
+
+## LinkedIn & Engineering Fieldnotes v28
+
+The active professional contact is https://www.linkedin.com/in/boom-theerawee, matching the existing public GitHub social account. Site CTA/About/Footer, static/generated/skill-only briefs, JSON-LD, profile-schema and llms.txt agree. The repository About description includes LinkedIn; its website homepage remains intact. No account-level profile changes. Historical screenshots/recorded traces are not rewritten.
+
+README is an independent editorial composition with two authored plates across eight mobile/desktop/light/dark assets. GitHub’s Markdown API and the actual GitHub repository page were checked. The native Markdown retains identity, descriptive text, contact links, installation notes and disclosure content even without artwork. Previous release notes are preserved separately; no downloaded font binary enters the repository or bundle.
+
+Local: 156 assertions across contact/README, existing edited journey and score continuity. Live: 78 contact/README assertions in WebKit/Chromium, plus four actual GitHub viewport/theme states, with no failures/runtime errors in final runs. Switching theme requires awaiting the newly selected picture source, not an arbitrary 150 ms delay; the QA waits on actual image completion/currentSrc. No website sound, motion or layout redesign was performed. Physical iPhone/native GitHub app was not tested.

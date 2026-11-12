@@ -1,0 +1,209 @@
+{
+  "url": "https://github.com/holyboom/holyboom.github.io",
+  "rows": [
+    {
+      "device": "desktop",
+      "theme": "light",
+      "status": 200,
+      "text": "HolyMind · Engineering fieldnotes\n\nTheerawee “Boom” Rangram — AI Engineer, Solutions Architect, and creator of HolyMind Framework. Based in Bangkok.\n\nI turn ambitious business strategies into working AI systems, agentic workflows, and automation. The",
+      "images": [
+        {
+          "src": "https://github.com/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-light.png",
+          "original": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-light.png",
+          "width": 1400,
+          "complete": true
+        },
+        {
+          "src": "https://github.com/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-light.png",
+          "original": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-light.png",
+          "width": 1400,
+          "complete": true
+        }
+      ],
+      "sources": [
+        {
+          "media": "(max-width: 600px) and (prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-dark.png"
+        },
+        {
+          "media": "(max-width: 600px)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-light.png"
+        },
+        {
+          "media": "(prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-dark.png"
+        },
+        {
+          "media": "(max-width: 600px) and (prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-dark.png"
+        },
+        {
+          "media": "(max-width: 600px)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-light.png"
+        },
+        {
+          "media": "(prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-dark.png"
+        }
+      ],
+      "links": [
+        "https://www.linkedin.com/in/boom-theerawee",
+        "https://www.linkedin.com/in/boom-theerawee"
+      ],
+      "overflow": false
+    },
+    {
+      "device": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "text": "HolyMind · Engineering fieldnotes\n\nTheerawee “Boom” Rangram — AI Engineer, Solutions Architect, and creator of HolyMind Framework. Based in Bangkok.\n\nI turn ambitious business strategies into working AI systems, agentic workflows, and automation. The",
+      "images": [
+        {
+          "src": "https://github.com/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-dark.png",
+          "original": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-light.png",
+          "width": 1400,
+          "complete": true
+        },
+        {
+          "src": "https://github.com/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-dark.png",
+          "original": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-light.png",
+          "width": 1400,
+          "complete": true
+        }
+      ],
+      "sources": [
+        {
+          "media": "(max-width: 600px) and (prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-dark.png"
+        },
+        {
+          "media": "(max-width: 600px)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-light.png"
+        },
+        {
+          "media": "(prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-dark.png"
+        },
+        {
+          "media": "(max-width: 600px) and (prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-dark.png"
+        },
+        {
+          "media": "(max-width: 600px)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-light.png"
+        },
+        {
+          "media": "(prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-dark.png"
+        }
+      ],
+      "links": [
+        "https://www.linkedin.com/in/boom-theerawee",
+        "https://www.linkedin.com/in/boom-theerawee"
+      ],
+      "overflow": false
+    },
+    {
+      "device": "mobile",
+      "theme": "light",
+      "status": 200,
+      "text": "HolyMind · Engineering fieldnotes\n\nTheerawee “Boom” Rangram — AI Engineer, Solutions Architect, and creator of HolyMind Framework. Based in Bangkok.\n\nI turn ambitious business strategies into working AI systems, agentic workflows, and automation. The",
+      "images": [
+        {
+          "src": "https://github.com/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-light.png",
+          "original": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-light.png",
+          "width": 720,
+          "complete": true
+        },
+        {
+          "src": "https://github.com/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-light.png",
+          "original": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-light.png",
+          "width": 720,
+          "complete": true
+        }
+      ],
+      "sources": [
+        {
+          "media": "(max-width: 600px) and (prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-dark.png"
+        },
+        {
+          "media": "(max-width: 600px)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-light.png"
+        },
+        {
+          "media": "(prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-dark.png"
+        },
+        {
+          "media": "(max-width: 600px) and (prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-dark.png"
+        },
+        {
+          "media": "(max-width: 600px)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-light.png"
+        },
+        {
+          "media": "(prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-dark.png"
+        }
+      ],
+      "links": [
+        "https://www.linkedin.com/in/boom-theerawee",
+        "https://www.linkedin.com/in/boom-theerawee"
+      ],
+      "overflow": false
+    },
+    {
+      "device": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "text": "HolyMind · Engineering fieldnotes\n\nTheerawee “Boom” Rangram — AI Engineer, Solutions Architect, and creator of HolyMind Framework. Based in Bangkok.\n\nI turn ambitious business strategies into working AI systems, agentic workflows, and automation. The",
+      "images": [
+        {
+          "src": "https://github.com/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-dark.png",
+          "original": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-light.png",
+          "width": 720,
+          "complete": true
+        },
+        {
+          "src": "https://github.com/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-dark.png",
+          "original": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-light.png",
+          "width": 720,
+          "complete": true
+        }
+      ],
+      "sources": [
+        {
+          "media": "(max-width: 600px) and (prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-dark.png"
+        },
+        {
+          "media": "(max-width: 600px)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-mobile-light.png"
+        },
+        {
+          "media": "(prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/cover-desktop-dark.png"
+        },
+        {
+          "media": "(max-width: 600px) and (prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-dark.png"
+        },
+        {
+          "media": "(max-width: 600px)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-mobile-light.png"
+        },
+        {
+          "media": "(prefers-color-scheme: dark)",
+          "srcset": "/holyboom/holyboom.github.io/raw/main/assets/readme/method-desktop-dark.png"
+        }
+      ],
+      "links": [
+        "https://www.linkedin.com/in/boom-theerawee",
+        "https://www.linkedin.com/in/boom-theerawee"
+      ],
+      "overflow": false
+    }
+  ]
+}
