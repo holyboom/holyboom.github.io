@@ -1,8 +1,30 @@
 {
   "release": "living-flow-v25",
-  "name": "HolyMind \u2014 Living Workflow",
-  "status": "Local verification passed; production verification pending",
+  "name": "HolyMind — Living Workflow",
+  "status": "Published and verified",
+  "implementation_commit": "b5d10733c290b707e018b2dcff2358e411aed8d1",
   "baseline": "0519c55ba3d4120c411f3f9851fdd53347886e68",
+  "verified_at": "2026-11-12T04:33:36.554209+00:00",
+  "url": "https://holyboom.github.io/?v=living-flow-v25",
+  "review": "https://holyboom.github.io/qa/living-flow-v25.html",
+  "scope": "Continuation and completion pass on the approved v24 Workbench → Skills → Portal plan; no new visual theme or sound family.",
+  "features": {
+    "visible_transfer": "Three scenarios × four existing explicit steps. A finite 950 ms packet transfer links eligible inputs, the gate and the developing artifact. Held material has a separate stopped path, never an output segment. Final operations state waits for owner review. Latest step wins during rapid changes; no perpetual JavaScript frame loop or queued sound.",
+    "source_inspection": "Three fictional snippets per scenario and two possible output claims, each traceable to its example source. Native buttons and keyboard inspection highlight the document/path and show the actual example excerpt. The excluded source is explicitly unavailable/held/unproven, and is never cited as support.",
+    "truthfulness": "Every example is labeled fictional/illustrative. No AI request, retrieval, real client evidence, approval, external action, measured outcome or invented ROI. Example contents are not inserted into the real planning brief.",
+    "choice_ownership": "Inspecting sources does not overwrite challenge, step or carried skill. Existing whitelisted current-tab state remains compatible. Portal shows the explored step, can return to the selected question without reset, and can remove only the carried skill while preserving the question. Existing full reset/copy/review remain.",
+    "reflection": "The existing gold, cyan and violet reflection intensity caps are unchanged. Each color now takes its horizontal position from its own particle source centroid rather than fixed cyan/violet positions. Exact deterministic reverse and endpoint clear retained.",
+    "performance": "Repeated rendering of the same selected step and journey choice is a no-op. Actual layout changes batch geometry measurement before requesting a global refresh. Finite transfers stop offscreen/hidden and do not replay stale transitions on return.",
+    "sound": "No changes to the sound engines, source audio, four sound roles, Mozart order or afterglow recordings. New optional source/brief reading uses the existing quiet reading mix. Existing reaction keys acknowledge new source and return controls; no new sound assets."
+  },
+  "same_input_reproduction": {
+    "method": "Same WebKit viewport and the same four repeated selected-step clicks, with a ScrollTrigger refresh listener. No native scroll input in the repeated-input block.",
+    "four_repeated_selected_step_clicks": true,
+    "baseline_global_refreshes": 20,
+    "new_global_refreshes": 0,
+    "new_choice_updates": 0,
+    "physical_fps_claim": false
+  },
   "local_checks": {
     "final-webkit": 50,
     "final-chromium": 50,
@@ -12,7 +34,40 @@
     "regression-touch": 7
   },
   "total_local_checks": 203,
-  "new_source_to_artifact_examples": 3,
-  "steps_per_example": 4,
-  "physical_iphone_tested": false
+  "live_checks": {
+    "live-webkit": 50,
+    "live-chromium": 50,
+    "live-stability": 25,
+    "live-touch": 7,
+    "live-reversal": 5
+  },
+  "total_live_checks": 137,
+  "failed_checks": 0,
+  "runtime_errors": 0,
+  "matched_live_assets": 42,
+  "unchanged_core_modules": 19,
+  "unchanged_source_assets": 221,
+  "new_runtime_dependencies": 0,
+  "actual_reverse_samples": 5,
+  "actual_reverse_max_coordinate_difference_css_px": 0,
+  "preserved": [
+    "Original source images and icons",
+    "14 brain reactions",
+    "Five alternating firework sizes and 259 particle identities",
+    "Final recorded burst 3.7 s / glitter 4.2 s",
+    "Mozart score and natural piano releases",
+    "Four independent sound controls",
+    "Line-only electrical current at +8 dB",
+    "Always-on motion and mobile-only brain-first layout",
+    "Stable viewport and existing Assemble pin",
+    "All 34 skills and keyboard/copy fallbacks"
+  ],
+  "limitations": {
+    "physical_iphone_tested": false,
+    "subjective_listening_certified": false,
+    "total_frame_rate_certified": false,
+    "full_accessibility_or_flash_audit": false,
+    "real_ai_service": false,
+    "note": "Browser automation and native touch emulation verify specific behavior, signals and geometry. Same-input refresh reduction is not a real-device frame-rate guarantee."
+  }
 }

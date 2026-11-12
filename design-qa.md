@@ -395,3 +395,10 @@ The native control test covers each scenario/stage, blocked source, claim lookup
 In the identical four-repeat same-step reproduction, v24 caused 20 global ScrollTrigger refresh events; v25 caused zero, with the choice unchanged. This measures redundant work, not user-device FPS. Default source audio, 259-particle model, Mozart and 19 core modules are byte-identical; preservation manifest lists exact scope. Color-specific material light is bounded and reverses deterministically.
 
 No physical iPhone audio, total-frame-rate, flash-threshold or full accessibility certification is claimed. Final production evidence follows publication.
+
+
+### Production verification — Living Workflow v25
+
+Live checks: {'live-webkit': 50, 'live-chromium': 50, 'live-stability': 25, 'live-touch': 7, 'live-reversal': 5}; total 137, zero failed assertions/runtime errors. 42 public runtime/Studio assets match the final implementation. Five actual reverse-particle coordinate samples have maximum difference 0 CSS pixels. Current mobile/desktop screenshots in this release directory were replaced with production captures.
+
+The source/claim inspection, latest-step transfer, independent skill removal, return-to-question focus, no-op repeated input, hidden/resume behavior and optional reading mix were checked alongside retained viewport, touch and reverse behavior. Original recorded sound assets and nineteen core modules are byte-identical. No physical iPhone or subjective/flash certification claimed.
