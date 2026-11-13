@@ -110,14 +110,50 @@
   mute('none');
   brain.style.visibility='hidden';window.HolyMindNeural?.transport(false);restored=true;
  }
- function routePoint(a,c1,c2,b,t){const edge=Math.sin(Math.PI*t)**2;return {x:lerp(lerp(a.x,b.x,t),c1.x,edge),y:lerp(a.y,b.y,t)};}
+ // The service icons can be side by side. Sending that bridge to the far
+ // viewport margin folds it back through the service title. Use an explicit
+ // content-free route for this bridge; sample it by distance for both the wire
+ // and its carrier so reverse scroll retraces the exact same geometry.
+ function corridor(a,b,vertices){
+  const points=[a];for(const point of vertices.concat([b]))if(Math.hypot(point.x-points.at(-1).x,point.y-points.at(-1).y)>.01)points.push(point);
+  const lengths=points.slice(1).map((point,i)=>Math.hypot(point.x-points[i].x,point.y-points[i].y));
+  return [a,{points,lengths,total:lengths.reduce((sum,n)=>sum+n,0)},null,b];
+ }
+ function routePoint(a,c1,c2,b,t){
+  if(c1.points){
+   let distance=clamp(t)*c1.total;
+   for(let i=0;i<c1.lengths.length;i++){
+    const length=c1.lengths[i];if(distance<=length||i===c1.lengths.length-1){const f=clamp(distance/Math.max(.001,length)),start=c1.points[i],end=c1.points[i+1];return {x:lerp(start.x,end.x,f),y:lerp(start.y,end.y,f)};}distance-=length;
+   }
+   return {x:b.x,y:b.y};
+  }
+  const edge=Math.sin(Math.PI*t)**2;return {x:lerp(lerp(a.x,b.x,t),c1.x,edge),y:lerp(a.y,b.y,t)};
+ }
  function curve(a,b,from,to){
+  if(from.id==='services'&&to.id==='delivery'){
+   if(!small()){
+    // Cross the open space beneath the intro, then approach the target from
+    // the column gutter. Never overshoot the destination into its label.
+    const target=q(to.s).getBoundingClientRect(),x=clamp(target.left-16,a.x,b.x);
+    return corridor(a,b,[{x,y:a.y},{x,y:b.y}]);
+   }
+   // In the stacked layout, stay outside the reading column. Cross only the
+   // gap before the first service, then return through the left icon margin.
+   const intro=q('.approach-intro').getBoundingClientRect(),first=q('.approach-list details').getBoundingClientRect();
+   const y=(Math.max(intro.bottom,a.y)+first.top)/2;
+   return corridor(a,b,[{x:innerWidth-8,y:a.y},{x:innerWidth-8,y},{x:8,y},{x:8,y:b.y}]);
+  }
   // Route between pieces via free page margins, not across reading columns.
   const right=small()||['assembly','system','skills','gallery','services','signature'].includes(from.id);
   const lane=right?innerWidth-(small()?24:42):(small()?24:42);
   return [a,{x:lane,y:innerHeight*.32},{x:lane,y:innerHeight*.70},b];
  }
  function polyline(curve,start,end,steps=32){
+  if(curve[1].points){
+   const route=curve[1],fractions=[start,end];let distance=0;
+   for(const length of route.lengths){distance+=length;const f=distance/Math.max(.001,route.total);if(f>start&&f<end)fractions.push(f);}
+   return fractions.sort((a,b)=>a-b).map((f,i)=>{const v=routePoint(...curve,f);return `${i?'L':'M'}${Math.round(v.x/2)*2} ${Math.round(v.y/2)*2}`;}).join(' ');
+  }
   let path='';for(let i=0;i<=steps;i++){const v=routePoint(...curve,lerp(start,end,i/steps));const x=Math.round(v.x/2)*2,y=Math.round(v.y/2)*2;path+=`${i?'L':'M'}${x} ${y} `;}return path;
  }
  function sharedBrain(a,b,p){
@@ -209,6 +245,6 @@
  if(window.ScrollTrigger)window.ScrollTrigger.addEventListener('refresh',refresh);
  if(window.ResizeObserver){const observer=new ResizeObserver(refresh);observer.observe(main);}
  // Read-only diagnostics make reversal and geometry testable without driving state.
- window.HolyMindContinuity=Object.freeze({version:'line-current-v19',snapshot:()=>({lineTravel:{...lineTravel},stations:stations.map(s=>({id:s.id,at:s.at})),keys:keys.map(k=>({id:k.station.id,at:k.at})),state:body.dataset.continuity,renderedScrollY:lastY,from:layer.dataset.from,to:layer.dataset.to,progress:Number(layer.dataset.progress),x:Number(layer.dataset.x),y:Number(layer.dataset.y),running:!!raf})});
+ window.HolyMindContinuity=Object.freeze({version:'service-route-20261113',snapshot:()=>({lineTravel:{...lineTravel},stations:stations.map(s=>({id:s.id,at:s.at})),keys:keys.map(k=>({id:k.station.id,at:k.at})),state:body.dataset.continuity,renderedScrollY:lastY,from:layer.dataset.from,to:layer.dataset.to,progress:Number(layer.dataset.progress),x:Number(layer.dataset.x),y:Number(layer.dataset.y),running:!!raf})});
  refresh();
 })();

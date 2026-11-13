@@ -1,0 +1,62 @@
+[
+  {
+    "width": 820,
+    "progress": 0.12,
+    "title_intersections": 84
+  },
+  {
+    "width": 820,
+    "progress": 0.5,
+    "title_intersections": 84
+  },
+  {
+    "width": 820,
+    "progress": 0.88,
+    "title_intersections": 85
+  },
+  {
+    "width": 992,
+    "progress": 0.12,
+    "title_intersections": 80
+  },
+  {
+    "width": 992,
+    "progress": 0.5,
+    "title_intersections": 80
+  },
+  {
+    "width": 992,
+    "progress": 0.88,
+    "title_intersections": 82
+  },
+  {
+    "width": 1440,
+    "progress": 0.12,
+    "title_intersections": 132
+  },
+  {
+    "width": 1440,
+    "progress": 0.5,
+    "title_intersections": 132
+  },
+  {
+    "width": 1440,
+    "progress": 0.88,
+    "title_intersections": 132
+  },
+  {
+    "width": 390,
+    "progress": 0.12,
+    "title_intersections": 54
+  },
+  {
+    "width": 390,
+    "progress": 0.5,
+    "title_intersections": 54
+  },
+  {
+    "width": 390,
+    "progress": 0.88,
+    "title_intersections": 54
+  }
+]
