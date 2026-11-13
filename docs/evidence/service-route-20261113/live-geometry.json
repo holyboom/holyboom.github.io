@@ -1,0 +1,3098 @@
+[
+  {
+    "width": 820,
+    "t": 0.12,
+    "start": 6148,
+    "end": 6188,
+    "scrollY": 6152,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.1,
+        "x": 108.82970343017578,
+        "y": 714.109375,
+        "at": 5087,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 862
+        },
+        {
+          "id": "ribbon",
+          "at": 1072
+        },
+        {
+          "id": "assembly",
+          "at": 2014
+        },
+        {
+          "id": "system",
+          "at": 4742.8
+        },
+        {
+          "id": "skills",
+          "at": 5311.8
+        },
+        {
+          "id": "gallery",
+          "at": 5722
+        },
+        {
+          "id": "services",
+          "at": 6138
+        },
+        {
+          "id": "delivery",
+          "at": 6188
+        },
+        {
+          "id": "signature",
+          "at": 6512.5
+        },
+        {
+          "id": "portal",
+          "at": 7192
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 862
+        },
+        {
+          "id": "ribbon",
+          "at": 1072
+        },
+        {
+          "id": "ribbon",
+          "at": 1107
+        },
+        {
+          "id": "assembly",
+          "at": 2014
+        },
+        {
+          "id": "assembly",
+          "at": 3614
+        },
+        {
+          "id": "system",
+          "at": 4742.8
+        },
+        {
+          "id": "system",
+          "at": 4767.8
+        },
+        {
+          "id": "skills",
+          "at": 5311.8
+        },
+        {
+          "id": "skills",
+          "at": 5441.8
+        },
+        {
+          "id": "gallery",
+          "at": 5722
+        },
+        {
+          "id": "gallery",
+          "at": 5747
+        },
+        {
+          "id": "services",
+          "at": 6138
+        },
+        {
+          "id": "services",
+          "at": 6148
+        },
+        {
+          "id": "delivery",
+          "at": 6188
+        },
+        {
+          "id": "delivery",
+          "at": 6233
+        },
+        {
+          "id": "signature",
+          "at": 6512.5
+        },
+        {
+          "id": "signature",
+          "at": 6812.5
+        },
+        {
+          "id": "portal",
+          "at": 7192
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6152,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.1,
+      "x": 108.83,
+      "y": 714.109,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 36.890625,
+        "y": 652.109375,
+        "width": 124,
+        "height": 124,
+        "top": 652.109375,
+        "right": 160.890625,
+        "bottom": 776.109375,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 36.890625,
+        "y": 485.171875,
+        "width": 319.59375,
+        "height": 76.15625,
+        "top": 485.171875,
+        "right": 356.484375,
+        "bottom": 561.328125,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 36.890625,
+        "y": 579.328125,
+        "width": 319.59375,
+        "height": 52.78125,
+        "top": 579.328125,
+        "right": 356.484375,
+        "bottom": 632.109375,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 459.2131652832031,
+        "y": 527.08251953125,
+        "width": 290.3316345214844,
+        "height": 26.3623046875,
+        "top": 527.08251953125,
+        "right": 749.5447998046875,
+        "bottom": 553.44482421875,
+        "left": 459.2131652832031
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 466.2674560546875,
+        "y": 635.95361328125,
+        "width": 291.88104248046875,
+        "height": 26.4365234375,
+        "top": 635.95361328125,
+        "right": 758.1484985351562,
+        "bottom": 662.39013671875,
+        "left": 466.2674560546875
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 450.00927734375,
+        "y": 743.845703125,
+        "width": 288.0311279296875,
+        "height": 27.158203125,
+        "top": 743.845703125,
+        "right": 738.0404052734375,
+        "bottom": 771.00390625,
+        "left": 450.00927734375
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 381.7612609863281,
+        "y": 730.01171875,
+        "width": 56.228057861328125,
+        "height": 56.16015625,
+        "top": 730.01171875,
+        "right": 437.98931884765625,
+        "bottom": 786.171875,
+        "left": 381.7612609863281
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M98 714 L366 714 L366 758 L410 758",
+    "len": 356,
+    "errors": []
+  },
+  {
+    "width": 820,
+    "t": 0.5,
+    "start": 6148,
+    "end": 6188,
+    "scrollY": 6168,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.5,
+        "x": 276.7225036621094,
+        "y": 698.109375,
+        "at": 6270,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 862
+        },
+        {
+          "id": "ribbon",
+          "at": 1072
+        },
+        {
+          "id": "assembly",
+          "at": 2014
+        },
+        {
+          "id": "system",
+          "at": 4742.8
+        },
+        {
+          "id": "skills",
+          "at": 5311.8
+        },
+        {
+          "id": "gallery",
+          "at": 5722
+        },
+        {
+          "id": "services",
+          "at": 6138
+        },
+        {
+          "id": "delivery",
+          "at": 6188
+        },
+        {
+          "id": "signature",
+          "at": 6512.5
+        },
+        {
+          "id": "portal",
+          "at": 7192
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 862
+        },
+        {
+          "id": "ribbon",
+          "at": 1072
+        },
+        {
+          "id": "ribbon",
+          "at": 1107
+        },
+        {
+          "id": "assembly",
+          "at": 2014
+        },
+        {
+          "id": "assembly",
+          "at": 3614
+        },
+        {
+          "id": "system",
+          "at": 4742.8
+        },
+        {
+          "id": "system",
+          "at": 4767.8
+        },
+        {
+          "id": "skills",
+          "at": 5311.8
+        },
+        {
+          "id": "skills",
+          "at": 5441.8
+        },
+        {
+          "id": "gallery",
+          "at": 5722
+        },
+        {
+          "id": "gallery",
+          "at": 5747
+        },
+        {
+          "id": "services",
+          "at": 6138
+        },
+        {
+          "id": "services",
+          "at": 6148
+        },
+        {
+          "id": "delivery",
+          "at": 6188
+        },
+        {
+          "id": "delivery",
+          "at": 6233
+        },
+        {
+          "id": "signature",
+          "at": 6512.5
+        },
+        {
+          "id": "signature",
+          "at": 6812.5
+        },
+        {
+          "id": "portal",
+          "at": 7192
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6168,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.5,
+      "x": 276.723,
+      "y": 698.109,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 36.890625,
+        "y": 636.109375,
+        "width": 124,
+        "height": 124,
+        "top": 636.109375,
+        "right": 160.890625,
+        "bottom": 760.109375,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 36.890625,
+        "y": 469.171875,
+        "width": 319.59375,
+        "height": 76.15625,
+        "top": 469.171875,
+        "right": 356.484375,
+        "bottom": 545.328125,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 36.890625,
+        "y": 563.328125,
+        "width": 319.59375,
+        "height": 52.78125,
+        "top": 563.328125,
+        "right": 356.484375,
+        "bottom": 616.109375,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 459.8913269042969,
+        "y": 511.0634765625,
+        "width": 290.4889221191406,
+        "height": 26.302734375,
+        "top": 511.0634765625,
+        "right": 750.3802490234375,
+        "bottom": 537.3662109375,
+        "left": 459.8913269042969
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 465.5939636230469,
+        "y": 619.96435546875,
+        "width": 291.7415466308594,
+        "height": 26.4150390625,
+        "top": 619.96435546875,
+        "right": 757.3355102539062,
+        "bottom": 646.37939453125,
+        "left": 465.5939636230469
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 450.6941833496094,
+        "y": 727.9228515625,
+        "width": 288.2127380371094,
+        "height": 27.10009765625,
+        "top": 727.9228515625,
+        "right": 738.9069213867188,
+        "bottom": 755.02294921875,
+        "left": 450.6941833496094
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 382.4587707519531,
+        "y": 714.02197265625,
+        "width": 56.21612548828125,
+        "height": 56.14990234375,
+        "top": 714.02197265625,
+        "right": 438.6748962402344,
+        "bottom": 770.171875,
+        "left": 382.4587707519531
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M98 698 L366 698 L366 742 L410 742",
+    "len": 356,
+    "errors": []
+  },
+  {
+    "width": 820,
+    "t": 0.88,
+    "start": 6148,
+    "end": 6188,
+    "scrollY": 6183,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.875,
+        "x": 395.9043918848038,
+        "y": 727.101806640625,
+        "at": 7486,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 862
+        },
+        {
+          "id": "ribbon",
+          "at": 1072
+        },
+        {
+          "id": "assembly",
+          "at": 2014
+        },
+        {
+          "id": "system",
+          "at": 4742.8
+        },
+        {
+          "id": "skills",
+          "at": 5311.8
+        },
+        {
+          "id": "gallery",
+          "at": 5722
+        },
+        {
+          "id": "services",
+          "at": 6138
+        },
+        {
+          "id": "delivery",
+          "at": 6188
+        },
+        {
+          "id": "signature",
+          "at": 6512.5
+        },
+        {
+          "id": "portal",
+          "at": 7192
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 862
+        },
+        {
+          "id": "ribbon",
+          "at": 1072
+        },
+        {
+          "id": "ribbon",
+          "at": 1107
+        },
+        {
+          "id": "assembly",
+          "at": 2014
+        },
+        {
+          "id": "assembly",
+          "at": 3614
+        },
+        {
+          "id": "system",
+          "at": 4742.8
+        },
+        {
+          "id": "system",
+          "at": 4767.8
+        },
+        {
+          "id": "skills",
+          "at": 5311.8
+        },
+        {
+          "id": "skills",
+          "at": 5441.8
+        },
+        {
+          "id": "gallery",
+          "at": 5722
+        },
+        {
+          "id": "gallery",
+          "at": 5747
+        },
+        {
+          "id": "services",
+          "at": 6138
+        },
+        {
+          "id": "services",
+          "at": 6148
+        },
+        {
+          "id": "delivery",
+          "at": 6188
+        },
+        {
+          "id": "delivery",
+          "at": 6233
+        },
+        {
+          "id": "signature",
+          "at": 6512.5
+        },
+        {
+          "id": "signature",
+          "at": 6812.5
+        },
+        {
+          "id": "portal",
+          "at": 7192
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6183,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.875,
+      "x": 395.904,
+      "y": 727.102,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 36.890625,
+        "y": 621.109375,
+        "width": 124,
+        "height": 124,
+        "top": 621.109375,
+        "right": 160.890625,
+        "bottom": 745.109375,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 36.890625,
+        "y": 454.171875,
+        "width": 319.59375,
+        "height": 76.15625,
+        "top": 454.171875,
+        "right": 356.484375,
+        "bottom": 530.328125,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 36.890625,
+        "y": 548.328125,
+        "width": 319.59375,
+        "height": 52.78125,
+        "top": 548.328125,
+        "right": 356.484375,
+        "bottom": 601.109375,
+        "left": 36.890625
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 460.484375,
+        "y": 496.046875,
+        "width": 290.625,
+        "height": 26.25,
+        "top": 496.046875,
+        "right": 751.109375,
+        "bottom": 522.296875,
+        "left": 460.484375
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 464.9620361328125,
+        "y": 604.974609375,
+        "width": 291.60894775390625,
+        "height": 26.39453125,
+        "top": 604.974609375,
+        "right": 756.5709838867188,
+        "bottom": 631.369140625,
+        "left": 464.9620361328125
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 451.3357238769531,
+        "y": 712.99560546875,
+        "width": 288.3812561035156,
+        "height": 27.044921875,
+        "top": 712.99560546875,
+        "right": 739.7169799804688,
+        "bottom": 740.04052734375,
+        "left": 451.3357238769531
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 383.1125793457031,
+        "y": 699.03173828125,
+        "width": 56.20458984375,
+        "height": 56.14013671875,
+        "top": 699.03173828125,
+        "right": 439.3171691894531,
+        "bottom": 755.171875,
+        "left": 383.1125793457031
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M98 684 L368 684 L368 728 L412 728",
+    "len": 358,
+    "errors": []
+  },
+  {
+    "width": 992,
+    "t": 0.12,
+    "start": 6090,
+    "end": 6130,
+    "scrollY": 6094,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.1,
+        "x": 118.82636572265625,
+        "y": 714.421875,
+        "at": 3365,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 950
+        },
+        {
+          "id": "ribbon",
+          "at": 1056
+        },
+        {
+          "id": "assembly",
+          "at": 1998
+        },
+        {
+          "id": "system",
+          "at": 4638
+        },
+        {
+          "id": "skills",
+          "at": 5245.8
+        },
+        {
+          "id": "gallery",
+          "at": 5656
+        },
+        {
+          "id": "services",
+          "at": 6080
+        },
+        {
+          "id": "delivery",
+          "at": 6130
+        },
+        {
+          "id": "signature",
+          "at": 6466
+        },
+        {
+          "id": "portal",
+          "at": 7262
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 950
+        },
+        {
+          "id": "ribbon",
+          "at": 1056
+        },
+        {
+          "id": "ribbon",
+          "at": 1091
+        },
+        {
+          "id": "assembly",
+          "at": 1998
+        },
+        {
+          "id": "assembly",
+          "at": 3598
+        },
+        {
+          "id": "system",
+          "at": 4638
+        },
+        {
+          "id": "system",
+          "at": 4663
+        },
+        {
+          "id": "skills",
+          "at": 5245.8
+        },
+        {
+          "id": "skills",
+          "at": 5375.8
+        },
+        {
+          "id": "gallery",
+          "at": 5656
+        },
+        {
+          "id": "gallery",
+          "at": 5681
+        },
+        {
+          "id": "services",
+          "at": 6080
+        },
+        {
+          "id": "services",
+          "at": 6090
+        },
+        {
+          "id": "delivery",
+          "at": 6130
+        },
+        {
+          "id": "delivery",
+          "at": 6175
+        },
+        {
+          "id": "signature",
+          "at": 6466
+        },
+        {
+          "id": "signature",
+          "at": 6766
+        },
+        {
+          "id": "portal",
+          "at": 7262
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6094,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.1,
+      "x": 118.826,
+      "y": 714.422,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 44.625,
+        "y": 652.421875,
+        "width": 124,
+        "height": 124,
+        "top": 652.421875,
+        "right": 168.625,
+        "bottom": 776.421875,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 44.625,
+        "y": 477.25,
+        "width": 379.234375,
+        "height": 84.390625,
+        "top": 477.25,
+        "right": 423.859375,
+        "bottom": 561.640625,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 44.625,
+        "y": 579.640625,
+        "width": 372.09375,
+        "height": 52.78125,
+        "top": 579.640625,
+        "right": 416.71875,
+        "bottom": 632.421875,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 566.9390869140625,
+        "y": 517.28271484375,
+        "width": 339.2174072265625,
+        "height": 30.09326171875,
+        "top": 517.28271484375,
+        "right": 906.156494140625,
+        "bottom": 547.3759765625,
+        "left": 566.9390869140625
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 573.1907348632812,
+        "y": 626.13232421875,
+        "width": 341.17266845703125,
+        "height": 30.2353515625,
+        "top": 626.13232421875,
+        "right": 914.3634033203125,
+        "bottom": 656.36767578125,
+        "left": 573.1907348632812
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 557.842041015625,
+        "y": 733.9072265625,
+        "width": 336.0877685546875,
+        "height": 30.9873046875,
+        "top": 733.9072265625,
+        "right": 893.9298095703125,
+        "bottom": 764.89453125,
+        "left": 557.842041015625
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 473.4849853515625,
+        "y": 717.07861328125,
+        "width": 66.3212890625,
+        "height": 66.17138671875,
+        "top": 717.07861328125,
+        "right": 539.8062744140625,
+        "bottom": 783.25,
+        "left": 473.4849853515625
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M106 714 L458 714 L458 750 L506 750",
+    "len": 436,
+    "errors": []
+  },
+  {
+    "width": 992,
+    "t": 0.5,
+    "start": 6090,
+    "end": 6130,
+    "scrollY": 6110,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.5,
+        "x": 324.85364532470703,
+        "y": 698.421875,
+        "at": 4547,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 950
+        },
+        {
+          "id": "ribbon",
+          "at": 1056
+        },
+        {
+          "id": "assembly",
+          "at": 1998
+        },
+        {
+          "id": "system",
+          "at": 4638
+        },
+        {
+          "id": "skills",
+          "at": 5245.8
+        },
+        {
+          "id": "gallery",
+          "at": 5656
+        },
+        {
+          "id": "services",
+          "at": 6080
+        },
+        {
+          "id": "delivery",
+          "at": 6130
+        },
+        {
+          "id": "signature",
+          "at": 6466
+        },
+        {
+          "id": "portal",
+          "at": 7262
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 950
+        },
+        {
+          "id": "ribbon",
+          "at": 1056
+        },
+        {
+          "id": "ribbon",
+          "at": 1091
+        },
+        {
+          "id": "assembly",
+          "at": 1998
+        },
+        {
+          "id": "assembly",
+          "at": 3598
+        },
+        {
+          "id": "system",
+          "at": 4638
+        },
+        {
+          "id": "system",
+          "at": 4663
+        },
+        {
+          "id": "skills",
+          "at": 5245.8
+        },
+        {
+          "id": "skills",
+          "at": 5375.8
+        },
+        {
+          "id": "gallery",
+          "at": 5656
+        },
+        {
+          "id": "gallery",
+          "at": 5681
+        },
+        {
+          "id": "services",
+          "at": 6080
+        },
+        {
+          "id": "services",
+          "at": 6090
+        },
+        {
+          "id": "delivery",
+          "at": 6130
+        },
+        {
+          "id": "delivery",
+          "at": 6175
+        },
+        {
+          "id": "signature",
+          "at": 6466
+        },
+        {
+          "id": "signature",
+          "at": 6766
+        },
+        {
+          "id": "portal",
+          "at": 7262
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6110,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.5,
+      "x": 324.854,
+      "y": 698.422,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 44.625,
+        "y": 636.421875,
+        "width": 124,
+        "height": 124,
+        "top": 636.421875,
+        "right": 168.625,
+        "bottom": 760.421875,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 44.625,
+        "y": 461.25,
+        "width": 379.234375,
+        "height": 84.390625,
+        "top": 461.25,
+        "right": 423.859375,
+        "bottom": 545.640625,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 44.625,
+        "y": 563.640625,
+        "width": 372.09375,
+        "height": 52.78125,
+        "top": 563.640625,
+        "right": 416.71875,
+        "bottom": 616.421875,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 567.6085205078125,
+        "y": 501.2587890625,
+        "width": 339.43475341796875,
+        "height": 30.025390625,
+        "top": 501.2587890625,
+        "right": 907.0432739257812,
+        "bottom": 531.2841796875,
+        "left": 567.6085205078125
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 572.5264892578125,
+        "y": 610.14697265625,
+        "width": 340.97296142578125,
+        "height": 30.2060546875,
+        "top": 610.14697265625,
+        "right": 913.4994506835938,
+        "bottom": 640.35302734375,
+        "left": 572.5264892578125
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 558.519775390625,
+        "y": 717.99609375,
+        "width": 336.33197021484375,
+        "height": 30.92236328125,
+        "top": 717.99609375,
+        "right": 894.8517456054688,
+        "bottom": 748.91845703125,
+        "left": 558.519775390625
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 474.1824645996094,
+        "y": 701.09033203125,
+        "width": 66.30307006835938,
+        "height": 66.15966796875,
+        "top": 701.09033203125,
+        "right": 540.4855346679688,
+        "bottom": 767.25,
+        "left": 474.1824645996094
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M106 698 L458 698 L458 734 L508 734",
+    "len": 438,
+    "errors": []
+  },
+  {
+    "width": 992,
+    "t": 0.88,
+    "start": 6090,
+    "end": 6130,
+    "scrollY": 6125,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.875,
+        "x": 489.1970484852791,
+        "y": 719.175537109375,
+        "at": 5780,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 950
+        },
+        {
+          "id": "ribbon",
+          "at": 1056
+        },
+        {
+          "id": "assembly",
+          "at": 1998
+        },
+        {
+          "id": "system",
+          "at": 4638
+        },
+        {
+          "id": "skills",
+          "at": 5245.8
+        },
+        {
+          "id": "gallery",
+          "at": 5656
+        },
+        {
+          "id": "services",
+          "at": 6080
+        },
+        {
+          "id": "delivery",
+          "at": 6130
+        },
+        {
+          "id": "signature",
+          "at": 6466
+        },
+        {
+          "id": "portal",
+          "at": 7262
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 950
+        },
+        {
+          "id": "ribbon",
+          "at": 1056
+        },
+        {
+          "id": "ribbon",
+          "at": 1091
+        },
+        {
+          "id": "assembly",
+          "at": 1998
+        },
+        {
+          "id": "assembly",
+          "at": 3598
+        },
+        {
+          "id": "system",
+          "at": 4638
+        },
+        {
+          "id": "system",
+          "at": 4663
+        },
+        {
+          "id": "skills",
+          "at": 5245.8
+        },
+        {
+          "id": "skills",
+          "at": 5375.8
+        },
+        {
+          "id": "gallery",
+          "at": 5656
+        },
+        {
+          "id": "gallery",
+          "at": 5681
+        },
+        {
+          "id": "services",
+          "at": 6080
+        },
+        {
+          "id": "services",
+          "at": 6090
+        },
+        {
+          "id": "delivery",
+          "at": 6130
+        },
+        {
+          "id": "delivery",
+          "at": 6175
+        },
+        {
+          "id": "signature",
+          "at": 6466
+        },
+        {
+          "id": "signature",
+          "at": 6766
+        },
+        {
+          "id": "portal",
+          "at": 7262
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6125,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.875,
+      "x": 489.197,
+      "y": 719.176,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 44.625,
+        "y": 621.421875,
+        "width": 124,
+        "height": 124,
+        "top": 621.421875,
+        "right": 168.625,
+        "bottom": 745.421875,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 44.625,
+        "y": 446.25,
+        "width": 379.234375,
+        "height": 84.390625,
+        "top": 446.25,
+        "right": 423.859375,
+        "bottom": 530.640625,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 44.625,
+        "y": 548.640625,
+        "width": 372.09375,
+        "height": 52.78125,
+        "top": 548.640625,
+        "right": 416.71875,
+        "bottom": 601.421875,
+        "left": 44.625
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 567.859375,
+        "y": 486.25,
+        "width": 339.515625,
+        "height": 30,
+        "top": 486.25,
+        "right": 907.375,
+        "bottom": 516.25,
+        "left": 567.859375
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 571.9031372070312,
+        "y": 595.16064453125,
+        "width": 340.78369140625,
+        "height": 30.1787109375,
+        "top": 595.16064453125,
+        "right": 912.6868286132812,
+        "bottom": 625.33935546875,
+        "left": 571.9031372070312
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 559.154541015625,
+        "y": 703.07958984375,
+        "width": 336.55889892578125,
+        "height": 30.861328125,
+        "top": 703.07958984375,
+        "right": 895.7134399414062,
+        "bottom": 733.94091796875,
+        "left": 559.154541015625
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 474.8362731933594,
+        "y": 686.10107421875,
+        "width": 66.28549194335938,
+        "height": 66.14892578125,
+        "top": 686.10107421875,
+        "right": 541.1217651367188,
+        "bottom": 752.25,
+        "left": 474.8362731933594
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M106 684 L458 684 L458 720 L508 720",
+    "len": 438,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "t": 0.12,
+    "start": 6300,
+    "end": 6340,
+    "scrollY": 6304,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.1,
+        "x": 201.11010327148438,
+        "y": 714.078125,
+        "at": 3179,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 1114
+        },
+        {
+          "id": "ribbon",
+          "at": 1220
+        },
+        {
+          "id": "assembly",
+          "at": 2197
+        },
+        {
+          "id": "system",
+          "at": 4826.8
+        },
+        {
+          "id": "skills",
+          "at": 5427.8
+        },
+        {
+          "id": "gallery",
+          "at": 5838
+        },
+        {
+          "id": "services",
+          "at": 6290
+        },
+        {
+          "id": "delivery",
+          "at": 6340
+        },
+        {
+          "id": "signature",
+          "at": 6648
+        },
+        {
+          "id": "portal",
+          "at": 7448
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 1114
+        },
+        {
+          "id": "ribbon",
+          "at": 1220
+        },
+        {
+          "id": "ribbon",
+          "at": 1255
+        },
+        {
+          "id": "assembly",
+          "at": 2197
+        },
+        {
+          "id": "assembly",
+          "at": 3797
+        },
+        {
+          "id": "system",
+          "at": 4826.8
+        },
+        {
+          "id": "system",
+          "at": 4851.8
+        },
+        {
+          "id": "skills",
+          "at": 5427.8
+        },
+        {
+          "id": "skills",
+          "at": 5557.8
+        },
+        {
+          "id": "gallery",
+          "at": 5838
+        },
+        {
+          "id": "gallery",
+          "at": 5863
+        },
+        {
+          "id": "services",
+          "at": 6290
+        },
+        {
+          "id": "services",
+          "at": 6300
+        },
+        {
+          "id": "delivery",
+          "at": 6340
+        },
+        {
+          "id": "delivery",
+          "at": 6385
+        },
+        {
+          "id": "signature",
+          "at": 6648
+        },
+        {
+          "id": "signature",
+          "at": 6948
+        },
+        {
+          "id": "portal",
+          "at": 7448
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6304,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.1,
+      "x": 201.11,
+      "y": 714.078,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 124,
+        "y": 652.078125,
+        "width": 124,
+        "height": 124,
+        "top": 652.078125,
+        "right": 248,
+        "bottom": 776.078125,
+        "left": 124
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 124,
+        "y": 449.296875,
+        "width": 509.390625,
+        "height": 112,
+        "top": 449.296875,
+        "right": 633.390625,
+        "bottom": 561.296875,
+        "left": 124
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 124,
+        "y": 579.296875,
+        "width": 372.09375,
+        "height": 52.78125,
+        "top": 579.296875,
+        "right": 496.09375,
+        "bottom": 632.078125,
+        "left": 124
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 777.390625,
+        "y": 489.296875,
+        "width": 413.71875,
+        "height": 30,
+        "top": 489.296875,
+        "right": 1191.109375,
+        "bottom": 519.296875,
+        "left": 777.390625
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 781.4222412109375,
+        "y": 598.18994140625,
+        "width": 415.2642822265625,
+        "height": 30.2138671875,
+        "top": 598.18994140625,
+        "right": 1196.6865234375,
+        "bottom": 628.40380859375,
+        "left": 781.4222412109375
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 768.8014526367188,
+        "y": 705.91162109375,
+        "width": 410.15020751953125,
+        "height": 31.07275390625,
+        "top": 705.91162109375,
+        "right": 1178.95166015625,
+        "bottom": 736.984375,
+        "left": 768.8014526367188
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 684.2803344726562,
+        "y": 689.146484375,
+        "width": 66.4453125,
+        "height": 66.150390625,
+        "top": 689.146484375,
+        "right": 750.7256469726562,
+        "bottom": 755.296875,
+        "left": 684.2803344726562
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M186 714 L668 714 L668 722 L718 722",
+    "len": 540,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "t": 0.5,
+    "start": 6300,
+    "end": 6340,
+    "scrollY": 6320,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.5,
+        "x": 456.1670379638672,
+        "y": 698.078125,
+        "at": 4344,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 1114
+        },
+        {
+          "id": "ribbon",
+          "at": 1220
+        },
+        {
+          "id": "assembly",
+          "at": 2197
+        },
+        {
+          "id": "system",
+          "at": 4826.8
+        },
+        {
+          "id": "skills",
+          "at": 5427.8
+        },
+        {
+          "id": "gallery",
+          "at": 5838
+        },
+        {
+          "id": "services",
+          "at": 6290
+        },
+        {
+          "id": "delivery",
+          "at": 6340
+        },
+        {
+          "id": "signature",
+          "at": 6648
+        },
+        {
+          "id": "portal",
+          "at": 7448
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 1114
+        },
+        {
+          "id": "ribbon",
+          "at": 1220
+        },
+        {
+          "id": "ribbon",
+          "at": 1255
+        },
+        {
+          "id": "assembly",
+          "at": 2197
+        },
+        {
+          "id": "assembly",
+          "at": 3797
+        },
+        {
+          "id": "system",
+          "at": 4826.8
+        },
+        {
+          "id": "system",
+          "at": 4851.8
+        },
+        {
+          "id": "skills",
+          "at": 5427.8
+        },
+        {
+          "id": "skills",
+          "at": 5557.8
+        },
+        {
+          "id": "gallery",
+          "at": 5838
+        },
+        {
+          "id": "gallery",
+          "at": 5863
+        },
+        {
+          "id": "services",
+          "at": 6290
+        },
+        {
+          "id": "services",
+          "at": 6300
+        },
+        {
+          "id": "delivery",
+          "at": 6340
+        },
+        {
+          "id": "delivery",
+          "at": 6385
+        },
+        {
+          "id": "signature",
+          "at": 6648
+        },
+        {
+          "id": "signature",
+          "at": 6948
+        },
+        {
+          "id": "portal",
+          "at": 7448
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6320,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.5,
+      "x": 456.167,
+      "y": 698.078,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 124,
+        "y": 636.078125,
+        "width": 124,
+        "height": 124,
+        "top": 636.078125,
+        "right": 248,
+        "bottom": 760.078125,
+        "left": 124
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 124,
+        "y": 433.296875,
+        "width": 509.390625,
+        "height": 112,
+        "top": 433.296875,
+        "right": 633.390625,
+        "bottom": 545.296875,
+        "left": 124
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 124,
+        "y": 563.296875,
+        "width": 372.09375,
+        "height": 52.78125,
+        "top": 563.296875,
+        "right": 496.09375,
+        "bottom": 616.078125,
+        "left": 124
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 777.390625,
+        "y": 473.296875,
+        "width": 413.71875,
+        "height": 30,
+        "top": 473.296875,
+        "right": 1191.109375,
+        "bottom": 503.296875,
+        "left": 777.390625
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 780.772216796875,
+        "y": 582.20703125,
+        "width": 415.0211181640625,
+        "height": 30.1796875,
+        "top": 582.20703125,
+        "right": 1195.7933349609375,
+        "bottom": 612.38671875,
+        "left": 780.772216796875
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 769.4628295898438,
+        "y": 690.01611328125,
+        "width": 410.43756103515625,
+        "height": 30.9921875,
+        "top": 690.01611328125,
+        "right": 1179.900390625,
+        "bottom": 721.00830078125,
+        "left": 769.4628295898438
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 684.9778442382812,
+        "y": 673.15771484375,
+        "width": 66.41412353515625,
+        "height": 66.13916015625,
+        "top": 673.15771484375,
+        "right": 751.3919677734375,
+        "bottom": 739.296875,
+        "left": 684.9778442382812
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M186 698 L668 698 L668 706 L718 706",
+    "len": 540,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "t": 0.88,
+    "start": 6300,
+    "end": 6340,
+    "scrollY": 6335,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.875,
+        "x": 695.5787163972855,
+        "y": 691.232666015625,
+        "at": 5595,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 1114
+        },
+        {
+          "id": "ribbon",
+          "at": 1220
+        },
+        {
+          "id": "assembly",
+          "at": 2197
+        },
+        {
+          "id": "system",
+          "at": 4826.8
+        },
+        {
+          "id": "skills",
+          "at": 5427.8
+        },
+        {
+          "id": "gallery",
+          "at": 5838
+        },
+        {
+          "id": "services",
+          "at": 6290
+        },
+        {
+          "id": "delivery",
+          "at": 6340
+        },
+        {
+          "id": "signature",
+          "at": 6648
+        },
+        {
+          "id": "portal",
+          "at": 7448
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 1114
+        },
+        {
+          "id": "ribbon",
+          "at": 1220
+        },
+        {
+          "id": "ribbon",
+          "at": 1255
+        },
+        {
+          "id": "assembly",
+          "at": 2197
+        },
+        {
+          "id": "assembly",
+          "at": 3797
+        },
+        {
+          "id": "system",
+          "at": 4826.8
+        },
+        {
+          "id": "system",
+          "at": 4851.8
+        },
+        {
+          "id": "skills",
+          "at": 5427.8
+        },
+        {
+          "id": "skills",
+          "at": 5557.8
+        },
+        {
+          "id": "gallery",
+          "at": 5838
+        },
+        {
+          "id": "gallery",
+          "at": 5863
+        },
+        {
+          "id": "services",
+          "at": 6290
+        },
+        {
+          "id": "services",
+          "at": 6300
+        },
+        {
+          "id": "delivery",
+          "at": 6340
+        },
+        {
+          "id": "delivery",
+          "at": 6385
+        },
+        {
+          "id": "signature",
+          "at": 6648
+        },
+        {
+          "id": "signature",
+          "at": 6948
+        },
+        {
+          "id": "portal",
+          "at": 7448
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6335,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.875,
+      "x": 695.579,
+      "y": 691.233,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 124,
+        "y": 621.078125,
+        "width": 124,
+        "height": 124,
+        "top": 621.078125,
+        "right": 248,
+        "bottom": 745.078125,
+        "left": 124
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 124,
+        "y": 418.296875,
+        "width": 509.390625,
+        "height": 112,
+        "top": 418.296875,
+        "right": 633.390625,
+        "bottom": 530.296875,
+        "left": 124
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 124,
+        "y": 548.296875,
+        "width": 372.09375,
+        "height": 52.78125,
+        "top": 548.296875,
+        "right": 496.09375,
+        "bottom": 601.078125,
+        "left": 124
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 777.390625,
+        "y": 458.296875,
+        "width": 413.71875,
+        "height": 30,
+        "top": 458.296875,
+        "right": 1191.109375,
+        "bottom": 488.296875,
+        "left": 777.390625
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 780.162353515625,
+        "y": 567.2236328125,
+        "width": 414.7906494140625,
+        "height": 30.146484375,
+        "top": 567.2236328125,
+        "right": 1194.9530029296875,
+        "bottom": 597.3701171875,
+        "left": 780.162353515625
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 770.0821533203125,
+        "y": 675.1142578125,
+        "width": 410.7049560546875,
+        "height": 30.91650390625,
+        "top": 675.1142578125,
+        "right": 1180.787109375,
+        "bottom": 706.03076171875,
+        "left": 770.0821533203125
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 685.6316528320312,
+        "y": 658.16845703125,
+        "width": 66.38446044921875,
+        "height": 66.12841796875,
+        "top": 658.16845703125,
+        "right": 752.01611328125,
+        "bottom": 724.296875,
+        "left": 685.6316528320312
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M186 684 L670 684 L670 692 L718 692",
+    "len": 540,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "t": 0.12,
+    "start": 5819.36,
+    "end": 6103.36,
+    "scrollY": 5853,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.11845070422535327,
+        "x": 368.4392077700536,
+        "y": 339.109375,
+        "at": 3164,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 966.8
+        },
+        {
+          "id": "ribbon",
+          "at": 1392.36
+        },
+        {
+          "id": "assembly",
+          "at": 2073
+        },
+        {
+          "id": "system",
+          "at": 4579.36
+        },
+        {
+          "id": "skills",
+          "at": 5097.36
+        },
+        {
+          "id": "gallery",
+          "at": 5538.36
+        },
+        {
+          "id": "services",
+          "at": 5719.36
+        },
+        {
+          "id": "delivery",
+          "at": 6103.36
+        },
+        {
+          "id": "signature",
+          "at": 6364.0599999999995
+        },
+        {
+          "id": "portal",
+          "at": 7644.36
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 966.8
+        },
+        {
+          "id": "orbit",
+          "at": 1081.48
+        },
+        {
+          "id": "ribbon",
+          "at": 1392.36
+        },
+        {
+          "id": "ribbon",
+          "at": 1427.36
+        },
+        {
+          "id": "assembly",
+          "at": 2073
+        },
+        {
+          "id": "assembly",
+          "at": 3212
+        },
+        {
+          "id": "system",
+          "at": 4579.36
+        },
+        {
+          "id": "system",
+          "at": 4604.36
+        },
+        {
+          "id": "skills",
+          "at": 5097.36
+        },
+        {
+          "id": "skills",
+          "at": 5227.36
+        },
+        {
+          "id": "gallery",
+          "at": 5538.36
+        },
+        {
+          "id": "gallery",
+          "at": 5563.36
+        },
+        {
+          "id": "services",
+          "at": 5719.36
+        },
+        {
+          "id": "services",
+          "at": 5819.36
+        },
+        {
+          "id": "delivery",
+          "at": 6103.36
+        },
+        {
+          "id": "delivery",
+          "at": 6148.36
+        },
+        {
+          "id": "signature",
+          "at": 6364.0599999999995
+        },
+        {
+          "id": "signature",
+          "at": 6651.0199999999995
+        },
+        {
+          "id": "portal",
+          "at": 7644.36
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 5853,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.11845,
+      "x": 368.439,
+      "y": 339.109,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 304,
+        "y": 307.109375,
+        "width": 64,
+        "height": 64,
+        "top": 307.109375,
+        "right": 368,
+        "bottom": 371.109375,
+        "left": 304
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 22,
+        "y": 289.109375,
+        "width": 270,
+        "height": 80.625,
+        "top": 289.109375,
+        "right": 292,
+        "bottom": 369.734375,
+        "left": 22
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 22,
+        "y": 385.734375,
+        "width": 270,
+        "height": 79.171875,
+        "top": 385.734375,
+        "right": 292,
+        "bottom": 464.90625,
+        "left": 22
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 85.36090087890625,
+        "y": 510.609375,
+        "width": 244,
+        "height": 54.59375,
+        "top": 510.609375,
+        "right": 329.36090087890625,
+        "bottom": 565.203125,
+        "left": 85.36090087890625
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 96.84020233154297,
+        "y": 617.25,
+        "width": 244,
+        "height": 27.296875,
+        "top": 617.25,
+        "right": 340.84020233154297,
+        "bottom": 644.546875,
+        "left": 96.84020233154297
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 80.95860290527344,
+        "y": 696.609375,
+        "width": 244.00001525878906,
+        "height": 54.59375,
+        "top": 696.609375,
+        "right": 324.9586181640625,
+        "bottom": 751.203125,
+        "left": 80.95860290527344
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 12.958600044250488,
+        "y": 696.90625,
+        "width": 54.000003814697266,
+        "height": 54,
+        "top": 696.90625,
+        "right": 66.95860385894775,
+        "bottom": 750.90625,
+        "left": 12.958600044250488
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M336 340 L382 340 L382 478 L8 478 L8 724 L40 724",
+    "len": 836,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "t": 0.5,
+    "start": 5819.36,
+    "end": 6103.36,
+    "scrollY": 5961,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.4987323943661983,
+        "x": 148.7369083568442,
+        "y": 369.90625,
+        "at": 4331,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 966.8
+        },
+        {
+          "id": "ribbon",
+          "at": 1392.36
+        },
+        {
+          "id": "assembly",
+          "at": 2073
+        },
+        {
+          "id": "system",
+          "at": 4579.36
+        },
+        {
+          "id": "skills",
+          "at": 5097.36
+        },
+        {
+          "id": "gallery",
+          "at": 5538.36
+        },
+        {
+          "id": "services",
+          "at": 5719.36
+        },
+        {
+          "id": "delivery",
+          "at": 6103.36
+        },
+        {
+          "id": "signature",
+          "at": 6364.0599999999995
+        },
+        {
+          "id": "portal",
+          "at": 7644.36
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 966.8
+        },
+        {
+          "id": "orbit",
+          "at": 1081.48
+        },
+        {
+          "id": "ribbon",
+          "at": 1392.36
+        },
+        {
+          "id": "ribbon",
+          "at": 1427.36
+        },
+        {
+          "id": "assembly",
+          "at": 2073
+        },
+        {
+          "id": "assembly",
+          "at": 3212
+        },
+        {
+          "id": "system",
+          "at": 4579.36
+        },
+        {
+          "id": "system",
+          "at": 4604.36
+        },
+        {
+          "id": "skills",
+          "at": 5097.36
+        },
+        {
+          "id": "skills",
+          "at": 5227.36
+        },
+        {
+          "id": "gallery",
+          "at": 5538.36
+        },
+        {
+          "id": "gallery",
+          "at": 5563.36
+        },
+        {
+          "id": "services",
+          "at": 5719.36
+        },
+        {
+          "id": "services",
+          "at": 5819.36
+        },
+        {
+          "id": "delivery",
+          "at": 6103.36
+        },
+        {
+          "id": "delivery",
+          "at": 6148.36
+        },
+        {
+          "id": "signature",
+          "at": 6364.0599999999995
+        },
+        {
+          "id": "signature",
+          "at": 6651.0199999999995
+        },
+        {
+          "id": "portal",
+          "at": 7644.36
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 5961,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.49873,
+      "x": 148.737,
+      "y": 369.906,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 304,
+        "y": 199.109375,
+        "width": 64,
+        "height": 64,
+        "top": 199.109375,
+        "right": 368,
+        "bottom": 263.109375,
+        "left": 304
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 22,
+        "y": 181.109375,
+        "width": 270,
+        "height": 80.625,
+        "top": 181.109375,
+        "right": 292,
+        "bottom": 261.734375,
+        "left": 22
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 22,
+        "y": 277.734375,
+        "width": 270,
+        "height": 79.171875,
+        "top": 277.734375,
+        "right": 292,
+        "bottom": 356.90625,
+        "left": 22
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 87.91719818115234,
+        "y": 402.609375,
+        "width": 244,
+        "height": 54.59375,
+        "top": 402.609375,
+        "right": 331.91719818115234,
+        "bottom": 457.203125,
+        "left": 87.91719818115234
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 94.28399658203125,
+        "y": 509.25,
+        "width": 244,
+        "height": 27.296875,
+        "top": 509.25,
+        "right": 338.28399658203125,
+        "bottom": 536.546875,
+        "left": 94.28399658203125
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 83.51480102539062,
+        "y": 588.609375,
+        "width": 244,
+        "height": 54.59375,
+        "top": 588.609375,
+        "right": 327.5148010253906,
+        "bottom": 643.203125,
+        "left": 83.51480102539062
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 15.514800071716309,
+        "y": 588.90625,
+        "width": 54,
+        "height": 54,
+        "top": 588.90625,
+        "right": 69.51480007171631,
+        "bottom": 642.90625,
+        "left": 15.514800071716309
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M336 232 L382 232 L382 370 L8 370 L8 616 L42 616",
+    "len": 838,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "t": 0.88,
+    "start": 5819.36,
+    "end": 6103.36,
+    "scrollY": 6069,
+    "build": "recruiter-profile",
+    "continuity": {
+      "lineTravel": {
+        "moving": false,
+        "lineVisible": true,
+        "from": "services",
+        "to": "delivery",
+        "progress": 0.8790140845070434,
+        "x": 11.084043495217998,
+        "y": 507.90625,
+        "at": 5549,
+        "reason": "stationary"
+      },
+      "stations": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 966.8
+        },
+        {
+          "id": "ribbon",
+          "at": 1392.36
+        },
+        {
+          "id": "assembly",
+          "at": 2073
+        },
+        {
+          "id": "system",
+          "at": 4579.36
+        },
+        {
+          "id": "skills",
+          "at": 5097.36
+        },
+        {
+          "id": "gallery",
+          "at": 5538.36
+        },
+        {
+          "id": "services",
+          "at": 5719.36
+        },
+        {
+          "id": "delivery",
+          "at": 6103.36
+        },
+        {
+          "id": "signature",
+          "at": 6364.0599999999995
+        },
+        {
+          "id": "portal",
+          "at": 7644.36
+        }
+      ],
+      "keys": [
+        {
+          "id": "neural",
+          "at": 0
+        },
+        {
+          "id": "orbit",
+          "at": 966.8
+        },
+        {
+          "id": "orbit",
+          "at": 1081.48
+        },
+        {
+          "id": "ribbon",
+          "at": 1392.36
+        },
+        {
+          "id": "ribbon",
+          "at": 1427.36
+        },
+        {
+          "id": "assembly",
+          "at": 2073
+        },
+        {
+          "id": "assembly",
+          "at": 3212
+        },
+        {
+          "id": "system",
+          "at": 4579.36
+        },
+        {
+          "id": "system",
+          "at": 4604.36
+        },
+        {
+          "id": "skills",
+          "at": 5097.36
+        },
+        {
+          "id": "skills",
+          "at": 5227.36
+        },
+        {
+          "id": "gallery",
+          "at": 5538.36
+        },
+        {
+          "id": "gallery",
+          "at": 5563.36
+        },
+        {
+          "id": "services",
+          "at": 5719.36
+        },
+        {
+          "id": "services",
+          "at": 5819.36
+        },
+        {
+          "id": "delivery",
+          "at": 6103.36
+        },
+        {
+          "id": "delivery",
+          "at": 6148.36
+        },
+        {
+          "id": "signature",
+          "at": 6364.0599999999995
+        },
+        {
+          "id": "signature",
+          "at": 6651.0199999999995
+        },
+        {
+          "id": "portal",
+          "at": 7644.36
+        }
+      ],
+      "state": "ready",
+      "renderedScrollY": 6069,
+      "from": "services",
+      "to": "delivery",
+      "progress": 0.87901,
+      "x": 11.084,
+      "y": 507.906,
+      "running": false
+    },
+    "boxes": [
+      {
+        "s": ".approach-intro>img",
+        "x": 304,
+        "y": 91.109375,
+        "width": 64,
+        "height": 64,
+        "top": 91.109375,
+        "right": 368,
+        "bottom": 155.109375,
+        "left": 304
+      },
+      {
+        "s": ".approach-intro h2",
+        "x": 22,
+        "y": 73.109375,
+        "width": 270,
+        "height": 80.625,
+        "top": 73.109375,
+        "right": 292,
+        "bottom": 153.734375,
+        "left": 22
+      },
+      {
+        "s": ".approach-intro>p",
+        "x": 22,
+        "y": 169.734375,
+        "width": 270,
+        "height": 79.171875,
+        "top": 169.734375,
+        "right": 292,
+        "bottom": 248.90625,
+        "left": 22
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "x": 90,
+        "y": 294.609375,
+        "width": 244,
+        "height": 54.59375,
+        "top": 294.609375,
+        "right": 334,
+        "bottom": 349.203125,
+        "left": 90
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "x": 91.72779846191406,
+        "y": 401.25,
+        "width": 243.99998474121094,
+        "height": 27.296875,
+        "top": 401.25,
+        "right": 335.727783203125,
+        "bottom": 428.546875,
+        "left": 91.72779846191406
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "x": 86.07099914550781,
+        "y": 480.609375,
+        "width": 243.99998474121094,
+        "height": 54.59375,
+        "top": 480.609375,
+        "right": 330.07098388671875,
+        "bottom": 535.203125,
+        "left": 86.07099914550781
+      },
+      {
+        "s": ".approach-list details:last-child .service-art",
+        "x": 18.070999145507812,
+        "y": 480.90625,
+        "width": 54,
+        "height": 54,
+        "top": 480.90625,
+        "right": 72.07099914550781,
+        "bottom": 534.90625,
+        "left": 18.070999145507812
+      }
+    ],
+    "hits": [
+      {
+        "s": ".approach-intro h2",
+        "count": 0
+      },
+      {
+        "s": ".approach-intro>p",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(1) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(2) .service-title",
+        "count": 0
+      },
+      {
+        "s": ".approach-list details:nth-child(3) .service-title",
+        "count": 0
+      }
+    ],
+    "path": "M336 124 L382 124 L382 262 L8 262 L8 508 L46 508",
+    "len": 842,
+    "errors": []
+  }
+]

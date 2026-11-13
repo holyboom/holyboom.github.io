@@ -1,6 +1,6 @@
 {
   "fix": "service-route-20261113",
-  "status": "Local verification passed; publication pending",
+  "status": "Published and verified",
   "baseline": "d93c046603d561dc85a064eb2c27261987b73fe7",
   "root_cause": "The generic margin excursion sent a nearly horizontal Services to delivery connection past the destination icon to the far right, then back through the service label.",
   "repair": "A measured, arc-length sampled corridor now stays in the gap between columns; the stacked mobile layout crosses only the intro/list gap and returns through the outer icon margin. Full wire, lit segment and carrier share the same route including exact corners.",
@@ -32,5 +32,18 @@
     "Native scroll-driven electrical sound and silence when stationary",
     "Piano continues with one audio context"
   ],
-  "physical_ipad_tested": false
+  "physical_ipad_tested": false,
+  "implementation_commit": "51e9a50b4836b5ee029104beee3257cb2c690a0e",
+  "verified_at": "2026-11-13T16:05:02.436878+00:00",
+  "url": "https://holyboom.github.io/?fix=service-route-20261113#what-i-do",
+  "public_geometry_samples": 12,
+  "public_geometry_viewports": [
+    390,
+    820,
+    992,
+    1440
+  ],
+  "public_visible_title_intersections": 0,
+  "public_runtime_errors": 0,
+  "public_source_matches_tested_code": true
 }
