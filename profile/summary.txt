@@ -31,7 +31,8 @@ Angular and enterprise frontend development, working with stakeholders and engin
 PUBLIC WORK
 A working browser-based showcase of intentional interaction, workflow boundaries and software engineering. Visitors explore three illustrative scenarios, inspect fictional source-to-output examples and carry an explicit choice into a planning brief.
 This public example is a portfolio demonstration, not a live agent service or a claimed client result. Client source code, private records and confidential documents are not published here.
-Source: https://github.com/holyboom/holyboom.github.io
+Project explanation: https://holyboom.github.io/work/holymind-portfolio/
+Interactive showcase: https://holyboom.github.io/
 
 CONTACT
 LinkedIn: https://www.linkedin.com/in/boom-theerawee

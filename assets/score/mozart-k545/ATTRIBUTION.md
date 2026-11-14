@@ -8,4 +8,4 @@ License: https://creativecommons.org/licenses/by-sa/3.0/
 
 HolyMind adaptation: the first twelve complete bars extracted from the distributed MIDI, followed by two newly arranged G-to-C closing bars. Tempo is slowed and bounded for user-controlled scrolling, dynamics are softened, and section material changes affect piano colour rather than note order. Music continues chronologically in either scroll direction; it is not reversed audio.
 
-The derived score data, this arrangement and rendered musical previews are offered under CC BY-SA 3.0. Source files, source hashes and extraction script are included. Piano recordings have their separate CC BY 3.0 attribution in assets/audio/scroll-score-v17/ATTRIBUTION.md. No endorsement is implied.
+The derived score data, this arrangement and rendered musical previews are offered under CC BY-SA 3.0. Source notation, MIDI, source hashes and the derived note sequence are included. The extraction script remains a development tool. Piano recordings have their separate CC BY 3.0 attribution in assets/audio/scroll-score-v17/ATTRIBUTION.md. No endorsement is implied.

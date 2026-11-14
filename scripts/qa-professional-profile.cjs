@@ -21,7 +21,7 @@ const {webkit,chromium}=require('playwright'),fs=require('fs');
    check('no-extra-execution-'+lang,await p.locator('script:not([type="application/ld+json"])').count()===0);
    check('indexable-meta-'+lang,(await p.locator('meta[name=robots]').getAttribute('content')).startsWith('index,follow'));
    const hrefs=await p.locator('a[href]').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
-   check('public-proof-links-'+lang,hrefs.some(h=>h.includes('/blob/main/workflow-proof.js'))&&!hrefs.some(h=>h==='https://github.com/holyboom/holy-mind'));
+   check('public-proof-links-'+lang,hrefs.some(h=>h.includes('/work/holymind-portfolio/#workflow'))&&!hrefs.some(h=>h.includes('github.com/holyboom/holyboom.github.io/blob/')));
    for(const w of [320,390,768,1440]){
     await p.setViewportSize({width:w,height:900});await p.waitForTimeout(200);
     check('layout-'+lang+'-'+w,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
@@ -39,6 +39,7 @@ const {webkit,chromium}=require('playwright'),fs=require('fs');
   check('short-showcase-retained',await root.evaluate(()=>document.documentElement.scrollHeight<9200&&!document.querySelector('#skill-library').open&&document.body.dataset.motion==='on'));
   check('audio-default-retained',await root.evaluate(()=>HolyMindAudio.snapshot().context==='uncreated'&&HolyMindTimbres.presets.length===14&&HolyMindBoomModel.particleCount===259));
   await root.screenshot({path:out+'/homepage-mobile.jpg',quality:85});await root.close();
+  if(process.env.PUBLIC_ARTIFACT!=='1'){
   const r=await browser.newPage({viewport:{width:390,height:844}});await r.goto(new URL('qa/recruiter-readme.html',base).href,{waitUntil:'networkidle'});
   const readme=await r.locator('.markdown-body').textContent();check('readme-is-person-first',readme.includes('Theerawee Rangram')&&readme.includes('Forward Deployed Engineer'));
   check('readme-no-version-history',!(/\bv\d+\b|release history|changelog|docs\/evidence/i.test(readme))&&await r.locator('.markdown-body a[href*="RELEASE-HISTORY"]').count()===0);
@@ -47,6 +48,8 @@ const {webkit,chromium}=require('playwright'),fs=require('fs');
    check('readme-plates-retained-'+width+'-'+theme,await r.locator('.markdown-body picture').count()===2&&await r.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    if(width===390)await r.screenshot({path:out+'/readme-'+theme+'.jpg',fullPage:true,quality:85});
   }
-  await r.close();const failed=checks.filter(c=>!c.pass);fs.writeFileSync(out+'/result.json',JSON.stringify({base,engine,checks,failed,errors,indexing_or_ranking_verified:false,physicalDevice:false},null,2));console.log(JSON.stringify({checks:checks.length,failed:failed.map(c=>c.name),errors}));if(failed.length||errors.length)process.exitCode=1;
+  await r.close();
+  }
+  const failed=checks.filter(c=>!c.pass);fs.writeFileSync(out+'/result.json',JSON.stringify({base,engine,checks,failed,errors,indexing_or_ranking_verified:false,physicalDevice:false},null,2));console.log(JSON.stringify({checks:checks.length,failed:failed.map(c=>c.name),errors}));if(failed.length||errors.length)process.exitCode=1;
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});
