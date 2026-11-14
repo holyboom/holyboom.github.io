@@ -5,8 +5,8 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='https://holyboom.github.io'
 LI='https://www.linkedin.com/in/boom-theerawee'
 GITHUB='https://github.com/holyboom'
-REPO=GITHUB+'/holyboom.github.io'
-UPDATED='2026-11-12'
+PUBLIC_WORK=BASE+'/work/holymind-portfolio/'
+UPDATED='2026-11-14'
 E=html.escape
 person={
  '@type':'Person','@id':BASE+'/#theerawee-rangram','name':'Theerawee Rangram',
@@ -47,9 +47,9 @@ data={
  'workCopy':'A working browser-based showcase of intentional interaction, workflow boundaries and software engineering. Visitors explore three illustrative scenarios, inspect fictional source-to-output examples and carry an explicit choice into a planning brief.',
  'proofs':[
  ('Explore the live workbench',BASE+'/#workbench'),
- ('Inspect the source-to-output implementation',REPO+'/blob/main/workflow-proof.js'),
- ('Review choice ownership and state',REPO+'/blob/main/intent-journey.js'),
- ('Read browser checks',REPO+'/blob/main/scripts/qa-edited-journey.cjs')],
+ ('Read the project and workflow explanation',PUBLIC_WORK+'#workflow'),
+ ('See how visitor choices shape the brief',PUBLIC_WORK+'#choices'),
+ ('Explore the connected motion and sound',PUBLIC_WORK+'#experience')],
  'workNote':'This public example is a portfolio demonstration, not a live agent service or a claimed client result. Client source code, private records and confidential documents are not published here.',
  'questionsHeading':'For recruiters and hiring teams',
  'questions':[
@@ -58,7 +58,7 @@ data={
  ('How can I discuss a role or request a CV?','Use LinkedIn with the role, team, location and problem you need solved. We can discuss fit and the appropriate supporting project context.')],
  'closing':'Bring the problem your team is trying to solve.',
  'footer':'Professional history is self-reported. The linked portfolio demonstrates the stated browser behavior; it does not independently verify employment or business outcomes.',
- 'languageLabel':'ภาษาไทย','other':'/th/profile/','updated':'Profile reviewed 12 November 2026'
+ 'languageLabel':'ภาษาไทย','other':'/th/profile/','updated':'Profile updated 14 November 2026'
 },
  'th':{
  'path':'th/profile','title':'ธีรวีร์ รางแรม (Boom) | AI Engineer และ AI Solutions Architect กรุงเทพฯ',
@@ -89,9 +89,9 @@ data={
  'workCopy':'เว็บไซต์ที่ใช้งานได้จริงในเบราว์เซอร์ แสดงการออกแบบปฏิสัมพันธ์ ขอบเขต workflow และงานวิศวกรรมซอฟต์แวร์ ผู้ชมทดลองโจทย์สมมติสามรูปแบบ ตรวจความสัมพันธ์ของแหล่งข้อมูลกับผลลัพธ์ และส่งต่อสิ่งที่เลือกไปยัง brief เริ่มต้นได้',
  'proofs':[
  ('ทดลอง Workbench บนเว็บไซต์',BASE+'/#workbench'),
- ('ดูโค้ดความสัมพันธ์ของแหล่งข้อมูลกับผลลัพธ์',REPO+'/blob/main/workflow-proof.js'),
- ('ดูการเก็บตัวเลือกและสถานะของผู้ใช้',REPO+'/blob/main/intent-journey.js'),
- ('ดูชุดตรวจพฤติกรรมในเบราว์เซอร์',REPO+'/blob/main/scripts/qa-edited-journey.cjs')],
+ ('อ่านแนวคิดโครงการและ workflow (English)',PUBLIC_WORK+'#workflow'),
+ ('ดูว่าตัวเลือกของผู้ใช้เชื่อมกับ brief อย่างไร (English)',PUBLIC_WORK+'#choices'),
+ ('อ่านเรื่องภาพเคลื่อนไหวและเสียงที่เชื่อมกัน (English)',PUBLIC_WORK+'#experience')],
  'workNote':'ตัวอย่างสาธารณะนี้เป็นงานสาธิตใน portfolio ไม่ใช่บริการ Agent ที่รันจริงหรือผลลัพธ์ของลูกค้าที่อ้างว่าวัดแล้ว ไม่เผยแพร่โค้ดลูกค้า ข้อมูลส่วนตัว หรือเอกสารลับ',
  'questionsHeading':'ข้อมูลสำหรับ HR และทีมที่กำลังหาคน',
  'questions':[
@@ -100,7 +100,7 @@ data={
  ('ติดต่อคุยตำแหน่งงานหรือขอ CV อย่างไร','ติดต่อผ่าน LinkedIn พร้อมชื่อตำแหน่ง ทีม สถานที่ทำงาน และโจทย์ที่ต้องการแก้ เพื่อประเมินความเหมาะสมและแลกเปลี่ยนรายละเอียดโครงการที่เปิดเผยได้')],
  'closing':'เริ่มจากโจทย์ที่ทีมคุณอยากแก้ให้สำเร็จ',
  'footer':'ประวัติการทำงานเป็นข้อมูลที่เจ้าของโปรไฟล์ให้ไว้ ผลงานที่ลิงก์แสดงพฤติกรรมของเว็บไซต์ ไม่ใช่หลักฐานยืนยันการจ้างงานหรือผลลัพธ์ธุรกิจจากหน่วยงานอิสระ',
- 'languageLabel':'English','other':'/profile/','updated':'ทบทวนโปรไฟล์ 12 พฤศจิกายน 2026'
+ 'languageLabel':'English','other':'/profile/','updated':'อัปเดตโปรไฟล์ 14 พฤศจิกายน 2026'
 }}
 for lang,d in data.items():
  url=BASE+'/'+d['path']+'/'
@@ -129,7 +129,7 @@ for lang,d in data.items():
 </main><footer><p>{E(d['updated'])}</p><p>{E(d['footer'])}</p><a href="{GITHUB}" rel="me">GitHub</a><a href="/">HolyMind showcase</a><a href="{d['other']}">{E(d['languageLabel'])}</a></footer></body></html>'''
  path=ROOT/d['path'];path.mkdir(parents=True,exist_ok=True);(path/'index.html').write_text(page)
 # A readable summary, not instructions to any model or a ranking assertion.
-en=data['en'];summary='THEERAWEE RANGRAM (BOOM)\nAI Engineer & AI Solutions Architect | Bangkok, Thailand\nธีรวีร์ รางแรม\n\n'+en['intro']+'\n'+en['experience']+'\n\nROLE FIT\n'+'\n'.join(k+': '+v for k,v in en['fits'])+'\n'+en['fitNote']+'\n\nCORE CAPABILITIES\n'+en['strengths']+'\n\nSELECTED EXPERIENCE\n'+'\n\n'.join(k+'\n'+v for k,v in en['jobs'])+'\n\nPUBLIC WORK\n'+en['workCopy']+'\n'+en['workNote']+'\nSource: '+REPO+'\n\nCONTACT\nLinkedIn: '+LI+'\nEnglish profile: '+BASE+'/profile/\nโปรไฟล์ภาษาไทย: '+BASE+'/th/profile/\n\n'+en['footer']+'\n'
+en=data['en'];summary='THEERAWEE RANGRAM (BOOM)\nAI Engineer & AI Solutions Architect | Bangkok, Thailand\nธีรวีร์ รางแรม\n\n'+en['intro']+'\n'+en['experience']+'\n\nROLE FIT\n'+'\n'.join(k+': '+v for k,v in en['fits'])+'\n'+en['fitNote']+'\n\nCORE CAPABILITIES\n'+en['strengths']+'\n\nSELECTED EXPERIENCE\n'+'\n\n'.join(k+'\n'+v for k,v in en['jobs'])+'\n\nPUBLIC WORK\n'+en['workCopy']+'\n'+en['workNote']+'\nProject explanation: '+PUBLIC_WORK+'\nInteractive showcase: '+BASE+'/\n\nCONTACT\nLinkedIn: '+LI+'\nEnglish profile: '+BASE+'/profile/\nโปรไฟล์ภาษาไทย: '+BASE+'/th/profile/\n\n'+en['footer']+'\n'
 (ROOT/'profile/summary.txt').write_text(summary)
 # Main-site schema deliberately remains limited to the visibly stated homepage scope.
 root_schema={'@context':'https://schema.org','@type':'ProfilePage','@id':BASE+'/#profile','url':BASE+'/','inLanguage':['en','th'],'dateModified':UPDATED,'mainEntity':{**person,'description':'Theerawee Rangram (Boom), AI Engineer and AI Solutions Architect in Bangkok and creator of HolyMind Framework. Business strategy, agentic workflows, evaluation and automation.','knowsAbout':['AI Engineering','AI Solutions Architecture','Agentic AI','AI Transformation','Workflow Automation','LLM Evaluation','Guardrails','HolyMind Framework']}}
