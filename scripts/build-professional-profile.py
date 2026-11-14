@@ -6,6 +6,7 @@ BASE='https://holyboom.github.io'
 LI='https://www.linkedin.com/in/boom-theerawee'
 GITHUB='https://github.com/holyboom'
 PUBLIC_WORK=BASE+'/work/holymind-portfolio/'
+PUBLIC_WORK_TH=BASE+'/th/work/holymind-portfolio/'
 UPDATED='2026-11-14'
 E=html.escape
 person={
@@ -89,9 +90,9 @@ data={
  'workCopy':'เว็บไซต์ที่ใช้งานได้จริงในเบราว์เซอร์ แสดงการออกแบบปฏิสัมพันธ์ ขอบเขต workflow และงานวิศวกรรมซอฟต์แวร์ ผู้ชมทดลองโจทย์สมมติสามรูปแบบ ตรวจความสัมพันธ์ของแหล่งข้อมูลกับผลลัพธ์ และส่งต่อสิ่งที่เลือกไปยัง brief เริ่มต้นได้',
  'proofs':[
  ('ทดลอง Workbench บนเว็บไซต์',BASE+'/#workbench'),
- ('อ่านแนวคิดโครงการและ workflow (English)',PUBLIC_WORK+'#workflow'),
- ('ดูว่าตัวเลือกของผู้ใช้เชื่อมกับ brief อย่างไร (English)',PUBLIC_WORK+'#choices'),
- ('อ่านเรื่องภาพเคลื่อนไหวและเสียงที่เชื่อมกัน (English)',PUBLIC_WORK+'#experience')],
+ ('อ่านแนวคิดโครงการและ workflow',PUBLIC_WORK_TH+'#workflow'),
+ ('ดูว่าตัวเลือกของผู้ใช้เชื่อมกับ brief อย่างไร',PUBLIC_WORK_TH+'#choices'),
+ ('อ่านเรื่องภาพเคลื่อนไหวและเสียงที่เชื่อมกัน',PUBLIC_WORK_TH+'#experience')],
  'workNote':'ตัวอย่างสาธารณะนี้เป็นงานสาธิตใน portfolio ไม่ใช่บริการ Agent ที่รันจริงหรือผลลัพธ์ของลูกค้าที่อ้างว่าวัดแล้ว ไม่เผยแพร่โค้ดลูกค้า ข้อมูลส่วนตัว หรือเอกสารลับ',
  'questionsHeading':'ข้อมูลสำหรับ HR และทีมที่กำลังหาคน',
  'questions':[
@@ -129,7 +130,7 @@ for lang,d in data.items():
 </main><footer><p>{E(d['updated'])}</p><p>{E(d['footer'])}</p><a href="{GITHUB}" rel="me">GitHub</a><a href="/">HolyMind showcase</a><a href="{d['other']}">{E(d['languageLabel'])}</a></footer></body></html>'''
  path=ROOT/d['path'];path.mkdir(parents=True,exist_ok=True);(path/'index.html').write_text(page)
 # A readable summary, not instructions to any model or a ranking assertion.
-en=data['en'];summary='THEERAWEE RANGRAM (BOOM)\nAI Engineer & AI Solutions Architect | Bangkok, Thailand\nธีรวีร์ รางแรม\n\n'+en['intro']+'\n'+en['experience']+'\n\nROLE FIT\n'+'\n'.join(k+': '+v for k,v in en['fits'])+'\n'+en['fitNote']+'\n\nCORE CAPABILITIES\n'+en['strengths']+'\n\nSELECTED EXPERIENCE\n'+'\n\n'.join(k+'\n'+v for k,v in en['jobs'])+'\n\nPUBLIC WORK\n'+en['workCopy']+'\n'+en['workNote']+'\nProject explanation: '+PUBLIC_WORK+'\nInteractive showcase: '+BASE+'/\n\nCONTACT\nLinkedIn: '+LI+'\nEnglish profile: '+BASE+'/profile/\nโปรไฟล์ภาษาไทย: '+BASE+'/th/profile/\n\n'+en['footer']+'\n'
+en=data['en'];summary='THEERAWEE RANGRAM (BOOM)\nAI Engineer & AI Solutions Architect | Bangkok, Thailand\nธีรวีร์ รางแรม\n\n'+en['intro']+'\n'+en['experience']+'\n\nROLE FIT\n'+'\n'.join(k+': '+v for k,v in en['fits'])+'\n'+en['fitNote']+'\n\nCORE CAPABILITIES\n'+en['strengths']+'\n\nSELECTED EXPERIENCE\n'+'\n\n'.join(k+'\n'+v for k,v in en['jobs'])+'\n\nPUBLIC WORK\n'+en['workCopy']+'\n'+en['workNote']+'\nProject explanation: '+PUBLIC_WORK+'\nคำอธิบายโครงการภาษาไทย: '+PUBLIC_WORK_TH+'\nInteractive showcase: '+BASE+'/\n\nCONTACT\nLinkedIn: '+LI+'\nEnglish profile: '+BASE+'/profile/\nโปรไฟล์ภาษาไทย: '+BASE+'/th/profile/\n\n'+en['footer']+'\n'
 (ROOT/'profile/summary.txt').write_text(summary)
 # Main-site schema deliberately remains limited to the visibly stated homepage scope.
 root_schema={'@context':'https://schema.org','@type':'ProfilePage','@id':BASE+'/#profile','url':BASE+'/','inLanguage':['en','th'],'dateModified':UPDATED,'mainEntity':{**person,'description':'Theerawee Rangram (Boom), AI Engineer and AI Solutions Architect in Bangkok and creator of HolyMind Framework. Business strategy, agentic workflows, evaluation and automation.','knowsAbout':['AI Engineering','AI Solutions Architecture','Agentic AI','AI Transformation','Workflow Automation','LLM Evaluation','Guardrails','HolyMind Framework']}}
