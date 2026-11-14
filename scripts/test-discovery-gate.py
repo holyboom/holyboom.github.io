@@ -21,11 +21,14 @@ def write(root, relative, text):
 def fixture(root):
     person = {"@type": "Person", "@id": GATE.PERSON, "name": "Theerawee Rangram"}
     profile = {"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": person}
-    alternates = "".join('<link rel="alternate" hreflang="' + lang + '" href="' + GATE.ORIGIN + route + '">'
-                         for lang, route in (("en", "/profile/"), ("th", "/th/profile/"), ("x-default", "/profile/")))
     for relative, route in GATE.PAGES.items():
-        schema = {"@context": "https://schema.org", "@type": "WebPage", "mainEntity": {"@type": "CreativeWork", "creator": {"@id": GATE.PERSON}}} if relative.startswith("work/") else profile
-        html = ('<!doctype html><html lang="en"><head><title>Profile ' + route + '</title>'
+        language = "th" if relative.startswith("th/") else "en"
+        is_work = "/work/" in route
+        alternatives = (("en", "/work/holymind-portfolio/"), ("th", "/th/work/holymind-portfolio/"), ("x-default", "/work/holymind-portfolio/")) if is_work else (("en", "/profile/"), ("th", "/th/profile/"), ("x-default", "/profile/"))
+        alternates = "".join('<link rel="alternate" hreflang="' + lang + '" href="' + GATE.ORIGIN + path + '">'
+                             for lang, path in alternatives)
+        schema = {"@context": "https://schema.org", "@type": "WebPage", "inLanguage": language, "mainEntity": {"@type": "CreativeWork", "@id": GATE.PROJECT, "creator": person}} if is_work else profile
+        html = ('<!doctype html><html lang="' + language + '"><head><title>Profile ' + route + '</title>'
                 '<meta name="description" content="Theerawee Rangram and the HolyMind portfolio">'
                 '<meta name="robots" content="index,follow,max-image-preview:large">'
                 '<link rel="canonical" href="' + GATE.ORIGIN + route + '">' + alternates +
@@ -70,6 +73,8 @@ def run():
         ("blocked search crawler", lambda root: write(root, "robots.txt", "User-agent: *\nAllow: /\n\nUser-agent: OAI-SearchBot\nDisallow: /\nSitemap: " + GATE.ORIGIN + "/sitemap.xml\n"), "robots_blocked"),
         ("blocked rendering asset", lambda root: write(root, "robots.txt", "User-agent: *\nAllow: /\nDisallow: /assets/\nSitemap: " + GATE.ORIGIN + "/sitemap.xml\n"), "robots_blocked"),
         ("blocked query-versioned stylesheet", block_query_resource, "robots_blocked"),
+        ("blocked ad-review rendering asset", lambda root: write(root, "robots.txt", "User-agent: *\nAllow: /\n\nUser-agent: OAI-AdsBot\nDisallow: /assets/\nSitemap: " + GATE.ORIGIN + "/sitemap.xml\n"), "robots_blocked"),
+        ("blocked paid landing query", lambda root: write(root, "robots.txt", "User-agent: *\nAllow: /\n\nUser-agent: OAI-AdsBot\nDisallow: /*?utm_source=chatgpt\nSitemap: " + GATE.ORIGIN + "/sitemap.xml\n"), "robots_blocked"),
         ("noindex in generic meta", lambda root: replace(root, "index.html", "index,follow,max-image-preview:large", "noindex,follow"), "restrictive_meta"),
         ("agent-specific noarchive", lambda root: replace(root, "index.html", "</head>", '<meta name="bingbot" content="noarchive"></head>'), "restrictive_meta"),
         ("wrong canonical", lambda root: replace(root, "index.html", 'rel="canonical" href="' + GATE.ORIGIN + '/"', 'rel="canonical" href="https://example.com/"'), "canonical"),
@@ -83,6 +88,10 @@ def run():
         ("private implementation link", lambda root: replace(root, "index.html", 'href="https://github.com/holyboom"', 'href="https://github.com/holyboom/holyboom.github.io/blob/main/site.js"'), "source_link"),
         ("conflicting Person identity", lambda root: replace(root, "profile/person.json", GATE.PERSON, GATE.ORIGIN + "/#another-person"), "schema_identity"),
         ("one-way language alternative", lambda root: replace(root, "th/profile/index.html", 'hreflang="en"', 'hreflang="fr"'), "hreflang"),
+        ("one-way project language alternative", lambda root: replace(root, "work/holymind-portfolio/index.html", 'hreflang="th"', 'hreflang="fr"'), "hreflang"),
+        ("wrong Thai project HTML language", lambda root: replace(root, "th/work/holymind-portfolio/index.html", '<html lang="th">', '<html lang="en">'), "page_language"),
+        ("wrong Thai project schema language", lambda root: replace(root, "th/work/holymind-portfolio/index.html", '"inLanguage": "th"', '"inLanguage": "en"'), "schema_language"),
+        ("conflicting project identity", lambda root: replace(root, "th/work/holymind-portfolio/index.html", GATE.PROJECT, GATE.ORIGIN + "/th/work/holymind-portfolio/#another-project"), "schema_work_identity"),
     ]
     results = []
     for name, mutate, expected in cases:

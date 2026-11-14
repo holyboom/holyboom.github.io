@@ -16,6 +16,7 @@ Relevant roles to discuss: AI Solutions Architect, AI Engineer, GenAI Engineer, 
 ## Public work
 - Interactive portfolio: https://holyboom.github.io/
 - Portfolio project explanation: https://holyboom.github.io/work/holymind-portfolio/
+- คำอธิบายโครงการภาษาไทย: https://holyboom.github.io/th/work/holymind-portfolio/
 
 The site’s workbench uses fictional examples and makes no live model request or automatic submission. It is not a claimed client result. Private framework source and client documents are not published. Career history is self-reported; the interactive portfolio and project explanation demonstrate the stated browser behavior, not independent verification of employment.
 

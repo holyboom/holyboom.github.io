@@ -16,18 +16,25 @@ from xml.etree import ElementTree
 
 ORIGIN = "https://holyboom.github.io"
 PERSON = ORIGIN + "/#theerawee-rangram"
+PROJECT = ORIGIN + "/work/holymind-portfolio/#project"
 PAGES = {
     "index.html": "/",
     "profile/index.html": "/profile/",
     "th/profile/index.html": "/th/profile/",
     "work/holymind-portfolio/index.html": "/work/holymind-portfolio/",
+    "th/work/holymind-portfolio/index.html": "/th/work/holymind-portfolio/",
 }
+LANGUAGE_GROUPS = (
+    {"en": "/profile/", "th": "/th/profile/", "x-default": "/profile/"},
+    {"en": "/work/holymind-portfolio/", "th": "/th/work/holymind-portfolio/", "x-default": "/work/holymind-portfolio/"},
+)
+PAID_QUERY = "utm_source=chatgpt&utm_medium=paid&utm_campaign=holymind_workflow"
 INDEXNOW_FILE = "e0ad7af3e67c2e99f62f08ac4b786ec5.txt"
 DISCOVERY_FILES = (
     "robots.txt", "sitemap.xml", "profile/person.json", "profile/summary.txt",
     "profile-schema.json", "llms.txt", INDEXNOW_FILE,
 )
-AGENTS = ("*", "Googlebot", "Bingbot", "OAI-SearchBot", "Google-Extended")
+AGENTS = ("*", "Googlebot", "Bingbot", "OAI-SearchBot", "OAI-AdsBot", "Google-Extended")
 VOID_TAGS = set("area base br col embed hr img input link meta param source track wbr".split())
 INTERNAL_ROOTS = {"docs", "qa", "scripts", "node_modules", ".git", ".github"}
 INTERNAL_NAMES = {
@@ -81,12 +88,15 @@ class Page(HTMLParser):
         self.stack = []
         self.ids, self.refs, self.meta, self.links = set(), [], [], []
         self.title, self.main, self.jsonld, self.style = [], [], [], []
+        self.language = None
         self.h1 = self.main_count = 0
         self.feed(text)
         self.close()
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
+        if tag == "html":
+            self.language = attrs.get("lang")
         if attrs.get("id"):
             self.ids.add(attrs["id"])
         if tag == "a" and attrs.get("name"):
@@ -209,6 +219,9 @@ class Gate:
         self.counts = {"assertions": 0, "html_pages": 0, "schemas": 0,
                        "local_references": 0, "crawler_checks": 0, "public_files": 0}
         self.crawl_paths = set(PAGES.values())
+        # Keep tracked ad destinations crawlable too; robots may restrict queries
+        # even when their untracked canonical paths remain allowed.
+        self.crawl_paths.update(route + "?" + PAID_QUERY for route in PAGES.values())
 
     def require(self, condition, code, path, message):
         self.counts["assertions"] += 1
@@ -292,6 +305,9 @@ class Gate:
             if not (self.root / relative).is_file():
                 continue
             page = self.page(relative)
+            language = "th" if relative.startswith("th/") else "en"
+            self.require(page.language == language, "page_language", relative,
+                         "The native page language must match its English or Thai route.")
             title = " ".join("".join(page.title).split())
             titles.append(title)
             self.require(bool(title), "title", relative, "A native title is required.")
@@ -310,17 +326,22 @@ class Gate:
                 except json.JSONDecodeError as error:
                     self.require(False, "schema_json", relative, str(error))
             self.require(bool(nodes), "schema_json", relative, "Valid native JSON-LD is required.")
-            if relative.startswith("work/"):
-                self.require(any(is_type(node, "WebPage") or is_type(node, "CreativeWork") for node in nodes), "schema_work", relative, "Public work needs a WebPage or CreativeWork description.")
+            if route in {"/work/holymind-portfolio/", "/th/work/holymind-portfolio/"}:
+                self.require(any(is_type(node, "WebPage") for node in nodes) and any(is_type(node, "CreativeWork") for node in nodes), "schema_work", relative, "Public work needs a WebPage and CreativeWork description.")
+                self.require(any(is_type(node, "WebPage") and node.get("inLanguage") == language for node in nodes), "schema_language", relative, "Project WebPage language must match its native page language.")
+                works = [node for node in nodes if is_type(node, "CreativeWork")]
+                self.require(bool(works) and all(node.get("@id") == PROJECT for node in works), "schema_work_identity", relative, "English and Thai explanations must describe the same public project identity.")
+                self.require(any(is_type(node, "Person") and node.get("@id") == PERSON for node in nodes), "schema_person", relative, "Public work must retain its established creator identity.")
             else:
                 self.require(any(is_type(node, "ProfilePage") for node in nodes) and any(is_type(node, "Person") and node.get("@id") == PERSON for node in nodes), "schema_person", relative, "ProfilePage and the established Person are required.")
         self.require(len(titles) == len(set(titles)), "duplicate_title", "public pages", "Each primary page needs its own title.")
 
-        expected_languages = {"en": ORIGIN + "/profile/", "th": ORIGIN + "/th/profile/", "x-default": ORIGIN + "/profile/"}
-        for relative in ("profile/index.html", "th/profile/index.html"):
-            if (self.root / relative).is_file():
-                alternate = {link.get("hreflang"): link.get("href") for link in self.page(relative).links if "alternate" in link.get("rel", "").split() and link.get("hreflang")}
-                self.require(all(alternate.get(language) == url for language, url in expected_languages.items()), "hreflang", relative, "English and Thai profiles must have reciprocal language alternatives.")
+        for group in LANGUAGE_GROUPS:
+            for route in (group["en"], group["th"]):
+                relative = route.lstrip("/") + "index.html"
+                if (self.root / relative).is_file():
+                    alternate = {link.get("hreflang"): link.get("href") for link in self.page(relative).links if "alternate" in link.get("rel", "").split() and link.get("hreflang")}
+                    self.require(all(alternate.get(language) == ORIGIN + url for language, url in group.items()), "hreflang", relative, "English and Thai counterparts must have reciprocal language alternatives and a default.")
         for relative in ("profile/person.json", "profile-schema.json"):
             try:
                 self.check_schema(json.loads(self.read(relative)), relative, profile=True)

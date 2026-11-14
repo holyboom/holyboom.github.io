@@ -37,11 +37,12 @@ scripts, QA fixtures and source maps. The source repository's visibility is a
 separate control; building an artifact alone changes neither live publication
 nor repository access.
 
-A public project explanation replaces profile links that previously depended
+A public project explanation in English and Thai replaces profile links that previously depended
 on access to raw implementation/QA files. Its statements describe observable
 portfolio behavior and label the example scenarios as fictional. The homepage
-and English profile now have distinct titles. The new page is linked from the
-site and included in the sitemap.
+and English profile now have distinct titles. Both project pages are linked from
+the site and included in the sitemap, with reciprocal English, Thai and default
+language alternatives. The Thai profile links to the Thai project sections.
 
 Run:
 
@@ -55,7 +56,9 @@ The offline production gate checks:
 - Public route coverage, initial HTML text, headings, descriptions, canonical
   URLs, unique titles, language alternatives and consistent structured identity.
 - Crawl permission for the public files, including Googlebot, Bingbot,
-  OAI-SearchBot and Google-Extended; restrictive robots metadata is rejected.
+  OAI-SearchBot, OAI-AdsBot and Google-Extended; restrictive robots metadata is
+  rejected. Canonical routes are also checked with representative paid UTM
+  parameters because a query-specific rule can block an otherwise open page.
 - Sitemap coverage, local resources/fragments, public evidence links and the
   retained IndexNow key file `e0ad7af3e67c2e99f62f08ac4b786ec5.txt`.
 - Absence of development documents, source-map files/directives and links that
@@ -72,6 +75,9 @@ AI-labelled crawlers as equivalent:
 
 - OpenAI documents separate controls for OAI-SearchBot and GPTBot. A future
   decision about training can preserve ChatGPT Search crawl access.
+- OAI-AdsBot validates advertising landing pages. Keeping it allowed supports
+  ad review, while paid placements remain separate from organic ChatGPT answers.
+  Advertising does not change the rank or wording of those answers.
 - Google's current documentation says Google-Extended controls both future
   Gemini training and some Gemini/Vertex AI grounding. Blocking it can therefore
   conflict with the owner's goal of AI discovery, even though it does not
@@ -107,6 +113,8 @@ mentions or unsubstantiated outcome claims are added.
 - [Google common crawlers and Google-Extended](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers)
 - [Search Console generative AI setting](https://support.google.com/webmasters/answer/16908024)
 - [OpenAI crawler controls](https://developers.openai.com/api/docs/bots)
+- [OpenAI advertising crawler guidance](https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers)
+- [ChatGPT answers and advertising independence](https://help.openai.com/en/articles/20001047-ads-in-chatgpt)
 - [Google robots.txt limitations](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
 - [GitHub Pages publication](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 - [Repository visibility implications](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility)
