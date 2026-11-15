@@ -1,0 +1,464 @@
+{
+  "release": "living-story-worlds-v16",
+  "recipes": [
+    {
+      "family": "islands",
+      "name": "Seeds of possibility",
+      "islands": 3,
+      "lift": 0.12,
+      "bridge": 0.06,
+      "spread": 0.1,
+      "turn": 0.25,
+      "phase": 0,
+      "ink": 0.2
+    },
+    {
+      "family": "terraces",
+      "name": "The blank site",
+      "levels": 2,
+      "rise": 0.1,
+      "lobes": 0.06,
+      "petals": 2,
+      "wide": 1.13,
+      "deep": 0.69,
+      "turn": 0.12,
+      "phase": 0.1,
+      "ink": 0.48
+    },
+    {
+      "family": "terraces",
+      "name": "An imagined home",
+      "levels": 3,
+      "rise": 0.12,
+      "lobes": 0.1,
+      "petals": 3,
+      "wide": 1.02,
+      "deep": 0.8,
+      "turn": 0.42,
+      "phase": 0.3,
+      "ink": 0.55
+    },
+    {
+      "family": "paths",
+      "name": "The first executable line",
+      "branches": 3,
+      "bend": 0.2,
+      "width": 0.28,
+      "turn": 0.25,
+      "phase": 0.5,
+      "ink": 0.48
+    },
+    {
+      "family": "terraces",
+      "name": "A component foundation",
+      "levels": 4,
+      "rise": 0.075,
+      "lobes": 0.04,
+      "petals": 4,
+      "wide": 1.1,
+      "deep": 0.72,
+      "turn": 0.78,
+      "phase": 0.4,
+      "ink": 0.49
+    },
+    {
+      "family": "islands",
+      "name": "Parts finding their place",
+      "islands": 3,
+      "lift": 0.2,
+      "bridge": 0.18,
+      "spread": 0.04,
+      "turn": 0.55,
+      "phase": 0.8,
+      "ink": 0.53
+    },
+    {
+      "family": "terraces",
+      "name": "A measured foundation",
+      "levels": 2,
+      "rise": 0.15,
+      "lobes": 0.035,
+      "petals": 2,
+      "wide": 1.02,
+      "deep": 0.86,
+      "turn": 0,
+      "phase": 0.9,
+      "ink": 0.48
+    },
+    {
+      "family": "paths",
+      "name": "Across the distance",
+      "branches": 2,
+      "bend": 0.35,
+      "width": 0.34,
+      "turn": 0.65,
+      "phase": 1.1,
+      "ink": 0.48
+    },
+    {
+      "family": "paths",
+      "name": "Connections become a network",
+      "branches": 4,
+      "bend": 0.58,
+      "width": 0.26,
+      "turn": 0.25,
+      "phase": 1.3,
+      "ink": 0.54
+    },
+    {
+      "family": "islands",
+      "name": "A shared release",
+      "islands": 5,
+      "lift": 0.14,
+      "bridge": 0.12,
+      "spread": 0.03,
+      "turn": 0.15,
+      "phase": 1.5,
+      "ink": 0.51
+    },
+    {
+      "family": "paths",
+      "name": "An intelligence pipeline",
+      "branches": 3,
+      "bend": 0.09,
+      "width": 0.38,
+      "turn": 1.2,
+      "phase": 1.7,
+      "ink": 0.51
+    },
+    {
+      "family": "terraces",
+      "name": "A human review boundary",
+      "levels": 2,
+      "rise": 0.09,
+      "lobes": 0.1,
+      "petals": 4,
+      "wide": 1.15,
+      "deep": 0.68,
+      "turn": 0.35,
+      "phase": 1.9,
+      "ink": 0.45
+    },
+    {
+      "family": "islands",
+      "name": "An approved connection",
+      "islands": 4,
+      "lift": 0.08,
+      "bridge": 0.08,
+      "spread": -0.1,
+      "turn": 0.85,
+      "phase": 2,
+      "ink": 0.48
+    },
+    {
+      "family": "well",
+      "name": "Alone with a conviction",
+      "depth": 0.53,
+      "skew": 0.08,
+      "wide": 1.02,
+      "deep": 0.86,
+      "turn": 0.2,
+      "phase": 2.2,
+      "ink": 0.36
+    },
+    {
+      "family": "well",
+      "name": "Resistance around the light",
+      "depth": 0.64,
+      "skew": 0.23,
+      "lobes": 0.055,
+      "petals": 3,
+      "wide": 1.14,
+      "deep": 0.72,
+      "turn": 0.7,
+      "phase": 2.4,
+      "ink": 0.43
+    },
+    {
+      "family": "well",
+      "name": "A place to question",
+      "depth": 0.31,
+      "skew": 0.17,
+      "wide": 1.22,
+      "deep": 0.65,
+      "turn": 0.4,
+      "phase": 2.6,
+      "ink": 0.36
+    },
+    {
+      "family": "terraces",
+      "name": "Ground recovered through repair",
+      "levels": 3,
+      "rise": 0.1,
+      "lobes": 0.075,
+      "petals": 3,
+      "wide": 1,
+      "deep": 0.86,
+      "turn": 1.05,
+      "phase": 2.8,
+      "ink": 0.48
+    },
+    {
+      "family": "terraces",
+      "name": "The next foothold",
+      "levels": 4,
+      "rise": 0.085,
+      "lobes": 0.06,
+      "petals": 2,
+      "wide": 1.17,
+      "deep": 0.68,
+      "turn": 0.15,
+      "phase": 3,
+      "ink": 0.53
+    },
+    {
+      "family": "terraces",
+      "name": "A lesson condensed",
+      "levels": 3,
+      "rise": 0.075,
+      "lobes": 0.035,
+      "petals": 5,
+      "wide": 1.2,
+      "deep": 0.64,
+      "turn": 0.6,
+      "phase": 3.2,
+      "ink": 0.46
+    },
+    {
+      "family": "paths",
+      "name": "Tributaries of knowledge",
+      "branches": 5,
+      "bend": 0.4,
+      "width": 0.22,
+      "turn": 0.35,
+      "phase": 3.4,
+      "ink": 0.51
+    },
+    {
+      "family": "islands",
+      "name": "A capability of its own",
+      "islands": 4,
+      "lift": 0.28,
+      "bridge": 0.16,
+      "spread": 0.11,
+      "turn": 0.3,
+      "phase": 3.6,
+      "ink": 0.55
+    },
+    {
+      "family": "islands",
+      "name": "A constellation with a moat",
+      "islands": 6,
+      "lift": 0.17,
+      "bridge": 0.23,
+      "spread": 0.02,
+      "turn": 0.73,
+      "phase": 3.8,
+      "ink": 0.53
+    },
+    {
+      "family": "paths",
+      "name": "The depth behind an entrance",
+      "branches": 6,
+      "bend": 0.66,
+      "width": 0.2,
+      "turn": 0.85,
+      "phase": 4,
+      "ink": 0.48
+    },
+    {
+      "family": "terraces",
+      "name": "A clear place to begin",
+      "levels": 1,
+      "rise": 0.12,
+      "lobes": 0.045,
+      "petals": 2,
+      "wide": 1.06,
+      "deep": 0.82,
+      "turn": 0.2,
+      "phase": 4.2,
+      "ink": 0.4
+    },
+    {
+      "family": "paths",
+      "name": "A person chooses the way",
+      "branches": 2,
+      "bend": 0.16,
+      "width": 0.42,
+      "turn": 0.15,
+      "phase": 4.4,
+      "ink": 0.48
+    },
+    {
+      "family": "islands",
+      "name": "Room for another person",
+      "islands": 2,
+      "lift": 0.1,
+      "bridge": 0.13,
+      "spread": 0.08,
+      "turn": 0.6,
+      "phase": 4.6,
+      "ink": 0.46
+    },
+    {
+      "family": "paths",
+      "name": "The work opens outward",
+      "branches": 5,
+      "bend": 0.29,
+      "width": 0.27,
+      "turn": 1,
+      "phase": 4.8,
+      "ink": 0.51
+    },
+    {
+      "family": "terraces",
+      "name": "Layers of lived experience",
+      "levels": 3,
+      "rise": 0.11,
+      "lobes": 0.07,
+      "petals": 4,
+      "wide": 1.11,
+      "deep": 0.72,
+      "turn": 0.95,
+      "phase": 5,
+      "ink": 0.46
+    },
+    {
+      "family": "islands",
+      "name": "An offer across the gap",
+      "islands": 3,
+      "lift": 0.17,
+      "bridge": 0.27,
+      "spread": 0.12,
+      "turn": 1.25,
+      "phase": 5.2,
+      "ink": 0.49
+    },
+    {
+      "family": "well",
+      "name": "A quiet centre after the journey",
+      "depth": 0.13,
+      "skew": 0.05,
+      "lobes": 0.035,
+      "petals": 2,
+      "wide": 1.12,
+      "deep": 0.73,
+      "turn": 0.4,
+      "phase": 5.4,
+      "ink": 0.4
+    },
+    {
+      "family": "islands",
+      "name": "An open pavilion for what comes next",
+      "islands": 6,
+      "lift": 0.12,
+      "bridge": 0.1,
+      "spread": -0.04,
+      "turn": 0.2,
+      "phase": 5.6,
+      "ink": 0.51
+    }
+  ],
+  "checks": [
+    {
+      "name": "four-selected-families-cover-all-31-scenes",
+      "pass": true
+    },
+    {
+      "name": "every-scene-has-its-own-ground-geometry",
+      "pass": true
+    },
+    {
+      "name": "all-worlds-keep-the-same-100-strands-and-48-samples",
+      "pass": true
+    },
+    {
+      "name": "all-floors-retrace-in-both-scroll-directions",
+      "pass": true
+    },
+    {
+      "name": "terrain-remains-finite-and-below-the-actor",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "all-777-ids-and-entire-floor-survive-mobile-detail",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "rendered-ground-remains-beneath-the-foot-supports",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "relief-plates-retrace-with-the-network",
+      "pass": true
+    },
+    {
+      "name": "full-policy-ignores-old-storage-and-os-reduce",
+      "pass": true
+    },
+    {
+      "name": "native-scroll-still-renders-reduce",
+      "pass": true
+    },
+    {
+      "name": "full-renderer-remains-active-reduce-844x390",
+      "pass": true
+    },
+    {
+      "name": "full-renderer-remains-active-reduce-390x600",
+      "pass": true
+    },
+    {
+      "name": "full-renderer-remains-active-reduce-640x480",
+      "pass": true
+    },
+    {
+      "name": "full-policy-ignores-old-storage-and-os-no-preference",
+      "pass": true
+    },
+    {
+      "name": "native-scroll-still-renders-no-preference",
+      "pass": true
+    },
+    {
+      "name": "full-renderer-remains-active-no-preference-844x390",
+      "pass": true
+    },
+    {
+      "name": "full-renderer-remains-active-no-preference-390x600",
+      "pass": true
+    },
+    {
+      "name": "full-renderer-remains-active-no-preference-640x480",
+      "pass": true
+    },
+    {
+      "name": "full-mode-does-not-run-an-idle-render-loop",
+      "pass": true,
+      "data": {
+        "before": {
+          "draws": 26,
+          "target": 1
+        },
+        "after": {
+          "draws": 26,
+          "target": 1
+        }
+      }
+    },
+    {
+      "name": "no-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Full motion is the explicit owner policy; automatic OS reduced-motion switching is intentionally absent.",
+    "Static no-JS, failed-runtime and print fallbacks remain.",
+    "Browser viewport emulation is not a physical-device performance claim."
+  ]
+}

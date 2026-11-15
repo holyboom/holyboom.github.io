@@ -33,7 +33,9 @@ const positionFor=s=>Math.min(10,s.chapter+(s.step+.05)/s.count);
    const samples=model.flatMap(l=>l.points.filter((_,i)=>i%12===0));
    for(const p of samples){const q=project(p);if(!q.every(Number.isFinite))nonfinite.push({shot:shot.action,w,h});if(project.camera.distance-q[2]<=.1)nearPlane.push({shot:shot.action,w,h});}
    for(const layer of g.illustration(position)){
-    if(layer.alpha<.5)continue;
+    // Primary work must fit; terrain and scenery intentionally extend beyond
+    // the frame, particularly in portraits and documentary detail shots.
+    if(layer.alpha<.5||layer.role==='surroundings')continue;
     const points=layer.paths.flatMap(p=>p.points),projected=points.map(project),inside=projected.filter(p=>p[0]>=0&&p[0]<=w&&p[1]>=0&&p[1]<=h).length;
     // Permit a deliberate detail crop; losing over 15% of the primary prop is suspicious.
     if(points.length&&inside/points.length<.85)clipping.push({type:'prop',shot:shot.action,w,h,visibleFraction:inside/points.length});
@@ -58,9 +60,9 @@ const positionFor=s=>Math.min(10,s.chapter+(s.step+.05)/s.count);
    const first=await go(1.35),other=await go(3.35),again=await go(1.35);
    check('live-camera-follows-scroll',delta(first.camera,other.camera)>.05,{first:first.camera,other:other.camera});
    check('live-camera-retraces-on-reverse-scroll',delta(first.camera,again.camera)<1e-4);
-   await p.locator('#motion').selectOption('reduced');const stopped=await p.evaluate(()=>ProfileExperience.snapshot().draws);await p.evaluate(()=>document.querySelector('#craft').scrollIntoView({behavior:'instant'}));await p.waitForTimeout(180);
-   check('reduced-motion-stops-camera-rendering',!await p.locator('.stage').isVisible()&&await p.evaluate(count=>ProfileExperience.snapshot().draws===count,stopped));
-   check('reduced-motion-retains-scene-art',await p.locator('#craft .scene-fallback').isVisible());
+   await p.emulateMedia({reducedMotion:'reduce'});const previous=await p.evaluate(()=>ProfileExperience.snapshot().draws);await p.evaluate(()=>document.querySelector('#craft').scrollIntoView({behavior:'instant'}));await p.waitForTimeout(250);
+   check('owner-full-motion-keeps-camera-rendering',await p.locator('.stage').isVisible()&&await p.evaluate(count=>ProfileExperience.snapshot().mode==='full'&&ProfileExperience.snapshot().draws>count,previous));
+   check('motion-selector-is-not-exposed',await p.locator('#motion,.motion-control').count()===0);
    check('camera-browser-errors',errors.length===0,errors);
   }finally{await browser.close();}
  }

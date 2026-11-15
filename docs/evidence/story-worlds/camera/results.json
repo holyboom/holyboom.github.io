@@ -1,0 +1,192 @@
+{
+  "release": "living-story-worlds-v16",
+  "checks": [
+    {
+      "name": "inserts-have-approach-hold-and-release",
+      "pass": true
+    },
+    {
+      "name": "inserts-do-not-disrupt-locked-orbits",
+      "pass": true
+    },
+    {
+      "name": "all-camera-sampling-retraces",
+      "pass": true
+    },
+    {
+      "name": "no-cuts-at-insert-boundaries",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "the-focused-head-hand-or-work-remains-visible",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "closeups-have-no-nonfinite-or-eye-plane-crossings",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "inserts-enlarge-the-subject-materially",
+      "pass": true,
+      "data": [
+        {
+          "id": "the-first-mark",
+          "compact": false,
+          "magnification": 2.261826392032998
+        },
+        {
+          "id": "the-first-mark",
+          "compact": true,
+          "magnification": 1.8865748386902066
+        },
+        {
+          "id": "the-review-boundary",
+          "compact": false,
+          "magnification": 1.7506201583876606
+        },
+        {
+          "id": "the-review-boundary",
+          "compact": true,
+          "magnification": 1.5276035440176432
+        },
+        {
+          "id": "stay-with-the-question",
+          "compact": false,
+          "magnification": 2.3994395245970432
+        },
+        {
+          "id": "stay-with-the-question",
+          "compact": true,
+          "magnification": 1.965479169640812
+        },
+        {
+          "id": "the-light-that-remains",
+          "compact": false,
+          "magnification": 2.297320844878926
+        },
+        {
+          "id": "the-light-that-remains",
+          "compact": true,
+          "magnification": 1.9119166106492307
+        },
+        {
+          "id": "a-capability-of-its-own",
+          "compact": false,
+          "magnification": 1.9420281970113418
+        },
+        {
+          "id": "a-capability-of-its-own",
+          "compact": true,
+          "magnification": 1.6318949437545711
+        },
+        {
+          "id": "a-person-chooses",
+          "compact": false,
+          "magnification": 1.7517598436015729
+        },
+        {
+          "id": "a-person-chooses",
+          "compact": true,
+          "magnification": 1.5247086434320942
+        },
+        {
+          "id": "the-person-behind-it",
+          "compact": false,
+          "magnification": 2.539820523374568
+        },
+        {
+          "id": "the-person-behind-it",
+          "compact": true,
+          "magnification": 1.9996013878277852
+        }
+      ]
+    },
+    {
+      "name": "pointer-cannot-jostle-a-held-closeup",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "opening-system-layers-reestablishes-the-wide-context",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "rear-shot-reaches-behind-the-maker-on-both-viewports",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-1440-the-first-mark",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-1440-the-review-boundary",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-1440-stay-with-the-question",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-1440-the-light-that-remains",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-1440-a-capability-of-its-own",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-1440-a-person-chooses",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-1440-the-person-behind-it",
+      "pass": true
+    },
+    {
+      "name": "owner-full-motion-keeps-camera-active-1440",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-390-the-first-mark",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-390-the-review-boundary",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-390-stay-with-the-question",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-390-the-light-that-remains",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-390-a-capability-of-its-own",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-390-a-person-chooses",
+      "pass": true
+    },
+    {
+      "name": "live-closeup-390-the-person-behind-it",
+      "pass": true
+    },
+    {
+      "name": "owner-full-motion-keeps-camera-active-390",
+      "pass": true
+    },
+    {
+      "name": "no-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

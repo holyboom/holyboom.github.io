@@ -134,9 +134,9 @@ const frontWork=(position,explode)=>g.illustration(position,explode).filter(l=>l
     check(label+'-native-disclosure-preserves-orbit-and-front-work',Math.abs(opened.current-closed.current)<1e-4&&delta(opened.camera,closed.camera)<1e-4&&opened.work===workHash&&opened.depthLayers>0,{positions:[closed.current,opened.current],cameraDelta:delta(opened.camera,closed.camera),depthLayers:opened.depthLayers});
     await page.screenshot({path:path.join(out,`${label}-experience-depth-open.png`)});
     await page.locator('#beneath').evaluate(el=>{el.open=false;});await page.waitForFunction(()=>ProfileExperience.snapshot().exploded<.001);
-    await page.locator('#motion').selectOption('reduced');const draws=await page.evaluate(()=>ProfileExperience.snapshot().draws);await page.evaluate(()=>document.querySelector('#craft').scrollIntoView({behavior:'instant'}));await page.waitForTimeout(250);
-    check(label+'-reduced-motion-stops-live-orbits',!await page.locator('.stage').isVisible()&&await page.evaluate(draws=>ProfileExperience.snapshot().draws===draws,draws));
-    check(label+'-reduced-motion-retains-static-art',await page.locator('#craft .scene-fallback').isVisible());
+    await page.emulateMedia({reducedMotion:'reduce'});const draws=await page.evaluate(()=>ProfileExperience.snapshot().draws);await page.evaluate(()=>document.querySelector('#craft').scrollIntoView({behavior:'instant'}));await page.waitForTimeout(250);
+    check(label+'-owner-full-motion-retains-live-orbits',await page.locator('.stage').isVisible()&&await page.evaluate(draws=>ProfileExperience.snapshot().mode==='full'&&ProfileExperience.snapshot().draws>draws,draws));
+    check(label+'-no-motion-selector',await page.locator('#motion,.motion-control').count()===0);
     await page.close();
    }
    await Promise.all(pending);check('browser-source-matches-tested-geometry',browserSources.filter(s=>s.url.includes('/geometry.js')).every(s=>s.sha256===hash(fs.readFileSync(source,'utf8'))));check('orbit-browser-errors',errors.length===0,errors);

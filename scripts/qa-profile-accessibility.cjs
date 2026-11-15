@@ -80,25 +80,25 @@ function check(name, pass, data) {
     const page = await open({ width: 390, height: 844 });
     await page.locator('#craft').evaluate(el => el.scrollIntoView({ behavior: 'instant' })); await settle(page);
     const portrait = await headingState(page);
-    await page.locator('#motion').selectOption('reduced'); await settle(page);
-    const reduced = await headingState(page);
-    check('reduced-toggle-retains-reading-heading', reduced.visible && !reduced.live, { portrait, reduced });
+    await page.emulateMedia({reducedMotion:'reduce'}); await settle(page);
+    const full = await headingState(page);
+    check('owner-full-policy-retains-reading-heading', full.visible && full.live && await page.locator('#motion').count()===0 && await page.evaluate(()=>ProfileExperience.snapshot().mode==='full'), { portrait, full });
     await page.locator('#ai-experiences').evaluate(el => el.scrollIntoView({ behavior: 'instant' })); await settle(page);
-    await page.locator('#motion').selectOption('full');
+    await page.waitForFunction(()=>Math.abs(ProfileExperience.snapshot().current-ProfileExperience.snapshot().target)<.0001);
     const resume = await page.evaluate(async () => { const rows = []; for (let i = 0; i < 6; i++) { const s = ProfileExperience.snapshot(); rows.push({ current: s.current, target: s.target, shot: s.shot }); await new Promise(requestAnimationFrame); } return rows; });
-    check('static-scroll-resumes-without-fly-through', resume.every(s => Math.abs(s.current - s.target) < .0001) && (await headingState(page, 'ai-experiences')).visible, resume);
+    check('full-scroll-settles-without-backlog', resume.every(s => Math.abs(s.current - s.target) < .0001) && (await headingState(page, 'ai-experiences')).visible, resume);
     await page.locator('#craft').evaluate(el => el.scrollIntoView({ behavior: 'instant' })); await settle(page);
     const beforeRotation = await headingState(page);
     await page.setViewportSize({ width: 844, height: 390 }); await settle(page);
     const landscape = await headingState(page);
-    check('landscape-uses-readable-static-story', !landscape.live && landscape.visible && !landscape.overflow && await page.locator('#craft .scene-fallback').isVisible(), landscape);
+    check('landscape-retains-readable-full-motion', landscape.live && landscape.visible && !landscape.overflow && await page.locator('#architecture').isVisible(), landscape);
     await page.screenshot({ path: path.join(out, 'landscape.png') });
     await page.setViewportSize({ width: 390, height: 844 }); await settle(page);
     const restored = await headingState(page);
     check('rotation-restores-reading-position', restored.live && restored.visible && Math.abs(restored.top - beforeRotation.top) < 3, { beforeRotation, restored });
     await page.setViewportSize({ width: 390, height: 600 }); await settle(page);
     const short = await headingState(page);
-    check('height-only-static-transition-retains-context', short.visible && !short.live, short);
+    check('short-screen-retains-full-motion-and-context', short.visible && short.live, short);
     await page.setViewportSize({ width: 390, height: 844 }); await settle(page);
     check('height-only-return-retains-context', (await headingState(page)).visible && (await headingState(page)).live);
     await page.close();
@@ -132,7 +132,7 @@ function check(name, pass, data) {
         await boot.goto(base + 'profile/', { waitUntil: 'commit' });
         await boot.locator('main').waitFor({ state: 'attached' });
         await boot.waitForFunction(() => [...document.styleSheets].some(sheet => sheet.href?.includes('/living.css')));
-        check('short-landscape-inline-boot-preview', await boot.locator('.stage').isHidden() && await boot.locator('#intro .scene-fallback').isVisible());
+        check('short-landscape-inline-boot-preview', await boot.locator('.stage').isVisible() && await boot.locator('.stage-poster').isVisible() && await boot.locator('#motion').count()===0);
       } finally { release(); await boot.waitForFunction(() => window.ProfileExperience); await boot.close(); }
     }
     check('runtime-errors', errors.length === 0, errors);

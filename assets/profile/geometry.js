@@ -4,6 +4,7 @@
  const cfg=typeof module==='object'&&module.exports?require('./scenes.js'):root.ProfileScenes;
  const motion=typeof module==='object'&&module.exports?require('./motion.js'):root.ProfileMotion;
  const hands=typeof module==='object'&&module.exports?require('./hand-shapes.js'):root.ProfileHandShapes;
+ const floors=typeof module==='object'&&module.exports?require('./floors.js'):root.ProfileFloors;
  if(!motion)throw new Error('Profile performance module unavailable');
  const PI=Math.PI,TAU=PI*2,SAMPLES=48;
  const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n));
@@ -172,9 +173,9 @@
   }
   // Connections pass behind the maker, never across the face.
   for(let j=0;j<8;j++)emit(t=>{const a=t*TAU*.82,rad=1.18+j*.035;return [Math.cos(a)*rad+.1,Math.sin(a)*rad*.76+.14,-.64+Math.sin(a)*.15];},'network',['connect','experience','shape','offer'].includes(name)?.32:.035,.65);
-  // A continuous woven landscape: soft hills settle around the maker's gravity well.
-  const field=(x,z)=>[x,-1.32-.10*Math.exp(-((x+.25)**2+z*z)*1.6)+.24*Math.sin(x*1.8+z*.7+(options.chapter+options.step*.18)*.4)+.15*Math.cos(z*2.2),z];
-  for(let j=0;j<50;j++){const q=-2+j*4/49;emit(t=>field(q,-1.6+t*3.2),'world',quiet?.20:.47,.6,j%7===0);emit(t=>field(-2+t*4,q*.8),'world',quiet?.20:.47,.6,j%7===0);}
+  // The same 100 strand identities become terraces, wells, flowing pathways or
+  // linked islands. Every beat has its own authored geometry and silhouette.
+  for(const line of floors.scene(index).lines)lines.push({id:lines.length,part:'environment',group:'world',floor:true,alpha:line.alpha,width:line.width,important:line.important,points:line.points});
   for(let j=0;j<18;j++){const x=-1.9+j*.22,z=-1.3+(j%3)*.08;emit(t=>[x+.20*Math.sin(t*PI*1.4+j*.22),-1.25+t*(2.9-((j*7)%5)*.13),z+.15*Math.sin(t*PI)],'code',quiet?.025:.095,.45);}
   if(index===0){
    // The approved A material: a large folded, continuous woven surface, not a mannequin.
@@ -186,7 +187,8 @@
   if(index>0)for(const line of lines){
    if(['prop','ui','architecture'].includes(line.group))line.alpha=0;
    if(['code','network'].includes(line.group))line.alpha*=.10;
-   if(line.group==='world')line.alpha*=.15+.65*(options.energy??1);
+   // Terrain ink is authored per beat; do not dim it a second time through
+   // the foreground action's energy. Quiet scenes still need a readable floor.
    if(['human','hair','detail'].includes(line.group))line.alpha*=.76;
   }
   return lines;
@@ -199,9 +201,9 @@
  function frame(position,detail=1,explode=0){
   const timeline=resolve(position),a=Math.floor(timeline),b=Math.min(a+1,sequence.length-1),raw=timeline-a;
   const source=scene(a),destination=raw?scene(b):source,p=motion.poseAt(timeline),body=createScene(a,p,true,a>0?detail:1);
-  const lines=[],pulse=Math.sin(PI*raw)**2,attractor=p.light;
+  const lines=[],pulse=Math.sin(PI*raw)**2,attractor=p.light,floorTransform=floors.deformer(raw,p);
   for(let l=0;l<source.length;l++){
-   const s=source[l],d=destination[l];if(detail>1&&Math.floor(l/2)%detail&&!s.important)continue;
+   const s=source[l],d=destination[l];if(detail>1&&Math.floor(l/2)%detail&&!s.important&&!s.floor)continue;
    if(l<body.length&&a>0){const live=body[l];lines.push({...live,alpha:live.alpha*(live.group==='human'?.76:1)});continue;}
    if(s.alpha<=.005&&d.alpha<=.005&&!(a===0&&l<body.length)){lines.push(s);continue;}
    const range=a===0?[0,.88]:(timing[s.group]||[0,1]),t=smooth((raw-range[0])/(range[1]-range[0]));
@@ -210,8 +212,8 @@
    const angle=pulse*cfg.gravity.swirl*(environment?1:0),c=Math.cos(angle),sn=Math.sin(angle),radius=1-pull*pulse;
    const points=s.points.map((q,k)=>{
     const dest=targetLine.points[k];let v=[mix(q[0],dest[0],t),mix(q[1],dest[1],t),mix(q[2],dest[2],t)];
+    if(s.floor)return floorTransform(v);
     if(pulse>0&&pull>0&&!(a===0&&l<body.length)){const x=v[0]-attractor[0],y=v[1]-attractor[1],z=v[2]-attractor[2];v=[attractor[0]+radius*(x*c-z*sn),attractor[1]+radius*y,attractor[2]+radius*(x*sn+z*c)];}
-    if(s.group==='world'&&a>0){const distance=Math.min(...p.feet.map(f=>Math.hypot(v[0]-f[0],v[2]-f[2]-.07)));v[1]=mix(v[1],p.support.floorY,smooth(1-distance/.40));}
     if(explode&&environment){v[0]+=(s.group==='prop'?.25:.55)*explode;v[2]-=(s.group==='network'?.7:.3)*explode;}
     return v;
    });
@@ -593,6 +595,7 @@
    for(let line=0;line<5;line++)path('roof-'+line,t=>{const a=(line+1)/6*PI;return [-.22+Math.cos(a)*(1.15-.14*t),-1.27+Math.sin(a)*(2.90-.12*t),-.76-.46*t];},.24,.65);
    layers.push({id:'closing-architecture',role:'surroundings',alpha:closing*.30,textAlpha:0,texts:[],paths});
   }
+  layers.push(...floors.layers(timeline,p,paletteAt(position).accent));
   layers.push(...gloveSkin(timeline,p));
   return layers;
  }

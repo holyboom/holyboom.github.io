@@ -10,11 +10,12 @@ def render(head, data):
     scene_total = 3 + sum(len(c['beats']) for c in story['chapters'])
     head = head.replace('/assets/profile/profile.css', '/assets/profile/living.css?v='+release)
     head = head.replace('#100b1b', '#0B0912')
-    head = head.replace('</head>', f'''<script>try{{let m=localStorage.getItem('holyboom.profile.motion.v1');if(!(m==='reduced'||(m!=='full'&&matchMedia('(prefers-reduced-motion: reduce)').matches))&&!(innerHeight<500||(innerWidth<768&&innerHeight<650)))document.documentElement.classList.add('profile-boot')}}catch{{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!(innerHeight<500||(innerWidth<768&&innerHeight<650)))document.documentElement.classList.add('profile-boot')}}setTimeout(()=>document.documentElement.classList.remove('profile-boot'),4000)</script><link rel="preload" href="/assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+    head = head.replace('</head>', f'''<script>document.documentElement.dataset.profileMotion='full';document.documentElement.classList.add('profile-boot');setTimeout(()=>document.documentElement.classList.remove('profile-boot'),4000)</script><link rel="preload" href="/assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
 <script defer src="/assets/profile/scenes.js?v={release}"></script>
 <script defer src="/assets/profile/performance-source/pilot-clips.js?v={release}"></script>
 <script defer src="/assets/profile/hand-shapes.js?v={release}"></script>
 <script defer src="/assets/profile/motion.js?v={release}"></script>
+<script defer src="/assets/profile/floors.js?v={release}"></script>
 <script defer src="/assets/profile/geometry.js?v={release}"></script>
 <script defer src="/assets/profile/living.js?v={release}" onerror="document.documentElement.classList.remove('profile-boot')"></script>
 </head>''')
@@ -53,7 +54,7 @@ def render(head, data):
     faq=''.join(f'<details><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q,a in data['questions'])
     page = head + f'''<body class="living-profile">
 <a class="skip" href="#profile">Skip to profile</a>
-<header class="site-header"><a class="brand" href="/" aria-label="Holyboom showcase"><img src="/assets/favicon.png" alt="" width="26" height="26">holyboom<span>.</span></a><nav aria-label="Main"><a href="#origins">Story</a><a href="#work-heading">Work</a><a href="#experience">Experience</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav><div class="header-tools"><label class="motion-control" hidden>Motion<select id="motion"><option value="system">System</option><option value="full">Full</option><option value="reduced">Reduced</option></select></label><a href="/th/profile/" lang="th">ไทย</a></div></header>
+<header class="site-header"><a class="brand" href="/" aria-label="Holyboom showcase"><img src="/assets/favicon.png" alt="" width="26" height="26">holyboom<span>.</span></a><nav aria-label="Main"><a href="#origins">Story</a><a href="#work-heading">Work</a><a href="#experience">Experience</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav><div class="header-tools"><a href="/th/profile/" lang="th">ไทย</a></div></header>
 <main id="profile">
 <div class="journey" id="journey"><div class="stage" aria-hidden="true"><div class="stage-frame"><div class="stage-top"><span>HOLYMIND / A HUMAN STORY IN CODE</span><span class="stage-count">01 / {scene_total} SCENES</span></div><img class="stage-poster" src="/assets/profile/fallback/scene-0.svg?v={release}" width="720" height="720" alt=""><canvas id="architecture" aria-hidden="true"></canvas><div class="scene-transition"><span class="transition-copy">Imagine</span><span class="transition-track"><i></i></span></div><div class="scene-meaning">Imagination · 1 / 1</div><div class="scene-caption">A world begins at the end of a drawn line.</div><div class="stage-bottom"><span class="scene-label">00 / A MIND AT WORK</span><span>SCROLL TO CONTINUE ↓</span></div></div></div>
 <nav class="chapter-rail" aria-label="Story chapters">{rail}</nav>

@@ -4,24 +4,24 @@
  const g=window.ProfileGeometry;if(!g){clearBoot();return;}
  const canvas=document.querySelector('#architecture'),stage=document.querySelector('.stage'),journey=document.querySelector('#journey');
  const ctx=canvas?.getContext('2d');if(!ctx){clearBoot();return;}
- const chapters=[...document.querySelectorAll('[data-scene]')],select=document.querySelector('#motion'),control=document.querySelector('.motion-control'),rail=[...document.querySelectorAll('.chapter-rail a')],beneath=document.querySelector('#beneath');
+ const chapters=[...document.querySelectorAll('[data-scene]')],rail=[...document.querySelectorAll('.chapter-rail a')],beneath=document.querySelector('#beneath');
  const professional=document.querySelector('#experience'),summaryHost=document.querySelector('.reflection-art');
  const originalHost=canvas.parentElement,contact=document.querySelector('#contact'),contactHost=contact.querySelector('.scene-fallback');
- const media=matchMedia('(prefers-reduced-motion: reduce)'),key='holyboom.profile.motion.v1';
- let mode='system';try{const value=localStorage.getItem(key);if(['system','full','reduced'].includes(value))mode=value;}catch{}
- select.value=mode;control.hidden=false;
- let anchors=[],w=0,h=0,dpr=1,frameId=0,last=0,current=0,target=0,exploded=0,px=0,py=0,tx=0,ty=0,reduced=false,visible=true,draws=0,drawCost=0,detail=1,dirty=true,previousWidth=innerWidth,lastLabel=-1;
+ // Owner policy: Full is fixed. Stored preferences and OS motion settings are
+ // not mode controls for this profile. No hidden selector or public setter.
+ const mode='full',reduced=false;
+ let anchors=[],w=0,h=0,dpr=1,frameId=0,last=0,current=0,target=0,exploded=0,px=0,py=0,tx=0,ty=0,visible=true,draws=0,drawCost=0,detail=1,dirty=true,previousWidth=innerWidth,previousHeight=innerHeight,lastLabel=-1;
  let renderedCamera=null,modelCache=null,navPosition=-1,navScroll=-1;
  let layoutCorrection=null,measuredDisclosureOpen=beneath.open;
  const workPaths=[...document.querySelectorAll('.work-path')],workState=()=>workPaths.map(el=>el.open?'1':'0').join('');
+ const inspecting=()=>(beneath.open&&current>6.45&&current<8.25)||(workPaths.some(el=>el.open)&&current>7.75&&current<9.1);
  let measuredWorkOpen=workState();
- let layoutStatic=null,readingContext=null,readingWidth=innerWidth,readingHeight=innerHeight;
+ let readingContext=null,readingWidth=innerWidth,readingHeight=innerHeight;
  let trailDirection=1,trailEnergy=0,lastMotion=0,trailSpan=0;
  const resetTrail=()=>{trailEnergy=0;lastMotion=0;trailSpan=0;};
  const glow=document.createElement('canvas'),gc=glow.getContext('2d');
  const brief=document.querySelector('.scene-label'),counter=document.querySelector('.stage-count');
- // Short landscape screens need the same complete, in-flow story as short phones.
- function staticLayout(){return reduced||innerHeight<500||(innerWidth<768&&innerHeight<650);}
+ function staticLayout(){return false;}
  function readingTop(){
   let top=document.querySelector('.site-header').getBoundingClientRect().bottom;
   if(!staticLayout()&&innerWidth<768){const r=stage.getBoundingClientRect();if(r.bottom>top&&r.top<innerHeight)top=r.bottom;}
@@ -41,18 +41,15 @@
   const top=readingTop(),rect=context.anchor.getBoundingClientRect(),offset=g.clamp(context.offset,-Math.max(0,rect.height-40),Math.max(0,innerHeight-top-80));
   scrollTo({top:Math.max(0,scrollY+rect.top-top-offset),behavior:'instant'});
  }
- function preferences(){
-  const context=readingWidth===innerWidth&&readingHeight===innerHeight?captureReadingContext():readingContext;
-  reduced=mode==='reduced'||(mode==='system'&&media.matches);
-  const nextStatic=staticLayout(),changed=layoutStatic!==null&&layoutStatic!==nextStatic;
-  layoutStatic=nextStatic;
-  document.documentElement.dataset.profileMotion=reduced?'reduced':'full';
-  document.documentElement.classList.toggle('profile-enhanced',!nextStatic);
-  if(changed)layoutCorrection=null;
-  clearBoot();measure();
-  // Only a change between sticky and in-flow layouts restores the reading point.
-  // Ordinary resizing and section links keep their native scroll behavior.
-  if(changed){if(context)restoreReadingContext(context);target=positionAt(scrollY);current=target;scroll();}
+ function activate(restore=false){
+  const preservePerformance=restore&&inspecting(),context=restore&&!preservePerformance?readingContext:null;
+  document.documentElement.dataset.profileMotion='full';
+  document.documentElement.classList.add('profile-enhanced');
+  if(restore&&!preservePerformance)layoutCorrection=null;
+  clearBoot();measure({preserve:preservePerformance});
+  // A structural reflow retains the reader's heading and resumes at that
+  // position. Toolbar-height changes keep native scroll and the current rig.
+  if(context){restoreReadingContext(context);target=positionAt(scrollY);current=target;scroll();}
   readingWidth=innerWidth;readingHeight=innerHeight;readingContext=captureReadingContext();wake();
  }
  function positionAt(scroll){
@@ -67,13 +64,13 @@
   // smooth() has maximum slope 1.5; span >= 2.2*abs(delta) keeps this monotonic.
   return g.clamp(raw+layoutCorrection.delta*(1-g.smooth(progress)),0,anchors.length-1);
  }
- function measure(){
+ function measure({navigation=false,preserve=false}={}){
   resetTrail();
   const hadAnchors=anchors.length>0;
   const nextAnchors=chapters.map(el=>el.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(el).scrollMarginTop||'0'));
   const anchorsChanged=nextAnchors.some((value,i)=>Math.abs(value-(anchors[i]??value))>.01),disclosureChanged=measuredDisclosureOpen!==beneath.open||measuredWorkOpen!==workState();
   anchors=nextAnchors;measuredDisclosureOpen=beneath.open;measuredWorkOpen=workState();
-  if(hadAnchors&&(disclosureChanged||(layoutCorrection&&anchorsChanged))){
+  if(hadAnchors&&!navigation&&(disclosureChanged||((layoutCorrection||preserve)&&anchorsChanged))){
    // Native scroll anchoring may also change scrollY during a width/font
    // resize. Preserve what is displayed, not an old map at that new offset.
    const preserved=current,origin=g.positionFromAnchors(scrollY,anchors),delta=preserved-origin;
@@ -253,15 +250,13 @@
  function scroll(){
   document.documentElement.classList.toggle('profile-story-active',scrollY<(anchors[9]??Infinity)-1);
   const host=scrollY>=(anchors[10]??Infinity)-1?contactHost:scrollY>=(anchors[9]??Infinity)-1?summaryHost:originalHost;
-  if(canvas.parentElement!==host){host.appendChild(canvas);contact.classList.toggle('live-art',host===contactHost);professional.classList.toggle('live-art',host===summaryHost);measure();}
+  if(canvas.parentElement!==host){host.appendChild(canvas);contact.classList.toggle('live-art',host===contactHost);professional.classList.toggle('live-art',host===summaryHost);layoutCorrection=null;measure({navigation:true});}
   const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible)resetTrail();
   target=positionAt(scrollY);updateNavigation();
   if(readingWidth===innerWidth&&readingHeight===innerHeight)readingContext=captureReadingContext();
   wake();}
  addEventListener('scroll',scroll,{passive:true});
- addEventListener('resize',()=>{const changed=previousWidth!==innerWidth;previousWidth=innerWidth;if(changed||staticLayout()!==layoutStatic){preferences();}else {measure();readingWidth=innerWidth;readingHeight=innerHeight;readingContext=captureReadingContext();}});
- select.addEventListener('change',()=>{mode=select.value;try{localStorage.setItem(key,mode);}catch{}preferences();});
- media.addEventListener('change',preferences);
+ addEventListener('resize',()=>{const structural=previousWidth!==innerWidth||Math.abs(previousHeight-innerHeight)>120;previousWidth=innerWidth;previousHeight=innerHeight;if(structural){activate(true);}else {measure();readingWidth=innerWidth;readingHeight=innerHeight;readingContext=captureReadingContext();}});
  beneath.addEventListener('toggle',()=>{measure();wake();});
  workPaths.forEach(el=>el.addEventListener('toggle',()=>{measure();wake();}));
  document.addEventListener('visibilitychange',()=>{last=0;resetTrail();if(!document.hidden){measure();wake();}});
@@ -270,7 +265,7 @@
  addEventListener('pointermove',e=>{if(!matchMedia('(hover: hover) and (pointer: fine)').matches||reduced)return;const r=stage.getBoundingClientRect();tx=g.clamp((e.clientX-r.left)/Math.max(r.width,1)-.5,-.5,.5)*.1;ty=g.clamp((e.clientY-r.top)/Math.max(r.height,1)-.5,-.5,.5)*.1;wake();},{passive:true});
  document.addEventListener('pointerleave',()=>{tx=ty=0;wake();});
  addEventListener('pageshow',measure);document.fonts.ready.then(measure);
- preferences();scroll();
+ activate();scroll();
  // Read-only diagnostics for reproducible QA; no control over user content.
  window.ProfileExperience=Object.freeze({snapshot:()=>({mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
 })();

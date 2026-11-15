@@ -18,10 +18,10 @@ const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass
   for(const direction of [-1,1]){const trail=geometry.lightTrail(position,direction);assert.deepEqual(trail[0].point,geometry.lightAt(position));assert(trail.every((p,i)=>p.alpha>=0&&p.alpha<=1&&(!i||p.alpha<=trail[i-1].alpha)));assert.deepEqual(trail.at(-1).point,geometry.lightAt(position-direction*geometry.config.gravity.trailSpan));}
  }
  check('light-trail-attachment-and-directions',true);
- const pulseBefore=geometry.config.gravity.collapse;geometry.config.gravity.collapse=0;const relaxed=geometry.frame(2.5);geometry.config.gravity.collapse=pulseBefore;const collapsed=geometry.frame(2.5);
- const center=geometry.lightAt(2.5),distance=p=>Math.hypot(...p.map((n,i)=>n-center[i]));
+ const floorMotion=geometry.config.floorMotion,pulseBefore=geometry.config.gravity.collapse;geometry.config.floorMotion={squeeze:0,turn:0,sink:0};const relaxed=geometry.frame(2.5);geometry.config.floorMotion=floorMotion;const collapsed=geometry.frame(2.5);
+ const distance=p=>Math.hypot(p[0]+.46,p[2]-.12);
  const world=collapsed.find(l=>l.group==='world'),plain=relaxed.find(l=>l.id===world.id);
- check('gravity-contracts-environment',world.points.reduce((sum,p)=>sum+distance(p),0)<plain.points.reduce((sum,p)=>sum+distance(p),0)*.7);
+ check('terrain-remesh-contracts-around-its-support-centre',world.points.reduce((sum,p)=>sum+distance(p),0)<plain.points.reduce((sum,p)=>sum+distance(p),0)*.98);
  const exact=geometry.frame(3);geometry.config.gravity.collapse=0;check('gravity-preserves-chapter-endpoints',JSON.stringify(exact)===JSON.stringify(geometry.frame(3)));geometry.config.gravity.collapse=pulseBefore;
  check('31-authored-scenes',geometry.sequence.length===31&&new Set(geometry.sequence.map(s=>s.action)).size===31);
  check('five-consistent-colour-meanings',Object.keys(geometry.config.tones).length===5&&geometry.sequence.every(s=>geometry.config.tones[s.tone]&&s.meaning));
@@ -73,17 +73,16 @@ const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass
   check('inspect-structure',await p.evaluate(()=>document.querySelector('#beneath').open&&ProfileExperience.snapshot().exploded>.95));
   await p.screenshot({path:path.join(out,'beneath.png')});
   await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await p.waitForTimeout(200);check('scroll-preserves-disclosure',await p.locator('#beneath').getAttribute('open')!==null);
-  await p.locator('#motion').selectOption('reduced');check('reduced-clears-trail',await p.evaluate(()=>ProfileExperience.snapshot().trailEnergy===0));check('reduced-removes-sticky',await p.locator('.stage').isVisible()===false);
-  check('reduced-shows-art',await p.locator('#intro .scene-fallback').isVisible());await p.reload();check('preference-persists',await p.locator('#motion').inputValue()==='reduced');
-  await p.locator('#motion').selectOption('system');await p.emulateMedia({reducedMotion:'reduce'});await p.waitForFunction(()=>ProfileExperience.snapshot().reduced);check('system-change',await p.evaluate(()=>ProfileExperience.snapshot().reduced));
-  await p.locator('#motion').selectOption('full');check('explicit-full-overrides-system',await p.evaluate(()=>!ProfileExperience.snapshot().reduced));await p.emulateMedia({reducedMotion:'no-preference'});
-  await p.locator('#motion').selectOption('system');
+  check('motion-control-removed',await p.locator('#motion,.motion-control').count()===0);
+  await p.emulateMedia({reducedMotion:'reduce'});check('owner-full-ignores-os-preference',await p.evaluate(()=>ProfileExperience.snapshot().mode==='full'&&!ProfileExperience.snapshot().reduced&&document.documentElement.dataset.profileMotion==='full'));
+  await p.evaluate(()=>localStorage.setItem('holyboom.profile.motion.v1','reduced'));await p.reload();await p.waitForFunction(()=>window.ProfileExperience);check('legacy-stored-preference-cannot-change-full',await p.evaluate(()=>ProfileExperience.snapshot().mode==='full'&&!ProfileExperience.snapshot().reduced)&&await p.locator('.stage').isVisible());
+  await p.emulateMedia({reducedMotion:'no-preference'});
   for(const [width,height] of [[320,740],[390,844],[768,1024],[1024,768],[1440,1000],[1920,1080],[844,390]]){
    await p.setViewportSize({width,height});await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await p.waitForTimeout(250);
    check('no-overflow-'+width,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    if(width===390||width===1440)await p.screenshot({path:path.join(out,'hero-'+width+'.png')});
   }
-  await p.setViewportSize({width:390,height:600});await p.waitForTimeout(200);check('short-phone-static',!await p.locator('.stage').isVisible());
+  await p.setViewportSize({width:390,height:600});await p.waitForTimeout(200);check('short-phone-retains-full-motion',await p.locator('.stage').isVisible()&&await p.evaluate(()=>ProfileExperience.snapshot().mode==='full'));
   await p.setViewportSize({width:390,height:844});await p.waitForTimeout(150);const mobileBefore=await p.evaluate(()=>ProfileExperience.snapshot().anchors);
   await p.setViewportSize({width:390,height:780});await p.waitForTimeout(150);check('toolbar-no-reset',await p.evaluate(()=>ProfileExperience.snapshot().target===0));
   await p.goto(base+'profile/#ttb');await p.waitForFunction(()=>Math.abs(ProfileExperience.snapshot().target-4)<.1);check('deep-link',Math.abs((await p.evaluate(()=>ProfileExperience.snapshot())).target-4)<.1);
@@ -97,7 +96,7 @@ const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass
   await q.screenshot({path:path.join(out,'no-js.png')});await q.emulateMedia({media:'print'});check('print-readable',!await q.locator('.stage').isVisible()&&await q.locator('#experience').isVisible());
   await q.goto(base+'th/profile/');check('thai-no-runtime',await q.locator('script:not([type="application/ld+json"])').count()===0);check('thai-profile',await q.locator('html').getAttribute('lang')==='th');await noJS.close();
   const failedScript=await browser.newContext({viewport:{width:390,height:844}});await failedScript.route('**/living.js*',route=>route.abort());const fallback=await failedScript.newPage();await fallback.goto(base+'profile/');check('script-failure-fallback',await fallback.locator('#intro .scene-fallback').isVisible()&&await fallback.locator('#contact a.primary').count()===1);await failedScript.close();
-  const blocked=await browser.newContext();await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('blocked');}});});const r=await blocked.newPage();await r.goto(base+'profile/');await r.waitForFunction(()=>window.ProfileExperience);check('blocked-storage',await r.locator('#motion').inputValue()==='system');await blocked.close();
+  const blocked=await browser.newContext();await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('blocked');}});});const r=await blocked.newPage();await r.goto(base+'profile/');await r.waitForFunction(()=>window.ProfileExperience);check('blocked-storage',await r.evaluate(()=>ProfileExperience.snapshot().mode==='full'));await blocked.close();
  }finally{await browser.close();}
  const failed=checks.filter(c=>!c.pass);fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({engine,base,checks,errors,physicalDevice:false},null,2));console.log(JSON.stringify({engine,checks:checks.length,failed,output:out},null,2));if(failed.length||errors.length)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exitCode=1;});
