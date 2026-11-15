@@ -54,6 +54,7 @@ jobs:
           npm --prefix .. run test:profile-camera
           npm --prefix .. run test:profile-performance
           npm --prefix .. run test:profile-floors
+          npm --prefix .. run test:profile-drama
           npm --prefix .. run test:profile-glove
           npm --prefix .. run test:profile-documentary
           npm --prefix .. run test:profile-painter

@@ -1,0 +1,130 @@
+{
+  "checks": [
+    {
+      "name": "camera-finite-for-entire-story",
+      "pass": true
+    },
+    {
+      "name": "camera-reverses-without-history",
+      "pass": true
+    },
+    {
+      "name": "authored-depth-and-angle-variety",
+      "pass": true,
+      "data": {
+        "distanceSpan": 4.800000000000001,
+        "yawSpan": 3.9300000000000006,
+        "pitchSpan": 0.28
+      }
+    },
+    {
+      "name": "no-camera-cuts-at-beat-or-easing-boundaries",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "compact-camera-finite-and-reversible",
+      "pass": true
+    },
+    {
+      "name": "zero-strength-locks-a-static-camera",
+      "pass": true
+    },
+    {
+      "name": "compact-reduces-orbit-and-dolly-range",
+      "pass": true
+    },
+    {
+      "name": "intended-subject-remains-in-frame-during-transitions",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "finite-projection-through-all-31-shots",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "no-eye-plane-crossings",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "hand-and-trail-share-the-camera",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "primary-props-labels-and-hand-remain-readable",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "depth-changes-apparent-scale",
+      "pass": true,
+      "data": {
+        "near": 45.734137803114,
+        "far": 35.3748291232462
+      }
+    },
+    {
+      "name": "live-camera-follows-scroll",
+      "pass": true,
+      "data": {
+        "first": {
+          "yaw": 0.58,
+          "pitch": 0.21067049656439613,
+          "distance": 6.003103286407584,
+          "target": [
+            -0.2410670496564396,
+            -0.20426819862575846,
+            0.20213409931287923
+          ],
+          "focal": 6,
+          "orbitId": "drawing-side",
+          "orbitWeight": 0.8932950343560387,
+          "locked": false,
+          "focusId": null,
+          "focusWeight": 0,
+          "framing": "full"
+        },
+        "other": {
+          "yaw": 0.28,
+          "pitch": 0.17,
+          "distance": 6.250000000000001,
+          "target": [
+            -0.2,
+            -0.07,
+            0.15
+          ],
+          "focal": 6,
+          "orbitId": null,
+          "orbitWeight": 0,
+          "locked": false,
+          "focusId": null,
+          "focusWeight": 0,
+          "framing": "full"
+        }
+      }
+    },
+    {
+      "name": "live-camera-retraces-on-reverse-scroll",
+      "pass": true
+    },
+    {
+      "name": "owner-full-motion-keeps-camera-rendering",
+      "pass": true
+    },
+    {
+      "name": "motion-selector-is-not-exposed",
+      "pass": true
+    },
+    {
+      "name": "camera-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "physicalDevice": false
+}

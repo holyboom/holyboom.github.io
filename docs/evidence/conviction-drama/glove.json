@@ -1,0 +1,47 @@
+{
+  "release": "living-conviction-v17",
+  "shapes": 24,
+  "vertices": 30240,
+  "positions": 21,
+  "maxClosure": 0,
+  "maxTip": 1.3877787807814457e-17,
+  "maxJoin": 3.7172706887848896e-7,
+  "checks": [
+    {
+      "name": "five-digits-through-all-grips-and-blends",
+      "pass": true
+    },
+    {
+      "name": "finger-bases-are-closed",
+      "pass": true
+    },
+    {
+      "name": "skin-tips-are-exact-contact-tips",
+      "pass": true
+    },
+    {
+      "name": "caps-join-without-position-cuts",
+      "pass": true
+    },
+    {
+      "name": "skin-is-finite-and-does-not-mutate-the-rig",
+      "pass": true
+    },
+    {
+      "name": "all-777-ids-and-essential-mobile-contours-remain",
+      "pass": true
+    },
+    {
+      "name": "filled-patches-remain-finite-and-closed",
+      "pass": true
+    },
+    {
+      "name": "glove-surfaces-retrace-with-scroll",
+      "pass": true
+    },
+    {
+      "name": "two-continuous-glove-materials-remain-valid",
+      "pass": true
+    }
+  ]
+}

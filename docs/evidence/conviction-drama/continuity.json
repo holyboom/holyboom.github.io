@@ -1,0 +1,121 @@
+{
+  "release": "living-conviction-v17",
+  "checks": [
+    {
+      "name": "dramatic-materials-and-camera-retrace-exactly",
+      "pass": true
+    },
+    {
+      "name": "skipping-between-moments-does-not-mutate-the-story",
+      "pass": true
+    },
+    {
+      "name": "terrain-and-all-dramatic-material-remain-finite",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "the-five-moments-have-distinct-emotional-compositions",
+      "pass": true
+    },
+    {
+      "name": "the-light-survives-the-lowest-moment-and-recovers",
+      "pass": true
+    },
+    {
+      "name": "held-closeup-keeps-its-own-object-the-weight-of-resistance",
+      "pass": true,
+      "data": {
+        "props": [
+          "fracture"
+        ],
+        "story": "Meet the resistance"
+      }
+    },
+    {
+      "name": "held-closeup-keeps-its-own-object-stay-with-the-question",
+      "pass": true,
+      "data": {
+        "props": [
+          "remnant"
+        ],
+        "story": "Stay with the problem"
+      }
+    },
+    {
+      "name": "doubt-is-bowed-and-the-return-reopens-the-silhouette",
+      "pass": true
+    },
+    {
+      "name": "all-49-room-and-fragment-identities-survive-the-passage",
+      "pass": true
+    },
+    {
+      "name": "new-scenery-stays-behind-the-eye-plane-through-all-shots",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "emotional-grading-releases-outside-the-personal-passage",
+      "pass": true
+    },
+    {
+      "name": "approved-scenes-outside-the-passage-remain-identical",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "samples": 129,
+  "emotionalStates": [
+    {
+      "isolation": 1,
+      "pressure": 0.1,
+      "doubt": 0,
+      "repair": 0,
+      "rise": 0,
+      "body": 0.88,
+      "glow": 0.65,
+      "strength": 1
+    },
+    {
+      "isolation": 0.75,
+      "pressure": 1,
+      "doubt": 0.25,
+      "repair": 0,
+      "rise": 0,
+      "body": 0.97,
+      "glow": 0.42,
+      "strength": 1
+    },
+    {
+      "isolation": 0.95,
+      "pressure": 0.55,
+      "doubt": 1,
+      "repair": 0,
+      "rise": 0,
+      "body": 0.84,
+      "glow": 0.32,
+      "strength": 1
+    },
+    {
+      "isolation": 0.25,
+      "pressure": 0.18,
+      "doubt": 0.25,
+      "repair": 1,
+      "rise": 0.08,
+      "body": 0.96,
+      "glow": 1.15,
+      "strength": 1
+    },
+    {
+      "isolation": 0.08000000000000002,
+      "pressure": 0,
+      "doubt": 0,
+      "repair": 0.44999999999999996,
+      "rise": 1,
+      "body": 1.08,
+      "glow": 1.45,
+      "strength": 1
+    }
+  ]
+}

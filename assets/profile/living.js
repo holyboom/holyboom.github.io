@@ -29,7 +29,7 @@
  }
  function captureReadingContext(){
   if(scrollY<1)return {start:true};
-  const top=readingTop(),chapter=chapters.find(el=>{const r=el.getBoundingClientRect();return r.bottom>top&&r.top<innerHeight;});
+  const top=readingTop(),chapter=chapters.find(el=>{const r=el.getBoundingClientRect();return r.bottom>top+60&&r.top<innerHeight-40;});
   if(!chapter)return null;
   const focused=document.activeElement,fr=focused?.getBoundingClientRect();
   const anchor=chapter.contains(focused)&&fr.height&&fr.bottom>top&&fr.top<innerHeight?focused:[...chapter.querySelectorAll('h1,h2,h3,p,blockquote,summary,.story-bridge')].find(el=>{const r=el.getBoundingClientRect();return r.height&&r.bottom>top&&r.top<innerHeight;})||chapter;
@@ -118,14 +118,19 @@
   px=g.mix(px,tx,follow);py=g.mix(py,ty,follow);
   const desired=beneath.open&&current>6.5?1:0;exploded=g.mix(exploded,desired,follow);
   if(!modelCache||modelCache.position!==current||modelCache.detail!==detail||modelCache.exploded!==exploded)modelCache={position:current,detail,exploded,lines:g.frame(current,detail,exploded)};
-  const geom=modelCache.lines,theme=g.paletteAt(current);
-  const humanLight=g.resolve(current)>=1,lightCore=humanLight?2:2.6,lightHalo=humanLight?5.5:7;
+  const geom=modelCache.lines,theme=g.paletteAt(current),emotion=g.dramaAt(current);
+  const humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow),lightCore=(humanLight?2:2.6)*sourceStrength,lightHalo=(humanLight?5.5:7)*sourceStrength;
   const project=g.createProjector(current,w,h,{compact:innerWidth<768,yaw:px,pitch:py,expanded:exploded});renderedCamera=project.camera;
   // Performance is a pure function of story position. Scaling the whole body to
   // suggest breathing also moved planted feet, hands and the work surface.
   const projectPoint=project;
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
-  const halo=ctx.createRadialGradient(w*.5,h*.5,0,w*.5,h*.5,Math.min(w,h)*.43);halo.addColorStop(0,theme.accent+'16');halo.addColorStop(1,'rgba(133,83,222,0)');ctx.fillStyle=halo;ctx.fillRect(0,0,w,h);
+  const halo=ctx.createRadialGradient(w*.5,h*.5,0,w*.5,h*.5,Math.min(w,h)*.43);halo.addColorStop(0,theme.accent+'16');halo.addColorStop(1,'rgba(133,83,222,0)');ctx.globalAlpha=1-emotion.isolation*.75-emotion.doubt*.15;ctx.fillStyle=halo;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
+  if(emotion.strength>.001){
+   const light=projectPoint(g.lightAt(current)),radius=Math.min(w,h)*(.17+emotion.rise*.15),cast=ctx.createRadialGradient(light[0],light[1],0,light[0],light[1],radius);
+   cast.addColorStop(0,'#ffd394'+Math.round(21+15*emotion.rise).toString(16).padStart(2,'0'));cast.addColorStop(1,'#ffd39400');ctx.globalAlpha=emotion.strength*emotion.glow;ctx.fillStyle=cast;ctx.fillRect(0,0,w,h);
+   const edge=ctx.createRadialGradient(w*.5,h*.50,Math.min(w,h)*.22,w*.5,h*.50,Math.max(w,h)*.65);edge.addColorStop(0,'#0b091200');edge.addColorStop(1,'#0b0912d9');ctx.globalAlpha=emotion.strength*(.40+emotion.doubt*.35);ctx.fillStyle=edge;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
+  }
   ctx.lineCap=ctx.lineJoin='round';
   const projected=geom.filter(line=>line.alpha>.005&&line.points.length>1).map(line=>({...line,points:line.points.map(projectPoint)}));
   const illustrations=g.illustration(current,exploded).map(layer=>({...layer,paths:layer.paths.filter(item=>item.alpha*layer.alpha>.001&&!(innerWidth<768&&item.secondary)).map(item=>({...item,points:item.points.map(projectPoint)})).filter(item=>layer.id!=='story-world'||item.points.some(q=>q[0]>-16&&q[0]<w+16&&q[1]>-16&&q[1]<h+16))}));
