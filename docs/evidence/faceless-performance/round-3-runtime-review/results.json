@@ -1,0 +1,148 @@
+{
+  "capturedAt": "2026-11-14T22:00:17.756Z",
+  "base": "http://127.0.0.1:4173/",
+  "environment": "Headless Chromium, desktop1440x1000, unthrottled. Forced-GC retained JS heap; not process/GPU/physical-device memory.",
+  "visibilityLimit": "Headless tabs remain visible; hidden-document branch uses temporary document property overrides. Unsupported lifecycle transitions are recorded separately, never counted as passes.",
+  "sources": {
+    "/assets/profile/scenes.js": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c",
+    "/assets/profile/performance-source/pilot-clips.js": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95",
+    "/assets/profile/hand-shapes.js": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0",
+    "/assets/profile/geometry.js": "8e67a3485c6c8d5af9462bef4ee1d7810124f5f90b884262616a64d343068d58",
+    "/assets/profile/motion.js": "4c2941df5262bdac4ba2b4a8303780a3fd42b61ff361fc735a65751a1d30aed6",
+    "/assets/profile/living.js": "c201ac92c2d046e8c6f0e940d73ee2ba3deba76d15c4158d5e90601175928fe5"
+  },
+  "checks": [
+    {
+      "name": "typing-render-loop-settles",
+      "pass": true,
+      "data": {
+        "draws": [
+          35,
+          35
+        ],
+        "trailEnergy": 0
+      }
+    },
+    {
+      "name": "reflection-render-loop-settles",
+      "pass": true,
+      "data": {
+        "draws": [
+          81,
+          81
+        ],
+        "trailEnergy": 0
+      }
+    },
+    {
+      "name": "contact-render-loop-settles",
+      "pass": true,
+      "data": {
+        "draws": [
+          136,
+          136
+        ],
+        "trailEnergy": 0
+      }
+    },
+    {
+      "name": "simulated-hidden-document-stops-and-clears",
+      "pass": true,
+      "data": {
+        "draws": [
+          145,
+          145
+        ],
+        "trailEnergy": 0
+      }
+    },
+    {
+      "name": "visibility-restore-renders-current-position",
+      "pass": true,
+      "data": {
+        "current": 3.3999333333333333,
+        "target": 3.3999333333333333
+      }
+    },
+    {
+      "name": "reversal-starts-a-fresh-trail-span",
+      "pass": true,
+      "data": {
+        "changes": 1,
+        "largestSpan": 0.02004463179273941,
+        "maximumAllowed": 0.02004463179273941
+      }
+    },
+    {
+      "name": "retained-heap-stabilizes-after-warm-traversal",
+      "pass": true,
+      "data": {
+        "growthBytes": 135164,
+        "thresholdBytes": 2097152
+      }
+    },
+    {
+      "name": "dom-and-listeners-do-not-accumulate",
+      "pass": true,
+      "data": {
+        "nodeGrowth": 0,
+        "listenerGrowth": 0
+      }
+    },
+    {
+      "name": "no-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "unavailableChecks": [
+    {
+      "name": "active-browser-freeze",
+      "reason": "This headless Chromium accepts the CDP command but does not freeze a visible tab; no freeze event was emitted.",
+      "lifecycleEvents": []
+    }
+  ],
+  "heap": [
+    {
+      "label": "initial",
+      "usedBytes": 5469352,
+      "totalBytes": 6361088,
+      "embedderBytes": 2187016,
+      "backingStorageBytes": 128993,
+      "documents": 2,
+      "nodes": 1049,
+      "jsEventListeners": 23
+    },
+    {
+      "label": "full-traversal-1",
+      "usedBytes": 28448712,
+      "totalBytes": 29954048,
+      "embedderBytes": 4227368,
+      "backingStorageBytes": 89891,
+      "documents": 4,
+      "nodes": 1790,
+      "jsEventListeners": 23
+    },
+    {
+      "label": "full-traversal-2",
+      "usedBytes": 28526320,
+      "totalBytes": 29429760,
+      "embedderBytes": 4125232,
+      "backingStorageBytes": 89884,
+      "documents": 4,
+      "nodes": 1799,
+      "jsEventListeners": 23
+    },
+    {
+      "label": "full-traversal-3",
+      "usedBytes": 28583876,
+      "totalBytes": 29691904,
+      "embedderBytes": 4151664,
+      "backingStorageBytes": 89891,
+      "documents": 4,
+      "nodes": 1790,
+      "jsEventListeners": 23
+    }
+  ],
+  "errors": []
+}

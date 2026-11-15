@@ -321,3 +321,19 @@ The cover and method plates are static raster assets: no script, external tracke
 The owner requested a profile-led README without release/version narration and better discovery by recruiters using AI search. Keep the approved README artwork; replace update-oriented copy with professional positioning, role fit and public proof. Two distinct full-language profile pages (English and Thai) provide server-rendered text, native links and consistent ProfilePage/Person identity without adding length to the existing showcase. Role targets are not presented as titles already held. Private CV files, personal contact identifiers, client documents and private code are not published.
 
 Current public GitHub name/bio/website/location and repository About/topics may be aligned to the same professional identity. Never claim first rank, indexing, employment verification or client results from this work. Existing OAI-SearchBot access is preserved; no training policy is changed. IndexNow notification, if accepted, is receipt of changed URLs only. Search Console and Bing ranking/citation measurements require authorized property access; public page checks are not those measurements.
+
+## Living Architecture — English profile
+
+The owner-selected profile redesign makes AI experiences the narrative core, with a single reversible architectural sculpture and native readable content. It applies only to the English profile. Its System/Full/Reduced preference is intentionally separate from the earlier showcase's motion/audio rules. Owner customization lives in scene config; visitors do not receive a color/shape editor. See `docs/LIVING-PROFILE.md` for source-of-truth files, art direction, accessibility and verification. Original brain assets and main-showcase behavior are preserved.
+
+## Human Matrix revision
+
+The owner requested a human story within the wireframe environment, stronger hooks and richer scroll transitions. The owner selected a symbolic character rather than a facial likeness. The new rig connects drawing, building, reviewing, reflecting and offering an interface across eleven scenes. The character is preserved while props and the environment transform in staggered, reversible phases. Chapter-end narrative bridges connect each section. This is the historical v2 direction; current verification is linked below.
+
+## Human Drama — readable action and emotional continuity
+
+The approved A woven material remains the environment. Thirty-one visual beats now combine a human pose, a recognizable foreground prop, semantic colour and an emotional line. The five-beat personal passage moves through conviction, resistance, reflection, another attempt and persistence. The warm drawing light remains present as the terrain dims, then regains energy. Violet represents imagination/identity, cyan engineering, amber human conviction/agency, coral friction and mint approachable outcomes. Shapes and native text explain the same meanings. See `docs/HUMAN-STORYBOARD.md` and `docs/evidence/human-drama/REPORT.md`.
+
+## Cinematic camera revision
+
+Shot blocking adds depth and motivated camera distance changes to the same 31-beat story. Wide isolation gives the personal passage room; detail shots bring the hand and task forward; elevated drafting and a low-angle rise change perspective. A prepared perspective projector is shared by all scene layers and SVG fallbacks. Native scrolling and deterministic camera keyframes preserve reverse scrubbing. See `docs/evidence/cinematic-camera/REPORT.md` for visual and performance evidence.

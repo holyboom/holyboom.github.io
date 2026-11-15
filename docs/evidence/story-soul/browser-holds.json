@@ -1,0 +1,17 @@
+{
+  "scriptHashesMatch": true,
+  "sourceDistMatch": true,
+  "errors": [],
+  "heldPerformanceWithMovingCamera": [
+    {
+      "beat": 13,
+      "renderedSamples": 23,
+      "cameraYawSpan": 2.0699886367596623
+    },
+    {
+      "beat": 20,
+      "renderedSamples": 21,
+      "cameraYawSpan": 0.051520619073387675
+    }
+  ]
+}

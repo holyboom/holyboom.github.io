@@ -1,0 +1,15 @@
+{
+  "tool": "Blender 4.3.2",
+  "actions": [
+    "draw",
+    "repair",
+    "rise"
+  ],
+  "samplesPerClip": 61,
+  "maximumAngleRadians": 0.12,
+  "maximumOffsetUnits": 0.042,
+  "maximumDeclaredContactOffset": 0.0,
+  "boundaryOffsetsZero": true,
+  "payloadSHA256": "3e308e7a9ccdbce04203aa29aa709ef4ba93b8a7c5d82972150a225489b013a7",
+  "scope": "Control-curve validation only, not a full-body IK/contact/acting validation."
+}

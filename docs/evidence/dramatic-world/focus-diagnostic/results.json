@@ -1,0 +1,239 @@
+{
+  "release": "living-dramatic-world-v12",
+  "checks": [
+    {
+      "name": "all-eleven-chapters-have-distinct-authored-sets",
+      "pass": true
+    },
+    {
+      "name": "world-retraces-without-history",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-world-geometry",
+      "pass": true
+    },
+    {
+      "name": "bounded-desktop-and-mobile-budget",
+      "pass": true
+    },
+    {
+      "name": "scenic-world-is-a-nonopaque-backdrop",
+      "pass": true
+    },
+    {
+      "name": "head-negative-space-suppresses-scenic-ink",
+      "pass": true,
+      "data": {
+        "protectedSamples": 1611,
+        "protectedInk": 0
+      }
+    },
+    {
+      "name": "no-scenic-eye-plane-crossings",
+      "pass": true,
+      "data": {
+        "nearPlane": 0
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-1440-2",
+      "pass": false,
+      "data": {
+        "max": 37,
+        "changed": 2092,
+        "before": {
+          "current": 1.2836666666666667,
+          "detail": 1
+        },
+        "after": {
+          "current": 1.2836666666666667,
+          "detail": 1
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-1440-13",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 4.950333333333333,
+          "detail": 1
+        },
+        "after": {
+          "current": 4.950333333333333,
+          "detail": 1
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-1440-14",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 5.169861272776521,
+          "detail": 1
+        },
+        "after": {
+          "current": 5.169861272776521,
+          "detail": 1
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-1440-20",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 6.462584799107946,
+          "detail": 1
+        },
+        "after": {
+          "current": 6.462584799107946,
+          "detail": 1
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-1440-23",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 7.212786801845997,
+          "detail": 1
+        },
+        "after": {
+          "current": 7.212786801845997,
+          "detail": 1
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-1440-30",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 10,
+          "detail": 2
+        },
+        "after": {
+          "current": 10,
+          "detail": 2
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-390-2",
+      "pass": false,
+      "data": {
+        "max": 20,
+        "changed": 231,
+        "before": {
+          "current": 1.283549087584289,
+          "detail": 2
+        },
+        "after": {
+          "current": 1.283549087584289,
+          "detail": 2
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-390-13",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 4.949453517618498,
+          "detail": 2
+        },
+        "after": {
+          "current": 4.949453517618498,
+          "detail": 2
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-390-14",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 5.169767952438401,
+          "detail": 2
+        },
+        "after": {
+          "current": 5.169767952438401,
+          "detail": 2
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-390-20",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 6.462894393741851,
+          "detail": 2
+        },
+        "after": {
+          "current": 6.462894393741851,
+          "detail": 2
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-390-23",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 7.212108477889079,
+          "detail": 2
+        },
+        "after": {
+          "current": 7.212108477889079,
+          "detail": 2
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-390-30",
+      "pass": true,
+      "data": {
+        "max": 0,
+        "changed": 0,
+        "before": {
+          "current": 10,
+          "detail": 2
+        },
+        "after": {
+          "current": 10,
+          "detail": 2
+        }
+      }
+    },
+    {
+      "name": "no-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "sourceSHA256": "67b62edca76959f6a070b559b99c9038b4cf02222bd762ac877b374100eda32e"
+}

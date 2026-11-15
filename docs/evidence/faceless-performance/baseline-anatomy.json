@@ -1,0 +1,544 @@
+{
+  "capturedAt": "2026-11-14T20:25:55.838Z",
+  "method": "Read-only evaluation of pre-integration named pose joint coordinates. Segment distances; not inferred from rendered mesh.",
+  "ranges": {
+    "upperArmL": {
+      "min": 0.3430743359681689,
+      "max": 0.49203658400570177,
+      "ratio": 1.4341981676278865
+    },
+    "forearmL": {
+      "min": 0.39496835316262996,
+      "max": 1.4353396810511438,
+      "ratio": 3.6340625003445184
+    },
+    "thighL": {
+      "min": 0.4980963762164909,
+      "max": 0.6564297372910524,
+      "ratio": 1.3178769584257004
+    },
+    "shinL": {
+      "min": 0.4716990566028302,
+      "max": 0.5900847396772773,
+      "ratio": 1.2509771461640375
+    },
+    "upperArmR": {
+      "min": 0.28635642126552713,
+      "max": 0.9183136719008381,
+      "ratio": 3.206890447374748
+    },
+    "forearmR": {
+      "min": 0.41472882706655445,
+      "max": 1.0967679791095288,
+      "ratio": 2.644542427559594
+    },
+    "thighR": {
+      "min": 0.4716990566028303,
+      "max": 0.645832795698701,
+      "ratio": 1.369162788558407
+    },
+    "shinR": {
+      "min": 0.48754486972995614,
+      "max": 0.5616048432839588,
+      "ratio": 1.1519039131619278
+    }
+  },
+  "rows": [
+    {
+      "beat": 1,
+      "action": "Imagine",
+      "pose": "design",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 0.5640035460881428,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 0.6774953874381728,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 2,
+      "action": "Imagine a place",
+      "pose": "draw",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 0.712320152740325,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 0.6870953354520754,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 3,
+      "action": "Draw the first lines",
+      "pose": "sketch",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 0.712320152740325,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.4473253849269009,
+        "forearmR": 0.7297259759663213,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 4,
+      "action": "Turn the drawing into an interface",
+      "pose": "type",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 1.4353396810511438,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 1.0967679791095288,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 5,
+      "action": "Build one component",
+      "pose": "type",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 1.4353396810511438,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 1.0967679791095288,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 6,
+      "action": "Fit it into a larger system",
+      "pose": "build",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.49203658400570177,
+        "forearmL": 0.578013840664737,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.38600518131237566,
+        "forearmR": 0.6391400472509917,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 7,
+      "action": "Make it dependable",
+      "pose": "inspect",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 1.1488254871824528,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 0.8854942122905152,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 8,
+      "action": "Listen to the requirement",
+      "pose": "read",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 1.1488254871824528,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 0.8854942122905152,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 9,
+      "action": "Connect across boundaries",
+      "pose": "connect",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.4223742416388575,
+        "forearmL": 0.43416586692184805,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.3966106403010389,
+        "forearmR": 0.6378871373526825,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 10,
+      "action": "Bring the pieces together",
+      "pose": "build",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.49203658400570177,
+        "forearmL": 0.578013840664737,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.38600518131237566,
+        "forearmR": 0.6391400472509917,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 11,
+      "action": "Invite intelligence into the workflow",
+      "pose": "type",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 1.4353396810511438,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 1.0967679791095288,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 12,
+      "action": "Pause at the review boundary",
+      "pose": "inspect",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 1.1488254871824528,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 0.8854942122905152,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 13,
+      "action": "Keep the person in control",
+      "pose": "approve",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.49203658400570177,
+        "forearmL": 0.578013840664737,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.9183136719008381,
+        "forearmR": 0.7713624310270757,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 14,
+      "action": "Hold on to the possibility",
+      "pose": "alone",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 0.6659579566308972,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.64389440128021,
+        "forearmR": 0.41472882706655445,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 15,
+      "action": "Meet the resistance",
+      "pose": "reach",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 0.6659579566308972,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.6946941773183363,
+        "forearmR": 0.9179869280115049,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 16,
+      "action": "Stay with the problem",
+      "pose": "reflect",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 0.6659579566308972,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.5646237685397242,
+        "forearmR": 0.5382378656319156,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 17,
+      "action": "Return to the work",
+      "pose": "repair",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.48969378186781176,
+        "forearmL": 1.064894360957931,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.4638965401897281,
+        "forearmR": 0.7654410493303845,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 18,
+      "action": "Keep the light alive",
+      "pose": "rise",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.49203658400570177,
+        "forearmL": 0.578013840664737,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.2989983277545211,
+        "forearmR": 0.6086871117413281,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 19,
+      "action": "Keep the lesson",
+      "pose": "read",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 1.1488254871824528,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 0.8854942122905152,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 20,
+      "action": "Look beyond my own methods",
+      "pose": "research",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.4223742416388575,
+        "forearmL": 0.5374941860150674,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.3966106403010389,
+        "forearmR": 0.8154753215150045,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 21,
+      "action": "Distil a capability",
+      "pose": "shape",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.48969378186781176,
+        "forearmL": 0.6739436178197699,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.4638965401897281,
+        "forearmR": 0.5974110812497538,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 22,
+      "action": "Build a distinctive advantage",
+      "pose": "protect",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.48969378186781176,
+        "forearmL": 1.0225947388873071,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.4638965401897281,
+        "forearmR": 0.8453401682163222,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 23,
+      "action": "Face the hidden complexity",
+      "pose": "connect",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.4223742416388575,
+        "forearmL": 0.43416586692184805,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.3966106403010389,
+        "forearmR": 0.6378871373526825,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 24,
+      "action": "Shape a clear way in",
+      "pose": "shape",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.48969378186781176,
+        "forearmL": 0.6739436178197699,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.4638965401897281,
+        "forearmR": 0.5974110812497538,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 25,
+      "action": "Give the person agency",
+      "pose": "offer",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.4295346318982905,
+        "forearmL": 0.4091454509095757,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.6252199612936234,
+        "forearmR": 0.6552098900352468,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 26,
+      "action": "Make the experience inviting",
+      "pose": "welcome",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.4295346318982905,
+        "forearmL": 0.39496835316262996,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.5412947441089744,
+        "forearmR": 0.7926537705707328,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 27,
+      "action": "Open the door",
+      "pose": "invite",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.4295346318982905,
+        "forearmL": 0.4091454509095757,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.5412947441089744,
+        "forearmR": 0.6913031173081748,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 28,
+      "action": "Make the work inspectable",
+      "pose": "inspect",
+      "seated": true,
+      "bones": {
+        "upperArmL": 0.3430743359681689,
+        "forearmL": 1.1488254871824528,
+        "thighL": 0.6564297372910524,
+        "shinL": 0.5900847396772773,
+        "upperArmR": 0.28635642126552713,
+        "forearmR": 0.8854942122905152,
+        "thighR": 0.645832795698701,
+        "shinR": 0.5616048432839588
+      }
+    },
+    {
+      "beat": 29,
+      "action": "Offer the next possibility",
+      "pose": "offer",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.4295346318982905,
+        "forearmL": 0.4091454509095757,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.6252199612936234,
+        "forearmR": 0.6552098900352468,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 30,
+      "action": "Reflect",
+      "pose": "stand",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.49203658400570177,
+        "forearmL": 0.4223742416388575,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.43726422218150895,
+        "forearmR": 0.45099889135118726,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    },
+    {
+      "beat": 31,
+      "action": "Begin",
+      "pose": "invite",
+      "seated": false,
+      "bones": {
+        "upperArmL": 0.4295346318982905,
+        "forearmL": 0.4091454509095757,
+        "thighL": 0.4980963762164909,
+        "shinL": 0.4716990566028302,
+        "upperArmR": 0.5412947441089744,
+        "forearmR": 0.6913031173081748,
+        "thighR": 0.4716990566028303,
+        "shinR": 0.48754486972995614
+      }
+    }
+  ]
+}

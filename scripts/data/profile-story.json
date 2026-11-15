@@ -1,0 +1,554 @@
+{
+  "release": "living-c-glove-v15",
+  "updated": "2026-11-15",
+  "chapters": [
+    {
+      "id": "origins",
+      "scene": 1,
+      "eyebrow": "01 / THE FIRST BLUEPRINT",
+      "title": "A blank page.\nA world waiting\nto happen.",
+      "lede": "As a child, I wanted to be an architect. That instinct never really left.",
+      "paragraphs": [
+        "That early interest in design stayed with me when I chose to study software engineering. Frontend became my creative space: a place where code could become something people could see, interact with, and make their own.",
+        "I care about the character of what I build. The shape of an interface, the rhythm of its interactions, and the clarity of its next step all influence how it feels to use. Software gave me a different medium for that same desire to create."
+      ],
+      "tags": [
+        "Architecture at heart",
+        "Frontend by craft"
+      ],
+      "bridge": "That instinct now had a new responsibility: make the idea work.",
+      "hook": "What makes a beautiful idea dependable?",
+      "sceneDescription": "Imagine a place. A symbolic maker interacts with a clearly outlined blueprint above a woven landscape.",
+      "beats": [
+        {
+          "action": "Imagine a place",
+          "caption": "Before software, there was a wish to make a place for people.",
+          "pose": "draw",
+          "prop": "blueprint",
+          "tone": "dream",
+          "meaning": "Imagination",
+          "energy": 1,
+          "shot": "establish"
+        },
+        {
+          "action": "Draw the first lines",
+          "caption": "A hand, a drawing, and something that did not exist before.",
+          "pose": "sketch",
+          "prop": "house",
+          "tone": "dream",
+          "meaning": "Imagination",
+          "energy": 1,
+          "shot": "draft"
+        },
+        {
+          "action": "Turn the drawing into an interface",
+          "caption": "The medium changed. The instinct to create stayed.",
+          "pose": "type",
+          "prop": "code",
+          "tone": "build",
+          "meaning": "Engineering",
+          "energy": 1,
+          "shot": "detail"
+        }
+      ]
+    },
+    {
+      "id": "allianz",
+      "scene": 2,
+      "eyebrow": "02 / FOUNDATIONS",
+      "title": "A beautiful idea\nhas to hold up.",
+      "lede": "Allianz Technology",
+      "careerIndex": 3,
+      "paragraphs": [
+        "Enterprise frontend work gave my interest in design a practical setting. An interface sits within a larger application, with requirements and people depending on it. That context remains part of how I approach the experiences I build today."
+      ],
+      "tags": [
+        "Angular",
+        "Enterprise frontend",
+        "Munich ↔ Bangkok"
+      ],
+      "bridge": "Dependable parts need thoughtful connections.",
+      "hook": "What happens when your work has to connect with everyone else’s?",
+      "sceneDescription": "Build one component. A symbolic maker interacts with a clearly outlined component above a woven landscape.",
+      "beats": [
+        {
+          "action": "Build one component",
+          "caption": "An idea has to become something that works.",
+          "pose": "type",
+          "prop": "component",
+          "tone": "build",
+          "meaning": "Engineering",
+          "energy": 1,
+          "shot": "detail"
+        },
+        {
+          "action": "Fit it into a larger system",
+          "caption": "A beautiful part still has to belong to the whole.",
+          "pose": "build",
+          "prop": "assembly",
+          "tone": "build",
+          "meaning": "Engineering",
+          "energy": 1,
+          "shot": "connect"
+        },
+        {
+          "action": "Make it dependable",
+          "caption": "Other people will rely on the work. The details matter.",
+          "pose": "inspect",
+          "prop": "verified",
+          "tone": "care",
+          "meaning": "Dependability",
+          "energy": 1,
+          "shot": "detail"
+        }
+      ]
+    },
+    {
+      "id": "accenture",
+      "scene": 3,
+      "eyebrow": "03 / CONNECTIONS",
+      "title": "The world grows\nbeyond your screen.",
+      "lede": "Accenture",
+      "careerIndex": 2,
+      "paragraphs": [
+        "The work connected business requirements with hands-on implementation. My contribution lived within a shared effort: understanding what needed to be built, translating it into frontend delivery, and working with engineers across locations."
+      ],
+      "tags": [
+        "Corporate banking",
+        "Requirements",
+        "Distributed teams"
+      ],
+      "bridge": "Then the tools themselves began to change.",
+      "hook": "What if intelligence could become part of the workflow?",
+      "sceneDescription": "Listen to the requirement. A symbolic maker interacts with a clearly outlined brief above a woven landscape.",
+      "beats": [
+        {
+          "action": "Listen to the requirement",
+          "caption": "The work begins with understanding someone else’s need.",
+          "pose": "read",
+          "prop": "brief",
+          "tone": "human",
+          "meaning": "Understanding",
+          "energy": 1,
+          "shot": "intimate"
+        },
+        {
+          "action": "Connect across boundaries",
+          "caption": "My part had to connect with the work around it.",
+          "pose": "connect",
+          "prop": "network",
+          "tone": "build",
+          "meaning": "Connection",
+          "energy": 1,
+          "shot": "connect"
+        },
+        {
+          "action": "Bring the pieces together",
+          "caption": "A shared system asks more of us than a single screen.",
+          "pose": "build",
+          "prop": "assembly",
+          "tone": "care",
+          "meaning": "Collaboration",
+          "energy": 1,
+          "shot": "reveal"
+        }
+      ]
+    },
+    {
+      "id": "ttb",
+      "scene": 4,
+      "eyebrow": "04 / APPLIED INTELLIGENCE",
+      "title": "Let intelligence in.\nKeep people close.",
+      "lede": "ttb spark",
+      "careerIndex": 1,
+      "paragraphs": [
+        "AI-assisted engineering introduced another layer to the experience: how a model fits into an existing process, and where a person needs to inspect its output. Human review is part of that workflow. It also remains an explicit part of my current approach to applied AI."
+      ],
+      "tags": [
+        "Jira · Confluence · Bitbucket",
+        "Human review"
+      ],
+      "bridge": "I wanted to explore what that possibility could become in my own hands.",
+      "hook": "What would I keep building before everyone saw its value?",
+      "sceneDescription": "Invite intelligence into the workflow. A symbolic maker interacts with a clearly outlined ai above a woven landscape.",
+      "beats": [
+        {
+          "action": "Invite intelligence into the workflow",
+          "caption": "A new possibility enters a familiar process.",
+          "pose": "type",
+          "prop": "ai",
+          "tone": "dream",
+          "meaning": "Possibility",
+          "energy": 1,
+          "shot": "draft"
+        },
+        {
+          "action": "Pause at the review boundary",
+          "caption": "An answer is not the end of a human decision.",
+          "pose": "inspect",
+          "prop": "review",
+          "tone": "human",
+          "meaning": "Human judgment",
+          "energy": 1,
+          "shot": "detail"
+        },
+        {
+          "action": "Keep the person in control",
+          "caption": "Move forward with a visible path to inspect and review.",
+          "pose": "approve",
+          "prop": "verified",
+          "tone": "care",
+          "meaning": "Agency",
+          "energy": 1,
+          "shot": "connect"
+        }
+      ]
+    },
+    {
+      "id": "conviction",
+      "scene": 5,
+      "eyebrow": "05 / THE PERSONAL THREAD",
+      "title": "Not everyone\nsaw it yet.\nI kept building.",
+      "lede": "I started on my own, with more conviction than certainty.",
+      "paragraphs": [
+        "Some people around me, including others in the same field, were still unsure how useful AI could become in practice. Belief got me started. The problems I encountered had to be worked through, one by one.",
+        "Each skill and workflow starts with a problem I have met myself. Week after week, I return to what is difficult, keep what is useful, and develop the next version. HolyMind grows from that continued effort."
+      ],
+      "quote": "Not every attempt became a capability. Every problem gave me something to work on.",
+      "tags": [
+        "Independent exploration",
+        "Continuous refinement"
+      ],
+      "bridge": "The work left me with more than a solution. It left a lesson I could carry forward.",
+      "hook": "How does a lesson become a skill with a character of its own?",
+      "sceneDescription": "Hold on to the possibility. A symbolic maker interacts with a clearly outlined ember above a woven landscape.",
+      "beats": [
+        {
+          "action": "Hold on to the possibility",
+          "caption": "Not everyone saw it yet. I still wanted to find out.",
+          "pose": "alone",
+          "prop": "ember",
+          "tone": "human",
+          "meaning": "Conviction",
+          "energy": 0.22,
+          "shot": "isolate"
+        },
+        {
+          "action": "Meet the resistance",
+          "caption": "Belief did not make the difficult parts disappear.",
+          "pose": "reach",
+          "prop": "fracture",
+          "tone": "friction",
+          "meaning": "An obstacle",
+          "energy": 0.38,
+          "shot": "intimate"
+        },
+        {
+          "action": "Stay with the problem",
+          "caption": "What could this difficulty teach me?",
+          "pose": "reflect",
+          "prop": "lesson",
+          "tone": "human",
+          "meaning": "Reflection",
+          "energy": 0.28,
+          "shot": "intimate"
+        },
+        {
+          "action": "Return to the work",
+          "caption": "Another attempt. Another refinement. Then back again.",
+          "pose": "repair",
+          "prop": "repair",
+          "tone": "build",
+          "meaning": "Iteration",
+          "energy": 0.65,
+          "shot": "detail"
+        },
+        {
+          "action": "Keep the light alive",
+          "caption": "The work continued, week after week.",
+          "pose": "rise",
+          "prop": "ember",
+          "tone": "human",
+          "meaning": "Persistence",
+          "energy": 0.85,
+          "shot": "rise"
+        }
+      ]
+    },
+    {
+      "id": "craft",
+      "scene": 6,
+      "eyebrow": "06 / EXPERIENCE, DISTILLED",
+      "title": "The problem\nbecomes part\nof the craft.",
+      "lede": "A skill begins where a real problem refuses to go away.",
+      "paragraphs": [
+        "I let the experience settle, then look outward. I research approaches, ideas, and tools from around the world, selecting and combining the strongest methods I can find for the problem in front of me.",
+        "A skill gradually earns its own purpose, method, and character. That is the moat I am working to build: accumulated experience, careful selection, and repeated refinement. Connected into workflows, those capabilities become a larger way of working."
+      ],
+      "steps": [
+        "Encounter",
+        "Reflect",
+        "Research",
+        "Synthesize",
+        "Refine"
+      ],
+      "tags": [
+        "Purpose",
+        "Method",
+        "Character"
+      ],
+      "bridge": "All that depth still needs a way for someone to reach it.",
+      "hook": "How do you make all that complexity feel human?",
+      "sceneDescription": "Keep the lesson. A symbolic maker interacts with a clearly outlined lesson above a woven landscape.",
+      "beats": [
+        {
+          "action": "Keep the lesson",
+          "caption": "A problem I had lived through became a starting point.",
+          "pose": "read",
+          "prop": "lesson",
+          "tone": "human",
+          "meaning": "Experience",
+          "energy": 1,
+          "shot": "intimate"
+        },
+        {
+          "action": "Look beyond my own methods",
+          "caption": "Seek the strongest ideas and methods I can find.",
+          "pose": "research",
+          "prop": "library",
+          "tone": "build",
+          "meaning": "Research",
+          "energy": 1,
+          "shot": "connect"
+        },
+        {
+          "action": "Distil a capability",
+          "caption": "Experience and selected methods become a skill with character.",
+          "pose": "shape",
+          "prop": "skill",
+          "tone": "dream",
+          "meaning": "Synthesis",
+          "energy": 1,
+          "shot": "detail"
+        },
+        {
+          "action": "Build a distinctive advantage",
+          "caption": "Purpose. Method. Character. A MOAT I keep developing.",
+          "pose": "protect",
+          "prop": "moat",
+          "tone": "dream",
+          "meaning": "Identity",
+          "energy": 1,
+          "shot": "reveal"
+        }
+      ]
+    },
+    {
+      "id": "ai-experiences",
+      "scene": 7,
+      "eyebrow": "07 / WHERE IT COMES TOGETHER",
+      "title": "The soul of\nAI experiences.",
+      "lede": "I want people to feel the possibility, without carrying all the complexity.",
+      "careerIndex": 0,
+      "paragraphs": [
+        "The AI era gives my frontend instincts and software engineering background a wider creative space. I can shape a tool’s capabilities and the way someone enters, understands, and uses it.",
+        "I want the next step to feel clear, the interaction to feel inviting, and the person using it to feel in control. The aim is an experience people want to return to in their own work. Beautiful design can make depth approachable, while keeping the reasoning, sources, and moments for human review within reach."
+      ],
+      "tags": [
+        "Clarity",
+        "Agency",
+        "Trust",
+        "Engagement"
+      ],
+      "bridge": "The work comes full circle: making a place someone wants to enter.",
+      "hook": "What happens when you step inside?",
+      "sceneDescription": "Face the hidden complexity. A symbolic maker interacts with a clearly outlined complexity above a woven landscape.",
+      "beats": [
+        {
+          "action": "Face the hidden complexity",
+          "caption": "There is depth behind an experience that feels simple.",
+          "pose": "connect",
+          "prop": "complexity",
+          "tone": "build",
+          "meaning": "Depth",
+          "energy": 1,
+          "shot": "connect"
+        },
+        {
+          "action": "Shape a clear way in",
+          "caption": "Design gives that complexity a human starting point.",
+          "pose": "shape",
+          "prop": "interface",
+          "tone": "dream",
+          "meaning": "Design",
+          "energy": 1,
+          "shot": "draft"
+        },
+        {
+          "action": "Give the person agency",
+          "caption": "The next step should feel understandable and in their control.",
+          "pose": "offer",
+          "prop": "choice",
+          "tone": "human",
+          "meaning": "Agency",
+          "energy": 1,
+          "shot": "detail"
+        },
+        {
+          "action": "Make the experience inviting",
+          "caption": "Useful enough to work. Engaging enough to want to return.",
+          "pose": "welcome",
+          "prop": "recipient",
+          "tone": "care",
+          "meaning": "AI experiences",
+          "energy": 1,
+          "shot": "reveal"
+        }
+      ]
+    },
+    {
+      "id": "work-heading",
+      "scene": 8,
+      "eyebrow": "08 / OPEN TO EXPLORATION",
+      "title": "Now, step inside.",
+      "lede": "HolyMind interactive portfolio",
+      "paragraphs": [
+        "Explore a browser-based demonstration of how intentions, workflow boundaries, and interface choices can work together. Try three illustrative scenarios, inspect fictional source-to-output examples, and carry your choices into a planning brief.",
+        "This is a portfolio demonstration, not a live agent service or a claimed client result. The public project makes its browser behavior inspectable; client source code, private records, and confidential documents are not published here."
+      ],
+      "tags": [
+        "Input",
+        "Workflow",
+        "Output"
+      ],
+      "bridge": "The experience grows from years of hands-on work.",
+      "hook": "See the work and responsibilities behind the story.",
+      "sceneDescription": "Open the door. A symbolic maker interacts with a clearly outlined interface above a woven landscape.",
+      "beats": [
+        {
+          "action": "Open the door",
+          "caption": "An experience becomes meaningful when someone can enter it.",
+          "pose": "invite",
+          "prop": "interface",
+          "tone": "care",
+          "meaning": "Invitation",
+          "energy": 1,
+          "shot": "reveal"
+        },
+        {
+          "action": "Make the work inspectable",
+          "caption": "Explore the demonstration. Look beneath the surface.",
+          "pose": "inspect",
+          "prop": "review",
+          "tone": "build",
+          "meaning": "Transparency",
+          "energy": 1,
+          "shot": "detail"
+        },
+        {
+          "action": "Offer the next possibility",
+          "caption": "This story continues through what we choose to build next.",
+          "pose": "offer",
+          "prop": "recipient",
+          "tone": "human",
+          "meaning": "Possibility",
+          "energy": 1,
+          "shot": "reveal"
+        }
+      ]
+    }
+  ],
+  "workPaths": [
+    {
+      "id": "review",
+      "title": "Make work reviewable",
+      "hook": "From a repeated task to a decision someone can inspect.",
+      "tone": "care",
+      "steps": [
+        [
+          "Problem",
+          "A repetitive request still needs an accountable owner and a clear review boundary."
+        ],
+        [
+          "Design choice",
+          "Make the draft, missing information and next decision visible together."
+        ],
+        [
+          "Workflow",
+          "Explore the repetitive-work scenario, inspect the example input, then review the proposed output."
+        ]
+      ],
+      "links": [
+        [
+          "Try the workbench",
+          "/#workbench"
+        ],
+        [
+          "Read the workflow",
+          "/work/holymind-portfolio/#workflow"
+        ]
+      ]
+    },
+    {
+      "id": "sources",
+      "title": "Keep the source in sight",
+      "hook": "From scattered information to an answer you can trace.",
+      "tone": "build",
+      "steps": [
+        [
+          "Problem",
+          "A confident answer is difficult to assess when its supporting information is hidden."
+        ],
+        [
+          "Design choice",
+          "Keep claims connected to approved excerpts and leave unsupported facts unanswered."
+        ],
+        [
+          "Workflow",
+          "Open the scattered-knowledge scenario and follow a draft claim back to its fictional source."
+        ]
+      ],
+      "links": [
+        [
+          "Inspect an example",
+          "/#workbench"
+        ],
+        [
+          "Explore source boundaries",
+          "/work/holymind-portfolio/#workflow"
+        ]
+      ]
+    },
+    {
+      "id": "intent",
+      "title": "Carry intent into the next step",
+      "hook": "From an interesting capability to a brief with a purpose.",
+      "tone": "dream",
+      "steps": [
+        [
+          "Problem",
+          "Exploring a collection should lead somewhere useful when a capability catches your attention."
+        ],
+        [
+          "Design choice",
+          "Keep the visitor’s scenario and chosen skill connected to the next conversation."
+        ],
+        [
+          "Workflow",
+          "Choose a scenario, explore a HolyMind skill, then carry that skill into the starting brief."
+        ]
+      ],
+      "links": [
+        [
+          "Explore the skill collection",
+          "/#framework"
+        ],
+        [
+          "See how the brief works",
+          "/work/holymind-portfolio/#choices"
+        ]
+      ]
+    }
+  ],
+  "closingQuote": "I still build places for people. The medium has changed."
+}

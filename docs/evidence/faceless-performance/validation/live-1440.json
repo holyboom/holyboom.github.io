@@ -1,0 +1,206 @@
+[
+  {
+    "requestedTimeline": 2,
+    "actualTimeline": 2,
+    "file": "live-1440-t2.00.png",
+    "current": 1.3497999999999999,
+    "camera": {
+      "yaw": 0.5800000000000001,
+      "pitch": 0.3,
+      "distance": 5.25,
+      "target": [
+        -0.25,
+        -0.24,
+        0.22
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 6.16,
+    "actualTimeline": 6.159900204744651,
+    "file": "live-1440-t6.16.png",
+    "current": 2.7882,
+    "camera": {
+      "yaw": 0.43609207922236165,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 6.48,
+    "actualTimeline": 6.476930359581248,
+    "file": "live-1440-t6.48.png",
+    "current": 2.8383333333333334,
+    "camera": {
+      "yaw": 0.43021304983988223,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 12.16,
+    "actualTimeline": 12.15990020474465,
+    "file": "live-1440-t12.16.png",
+    "current": 4.7882,
+    "camera": {
+      "yaw": 0.3190792077763837,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 13,
+    "actualTimeline": 13,
+    "file": "live-1440-t13.00.png",
+    "current": 5.009625839134986,
+    "camera": {
+      "yaw": 0.4799999999999999,
+      "pitch": 0.21,
+      "distance": 7.25,
+      "target": [
+        -0.12,
+        -0.22999999999999998,
+        0.15
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 14,
+    "actualTimeline": 14,
+    "file": "live-1440-t14.00.png",
+    "current": 5.21015439351679,
+    "camera": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.21,
+        0.25
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 15,
+    "actualTimeline": 15,
+    "file": "live-1440-t15.00.png",
+    "current": 5.409745898579052,
+    "camera": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.21,
+        0.25
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16,
+    "actualTimeline": 16,
+    "file": "live-1440-t16.00.png",
+    "current": 5.610274452960856,
+    "camera": {
+      "yaw": 0.44,
+      "pitch": 0.17584316292005944,
+      "distance": 5.153920926998514,
+      "target": [
+        -0.2627712247199604,
+        -0.22792158146002972,
+        0.24515035674006935
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16.3,
+    "actualTimeline": 16.298815872808913,
+    "file": "live-1440-t16.30.png",
+    "current": 5.68711249716323,
+    "camera": {
+      "yaw": 0.16096548918262266,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16.48,
+    "actualTimeline": 16.477418394467776,
+    "file": "live-1440-t16.48.png",
+    "current": 5.703042335595429,
+    "camera": {
+      "yaw": 0.018773363263638154,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 17,
+    "actualTimeline": 17,
+    "file": "live-1440-t17.00.png",
+    "current": 5.809865958023119,
+    "camera": {
+      "yaw": -0.42,
+      "pitch": 0.020000000000000004,
+      "distance": 6.200000000000001,
+      "target": [
+        -0.3,
+        -0.1,
+        0.2
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 25,
+    "actualTimeline": 25,
+    "file": "live-1440-t25.00.png",
+    "current": 7.762574221447,
+    "camera": {
+      "yaw": 0.2,
+      "pitch": 0.19,
+      "distance": 6.349999999999999,
+      "target": [
+        -0.08000000000000002,
+        -0.08,
+        0.2
+      ],
+      "focal": 6
+    }
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "requestedTimeline": 2,
+    "actualTimeline": 2,
+    "file": "live-390-t2.00.png",
+    "current": 1.349658526674032,
+    "camera": {
+      "yaw": 0.307,
+      "pitch": 0.20403268383857093,
+      "distance": 6.0278242196697285,
+      "target": [
+        -0.2407084444581273,
+        -0.2020708376468337,
+        0.20141688891625464
+      ],
+      "focal": 6,
+      "orbitId": "drawing-side",
+      "orbitWeight": 0.8910085449034891,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 2.28,
+    "actualTimeline": 2.278776523799862,
+    "file": "live-390-t2.28.png",
+    "current": 1.475360669824459,
+    "camera": {
+      "yaw": 0.9461786740071394,
+      "pitch": 0.2,
+      "distance": 6.1,
+      "target": [
+        -0.24,
+        -0.2,
+        0.2
+      ],
+      "focal": 6,
+      "orbitId": "drawing-side",
+      "orbitWeight": 1,
+      "locked": true
+    }
+  },
+  {
+    "requestedTimeline": 2.32,
+    "actualTimeline": 2.320387590359167,
+    "file": "live-390-t2.32.png",
+    "current": 1.4818625048149983,
+    "camera": {
+      "yaw": 0.9709757409394326,
+      "pitch": 0.2,
+      "distance": 6.1,
+      "target": [
+        -0.24,
+        -0.2,
+        0.2
+      ],
+      "focal": 6,
+      "orbitId": "drawing-side",
+      "orbitWeight": 1,
+      "locked": true
+    }
+  },
+  {
+    "requestedTimeline": 2.42,
+    "actualTimeline": 2.4220537704735983,
+    "file": "live-390-t2.42.png",
+    "current": 1.4970334531262568,
+    "camera": {
+      "yaw": 0.9979689269368621,
+      "pitch": 0.2,
+      "distance": 6.1,
+      "target": [
+        -0.24,
+        -0.2,
+        0.2
+      ],
+      "focal": 6,
+      "orbitId": "drawing-side",
+      "orbitWeight": 1,
+      "locked": true
+    }
+  },
+  {
+    "requestedTimeline": 2.58,
+    "actualTimeline": 2.5790188484946275,
+    "file": "live-390-t2.58.png",
+    "current": 1.5197898755931445,
+    "camera": {
+      "yaw": 1,
+      "pitch": 0.2,
+      "distance": 6.1,
+      "target": [
+        -0.24,
+        -0.2,
+        0.2
+      ],
+      "focal": 6,
+      "orbitId": "drawing-side",
+      "orbitWeight": 1,
+      "locked": true
+    }
+  },
+  {
+    "requestedTimeline": 2.72,
+    "actualTimeline": 2.722207109104742,
+    "file": "live-390-t2.72.png",
+    "current": 1.5414626588949418,
+    "camera": {
+      "yaw": 1,
+      "pitch": 0.2,
+      "distance": 6.1,
+      "target": [
+        -0.24,
+        -0.2,
+        0.2
+      ],
+      "focal": 6,
+      "orbitId": "drawing-side",
+      "orbitWeight": 1,
+      "locked": true
+    }
+  },
+  {
+    "requestedTimeline": 6.16,
+    "actualTimeline": 6.158523971179625,
+    "file": "live-390-t6.16.png",
+    "current": 2.7879367791542076,
+    "camera": {
+      "yaw": 0.21347658357704935,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 6.48,
+    "actualTimeline": 6.479527083296095,
+    "file": "live-390-t6.48.png",
+    "current": 2.838708732531885,
+    "camera": {
+      "yaw": 0.2096072943799852,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 12.16,
+    "actualTimeline": 12.163060013776287,
+    "file": "live-390-t12.16.png",
+    "current": 4.788801222081138,
+    "camera": {
+      "yaw": 0.13778547978829603,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 13,
+    "actualTimeline": 13,
+    "file": "live-390-t13.00.png",
+    "current": 5.010250234583601,
+    "camera": {
+      "yaw": 0.5653978975364767,
+      "pitch": 0.12,
+      "distance": 6.9,
+      "target": [
+        -0.26,
+        -0.22,
+        0.16
+      ],
+      "focal": 6,
+      "orbitId": "conviction-rear",
+      "orbitWeight": 1,
+      "locked": true
+    }
+  },
+  {
+    "requestedTimeline": 14,
+    "actualTimeline": 14,
+    "file": "live-390-t14.00.png",
+    "current": 5.2096553523101505,
+    "camera": {
+      "yaw": 0.20300000000000004,
+      "pitch": 0.1131199084727416,
+      "distance": 6.141053487789763,
+      "target": [
+        -0.25285528956784703,
+        -0.2091506248993233,
+        0.19836974120971032
+      ],
+      "focal": 6,
+      "orbitId": "conviction-rear",
+      "orbitWeight": 0.4707621902108923,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 15,
+    "actualTimeline": 15,
+    "file": "live-390-t15.00.png",
+    "current": 5.409987935700545,
+    "camera": {
+      "yaw": 0.203,
+      "pitch": 0.107,
+      "distance": 5.536408954407982,
+      "target": [
+        -0.2465,
+        -0.19949999999999998,
+        0.2325
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 16,
+    "actualTimeline": 16,
+    "file": "live-390-t16.00.png",
+    "current": 5.610320519090939,
+    "camera": {
+      "yaw": 0.21600000000000003,
+      "pitch": 0.15626617251231584,
+      "distance": 5.404492277248812,
+      "target": [
+        -0.25482255165845613,
+        -0.2111330862561579,
+        0.2293105345977018
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 16.3,
+    "actualTimeline": 16.300819042756906,
+    "file": "live-390-t16.30.png",
+    "current": 5.687300169190025,
+    "camera": {
+      "yaw": 0.03358985732812303,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 16.48,
+    "actualTimeline": 16.477703714224482,
+    "file": "live-390-t16.48.png",
+    "current": 5.70306708547538,
+    "camera": {
+      "yaw": -0.05794467172707177,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 17,
+    "actualTimeline": 17,
+    "file": "live-390-t17.00.png",
+    "current": 5.809725636817489,
+    "camera": {
+      "yaw": -0.34299999999999997,
+      "pitch": 0.05499999999999999,
+      "distance": 6.0933033864672925,
+      "target": [
+        -0.27899999999999997,
+        -0.128,
+        0.2
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  },
+  {
+    "requestedTimeline": 25,
+    "actualTimeline": 25,
+    "file": "live-390-t25.00.png",
+    "current": 7.762336544896376,
+    "camera": {
+      "yaw": 0.06,
+      "pitch": 0.1655,
+      "distance": 6.188724152823644,
+      "target": [
+        -0.136,
+        -0.11499999999999999,
+        0.2
+      ],
+      "focal": 6,
+      "orbitId": null,
+      "orbitWeight": 0,
+      "locked": false
+    }
+  }
+]

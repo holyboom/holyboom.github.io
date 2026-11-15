@@ -1,0 +1,18 @@
+{
+  "samples": 41,
+  "stableStrandCount": 777,
+  "allowedChangedParts": [
+    "handL",
+    "handR",
+    "forearmL",
+    "forearmR"
+  ],
+  "unexpectedGeometryChanges": [],
+  "mobileMissingEssentialOutlines": [],
+  "unchanged": [
+    "rig poses and contacts",
+    "camera",
+    "wrist light trail",
+    "work and scenery"
+  ]
+}

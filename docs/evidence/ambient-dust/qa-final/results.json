@@ -1,0 +1,120 @@
+{
+  "release": "living-dust-v8",
+  "source": "/workspace/profile-site/assets/profile/geometry.js",
+  "sourceHash": "0a29e9124d56e11aa858869396be72cb645d70bb61430724de37d8a95b999f5b",
+  "baseline": "/tmp/profile-before-dust.cjs",
+  "baselineHash": "64c64227e339387ed99516e3370eb9ee7816241fe37f5f012554f480bd3f9a82",
+  "samples": 421,
+  "checks": [
+    {
+      "name": "actual-resolver-inverse-matches-requested-timeline",
+      "pass": true
+    },
+    {
+      "name": "dust-retraces-identically-in-reverse",
+      "pass": true
+    },
+    {
+      "name": "dust-is-independent-of-scrubbing-history",
+      "pass": true
+    },
+    {
+      "name": "surroundings-have-finite-valid-geometry",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "particle-budget-never-exceeds-120",
+      "pass": true,
+      "data": {
+        "maxParticles": 120,
+        "maxMobileParticles": 60,
+        "failures": []
+      }
+    },
+    {
+      "name": "particles-retain-source-identities-and-mobile-flags",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "dust-stays-near-the-background-pieces",
+      "pass": true,
+      "data": {
+        "maxCoordinate": 1.8932140337800833,
+        "maxSpread": 0.4704526151793363,
+        "failures": []
+      }
+    },
+    {
+      "name": "fragments-contract-into-a-fine-cloud",
+      "pass": true,
+      "data": {
+        "cloudSizes": {
+          "2": 0.03492297854419558,
+          "4": 0.0023255925151015335,
+          "9": 0.0021813885828217494,
+          "12": 0.013006336994330221,
+          "14": 0.002818243374255096,
+          "17": 0.01116804236541578,
+          "19": 0.018622549500853038,
+          "22": 0.01352982014646434,
+          "24": 0.0026885860738374502
+        },
+        "oversizedFragments": []
+      }
+    },
+    {
+      "name": "dust-is-visible-during-some-middle-transitions",
+      "pass": true,
+      "data": {
+        "activeSamples": 36
+      }
+    },
+    {
+      "name": "dust-is-invisible-at-transition-ends",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "all-integer-beats-have-no-visible-dust",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "undissolved-background-matches-baseline-at-integer-beats",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "hero-remains-unchanged",
+      "pass": true
+    },
+    {
+      "name": "actor-work-camera-and-light-match-baseline-throughout",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "rendered-body-and-gravity-field-match-baseline",
+      "pass": true,
+      "data": {
+        "samples": 61,
+        "failures": []
+      }
+    },
+    {
+      "name": "opening-the-work-layers-does-not-change-existing-content",
+      "pass": true
+    },
+    {
+      "name": "dust-and-surroundings-have-no-sampled-transition-cuts",
+      "pass": true,
+      "data": {
+        "maxPointStep": 0.00012565390123038149,
+        "maxAlphaStep": 0.0000705356637686616,
+        "failures": []
+      }
+    }
+  ]
+}

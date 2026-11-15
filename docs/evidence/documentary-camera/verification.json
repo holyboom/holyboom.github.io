@@ -1,0 +1,36 @@
+{
+  "release": "living-documentary-v13",
+  "suites": [
+    {
+      "name": "profile",
+      "checks": 59,
+      "failed": 0
+    },
+    {
+      "name": "camera",
+      "checks": 18,
+      "failed": 0
+    },
+    {
+      "name": "performance",
+      "checks": 69,
+      "failed": 0
+    },
+    {
+      "name": "orbits",
+      "checks": 42,
+      "failed": 0
+    },
+    {
+      "name": "validation",
+      "checks": 28,
+      "failed": 0
+    }
+  ],
+  "captures": 40,
+  "directionalTakes": 12,
+  "loadedScripts": 24,
+  "sourceBuildCaptureHashesMatch": true,
+  "browserErrors": [],
+  "publicDeployment": false
+}

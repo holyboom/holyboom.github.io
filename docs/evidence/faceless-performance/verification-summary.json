@@ -1,0 +1,65 @@
+[
+  {
+    "suite": "Performance",
+    "passed": 69,
+    "total": 69,
+    "errors": [],
+    "evidence": "round-3-delivery/results.json"
+  },
+  {
+    "suite": "Camera",
+    "passed": 18,
+    "total": 18,
+    "errors": [],
+    "evidence": "round-3-delivery/camera/results.json"
+  },
+  {
+    "suite": "Chromium",
+    "passed": 59,
+    "total": 59,
+    "errors": [],
+    "evidence": "round-3-delivery/profile-chromium/results.json"
+  },
+  {
+    "suite": "Firefox",
+    "passed": 59,
+    "total": 59,
+    "errors": [],
+    "evidence": "round-3-delivery/profile-firefox/results.json"
+  },
+  {
+    "suite": "WebKit",
+    "passed": 59,
+    "total": 59,
+    "errors": [],
+    "evidence": "round-3-delivery/profile-webkit/results.json"
+  },
+  {
+    "suite": "Keyboard/reflow Chromium",
+    "passed": 27,
+    "total": 27,
+    "errors": [],
+    "evidence": "round-3-final/accessibility-chromium/results.json"
+  },
+  {
+    "suite": "Keyboard/reflow Firefox",
+    "passed": 27,
+    "total": 27,
+    "errors": [],
+    "evidence": "round-3-final/accessibility-firefox/results.json"
+  },
+  {
+    "suite": "Keyboard/reflow WebKit",
+    "passed": 27,
+    "total": 27,
+    "errors": [],
+    "evidence": "round-3-final/accessibility-webkit/results.json"
+  },
+  {
+    "suite": "English/Thai/main showcase",
+    "passed": 42,
+    "total": 42,
+    "errors": [],
+    "evidence": "round-3-final/public-regression/result.json"
+  }
+]

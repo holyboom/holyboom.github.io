@@ -1,0 +1,2916 @@
+{
+  "release": "living-story-soul-v10",
+  "captures": [
+    {
+      "view": "desktop",
+      "name": "drawing",
+      "file": "desktop-drawing.png",
+      "position": 1.3668666666666667,
+      "track": 2.1006,
+      "timeline": 2,
+      "camera": {
+        "yaw": 0.5800000145460403,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "desktop",
+      "name": "rear-hold",
+      "file": "desktop-rear-hold.png",
+      "position": 5.063974699668372,
+      "track": 13.31987349834186,
+      "timeline": 13,
+      "camera": {
+        "yaw": 2.3500000000000005,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "desktop",
+      "name": "fracture",
+      "file": "desktop-fracture.png",
+      "position": 5.224210133309907,
+      "track": 14.121050666549536,
+      "timeline": 14,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.10042157935014509,
+        "distance": 5.37876919624484,
+        "target": [
+          -0.25021078967507254,
+          -0.21021078967507253,
+          0.2481028929243471
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 0.021078967507254465,
+        "locked": false
+      }
+    },
+    {
+      "view": "desktop",
+      "name": "gathering",
+      "file": "desktop-gathering.png",
+      "position": 6.389558547156062,
+      "track": 19.558234188624247,
+      "timeline": 19.57642695299876,
+      "camera": {
+        "yaw": -0.9470978747529402,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "desktop",
+      "name": "skill-hold",
+      "file": "desktop-skill-hold.png",
+      "position": 6.544692210332528,
+      "track": 20.17876884133011,
+      "timeline": 20,
+      "camera": {
+        "yaw": -1.08,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "desktop",
+      "name": "experience-hold",
+      "file": "desktop-experience-hold.png",
+      "position": 7.287208110759838,
+      "track": 23.148832443039353,
+      "timeline": 23,
+      "camera": {
+        "yaw": 1.05,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "mobile",
+      "name": "drawing",
+      "file": "mobile-drawing.png",
+      "position": 1.3669967533154703,
+      "track": 2.100990259946411,
+      "timeline": 2,
+      "camera": {
+        "yaw": 0.3070000905098385,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "mobile",
+      "name": "rear-hold",
+      "file": "mobile-rear-hold.png",
+      "position": 5.0640432430865765,
+      "track": 13.320216215432882,
+      "timeline": 13,
+      "camera": {
+        "yaw": 2.1,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "mobile",
+      "name": "fracture",
+      "file": "mobile-fracture.png",
+      "position": 5.223567337267816,
+      "track": 14.117836686339082,
+      "timeline": 14,
+      "camera": {
+        "yaw": 0.203,
+        "pitch": 0.10736632815593687,
+        "distance": 5.570865497676072,
+        "target": [
+          -0.24688041770039598,
+          -0.2000776713228235,
+          0.23045701605342903
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 0.02817908891822063,
+        "locked": false
+      }
+    },
+    {
+      "view": "mobile",
+      "name": "gathering",
+      "file": "mobile-gathering.png",
+      "position": 6.390010300948529,
+      "track": 19.560041203794118,
+      "timeline": 19.58055096841135,
+      "camera": {
+        "yaw": -0.8948472599203239,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "mobile",
+      "name": "skill-hold",
+      "file": "mobile-skill-hold.png",
+      "position": 6.544899805086141,
+      "track": 20.179599220344564,
+      "timeline": 20,
+      "camera": {
+        "yaw": -0.9999999999999999,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "mobile",
+      "name": "experience-hold",
+      "file": "mobile-experience-hold.png",
+      "position": 7.287350973914459,
+      "track": 23.149403895657837,
+      "timeline": 23,
+      "camera": {
+        "yaw": 0.98,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "art",
+      "name": "drawing",
+      "file": "art-drawing.png",
+      "position": 1.3669333333333333,
+      "track": 2.1008,
+      "timeline": 2,
+      "camera": {
+        "yaw": 0.5800000344548548,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "art",
+      "name": "rear-hold",
+      "file": "art-rear-hold.png",
+      "position": 5.063987942553222,
+      "track": 13.31993971276611,
+      "timeline": 13,
+      "camera": {
+        "yaw": 2.3500000000000005,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "art",
+      "name": "fracture",
+      "file": "art-fracture.png",
+      "position": 5.224444734286915,
+      "track": 14.122223671434575,
+      "timeline": 14,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.10037584021509788,
+        "distance": 5.375640423307837,
+        "target": [
+          -0.2501879201075489,
+          -0.21018792010754891,
+          0.2483087190320596
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 0.018792010754893562,
+        "locked": false
+      }
+    },
+    {
+      "view": "art",
+      "name": "gathering",
+      "file": "art-gathering.png",
+      "position": 6.390085309834068,
+      "track": 19.56034123933627,
+      "timeline": 19.581235240008994,
+      "camera": {
+        "yaw": -0.9521023193434426,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "art",
+      "name": "skill-hold",
+      "file": "art-skill-hold.png",
+      "position": 6.54508046623543,
+      "track": 20.18032186494172,
+      "timeline": 20,
+      "camera": {
+        "yaw": -1.08,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "view": "art",
+      "name": "experience-hold",
+      "file": "art-experience-hold.png",
+      "position": 7.287830050007018,
+      "track": 23.15132020002807,
+      "timeline": 23,
+      "camera": {
+        "yaw": 1.05,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    }
+  ],
+  "sweeps": [
+    {
+      "from": 12.85,
+      "to": 14.7,
+      "direction": 1,
+      "rows": [
+        {
+          "position": 4.9504,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.2848990907891171,
+            "pitch": 0.12008779251927003,
+            "distance": 6.891772841901071,
+            "target": [
+              -0.26081972757118027,
+              -0.21952936513096527,
+              0.16046818824656428
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.9751171847569915,
+            "locked": false
+          }
+        },
+        {
+          "position": 4.962154155281305,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.2806477608222051,
+            "pitch": 0.12007769114259417,
+            "distance": 6.899454907618709,
+            "target": [
+              -0.2599748377117918,
+              -0.2199601362583291,
+              0.16003915378816666
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.9967445000754969,
+            "locked": false
+          }
+        },
+        {
+          "position": 4.978282399152258,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.28116344581242964,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 4.995861355157276,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.3675962850870026,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.00849028706504,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.6810020694977231,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.019630135217317,
+          "timeline": 13,
+          "camera": {
+            "yaw": 1.1942866346839303,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.030342266721989,
+          "timeline": 13,
+          "camera": {
+            "yaw": 1.7275414190782001,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.041392363068231,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.146838301323605,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.0525772496928925,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.3334297377085464,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.063699103779999,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.3500000000000005,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.074828863569955,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.3500000000000005,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.086886352037587,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.3500000000000005,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.098015340551234,
+          "timeline": 13.016925035185638,
+          "camera": {
+            "yaw": 2.3406935612568995,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.108684304769402,
+          "timeline": 13.117687761891146,
+          "camera": {
+            "yaw": 2.2515796719401697,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.119483258591269,
+          "timeline": 13.284961967413672,
+          "camera": {
+            "yaw": 2.033082790029317,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.131864948453457,
+          "timeline": 13.51663089690571,
+          "camera": {
+            "yaw": 1.6447684851880906,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.1443423639914885,
+          "timeline": 13.746573681741632,
+          "camera": {
+            "yaw": 1.1892855090659995,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.153986450691717,
+          "timeline": 13.890859861906627,
+          "camera": {
+            "yaw": 0.8651516165134245,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.164749949396586,
+          "timeline": 13.987018630804279,
+          "camera": {
+            "yaw": 0.594710262383753,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.174394573934664,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.4614861438572162,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.187977377383852,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.4200000002373332,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.199092326279701,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.41999999999999993,
+            "pitch": 0.11762109036324166,
+            "distance": 6.6943154444871755,
+            "target": [
+              -0.25881054518162083,
+              -0.21881054518162082,
+              0.1707050933654125
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.8810545181620832,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.209775082364281,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.109308590404028,
+            "distance": 6.02256589607093,
+            "target": [
+              -0.254654295202014,
+              -0.21465429520201398,
+              0.20811134318187402
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.4654295202013998,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.220895788871053,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.10143215680020815,
+            "distance": 5.448363971594098,
+            "target": [
+              -0.25071607840010407,
+              -0.21071607840010406,
+              0.24355529439906337
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.07160784001040688,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.232502099359421,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.245511017308092,
+          "timeline": 14.00523898859384,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.257999633468514,
+          "timeline": 14.052203717101971,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.267511258918431,
+          "timeline": 14.115400179780085,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.279794369389805,
+          "timeline": 14.223743622577018,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.2908821368970385,
+          "timeline": 14.339663153175865,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.302990067717016,
+          "timeline": 14.476815865355903,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.314071803569037,
+          "timeline": 14.603995013559173,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.325179052747453,
+          "timeline": 14.725355212511088,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.336616411439722,
+          "timeline": 14.836034893071748,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "from": 12.85,
+      "to": 14.7,
+      "direction": -1,
+      "rows": [
+        {
+          "position": 5.340381722533802,
+          "timeline": 14.867929128277549,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.3318914085935605,
+          "timeline": 14.79258273959964,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.321193907189025,
+          "timeline": 14.682986837331736,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.308349286474536,
+          "timeline": 14.538611410748521,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.296165790336578,
+          "timeline": 14.398694440638247,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.2850352762761705,
+          "timeline": 14.276881993527628,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.274498133533298,
+          "timeline": 14.173888645148168,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.261959825287479,
+          "timeline": 14.075963443715034,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.251179856784272,
+          "timeline": 14.020915368433979,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.239816949415421,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.229340137432378,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.10000075744504928,
+            "distance": 5.350051550934018,
+            "target": [
+              -0.2500003787225246,
+              -0.21000037872252464,
+              0.24999659149727826
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.00003787225246365544,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.216434278418346,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.10389598592188541,
+            "distance": 5.621836234918973,
+            "target": [
+              -0.2519479929609427,
+              -0.2119479929609427,
+              0.23246806335151568
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.19479929609427016,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.204654179994707,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.41999999999999993,
+            "pitch": 0.11377083820007952,
+            "distance": 6.374328381405117,
+            "target": [
+              -0.25688541910003976,
+              -0.21688541910003975,
+              0.18803122809964212
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.6885419100039765,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.196372974982143,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.41999999999999993,
+            "pitch": 0.11885145958904883,
+            "distance": 6.7999179808834045,
+            "target": [
+              -0.25942572979452444,
+              -0.21942572979452443,
+              0.16516843184928023
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.9425729794524419,
+            "locked": false
+          }
+        },
+        {
+          "position": 5.181829165593145,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.4243748371084426,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.170007202894763,
+          "timeline": 14,
+          "camera": {
+            "yaw": 0.50896713731504,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.159026761648724,
+          "timeline": 13.946193925329796,
+          "camera": {
+            "yaw": 0.723717766353692,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.147749423167648,
+          "timeline": 13.802300618414156,
+          "camera": {
+            "yaw": 1.0687202562323388,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.137538813594344,
+          "timeline": 13.624568150056398,
+          "camera": {
+            "yaw": 1.4389238211249118,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.1278180680174374,
+          "timeline": 13.438944775038875,
+          "camera": {
+            "yaw": 1.7837931408157108,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.114003996329822,
+          "timeline": 13.193845021196665,
+          "camera": {
+            "yaw": 2.160377927558617,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.103150633826437,
+          "timeline": 13.055466857071343,
+          "camera": {
+            "yaw": 2.3122474600545417,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.090733966633068,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.3499919829192426,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.078184032995471,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.3500000000000005,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.064262120173182,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.3500000000000005,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.053790013056007,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.3400460698085457,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.041129541646981,
+          "timeline": 13,
+          "camera": {
+            "yaw": 2.1394269888341944,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.028719237660312,
+          "timeline": 13,
+          "camera": {
+            "yaw": 1.6510598396765699,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.019726938250974,
+          "timeline": 13,
+          "camera": {
+            "yaw": 1.1991934394239745,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 5.006782347252668,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.6169397763595865,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 4.991057422674576,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.3254749416428143,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 4.970510880230351,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.2800113632403384,
+            "pitch": 0.12000264060413691,
+            "distance": 6.9000005868524745,
+            "target": [
+              -0.25999699493531714,
+              -0.2199997355165414,
+              0.1600002572692309
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.999943096410225,
+            "locked": false
+          }
+        },
+        {
+          "position": 4.952431676992966,
+          "timeline": 13,
+          "camera": {
+            "yaw": 0.2837987067802604,
+            "pitch": 0.1201095204850338,
+            "distance": 6.893970167758363,
+            "target": [
+              -0.2605508976457705,
+              -0.2196491597188629,
+              0.16034824631579603
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.9807515346040477,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "from": 19.12,
+      "to": 20.6,
+      "direction": 1,
+      "rows": [
+        {
+          "position": 6.28008874722665,
+          "timeline": 19,
+          "camera": {
+            "yaw": 0.27999999688469573,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.286519782222073,
+          "timeline": 19,
+          "camera": {
+            "yaw": 0.27884555643432757,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.2988791433399784,
+          "timeline": 19,
+          "camera": {
+            "yaw": 0.2555392354739604,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.308909378916846,
+          "timeline": 19.008688363447867,
+          "camera": {
+            "yaw": 0.20188004205265717,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.322251323409516,
+          "timeline": 19.051115513431075,
+          "camera": {
+            "yaw": 0.07344944184119934,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.333162023446215,
+          "timeline": 19.107940770902,
+          "camera": {
+            "yaw": -0.07570420321327836,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.344084048561346,
+          "timeline": 19.18085763853297,
+          "camera": {
+            "yaw": -0.2533195422103141,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.359372601606126,
+          "timeline": 19.302935201000366,
+          "camera": {
+            "yaw": -0.5201408958960199,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.373200891003243,
+          "timeline": 19.42594359224327,
+          "camera": {
+            "yaw": -0.7447474577614783,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.384994974055223,
+          "timeline": 19.534544511001307,
+          "camera": {
+            "yaw": -0.8995419435294638,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.39485819129243,
+          "timeline": 19.62443952453067,
+          "camera": {
+            "yaw": -0.9927609041155576,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.407119144452254,
+          "timeline": 19.730723169857086,
+          "camera": {
+            "yaw": -1.0589812963205336,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.417813242028358,
+          "timeline": 19.814724212442147,
+          "camera": {
+            "yaw": -1.0784647689758762,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.428816833696625,
+          "timeline": 19.888915565569718,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.442210269844502,
+          "timeline": 19.957123160958783,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.457206591890518,
+          "timeline": 19.99688577498361,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.466256164683576,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.478267746435375,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.489769066931403,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.500266155115316,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.510791137140575,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.520764232260798,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.5358672584495165,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.548039291612132,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.56034621352302,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.0795854788035548,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.571337215946528,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.069347377371588,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.5838063482496265,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.0284793809266124,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.592025480172717,
+          "timeline": 20.000811131471384,
+          "camera": {
+            "yaw": -0.9796817326380305,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.604408795054417,
+          "timeline": 20.038250727853114,
+          "camera": {
+            "yaw": -0.8721926751175693,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.616518530688256,
+          "timeline": 20.120298473736014,
+          "camera": {
+            "yaw": -0.7322809570744715,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.628805904040949,
+          "timeline": 20.23747498572643,
+          "camera": {
+            "yaw": -0.5655264262401494,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.638518291211795,
+          "timeline": 20.346346863520896,
+          "camera": {
+            "yaw": -0.42518999572955235,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        }
+      ]
+    },
+    {
+      "from": 19.12,
+      "to": 20.6,
+      "direction": -1,
+      "rows": [
+        {
+          "position": 6.650077185087966,
+          "timeline": 20.48564075621068,
+          "camera": {
+            "yaw": -0.25987387601592027,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.642271055678531,
+          "timeline": 20.3908413282362,
+          "camera": {
+            "yaw": -0.3707574002066254,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.629642798809185,
+          "timeline": 20.24639734839324,
+          "camera": {
+            "yaw": -0.5535973578370545,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.61808523039281,
+          "timeline": 20.133588183530254,
+          "camera": {
+            "yaw": -0.7121436991813608,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.606444598758206,
+          "timeline": 20.04922415323689,
+          "camera": {
+            "yaw": -0.8508572214287253,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.595429247506993,
+          "timeline": 20.0057187735377,
+          "camera": {
+            "yaw": -0.9541259809872207,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.583356754054775,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.0306254902695335,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.5724670354664125,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.0671241142310781,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.560312170967287,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.0795932182297114,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.548631646275441,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.534796108009179,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.521945498669788,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.510290511033542,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.504485839999586,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.483410550965248,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.47221437152649,
+          "timeline": 20,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.461633740011454,
+          "timeline": 19.999915049712676,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.450403977445333,
+          "timeline": 19.984202264544496,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.438092200383603,
+          "timeline": 19.939095503958715,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.427218523717608,
+          "timeline": 19.879050552541855,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.41622026855265,
+          "timeline": 19.80286974811746,
+          "camera": {
+            "yaw": -1.077248460879778,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.404287003607362,
+          "timeline": 19.706950930468913,
+          "camera": {
+            "yaw": -1.048366241324679,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.392820376276077,
+          "timeline": 19.606081514628244,
+          "camera": {
+            "yaw": -0.976438617586525,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.3820569211842555,
+          "timeline": 19.50744825835368,
+          "camera": {
+            "yaw": -0.8650711822666024,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.369620318986395,
+          "timeline": 19.393382215365897,
+          "camera": {
+            "yaw": -0.69007587217194,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.357324677952468,
+          "timeline": 19.285534144319406,
+          "camera": {
+            "yaw": -0.48459761623951897,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.346303107712339,
+          "timeline": 19.197306086737516,
+          "camera": {
+            "yaw": -0.2915498016466183,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.334946590700629,
+          "timeline": 19.11885490580044,
+          "camera": {
+            "yaw": -0.10315390012527742,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.325560083586103,
+          "timeline": 19.066439922173895,
+          "camera": {
+            "yaw": 0.031966658130897996,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.309266658495049,
+          "timeline": 19.00938486890745,
+          "camera": {
+            "yaw": 0.19929472620503483,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.297262064275643,
+          "timeline": 19,
+          "camera": {
+            "yaw": 0.26095614770217795,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "position": 6.285047139330487,
+          "timeline": 19,
+          "camera": {
+            "yaw": 0.27945597975356756,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "view": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-story-soul-v10",
+      "sha256": "475259fc54545a7ae78b90b8bba96a4d2c76b831240ce65f972019858265a82b"
+    },
+    {
+      "view": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-story-soul-v10",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "view": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-story-soul-v10",
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "view": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-story-soul-v10",
+      "sha256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07"
+    },
+    {
+      "view": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-story-soul-v10",
+      "sha256": "e57833bd55bcb7d63f3c559f396dc945b5711db34eb79eb3e99afe0b577dac84"
+    },
+    {
+      "view": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-story-soul-v10",
+      "sha256": "843cc68131e9e6f0a640f77de49f94155e56e835ad870f5dc436f6e723511739"
+    },
+    {
+      "view": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-story-soul-v10",
+      "sha256": "475259fc54545a7ae78b90b8bba96a4d2c76b831240ce65f972019858265a82b"
+    },
+    {
+      "view": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-story-soul-v10",
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "view": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-story-soul-v10",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "view": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-story-soul-v10",
+      "sha256": "843cc68131e9e6f0a640f77de49f94155e56e835ad870f5dc436f6e723511739"
+    },
+    {
+      "view": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-story-soul-v10",
+      "sha256": "e57833bd55bcb7d63f3c559f396dc945b5711db34eb79eb3e99afe0b577dac84"
+    },
+    {
+      "view": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-story-soul-v10",
+      "sha256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07"
+    },
+    {
+      "view": "art",
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-story-soul-v10",
+      "sha256": "475259fc54545a7ae78b90b8bba96a4d2c76b831240ce65f972019858265a82b"
+    },
+    {
+      "view": "art",
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-story-soul-v10",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "view": "art",
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-story-soul-v10",
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "view": "art",
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-story-soul-v10",
+      "sha256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07"
+    },
+    {
+      "view": "art",
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-story-soul-v10",
+      "sha256": "843cc68131e9e6f0a640f77de49f94155e56e835ad870f5dc436f6e723511739"
+    },
+    {
+      "view": "art",
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-story-soul-v10",
+      "sha256": "e57833bd55bcb7d63f3c559f396dc945b5711db34eb79eb3e99afe0b577dac84"
+    },
+    {
+      "view": "video",
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-story-soul-v10",
+      "sha256": "475259fc54545a7ae78b90b8bba96a4d2c76b831240ce65f972019858265a82b"
+    },
+    {
+      "view": "video",
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-story-soul-v10",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "view": "video",
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-story-soul-v10",
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "view": "video",
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-story-soul-v10",
+      "sha256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07"
+    },
+    {
+      "view": "video",
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-story-soul-v10",
+      "sha256": "843cc68131e9e6f0a640f77de49f94155e56e835ad870f5dc436f6e723511739"
+    },
+    {
+      "view": "video",
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-story-soul-v10",
+      "sha256": "e57833bd55bcb7d63f3c559f396dc945b5711db34eb79eb3e99afe0b577dac84"
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Actual Canvas and native scroll. Art view hides DOM overlays for review.",
+    "Headless Chromium viewport simulation, not physical-device performance evidence."
+  ]
+}

@@ -76,16 +76,35 @@
     "assets/score/mozart-k545/opening.json",
     "assets/score/mozart-k545/source.json",
     "assets/score/mozart-k545/K545-1.ly",
-    "assets/score/mozart-k545/K545-1.mid"
+    "assets/score/mozart-k545/K545-1.mid",
+    "assets/profile/living.css",
+    "assets/profile/scenes.js",
+    "assets/profile/performance-source/pilot-clips.js",
+    "assets/profile/hand-shapes.js",
+    "assets/profile/motion.js",
+    "assets/profile/geometry.js",
+    "assets/profile/living.js",
+    "assets/fonts/instrument-serif.woff2",
+    "assets/fonts/instrument-serif-italic.woff2"
   ],
   "assetDirectories": [
     {
       "path": "assets/skills",
-      "extensions": [".webp"]
+      "extensions": [
+        ".webp"
+      ]
     },
     {
       "path": "assets/ui",
-      "extensions": [".svg"]
+      "extensions": [
+        ".svg"
+      ]
+    },
+    {
+      "path": "assets/profile/fallback",
+      "extensions": [
+        ".svg"
+      ]
     }
   ],
   "retainedNotices": [
@@ -103,6 +122,7 @@
     "assets/audio/grand-boom-v22/ATTRIBUTION.md",
     "assets/audio/grand-boom-v22/source/provenance.json",
     "assets/audio/afterglow-v23/ATTRIBUTION.md",
-    "assets/score/mozart-k545/ATTRIBUTION.md"
+    "assets/score/mozart-k545/ATTRIBUTION.md",
+    "assets/fonts/Instrument-Serif-OFL.txt"
   ]
 }

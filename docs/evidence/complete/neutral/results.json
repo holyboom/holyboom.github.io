@@ -1,0 +1,269 @@
+{
+  "release": "living-complete-v11",
+  "checks": [
+    {
+      "name": "no-near-duplicate-settled-body-poses",
+      "pass": true,
+      "data": {
+        "closestPairs": [
+          {
+            "a": 19,
+            "b": 23,
+            "rms": 0.11416462438006156,
+            "largestJointDifference": 0.17184611984261877
+          },
+          {
+            "a": 11,
+            "b": 19,
+            "rms": 0.12090803995933151,
+            "largestJointDifference": 0.20444259668045078
+          },
+          {
+            "a": 18,
+            "b": 27,
+            "rms": 0.12412203300664232,
+            "largestJointDifference": 0.24175451423358968
+          },
+          {
+            "a": 7,
+            "b": 19,
+            "rms": 0.12507274705043617,
+            "largestJointDifference": 0.3446358692325228
+          },
+          {
+            "a": 3,
+            "b": 14,
+            "rms": 0.12814322956602375,
+            "largestJointDifference": 0.26162403191494427
+          },
+          {
+            "a": 24,
+            "b": 29,
+            "rms": 0.13103084718435737,
+            "largestJointDifference": 0.21914607000811123
+          },
+          {
+            "a": 23,
+            "b": 27,
+            "rms": 0.1319551558385415,
+            "largestJointDifference": 0.32528016231977014
+          },
+          {
+            "a": 13,
+            "b": 15,
+            "rms": 0.13295626808276362,
+            "largestJointDifference": 0.23711928507867364
+          }
+        ],
+        "note": "Numerical distinction is not proof of perceived meaning; inspect the neutral contact sheet."
+      }
+    },
+    {
+      "name": "both-contrasting-torso-turns-are-used",
+      "pass": true
+    },
+    {
+      "name": "standing-levels-and-knee-bends-vary",
+      "pass": true
+    },
+    {
+      "name": "stance-changes-keep-a-foot-or-seat-support",
+      "pass": true,
+      "data": {
+        "unsupportedSamples": 0
+      }
+    },
+    {
+      "name": "planted-foot-marks-do-not-slide",
+      "pass": true,
+      "data": {
+        "driftSamples": 0
+      }
+    }
+  ],
+  "closestPairs": [
+    {
+      "a": 19,
+      "b": 23,
+      "rms": 0.11416462438006156,
+      "largestJointDifference": 0.17184611984261877
+    },
+    {
+      "a": 11,
+      "b": 19,
+      "rms": 0.12090803995933151,
+      "largestJointDifference": 0.20444259668045078
+    },
+    {
+      "a": 18,
+      "b": 27,
+      "rms": 0.12412203300664232,
+      "largestJointDifference": 0.24175451423358968
+    },
+    {
+      "a": 7,
+      "b": 19,
+      "rms": 0.12507274705043617,
+      "largestJointDifference": 0.3446358692325228
+    },
+    {
+      "a": 3,
+      "b": 14,
+      "rms": 0.12814322956602375,
+      "largestJointDifference": 0.26162403191494427
+    },
+    {
+      "a": 24,
+      "b": 29,
+      "rms": 0.13103084718435737,
+      "largestJointDifference": 0.21914607000811123
+    },
+    {
+      "a": 23,
+      "b": 27,
+      "rms": 0.1319551558385415,
+      "largestJointDifference": 0.32528016231977014
+    },
+    {
+      "a": 13,
+      "b": 15,
+      "rms": 0.13295626808276362,
+      "largestJointDifference": 0.23711928507867364
+    },
+    {
+      "a": 9,
+      "b": 28,
+      "rms": 0.13311290755424482,
+      "largestJointDifference": 0.2784331158465171
+    },
+    {
+      "a": 7,
+      "b": 11,
+      "rms": 0.13583195148199068,
+      "largestJointDifference": 0.244139031439757
+    },
+    {
+      "a": 8,
+      "b": 23,
+      "rms": 0.14029676291395143,
+      "largestJointDifference": 0.2664654524873104
+    },
+    {
+      "a": 25,
+      "b": 26,
+      "rms": 0.14071244464939334,
+      "largestJointDifference": 0.2693046601899046
+    },
+    {
+      "a": 3,
+      "b": 16,
+      "rms": 0.14291511454395778,
+      "largestJointDifference": 0.22853544677748278
+    },
+    {
+      "a": 14,
+      "b": 16,
+      "rms": 0.14316620264379296,
+      "largestJointDifference": 0.254764556924652
+    },
+    {
+      "a": 3,
+      "b": 5,
+      "rms": 0.14349506182189053,
+      "largestJointDifference": 0.3331184554381425
+    }
+  ],
+  "baselineClosestPairs": [
+    {
+      "a": 7,
+      "b": 18,
+      "rms": 0.010419084558890481,
+      "largestJointDifference": 0.021171532484425142
+    },
+    {
+      "a": 8,
+      "b": 22,
+      "rms": 0.012520337335022965,
+      "largestJointDifference": 0.02891316844057526
+    },
+    {
+      "a": 3,
+      "b": 4,
+      "rms": 0.019824011102167298,
+      "largestJointDifference": 0.044158804331639295
+    },
+    {
+      "a": 11,
+      "b": 23,
+      "rms": 0.03950826373834578,
+      "largestJointDifference": 0.10249136097904991
+    },
+    {
+      "a": 19,
+      "b": 27,
+      "rms": 0.04816383225957952,
+      "largestJointDifference": 0.08008814822536064
+    },
+    {
+      "a": 23,
+      "b": 27,
+      "rms": 0.05147778665628619,
+      "largestJointDifference": 0.09273618495495708
+    },
+    {
+      "a": 21,
+      "b": 27,
+      "rms": 0.05150742949075251,
+      "largestJointDifference": 0.12924255294970433
+    },
+    {
+      "a": 21,
+      "b": 23,
+      "rms": 0.05206204072640546,
+      "largestJointDifference": 0.1345541902562116
+    },
+    {
+      "a": 25,
+      "b": 26,
+      "rms": 0.053490930627348984,
+      "largestJointDifference": 0.14620400887833443
+    },
+    {
+      "a": 17,
+      "b": 30,
+      "rms": 0.05370501795668623,
+      "largestJointDifference": 0.13283885366733766
+    },
+    {
+      "a": 5,
+      "b": 16,
+      "rms": 0.05408029243023125,
+      "largestJointDifference": 0.1363818169698586
+    },
+    {
+      "a": 11,
+      "b": 21,
+      "rms": 0.05437447657186466,
+      "largestJointDifference": 0.10862780491200216
+    },
+    {
+      "a": 3,
+      "b": 15,
+      "rms": 0.0640446343968154,
+      "largestJointDifference": 0.13361853488893888
+    },
+    {
+      "a": 4,
+      "b": 15,
+      "rms": 0.06428160047157168,
+      "largestJointDifference": 0.13474209869871703
+    },
+    {
+      "a": 28,
+      "b": 30,
+      "rms": 0.06764644863487948,
+      "largestJointDifference": 0.17748239349298844
+    }
+  ],
+  "note": "A human visual review is still required for emotional readability."
+}

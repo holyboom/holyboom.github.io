@@ -1,0 +1,29 @@
+{
+  "environment": "Headless Chromium, local machine, unthrottled; diagnostic, not a physical-device benchmark",
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "frames": 87,
+      "rafMedianMs": 33.30000000000018,
+      "rafP95Ms": 66.59999999999991,
+      "drawMedianMs": 13.769594822836064,
+      "drawP95Ms": 21.52082937487944,
+      "detail": 2
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "frames": 157,
+      "rafMedianMs": 16.700000000000045,
+      "rafP95Ms": 33.39999999999998,
+      "drawMedianMs": 13.46031513105611,
+      "drawP95Ms": 17.5763589675684,
+      "detail": 2
+    }
+  ]
+}

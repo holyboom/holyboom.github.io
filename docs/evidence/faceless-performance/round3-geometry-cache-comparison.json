@@ -1,0 +1,43 @@
+{
+  "baseline": "2026-11-14T21:46:10.212Z",
+  "after": "2026-11-14T21:49:31.304Z",
+  "onlyGeometryChanged": true,
+  "metrics": {
+    "afterAllFrameCaches": {
+      "before": 102582664,
+      "after": 44514048,
+      "reductionPercent": 56.60665626698873
+    },
+    "afterAllSceneCaches": {
+      "before": 103585024,
+      "after": 45542648,
+      "reductionPercent": 56.03355944581332
+    },
+    "frameCacheGrowth": {
+      "before": 93852648,
+      "after": 35782504,
+      "reductionPercent": 61.87374063223021
+    },
+    "frame1-coldPerScene": {
+      "before": 25.519660000000044,
+      "after": 19.269874000000016,
+      "changePercent": -24.490083331831293
+    },
+    "frame1-warmMidTransitions": {
+      "before": 8.555768000000171,
+      "after": 8.550530999999864,
+      "changePercent": -0.061210168395242626
+    },
+    "frame2-coldPerScene": {
+      "before": 19.55839500000002,
+      "after": 13.376496000000031,
+      "changePercent": -31.607394165011915
+    },
+    "frame2-warmMidTransitions": {
+      "before": 4.675804999999855,
+      "after": 4.697505000000092,
+      "changePercent": 0.4640912099678651
+    }
+  },
+  "limitations": "Single fresh-process run per case, same host/script/settings; heap gain is direct retained-allocation evidence. CPU timings are JIT/load sensitive, not device FPS. Exact output parity is verified separately by camera_qa."
+}

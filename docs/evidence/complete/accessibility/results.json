@@ -1,0 +1,482 @@
+{
+  "generatedAt": "2026-11-15T04:56:48.566Z",
+  "engine": "chromium",
+  "base": "http://127.0.0.1:4174/",
+  "checks": [
+    {
+      "name": "skip-link-first-390",
+      "pass": true
+    },
+    {
+      "name": "skip-link-bypasses-navigation-390",
+      "pass": true
+    },
+    {
+      "name": "reverse-tab-clears-sticky-stage-390",
+      "pass": true,
+      "data": [
+        {
+          "label": "See how visitor choices shape the brief",
+          "tag": "A",
+          "top": 539.90625,
+          "bottom": 593.90625,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Read the project and workflow explanation",
+          "tag": "A",
+          "top": 485.90625,
+          "bottom": 539.90625,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore the live workbench",
+          "tag": "A",
+          "top": 431.90625,
+          "bottom": 485.90625,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Carry intent into the next step\nFrom an interesting capability to a brief with a purpose.",
+          "tag": "SUMMARY",
+          "top": 418.53125,
+          "bottom": 527.90625,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Keep the source in sight\nFrom scattered information to an answer you can trace.",
+          "tag": "SUMMARY",
+          "top": 419.15625,
+          "bottom": 528.53125,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Make work reviewable\nFrom a repeated task to a decision someone can inspect.",
+          "tag": "SUMMARY",
+          "top": 418.78125,
+          "bottom": 528.15625,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "The work comes full circle: making a place someone wants to enter.\nWhat happens when you s",
+          "tag": "A",
+          "top": 547.75,
+          "bottom": 694.53125,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore beneath the surface",
+          "tag": "SUMMARY",
+          "top": 418.609375,
+          "bottom": 477.359375,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "All that depth still needs a way for someone to reach it.\nHow do you make all that complex",
+          "tag": "A",
+          "top": 547.828125,
+          "bottom": 694.609375,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Follow these capabilities into the work\n↓",
+          "tag": "A",
+          "top": 419.4375,
+          "bottom": 463.4375,
+          "blockedTop": 386.953125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        }
+      ]
+    },
+    {
+      "name": "keyboard-focus-visible-390",
+      "pass": true
+    },
+    {
+      "name": "keyboard-disclosure-opens-390",
+      "pass": true
+    },
+    {
+      "name": "expanded-content-reflows-390",
+      "pass": true
+    },
+    {
+      "name": "keyboard-disclosure-closes-390",
+      "pass": true
+    },
+    {
+      "name": "native-keyboard-bridge-offset-390",
+      "pass": true,
+      "data": {
+        "hash": "#ai-experiences",
+        "error": 1.6493750000000205
+      }
+    },
+    {
+      "name": "skip-link-first-320",
+      "pass": true
+    },
+    {
+      "name": "skip-link-bypasses-navigation-320",
+      "pass": true
+    },
+    {
+      "name": "reverse-tab-clears-sticky-stage-320",
+      "pass": true,
+      "data": [
+        {
+          "label": "See how visitor choices shape the brief",
+          "tag": "A",
+          "top": 470.234375,
+          "bottom": 524.234375,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Read the project and workflow explanation",
+          "tag": "A",
+          "top": 395.234375,
+          "bottom": 470.234375,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore the live workbench",
+          "tag": "A",
+          "top": 383.234375,
+          "bottom": 437.234375,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Carry intent into the next step\nFrom an interesting capability to a brief with a purpose.",
+          "tag": "SUMMARY",
+          "top": 383.859375,
+          "bottom": 514.234375,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Keep the source in sight\nFrom scattered information to an answer you can trace.",
+          "tag": "SUMMARY",
+          "top": 383.484375,
+          "bottom": 492.859375,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Make work reviewable\nFrom a repeated task to a decision someone can inspect.",
+          "tag": "SUMMARY",
+          "top": 383.109375,
+          "bottom": 492.484375,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "The work comes full circle: making a place someone wants to enter.\nWhat happens when you s",
+          "tag": "A",
+          "top": 478.484375,
+          "bottom": 625.265625,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore beneath the surface",
+          "tag": "SUMMARY",
+          "top": 383.34375,
+          "bottom": 442.09375,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "All that depth still needs a way for someone to reach it.\nHow do you make all that complex",
+          "tag": "A",
+          "top": 463.625,
+          "bottom": 640.40625,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Follow these capabilities into the work\n↓",
+          "tag": "A",
+          "top": 383.234375,
+          "bottom": 427.234375,
+          "blockedTop": 351.59375,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        }
+      ]
+    },
+    {
+      "name": "keyboard-focus-visible-320",
+      "pass": true
+    },
+    {
+      "name": "keyboard-disclosure-opens-320",
+      "pass": true
+    },
+    {
+      "name": "expanded-content-reflows-320",
+      "pass": true
+    },
+    {
+      "name": "keyboard-disclosure-closes-320",
+      "pass": true
+    },
+    {
+      "name": "native-keyboard-bridge-offset-320",
+      "pass": true,
+      "data": {
+        "hash": "#ai-experiences",
+        "error": 0.8062499999999773
+      }
+    },
+    {
+      "name": "reduced-toggle-retains-reading-heading",
+      "pass": true,
+      "data": {
+        "portrait": {
+          "top": 510.6875,
+          "bottom": 678.96875,
+          "visible": true,
+          "live": true,
+          "scroll": 6569,
+          "overflow": false
+        },
+        "reduced": {
+          "top": 223.734375,
+          "bottom": 392.015625,
+          "visible": true,
+          "live": false,
+          "scroll": 8814,
+          "overflow": false
+        }
+      }
+    },
+    {
+      "name": "static-scroll-resumes-without-fly-through",
+      "pass": true,
+      "data": [
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        }
+      ]
+    },
+    {
+      "name": "landscape-uses-readable-static-story",
+      "pass": true,
+      "data": {
+        "top": 219.625,
+        "bottom": 397.09375,
+        "visible": true,
+        "live": false,
+        "scroll": 7388,
+        "overflow": false
+      }
+    },
+    {
+      "name": "rotation-restores-reading-position",
+      "pass": true,
+      "data": {
+        "beforeRotation": {
+          "top": 510.6875,
+          "bottom": 678.96875,
+          "visible": true,
+          "live": true,
+          "scroll": 6569,
+          "overflow": false
+        },
+        "restored": {
+          "top": 510.6875,
+          "bottom": 678.96875,
+          "visible": true,
+          "live": true,
+          "scroll": 6569,
+          "overflow": false
+        }
+      }
+    },
+    {
+      "name": "height-only-static-transition-retains-context",
+      "pass": true,
+      "data": {
+        "top": 223.734375,
+        "bottom": 392.015625,
+        "visible": true,
+        "live": false,
+        "scroll": 8814,
+        "overflow": false
+      }
+    },
+    {
+      "name": "height-only-return-retains-context",
+      "pass": true
+    },
+    {
+      "name": "two-hundred-percent-reflow-controls-clear",
+      "pass": true,
+      "data": [
+        {
+          "label": "That instinct now had a new responsibility: make the idea work.\nWhat makes a beautiful ide",
+          "tag": "A",
+          "top": 244.0625,
+          "bottom": 340.453125,
+          "blockedTop": 100,
+          "viewportHeight": 480,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore beneath the surface",
+          "tag": "SUMMARY",
+          "top": 220.703125,
+          "bottom": 279.453125,
+          "blockedTop": 100,
+          "viewportHeight": 480,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore the live workbench",
+          "tag": "A",
+          "top": 265.046875,
+          "bottom": 319.046875,
+          "blockedTop": 100,
+          "viewportHeight": 480,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Let’s talk on LinkedIn",
+          "tag": "A",
+          "top": 266.109375,
+          "bottom": 317.109375,
+          "blockedTop": 100,
+          "viewportHeight": 480,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        }
+      ]
+    },
+    {
+      "name": "no-js-keyboard-skip",
+      "pass": true
+    },
+    {
+      "name": "no-js-keyboard-disclosure-clear",
+      "pass": true
+    },
+    {
+      "name": "short-landscape-inline-boot-preview",
+      "pass": true
+    },
+    {
+      "name": "runtime-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "skipped": [],
+  "errors": [],
+  "physicalDevice": false,
+  "zoom": "200% layout reflow emulation; browser chrome zoom and physical devices were not tested."
+}

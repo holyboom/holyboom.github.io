@@ -1,0 +1,246 @@
+{
+  "capturedAt": "2026-11-14T21:34:08.115Z",
+  "notes": [
+    "Native pointer click opens details; native Enter closes it.",
+    "Screenshots preserve the actual desktop/mobile page layout.",
+    "Videos include page startup and scroll to the disclosure."
+  ],
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "before": {
+        "current": 7.457446854900251,
+        "target": 7.457446854900251,
+        "exploded": 0,
+        "shot": 24,
+        "camera": {
+          "yaw": 0.44358852630627416,
+          "pitch": 0.18307587969109218,
+          "distance": 5.055030058479287,
+          "target": [
+            -0.259743676692409,
+            -0.08025632330759101,
+            0.24923103007722697
+          ],
+          "focal": 6
+        },
+        "hand": [
+          -0.3750687193669728,
+          0.007534359683486425,
+          0.47691671107018196
+        ],
+        "head": [
+          -0.49472166984015387,
+          0.8591161759327759,
+          0.22875103661848195
+        ],
+        "opened": false
+      },
+      "opened": {
+        "current": 7.457446854900251,
+        "target": 7.457446854900251,
+        "exploded": 0.999132591042693,
+        "shot": 24,
+        "camera": {
+          "yaw": 0.44358852630627416,
+          "pitch": 0.18307587969109218,
+          "distance": 5.055030058479287,
+          "target": [
+            -0.259743676692409,
+            -0.08025632330759101,
+            0.24923103007722697
+          ],
+          "focal": 6
+        },
+        "hand": [
+          -0.3750687193669728,
+          0.007534359683486425,
+          0.47691671107018196
+        ],
+        "head": [
+          -0.49472166984015387,
+          0.8591161759327759,
+          0.22875103661848195
+        ],
+        "opened": true
+      },
+      "closed": {
+        "current": 7.457446854900251,
+        "target": 7.457446854900251,
+        "exploded": 0.00048017123150497984,
+        "shot": 24,
+        "camera": {
+          "yaw": 0.44358852630627416,
+          "pitch": 0.18307587969109218,
+          "distance": 5.055030058479287,
+          "target": [
+            -0.259743676692409,
+            -0.08025632330759101,
+            0.24923103007722697
+          ],
+          "focal": 6
+        },
+        "hand": [
+          -0.3750687193669728,
+          0.007534359683486425,
+          0.47691671107018196
+        ],
+        "head": [
+          -0.49472166984015387,
+          0.8591161759327759,
+          0.22875103661848195
+        ],
+        "opened": false
+      },
+      "errors": [],
+      "scripts": [
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+          "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+          "sha256": "0959a3a6d195d749a280694a550f91f0dd88bd52e7e1480f243d7acc22ac42c5"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+          "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6",
+          "sha256": "aea2f153719e934e2502ee05d9fd63404777707fcf573f97a08300449506d2eb"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+          "sha256": "9d815b7953b721473c1890f70d4fe891725f5c9fbf7679fbeebd38474b772da0"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+          "sha256": "f09e173ed282f21b235af4ccf3b5e65527f7a7d7884f633818134da448c677ff"
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "before": {
+        "current": 7.797688524416023,
+        "target": 7.797688524416023,
+        "exploded": 0,
+        "shot": 25,
+        "camera": {
+          "yaw": 0.06,
+          "pitch": 0.1655,
+          "distance": 6.188724152823644,
+          "target": [
+            -0.136,
+            -0.11499999999999999,
+            0.2
+          ],
+          "focal": 6
+        },
+        "hand": [
+          0.4130121418048961,
+          0.3059973018211342,
+          0.2502813663293149
+        ],
+        "head": [
+          -0.5658966660031387,
+          0.8595597813803166,
+          0.20111384039311245
+        ],
+        "opened": false
+      },
+      "opened": {
+        "current": 7.797688524416023,
+        "target": 7.797688524416023,
+        "exploded": 0.9992066814497552,
+        "shot": 25,
+        "camera": {
+          "yaw": 0.06,
+          "pitch": 0.1655,
+          "distance": 6.188724152823644,
+          "target": [
+            -0.136,
+            -0.11499999999999999,
+            0.2
+          ],
+          "focal": 6
+        },
+        "hand": [
+          0.4130121418048961,
+          0.3059973018211342,
+          0.2502813663293149
+        ],
+        "head": [
+          -0.5658966660031387,
+          0.8595597813803166,
+          0.20111384039311245
+        ],
+        "opened": true
+      },
+      "closed": {
+        "current": 7.797688524416023,
+        "target": 7.797688524416023,
+        "exploded": 0.0008708164416640406,
+        "shot": 25,
+        "camera": {
+          "yaw": 0.06,
+          "pitch": 0.1655,
+          "distance": 6.188724152823644,
+          "target": [
+            -0.136,
+            -0.11499999999999999,
+            0.2
+          ],
+          "focal": 6
+        },
+        "hand": [
+          0.4130121418048961,
+          0.3059973018211342,
+          0.2502813663293149
+        ],
+        "head": [
+          -0.5658966660031387,
+          0.8595597813803166,
+          0.20111384039311245
+        ],
+        "opened": false
+      },
+      "errors": [],
+      "scripts": [
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+          "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+          "sha256": "0959a3a6d195d749a280694a550f91f0dd88bd52e7e1480f243d7acc22ac42c5"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+          "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+          "sha256": "f09e173ed282f21b235af4ccf3b5e65527f7a7d7884f633818134da448c677ff"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6",
+          "sha256": "aea2f153719e934e2502ee05d9fd63404777707fcf573f97a08300449506d2eb"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+          "sha256": "9d815b7953b721473c1890f70d4fe891725f5c9fbf7679fbeebd38474b772da0"
+        }
+      ]
+    }
+  ]
+}

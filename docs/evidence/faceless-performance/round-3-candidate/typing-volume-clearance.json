@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-11-14T22:02:43.102Z",
+  "purpose": "Independent rendered-hand clearance against the actual keyboard plane during typing actions; negative means below plane.",
+  "samples": 196,
+  "visibleVertices": 508032,
+  "worst": [
+    {
+      "timeline": 3.48,
+      "clearance": -0.002697183386929908,
+      "part": "handR"
+    },
+    {
+      "timeline": 2.66,
+      "clearance": -0.0026971833869298806,
+      "part": "handR"
+    },
+    {
+      "timeline": 9.49,
+      "clearance": -0.0026971833869298806,
+      "part": "handR"
+    },
+    {
+      "timeline": 2.57,
+      "clearance": -0.0026962693103247857,
+      "part": "handL"
+    },
+    {
+      "timeline": 9.5,
+      "clearance": -0.0026938783562150677,
+      "part": "handL"
+    },
+    {
+      "timeline": 3.37,
+      "clearance": -0.0026921195395803654,
+      "part": "handL"
+    },
+    {
+      "timeline": 3.495,
+      "clearance": -0.0026891228206473174,
+      "part": "handL"
+    },
+    {
+      "timeline": 3.56,
+      "clearance": -0.0026876671619720472,
+      "part": "handR"
+    },
+    {
+      "timeline": 3.4,
+      "clearance": -0.002687667161971952,
+      "part": "handR"
+    },
+    {
+      "timeline": 3.365,
+      "clearance": -0.0026809595667845235,
+      "part": "handL"
+    },
+    {
+      "timeline": 9.415,
+      "clearance": -0.0026770461845324806,
+      "part": "handL"
+    },
+    {
+      "timeline": 9.42,
+      "clearance": -0.002668969612258776,
+      "part": "handL"
+    }
+  ],
+  "threshold": -0.01,
+  "pass": true,
+  "sources": {
+    "geometry.js": "8e67a3485c6c8d5af9462bef4ee1d7810124f5f90b884262616a64d343068d58",
+    "motion.js": "4c2941df5262bdac4ba2b4a8303780a3fd42b61ff361fc735a65751a1d30aed6",
+    "hand-shapes.js": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+  }
+}

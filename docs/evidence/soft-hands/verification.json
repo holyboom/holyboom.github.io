@@ -1,0 +1,17 @@
+{
+  "release": "living-soft-hands-v14",
+  "sourceBuildCaptureMatch": true,
+  "suites": [
+    {
+      "name": "performance",
+      "passed": 69
+    },
+    {
+      "name": "camera",
+      "passed": 27
+    }
+  ],
+  "browserErrors": [],
+  "nativeScreenshots": 8,
+  "publicDeployment": false
+}

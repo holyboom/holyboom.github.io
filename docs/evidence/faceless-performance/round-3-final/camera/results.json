@@ -1,0 +1,118 @@
+{
+  "checks": [
+    {
+      "name": "camera-finite-for-entire-story",
+      "pass": true
+    },
+    {
+      "name": "camera-reverses-without-history",
+      "pass": true
+    },
+    {
+      "name": "authored-depth-and-angle-variety",
+      "pass": true,
+      "data": {
+        "distanceSpan": 2.2,
+        "yawSpan": 1,
+        "pitchSpan": 0.28
+      }
+    },
+    {
+      "name": "no-camera-cuts-at-beat-or-easing-boundaries",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "compact-camera-finite-and-reversible",
+      "pass": true
+    },
+    {
+      "name": "zero-strength-locks-a-static-camera",
+      "pass": true
+    },
+    {
+      "name": "compact-reduces-orbit-and-dolly-range",
+      "pass": true
+    },
+    {
+      "name": "drawing-light-remains-in-frame-during-transitions",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "finite-projection-through-all-31-shots",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "no-eye-plane-crossings",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "hand-and-trail-share-the-camera",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "primary-props-labels-and-hand-remain-readable",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "depth-changes-apparent-scale",
+      "pass": true,
+      "data": {
+        "near": 45.734137803114,
+        "far": 35.3748291232462
+      }
+    },
+    {
+      "name": "live-camera-follows-scroll",
+      "pass": true,
+      "data": {
+        "first": {
+          "yaw": 0.5800000000000001,
+          "pitch": 0.3,
+          "distance": 5.25,
+          "target": [
+            -0.25,
+            -0.24,
+            0.22
+          ],
+          "focal": 6
+        },
+        "other": {
+          "yaw": 0.28,
+          "pitch": 0.17,
+          "distance": 6.250000000000001,
+          "target": [
+            -0.2,
+            -0.07,
+            0.15
+          ],
+          "focal": 6
+        }
+      }
+    },
+    {
+      "name": "live-camera-retraces-on-reverse-scroll",
+      "pass": true
+    },
+    {
+      "name": "reduced-motion-stops-camera-rendering",
+      "pass": true
+    },
+    {
+      "name": "reduced-motion-retains-scene-art",
+      "pass": true
+    },
+    {
+      "name": "camera-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "physicalDevice": false
+}

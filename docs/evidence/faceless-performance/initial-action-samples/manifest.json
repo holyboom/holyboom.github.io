@@ -1,0 +1,2339 @@
+{
+  "capturedAt": "2026-11-14T20:42:48.182Z",
+  "base": "http://127.0.0.1:4174/",
+  "release": "faceless-performance-v6",
+  "sequence": [
+    {
+      "verb": "Imagine",
+      "shot": "establish",
+      "shape": "maker",
+      "pose": "design",
+      "label": "00 / THE PERSON BEHIND THE SYSTEM",
+      "caption": "A world begins at the end of a drawn line.",
+      "scale": 1,
+      "action": "Imagine",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 0,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "draw",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "Before software, there was a wish to make a place for people.",
+      "scale": 1,
+      "action": "Imagine a place",
+      "prop": "blueprint",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "establish",
+      "chapter": 1,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "sketch",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "A hand, a drawing, and something that did not exist before.",
+      "scale": 1,
+      "action": "Draw the first lines",
+      "prop": "house",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 1,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "type",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "The medium changed. The instinct to create stayed.",
+      "scale": 1,
+      "action": "Turn the drawing into an interface",
+      "prop": "code",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 1,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "type",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "An idea has to become something that works.",
+      "scale": 1,
+      "action": "Build one component",
+      "prop": "component",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "build",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "A beautiful part still has to belong to the whole.",
+      "scale": 1,
+      "action": "Fit it into a larger system",
+      "prop": "assembly",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 2,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "Other people will rely on the work. The details matter.",
+      "scale": 1,
+      "action": "Make it dependable",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Dependability",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "read",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "The work begins with understanding someone else’s need.",
+      "scale": 1,
+      "action": "Listen to the requirement",
+      "prop": "brief",
+      "tone": "human",
+      "meaning": "Understanding",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 3,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "My part had to connect with the work around it.",
+      "scale": 1,
+      "action": "Connect across boundaries",
+      "prop": "network",
+      "tone": "build",
+      "meaning": "Connection",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 3,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "build",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "A shared system asks more of us than a single screen.",
+      "scale": 1,
+      "action": "Bring the pieces together",
+      "prop": "assembly",
+      "tone": "care",
+      "meaning": "Collaboration",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 3,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "type",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "A new possibility enters a familiar process.",
+      "scale": 1,
+      "action": "Invite intelligence into the workflow",
+      "prop": "ai",
+      "tone": "dream",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 4,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "An answer is not the end of a human decision.",
+      "scale": 1,
+      "action": "Pause at the review boundary",
+      "prop": "review",
+      "tone": "human",
+      "meaning": "Human judgment",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 4,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "approve",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "Move forward with a visible path to inspect and review.",
+      "scale": 1,
+      "action": "Keep the person in control",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 4,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "alone",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Not everyone saw it yet. I still wanted to find out.",
+      "scale": 1,
+      "action": "Hold on to the possibility",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Conviction",
+      "energy": 0.22,
+      "shot": "isolate",
+      "chapter": 5,
+      "step": 0,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reach",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Belief did not make the difficult parts disappear.",
+      "scale": 1,
+      "action": "Meet the resistance",
+      "prop": "fracture",
+      "tone": "friction",
+      "meaning": "An obstacle",
+      "energy": 0.38,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 1,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reflect",
+      "label": "05 / KEEP BUILDING",
+      "caption": "What could this difficulty teach me?",
+      "scale": 1,
+      "action": "Stay with the problem",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Reflection",
+      "energy": 0.28,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 2,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "repair",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Another attempt. Another refinement. Then back again.",
+      "scale": 1,
+      "action": "Return to the work",
+      "prop": "repair",
+      "tone": "build",
+      "meaning": "Iteration",
+      "energy": 0.65,
+      "shot": "detail",
+      "chapter": 5,
+      "step": 3,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "rise",
+      "label": "05 / KEEP BUILDING",
+      "caption": "The work continued, week after week.",
+      "scale": 1,
+      "action": "Keep the light alive",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Persistence",
+      "energy": 0.85,
+      "shot": "rise",
+      "chapter": 5,
+      "step": 4,
+      "count": 5
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "read",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "A problem I had lived through became a starting point.",
+      "scale": 1,
+      "action": "Keep the lesson",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Experience",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 6,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "research",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Seek the strongest ideas and methods I can find.",
+      "scale": 1,
+      "action": "Look beyond my own methods",
+      "prop": "library",
+      "tone": "build",
+      "meaning": "Research",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 6,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Experience and selected methods become a skill with character.",
+      "scale": 1,
+      "action": "Distil a capability",
+      "prop": "skill",
+      "tone": "dream",
+      "meaning": "Synthesis",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 6,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "protect",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Purpose. Method. Character. A MOAT I keep developing.",
+      "scale": 1,
+      "action": "Build a distinctive advantage",
+      "prop": "moat",
+      "tone": "dream",
+      "meaning": "Identity",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 6,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "There is depth behind an experience that feels simple.",
+      "scale": 1,
+      "action": "Face the hidden complexity",
+      "prop": "complexity",
+      "tone": "build",
+      "meaning": "Depth",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 7,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Design gives that complexity a human starting point.",
+      "scale": 1,
+      "action": "Shape a clear way in",
+      "prop": "interface",
+      "tone": "dream",
+      "meaning": "Design",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 7,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "The next step should feel understandable and in their control.",
+      "scale": 1,
+      "action": "Give the person agency",
+      "prop": "choice",
+      "tone": "human",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 7,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "welcome",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Useful enough to work. Engaging enough to want to return.",
+      "scale": 1,
+      "action": "Make the experience inviting",
+      "prop": "recipient",
+      "tone": "care",
+      "meaning": "AI experiences",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 7,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "An experience becomes meaningful when someone can enter it.",
+      "scale": 1,
+      "action": "Open the door",
+      "prop": "interface",
+      "tone": "care",
+      "meaning": "Invitation",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "Explore the demonstration. Look beneath the surface.",
+      "scale": 1,
+      "action": "Make the work inspectable",
+      "prop": "review",
+      "tone": "build",
+      "meaning": "Transparency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 8,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "This story continues through what we choose to build next.",
+      "scale": 1,
+      "action": "Offer the next possibility",
+      "prop": "recipient",
+      "tone": "human",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Reflect",
+      "shot": "portrait",
+      "shape": "maker",
+      "pose": "stand",
+      "label": "09 / THE EXPERIENCE BEHIND THE STORY",
+      "caption": "The work that brought me here.",
+      "scale": 0.9,
+      "action": "Reflect",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 9,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Begin",
+      "shot": "reveal",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "10 / YOUR NEXT CHAPTER",
+      "caption": "What could we make possible, together?",
+      "scale": 1,
+      "action": "Begin",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 10,
+      "step": 0,
+      "count": 1
+    }
+  ],
+  "shots": {
+    "establish": {
+      "yaw": -0.3,
+      "pitch": 0.12,
+      "distance": 6.4,
+      "target": [
+        0.1,
+        0,
+        0
+      ]
+    },
+    "draft": {
+      "yaw": -0.48,
+      "pitch": 0.34,
+      "distance": 5.25,
+      "target": [
+        0.3,
+        0.2,
+        0.35
+      ]
+    },
+    "detail": {
+      "yaw": -0.18,
+      "pitch": 0.18,
+      "distance": 4.9,
+      "target": [
+        0.4,
+        0.32,
+        0.45
+      ]
+    },
+    "connect": {
+      "yaw": 0.22,
+      "pitch": 0.18,
+      "distance": 6.65,
+      "target": [
+        0.18,
+        0,
+        0.2
+      ]
+    },
+    "isolate": {
+      "yaw": -0.42,
+      "pitch": 0.24,
+      "distance": 7.7,
+      "target": [
+        -0.1,
+        -0.02,
+        0.15
+      ]
+    },
+    "intimate": {
+      "yaw": 0.12,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        0.3,
+        0.38,
+        0.35
+      ]
+    },
+    "rise": {
+      "yaw": -0.42,
+      "pitch": -0.06,
+      "distance": 5.8,
+      "target": [
+        0.1,
+        0.22,
+        0.2
+      ]
+    },
+    "reveal": {
+      "yaw": 0.2,
+      "pitch": 0.22,
+      "distance": 6.8,
+      "target": [
+        0.2,
+        0.02,
+        0.15
+      ]
+    },
+    "portrait": {
+      "yaw": -0.15,
+      "pitch": 0.1,
+      "distance": 6,
+      "target": [
+        0.2,
+        -0.05,
+        0.2
+      ]
+    }
+  },
+  "morph": {
+    "start": 0.16,
+    "end": 0.91
+  },
+  "scripts": [
+    "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6"
+  ],
+  "viewport": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "art": [
+      720,
+      720
+    ]
+  },
+  "notes": [
+    "All artwork is captured from the live browser canvas.",
+    "The art view overrides capture CSS only: 720-square canvas, no caption overlays, desktop camera behavior.",
+    "Desktop and mobile captures retain the real layout.",
+    "Steady key poses allow two settled rendering frames. Pilot transitions use fixed scroll positions.",
+    "These are headless review captures, not physical-device performance measurements."
+  ],
+  "metadataHash": "a4cbe1034ddb33d72a4f57dd2093f7fe2a4d5ca599d611c46b83c176fac1a545",
+  "snapshots": [],
+  "pilots": [],
+  "performances": [
+    {
+      "index": 2,
+      "stage": "attention",
+      "u": 0.06,
+      "position": 1.0992,
+      "shot": 1,
+      "detail": 2,
+      "drawCost": 11.224005035360785,
+      "camera": {
+        "yaw": -0.3181188268034365,
+        "pitch": 0.1421452327597557,
+        "distance": 6.273662051205989,
+        "target": [
+          0.12013202978159611,
+          0.020132029781596103,
+          0.03523105211779318
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-attention.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.060867742004551584,
+          "stage": "attention",
+          "action": 0
+        },
+        "hand": [
+          -0.15534651797544802,
+          0.09977692941320489,
+          0.5250420492191296
+        ],
+        "head": [
+          -0.43995365454404894,
+          0.45956943796175365,
+          0.00016640549347591432
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.15213000448659492,
+            -0.017121923475865483,
+            0.42668396752679744
+          ],
+          "tip": [
+            -0.15213000448659494,
+            -0.017121923475865483,
+            0.4266839675267973
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "stage": "preparation",
+      "u": 0.2,
+      "position": 1.1290666666666667,
+      "shot": 1,
+      "detail": 2,
+      "drawCost": 7.563065766219307,
+      "camera": {
+        "yaw": -0.3420767164434731,
+        "pitch": 0.17142709787535604,
+        "distance": 6.1104306851622825,
+        "target": [
+          0.14675190715941458,
+          0.04675190715941459,
+          0.08181583752897552
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.201056256,
+          "stage": "preparation",
+          "action": 0
+        },
+        "hand": [
+          -0.2261170159998751,
+          0.07196534397707866,
+          0.4919775708679625
+        ],
+        "head": [
+          -0.42841778346068515,
+          0.4531061564390991,
+          0.036165840965676495
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.22290050251102203,
+            -0.04493350891199171,
+            0.39361948917563033
+          ],
+          "tip": [
+            -0.22290050251102203,
+            -0.044933508911991715,
+            0.3936194891756303
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "stage": "action",
+      "u": 0.48,
+      "position": 1.1717333333333333,
+      "shot": 1,
+      "detail": 2,
+      "drawCost": 7.077520996231589,
+      "camera": {
+        "yaw": -0.3881592369594736,
+        "pitch": 0.2277501785060233,
+        "distance": 5.808303826035639,
+        "target": [
+          0.19795470773274843,
+          0.09795470773274845,
+          0.17142073853230977
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-action.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.47739146976422364,
+          "stage": "action",
+          "action": 0.49347867441055904
+        },
+        "hand": [
+          0.04723441663549191,
+          -0.012873067529156665,
+          0.4700306235533986
+        ],
+        "head": [
+          -0.41074962122559916,
+          0.4426564914716268,
+          0.0877300531285447
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.050450930124344984,
+            -0.12977192041822705,
+            0.37167254186106635
+          ],
+          "tip": [
+            0.05045093012434499,
+            -0.12977192041822705,
+            0.37167254186106635
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "stage": "response",
+      "u": 0.76,
+      "position": 1.2144,
+      "shot": 2,
+      "detail": 2,
+      "drawCost": 7.7985700425613285,
+      "camera": {
+        "yaw": -0.43483848499199995,
+        "pitch": 0.284802592768,
+        "distance": 5.517491310706373,
+        "target": [
+          0.24982053888,
+          0.14982053888,
+          0.26218594304
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-response.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.7607426449303589,
+          "stage": "response",
+          "action": 1
+        },
+        "hand": [
+          0.07158974634933687,
+          0.04498493368662082,
+          0.5260864173202895
+        ],
+        "head": [
+          -0.42384303496482834,
+          0.45199854764417347,
+          0.05277195810243354
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.07480625983818998,
+            -0.07191391920244955,
+            0.4277283356279571
+          ],
+          "tip": [
+            0.07480625983818996,
+            -0.07191391920244955,
+            0.42772833562795726
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 1.2794666666666665,
+      "shot": 2,
+      "detail": 2,
+      "drawCost": 8.047702108067336,
+      "camera": {
+        "yaw": -0.4761807284788826,
+        "pitch": 0.33533200147418984,
+        "distance": 5.27211051028641,
+        "target": [
+          0.29575636497653623,
+          0.19575636497653626,
+          0.34257363870893837
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-hold.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.9990559118507054,
+          "stage": "hold",
+          "action": 1
+        },
+        "hand": [
+          0.09669626694491829,
+          0.11892938652758815,
+          0.5066009902682748
+        ],
+        "head": [
+          -0.4239100460224665,
+          0.45262869290297564,
+          0.04663370931600834
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.09991278043377134,
+            0.002030533638517785,
+            0.40824290857594253
+          ],
+          "tip": [
+            0.09991278043377137,
+            0.0020305336385177813,
+            0.40824290857594253
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "attention",
+      "u": 0.1,
+      "position": 4.1088000000000005,
+      "shot": 10,
+      "detail": 2,
+      "drawCost": 10.901667158082551,
+      "camera": {
+        "yaw": -0.4387056537599994,
+        "pitch": 0.3179763486719997,
+        "distance": 5.200378223301651,
+        "target": [
+          0.3137647820800002,
+          0.21651773849600023,
+          0.3637647820800002
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-attention.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.09873863090396107,
+          "stage": "attention",
+          "action": 0
+        },
+        "hand": [
+          0.05000000000000002,
+          0.2577555270383949,
+          0.5555456899754709
+        ],
+        "head": [
+          -0.43165844838902373,
+          0.8560483465109678,
+          0.27929190203043713
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.05,
+            0.20591812972324142,
+            0.4759348600615019
+          ],
+          "tip": [
+            0.05000000000000002,
+            0.2059181297232414,
+            0.4759348600615018
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.095
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "preparation",
+      "u": 0.27,
+      "position": 4.1408,
+      "shot": 10,
+      "detail": 2,
+      "drawCost": 7.374442958459698,
+      "camera": {
+        "yaw": -0.3903701604627967,
+        "pitch": 0.2921974189134916,
+        "distance": 5.142890848571612,
+        "target": [
+          0.32987661317906775,
+          0.2358519358148813,
+          0.37987661317906773
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.2710963719690458,
+          "stage": "preparation",
+          "action": 0
+        },
+        "hand": [
+          -0.1463196927408117,
+          0.5700227220257177,
+          0.562392107864514
+        ],
+        "head": [
+          -0.4258367952369478,
+          0.8538982003173998,
+          0.293471673716029
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            -0.1463196927408117,
+            0.5407604237238106,
+            0.4409943420194925
+          ],
+          "tip": [
+            -0.1463196927408117,
+            0.5407604237238106,
+            0.44099434201949245
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.12487473585186265
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "action",
+      "u": 0.46,
+      "position": 4.1696,
+      "shot": 10,
+      "detail": 2,
+      "drawCost": 6.627073918833693,
+      "camera": {
+        "yaw": -0.337155999098474,
+        "pitch": 0.2638165328525195,
+        "distance": 5.080335743333929,
+        "target": [
+          0.34761466696717536,
+          0.2571376003606104,
+          0.39761466696717535
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-action.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.46264634704050955,
+          "stage": "action",
+          "action": 0.5110264460021233
+        },
+        "hand": [
+          -0.06024638665309617,
+          0.6380088923832252,
+          0.5629438321165805
+        ],
+        "head": [
+          -0.4187012385897076,
+          0.8517349378344128,
+          0.3089078993395724
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            -0.06024638665309617,
+            0.6149790026022408,
+            0.43500000000000005
+          ],
+          "tip": [
+            -0.06024638665309617,
+            0.6149790026022408,
+            0.43500000000000005
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "response",
+      "u": 0.67,
+      "position": 4.199466666666667,
+      "shot": 11,
+      "detail": 2,
+      "drawCost": 6.449935431626021,
+      "camera": {
+        "yaw": -0.28093695810995084,
+        "pitch": 0.23383304432530713,
+        "distance": 5.015074652006256,
+        "target": [
+          0.36635434729668304,
+          0.27962521675601965,
+          0.4163543472966831
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-response.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.6665047107583089,
+          "stage": "response",
+          "action": 1
+        },
+        "hand": [
+          0.01290981354567905,
+          0.6076661630877747,
+          0.5884433353039261
+        ],
+        "head": [
+          -0.4161597597824248,
+          0.8512658535042752,
+          0.3136312526183812
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.012909813545679057,
+            0.5846362733067902,
+            0.46049950318734567
+          ],
+          "tip": [
+            0.01290981354567905,
+            0.5846362733067902,
+            0.46049950318734567
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 4.279466666666667,
+      "shot": 11,
+      "detail": 2,
+      "drawCost": 6.867741274917691,
+      "camera": {
+        "yaw": -0.18636545253519538,
+        "pitch": 0.18339490801877087,
+        "distance": 4.907178376803489,
+        "target": [
+          0.39787818248826823,
+          0.31745381898592184,
+          0.4478781824882682
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-hold.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.9990559118507054,
+          "stage": "hold",
+          "action": 1
+        },
+        "hand": [
+          -0.03,
+          0.6130298897809845,
+          0.6179438321165804
+        ],
+        "head": [
+          -0.41614664560438114,
+          0.8512633818158992,
+          0.3136550523318805
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            -0.03,
+            0.5900000000000001,
+            0.49
+          ],
+          "tip": [
+            -0.03,
+            0.5900000000000001,
+            0.49
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "attention",
+      "u": 0.08,
+      "position": 5.0621329507412725,
+      "shot": 13,
+      "detail": 2,
+      "drawCost": 10.094659424981497,
+      "camera": {
+        "yaw": -0.3569776189727357,
+        "pitch": 0.22366086417811668,
+        "distance": 7.379634642854679,
+        "target": [
+          -0.05331675479461909,
+          0.026683245205380915,
+          0.17334162260269045
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-attention.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.0770887125396591,
+          "stage": "attention",
+          "action": 0
+        },
+        "hand": [
+          -0.2610962071137619,
+          -0.36945189644311904,
+          0.16768339549825467
+        ],
+        "head": [
+          -0.4821932591881885,
+          0.4426126948325918,
+          0.10149163920261377
+        ],
+        "hip": [
+          -0.51,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.24,
+            -0.38,
+            0.27
+          ],
+          "tip": [
+            -0.24,
+            -0.38,
+            0.27
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.105
+          ],
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "preparation",
+      "u": 0.24,
+      "position": 5.08161036476675,
+      "shot": 13,
+      "detail": 2,
+      "drawCost": 6.546160022642511,
+      "camera": {
+        "yaw": -0.2733533402269711,
+        "pitch": 0.20198049561439993,
+        "distance": 6.975025656526853,
+        "target": [
+          0.008627155387428781,
+          0.08862715538742878,
+          0.2043135776937144
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.2417681010139887,
+          "stage": "preparation",
+          "action": 0
+        },
+        "hand": [
+          -0.3072946805825222,
+          -0.3277032362437286,
+          0.3391477447112031
+        ],
+        "head": [
+          -0.4702059591703929,
+          0.4399286676629435,
+          0.11869738703171065
+        ],
+        "hip": [
+          -0.5042318838590996,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.22667115651825825,
+            -0.34816716828268396,
+            0.24731781797747618
+          ],
+          "tip": [
+            -0.22667115651825825,
+            -0.34816716828268396,
+            0.24731781797747618
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.12390181835210319
+          ],
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "action",
+      "u": 0.47,
+      "position": 5.102015274698202,
+      "shot": 13,
+      "detail": 2,
+      "drawCost": 6.285047491368378,
+      "camera": {
+        "yaw": -0.16141393757496791,
+        "pitch": 0.17295916900091762,
+        "distance": 6.467922116983306,
+        "target": [
+          0.09154523142594967,
+          0.17154523142594968,
+          0.24577261571297482
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-action.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.46558506734559835,
+          "stage": "action",
+          "action": 0.48528355781866117
+        },
+        "hand": [
+          0.06592106058586666,
+          0.15579846525164015,
+          0.5576678228602241
+        ],
+        "head": [
+          -0.41029391364428697,
+          0.43680336616355697,
+          0.1281165088791642
+        ],
+        "hip": [
+          -0.4740157012884085,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.06592106058586666,
+            0.13276857547065568,
+            0.42972399074364365
+          ],
+          "tip": [
+            0.06592106058586666,
+            0.13276857547065568,
+            0.42972399074364365
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "response",
+      "u": 0.71,
+      "position": 5.123347680535629,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 7.164572248639858,
+      "camera": {
+        "yaw": -0.04223070116805128,
+        "pitch": 0.14205981141393925,
+        "distance": 5.968461887031879,
+        "target": [
+          0.1798291102458879,
+          0.2598291102458879,
+          0.28991455512294395
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-response.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.7060813251392499,
+          "stage": "response",
+          "action": 1
+        },
+        "hand": [
+          -0.002661765654096815,
+          -0.06010532513954875,
+          0.46691278520601764
+        ],
+        "head": [
+          -0.39070033570429435,
+          0.4440322425871755,
+          0.09407294931043642
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.002661765654096801,
+            -0.08313521492053322,
+            0.33896895308943725
+          ],
+          "tip": [
+            -0.002661765654096815,
+            -0.08313521492053322,
+            0.3389689530894372
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 5.167867484022434,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 6.723015056522455,
+      "camera": {
+        "yaw": 0.10878534017452862,
+        "pitch": 0.1029075043991963,
+        "distance": 5.390610494242058,
+        "target": [
+          0.2916928445737249,
+          0.37169284457372487,
+          0.3458464222868624
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-hold.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.9992015576920696,
+          "stage": "hold",
+          "action": 1
+        },
+        "hand": [
+          -0.09999999999999998,
+          -0.3169701102190155,
+          0.3479438321165804
+        ],
+        "head": [
+          -0.39211012460735745,
+          0.44523056634185965,
+          0.08840250465807349
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.09999999999999998,
+            -0.33999999999999997,
+            0.22000000000000003
+          ],
+          "tip": [
+            -0.09999999999999998,
+            -0.33999999999999997,
+            0.22
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "attention",
+      "u": 0.12,
+      "position": 5.2680370418677445,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 7.155197308932576,
+      "camera": {
+        "yaw": 0.12,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          0.3,
+          0.38,
+          0.35
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-attention.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.11947703866646009,
+          "stage": "attention",
+          "action": 0
+        },
+        "hand": [
+          -0.1001167034888268,
+          -0.3156004453614546,
+          0.34885307283951805
+        ],
+        "head": [
+          -0.3918121354809019,
+          0.44483769437809656,
+          0.08969331667479061
+        ],
+        "hip": [
+          -0.46011705752042803,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.1001167034888268,
+            -0.33860890370960856,
+            0.2210283042386626
+          ],
+          "tip": [
+            -0.1001167034888268,
+            -0.33860890370960856,
+            0.2210283042386626
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.12987902303074558
+          ],
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "preparation",
+      "u": 0.31,
+      "position": 5.288441951799197,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 6.478221067757319,
+      "camera": {
+        "yaw": 0.12,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          0.3,
+          0.38,
+          0.35
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.3130782356971462,
+          "stage": "preparation",
+          "action": 0
+        },
+        "hand": [
+          -0.10127665941469957,
+          0.0043090906718409455,
+          0.6208394735332643
+        ],
+        "head": [
+          -0.41443801758102494,
+          0.4408581156672595,
+          0.10654594378679304
+        ],
+        "hip": [
+          -0.4738372992815425,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.10127665941469957,
+            -0.012288460058306926,
+            0.5286308583657762
+          ],
+          "tip": [
+            -0.10127665941469957,
+            -0.012288460058306912,
+            0.5286308583657762
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.09369048725108517
+          ],
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "action",
+      "u": 0.47,
+      "position": 5.302354390388824,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 7.099360001261104,
+      "camera": {
+        "yaw": 0.12,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          0.3,
+          0.38,
+          0.35
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-action.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.4694905921365322,
+          "stage": "action",
+          "action": 0.49716995631406785
+        },
+        "hand": [
+          -0.06500138331540176,
+          0.050942781765944044,
+          0.6485764991576326
+        ],
+        "head": [
+          -0.45888392508050424,
+          0.4387158384969223,
+          0.1195888403981702
+        ],
+        "hip": [
+          -0.4965032592944044,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.06500138331540176,
+            0.03499901191757018,
+            0.56
+          ],
+          "tip": [
+            -0.06500138331540176,
+            0.03499901191757018,
+            0.56
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.09
+          ],
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "response",
+      "u": 0.65,
+      "position": 5.318121820790401,
+      "shot": 15,
+      "detail": 2,
+      "drawCost": 6.468099180596259,
+      "camera": {
+        "yaw": 0.12,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          0.3,
+          0.38,
+          0.35
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-response.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.6493488710039532,
+          "stage": "response",
+          "action": 1
+        },
+        "hand": [
+          -0.09999999999999998,
+          0.025943769848373863,
+          0.6485764991576326
+        ],
+        "head": [
+          -0.48600483416218926,
+          0.43800182532223014,
+          0.12467205833686008
+        ],
+        "hip": [
+          -0.5097596934337779,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.09999999999999999,
+            0.010000000000000009,
+            0.56
+          ],
+          "tip": [
+            -0.09999999999999998,
+            0.010000000000000005,
+            0.56
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.09
+          ],
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 5.367279103807081,
+      "shot": 15,
+      "detail": 2,
+      "drawCost": 6.3953269754275786,
+      "camera": {
+        "yaw": 0.12,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          0.3,
+          0.38,
+          0.35
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-hold.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.9987041462973796,
+          "stage": "hold",
+          "action": 1
+        },
+        "hand": [
+          -0.1,
+          0.025943769848373863,
+          0.6485764991576326
+        ],
+        "head": [
+          -0.48649999672623456,
+          0.4379886715869479,
+          0.12475716199601954
+        ],
+        "hip": [
+          -0.51,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.1,
+            0.010000000000000009,
+            0.56
+          ],
+          "tip": [
+            -0.1,
+            0.010000000000000005,
+            0.56
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.09
+          ],
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "attention",
+      "u": 0.08,
+      "position": 6.328087247273523,
+      "shot": 19,
+      "detail": 2,
+      "drawCost": 9.419414630451348,
+      "camera": {
+        "yaw": 0.17245356036915127,
+        "pitch": 0.18,
+        "distance": 6.4129368264198865,
+        "target": [
+          0.2061505417969668,
+          0.03803715170467898,
+          0.22971652476928045
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-attention.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.07929821279221372,
+          "stage": "attention",
+          "action": 0
+        },
+        "hand": [
+          0.0800000000000001,
+          0.6359437698483739,
+          0.6085764991576326
+        ],
+        "head": [
+          -0.43252352759679236,
+          0.8577351132323382,
+          0.26143375796506907
+        ],
+        "hip": [
+          -0.44999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.08000000000000002,
+            0.62,
+            0.52
+          ],
+          "tip": [
+            0.0800000000000001,
+            0.62,
+            0.52
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.09
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "preparation",
+      "u": 0.25,
+      "position": 6.353086466047936,
+      "shot": 19,
+      "detail": 2,
+      "drawCost": 7.425500161884478,
+      "camera": {
+        "yaw": 0.1081548150733383,
+        "pitch": 0.18,
+        "distance": 6.10573312897851,
+        "target": [
+          0.2415148517096639,
+          0.08947614794132934,
+          0.26990324057916354
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.25044084993473703,
+          "stage": "preparation",
+          "action": 0
+        },
+        "hand": [
+          0.09755334612408934,
+          0.5925045500078179,
+          0.41122453270713644
+        ],
+        "head": [
+          -0.4306183512418994,
+          0.8566820590786595,
+          0.27070211303970887
+        ],
+        "hip": [
+          -0.451315044775657,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.18189390407776213,
+            0.5809090269264198,
+            0.4654139799583417
+          ],
+          "tip": [
+            0.18189390407776213,
+            0.5809090269264198,
+            0.4654139799583417
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.10091720400833165
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "action",
+      "u": 0.52,
+      "position": 6.383085528577232,
+      "shot": 20,
+      "detail": 2,
+      "drawCost": 6.5622470099552865,
+      "camera": {
+        "yaw": 0.00948666888105093,
+        "pitch": 0.18,
+        "distance": 5.662693055382249,
+        "target": [
+          0.295782332115422,
+          0.16841066489515924,
+          0.33157083194934317
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-action.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.5169404583188744,
+          "stage": "action",
+          "action": 0.5204131127025717
+        },
+        "hand": [
+          0.1343159436034545,
+          0.540548103556881,
+          0.34268339549825466
+        ],
+        "head": [
+          -0.4280280617594264,
+          0.855205076479018,
+          0.2834711749885013
+        ],
+        "hip": [
+          -0.4584313760206107,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.15541215071721642,
+            0.53,
+            0.445
+          ],
+          "tip": [
+            0.15541215071721642,
+            0.53,
+            0.445
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.105
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "response",
+      "u": 0.77,
+      "position": 6.412084622355551,
+      "shot": 20,
+      "detail": 2,
+      "drawCost": 6.44415633198412,
+      "camera": {
+        "yaw": -0.08333400341348338,
+        "pitch": 0.18,
+        "distance": 5.275298465238401,
+        "target": [
+          0.34683370187741586,
+          0.24266720273078668,
+          0.3895837521334271
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-response.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.7709630332217756,
+          "stage": "response",
+          "action": 1
+        },
+        "hand": [
+          0.10397873996087612,
+          0.540548103556881,
+          0.35835523741990344
+        ],
+        "head": [
+          -0.42765560840306627,
+          0.8550796504276577,
+          0.2847708942107917
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.12507494707463804,
+            0.53,
+            0.4606718419216488
+          ],
+          "tip": [
+            0.12507494707463804,
+            0.53,
+            0.4606718419216488
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.105
+          ],
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 6.459083153651449,
+      "shot": 20,
+      "detail": 2,
+      "drawCost": 6.566005770387482,
+      "camera": {
+        "yaw": -0.17110719826472173,
+        "pitch": 0.18,
+        "distance": 4.933380492141825,
+        "target": [
+          0.39510895904559695,
+          0.31288575861177736,
+          0.4444419989154511
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-hold.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.998692220624136,
+          "stage": "hold",
+          "action": 1
+        },
+        "hand": [
+          0.11890379288623812,
+          0.540548103556881,
+          0.3676833954982547
+        ],
+        "head": [
+          -0.42765560840306627,
+          0.8550796504276577,
+          0.2847708942107917
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.14,
+            0.53,
+            0.47000000000000003
+          ],
+          "tip": [
+            0.14000000000000004,
+            0.53,
+            0.47000000000000003
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.105
+          ],
+          "space": "work"
+        }
+      }
+    }
+  ],
+  "errors": []
+}

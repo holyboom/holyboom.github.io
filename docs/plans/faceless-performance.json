@@ -1,0 +1,1122 @@
+{
+  "status": "planned_not_implemented",
+  "language": "th",
+  "version": "faceless-performance-plan-1",
+  "sourceBaseline": "cinematic-camera-v5",
+  "premise": "คนที่สังเกตอย่างตั้งใจ ลงมืออย่างประณีต อดทน และเว้นพื้นที่ให้คนอื่น",
+  "subtextNote": "เจตนาภายในเป็นคำกำกับการแสดงเชิงสัญลักษณ์ ไม่ใช่การอ้างคำพูดหรือความคิดจริงในเหตุการณ์การทำงาน",
+  "timingNote": "เปอร์เซ็นต์คือสัดส่วนระยะ scroll ของ beat ไม่ใช่เวลารอหรือเวลาจริง; attention ไม่ต้องหยุดส่วนอื่นทั้งหมด",
+  "beats": [
+    {
+      "title": "โลกที่ยังไม่มีรูป",
+      "subtext": "ความเป็นไปได้กำลังรอมือคนสร้าง",
+      "stance": "abstract → seated",
+      "timing": "reveal",
+      "attention": "แนวผิวใยนำไปสู่จุดที่จะกลายเป็นพื้นที่ทำงาน",
+      "contacts": "ช่วงท้ายจึงจัดเก้าอี้ เท้า และมือให้พร้อมรับรูปคน",
+      "keyPoses": [
+        "คงผืนใย A เป็นภาพหลัก ให้ช่องว่างหนึ่งแห่งเริ่มนิ่ง",
+        "แนวใยค่อยจัดเป็นแนวหลัง ไหล่ และมือที่มีพื้นที่ว่างระหว่างกัน",
+        "รูปคนนั่งพร้อมทำงานปรากฏเมื่อบริเวณที่นั่งและเท้ารองรับแล้ว"
+      ],
+      "handoff": "ส่งเข้าคนนั่งหันสามส่วนสี่เข้าหากระดาษ มือขวาถือแสงระดับงาน",
+      "failureRead": "คนลอยลงมาหรือยืดตัวเพื่อให้พอดีกับเก้าอี้",
+      "id": 1,
+      "action": "Imagine",
+      "chapter": 0,
+      "step": 0,
+      "prop": "none",
+      "shot": "establish",
+      "phasePercent": {
+        "attention": 16,
+        "preparation": 16,
+        "action": 34,
+        "response": 14,
+        "readableHold": 20
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ผืนใย A เต็มภาพก่อนค่อยเปิดให้เห็นบริเวณที่นั่งและจุดรองรับ ไม่ซูมเข้าระหว่างรูปคนยังอ่านไม่ครบ"
+    },
+    {
+      "title": "มองเห็นพื้นที่ในหน้าว่าง",
+      "subtext": "ฉันอยากสร้างพื้นที่ที่คนอยู่แล้วรู้สึกดี",
+      "stance": "seated → seated",
+      "timing": "observe",
+      "attention": "พื้นที่ว่างบนกระดาษ แล้วจุดเริ่มเส้น",
+      "contacts": "เท้าสองข้างและเบาะรับน้ำหนัก; มือซ้ายแตะขอบกระดาษ",
+      "keyPoses": [
+        "ศีรษะกับอกหันเข้าหากระดาษ ไหล่เปิดพอให้เห็นความสนใจ",
+        "ข้อมือขวาลอยเหนือกระดาษสั้น ๆ ลำตัวเอนไปจากสะโพกเล็กน้อย",
+        "เลือกตำแหน่งลงเส้น มือซ้ายกดกระดาษอย่างอ่อนโยน"
+      ],
+      "handoff": "ค้างปลายปากกาเหนือจุดเริ่ม พร้อมเข้าสู่การวาด",
+      "failureRead": "เอียงหัวแบบน่ารักซ้ำ ๆ หรือมองผู้ชมเพื่อขอคำตอบ",
+      "id": 2,
+      "action": "Imagine a place",
+      "chapter": 1,
+      "step": 0,
+      "prop": "blueprint",
+      "shot": "establish",
+      "phasePercent": {
+        "attention": 20,
+        "preparation": 15,
+        "action": 25,
+        "response": 15,
+        "readableHold": 25
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "มุมสามส่วนสี่เห็นหัว อก มือทั้งสอง และหน้าว่าง ให้มีพื้นที่ว่างตรงที่กำลังจินตนาการ"
+    },
+    {
+      "title": "วาดเส้นแรก",
+      "subtext": "สิ่งที่อยู่ในความคิดเริ่มมีรูปร่าง",
+      "stance": "seated → seated",
+      "timing": "precise",
+      "attention": "ปลายปากกาและทิศเส้นที่จะวาด",
+      "contacts": "มือซ้ายตรึงกระดาษ; ปลายปากกาสัมผัสระนาบเฉพาะช่วงเขียน",
+      "keyPoses": [
+        "ศอกขวาห่างเอวเล็กน้อย ข้อมือจัดมุมปากกาให้ตรงกับกระดาษ",
+        "วาดหนึ่งเส้นหลักตามด้วยเส้นสั้นที่ตั้งใจ ไหล่ตามเพียงเล็กน้อย",
+        "ยกปากกาให้พ้นกระดาษก่อนถอยมือ แล้วเอนกลับดูสัดส่วน"
+      ],
+      "handoff": "ปากกายกและมีพื้นที่วางชัดเจนก่อนเครื่องมือเปลี่ยน",
+      "failureRead": "ปากกาทะลุกระดาษ วนข้อมือเหมือนร่ายเวท หรือร่างกายโยกทั้งตัว",
+      "id": 3,
+      "action": "Draw the first lines",
+      "chapter": 1,
+      "step": 1,
+      "prop": "house",
+      "shot": "draft",
+      "phasePercent": {
+        "attention": 12,
+        "preparation": 16,
+        "action": 40,
+        "response": 16,
+        "readableHold": 16
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "มองเฉียงเหนือไหล่พอเห็นปลาย stylus มือรอง และเส้นที่เกิดจริง ไม่ให้หัวบังกระดาษ"
+    },
+    {
+      "title": "ความคิดกลายเป็นโค้ด",
+      "subtext": "ฉันเปลี่ยนเครื่องมือ แต่ยังสร้างด้วยเจตนาเดิม",
+      "stance": "seated → seated",
+      "timing": "transfer",
+      "attention": "จากช่องวางปากกาไปยังคีย์บอร์ดและผลลัพธ์",
+      "contacts": "ปล่อยปากกาลงที่พัก; กระดาษพ้นมือก่อนเปลี่ยนเป็นแล็ปท็อป",
+      "keyPoses": [
+        "วางปากกาด้วยข้อมือผ่อนคลาย มือซ้ายปล่อยขอบกระดาษ",
+        "เปลี่ยนตำแหน่งวัตถุให้มั่นคงก่อนวางมือสองข้างเหนือคีย์บอร์ด",
+        "พิมพ์ช่วงสั้นแล้วพักมือเพื่ออ่านผล ศีรษะนำการหยุด"
+      ],
+      "handoff": "เก็บท่ามือพร้อมพิมพ์สำหรับการสร้างองค์ประกอบชิ้นแรก",
+      "failureRead": "เครื่องมือเปลี่ยนขณะที่มือยังจับอยู่ หรือนิ้วขยับไม่หยุด",
+      "id": 4,
+      "action": "Turn the drawing into an interface",
+      "chapter": 1,
+      "step": 2,
+      "prop": "code",
+      "shot": "detail",
+      "phasePercent": {
+        "attention": 12,
+        "preparation": 22,
+        "action": 32,
+        "response": 16,
+        "readableHold": 18
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพกลางเห็นที่พัก stylus และมือย้ายเข้าสู่ keyboard จึงค่อยเข้าใกล้ช่วงพิมพ์"
+    },
+    {
+      "title": "ทำสิ่งเล็กให้ทำงานจริง",
+      "subtext": "รายละเอียดชิ้นนี้ต้องเชื่อถือได้",
+      "stance": "seated → seated",
+      "timing": "precise",
+      "attention": "องค์ประกอบเดียวบนหน้าจอ",
+      "contacts": "เก้าอี้และเท้ารองรับ; มือพักได้บนขอบโต๊ะ",
+      "keyPoses": [
+        "เอนเข้าใกล้เล็กน้อยเพื่ออ่านรายละเอียด มืออีกข้างพัก",
+        "ข้อมือทำคำสั่งสั้นที่ชัด แล้วหยุดรอผลด้วยร่างกายที่ยังสนใจ",
+        "ไหล่คลายเล็กน้อยเมื่อเห็นชิ้นงานนิ่ง มือขวาเตรียมย้ายมัน"
+      ],
+      "handoff": "เปลี่ยนจากท่าพิมพ์เป็นจับชิ้นงานหลังปล่อยคีย์บอร์ด",
+      "failureRead": "พยักหน้าหรือชูกำปั้นแทนการตรวจงาน",
+      "id": 5,
+      "action": "Build one component",
+      "chapter": 2,
+      "step": 0,
+      "prop": "component",
+      "shot": "detail",
+      "phasePercent": {
+        "attention": 12,
+        "preparation": 16,
+        "action": 40,
+        "response": 16,
+        "readableHold": 16
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นมือพิมพ์กับผลหนึ่งตำแหน่งในเฟรมเดียว มีจังหวะนิ่งเมื่ออ่านผล"
+    },
+    {
+      "title": "ให้ชิ้นส่วนเป็นส่วนหนึ่งของระบบ",
+      "subtext": "สิ่งที่ฉันทำต้องเข้ากับงานรอบตัว",
+      "stance": "seated → seated",
+      "timing": "place",
+      "attention": "ช่องที่จะรับชิ้นงาน ไม่ใช่ตัวชิ้นงานตลอดเวลา",
+      "contacts": "มือซ้ายตรึงกรอบหลัก; มือขวาถือชิ้นงานที่เอื้อมถึง",
+      "keyPoses": [
+        "ศีรษะเลือกช่องก่อน มือขวาจึงยกชิ้นงานผ่านเส้นทางโค้งสั้น",
+        "ชะลอก่อนช่อง หมุนข้อมือจัดแนว แล้ววางให้สัมผัส",
+        "ปล่อยนิ้วเมื่อชิ้นงานอยู่ได้ด้วยตัวเอง ลำตัวถอยพอดูความสัมพันธ์"
+      ],
+      "handoff": "มือซ้ายยังค้ำระบบไว้เพื่อเข้าสู่การตรวจ",
+      "failureRead": "ยืดแขนให้ถึงเป้าหมายไกล หรือยัดชิ้นงานเข้าอย่างมีแรงเกินเหตุ",
+      "id": 6,
+      "action": "Fit it into a larger system",
+      "chapter": 2,
+      "step": 1,
+      "prop": "assembly",
+      "shot": "connect",
+      "phasePercent": {
+        "attention": 14,
+        "preparation": 20,
+        "action": 34,
+        "response": 18,
+        "readableHold": 14
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพกลางเห็นกรอบ มือรอง และทางมือที่เข้าวาง ไม่ให้ชิ้นงานบัง contact"
+    },
+    {
+      "title": "ตรวจสิ่งที่คนอื่นจะพึ่งพา",
+      "subtext": "ฉันรับผิดชอบรายละเอียดหลังจากประกอบเสร็จ",
+      "stance": "seated → seated",
+      "timing": "verify",
+      "attention": "จุดเชื่อมและเส้นทางที่ต่อออกจากชิ้นงาน",
+      "contacts": "มือหนึ่งรองกรอบ อีกมือชี้โดยไม่บังสิ่งที่ตรวจ",
+      "keyPoses": [
+        "เลื่อนศีรษะตามรอยต่อเพียงแนวเดียว อกไม่ยกโอ้อวด",
+        "มือขวาตรวจจุดเชื่อมหนึ่งจุด แล้วถอนออกดูว่าระบบยังคงอยู่",
+        "วางงานลง ถอนมือ และพักบนเบาะโดยเท้ายังอยู่ตำแหน่งเดิม พร้อมเปลี่ยนพื้นที่"
+      ],
+      "handoff": "จบคนนั่งที่วางงานแล้ว; สะพานลุกเป็นของช่วงต้นฉาก 08 เพื่อไม่ตัดข้ามการถ่ายน้ำหนัก",
+      "failureRead": "สัญลักษณ์ผ่านตรวจปรากฏก่อนมีการตรวจ หรือเท้าไถลระหว่างเตรียมลุก",
+      "id": 7,
+      "action": "Make it dependable",
+      "chapter": 2,
+      "step": 2,
+      "prop": "verified",
+      "shot": "detail",
+      "phasePercent": {
+        "attention": 14,
+        "preparation": 16,
+        "action": 28,
+        "response": 18,
+        "readableHold": 24
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพกลางเห็นจุดตรวจและการวางงาน แล้วพร้อมขยายสำหรับ bridge 08"
+    },
+    {
+      "title": "ให้พื้นที่กับความต้องการของคนอื่น",
+      "subtext": "ฉันต้องเข้าใจก่อนจะลงมือ",
+      "stance": "standing → standing",
+      "timing": "receive",
+      "attention": "brief ที่เข้ามาในพื้นที่ทำงาน",
+      "contacts": "ยืนมั่นคงหลังลุก; มือรับขอบเอกสารหรือรองพื้นผิว",
+      "keyPoses": [
+        "หยุดมือที่กำลังทำงานก่อน หันอกกับศีรษะไปหา brief",
+        "รองรับเอกสารโดยให้ศอกอยู่ห่างลำตัวพออ่านรูปมือได้",
+        "เอนเข้าอ่านเล็กน้อยแล้ววางในตำแหน่งที่สัมพันธ์กับระบบ"
+      ],
+      "handoff": "แสดงจุดเริ่มของ requirement ให้เชื่อมไปสิ่งที่กำลังสร้าง",
+      "failureRead": "ยืนกอดอกหรือยื่นมือทั้งสองสมมาตรเหมือนกำลังบรรยาย",
+      "id": 8,
+      "action": "Listen to the requirement",
+      "chapter": 3,
+      "step": 0,
+      "prop": "brief",
+      "shot": "intimate",
+      "phasePercent": {
+        "attention": 24,
+        "preparation": 14,
+        "action": 24,
+        "response": 16,
+        "readableHold": 22
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0.36,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "entryBridge": {
+        "progress": [
+          0,
+          0.36
+        ],
+        "fromBeat": 7,
+        "fromState": "seated, work docked, both feet on support",
+        "toState": "standing, balanced, hands free for brief",
+        "action": "ขณะเบาะยังรับน้ำหนัก จัดเท้าทีละข้าง; เอนอกให้เท้ารับน้ำหนักแล้วลุก; ปรับสมดุลก่อนหันไปรับ brief",
+        "camera": "ขยายให้เห็นเท้า สะโพก และเบาะตลอดการถ่ายน้ำหนัก ก่อนเข้า intimate หลังยืนมั่นคง",
+        "direction": "ลุกอย่างใช้งานจริง ไม่มีการยกแสงหรือกล้องยกย่อง; จัดสัดส่วน scroll ให้เรียบและอ่านได้"
+      },
+      "cameraDirection": "bridge เริ่มกว้างเห็นเท้า/เบาะ/สะโพก; หลังยืนมั่นคงค่อยเข้าใกล้หัว–อก–brief"
+    },
+    {
+      "title": "เชื่อมสิ่งที่อยู่คนละฝั่ง",
+      "subtext": "ฉันกำลังหาความสัมพันธ์ระหว่างสิ่งเหล่านี้",
+      "stance": "standing → standing",
+      "timing": "connect",
+      "attention": "ต้นทาง → ปลายทาง; ศีรษะเปลี่ยนก่อนมือ",
+      "contacts": "มือซ้ายคงต้นทาง มือขวานำเส้นเชื่อม; ถ้าต้องก้าวให้ถ่ายน้ำหนักก่อน",
+      "keyPoses": [
+        "ลงน้ำหนักเท้าข้างที่รองการเอื้อม อกหมุนตามเป้าหมาย",
+        "มือขวานำการเชื่อมไปปลายทางด้วยข้อศอกงอเป็นธรรมชาติ",
+        "ปล่อยปลายทางแล้วปล่อยต้นทาง ลำตัวกลับสู่สมดุล"
+      ],
+      "handoff": "สายสัมพันธ์คงอยู่แม้มือปล่อย เพื่อให้มองระบบรวมในฉาก 10",
+      "failureRead": "แขนกางเป็นรูป T หรือมือสองข้างเริ่มและหยุดพร้อมกัน",
+      "id": 9,
+      "action": "Connect across boundaries",
+      "chapter": 3,
+      "step": 1,
+      "prop": "network",
+      "shot": "connect",
+      "phasePercent": {
+        "attention": 12,
+        "preparation": 20,
+        "action": 36,
+        "response": 16,
+        "readableHold": 16
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นเป้าหมายสองด้านและมือที่ทำงานทีละด้าน หากก้าวต้องเห็นการถ่ายน้ำหนัก"
+    },
+    {
+      "title": "ยอมให้ผลงานยืนได้เอง",
+      "subtext": "ระบบนี้ใหญ่กว่างานชิ้นเดียวของฉัน",
+      "stance": "standing → standing",
+      "timing": "reveal",
+      "attention": "ภาพรวม แล้วพื้นที่ที่ยังเว้นให้คนอื่น",
+      "contacts": "ปล่อยวัตถุแล้วจึงขยับเท้าถอยหนึ่งช่วงสั้น",
+      "keyPoses": [
+        "มือทั้งสองเริ่มถอนออกคนละจังหวะหลังเชื่อมครบ",
+        "ถอยครึ่งก้าวอย่างมีการถ่ายน้ำหนัก เว้นช่องว่างระหว่างคนกับระบบ",
+        "แขนพักด้านข้างอย่างพร้อมทำต่อ ศีรษะยังสัมพันธ์กับงาน"
+      ],
+      "handoff": "คงพื้นที่ว่างที่ความสามารถใหม่จะเข้ามา",
+      "failureRead": "กางแขนรับคำชมหรือทำท่าประกาศความสำเร็จ",
+      "id": 10,
+      "action": "Bring the pieces together",
+      "chapter": 3,
+      "step": 2,
+      "prop": "assembly",
+      "shot": "reveal",
+      "phasePercent": {
+        "attention": 16,
+        "preparation": 16,
+        "action": 34,
+        "response": 14,
+        "readableHold": 20
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ค่อยออกเมื่อมือปล่อยเพื่อเห็นระบบตั้งอยู่เองและคนถอยครึ่งก้าว"
+    },
+    {
+      "title": "เปิดรับความเป็นไปได้ใหม่",
+      "subtext": "ฉันสนใจว่าสิ่งนี้จะช่วยงานได้อย่างไร",
+      "stance": "standing → standing",
+      "timing": "explore",
+      "attention": "ความสามารถใหม่ แล้วตำแหน่งใน workflow",
+      "contacts": "มือซ้ายรองระบบเดิม; มือขวาแตะจุดทดลองที่เข้าถึงได้",
+      "keyPoses": [
+        "ศีรษะกับอกหันเข้าหาสัญญาณใหม่ มือยังไม่รีบคว้า",
+        "ทดลองหนึ่งการกระทำเล็ก ๆ แล้วชะลอเพื่อพิจารณาคำตอบ",
+        "ดึงคำตอบเข้าพื้นที่ตรวจ แทนส่งต่อทันที"
+      ],
+      "handoff": "ส่งเข้าช่วง review โดยมือยังรองข้อมูลไว้",
+      "failureRead": "สะดุ้งหรือพุ่งเข้าหาแสงจนอ่านเป็นความตื่นกลัว",
+      "id": 11,
+      "action": "Invite intelligence into the workflow",
+      "chapter": 4,
+      "step": 0,
+      "prop": "ai",
+      "shot": "draft",
+      "phasePercent": {
+        "attention": 20,
+        "preparation": 16,
+        "action": 26,
+        "response": 18,
+        "readableHold": 20
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพกลางเฉียงเห็น input คำตอบ และพื้นที่ review ที่ต่างกัน"
+    },
+    {
+      "title": "หยุดเพื่อพิจารณา",
+      "subtext": "ความเร็วไม่ได้ตัดสินใจแทนคน",
+      "stance": "standing → standing",
+      "timing": "verify",
+      "attention": "ข้อเสนอและแหล่งอ้างอิงที่วางใกล้กัน",
+      "contacts": "เอกสารมีจุดรองรับ; มือซ้ายแสดงการพักด้วยระดับฝ่ามือต่ำ",
+      "keyPoses": [
+        "มือซ้ายหยุดการส่งต่ออย่างสงบ ขณะที่มือขวารองคำตอบ",
+        "แนวศีรษะเปรียบเทียบสองตำแหน่ง มือขวาตรวจจุดเดียว",
+        "ผ่อนแรงมือเมื่อพร้อมไปต่อ โดยคงช่องทางตรวจให้เห็น"
+      ],
+      "handoff": "ท่าปลายยังเปิดให้แก้ไขและตรวจย้อน",
+      "failureRead": "ฝ่ามือตั้งสูงอ่านเป็นการปฏิเสธคน หรือพยักหน้าโดยไม่ตรวจ",
+      "id": 12,
+      "action": "Pause at the review boundary",
+      "chapter": 4,
+      "step": 1,
+      "prop": "review",
+      "shot": "detail",
+      "phasePercent": {
+        "attention": 14,
+        "preparation": 16,
+        "action": 28,
+        "response": 18,
+        "readableHold": 24
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพใกล้รวมมือหยุดระดับต่ำ คำตอบ และจุดตรวจ ไม่เหลือเพียงฝ่ามือ"
+    },
+    {
+      "title": "เลือกและรับผิดชอบ",
+      "subtext": "ฉันพร้อมทำขั้นต่อไปโดยยังรักษาการตรวจสอบ",
+      "stance": "standing → standing-at-seat",
+      "timing": "release",
+      "attention": "ผลที่เลือก → พื้นที่ทำงานส่วนตัว",
+      "contacts": "ปล่อยเอกสารเมื่อวางมั่นคง; เก้าอี้ฉากถัดไปต้องพร้อมก่อนนั่ง",
+      "keyPoses": [
+        "ยืนยันหนึ่งจุดด้วยการกระทำขนาดเล็กและแน่ชัด",
+        "มือถอนออกให้เห็นว่าการควบคุมยังกลับมาที่คนได้",
+        "วางเอกสารและปล่อยมือ หันเข้าพื้นที่เงียบ ถ่ายน้ำหนักและก้าวเข้าหน้าเก้าอี้ แล้วยืนสมดุลก่อนเริ่มนั่ง"
+      ],
+      "handoff": "จบยืนหน้าเก้าอี้ที่พร้อมรับ; สะพานนั่งเป็นของช่วงต้นฉาก 14 แสงติดกรอบมือขวาตลอดหลังวางเอกสาร",
+      "failureRead": "แสงดับหรือแสดงการพ่ายแพ้ระหว่างย้ายจากงานองค์กรสู่เรื่องส่วนตัว",
+      "id": 13,
+      "action": "Keep the person in control",
+      "chapter": 4,
+      "step": 2,
+      "prop": "verified",
+      "shot": "connect",
+      "phasePercent": {
+        "attention": 16,
+        "preparation": 20,
+        "action": 24,
+        "response": 18,
+        "readableHold": 22
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นวางเอกสาร หันและก้าวเข้าหน้าเก้าอี้ เตรียมภาพกว้างต่อ bridge 14"
+    },
+    {
+      "title": "รักษาสิ่งที่ยังเชื่อ",
+      "subtext": "ฉันยังไม่แน่ใจทุกอย่าง แต่เลือกจะดูแลความเป็นไปได้นี้",
+      "stance": "seated → seated",
+      "timing": "conviction",
+      "attention": "พื้นที่ที่ยังไม่ก่อตัว → แสงในมือ → งานข้างหน้า",
+      "contacts": "เบาะและเท้ารองรับ; มือขวาถือแสง มือซ้ายประคองใต้และด้านข้างโดยไม่ประกบ",
+      "keyPoses": [
+        "ลำตัวเอนจากสะโพกเล็กน้อย อกยังเปิด มือเว้นช่องว่างเล็กที่ปกป้องแสง",
+        "ศีรษะหันไปพิจารณาพื้นที่ว่างแล้วกลับมา มือซ้ายช่วยให้มือขวานิ่ง",
+        "มือขวาเปิดออกทางงานเพียงนิดเดียว มือซ้ายพร้อมเปลี่ยนไปค้ำโต๊ะ"
+      ],
+      "handoff": "คงความสนใจที่งานเพื่อเริ่มพยายามในฉาก 15",
+      "failureRead": "มือประนม อกพับเหมือนยอมแพ้ หรือกอดแสงแน่นจนอ่านเป็นความหวง",
+      "id": 14,
+      "action": "Hold on to the possibility",
+      "chapter": 5,
+      "step": 0,
+      "prop": "ember",
+      "shot": "isolate",
+      "phasePercent": {
+        "attention": 26,
+        "preparation": 16,
+        "action": 18,
+        "response": 12,
+        "readableHold": 28
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0.32,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "entryBridge": {
+        "progress": [
+          0,
+          0.32
+        ],
+        "fromBeat": 13,
+        "fromState": "standing-at-seat, document docked, hands free",
+        "toState": "seated, pelvis on seat, feet supported",
+        "action": "ให้เบาะอยู่ในตำแหน่งจริง; งอสะโพกและเข่าพร้อมโน้มอกชดเชย; ลงน้ำหนักบนเบาะก่อนผ่อนอกและนำมือซ้ายประคองพื้นที่แสง",
+        "camera": "ภาพกว้าง isolate ต้องเห็นเบาะ เท้า และสะโพกจนได้นั่งจริง จึงจัดพื้นที่ว่างรอบตัว",
+        "direction": "แสงจากกรอบมือขวาคงอยู่ ระดับค่อยลงตามมือ ไม่ส่งแสงกลับมาจากเอกสารที่วางไว้"
+      },
+      "cameraDirection": "bridge เห็นเบาะ/เท้า/สะโพก; หลังนั่งใช้พื้นที่ว่างด้านข้างมากกว่าตัวคนเพื่อสื่อความโดดเดี่ยว"
+    },
+    {
+      "title": "พบขอบเขตของวิธีเดิม",
+      "subtext": "ฉันลองแล้วพบว่าวิธีนี้ยังไปต่อไม่ได้",
+      "stance": "seated → seated",
+      "timing": "resistance",
+      "attention": "รอยขาดที่ทำให้การกระทำหยุด",
+      "contacts": "มือซ้ายค้ำโต๊ะ เท้าช่วยรับการเอน; แขนขวาอยู่ในระยะเอื้อมจริง",
+      "keyPoses": [
+        "ศีรษะเลือกจุด ลำตัวตาม มือขวาเอื้อมอย่างมีเหตุผล",
+        "เห็นรอยขาดแล้วชะลอและยกเลิกการเอื้อมก่อนแตะ ลำตัวตามอีกนิดแล้วหยุดผ่านไหล่และสะโพกอย่างควบคุม ไม่มีแรงสะท้อนจากกำแพงที่ไม่ได้สัมผัส",
+        "ข้อศอกพับคืนบางส่วน ศีรษะยังหันหารอยขาด ไม่ทิ้งความสนใจจากงาน"
+      ],
+      "handoff": "คืนลำตัวเหนือเบาะและเท้าก่อนคลายแรงมือซ้ายที่ค้ำโต๊ะ แล้วจึงยกมือรองส่วนของปัญหาในฉาก 16",
+      "failureRead": "ชกอากาศ สะบัดหัว ทิ้งสิ่งของ หรือคอตกลงพื้นทันที",
+      "id": 15,
+      "action": "Meet the resistance",
+      "chapter": 5,
+      "step": 1,
+      "prop": "fracture",
+      "shot": "intimate",
+      "phasePercent": {
+        "attention": 14,
+        "preparation": 18,
+        "action": 22,
+        "response": 14,
+        "readableHold": 32
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "ความสนใจเลือกเป้าหมาย → มือเอื้อม → เห็นรอยขาดและชะลอมือ → อก/ไหล่ตามการหยุดเล็กน้อย → ข้อศอกถอนบางส่วน โดยแนวศีรษะยังอยู่ที่ปัญหา",
+      "cameraDirection": "ภาพกลางเห็นมือชะลอ รอยขาด และไหล่/อกที่ตามหยุด กล้อง settle ช่วงรับผล"
+    },
+    {
+      "title": "อยู่กับสิ่งที่ยังไม่เข้าใจ",
+      "subtext": "ฉันกำลังเปลี่ยนคำถามให้ชัดขึ้น",
+      "stance": "seated → seated",
+      "timing": "reflection",
+      "attention": "สองด้านของปัญหา แล้วจุดที่จะลองใหม่",
+      "contacts": "คืนลำตัวเหนือเบาะ/เท้า → คลายแรงค้ำโต๊ะ → ยกฝ่ามือซ้าย → รับชิ้นงาน; มือขวาพิจารณาและมี emitter แสงแยกจาก grip",
+      "keyPoses": [
+        "เมื่อเบาะและเท้ารองลำตัวแล้ว ปลดมือซ้ายจากโต๊ะมารองชิ้นงาน ไหล่คลายครั้งเดียว ศอกเข้ามาใกล้แต่เว้นมือจากอก",
+        "หมุนชิ้นงานหรือเทียบสองขอบเพียงครั้งเดียว จากนั้นค้างพิจารณา",
+        "แนวศีรษะยกไปยังจุดถัดไปก่อนหน้าอกและมือ เป็นสัญญาณเล็กของการตัดสินใจ"
+      ],
+      "handoff": "มือซ้ายเริ่มจัดสิ่งรองรับก่อนมือขวาทดลองรอบใหม่",
+      "failureRead": "สองมือห้อยหมดแรง หรือค้างมือเท้าคางเป็นท่าคิดแบบสำเร็จรูป",
+      "id": 16,
+      "action": "Stay with the problem",
+      "chapter": 5,
+      "step": 2,
+      "prop": "lesson",
+      "shot": "intimate",
+      "phasePercent": {
+        "attention": 18,
+        "preparation": 12,
+        "action": 18,
+        "response": 12,
+        "readableHold": 40
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "ตั้งสมดุลก่อนปลดมือค้ำ → รับ/เทียบชิ้นงาน → พักพิจารณา → แนวศีรษะเลือกจุดใหม่ก่อนอกและมือเริ่มครั้งถัดไป",
+      "cameraDirection": "ภาพกลางใกล้รวมแนวหัว อก และสองมือ ถือกล้องนิ่งช่วงพิจารณา ไม่ crop เหลือหัวเปล่า"
+    },
+    {
+      "title": "กลับมาด้วยวิธีที่เปลี่ยนไป",
+      "subtext": "สิ่งที่ฉันเรียนรู้กำลังเปลี่ยนวิธีลงมือ",
+      "stance": "seated → seated",
+      "timing": "retry",
+      "attention": "จุดรองรับ → แนวสัมผัส → ผลหลังปล่อย",
+      "contacts": "มือซ้ายจัดและตรึงงานก่อน มือขวาจัด grip; เท้าอยู่ตำแหน่งเดิมตลอดฉากนี้; งานต้องวางได้เองก่อนปล่อยสองมือ",
+      "keyPoses": [
+        "เริ่มที่มือซ้ายจัดพื้นที่ ศีรษะกับอกจึงหันเข้าหาเป้าหมายที่ใกล้ขึ้น",
+        "หมุนข้อมือให้ตรงและใช้ทางมือสั้นกว่ารอบแรก ชะลอก่อนสัมผัส",
+        "ค้างตรวจ วางงานให้มั่นคงแล้วคลายและถอนมือทีละข้าง ไหล่คลายเล็กน้อย เท้ายังอยู่ตำแหน่งเดิม"
+      ],
+      "handoff": "จบคนนั่งที่ชิ้นงานตั้งมั่นคงและสองมือปล่อยแล้ว; การจัดเท้าและมือค้ำสำหรับลุกทั้งหมดอยู่ใน preparation ของฉาก 18",
+      "failureRead": "ใช้ท่าเดิมทุกอย่างแล้วเปลี่ยนแค่สีให้ดูสำเร็จ",
+      "id": 17,
+      "action": "Return to the work",
+      "chapter": 5,
+      "step": 3,
+      "prop": "repair",
+      "shot": "detail",
+      "phasePercent": {
+        "attention": 18,
+        "preparation": 24,
+        "action": 24,
+        "response": 20,
+        "readableHold": 14
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "มือซ้ายจัดฐาน → ศีรษะ/อกปรับแนว → ข้อมือขวาจัด grip → ทดลองทางสั้น → ตรวจผล → ปล่อยมือหลังงานตั้งมั่นคง",
+      "cameraDirection": "เข้าใกล้ฐานและมือได้ แต่ต้องเห็นมือซ้ายเปลี่ยนการจัดวางกับมือขวาลองใหม่"
+    },
+    {
+      "title": "ทำให้ตัวเองพร้อมเดินต่อ",
+      "subtext": "ฉันยังจะกลับมาทำสิ่งนี้ต่อไป",
+      "stance": "seated → standing",
+      "timing": "rise",
+      "attention": "งานปัจจุบัน → พื้นที่ทำงานถัดไป",
+      "contacts": "เบาะรองรับขณะจัดเท้าทีละข้าง; หลังงานถูกวางและปล่อยแล้ว ฝ่ามือซ้ายลงบนขอบโต๊ะคงที่ข้างตัวช่วยลุก; ถอนมือค้ำเมื่อเท้าและขารับได้ก่อนยืนเต็มตัว; มือขวาว่างพร้อม emitter แสง",
+      "keyPoses": [
+        "ขณะยังนั่ง ยกและวางเท้าที่ผ่อนน้ำหนักทีละข้างเข้าใต้ตัว วางมือซ้ายบนขอบโต๊ะคงที่ แล้วโน้มอกผ่านสะโพกให้เท้ารับน้ำหนัก",
+        "สะโพกยกเมื่อเท้ารับน้ำหนักแล้ว เข่ากับสะโพกค่อยเหยียดร่วมกัน คลายและถอนมือซ้ายจากขอบโต๊ะเมื่อขารับได้ ก่อนลำตัวตั้งเต็ม",
+        "อกและศีรษะตามขึ้นทีหลัง ปรับสมดุลเล็กน้อย แล้วนำแสงไปที่งานระดับอกหรือต่ำกว่า"
+      ],
+      "handoff": "ยืนมั่นคงพร้อมพิจารณาบทเรียนในฉาก 19",
+      "failureRead": "ชูแสงเหนือหัวเหมือนถ้วยรางวัล เข่ายืดก่อนน้ำหนักย้าย หรือเท้าไถล",
+      "id": 18,
+      "action": "Keep the light alive",
+      "chapter": 5,
+      "step": 4,
+      "prop": "ember",
+      "shot": "rise",
+      "phasePercent": {
+        "attention": 14,
+        "preparation": 30,
+        "action": 28,
+        "response": 16,
+        "readableHold": 12
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "จัดเท้าทีละข้างขณะเบาะรับ → มือซ้ายค้ำขอบโต๊ะ → เอนอก/ย้ายน้ำหนัก → สะโพกยกและขาเหยียด → ปลดมือค้ำ → อก/ศีรษะตาม → ตั้งสมดุลและทำต่อ",
+      "cameraDirection": "เริ่มเต็มตัวให้เห็นเบาะ เท้า สะโพก และขอบโต๊ะ จนถ่ายน้ำหนักและปลดมือค้ำเสร็จ จึงค่อยเข้าใกล้และลดมุมลงเล็กน้อย"
+    },
+    {
+      "title": "เก็บสิ่งที่ได้เรียนรู้",
+      "subtext": "ประสบการณ์นี้มีบางอย่างที่ฉันอยากเก็บไว้",
+      "stance": "standing → standing",
+      "timing": "observe",
+      "attention": "ชิ้นงานที่เลือกเก็บ ไม่ไล่มองทุกสิ่ง",
+      "contacts": "มือซ้ายรองชิ้นงาน มือขวาแยกส่วนที่ต้องการอย่างเบามือ",
+      "keyPoses": [
+        "นำสิ่งที่เรียนรู้มาใกล้ระดับอ่าน โดยลดไหล่ที่เพิ่งลุกให้สบาย",
+        "เลือกหนึ่งส่วนแล้ววางในพื้นที่เฉพาะ",
+        "ปล่อยมือออกช้า ๆ ให้เห็นว่าการเก็บเป็นการเลือกอย่างตั้งใจ"
+      ],
+      "handoff": "มือที่ว่างเปิดสู่แหล่งความรู้รอบตัว",
+      "failureRead": "กอดชิ้นงานเข้าหน้าอกแบบครอบครองหรือทำทุกบทเรียนเป็นถ้วยรางวัล",
+      "id": 19,
+      "action": "Keep the lesson",
+      "chapter": 6,
+      "step": 0,
+      "prop": "lesson",
+      "shot": "intimate",
+      "phasePercent": {
+        "attention": 20,
+        "preparation": 15,
+        "action": 25,
+        "response": 15,
+        "readableHold": 25
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพกลางเห็นบทเรียนหนึ่งส่วนที่เลือกและตำแหน่งที่วาง ไม่ทำ close-up แสงลอยเดี่ยว"
+    },
+    {
+      "title": "เปิดรับสิ่งที่ดีที่สุดที่หาได้",
+      "subtext": "ฉันยอมให้ความรู้ข้างนอกเปลี่ยนวิธีคิดของฉัน",
+      "stance": "standing → standing",
+      "timing": "compare",
+      "attention": "แหล่งความรู้สองตำแหน่งที่ต่างกัน",
+      "contacts": "ถือครั้งละหนึ่งชิ้น มีพื้นที่พักระหว่างเปรียบเทียบ",
+      "keyPoses": [
+        "แนวศีรษะเปลี่ยนไปแหล่งแรก ร่างกายตามด้วยน้ำหนักข้างที่รองรับ",
+        "หยิบ พัก แล้วเทียบกับอีกแหล่ง ไม่กวาดทุกอย่างเข้าหาตัว",
+        "เลือกส่วนที่เกี่ยวข้องแล้วคืนพื้นที่ให้ส่วนที่ไม่ใช้"
+      ],
+      "handoff": "ส่วนที่เลือกเข้ามาอยู่ระหว่างมือสำหรับสังเคราะห์",
+      "failureRead": "ยกแขนสองข้างกวาดหนังสือรอบตัวเหมือนผู้ควบคุมทุกอย่าง",
+      "id": 20,
+      "action": "Look beyond my own methods",
+      "chapter": 6,
+      "step": 1,
+      "prop": "library",
+      "shot": "connect",
+      "phasePercent": {
+        "attention": 18,
+        "preparation": 16,
+        "action": 30,
+        "response": 18,
+        "readableHold": 18
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นแหล่งสองตำแหน่งและที่พักชิ้นงาน รักษาแกนภาพไม่สลับข้างระหว่างเปรียบเทียบ"
+    },
+    {
+      "title": "ทำให้สกิลมีตัวตน",
+      "subtext": "ฉันกำลังสร้างวิธีทำงานที่มีเหตุผลของมันเอง",
+      "stance": "standing → standing",
+      "timing": "shape",
+      "attention": "ความสัมพันธ์ระหว่างบทเรียนกับวิธีที่เลือก",
+      "contacts": "มือซ้ายเป็นฐาน มือขวาปรับแนว; วัตถุเข้าถึงได้โดยไม่ยืดแขน",
+      "keyPoses": [
+        "จัดสองส่วนให้พบกันตรงพื้นที่กลางที่มือทั้งสองทำงานได้สบาย",
+        "มือขวาทดลองหมุนเพียงเล็กน้อย ขณะซ้ายรักษาฐานให้มั่นคง",
+        "ถอนมือออกทีละข้างเพื่อดูว่ารูปแบบยังคงตัวได้"
+      ],
+      "handoff": "เข้าสู่การทดสอบ character ของสกิลโดยไม่เริ่มเอื้อมใหม่จากท่าพัก",
+      "failureRead": "บีบลูกพลังหรือบิดทั้งตัวให้ดูมีพลังเหนือธรรมชาติ",
+      "id": 21,
+      "action": "Distil a capability",
+      "chapter": 6,
+      "step": 2,
+      "prop": "skill",
+      "shot": "detail",
+      "phasePercent": {
+        "attention": 16,
+        "preparation": 18,
+        "action": 32,
+        "response": 20,
+        "readableHold": 14
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นมือรองและส่วนที่เลือกประกอบ เข้าใกล้เมื่อ contact พร้อมแล้ว"
+    },
+    {
+      "title": "เห็นเอกลักษณ์ที่ยังพัฒนาต่อได้",
+      "subtext": "สิ่งนี้มีหลักการ วิธี และนิสัยการทำงานที่ต่างออกไป",
+      "stance": "standing → standing",
+      "timing": "verify",
+      "attention": "purpose → method → character ของสกิลเดียว",
+      "contacts": "ชิ้นงานยืนได้เอง มือสัมผัสเฉพาะตอนตรวจ",
+      "keyPoses": [
+        "ศีรษะและมือสำรวจสามด้านอย่างเป็นลำดับ",
+        "ตรวจแต่ละด้านด้วยท่าต่างขนาดเล็ก ก่อนเว้นระยะดูภาพรวม",
+        "ถอยเพียงพอให้เห็นสกิลแยกจากตัวผู้สร้าง มือเปิดพร้อมนำไปใช้"
+      ],
+      "handoff": "โครงสร้างลึกเริ่มเชื่อมด้านหลังสกิลเข้าสู่ฉาก 23",
+      "failureRead": "ตั้งการ์ดหรือกอดโล่รอบตัวจน MOAT อ่านเป็นการปิดกั้นคน",
+      "id": 22,
+      "action": "Build a distinctive advantage",
+      "chapter": 6,
+      "step": 3,
+      "prop": "moat",
+      "shot": "reveal",
+      "phasePercent": {
+        "attention": 14,
+        "preparation": 16,
+        "action": 28,
+        "response": 18,
+        "readableHold": 24
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ออกเล็กน้อยให้เห็น skill ที่มีที่อยู่ของตนและคนถอยเปิดพื้นที่"
+    },
+    {
+      "title": "ยอมรับความซับซ้อนที่อยู่ข้างหลัง",
+      "subtext": "ฉันต้องจัดการความยากนี้เพื่อให้คนอื่นทำงานได้ง่ายขึ้น",
+      "stance": "standing → standing",
+      "timing": "connect",
+      "attention": "เส้นทางที่จำเป็น ไม่พยายามมองทุกจุดพร้อมกัน",
+      "contacts": "มือหนึ่งคงแกน อีกมือจัดการจุดเชื่อม; มีฐานเท้ารับการหมุนตัว",
+      "keyPoses": [
+        "แผนภาพกว้างขึ้น ศีรษะเลือกเส้นทางก่อนแขนออกจากตัว",
+        "หมุนอกและไหล่ตามการเชื่อมขนาดพอดี แขนสองข้างมีหน้าที่ต่างกัน",
+        "นิ่งเมื่อเห็นเส้นทางหลัก มือที่เสร็จงานค่อยกลับพัก"
+      ],
+      "handoff": "คงแกนหนึ่งไว้เป็นจุดเริ่มออกแบบทางเข้าที่เรียบง่าย",
+      "failureRead": "กางแขนเต็มสองข้างตลอดเวลา หรือใช้เส้นรกกลบการกระทำ",
+      "id": 23,
+      "action": "Face the hidden complexity",
+      "chapter": 7,
+      "step": 0,
+      "prop": "complexity",
+      "shot": "connect",
+      "phasePercent": {
+        "attention": 12,
+        "preparation": 20,
+        "action": 36,
+        "response": 16,
+        "readableHold": 16
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นระบบหลายชั้นแต่ให้ความชัดกับเส้นทางเดียวที่มือกำลังติดตาม"
+    },
+    {
+      "title": "ออกแบบทางเข้าที่คนเข้าใจ",
+      "subtext": "ฉันกำลังเว้นพื้นที่ให้คนเข้ามาได้",
+      "stance": "standing → standing",
+      "timing": "clear",
+      "attention": "ช่องทางหลักและพื้นที่ที่ถูกเปิดให้ว่าง",
+      "contacts": "มือซ้ายคงกรอบหลัก มือขวาย้ายรายละเอียดออกแล้วปล่อย",
+      "keyPoses": [
+        "มองจุดที่ผู้ใช้ควรเริ่ม แล้วจัดกรอบให้มองเห็นได้",
+        "มือขวานำรายละเอียดที่ไม่จำเป็นออกด้วยท่าเดียวที่อ่านชัด",
+        "ลดแขนและถอยครึ่งช่วง ให้พื้นที่ว่างเป็นผลของการกระทำ"
+      ],
+      "handoff": "จุดเริ่มต้นยังว่างและเข้าถึงได้สำหรับการเลือกในฉาก 25",
+      "failureRead": "ปัดสิ่งของรุนแรงจนเหมือนรำคาญงานที่เคยทำ",
+      "id": 24,
+      "action": "Shape a clear way in",
+      "chapter": 7,
+      "step": 1,
+      "prop": "interface",
+      "shot": "draft",
+      "phasePercent": {
+        "attention": 16,
+        "preparation": 18,
+        "action": 30,
+        "response": 16,
+        "readableHold": 20
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "คงแกนจากฉาก 23 เพื่อเปรียบเทียบความซับซ้อนกับพื้นที่ที่ถูกทำให้ชัด"
+    },
+    {
+      "title": "ส่งสิทธิ์ตัดสินใจกลับให้คน",
+      "subtext": "ฉันช่วยจัดทางเลือก แล้วให้คุณเป็นผู้เลือก",
+      "stance": "standing → standing",
+      "timing": "offer",
+      "attention": "ทางเลือก → พื้นที่ของผู้ชม",
+      "contacts": "มือชี้ข้างปุ่ม ไม่กดแทนผู้ใช้; มืออีกข้างเปิดให้เห็นทางตรวจ",
+      "keyPoses": [
+        "แนะนำตำแหน่งทางเลือกด้วยฝ่ามือเฉียงขึ้นอย่างสงบ",
+        "ถอนมือที่กำลังจะกดออกและหมุนข้อมือเป็นท่าเปิด",
+        "ค้างโดยไม่ยื่นเข้าพื้นที่ผู้ชมเพิ่ม ร่างกายผ่อนแต่ยังรับรู้"
+      ],
+      "handoff": "การรอเปิดพื้นที่ให้ฉาก 26 เปลี่ยนจากทำงานเป็นต้อนรับ",
+      "failureRead": "ยกนิ้วชี้สั่งหรือทำท่ารออย่างหงุดหงิด",
+      "id": 25,
+      "action": "Give the person agency",
+      "chapter": 7,
+      "step": 2,
+      "prop": "choice",
+      "shot": "detail",
+      "phasePercent": {
+        "attention": 18,
+        "preparation": 16,
+        "action": 22,
+        "response": 14,
+        "readableHold": 30
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นทางเลือก มือที่ชี้ แล้วมือถอนก่อนเลือกแทน ต้องเหลือพื้นที่ของผู้ใช้"
+    },
+    {
+      "title": "ความลึกกลายเป็นประสบการณ์ที่เข้าถึงได้",
+      "subtext": "ฉันอยากให้คุณรู้สึกว่าพื้นที่นี้เป็นของคุณได้",
+      "stance": "standing → standing",
+      "timing": "invite",
+      "attention": "พื้นที่ใช้งาน แล้วทิศผู้ชมอย่างไม่จ้องค้าง",
+      "contacts": "ปล่อย interface ให้ตั้งอยู่ได้เองก่อนขยับตัวหลบทาง",
+      "keyPoses": [
+        "มือขวาวางงานในระยะใช้งาน มือซ้ายเปิดทางด้านข้าง",
+        "ถ่ายน้ำหนักและขยับออกจากกึ่งกลาง ให้คนดูเห็นพื้นที่ใช้งานเต็ม",
+        "มือกลับระดับพัก อกหันสามส่วนสี่ระหว่างงานกับผู้ชม"
+      ],
+      "handoff": "คงพื้นที่เดียวกันสำหรับเข้าสู่ผลงานจริง",
+      "failureRead": "ยืนบังผลงาน ยื่นจอใส่ผู้ชม หรือโค้งตัวแบบพิธีการ",
+      "id": 26,
+      "action": "Make the experience inviting",
+      "chapter": 7,
+      "step": 3,
+      "prop": "recipient",
+      "shot": "reveal",
+      "phasePercent": {
+        "attention": 18,
+        "preparation": 18,
+        "action": 22,
+        "response": 12,
+        "readableHold": 30
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ออกให้เห็นตัวคนหลบจากศูนย์กลางและพื้นที่งานที่เข้าได้ ไม่ย้ายจุดเด่นกลับมาที่คน"
+    },
+    {
+      "title": "เชิญให้ลองด้วยตัวเอง",
+      "subtext": "ผลงานพร้อมให้คุณเข้ามาสำรวจ",
+      "stance": "standing → standing",
+      "timing": "invite",
+      "attention": "จุดเริ่มใช้งานที่มีอยู่จริงในฉาก",
+      "contacts": "ไม่ยึด interface ไว้กับมือ; เท้ารองการเปิดทาง",
+      "keyPoses": [
+        "เปลี่ยนแนวตัวเพียงเล็กน้อยเพื่อชี้ทางเข้าที่ชัด",
+        "ใช้มือหนึ่งเชิญตามระนาบงานแล้วถอนออก",
+        "ปล่อยให้เส้นทางข้างหน้าสงบพออ่าน ร่างกายไม่แย่งความสนใจ"
+      ],
+      "handoff": "มือที่ว่างพร้อมเปิดด้านในของงานในฉาก 28",
+      "failureRead": "โบกเรียกซ้ำหรือใช้ท่าทางเร่งให้คนคลิก",
+      "id": 27,
+      "action": "Open the door",
+      "chapter": 8,
+      "step": 0,
+      "prop": "interface",
+      "shot": "reveal",
+      "phasePercent": {
+        "attention": 18,
+        "preparation": 18,
+        "action": 22,
+        "response": 12,
+        "readableHold": 30
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นจุดเริ่มใช้งานจริงและทางที่มือเปิดให้ แล้ว settle ให้ผู้ชมอ่านเส้นทาง"
+    },
+    {
+      "title": "เปิดให้เห็นสิ่งที่อยู่ข้างใน",
+      "subtext": "ความเชื่อใจควรมีทางให้ตรวจสอบได้",
+      "stance": "standing → standing",
+      "timing": "reveal",
+      "attention": "ชั้นที่เปิดเผยและจุดเชื่อมที่สำคัญ",
+      "contacts": "มือซ้ายตรึงขอบ มือขวาเปิดชั้นเดียว; จุดสัมผัสเคลื่อนกับวัตถุ",
+      "keyPoses": [
+        "จับขอบที่ชัดเจนโดยไม่ทะลุพื้นผิว",
+        "เปิดหรือแยกชั้นพร้อมเอนตัวหลบแนวการมอง",
+        "หยุดค้างให้เห็นความสัมพันธ์ของชั้น มือชี้แล้วถอย"
+      ],
+      "handoff": "ชั้นเปิดคงอยู่พออ่าน ก่อนกลับสู่พื้นที่เสนอความเป็นไปได้",
+      "failureRead": "รื้อทุกชั้นพร้อมกันจนผู้ชมมองไม่ออกว่าต้องดูอะไร",
+      "id": 28,
+      "action": "Make the work inspectable",
+      "chapter": 8,
+      "step": 1,
+      "prop": "review",
+      "shot": "detail",
+      "phasePercent": {
+        "attention": 16,
+        "preparation": 16,
+        "action": 34,
+        "response": 14,
+        "readableHold": 20
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพเฉียงพอเห็นชั้นที่เปิดโดยคนเอนหลบ ขอบที่จับกับชั้นงานต้องอยู่ในเฟรม"
+    },
+    {
+      "title": "ส่งต่อความเป็นไปได้",
+      "subtext": "ฉันพร้อมทำงานร่วมกับสิ่งที่คุณอยากสร้าง",
+      "stance": "standing → standing",
+      "timing": "offer",
+      "attention": "ผลงาน → พื้นที่ของคนที่อาจใช้มัน",
+      "contacts": "ถือขอบเมื่อจัดวาง แล้วปล่อย; ไม่ข้ามพื้นที่รับของผู้ชม",
+      "keyPoses": [
+        "จัดงานในระยะเอื้อมที่เคารพพื้นที่คนอื่น",
+        "มือซ้ายเปิดพื้นที่ มือขวาถอนจากผลงานช้ากว่าเล็กน้อย",
+        "ทั้งสองมือพักเปิดอย่างไม่สมมาตร รอโดยไม่เรียกร้องคำตอบ"
+      ],
+      "handoff": "ผ่อนลงเป็นท่าสะท้อนประสบการณ์ ไม่เริ่มบทสรุปแบบชัยชนะ",
+      "failureRead": "ยื่นวัตถุจนสุดแขน หยิบกลับ หรือทำท่าขอคำชม",
+      "id": 29,
+      "action": "Offer the next possibility",
+      "chapter": 8,
+      "step": 2,
+      "prop": "recipient",
+      "shot": "reveal",
+      "phasePercent": {
+        "attention": 18,
+        "preparation": 16,
+        "action": 22,
+        "response": 14,
+        "readableHold": 30
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพกลางกว้างเห็นงานถูกวาง พื้นที่รับของผู้ชม และมือที่ปล่อย โดยไม่ยื่นเข้ากล้อง"
+    },
+    {
+      "title": "อยู่กับประสบการณ์ที่พามาถึงตรงนี้",
+      "subtext": "ฉันยืนอยู่บนงานที่ทำและยังพร้อมพัฒนาต่อ",
+      "stance": "standing → standing",
+      "timing": "settle",
+      "attention": "งานที่อยู่ด้านข้างและแนวทางข้างหน้า",
+      "contacts": "น้ำหนักสองเท้าพร้อมผ่อนข้างหนึ่ง มือพักโดยไม่กอดอก",
+      "keyPoses": [
+        "หยุดจากการเสนอผลงาน ให้ไหล่ลดสู่ระดับสบาย",
+        "ศีรษะหันกลับดูงานสั้น ๆ แล้วคืนทิศไปข้างหน้า",
+        "ท่ายืนมีขารับน้ำหนักชัดและความพร้อมที่เงียบ"
+      ],
+      "handoff": "ส่งมือขวาที่ว่างเข้าสู่คำเชิญสุดท้าย",
+      "failureRead": "ยืนตรงสมมาตรเหมือนรูปปั้น หรือใช้ท่าเหนื่อยจนหมดแรง",
+      "id": 30,
+      "action": "Reflect",
+      "chapter": 9,
+      "step": 0,
+      "prop": "none",
+      "shot": "portrait",
+      "phasePercent": {
+        "attention": 18,
+        "preparation": 16,
+        "action": 18,
+        "response": 14,
+        "readableHold": 34
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "เห็นน้ำหนักการยืนและงานด้านข้าง กล้องนิ่งพออ่านการพักที่ยังพร้อม"
+    },
+    {
+      "title": "เว้นพื้นที่ให้บทต่อไป",
+      "subtext": "ฉันพร้อมเริ่มสิ่งใหม่ร่วมกับคุณ",
+      "stance": "standing → standing",
+      "timing": "final-offer",
+      "attention": "พื้นที่ระหว่างเราและงานที่จะเริ่ม",
+      "contacts": "เท้าคงที่ มือขวาเสนอพื้นที่ระดับเอว มือซ้ายว่างไม่กีดกัน",
+      "keyPoses": [
+        "หันอกสามส่วนสี่ให้ทั้งงานและผู้ชมอยู่ในความสัมพันธ์เดียวกัน",
+        "มือขวาเปิดอย่างพอดี มือซ้ายที่เคยประคองแสงเปิดพื้นที่ข้างมัน",
+        "ค้างท่ารับฟังที่ผ่อนคลาย ให้พื้นที่ว่างเป็นคำเชิญ"
+      ],
+      "handoff": "จบท่าที่อ่านได้แม้ไม่มีการขยับต่อ ไม่มีการดึงมือกลับวนซ้ำ",
+      "failureRead": "ชี้ใส่ผู้ชม ยื่นเพื่อจับมือโดยไม่มีผู้รับ หรือวนท่าเชิญไม่สิ้นสุด",
+      "id": 31,
+      "action": "Begin",
+      "chapter": 10,
+      "step": 0,
+      "prop": "none",
+      "shot": "reveal",
+      "phasePercent": {
+        "attention": 16,
+        "preparation": 14,
+        "action": 20,
+        "response": 10,
+        "readableHold": 40
+      },
+      "keyPoseMeaning": "Three readable key poses plus required contact/weight breakdowns; these descriptions are direction, not executable joint coordinates.",
+      "performanceDomain": [
+        0,
+        1
+      ],
+      "leadOrder": "เลือกจุดสนใจด้วยแนวศีรษะและอก → จัดน้ำหนัก/มือรอง → ไหล่และแขนลงมือ → ข้อมือจัดสัมผัส → ตรวจผลและปล่อย โดยซ้อนจังหวะตามการกระทำ",
+      "cameraDirection": "ภาพกลางกว้างมีพื้นที่ว่างด้านมือที่เปิด ค้าง framing ตอนจบ ไม่ dolly เข้าจนเหมือนขอจับมือ"
+    }
+  ],
+  "lightContinuity": "แสงเป็น emitter เชิงสัญลักษณ์ในกรอบมือขวา แยกจาก prop ที่จับ; เปลี่ยน offset ภายในกรอบอย่างต่อเนื่องให้เห็นแสงโดยไม่บังนิ้ว ไม่ต้องจับลูกแสงและวัตถุสองชิ้นใน grip เดียว",
+  "phaseDomainNote": "phasePercent รวม 100% ภายใน performanceDomain ของ beat; entryBridge มีช่วงแยกก่อนหน้านั้น เปอร์เซ็นต์ทั้งสองระดับห้ามนำมาบวกกัน ให้เพิ่มระยะบทหากสะพานเร็วเกินอ่าน"
+}

@@ -1,0 +1,79 @@
+{
+  "release": "living-dramatic-world-v12",
+  "checks": [
+    {
+      "name": "all-eleven-chapters-have-distinct-authored-sets",
+      "pass": true
+    },
+    {
+      "name": "world-retraces-without-history",
+      "pass": true
+    },
+    {
+      "name": "finite-bounded-world-geometry",
+      "pass": true
+    },
+    {
+      "name": "bounded-desktop-and-mobile-budget",
+      "pass": true
+    },
+    {
+      "name": "scenic-world-is-a-nonopaque-backdrop",
+      "pass": true
+    },
+    {
+      "name": "head-negative-space-suppresses-scenic-ink",
+      "pass": true,
+      "data": {
+        "protectedSamples": 1611,
+        "protectedInk": 0
+      }
+    },
+    {
+      "name": "no-scenic-eye-plane-crossings",
+      "pass": true,
+      "data": {
+        "nearPlane": 0
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-1440-2",
+      "pass": false,
+      "data": {
+        "max": 37,
+        "changed": 1936,
+        "before": {
+          "current": 1.2836666666666667,
+          "detail": 1
+        },
+        "after": {
+          "current": 1.2836666666666667,
+          "detail": 1
+        }
+      }
+    },
+    {
+      "name": "painted-head-remains-clear-390-2",
+      "pass": false,
+      "data": {
+        "max": 20,
+        "changed": 231,
+        "before": {
+          "current": 1.283549087584289,
+          "detail": 2
+        },
+        "after": {
+          "current": 1.283549087584289,
+          "detail": 2
+        }
+      }
+    },
+    {
+      "name": "no-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "sourceSHA256": "63e118c278b992e2ed739fff3e3f3911e9f794351a4a1a80c6b8654e996e0c11"
+}

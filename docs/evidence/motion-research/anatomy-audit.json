@@ -1,0 +1,1246 @@
+{
+  "source": "assets/profile/geometry.js",
+  "method": "pose() temporarily exposed only inside a VM; source file unmodified. Bone lengths measured from the same centers used by tube(). Units are model coordinates. Hero abstract remapping excluded from range/grounding results. Linear midpoint diagnostics isolate the skeletal interpolation component; renderer adds up to 4.5% uniform body contraction.",
+  "ranges": {
+    "leftUpper": {
+      "min": {
+        "index": 1,
+        "pose": "draw",
+        "value": 0.3431
+      },
+      "max": {
+        "index": 29,
+        "pose": "stand",
+        "value": 0.492
+      },
+      "maxMinRatio": 1.434
+    },
+    "leftFore": {
+      "min": {
+        "index": 25,
+        "pose": "welcome",
+        "value": 0.395
+      },
+      "max": {
+        "index": 10,
+        "pose": "type",
+        "value": 1.4353
+      },
+      "maxMinRatio": 3.6337
+    },
+    "rightUpper": {
+      "min": {
+        "index": 1,
+        "pose": "draw",
+        "value": 0.2864
+      },
+      "max": {
+        "index": 12,
+        "pose": "approve",
+        "value": 0.9183
+      },
+      "maxMinRatio": 3.2064
+    },
+    "rightFore": {
+      "min": {
+        "index": 13,
+        "pose": "alone",
+        "value": 0.4147
+      },
+      "max": {
+        "index": 10,
+        "pose": "type",
+        "value": 1.0968
+      },
+      "maxMinRatio": 2.6448
+    },
+    "leftThigh": {
+      "min": {
+        "index": 5,
+        "pose": "build",
+        "value": 0.4981
+      },
+      "max": {
+        "index": 27,
+        "pose": "inspect",
+        "value": 0.6564
+      },
+      "maxMinRatio": 1.3178
+    },
+    "rightThigh": {
+      "min": {
+        "index": 5,
+        "pose": "build",
+        "value": 0.4717
+      },
+      "max": {
+        "index": 27,
+        "pose": "inspect",
+        "value": 0.6458
+      },
+      "maxMinRatio": 1.3691
+    },
+    "leftShin": {
+      "min": {
+        "index": 5,
+        "pose": "build",
+        "value": 0.4717
+      },
+      "max": {
+        "index": 27,
+        "pose": "inspect",
+        "value": 0.5901
+      },
+      "maxMinRatio": 1.251
+    },
+    "rightShin": {
+      "min": {
+        "index": 5,
+        "pose": "build",
+        "value": 0.4875
+      },
+      "max": {
+        "index": 27,
+        "pose": "inspect",
+        "value": 0.5616
+      },
+      "maxMinRatio": 1.152
+    }
+  },
+  "grounding": {
+    "interpretation": "Negative soleMinusField = sole below visible woven terrain; positive = above. Terrain could be decorative rather than a physical floor; no contact solver exists.",
+    "min": {
+      "side": "left",
+      "soleY": -1.355,
+      "fieldY": -0.7779,
+      "soleMinusField": -0.5771,
+      "index": 20,
+      "pose": "shape"
+    },
+    "max": {
+      "side": "right",
+      "soleY": -1.355,
+      "fieldY": -1.5061,
+      "soleMinusField": 0.1511,
+      "index": 30,
+      "pose": "invite"
+    },
+    "samples": 60
+  },
+  "worstMidpointShrink": [
+    {
+      "fromIndex": 15,
+      "toIndex": 16,
+      "fromPose": "reflect",
+      "toPose": "repair",
+      "bone": "rightFore",
+      "meanEndpointLength": 0.6518,
+      "linearMidpointLength": 0.3546,
+      "linearMidpointShrinkPercent": 45.5982
+    },
+    {
+      "fromIndex": 21,
+      "toIndex": 22,
+      "fromPose": "protect",
+      "toPose": "connect",
+      "bone": "leftFore",
+      "meanEndpointLength": 0.7284,
+      "linearMidpointLength": 0.4769,
+      "linearMidpointShrinkPercent": 34.5236
+    },
+    {
+      "fromIndex": 28,
+      "toIndex": 29,
+      "fromPose": "offer",
+      "toPose": "stand",
+      "bone": "rightFore",
+      "meanEndpointLength": 0.5531,
+      "linearMidpointLength": 0.3683,
+      "linearMidpointShrinkPercent": 33.4048
+    },
+    {
+      "fromIndex": 29,
+      "toIndex": 30,
+      "fromPose": "stand",
+      "toPose": "invite",
+      "bone": "rightFore",
+      "meanEndpointLength": 0.5712,
+      "linearMidpointLength": 0.3899,
+      "linearMidpointShrinkPercent": 31.7337
+    },
+    {
+      "fromIndex": 8,
+      "toIndex": 9,
+      "fromPose": "connect",
+      "toPose": "build",
+      "bone": "leftFore",
+      "meanEndpointLength": 0.5061,
+      "linearMidpointLength": 0.3626,
+      "linearMidpointShrinkPercent": 28.3469
+    },
+    {
+      "fromIndex": 7,
+      "toIndex": 8,
+      "fromPose": "read",
+      "toPose": "connect",
+      "bone": "leftFore",
+      "meanEndpointLength": 0.7915,
+      "linearMidpointLength": 0.5749,
+      "linearMidpointShrinkPercent": 27.3637
+    },
+    {
+      "fromIndex": 22,
+      "toIndex": 23,
+      "fromPose": "connect",
+      "toPose": "shape",
+      "bone": "leftFore",
+      "meanEndpointLength": 0.5541,
+      "linearMidpointLength": 0.4162,
+      "linearMidpointShrinkPercent": 24.8805
+    },
+    {
+      "fromIndex": 23,
+      "toIndex": 24,
+      "fromPose": "shape",
+      "toPose": "offer",
+      "bone": "leftFore",
+      "meanEndpointLength": 0.5415,
+      "linearMidpointLength": 0.4091,
+      "linearMidpointShrinkPercent": 24.4597
+    },
+    {
+      "fromIndex": 14,
+      "toIndex": 15,
+      "fromPose": "reach",
+      "toPose": "reflect",
+      "bone": "rightFore",
+      "meanEndpointLength": 0.7281,
+      "linearMidpointLength": 0.5642,
+      "linearMidpointShrinkPercent": 22.5085
+    },
+    {
+      "fromIndex": 24,
+      "toIndex": 25,
+      "fromPose": "offer",
+      "toPose": "welcome",
+      "bone": "leftFore",
+      "meanEndpointLength": 0.4021,
+      "linearMidpointLength": 0.3237,
+      "linearMidpointShrinkPercent": 19.5012
+    },
+    {
+      "fromIndex": 25,
+      "toIndex": 26,
+      "fromPose": "welcome",
+      "toPose": "invite",
+      "bone": "leftFore",
+      "meanEndpointLength": 0.4021,
+      "linearMidpointLength": 0.3237,
+      "linearMidpointShrinkPercent": 19.5012
+    },
+    {
+      "fromIndex": 17,
+      "toIndex": 18,
+      "fromPose": "rise",
+      "toPose": "read",
+      "bone": "rightUpper",
+      "meanEndpointLength": 0.2927,
+      "linearMidpointLength": 0.2384,
+      "linearMidpointShrinkPercent": 18.5341
+    }
+  ],
+  "poses": [
+    {
+      "index": 0,
+      "action": "Imagine",
+      "pose": "design",
+      "chapter": 0,
+      "step": 0,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 0.564,
+        "rightUpper": 0.2864,
+        "rightFore": 0.6775,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.546,
+          "soleMinusField": 0.191
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.3283,
+          "soleMinusField": -0.0267
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "action": "Imagine a place",
+      "pose": "draw",
+      "chapter": 1,
+      "step": 0,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 0.7123,
+        "rightUpper": 0.2864,
+        "rightFore": 0.6871,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.413,
+          "soleMinusField": 0.058
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.1617,
+          "soleMinusField": -0.1933
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "action": "Draw the first lines",
+      "pose": "sketch",
+      "chapter": 1,
+      "step": 1,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 0.7123,
+        "rightUpper": 0.4473,
+        "rightFore": 0.7297,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.3853,
+          "soleMinusField": 0.0303
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.1329,
+          "soleMinusField": -0.2221
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "action": "Turn the drawing into an interface",
+      "pose": "type",
+      "chapter": 1,
+      "step": 2,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 1.4353,
+        "rightUpper": 0.2864,
+        "rightFore": 1.0968,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.3568,
+          "soleMinusField": 0.0018
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.1047,
+          "soleMinusField": -0.2503
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "action": "Build one component",
+      "pose": "type",
+      "chapter": 2,
+      "step": 0,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 1.4353,
+        "rightUpper": 0.2864,
+        "rightFore": 1.0968,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.2512,
+          "soleMinusField": -0.1038
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.0126,
+          "soleMinusField": -0.3424
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "action": "Fit it into a larger system",
+      "pose": "build",
+      "chapter": 2,
+      "step": 1,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.492,
+        "leftFore": 0.578,
+        "rightUpper": 0.386,
+        "rightFore": 0.6391,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.2262,
+          "soleMinusField": -0.1288
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.9864,
+          "soleMinusField": -0.3686
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "action": "Make it dependable",
+      "pose": "inspect",
+      "chapter": 2,
+      "step": 2,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 1.1488,
+        "rightUpper": 0.2864,
+        "rightFore": 0.8855,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.1908,
+          "soleMinusField": -0.1642
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.9679,
+          "soleMinusField": -0.3871
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "action": "Listen to the requirement",
+      "pose": "read",
+      "chapter": 3,
+      "step": 0,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 1.1488,
+        "rightUpper": 0.2864,
+        "rightFore": 0.8855,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.0862,
+          "soleMinusField": -0.2688
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.9045,
+          "soleMinusField": -0.4505
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "action": "Connect across boundaries",
+      "pose": "connect",
+      "chapter": 3,
+      "step": 1,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4224,
+        "leftFore": 0.4342,
+        "rightUpper": 0.3966,
+        "rightFore": 0.6379,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.0608,
+          "soleMinusField": -0.2942
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8793,
+          "soleMinusField": -0.4757
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "action": "Bring the pieces together",
+      "pose": "build",
+      "chapter": 3,
+      "step": 2,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.492,
+        "leftFore": 0.578,
+        "rightUpper": 0.386,
+        "rightFore": 0.6391,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.0326,
+          "soleMinusField": -0.3224
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8658,
+          "soleMinusField": -0.4892
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "action": "Invite intelligence into the workflow",
+      "pose": "type",
+      "chapter": 4,
+      "step": 0,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 1.4353,
+        "rightUpper": 0.2864,
+        "rightFore": 1.0968,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.9441,
+          "soleMinusField": -0.4109
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8544,
+          "soleMinusField": -0.5006
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "action": "Pause at the review boundary",
+      "pose": "inspect",
+      "chapter": 4,
+      "step": 1,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 1.1488,
+        "rightUpper": 0.2864,
+        "rightFore": 0.8855,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.9228,
+          "soleMinusField": -0.4322
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8524,
+          "soleMinusField": -0.5026
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "action": "Keep the person in control",
+      "pose": "approve",
+      "chapter": 4,
+      "step": 2,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.492,
+        "leftFore": 0.578,
+        "rightUpper": 0.9183,
+        "rightFore": 0.7714,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.8952,
+          "soleMinusField": -0.4598
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8286,
+          "soleMinusField": -0.5264
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "action": "Hold on to the possibility",
+      "pose": "alone",
+      "chapter": 5,
+      "step": 0,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 0.666,
+        "rightUpper": 0.6439,
+        "rightFore": 0.4147,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.8473,
+          "soleMinusField": -0.5077
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8703,
+          "soleMinusField": -0.4847
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "action": "Meet the resistance",
+      "pose": "reach",
+      "chapter": 5,
+      "step": 1,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 0.666,
+        "rightUpper": 0.6947,
+        "rightFore": 0.918,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.836,
+          "soleMinusField": -0.519
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8801,
+          "soleMinusField": -0.4749
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "action": "Stay with the problem",
+      "pose": "reflect",
+      "chapter": 5,
+      "step": 2,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 0.666,
+        "rightUpper": 0.5646,
+        "rightFore": 0.5382,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.8268,
+          "soleMinusField": -0.5282
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.892,
+          "soleMinusField": -0.463
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "action": "Return to the work",
+      "pose": "repair",
+      "chapter": 5,
+      "step": 3,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4897,
+        "leftFore": 1.0649,
+        "rightUpper": 0.4639,
+        "rightFore": 0.7654,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.7958,
+          "soleMinusField": -0.5592
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8698,
+          "soleMinusField": -0.4852
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "action": "Keep the light alive",
+      "pose": "rise",
+      "chapter": 5,
+      "step": 4,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.492,
+        "leftFore": 0.578,
+        "rightUpper": 0.299,
+        "rightFore": 0.6087,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.7881,
+          "soleMinusField": -0.5669
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.8838,
+          "soleMinusField": -0.4712
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "action": "Keep the lesson",
+      "pose": "read",
+      "chapter": 6,
+      "step": 0,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 1.1488,
+        "rightUpper": 0.2864,
+        "rightFore": 0.8855,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.8111,
+          "soleMinusField": -0.5439
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.9496,
+          "soleMinusField": -0.4054
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "action": "Look beyond my own methods",
+      "pose": "research",
+      "chapter": 6,
+      "step": 1,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4224,
+        "leftFore": 0.5375,
+        "rightUpper": 0.3966,
+        "rightFore": 0.8155,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.778,
+          "soleMinusField": -0.577
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.9281,
+          "soleMinusField": -0.4269
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "action": "Distil a capability",
+      "pose": "shape",
+      "chapter": 6,
+      "step": 2,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4897,
+        "leftFore": 0.6739,
+        "rightUpper": 0.4639,
+        "rightFore": 0.5974,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.7779,
+          "soleMinusField": -0.5771
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.9485,
+          "soleMinusField": -0.4065
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "action": "Build a distinctive advantage",
+      "pose": "protect",
+      "chapter": 6,
+      "step": 3,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4897,
+        "leftFore": 1.0226,
+        "rightUpper": 0.4639,
+        "rightFore": 0.8453,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.78,
+          "soleMinusField": -0.575
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -0.9704,
+          "soleMinusField": -0.3846
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "action": "Face the hidden complexity",
+      "pose": "connect",
+      "chapter": 7,
+      "step": 0,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4224,
+        "leftFore": 0.4342,
+        "rightUpper": 0.3966,
+        "rightFore": 0.6379,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.7951,
+          "soleMinusField": -0.5599
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.0327,
+          "soleMinusField": -0.3223
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "action": "Shape a clear way in",
+      "pose": "shape",
+      "chapter": 7,
+      "step": 1,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4897,
+        "leftFore": 0.6739,
+        "rightUpper": 0.4639,
+        "rightFore": 0.5974,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.8048,
+          "soleMinusField": -0.5502
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.0592,
+          "soleMinusField": -0.2958
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "action": "Give the person agency",
+      "pose": "offer",
+      "chapter": 7,
+      "step": 2,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4295,
+        "leftFore": 0.4091,
+        "rightUpper": 0.6252,
+        "rightFore": 0.6552,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.8165,
+          "soleMinusField": -0.5385
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.0866,
+          "soleMinusField": -0.2684
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "action": "Make the experience inviting",
+      "pose": "welcome",
+      "chapter": 7,
+      "step": 3,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4295,
+        "leftFore": 0.395,
+        "rightUpper": 0.5413,
+        "rightFore": 0.7927,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.8302,
+          "soleMinusField": -0.5248
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.1149,
+          "soleMinusField": -0.2401
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "action": "Open the door",
+      "pose": "invite",
+      "chapter": 8,
+      "step": 0,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4295,
+        "leftFore": 0.4091,
+        "rightUpper": 0.5413,
+        "rightFore": 0.6913,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.8736,
+          "soleMinusField": -0.4814
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.19,
+          "soleMinusField": -0.165
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "action": "Make the work inspectable",
+      "pose": "inspect",
+      "chapter": 8,
+      "step": 1,
+      "seated": true,
+      "bones": {
+        "leftUpper": 0.3431,
+        "leftFore": 1.1488,
+        "rightUpper": 0.2864,
+        "rightFore": 0.8855,
+        "leftThigh": 0.6564,
+        "rightThigh": 0.6458,
+        "leftShin": 0.5901,
+        "rightShin": 0.5616
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.9549,
+          "soleMinusField": -0.4001
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.2706,
+          "soleMinusField": -0.0844
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "action": "Offer the next possibility",
+      "pose": "offer",
+      "chapter": 8,
+      "step": 2,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4295,
+        "leftFore": 0.4091,
+        "rightUpper": 0.6252,
+        "rightFore": 0.6552,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -0.9152,
+          "soleMinusField": -0.4398
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.2503,
+          "soleMinusField": -0.1047
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "action": "Reflect",
+      "pose": "stand",
+      "chapter": 9,
+      "step": 0,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.492,
+        "leftFore": 0.4224,
+        "rightUpper": 0.4373,
+        "rightFore": 0.451,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.0032,
+          "soleMinusField": -0.3167
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.3566,
+          "soleMinusField": 0.0015
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "action": "Begin",
+      "pose": "invite",
+      "chapter": 10,
+      "step": 0,
+      "seated": false,
+      "bones": {
+        "leftUpper": 0.4295,
+        "leftFore": 0.4091,
+        "rightUpper": 0.5413,
+        "rightFore": 0.6913,
+        "leftThigh": 0.4981,
+        "rightThigh": 0.4717,
+        "leftShin": 0.4717,
+        "rightShin": 0.4875
+      },
+      "feet": [
+        {
+          "side": "left",
+          "soleY": -1.355,
+          "fieldY": -1.1635,
+          "soleMinusField": -0.1915
+        },
+        {
+          "side": "right",
+          "soleY": -1.355,
+          "fieldY": -1.5061,
+          "soleMinusField": 0.1511
+        }
+      ]
+    }
+  ]
+}

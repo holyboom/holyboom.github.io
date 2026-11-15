@@ -1,0 +1,27 @@
+[
+  {
+    "beat": 1,
+    "meanChannelDifference": 0.0003928755144032922,
+    "fractionPixelsOver16": 0.0
+  },
+  {
+    "beat": 4,
+    "meanChannelDifference": 0.0006526491769547325,
+    "fractionPixelsOver16": 0.0
+  },
+  {
+    "beat": 11,
+    "meanChannelDifference": 0.0003825874485596708,
+    "fractionPixelsOver16": 0.0
+  },
+  {
+    "beat": 17,
+    "meanChannelDifference": 0.0,
+    "fractionPixelsOver16": 0.0
+  },
+  {
+    "beat": 27,
+    "meanChannelDifference": 0.00020576131687242798,
+    "fractionPixelsOver16": 0.0
+  }
+]
