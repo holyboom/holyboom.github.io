@@ -207,8 +207,17 @@
  const LINES=scene(0).length;
  // The complete body moves together so hands never detach from arms. The world follows.
  const timing={intent:[0,.76],hand:[0,.76],human:[0,.76],hair:[0,.76],detail:[0,.76],ui:[.22,.95],prop:[.22,.95],architecture:[.30,1],network:[.24,1],world:[.36,1],code:[.18,.96]};
- function frame(position,detail=1,explode=0){
+ function openingPhase(seconds){const o=cfg.opening;return seconds*o.rate+o.paceAmount*Math.sin(seconds*o.paceFrequency);}
+ function openingDeformer(phase){
+  if(!phase)return q=>q;
+  const sx=1+.14*Math.sin(phase),sy=1-.10*Math.sin(phase),sz=1+.10*Math.sin(phase*.7),angle=.16*Math.sin(phase*.53),c=Math.cos(angle),s=Math.sin(angle);
+  return q=>{const x=q[0]*sx+.16*(Math.sin(phase*.61+q[1]*1.4)-Math.sin(q[1]*1.4)),y=q[1]*sy+.12*(Math.sin(phase*.83+q[0]*1.7)-Math.sin(q[0]*1.7)),z=q[2]*sz+.16*(Math.sin(phase*.9+(q[0]+q[1])*.8)-Math.sin((q[0]+q[1])*.8));return [x*c-z*s,y,x*s+z*c];};
+ }
+ function frame(position,detail=1,explode=0,ambientPhase=0){
   const timeline=resolve(position),a=Math.floor(timeline),b=Math.min(a+1,sequence.length-1),raw=timeline-a;
+  const elastic=openingDeformer(a===0?ambientPhase:0);
+  // The resting opening only needs its visible membrane, not a rebuilt human.
+  if(timeline===0&&ambientPhase)return scene(0).filter(s=>!(detail>1&&Math.floor(s.id/2)%detail&&!s.important&&!s.floor)).map(line=>line.id<192?{...line,points:line.points.map(elastic)}:line);
   const source=scene(a),destination=raw?scene(b):source,p=motion.poseAt(timeline),body=createScene(a,p,true,a>0?detail:1);
   const lines=[],pulse=Math.sin(PI*raw)**2,attractor=p.light,floorTransform=floors.deformer(raw,p),emotion=dramaState(timeline);
   for(let l=0;l<source.length;l++){
@@ -220,7 +229,7 @@
    const environment=['prop','ui','architecture','network','world','code','fabric'].includes(s.group),pull=environment?cfg.gravity.collapse:0;
    const angle=pulse*cfg.gravity.swirl*(environment?1:0),c=Math.cos(angle),sn=Math.sin(angle),radius=1-pull*pulse;
    const points=s.points.map((q,k)=>{
-    const dest=targetLine.points[k];let v=[mix(q[0],dest[0],t),mix(q[1],dest[1],t),mix(q[2],dest[2],t)];
+    const sourcePoint=a===0&&l<192?elastic(q):q,dest=targetLine.points[k];let v=[mix(sourcePoint[0],dest[0],t),mix(sourcePoint[1],dest[1],t),mix(sourcePoint[2],dest[2],t)];
     if(s.floor)return floorTransform(v);
     if(pulse>0&&pull>0&&!(a===0&&l<body.length)){const x=v[0]-attractor[0],y=v[1]-attractor[1],z=v[2]-attractor[2];v=[attractor[0]+radius*(x*c-z*sn),attractor[1]+radius*y,attractor[2]+radius*(x*sn+z*c)];}
     if(explode&&environment){v[0]+=(s.group==='prop'?.25:.55)*explode;v[2]-=(s.group==='network'?.7:.3)*explode;}
@@ -231,11 +240,11 @@
   }
   return lines;
  }
- function lightAt(position){
-  const timeline=resolve(position),light=motion.lightAt(timeline);return timeline>=1?light:lerp(scene(0)[0].points[0],light,smooth(timeline/.88));
+ function lightAt(position,ambientPhase=0){
+  const timeline=resolve(position),light=motion.lightAt(timeline);return timeline>=1?light:lerp(openingDeformer(ambientPhase)(scene(0)[0].points[0]),light,smooth(timeline/.88));
  }
- function lightTrail(position,direction=1,span=cfg.gravity.trailSpan,count=32){
-  return Array.from({length:count},(_,i)=>{const age=i/(count-1);return {point:lightAt(position-direction*span*age),alpha:(1-age)**1.7};});
+ function lightTrail(position,direction=1,span=cfg.gravity.trailSpan,count=32,ambientPhase=0){
+  return Array.from({length:count},(_,i)=>{const age=i/(count-1);return {point:lightAt(position-direction*span*age,ambientPhase),alpha:(1-age)**1.7};});
  }
  // Recognizable action props sit in front of the woven world. Colour supports their meaning.
  const objectCache=[];
@@ -546,7 +555,7 @@
  }
  // Soft, screen-space negative space keeps new scenic glyphs off the blank
  // head and the interaction. The 3D set itself stays anchored during orbits.
- function sceneryFocus(layer,project){return (layer.focus||[]).map(f=>{const q=project(f.point);return {x:q[0],y:q[1],radius:f.radius*project.scale/Math.max(.25,project.camera.distance-q[2])};});}
+ function sceneryFocus(layer,project){return (layer.focus||[]).filter(f=>!project.camera.perspectiveWeight||project.camera.distance-project.depth(f.point)>=project.camera.near).map(f=>{const q=project(f.point);return {x:q[0],y:q[1],radius:f.radius*project.scale/Math.max(.25,project.camera.distance-q[2])};});}
  function sceneryOpacity(points,focus){
   if(!focus.length)return 1;
   let opacity=1,minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
@@ -675,6 +684,20 @@
   const point=event.subject==='head'?p.head:event.subject==='light'?p.light:event.subject==='drawing'?(p.tool?.held>.5?p.tool.tip:p.light):p.work.origin;
   return {id:event.id,subject:event.subject,framing:event.framing,track,weight,radius:event.radius,point:[...point],camera:{yaw:compact?event.compactYaw:event.yaw,pitch:event.pitch,distance:compact?event.compactDistance:event.distance,target:add(point,event.offset)}};
  }
+ function cameraEye(camera){const cp=Math.cos(camera.pitch);return add(camera.target,mul([-Math.sin(camera.yaw)*cp,Math.sin(camera.pitch),Math.cos(camera.yaw)*cp],camera.distance));}
+ function cameraFromEye(eye,target,focal){const v=sub(eye,target),distance=Math.hypot(...v);return {yaw:Math.atan2(-v[0],v[2]),pitch:Math.asin(clamp(v[1]/distance,-1,1)),distance,target,focal};}
+ function perspectiveAt(position,{compact=false}={}){
+  const track=cameraTrack(position),event=cfg.camera.perspectives?.find(e=>track>e.start&&track<e.returnEnd);if(!event)return null;
+  const p=motion.poseAt(resolve(position)),f=p.frames.head,at=offset=>add(p.head,add(mul(f.x,offset[0]),add(mul(f.y,offset[1]),mul(f.z,offset[2])))),
+   subject=add(p.work.origin,mul(p.work.v,.025)),shoulder=at(event.shoulderOffset),eye=at(event.eyeOffset),
+   rear={yaw:event.yaw,pitch:event.pitch,distance:event.distance,target:[...event.target],focal:cfg.camera.focal},
+   incoming=smoother((track-event.start)/(event.rear-event.start)),outgoing=1-smoother((track-event.holdEnd)/(event.returnEnd-event.holdEnd)),
+   approach=smoother((track-event.rear)/(event.shoulder-event.rear)),inhabit=smoother((track-event.shoulder)/(event.eye-event.shoulder)),
+   eyeWeight=inhabit*outgoing,near=event.near,
+   shoulderCamera=cameraFromEye(shoulder,subject,compact?2.8:2.25),eyeCamera=cameraFromEye(eye,subject,compact?event.compactFocal:event.focal);
+  return {id:event.id,track,incoming,outgoing,approach,eyeWeight,near,subject,eye,shoulder,rear,shoulderCamera,eyeCamera,phase:track<event.rear?'rear':track<event.shoulder?'shoulder':track<event.eye?'enter':track<=event.holdEnd?'eyes':'return'};
+ }
+ const blendCamera=(a,b,t)=>({yaw:mix(a.yaw,b.yaw,t),pitch:mix(a.pitch,b.pitch,t),distance:Math.exp(mix(Math.log(a.distance),Math.log(b.distance),t)),target:lerp(a.target,b.target,t),focal:Math.exp(mix(Math.log(a.focal),Math.log(b.focal),t))});
  function cameraAt(position,{compact=false,strength=1,expanded=0}={}){
   position=clamp(position,0,cfg.scenes.length-1);const chapter=Math.floor(position),start=starts[chapter],count=sequence[start].count,local=(position-chapter)*count,step=Math.min(count-1,Math.floor(local));
   const a=start+step,b=Math.min(sequence.length-1,a+1),from=shotCamera(a),to=shotCamera(b),t=smoother((local-step-.08)/.88);
@@ -690,18 +713,34 @@
   const reveal=clamp(expanded)*smooth((position-6.5)/.2)*smooth((8.2-position)/.2);
   const focus=focusAt(position,{compact}),focusWeight=(focus?.weight||0)*clamp(strength)*(1-reveal);
   if(focusWeight>0){base.yaw=mix(base.yaw,focus.camera.yaw,focusWeight);base.pitch=mix(base.pitch,focus.camera.pitch,focusWeight);base.distance=Math.exp(mix(Math.log(base.distance),Math.log(focus.camera.distance),focusWeight));base.target=lerp(base.target,focus.camera.target,focusWeight);}
-  return {...base,orbitId:orbit?.id||null,orbitWeight:weight,locked:!!orbit?.locked&&strength===1,focusId:focusWeight>0?focus.id:null,focusWeight,framing:focusWeight>.02?focus.framing:'full'};
+  const perspective=perspectiveAt(position,{compact}),povWeight=perspective?perspective.incoming*perspective.outgoing*clamp(strength)*(1-reveal):0;
+  if(perspective&&povWeight>0){
+   const rear=blendCamera(base,perspective.rear,perspective.incoming),over=blendCamera(rear,perspective.shoulderCamera,perspective.approach),subjective=blendCamera(over,perspective.eyeCamera,perspective.eyeWeight);
+   Object.assign(base,blendCamera(base,subjective,perspective.outgoing*clamp(strength)*(1-reveal)));
+  }
+  return {...base,orbitId:orbit?.id||null,orbitWeight:weight,locked:!!orbit?.locked&&strength===1,focusId:focusWeight>0?focus.id:null,focusWeight,framing:povWeight>.001?'perspective':focusWeight>.02?focus.framing:'full',perspectiveId:povWeight>0?perspective.id:null,perspectiveWeight:povWeight,eyeWeight:(perspective?.eyeWeight||0)*clamp(strength)*(1-reveal),near:povWeight>0?perspective.near:.25};
  }
  function prepareProjection(camera,w,h,yaw=0,pitch=0){
   const cy=Math.cos(camera.yaw+yaw),sy=Math.sin(camera.yaw+yaw),cx=Math.cos(camera.pitch+pitch),sx=Math.sin(camera.pitch+pitch),[tx,ty,tz]=camera.target,scale=Math.min(w,h)*.285*camera.focal,ox=w/2,oy=h/2;
   // Rotation and viewport coefficients are computed once, not for every strand vertex.
-  const project=p=>{const qx=p[0]-tx,qy=p[1]-ty,qz=p[2]-tz,x=qx*cy+qz*sy,z=-qx*sy+qz*cy,y=qy*cx-z*sx,depth=qy*sx+z*cx,k=scale/Math.max(.25,camera.distance-depth);return [ox+x*k,oy-y*k,depth];};
-  project.camera=camera;project.scale=scale;project.center=[ox,oy];return project;
+  const project=p=>{const qx=p[0]-tx,qy=p[1]-ty,qz=p[2]-tz,x=qx*cy+qz*sy,z=-qx*sy+qz*cy,y=qy*cx-z*sx,depth=qy*sx+z*cx,k=scale/Math.max(camera.near||.25,camera.distance-depth);return [ox+x*k,oy-y*k,depth];};
+  project.camera=camera;project.scale=scale;project.center=[ox,oy];
+  project.depth=p=>{const qx=p[0]-tx,qy=p[1]-ty,qz=p[2]-tz,z=-qx*sy+qz*cy;return qy*sx+z*cx;};
+  project.clip=(points,closed=false)=>{
+   if(!camera.perspectiveWeight)return [points];
+   const limit=camera.distance-camera.near,depth=p=>limit-project.depth(p),crossing=(a,b,da,db)=>lerp(a,b,da/(da-db));
+   if(closed){let polygon=[],a=points.at(-1),da=depth(a);for(const b of points){const db=depth(b);if((da>=0)!==(db>=0))polygon.push(crossing(a,b,da,db));if(db>=0)polygon.push(b);a=b;da=db;}if(polygon.length<3)return [];polygon.push(polygon[0]);return [polygon];}
+   const fragments=[];let current=[],a=points[0],da=depth(a);if(da>=0)current.push(a);
+   for(const b of points.slice(1)){const db=depth(b);if((da>=0)!==(db>=0)){const cut=crossing(a,b,da,db);current.push(cut);if(da>=0){if(current.length>1)fragments.push(current);current=[];}}if(db>=0)current.push(b);a=b;da=db;}if(current.length>1)fragments.push(current);return fragments;
+  };
+  return project;
  }
  function createProjector(position,w,h,{compact=false,yaw=0,pitch=0,strength=1,expanded=0}={}){
-  const camera=cameraAt(position,{compact,strength,expanded}),free=1-Math.max(camera.orbitWeight,camera.focusWeight);
+  const camera=cameraAt(position,{compact,strength,expanded}),free=1-Math.max(camera.orbitWeight,camera.focusWeight,camera.perspectiveWeight);
   return prepareProjection(camera,w,h,yaw*free,pitch*free);
  }
+ function projectLines(lines,project){return lines.flatMap(line=>{const alpha=line.alpha*(line.part==='head'?1-smoother(((project.camera.eyeWeight||0)-.03)/.40):1);return alpha>.001?project.clip(line.points).map(points=>({...line,alpha,points:points.map(project)})):[];});}
+ function projectIllustrations(layers,project){return layers.map(layer=>({...layer,paths:layer.paths.flatMap(item=>project.clip(item.points,!!item.fill).map(points=>({...item,points:points.map(project)})))}));}
  // Compatibility for callers that explicitly need the legacy neutral projection.
  function project(p,w,h,yaw=0,pitch=0){return prepareProjection({...cfg.camera,target:[0,0,0]},w,h,yaw,pitch)(p);}
  function positionFromAnchors(scroll,anchors){if(scroll<=anchors[0])return 0;for(let i=0;i<anchors.length-1;i++)if(scroll<anchors[i+1]){const p=(scroll-anchors[i])/(anchors[i+1]-anchors[i]);return i+clamp((p-cfg.morph.start)/(cfg.morph.end-cfg.morph.start));}return anchors.length-1;}
@@ -728,5 +767,5 @@
    return polygon.length>=3?[...polygon,polygon[0]]:null;
   }).filter(Boolean);
  }
- const api={motion,performanceAt:position=>motion.poseAt(resolve(position)),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,createProjector,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,clamp,mix,smooth,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
+ const api={motion,performanceAt:position=>motion.poseAt(resolve(position)),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,perspectiveAt,createProjector,projectLines,projectIllustrations,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

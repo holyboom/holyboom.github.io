@@ -55,6 +55,11 @@ jobs:
           npm --prefix .. run test:profile-performance
           npm --prefix .. run test:profile-floors
           npm --prefix .. run test:profile-drama
+          npm --prefix .. run test:profile-perspective
+          npm --prefix .. run test:profile-reading-thread
+          npm --prefix .. run test:profile-opening
+          npm --prefix .. run test:profile-cinematic
+          npm --prefix .. run test:profile-hand-light
           npm --prefix .. run test:profile-glove
           npm --prefix .. run test:profile-documentary
           npm --prefix .. run test:profile-painter

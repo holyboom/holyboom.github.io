@@ -70,3 +70,33 @@ main :is(a,summary),.site-footer a{scroll-margin-block:110px 20px}
 @media(min-width:768px){:is(.profile-enhanced,.profile-boot) #conviction{min-height:180svh}:is(.profile-enhanced,.profile-boot) #conviction .chapter-copy{min-height:calc(180svh - 190px);display:flex;flex-direction:column}#conviction .story-bridge{margin-top:auto;padding-top:36px}#conviction .tags{margin-bottom:36px}}
 @media(max-width:767px){#conviction .scene-sequence{gap:13px}#conviction blockquote{font-size:31px;margin-block:35px}}
 @media print{#conviction{min-height:0!important}#conviction .chapter-copy{display:block!important;min-height:0!important}#conviction blockquote{font-size:16pt;margin-block:15px;color:#333}#conviction .lede{color:#333}}
+
+/* One material line carries attention from the drawn work to the reading path. */
+.reading-thread{position:fixed;inset:0;width:100%;height:100%;z-index:8;pointer-events:none;overflow:hidden;display:none;--reading-tone:#c398ff}
+.reading-thread path{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.reading-thread-line{stroke:url(#reading-thread-ink);stroke-width:1.15;opacity:.43}
+.reading-thread-halo{stroke:url(#reading-thread-ink);stroke-width:7;opacity:.045}
+.reading-thread-under{stroke:var(--reading-tone);stroke-width:1;opacity:.65}
+.reading-thread-source{fill:#ffd394;opacity:.65}.reading-thread-bead{fill:#fff0cc;opacity:.88}.reading-thread-end{fill:var(--reading-tone);stroke:var(--bg);stroke-width:1;opacity:.9}
+.story-receiver{text-shadow:0 0 23px var(--reading-glow)}
+@media(max-width:767px){.reading-thread-line{opacity:.48}}
+@media print{.reading-thread{display:none!important}.story-receiver{background:none;text-shadow:none}}
+.lede[data-company].story-receiver{color:var(--reading-tone)}
+
+/* A woven energy transfer: charge the real component, travel, then receive. */
+.reading-thread-halo{stroke-width:15;opacity:.07}
+.reading-thread-line{stroke-width:1.6;opacity:.68}
+.reading-thread-weave path{stroke:url(#reading-thread-ink);stroke-width:.65;opacity:.38}
+.reading-component-trace{fill:none;stroke:#ffe8ba;stroke-width:1.8;stroke-linecap:round}
+.reading-thread-source{fill:#fff1ce;opacity:.95}
+.reading-thread-source-ring{fill:none;stroke:#ffd394;stroke-width:1}
+.reading-thread-packet circle{fill:#fff2d5}
+.reading-thread-arrival{fill:none;stroke:var(--reading-tone);stroke-width:1.3}
+.reading-thread-dust circle{fill:var(--reading-tone)}
+.reading-thread-under{stroke-width:calc(1px + var(--reading-impact,0)*1.4px);opacity:calc(.5 + var(--reading-impact,0)*.5)}
+@media(max-width:767px){.reading-thread-line{opacity:.7;stroke-width:1.3}.reading-thread-weave path{opacity:.32}.reading-thread-halo{stroke-width:11;opacity:.06}.reading-component-trace{stroke-width:1.3}}
+
+/* A single local cinematic event; its SVG shares the foreground page clock. */
+.cinematic-lines{pointer-events:none}
+.cinematic-lines path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cinematic-lines circle{stroke:none}

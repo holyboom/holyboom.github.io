@@ -20,9 +20,9 @@ const positionFor=s=>Math.min(10,s.chapter+(s.step+.05)/s.count);
  check('compact-camera-finite-and-reversible',compact.every(c=>fields(c).every(Number.isFinite))&&JSON.stringify(compact)===JSON.stringify([...positions].reverse().map(p=>g.cameraAt(p,{compact:true})).reverse()));
  const neutral=positions.map(p=>g.cameraAt(p,{strength:0}));
  check('zero-strength-locks-a-static-camera',neutral.every(c=>delta(c,neutral[0])<1e-10));
- const compactSpan=key=>Math.max(...compact.map(c=>c[key]))-Math.min(...compact.map(c=>c[key]));
- check('compact-reduces-orbit-and-dolly-range',compactSpan('yaw')<span('yaw')&&compactSpan('pitch')<span('pitch')&&compactSpan('distance')<span('distance'));
- const transitClipping=[];for(const position of positions)for(const {w,h,compact}of [{w:696,h:860,compact:false},{w:390,h:228,compact:true}]){const project=g.createProjector(position,w,h,{compact}),subject=project.camera.framing==='head'?g.performanceAt(position).head:g.lightAt(position),q=project(subject);if(q[0]<0||q[0]>w||q[1]<0||q[1]>h)transitClipping.push({position,w,h,framing:project.camera.framing,point:q.slice(0,2)});}
+ const scenic=forward.filter(c=>!c.perspectiveWeight),compactScenic=compact.filter(c=>!c.perspectiveWeight),scenicSpan=(rows,key)=>Math.max(...rows.map(c=>c[key]))-Math.min(...rows.map(c=>c[key]));
+ check('compact-reduces-orbit-and-dolly-range', ['yaw','pitch','distance'].every(key=>scenicSpan(compactScenic,key)<scenicSpan(scenic,key)));
+ const transitClipping=[];for(const position of positions)for(const {w,h,compact}of [{w:696,h:860,compact:false},{w:390,h:228,compact:true}]){const project=g.createProjector(position,w,h,{compact}),subject=project.camera.framing==='perspective'?g.perspectiveAt(position,{compact}).subject:project.camera.framing==='head'?g.performanceAt(position).head:g.lightAt(position),q=project(subject);if(q[0]<0||q[0]>w||q[1]<0||q[1]>h)transitClipping.push({position,w,h,framing:project.camera.framing,point:q.slice(0,2)});}
  check('intended-subject-remains-in-frame-during-transitions',transitClipping.length===0,transitClipping);
  const clipping=[],nonfinite=[],nearPlane=[],misaligned=[];
  for(const {w,h,compact}of [{w:696,h:860,compact:false},{w:390,h:228,compact:true},{w:480,h:620,compact:false},{w:720,h:720,compact:false}]){
@@ -30,8 +30,8 @@ const positionFor=s=>Math.min(10,s.chapter+(s.step+.05)/s.count);
    const same=(a,b)=>a.every((n,i)=>Math.abs(n-b[i])<1e-8);
    if(!same(tip,trailTip)||!same(tip,signalTip))misaligned.push({shot:shot.action,w,h});
    if(shot.chapter>0&&(tip[0]<0||tip[0]>w||tip[1]<0||tip[1]>h))clipping.push({type:'hand',shot:shot.action,w,h,point:tip.slice(0,2)});
-   const samples=model.flatMap(l=>l.points.filter((_,i)=>i%12===0));
-   for(const p of samples){const q=project(p);if(!q.every(Number.isFinite))nonfinite.push({shot:shot.action,w,h});if(project.camera.distance-q[2]<=.1)nearPlane.push({shot:shot.action,w,h});}
+   const samples=model.flatMap(l=>project.clip(l.points).flatMap(points=>points.filter((_,i)=>i%12===0)));
+   for(const p of samples){const q=project(p);if(!q.every(Number.isFinite))nonfinite.push({shot:shot.action,w,h});if(project.camera.distance-q[2]<(project.camera.perspectiveWeight?project.camera.near-1e-8:.1))nearPlane.push({shot:shot.action,w,h});}
    for(const layer of g.illustration(position)){
     // Primary work must fit; terrain and scenery intentionally extend beyond
     // the frame, particularly in portraits and documentary detail shots.

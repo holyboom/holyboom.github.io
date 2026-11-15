@@ -21,7 +21,7 @@ const toPath=points=>{let d=`M${n(points[0][0])} ${n(points[0][1])}`;
 function painter(lines,layers,project){
  const cameraDistance=project.camera.distance,projectionScale=project.scale,[centerX,centerY]=project.center;
  const cameraPoint=q=>{const k=(cameraDistance-q[2])/projectionScale;return [(q[0]-centerX)*k,(centerY-q[1])*k,q[2]];};
- const screenPoint=q=>{const k=projectionScale/Math.max(.25,cameraDistance-q[2]);return [centerX+q[0]*k,centerY-q[1]*k,q[2]];};
+ const screenPoint=q=>{const k=projectionScale/Math.max(project.camera.near||.25,cameraDistance-q[2]);return [centerX+q[0]*k,centerY-q[1]*k,q[2]];};
  const planeItem=layers.filter(layer=>layer.role==='front-work').flatMap(layer=>layer.paths).find(item=>item.fill&&item.points.length>8);
  let plane=null;
  if(planeItem){
@@ -78,8 +78,8 @@ function painter(lines,layers,project){
 }
 for(let state=0;state<g.config.scenes.length;state++){
  const project=g.createProjector(state,720,720);
- const accent=g.paletteAt(state).accent,lines=g.frame(state,2).filter(l=>l.alpha>.005&&l.points.length>1).map(l=>({...l,points:l.points.map(project)}));
- const layers=g.illustration(state).map(layer=>({...layer,paths:layer.paths.map(item=>({...item,points:item.points.map(project)}))}));
+ const accent=g.paletteAt(state).accent,lines=g.projectLines(g.frame(state,2).filter(l=>l.alpha>.005&&l.points.length>1),project);
+ const layers=g.projectIllustrations(g.illustration(state),project);
  const mesh=line=>{
   const depth=line.points[Math.floor(line.points.length/2)][2],ink=line.group==='fabric'&&depth>.3?g.config.palette.highlight:color(line,accent);
   let svg=`<path d="${toPath(line.points)}" stroke="${ink}" stroke-width="${line.id===0?1.6:line.width}" opacity="${(line.alpha*g.clamp(.72+depth*.10,.25,1)).toFixed(3)}"/>`;

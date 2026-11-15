@@ -51,6 +51,19 @@
  const hoverCache={};
  function press(pulse,side=1){pulse=clamp(Number.isFinite(pulse)?pulse:0);side=side<0?-1:1;if(pulse===1)return pose('type',side);if(pulse===0&&hoverCache[side])return hoverCache[side];const parameters=controls('type'),hover=[.10,.12,.06];parameters.flex[1]=presets.type.flex[1].map((angle,i)=>mix(hover[i],angle,pulse));const shape=build(parameters,side,'type');if(pulse===0)hoverCache[side]=freeze(shape);return shape;}
 
+ // Scroll accents change joint angles, never the approved C glove proportions.
+ // Loaded index/tool features stay unchanged; IK receives the new contact pad.
+ function articulate(shape,{curl=0,spread=0,phase=0}={}){
+  if(!curl&&!spread||shape.parameters.features.tool===1)return shape;
+  const p=shape.parameters,parameters={yaw:[...p.yaw],flex:p.flex.map(a=>[...a]),features:{...p.features}};
+  for(let i=0;i<5;i++){
+   const freedom=(1-p.features.tool)*(i===1?1-p.features.index:1),lag=1-.16*Math.sin(phase*Math.PI*2-i*.42),weight=[.35,.62,.80,.95,1][i];
+   parameters.yaw[i]+=spread*freedom*[-.85,-.42,0,.42,.82][i];
+   for(let j=0;j<3;j++)parameters.flex[i][j]=clamp(parameters.flex[i][j]+curl*weight*lag*freedom*[.70,1,.65][j],.015,.82);
+  }
+  return build(parameters,shape.side,shape.grip);
+ }
+
  // Both the sparse filaments and filled skin sample these same surfaces.
  // Skin remains a pure function of the frozen/sampled articulated shape.
  const add=(a,b)=>a.map((v,i)=>v+b[i]),sub=(a,b)=>a.map((v,i)=>v-b[i]),mul=(a,k)=>a.map(v=>v*k),norm=a=>mul(a,1/(Math.hypot(...a)||1)),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],pow=(v,p)=>Math.sign(v)*Math.abs(v)**p;
@@ -74,6 +87,6 @@
   });
   const result={palm:palmPoint,fingers};skins.set(shape,result);return result;
  }
- const api={pose,sample,blend,press,skin,grips:Object.freeze(Object.keys(presets)),lengths:freeze(lengths.map(a=>[...a]))};
+ const api={pose,sample,blend,press,articulate,skin,grips:Object.freeze(Object.keys(presets)),lengths:freeze(lengths.map(a=>[...a]))};
  if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileHandShapes=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

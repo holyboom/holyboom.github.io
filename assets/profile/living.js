@@ -5,13 +5,15 @@
  const canvas=document.querySelector('#architecture'),stage=document.querySelector('.stage'),journey=document.querySelector('#journey');
  const ctx=canvas?.getContext('2d');if(!ctx){clearBoot();return;}
  const chapters=[...document.querySelectorAll('[data-scene]')],rail=[...document.querySelectorAll('.chapter-rail a')],beneath=document.querySelector('#beneath');
+ const readingThread=window.ProfileReadingThread?.create({chapters,canvas,stage});
  const professional=document.querySelector('#experience'),summaryHost=document.querySelector('.reflection-art');
  const originalHost=canvas.parentElement,contact=document.querySelector('#contact'),contactHost=contact.querySelector('.scene-fallback');
  // Owner policy: Full is fixed. Stored preferences and OS motion settings are
  // not mode controls for this profile. No hidden selector or public setter.
  const mode='full',reduced=false;
  let anchors=[],w=0,h=0,dpr=1,frameId=0,last=0,current=0,target=0,exploded=0,px=0,py=0,tx=0,ty=0,visible=true,draws=0,drawCost=0,detail=1,dirty=true,previousWidth=innerWidth,previousHeight=innerHeight,lastLabel=-1;
- let renderedCamera=null,modelCache=null,navPosition=-1,navScroll=-1;
+ let openingSeconds=0,openingActive=false,ambientPhase=0;
+ let renderedCamera=null,modelCache=null,bitmapDetail=0,navPosition=-1,navScroll=-1;
  let layoutCorrection=null,measuredDisclosureOpen=beneath.open;
  const workPaths=[...document.querySelectorAll('.work-path')],workState=()=>workPaths.map(el=>el.open?'1':'0').join('');
  const inspecting=()=>(beneath.open&&current>6.45&&current<8.25)||(workPaths.some(el=>el.open)&&current>7.75&&current<9.1);
@@ -76,7 +78,7 @@
    const preserved=current,origin=g.positionFromAnchors(scrollY,anchors),delta=preserved-origin;
    layoutCorrection=Math.abs(delta)>.00001?{origin,delta,span:Math.max(.30,2.2*Math.abs(delta))}:null;
   }
-  const r=canvas.getBoundingClientRect();w=r.width;h=r.height;
+  const r=canvas.getBoundingClientRect();readingThread?.measure();w=r.width;h=r.height;
   dpr=Math.min(devicePixelRatio||1,innerWidth<768?1.5:1.75);
   if(w&&h){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);glow.width=Math.round(w*0.5);glow.height=Math.round(h*0.5);}
   detail=innerWidth<1100?2:1;dirty=true;target=positionAt(scrollY);if(!hadAnchors)current=target;wake();
@@ -106,7 +108,7 @@
   frameId=0;if(document.hidden||!visible||staticLayout()||!w||!h){last=0;return;}
   const started=performance.now(),dt=last?Math.min(64,time-last):16;last=time;
   target=positionAt(scrollY);const follow=1-Math.exp(-dt/28);
-  const previous=current;
+  const previous=current,hadVisibleTrail=trailEnergy>.01;
   current=g.mix(current,target,follow);if(Math.abs(current-target)<0.0001)current=target;
   const travel=current-previous;
   if(Math.abs(travel)>1){resetTrail();}
@@ -116,14 +118,27 @@
   }else trailEnergy*=Math.exp(-dt/180);
   if(time-lastMotion>g.config.gravity.trailLife)resetTrail();
   px=g.mix(px,tx,follow);py=g.mix(py,ty,follow);
+  openingActive=current<1&&g.resolve(current)<g.config.opening.stopAt;if(openingActive)openingSeconds+=dt/1000;ambientPhase=openingActive?g.openingPhase(openingSeconds):0;
   const desired=beneath.open&&current>6.5?1:0;exploded=g.mix(exploded,desired,follow);
-  if(!modelCache||modelCache.position!==current||modelCache.detail!==detail||modelCache.exploded!==exploded)modelCache={position:current,detail,exploded,lines:g.frame(current,detail,exploded)};
+  const cue=window.ProfileCinematicLines?.cueFor(Math.floor(current+.001),g.storyAt(current));
+  // The finite SVG event shares this RAF, but a settled rig keeps its bitmap.
+  // This avoids repainting hundreds of anatomical strands just to move dust.
+  if(!dirty&&!openingActive&&!hadVisibleTrail&&bitmapDetail===detail&&current===previous&&trailEnergy<.01&&Math.abs(exploded-desired)<.001&&Math.abs(px-tx)<.0001&&Math.abs(py-ty)<.0001){
+   if(cue)readingThread?.animate(dt/1000,cue,visible);
+   if(readingThread?.pending())wake();
+   return;
+  }
+  if(!modelCache||modelCache.position!==current||modelCache.detail!==detail||modelCache.exploded!==exploded||modelCache.ambientPhase!==ambientPhase)modelCache={position:current,detail,exploded,ambientPhase,lines:g.frame(current,detail,exploded,ambientPhase)};
   const geom=modelCache.lines,theme=g.paletteAt(current),emotion=g.dramaAt(current);
-  const humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow),lightCore=(humanLight?2:2.6)*sourceStrength,lightHalo=(humanLight?5.5:7)*sourceStrength;
+  const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow),lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength,lightHalo=(humanLight?12+handLight.charge*13:7)*sourceStrength;
   const project=g.createProjector(current,w,h,{compact:innerWidth<768,yaw:px,pitch:py,expanded:exploded});renderedCamera=project.camera;
   // Performance is a pure function of story position. Scaling the whole body to
   // suggest breathing also moved planted feet, hands and the work surface.
   const projectPoint=project;
+  const rawIllustrations=g.illustration(current,exploded);
+  const readingSource=project.camera.eyeWeight>.5?g.performanceAt(current).contacts.left.tip:g.lightAt(current);
+  const readingComponents=rawIllustrations.filter(layer=>layer.role==='front-work'&&layer.alpha>.5).flatMap(layer=>layer.paths.filter(item=>item.fill&&item.points.length>=4&&!item.skin));
+  const readingFrame=readingThread?.read({position:current,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible});
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
   const halo=ctx.createRadialGradient(w*.5,h*.5,0,w*.5,h*.5,Math.min(w,h)*.43);halo.addColorStop(0,theme.accent+'16');halo.addColorStop(1,'rgba(133,83,222,0)');ctx.globalAlpha=1-emotion.isolation*.75-emotion.doubt*.15;ctx.fillStyle=halo;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
   if(emotion.strength>.001){
@@ -132,14 +147,14 @@
    const edge=ctx.createRadialGradient(w*.5,h*.50,Math.min(w,h)*.22,w*.5,h*.50,Math.max(w,h)*.65);edge.addColorStop(0,'#0b091200');edge.addColorStop(1,'#0b0912d9');ctx.globalAlpha=emotion.strength*(.40+emotion.doubt*.35);ctx.fillStyle=edge;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
   }
   ctx.lineCap=ctx.lineJoin='round';
-  const projected=geom.filter(line=>line.alpha>.005&&line.points.length>1).map(line=>({...line,points:line.points.map(projectPoint)}));
-  const illustrations=g.illustration(current,exploded).map(layer=>({...layer,paths:layer.paths.filter(item=>item.alpha*layer.alpha>.001&&!(innerWidth<768&&item.secondary)).map(item=>({...item,points:item.points.map(projectPoint)})).filter(item=>layer.id!=='story-world'||item.points.some(q=>q[0]>-16&&q[0]<w+16&&q[1]>-16&&q[1]<h+16))}));
+  const projected=g.projectLines(geom.filter(line=>line.alpha>.005&&line.points.length>1),project);
+  const illustrations=g.projectIllustrations(rawIllustrations,project).map(layer=>({...layer,paths:layer.paths.filter(item=>item.alpha*layer.alpha>.001&&!(innerWidth<768&&item.secondary)).filter(item=>layer.id!=='story-world'||item.points.some(q=>q[0]>-16&&q[0]<w+16&&q[1]>-16&&q[1]<h+16))}));
   // Compare strands with the tilted work plane in camera space. A normalized
   // plane distance remains finite as an orbit passes its edge; a reciprocal
   // ray-plane depth has a horizon there and can send sorting keys to infinity.
   const cameraDistance=project.camera.distance,projectionScale=project.scale,[centerX,centerY]=project.center;
   const cameraPoint=q=>{const k=(cameraDistance-q[2])/projectionScale;return [(q[0]-centerX)*k,(centerY-q[1])*k,q[2]];};
-  const screenPoint=q=>{const k=projectionScale/Math.max(.25,cameraDistance-q[2]);return [centerX+q[0]*k,centerY-q[1]*k,q[2]];};
+  const screenPoint=q=>{const k=projectionScale/Math.max(project.camera.near||.25,cameraDistance-q[2]);return [centerX+q[0]*k,centerY-q[1]*k,q[2]];};
   const planeItem=illustrations.filter(layer=>layer.role==='front-work').flatMap(layer=>layer.paths).find(item=>item.fill&&item.points.length>8);
   let plane=null;
   if(planeItem){
@@ -218,10 +233,11 @@
    }
   }
   if(trailEnergy>.01&&trailSpan>.001){
-   const trail=g.lightTrail(current,trailDirection,trailSpan,36).map(p=>({...p,q:projectPoint(p.point)}));
+   const trail=g.lightTrail(current,trailDirection,trailSpan,36,ambientPhase).map(p=>({...p,q:projectPoint(p.point)}));
    for(let i=1;i<trail.length;i++){
-    const points=[trail[i-1].q,trail[i].q];if(Math.hypot(...points[0].map((value,axis)=>value-points[1][axis]))<1e-7)continue;
-    for(const fragment of plane?splitAcrossPlane(points):[points])commands.push({kind:'trail',depth:depthOf(fragment),points:fragment,alpha:trail[i].alpha*trailEnergy});
+    const visible=project.camera.perspectiveWeight?project.clip([trail[i-1].point,trail[i].point]).map(points=>points.map(projectPoint)):[[trail[i-1].q,trail[i].q]];
+    for(const points of visible){if(Math.hypot(...points[0].map((value,axis)=>value-points[1][axis]))<1e-7)continue;
+     for(const fragment of plane?splitAcrossPlane(points):[points])commands.push({kind:'trail',depth:depthOf(fragment),points:fragment,alpha:trail[i].alpha*trailEnergy});}
    }
   }
   const skinMaterials=new Map(g.skinMaterials(illustrations).map(m=>{const gradient=ctx.createRadialGradient(m.fx,m.fy,0,m.cx,m.cy,m.r);for(const [offset,color]of m.stops)gradient.addColorStop(offset,color);return [m.id,gradient];}));
@@ -246,18 +262,18 @@
   }
   ctx.textAlign='start';ctx.globalAlpha=1;
 
-  updateNavigation();draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;
+  bitmapDetail=detail;readingThread?.write(readingFrame);if(cue)readingThread?.animate(dt/1000,cue,visible);updateNavigation();draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;
   if(drawCost>8&&detail===1&&Math.abs(current-Math.round(current))<.02)detail=2;
-  dirty=false;
-  if(trailEnergy>.01||current!==target||Math.abs(exploded-desired)>.001||Math.abs(px-tx)>.0001||Math.abs(py-ty)>.0001)wake();
+  dirty=bitmapDetail!==detail;
+  if(openingActive||bitmapDetail!==detail||readingThread?.pending()||trailEnergy>.01||current!==target||Math.abs(exploded-desired)>.001||Math.abs(px-tx)>.0001||Math.abs(py-ty)>.0001)wake();
  }
  function wake(){if(!frameId&&!document.hidden&&visible&&!staticLayout())frameId=requestAnimationFrame(render);}
  function scroll(){
   document.documentElement.classList.toggle('profile-story-active',scrollY<(anchors[9]??Infinity)-1);
   const host=scrollY>=(anchors[10]??Infinity)-1?contactHost:scrollY>=(anchors[9]??Infinity)-1?summaryHost:originalHost;
   if(canvas.parentElement!==host){host.appendChild(canvas);contact.classList.toggle('live-art',host===contactHost);professional.classList.toggle('live-art',host===summaryHost);layoutCorrection=null;measure({navigation:true});}
-  const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible)resetTrail();
-  target=positionAt(scrollY);updateNavigation();
+  const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible){resetTrail();readingThread?.hide();}
+  target=positionAt(scrollY);dirty=true;updateNavigation();
   if(readingWidth===innerWidth&&readingHeight===innerHeight)readingContext=captureReadingContext();
   wake();}
  addEventListener('scroll',scroll,{passive:true});
@@ -272,5 +288,5 @@
  addEventListener('pageshow',measure);document.fonts.ready.then(measure);
  activate();scroll();
  // Read-only diagnostics for reproducible QA; no control over user content.
- window.ProfileExperience=Object.freeze({snapshot:()=>({mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
+ window.ProfileExperience=Object.freeze({snapshot:()=>({opening:{active:openingActive,seconds:openingSeconds,phase:ambientPhase},readingThread:readingThread?.snapshot(),cinematic:readingThread?.cinematicSnapshot(),mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
 })();

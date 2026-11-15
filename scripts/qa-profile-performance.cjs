@@ -385,7 +385,7 @@ async function main() {
     const named=points(pose),p=Object.fromEntries(Object.entries(named).map(([name,value])=>[name,project(value)]));
     // Documentary inserts deliberately crop the rest of the body. Established
     // wide views retain all joints; inserts must retain their declared subject.
-    const framing=project.camera.framing||'full',subject=geometry.focusAt(positionForTimeline(timeline),{compact});
+    const framing=project.camera.framing||'full',perspective=geometry.perspectiveAt(positionForTimeline(timeline),{compact}),subject=perspective?{point:perspective.subject}:geometry.focusAt(positionForTimeline(timeline),{compact});
     if(framing==='full'){for(const joint of ['head','handL','handR','hip','footL','footR'])if(p[joint][0]<2||p[joint][0]>w-2||p[joint][1]<2||p[joint][1]>h-2)visibility.push({beat:beat+1,w,h,joint,point:p[joint].slice(0,2)});}
     else{const q=project(subject.point);if(q[0]<2||q[0]>w-2||q[1]<2||q[1]>h-2)visibility.push({beat:beat+1,w,h,framing,point:q.slice(0,2)});}
     const a=p.hip,b=p.shoulder,c=p.handR,ab=subtract(b.slice(0,2),a.slice(0,2)),ac=subtract(c.slice(0,2),a.slice(0,2)),t=Math.max(0,Math.min(1,dot(ab,ac)/dot(ab,ab)));

@@ -41,7 +41,7 @@
  function blendWrist(a,b,t){const shape=handShapes.blend(a.shape,b.shape,t),customOffset=!!(a.customOffset||b.customOffset);return {frame:blendFrame(a.frame,b.frame,t),offset:customOffset?lerp(a.offset,b.offset,t):shape.contactOffset,curl:mix(a.curl,b.curl,t),shape,customOffset};}
  function sampleClip(name,u){const clip=clips?.[name]||clips?.clips?.[name];if(!clip?.keys?.length)return null;const keys=clip.keys;let a=keys[0],b=keys[keys.length-1];for(let i=1;i<keys.length;i++)if(keys[i].t>=u){a=keys[i-1];b=keys[i];break;}const t=clamp((u-a.t)/Math.max(.00001,b.t-a.t));const out={};for(const key of ['lean','yaw','headYaw','headPitch'])out[key]=mix(a[key]||0,b[key]||0,t);for(const key of ['handL','handR','pelvis'])out[key]=lerp(a[key]||[0,0,0],b[key]||[0,0,0],t);return out;}
  function twoBone(origin,requested,l1,l2,pole){const delta=sub(requested,origin),distance=len(delta),axis=norm(distance<1e-8?[0,-1,0]:delta),d=clamp(distance,Math.abs(l1-l2)+.0001,l1+l2-.0002),end=add(origin,mul(axis,d));let side=sub(sub(pole,origin),mul(axis,dot(sub(pole,origin),axis)));if(len(side)<1e-6)side=cross(axis,[0,0,1]);if(len(side)<1e-6)side=cross(axis,[1,0,0]);side=norm(side);const along=(l1*l1-l2*l2+d*d)/(2*d),height=Math.sqrt(Math.max(0,l1*l1-along*along));return {joint:add(add(origin,mul(axis,along)),mul(side,height)),end,requested:[...requested],clamped:Math.abs(distance-d)>1e-6,error:Math.abs(distance-d)};}
- function workFrame(kind,stand,index=-1){const paper=kind==='paper',screen=kind==='screen',origin=paper?[-.06,-.17+stand*.39,.40]:[screen?.18:-.06,(screen?.31:.03)+stand*.33,.40],u=[1,0,0],v=paper?[0,.62,-Math.sqrt(1-.62*.62)]:[0,1,0];if(index===15){origin[0]-=.10;origin[1]-=.20;origin[2]-=.10;}if(index===20)origin[1]-=.18;const normal=norm(cross(u,v));const keyboard={origin:[-.08,-.23+stand*.39,.48],u:[1,0,0],v:[0,.13,-Math.sqrt(1-.13*.13)],normal:[0,Math.sqrt(1-.13*.13),.13],width:.84,height:.30};return {origin,u,v,normal,width:screen?.82:.92,height:paper?.72:screen?.42:.56,kind,keyboard};}
+ function workFrame(kind,stand,index=-1){const paper=kind==='paper',screen=kind==='screen',origin=paper?[-.06,-.17+stand*.39,.40]:[screen?.18:-.06,(screen?.31:.03)+stand*.33,.40],u=[1,0,0],v=paper?[0,.62,-Math.sqrt(1-.62*.62)]:[0,1,0];if(index===15){origin[0]-=.10;origin[1]-=.20;origin[2]-=.10;}if(index===18){origin[0]=-.20;origin[2]=.82;}if(index===20)origin[1]-=.18;const normal=norm(cross(u,v));const keyboard={origin:[-.08,-.23+stand*.39,.48],u:[1,0,0],v:[0,.13,-Math.sqrt(1-.13*.13)],normal:[0,Math.sqrt(1-.13*.13),.13],width:.84,height:.30};return {origin,u,v,normal,width:screen?.82:.92,height:paper?.72:screen?.42:.56,kind,keyboard};}
  function blendWork(a,b,t){const u=norm(lerp(a.u,b.u,t)),v=norm(lerp(a.v,b.v,t)),normal=norm(cross(u,v));return {origin:lerp(a.origin,b.origin,t),u,v,normal,width:mix(a.width,b.width,t),height:mix(a.height,b.height,t),kind:t<.5?a.kind:b.kind,keyboard:b.keyboard};}
  function toolDock(w){const tip=at(w,.45,.16,.018);return {tip,shaftEnd:add(tip,mul(w.v,.202)),origin:[...w.origin],u:[...w.u],v:[...w.v],normal:[...w.normal]};}
  function at(w,x,y,z=0){return add(w.origin,add(add(mul(w.u,x),mul(w.v,y)),mul(w.normal,z)));}
@@ -57,7 +57,7 @@
    case 5:return right?work(.08,-.06,.12,'open'):work(-.30,.18,.08,'open');
    case 6:return right?{target:bodyAt([.08,.52,.19]),grip:'reflect',active:false,space:'body'}:{target:add(tableSupport,[0,.02,0]),grip:'brace',active:false,space:'support'};
    case 7:return right?{target:bodyAt([.31,.83,.16]),grip:'reflect',active:false,space:'body'}:work(-.32,-.15,.025,'hold',true);
-   case 18:return right?{target:bodyAt([.02,.42,.24]),grip:'cup',active:false,space:'body'}:work(-.30,-.12,.025,'hold',true);
+   case 18:return right?{target:bodyAt([.02,.42,.24]),grip:'cup',active:false,space:'body'}:{...work(-.30,-.12,-.025,'hold',true),back:true};
    case 8:return right?work(.31,.18,.08,'point'):work(-.32,-.11,.07,'open');
    case 22:return right?work(.20,-.10,.10,'hold'):work(-.32,.18,.07,'point');
    case 9:return {target:bodyAt(right?[.48,.28,.31]:[-.43,.24,.26]),grip:'open',active:false,space:'body'};
@@ -105,7 +105,7 @@
   if(spec.grip==='write'){forward=add(add(mul(w.normal,-1),mul(w.v,.20)),mul(w.u,.12));normal=w.v;offset=[.015,-.025,.15];}
   else if(spec.grip==='type'){forward=mul(w.keyboard.v,-1);normal=w.keyboard.normal;}
   else if(spec.grip==='point'){forward=w.normal;normal=w.v;}
-  else if(['brace','hold'].includes(spec.grip)){normal=spec.space==='support'?[0,1,0]:w.normal;forward=spec.space==='support'?[side*.12,0,.99]:mul(w.v,w.kind==='paper'?-1:1);}
+  else if(['brace','hold'].includes(spec.grip)){normal=spec.space==='support'?[0,1,0]:spec.back?mul(w.normal,-1):w.normal;forward=spec.space==='support'?[side*.12,0,.99]:mul(w.v,w.kind==='paper'?-1:1);}
   else if(spec.grip==='reflect'){forward=[-.06,.40,-.92];normal=[0,1,0];offset=[0,0,.09];}
   else if(spec.grip==='relaxed'){forward=[side*.12,-.85,.50];normal=[0,.50,.85];offset=[0,0,.10];}
   else {forward=spec.space==='invitation'?[.85,-.04,.53]:spec.space==='welcome'?[.36,-.30,.88]:spec.space==='offer'?[.04,-.04,1]:[side*.20,-.10,.97];normal=spec.space==='welcome'||spec.space==='invitation'?[0,-1,-.35]:[0,-1,0];offset=[0,0,.105];}
@@ -113,6 +113,30 @@
   const curl={write:.68,type:.32,hold:.62,brace:.34,point:.20,relaxed:.40,open:.12,cup:.47,reflect:.45}[spec.grip]??.4,f=palm(forward,normal);if(spec.roll){const c=Math.cos(spec.roll),s=Math.sin(spec.roll);return {frame:{x:add(mul(f.x,c),mul(f.y,s)),y:add(mul(f.y,c),mul(f.x,-s)),z:f.z},offset,curl,shape};}return {frame:f,offset,curl,shape};
  }
  function phaseAt(to,u){const t=timing[to],bridge=to===7?.36:to===13?.32:0,scale=1-bridge,attentionEnd=to===3?.10:bridge+t[0]*scale,start=to===3?.50:attentionEnd+t[1]*scale,end=to===3?.82:start+t[2]*scale,settle=to===3?.92:end+t[3]*scale;return {bridge,attentionEnd,stage:u<bridge?'bridge':u<attentionEnd?'attention':u<start?'preparation':u<end?'action':u<settle?'response':'hold',actionStart:start,actionEnd:end,settle,action:clamp((u-start)/(end-start))};}
+ function accentAt(timeline){
+  timeline=clamp(Number.isFinite(timeline)?timeline:0,0,30);const to=Math.ceil(timeline),u=to?timeline-(to-1):1,p=phaseAt(to,u),envelope=Math.sin(PI*clamp((u-.10)/.84))**2;
+  const charge=Math.sin(PI*clamp((u-p.actionStart+.09)/Math.max(.18,p.actionEnd-p.actionStart+.09)))**2;
+  return {beat:to,progress:u,envelope,charge:to>0?charge:0};
+ }
+ function handAccent(wf,spec,side,to,u,weight){
+  // Keep the pen handoff, exact typing and load-bearing support untouched.
+  if(to<5||to===10||(side===-1&&[7,13,16,17,23].includes(to))||['support','head-support','stylus-dock','keyboard'].includes(spec.space)||wf.customOffset)return {wf,target:spec.target,amount:0};
+  const pulse=Math.sin(PI*clamp((u-(side===1?.12:.20))/(side===1?.78:.72)))**2;
+  if(pulse<1e-10)return {wf,target:spec.target,amount:0};
+  const flex=wf.shape.parameters.flex.slice(1).flat(),closure=smooth((flex.reduce((n,v)=>n+v,0)/flex.length-.12)/.23),doubt=to===15,amount=pulse*(doubt?.4:1);
+  const shape=handShapes.articulate(wf.shape,{curl:mix(-.075,.23,closure)*amount,spread:mix(.16,-.07,closure)*amount,phase:u+(side===1?0:.13)});
+  let f=wf.frame,target=spec.target;
+  // Only gestures that never acquire a contact receive a free wrist arc.
+  // Binary contact weights must not turn a rotation on/off at acquisition.
+  const free=[9,12,13,14,17,24,25,26,28,29,30].includes(to)&&['body','agency','welcome','offer','invitation'].includes(spec.space);
+  if(free){
+   const roll=amount*side*mix(.28,.22,closure),yaw=amount*side*mix(.24,.14,closure),pitch=amount*mix(.12,-.16,closure),rotation=frame(yaw,pitch,roll);
+   f={x:apply(wf.frame,rotation.x),y:apply(wf.frame,rotation.y),z:apply(wf.frame,rotation.z)};
+   const lift=to===13?.028:to===17?.035:mix(.055,.042,closure),across=side*amount*mix(.035,-.022,closure);
+   target=add(target,[across,lift*amount,.026*amount*Math.sin(PI*u)]);
+  }
+  return {wf:{...wf,frame:f,shape,offset:shape.contactOffset,curl:wf.curl+mix(-.04,.14,closure)*amount},target,amount};
+ }
  function evaluate(timeline,lightOnly=false){
   timeline=clamp(Number.isFinite(timeline)?timeline:0,0,30);const to=Math.ceil(timeline),from=Math.max(0,to-1),u=to===0?1:timeline-from,phase=phaseAt(to,u),a=direction[from],b=direction[to],isRise=to===7||to===17,isSit=to===13;
   const stanceProgress=isRise?smooth((u-(to===17?.40:.17))/(to===17?.32:.17)):isSit?smooth((u-.02)/.22):smooth((u-.10)/.72),seat= mix(seated(from)?1:0,seated(to)?1:0,stanceProgress),stand=1-seat;
@@ -124,7 +148,7 @@
   const hip=[-.48+shift,-.22-.39*seat-.02*stand+mix(level[from],level[to],stanceProgress),.20-.32*seat+(isRise?.24*seat*smooth((u-(to===17?.20:.08))/(to===17?.20:.09)):isSit?.12*prepPulse:0)],pelvisFrame=frame(yaw*.35,-lean*.15,-shift*.38),chestFrame=frame(yaw,lean,-shift*.22),lumbar=add(hip,mul(frame(yaw*.6,lean*.45,-shift*.25).y,.26)),ribcage=add(lumbar,mul(frame(yaw*.85,lean*.8,-shift*.23).y,.28)),shoulder=add(ribcage,mul(chestFrame.y,.18)),neck=add(shoulder,mul(chestFrame.y,.105)),headFrame=frame(headYaw,headPitch,-shift*.15),head=add(neck,mul(headFrame.y,.255));
   const shoulderL=add(shoulder,mul(chestFrame.x,-lengths.shoulderSpan/2)),shoulderR=add(shoulder,mul(chestFrame.x,lengths.shoulderSpan/2)),hipL=add(add(hip,mul(pelvisFrame.x,-lengths.hipSpan/2)),mul(pelvisFrame.y,-.055)),hipR=add(add(hip,mul(pelvisFrame.x,lengths.hipSpan/2)),mul(pelvisFrame.y,-.055));
   const body={hip,head,headFrame},previousBase=workFrame(kinds[from],stand,from),currentBase=workFrame(kinds[to],stand,to),previousWork=from===15?inspectWork(previousBase,1):previousBase,currentWork=to===15?inspectWork(currentBase,1):currentBase,baseWork=blendWork(previousBase,currentBase,to===3?smooth((u-.36)/.14):smooth((u-.16)/.20)),work=inspectWork(baseWork,to===15?smooth(phase.action):from===15?1-smooth((u-.16)/.20):0);
-  const hands=[],wrists=[],contacts=[],reach=[];
+  const hands=[],wrists=[],contacts=[],reach=[],handAmounts=[];
   for(const side of lightOnly?[1]:[-1,1]){
    const start=handSpec(from,side,previousWork,body),finish=handSpec(to,side,currentWork,body),actionStart=actionSpec(to,side,0,work,body),actionEnd=actionSpec(to,side,1,work,body),startWrist=wristFor(start,previousWork,side),finishWrist=wristFor(finish,currentWork,side),actionStartWrist=wristFor(actionStart,work,side),actionEndWrist=wristFor(actionEnd,work,side);let spec,wf,weight=0,offsetFreedom=u<phase.actionStart?1-smooth((u-phase.actionStart+.10)/.10):u>phase.actionEnd?smooth((u-phase.actionEnd)/.10)*(finish.active?0:1):0;
    if(u<phase.actionStart){const t=to===16?smooth((u-(side===-1?.18:.27))/(side===-1?.12:.15)):smooth((u-phase.attentionEnd)/Math.max(.01,phase.actionStart-phase.attentionEnd));spec={...actionStart,target:lerp(start.target,actionStart.target,t),active:false};spec.target[1]+=.035*Math.sin(PI*t);if(side===1&&(to===25||to===26))spec.target[2]+=.08*Math.sin(PI*t);wf=blendWrist(startWrist,actionStartWrist,t);}
@@ -146,6 +170,7 @@
    // Rise support is released after the centre of mass has travelled above the feet.
    if((isRise||isSit)&&side===-1){const supportBlend=isRise?(to===17?smooth((u-.10)/.14)*(1-smooth((u-.60)/.15)):smooth((u-.01)/.10)*(1-smooth((u-.27)/.08))):smooth(u/.04)*(1-smooth((u-.23)/.08)),supportSpec={target:tableSupport,grip:'brace',space:'support'};spec={...spec,target:lerp(spec.target,tableSupport,supportBlend),grip:supportBlend>.5?'brace':spec.grip,space:supportBlend>.5?'support':spec.space};wf=blendWrist(wf,wristFor(supportSpec,work,side),supportBlend);weight=supportBlend>.999?1:0;offsetFreedom*=1-supportBlend;}
    if(authored&&weight===0&&offsetFreedom>0)spec.target=add(spec.target,mul(authored[side===-1?'handL':'handR']||[0,0,0],offsetFreedom));
+   const accent=handAccent(wf,spec,side,to,u,weight);wf=accent.wf;spec={...spec,target:accent.target};handAmounts[side===-1?0:1]=accent.amount;
    const goal=sub(spec.target,apply(wf.frame,wf.offset)),origin=side===-1?shoulderL:shoulderR,poleWeight=side===1?(to===15?smooth((u-.18)/.40):from===15?1-smooth((u-.08)/.50):0):0,pole=add(origin,lerp([side*.45,-.48,-.22],[.02,-.50,.55],poleWeight)),solution=twoBone(origin,goal,lengths.upperArm,lengths.forearm,pole);
    const index=side===-1?0:1;hands[index]=solution;wrists[index]=wf.frame;if(!lightOnly){reach[index]={requested:goal,solved:solution.end,clamped:solution.clamped,error:solution.error};
    contacts[index]={target:spec.target,tip:add(solution.end,apply(wf.frame,wf.offset)),active:weight===1,weight,grip:spec.grip,gripOffset:wf.offset,fingerCurl:wf.curl,shape:wf.shape,space:spec.space,effector:spec.effector||(spec.grip==='write'?'stylus':'fingertip')};}
@@ -156,12 +181,12 @@
   const seatWeight=Math.max(0,seat*.65*(1-smooth((1-seat)/.18))),leftWeight=(1-seatWeight)*(footState[0].weight===0?0:footState[1].weight===0?1:clamp(.53-shift*1.2,.35,.7)),rightWeight=1-seatWeight-leftWeight;
   let tool;const penAxis=norm(apply(wrists[1],[-.001,-.007,-.081]));if(to<3){tool={held:1,alpha:1,tip:[...contacts[1].tip],shaftEnd:add(contacts[1].tip,mul(penAxis,.202)),dock:toolDock(work),stage:'held',owner:'right-hand',handoff:[.36,.50],release:[.30,.36]};}else if(to===3){const dock=toolDock(previousWork),placed=u>=.28,released=u>=.36,held=1-smooth((u-.30)/.06),axis=penAxis,tip=released?dock.tip:contacts[1].tip;tool={held,alpha:1-smooth((u-.52)/.14),tip:[...tip],shaftEnd:released?dock.shaftEnd:add(tip,mul(axis,.202)),dock,stage:released?(u>=.66?'hidden':'released'):placed?'placing':u>.10?'placing':'held',owner:released?'drafting-surface':'right-hand',handoff:[.36,.50],release:[.30,.36]};}else{const dock=toolDock(workFrame('paper',0));tool={held:0,alpha:0,tip:dock.tip,shaftEnd:dock.shaftEnd,dock,stage:'hidden',owner:'drafting-surface',handoff:[.36,.50],release:[.30,.36]};}
   let drawing=null;if(to===2||from===2){const progress=to===2?phase.action:1,points=[],strokes=[[],[]];for(let i=0;i<=96;i++){const a=i/96;if(a>progress)break;const p=actionSpec(2,1,a,work,body);if(p.active){points.push(p.target);strokes[a<.62?0:1].push(p.target);}}drawing={tip:contacts[1].tip,points,strokes,progress,active:to===2&&phase.stage==='action'&&contacts[1].active};}
-  return {head,hip,shoulder,shoulderL,shoulderR,hipL,hipR,elbowL:hands[0].joint,elbowR:hands[1].joint,handL:hands[0].end,handR:hands[1].end,knees:legs.map(l=>l.joint),feet:legs.map(l=>l.end),tilt:headPitch,seated:seat>.5,seatAmount:seat,frames:{head:headFrame,chest:chestFrame,pelvis:pelvisFrame,wristL:wrists[0],wristR:wrists[1],footL:footState[0].frame,footR:footState[1].frame},spine:{pelvis:hip,lumbar,ribcage,chest:shoulder,neck},light,work,drawing,tool,contacts:{left:contacts[0],right:contacts[1]},support:{floorY,seatY,seatCenter:[...seatCenter],tableSupport:[...tableSupport],seatWeight,footL:footState[0],footR:footState[1]},weights:{left:leftWeight,right:rightWeight,seat:seatWeight},phase:{from,to,beat:to,progress:u,stage:phase.stage,action:phase.action,bridge:phase.bridge,attentionEnd:phase.attentionEnd,actionStart:phase.actionStart,actionEnd:phase.actionEnd,settle:phase.settle},lengths,reach:{left:reach[0],right:reach[1]},authoring:authored?'blender-curves':'authored-controls'};
+  return {head,hip,shoulder,shoulderL,shoulderR,hipL,hipR,elbowL:hands[0].joint,elbowR:hands[1].joint,handL:hands[0].end,handR:hands[1].end,knees:legs.map(l=>l.joint),feet:legs.map(l=>l.end),tilt:headPitch,seated:seat>.5,seatAmount:seat,frames:{head:headFrame,chest:chestFrame,pelvis:pelvisFrame,wristL:wrists[0],wristR:wrists[1],footL:footState[0].frame,footR:footState[1].frame},spine:{pelvis:hip,lumbar,ribcage,chest:shoulder,neck},light,handMotion:{left:handAmounts[0],right:handAmounts[1],light:accentAt(timeline)},work,drawing,tool,contacts:{left:contacts[0],right:contacts[1]},support:{floorY,seatY,seatCenter:[...seatCenter],tableSupport:[...tableSupport],seatWeight,footL:footState[0],footR:footState[1]},weights:{left:leftWeight,right:rightWeight,seat:seatWeight},phase:{from,to,beat:to,progress:u,stage:phase.stage,action:phase.action,bridge:phase.bridge,attentionEnd:phase.attentionEnd,actionStart:phase.actionStart,actionEnd:phase.actionEnd,settle:phase.settle},lengths,reach:{left:reach[0],right:reach[1]},authoring:authored?'blender-curves':'authored-controls'};
  }
  // Trail sampling shares the same rig evaluation but omits unused body/prop output.
  function poseAt(timeline){return evaluate(timeline,false);}
  function lightAt(timeline){return evaluate(timeline,true);}
  function pose(value){if(typeof value==='number')return poseAt(value);const aliases={build:5,review:11,experience:24};const i=aliases[value]??names.indexOf(value);return poseAt(i<0?0:i);}
  function restPose(){return poseAt(29);}
- const api={poseAt,lightAt,pose,restPose,setClips,lengths,names};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
+ const api={poseAt,lightAt,accentAt,pose,restPose,setClips,lengths,names};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
