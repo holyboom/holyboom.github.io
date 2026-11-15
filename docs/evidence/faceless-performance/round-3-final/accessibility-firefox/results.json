@@ -1,0 +1,482 @@
+{
+  "generatedAt": "2026-11-14T22:05:14.737Z",
+  "engine": "firefox",
+  "base": "http://127.0.0.1:4174/",
+  "checks": [
+    {
+      "name": "skip-link-first-390",
+      "pass": true
+    },
+    {
+      "name": "skip-link-bypasses-navigation-390",
+      "pass": true
+    },
+    {
+      "name": "reverse-tab-clears-sticky-stage-390",
+      "pass": true,
+      "data": [
+        {
+          "label": "See how visitor choices shape the brief",
+          "tag": "A",
+          "top": 539.9666748046875,
+          "bottom": 593.9666748046875,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Read the project and workflow explanation",
+          "tag": "A",
+          "top": 485.9666748046875,
+          "bottom": 539.9666748046875,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore the live workbench",
+          "tag": "A",
+          "top": 431.9666748046875,
+          "bottom": 485.9666748046875,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "The work comes full circle: making a place someone wants to enter.\nWhat happens when you s",
+          "tag": "A",
+          "top": 548.066650390625,
+          "bottom": 694.8666534423828,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore beneath the surface",
+          "tag": "SUMMARY",
+          "top": 404.41668701171875,
+          "bottom": 463.66668701171875,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "All that depth still needs a way for someone to reach it.\nHow do you make all that complex",
+          "tag": "A",
+          "top": 548.066650390625,
+          "bottom": 694.8666534423828,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "The work left me with more than a solution. It left a lesson I could carry forward.\nHow do",
+          "tag": "A",
+          "top": 548.066650390625,
+          "bottom": 694.8666534423828,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "I wanted to explore what that possibility could become in my own hands.\nWhat would I keep ",
+          "tag": "A",
+          "top": 548.066650390625,
+          "bottom": 694.8666534423828,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Then the tools themselves began to change.\nWhat if intelligence could become part of the w",
+          "tag": "A",
+          "top": 558.2666625976562,
+          "bottom": 684.6666717529297,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Dependable parts need thoughtful connections.\nWhat happens when your work has to connect w",
+          "tag": "A",
+          "top": 543.2666625976562,
+          "bottom": 699.6666717529297,
+          "blockedTop": 386.95001220703125,
+          "viewportHeight": 844,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        }
+      ]
+    },
+    {
+      "name": "keyboard-focus-visible-390",
+      "pass": true
+    },
+    {
+      "name": "keyboard-disclosure-opens-390",
+      "pass": true
+    },
+    {
+      "name": "expanded-content-reflows-390",
+      "pass": true
+    },
+    {
+      "name": "keyboard-disclosure-closes-390",
+      "pass": true
+    },
+    {
+      "name": "native-keyboard-bridge-offset-390",
+      "pass": true,
+      "data": {
+        "hash": "#ai-experiences",
+        "error": 0.000012207031261368684
+      }
+    },
+    {
+      "name": "skip-link-first-320",
+      "pass": true
+    },
+    {
+      "name": "skip-link-bypasses-navigation-320",
+      "pass": true
+    },
+    {
+      "name": "reverse-tab-clears-sticky-stage-320",
+      "pass": true,
+      "data": [
+        {
+          "label": "See how visitor choices shape the brief",
+          "tag": "A",
+          "top": 470.29998779296875,
+          "bottom": 524.2999877929688,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Read the project and workflow explanation",
+          "tag": "A",
+          "top": 416.29998779296875,
+          "bottom": 470.29998779296875,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore the live workbench",
+          "tag": "A",
+          "top": 362.29998779296875,
+          "bottom": 416.29998779296875,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "The work comes full circle: making a place someone wants to enter.\nWhat happens when you s",
+          "tag": "A",
+          "top": 478.3999938964844,
+          "bottom": 625.1999969482422,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore beneath the surface",
+          "tag": "SUMMARY",
+          "top": 522.1666870117188,
+          "bottom": 581.4166870117188,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "All that depth still needs a way for someone to reach it.\nHow do you make all that complex",
+          "tag": "A",
+          "top": 463.3999938964844,
+          "bottom": 640.1999969482422,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "The work left me with more than a solution. It left a lesson I could carry forward.\nHow do",
+          "tag": "A",
+          "top": 453.20001220703125,
+          "bottom": 650.4000091552734,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "I wanted to explore what that possibility could become in my own hands.\nWhat would I keep ",
+          "tag": "A",
+          "top": 453.20001220703125,
+          "bottom": 650.4000091552734,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Then the tools themselves began to change.\nWhat if intelligence could become part of the w",
+          "tag": "A",
+          "top": 463.3999938964844,
+          "bottom": 640.1999969482422,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Dependable parts need thoughtful connections.\nWhat happens when your work has to connect w",
+          "tag": "A",
+          "top": 448.3999938964844,
+          "bottom": 655.1999969482422,
+          "blockedTop": 351.6000061035156,
+          "viewportHeight": 740,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        }
+      ]
+    },
+    {
+      "name": "keyboard-focus-visible-320",
+      "pass": true
+    },
+    {
+      "name": "keyboard-disclosure-opens-320",
+      "pass": true
+    },
+    {
+      "name": "expanded-content-reflows-320",
+      "pass": true
+    },
+    {
+      "name": "keyboard-disclosure-closes-320",
+      "pass": true
+    },
+    {
+      "name": "native-keyboard-bridge-offset-320",
+      "pass": true,
+      "data": {
+        "hash": "#ai-experiences",
+        "error": 0.0000061035156022626325
+      }
+    },
+    {
+      "name": "reduced-toggle-retains-reading-heading",
+      "pass": true,
+      "data": {
+        "portrait": {
+          "top": 511.1499938964844,
+          "bottom": 679.4499969482422,
+          "visible": true,
+          "live": true,
+          "scroll": 6539.2333984375,
+          "overflow": false
+        },
+        "reduced": {
+          "top": 224.1999969482422,
+          "bottom": 392.5,
+          "visible": true,
+          "live": false,
+          "scroll": 8784.2333984375,
+          "overflow": false
+        }
+      }
+    },
+    {
+      "name": "static-scroll-resumes-without-fly-through",
+      "pass": true,
+      "data": [
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        },
+        {
+          "current": 7,
+          "target": 7,
+          "shot": 22
+        }
+      ]
+    },
+    {
+      "name": "landscape-uses-readable-static-story",
+      "pass": true,
+      "data": {
+        "top": 220.1999969482422,
+        "bottom": 397.6999969482422,
+        "visible": true,
+        "live": false,
+        "scroll": 7419.5498046875,
+        "overflow": false
+      }
+    },
+    {
+      "name": "rotation-restores-reading-position",
+      "pass": true,
+      "data": {
+        "beforeRotation": {
+          "top": 511.1499938964844,
+          "bottom": 679.4499969482422,
+          "visible": true,
+          "live": true,
+          "scroll": 6539.2333984375,
+          "overflow": false
+        },
+        "restored": {
+          "top": 511.1499938964844,
+          "bottom": 679.4499969482422,
+          "visible": true,
+          "live": true,
+          "scroll": 6539.2333984375,
+          "overflow": false
+        }
+      }
+    },
+    {
+      "name": "height-only-static-transition-retains-context",
+      "pass": true,
+      "data": {
+        "top": 224.1999969482422,
+        "bottom": 392.5,
+        "visible": true,
+        "live": false,
+        "scroll": 8784.2333984375,
+        "overflow": false
+      }
+    },
+    {
+      "name": "height-only-return-retains-context",
+      "pass": true
+    },
+    {
+      "name": "two-hundred-percent-reflow-controls-clear",
+      "pass": true,
+      "data": [
+        {
+          "label": "That instinct now had a new responsibility: make the idea work.\nWhat makes a beautiful ide",
+          "tag": "A",
+          "top": 243.8000030517578,
+          "bottom": 340.1999969482422,
+          "blockedTop": 100,
+          "viewportHeight": 480,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore beneath the surface",
+          "tag": "SUMMARY",
+          "top": 262.3666687011719,
+          "bottom": 321.6166687011719,
+          "blockedTop": 100,
+          "viewportHeight": 480,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Explore the live workbench",
+          "tag": "A",
+          "top": 265,
+          "bottom": 319,
+          "blockedTop": 100,
+          "viewportHeight": 480,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        },
+        {
+          "label": "Let’s talk on LinkedIn",
+          "tag": "A",
+          "top": 266.5,
+          "bottom": 317.5,
+          "blockedTop": 100,
+          "viewportHeight": 480,
+          "outline": "solid",
+          "outlineWidth": 2,
+          "clear": true
+        }
+      ]
+    },
+    {
+      "name": "no-js-keyboard-skip",
+      "pass": true
+    },
+    {
+      "name": "no-js-keyboard-disclosure-clear",
+      "pass": true
+    },
+    {
+      "name": "short-landscape-inline-boot-preview",
+      "pass": true
+    },
+    {
+      "name": "runtime-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "skipped": [],
+  "errors": [],
+  "physicalDevice": false,
+  "zoom": "200% layout reflow emulation; browser chrome zoom and physical devices were not tested."
+}

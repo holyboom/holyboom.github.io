@@ -1,0 +1,7 @@
+{
+  "samples": 81,
+  "bodyAndWorkUnchanged": true,
+  "deterministic": true,
+  "finite": true,
+  "maxAmbientPaths": 35
+}

@@ -1,0 +1,2797 @@
+{
+  "release": "living-story-soul-v10",
+  "sourceHash": "e57833bd55bcb7d63f3c559f396dc945b5711db34eb79eb3e99afe0b577dac84",
+  "windows": [
+    {
+      "id": "drawing-side",
+      "start": 1.9,
+      "lockStart": 2.1,
+      "turnEnd": 2.52,
+      "holdEnd": 2.64,
+      "returnEnd": 2.9,
+      "end": 3.08,
+      "entryYaw": 0.58,
+      "yaw": 1.08,
+      "exitYaw": 0.44,
+      "compactYaw": 1,
+      "distance": 6.1,
+      "pitch": 0.2,
+      "target": [
+        -0.24,
+        -0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "conviction-rear",
+      "start": 12.45,
+      "lockStart": 12.92,
+      "turnEnd": 13.3,
+      "holdEnd": 13.45,
+      "returnEnd": 13.94,
+      "end": 14.15,
+      "entryYaw": 0.28,
+      "yaw": 2.35,
+      "exitYaw": 0.42,
+      "compactYaw": 2.1,
+      "distance": 6.9,
+      "pitch": 0.12,
+      "target": [
+        -0.26,
+        -0.22,
+        0.16
+      ]
+    },
+    {
+      "id": "synthesis-side",
+      "start": 18.92,
+      "lockStart": 19.12,
+      "turnEnd": 19.7,
+      "holdEnd": 20.22,
+      "returnEnd": 20.88,
+      "end": 21.12,
+      "entryYaw": 0.28,
+      "yaw": -1.08,
+      "exitYaw": 0.2,
+      "compactYaw": -1,
+      "distance": 6.4,
+      "pitch": 0.16,
+      "target": [
+        -0.18,
+        -0.12,
+        0.22
+      ]
+    },
+    {
+      "id": "experience-depth",
+      "start": 21.94,
+      "lockStart": 22.15,
+      "turnEnd": 22.68,
+      "holdEnd": 23.2,
+      "returnEnd": 23.76,
+      "end": 24.02,
+      "entryYaw": 0.2,
+      "yaw": 1.05,
+      "exitYaw": 0.44,
+      "compactYaw": 0.98,
+      "distance": 6.55,
+      "pitch": 0.16,
+      "target": [
+        -0.15,
+        -0.1,
+        0.2
+      ],
+      "disclosureFan": [
+        0.68,
+        -0.38
+      ]
+    }
+  ],
+  "summaries": [
+    {
+      "id": "drawing-side",
+      "compact": false,
+      "peakCamera": {
+        "yaw": 1.08,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 0.6399999999996359
+    },
+    {
+      "id": "conviction-rear",
+      "compact": false,
+      "peakCamera": {
+        "yaw": 2.3500000000000005,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 2.0699999999992187
+    },
+    {
+      "id": "synthesis-side",
+      "compact": false,
+      "peakCamera": {
+        "yaw": -1.08,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 1.359999999999258
+    },
+    {
+      "id": "experience-depth",
+      "compact": false,
+      "peakCamera": {
+        "yaw": 1.05,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 0.8499999999995347
+    },
+    {
+      "id": "drawing-side",
+      "compact": true,
+      "peakCamera": {
+        "yaw": 1,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 0.7839999999995537
+    },
+    {
+      "id": "conviction-rear",
+      "compact": true,
+      "peakCamera": {
+        "yaw": 2.1,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 1.9879999999992493
+    },
+    {
+      "id": "synthesis-side",
+      "compact": true,
+      "peakCamera": {
+        "yaw": -1,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 1.1119999999993933
+    },
+    {
+      "id": "experience-depth",
+      "compact": true,
+      "peakCamera": {
+        "yaw": 0.98,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 0.9199999999994963
+    }
+  ],
+  "checks": [
+    {
+      "name": "orbit-windows-have-ordered-nonoverlapping-phases",
+      "pass": true
+    },
+    {
+      "name": "camera-track-inversion-is-accurate",
+      "pass": true
+    },
+    {
+      "name": "desktop-camera-is-finite",
+      "pass": true
+    },
+    {
+      "name": "desktop-camera-retraces-in-reverse",
+      "pass": true
+    },
+    {
+      "name": "desktop-jumps-do-not-depend-on-history",
+      "pass": true
+    },
+    {
+      "name": "desktop-lock-fixes-distance-pivot-and-pitch",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "desktop-every-window-has-real-azimuth-travel",
+      "pass": true,
+      "data": [
+        {
+          "id": "drawing-side",
+          "range": 0.6399999999996359
+        },
+        {
+          "id": "conviction-rear",
+          "range": 2.0699999999992187
+        },
+        {
+          "id": "synthesis-side",
+          "range": 1.359999999999258
+        },
+        {
+          "id": "experience-depth",
+          "range": 0.8499999999995347
+        }
+      ]
+    },
+    {
+      "name": "desktop-includes-a-side-and-a-rear-view",
+      "pass": true,
+      "data": {
+        "rearMostCosine": -0.7027130767735543
+      }
+    },
+    {
+      "name": "desktop-orbit-releases-outside-authored-windows",
+      "pass": true
+    },
+    {
+      "name": "mobile-camera-is-finite",
+      "pass": true
+    },
+    {
+      "name": "mobile-camera-retraces-in-reverse",
+      "pass": true
+    },
+    {
+      "name": "mobile-jumps-do-not-depend-on-history",
+      "pass": true
+    },
+    {
+      "name": "mobile-lock-fixes-distance-pivot-and-pitch",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "mobile-every-window-has-real-azimuth-travel",
+      "pass": true,
+      "data": [
+        {
+          "id": "drawing-side",
+          "range": 0.7839999999995537
+        },
+        {
+          "id": "conviction-rear",
+          "range": 1.9879999999992493
+        },
+        {
+          "id": "synthesis-side",
+          "range": 1.1119999999993933
+        },
+        {
+          "id": "experience-depth",
+          "range": 0.9199999999994963
+        }
+      ]
+    },
+    {
+      "name": "mobile-includes-a-side-and-a-rear-view",
+      "pass": true,
+      "data": {
+        "rearMostCosine": -0.5048461045998576
+      }
+    },
+    {
+      "name": "mobile-orbit-releases-outside-authored-windows",
+      "pass": true
+    },
+    {
+      "name": "orbit-entry-hold-return-and-exit-have-no-cuts-or-velocity-kinks",
+      "pass": true,
+      "data": {
+        "maxJump": 0.00008096766865089977,
+        "maxSlopeChange": 0.00045252257052652567,
+        "maxCurvatureChange": 1.182496323082205,
+        "failures": []
+      }
+    },
+    {
+      "name": "locked-projector-suppresses-cursor-parallax",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "cursor-parallax-remains-available-outside-orbits",
+      "pass": true
+    },
+    {
+      "name": "zero-camera-strength-remains-static",
+      "pass": true
+    },
+    {
+      "name": "orbit-projection-is-finite-and-clear-of-the-near-plane",
+      "pass": true,
+      "data": {
+        "coreSamples": 442584,
+        "nonfinite": [],
+        "nearPlane": []
+      }
+    },
+    {
+      "name": "orbit-keeps-the-actor-hand-and-primary-work-in-frame",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "hand-light-and-trail-share-the-orbit-camera",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "ambient-dust-coexists-with-locked-orbits",
+      "pass": true,
+      "data": {
+        "activeSamples": 7
+      }
+    },
+    {
+      "name": "disclosure-preserves-front-work-during-an-orbit",
+      "pass": true
+    },
+    {
+      "name": "revealed-network-nodes-clear-the-faceless-head-through-the-lock",
+      "pass": true,
+      "data": {
+        "checkedNodes": 372,
+        "padding": "6% of projected head height",
+        "overlaps": []
+      }
+    },
+    {
+      "name": "desktop-live-pointer-cannot-shift-a-locked-orbit",
+      "pass": true
+    },
+    {
+      "name": "desktop-native-scroll-jump-and-return-restores-the-camera",
+      "pass": true
+    },
+    {
+      "name": "desktop-live-orbit-reaches-the-rear-hemisphere",
+      "pass": true
+    },
+    {
+      "name": "desktop-native-forward-reverse-keeps-orbit-lock",
+      "pass": true,
+      "data": {
+        "samples": 24
+      }
+    },
+    {
+      "name": "desktop-native-disclosure-preserves-orbit-and-front-work",
+      "pass": true,
+      "data": {
+        "positions": [
+          7.2351131945201494,
+          7.2351131945201494
+        ],
+        "cameraDelta": 0,
+        "depthLayers": 2
+      }
+    },
+    {
+      "name": "desktop-reduced-motion-stops-live-orbits",
+      "pass": true
+    },
+    {
+      "name": "desktop-reduced-motion-retains-static-art",
+      "pass": true
+    },
+    {
+      "name": "mobile-live-pointer-cannot-shift-a-locked-orbit",
+      "pass": true
+    },
+    {
+      "name": "mobile-native-scroll-jump-and-return-restores-the-camera",
+      "pass": true
+    },
+    {
+      "name": "mobile-live-orbit-reaches-the-rear-hemisphere",
+      "pass": true
+    },
+    {
+      "name": "mobile-native-forward-reverse-keeps-orbit-lock",
+      "pass": true,
+      "data": {
+        "samples": 24
+      }
+    },
+    {
+      "name": "mobile-native-disclosure-preserves-orbit-and-front-work",
+      "pass": true,
+      "data": {
+        "positions": [
+          7.234776235141652,
+          7.234776235141652
+        ],
+        "cameraDelta": 0,
+        "depthLayers": 2
+      }
+    },
+    {
+      "name": "mobile-reduced-motion-stops-live-orbits",
+      "pass": true
+    },
+    {
+      "name": "mobile-reduced-motion-retains-static-art",
+      "pass": true
+    },
+    {
+      "name": "browser-source-matches-tested-geometry",
+      "pass": true
+    },
+    {
+      "name": "orbit-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "browserSources": [
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-story-soul-v10",
+      "sha256": "475259fc54545a7ae78b90b8bba96a4d2c76b831240ce65f972019858265a82b"
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-story-soul-v10",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-story-soul-v10",
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-story-soul-v10",
+      "sha256": "e57833bd55bcb7d63f3c559f396dc945b5711db34eb79eb3e99afe0b577dac84"
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-story-soul-v10",
+      "sha256": "843cc68131e9e6f0a640f77de49f94155e56e835ad870f5dc436f6e723511739"
+    },
+    {
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-story-soul-v10",
+      "sha256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07"
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-story-soul-v10",
+      "sha256": "475259fc54545a7ae78b90b8bba96a4d2c76b831240ce65f972019858265a82b"
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-story-soul-v10",
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-story-soul-v10",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-story-soul-v10",
+      "sha256": "843cc68131e9e6f0a640f77de49f94155e56e835ad870f5dc436f6e723511739"
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-story-soul-v10",
+      "sha256": "e57833bd55bcb7d63f3c559f396dc945b5711db34eb79eb3e99afe0b577dac84"
+    },
+    {
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-story-soul-v10",
+      "sha256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07"
+    }
+  ],
+  "browserStates": [
+    {
+      "viewport": "desktop",
+      "id": "drawing-side",
+      "mode": "system",
+      "reduced": false,
+      "current": 1.5268666666666668,
+      "target": 1.5268666666666668,
+      "detail": 1,
+      "draws": 25,
+      "drawCost": 14.154156655139143,
+      "anchors": [
+        -22,
+        893.0625,
+        2143.0625,
+        3393.0625,
+        4643.0625,
+        5893.0625,
+        7315.96875,
+        8673.9375,
+        10107.21875,
+        11375.515625,
+        13357.703125
+      ],
+      "width": 695.515625,
+      "height": 860,
+      "exploded": 0,
+      "dirty": false,
+      "trailEnergy": 0,
+      "trailDirection": 1,
+      "trailSpan": 0,
+      "layoutCorrection": null,
+      "shot": 3,
+      "sceneCount": 31,
+      "camera": {
+        "yaw": 1.08,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "probe": {
+        "points": [
+          [
+            457.0527282205805,
+            335.07383899251994,
+            -0.6406603597173733
+          ],
+          [
+            222.99252671954218,
+            233.08147204780286,
+            0.2788785953913023
+          ]
+        ],
+        "camera": {
+          "yaw": 1.08,
+          "pitch": 0.2,
+          "distance": 6.1,
+          "target": [
+            -0.24,
+            -0.2,
+            0.2
+          ],
+          "focal": 6,
+          "orbitId": "drawing-side",
+          "orbitWeight": 1,
+          "locked": true
+        }
+      }
+    },
+    {
+      "viewport": "desktop",
+      "id": "conviction-rear",
+      "mode": "system",
+      "reduced": false,
+      "current": 5.075219291502866,
+      "target": 5.075219291502866,
+      "detail": 2,
+      "draws": 67,
+      "drawCost": 3.862559871397774,
+      "anchors": [
+        -22,
+        893.0625,
+        2143.0625,
+        3393.0625,
+        4643.0625,
+        5893.0625,
+        7315.96875,
+        8673.9375,
+        10107.21875,
+        11375.515625,
+        13357.703125
+      ],
+      "width": 695.515625,
+      "height": 860,
+      "exploded": 0,
+      "dirty": false,
+      "trailEnergy": 0,
+      "trailDirection": 1,
+      "trailSpan": 0,
+      "layoutCorrection": null,
+      "shot": 13,
+      "sceneCount": 31,
+      "camera": {
+        "yaw": 2.3500000000000005,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "probe": {
+        "points": [
+          [
+            269.8857489711736,
+            349.79673369072685,
+            -0.7952617928916561
+          ],
+          [
+            330.85464563456054,
+            249.21112479503208,
+            0.683191214765304
+          ]
+        ],
+        "camera": {
+          "yaw": 2.3500000000000005,
+          "pitch": 0.12,
+          "distance": 6.9,
+          "target": [
+            -0.26,
+            -0.22,
+            0.16
+          ],
+          "focal": 6,
+          "orbitId": "conviction-rear",
+          "orbitWeight": 1,
+          "locked": true
+        }
+      }
+    },
+    {
+      "viewport": "desktop",
+      "id": "synthesis-side",
+      "mode": "system",
+      "reduced": false,
+      "current": 6.489708127181375,
+      "target": 6.489708127181375,
+      "detail": 2,
+      "draws": 106,
+      "drawCost": 6.2245849261977195,
+      "anchors": [
+        -22,
+        893.0625,
+        2143.0625,
+        3393.0625,
+        4643.0625,
+        5893.0625,
+        7315.96875,
+        8673.9375,
+        10107.21875,
+        11375.515625,
+        13357.703125
+      ],
+      "width": 695.515625,
+      "height": 860,
+      "exploded": 0,
+      "dirty": false,
+      "trailEnergy": 0,
+      "trailDirection": 1,
+      "trailSpan": 0,
+      "layoutCorrection": null,
+      "shot": 20,
+      "sceneCount": 31,
+      "camera": {
+        "yaw": -1.08,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "probe": {
+        "points": [
+          [
+            403.12891157246554,
+            391.34096836724063,
+            0.9009469783877584
+          ],
+          [
+            392.9418721177292,
+            255.56121114962326,
+            -0.4610785046883159
+          ]
+        ],
+        "camera": {
+          "yaw": -1.08,
+          "pitch": 0.16,
+          "distance": 6.4,
+          "target": [
+            -0.18,
+            -0.12,
+            0.22
+          ],
+          "focal": 6,
+          "orbitId": "synthesis-side",
+          "orbitWeight": 1,
+          "locked": true
+        }
+      }
+    },
+    {
+      "viewport": "desktop",
+      "id": "experience-depth",
+      "mode": "system",
+      "reduced": false,
+      "current": 7.2351131945201494,
+      "target": 7.2351131945201494,
+      "detail": 2,
+      "draws": 154,
+      "drawCost": 3.8967016563469703,
+      "anchors": [
+        -22,
+        893.0625,
+        2143.0625,
+        3393.0625,
+        4643.0625,
+        5893.0625,
+        7315.96875,
+        8673.9375,
+        10107.21875,
+        11375.515625,
+        13357.703125
+      ],
+      "width": 695.515625,
+      "height": 860,
+      "exploded": 0,
+      "dirty": false,
+      "trailEnergy": 0,
+      "trailDirection": 1,
+      "trailSpan": 0,
+      "layoutCorrection": null,
+      "shot": 23,
+      "sceneCount": 31,
+      "camera": {
+        "yaw": 1.05,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "probe": {
+        "points": [
+          [
+            447.2188078147373,
+            363.6647755923724,
+            -0.5818536885955127
+          ],
+          [
+            222.95435405421318,
+            265.6587820118573,
+            0.2831332725476118
+          ]
+        ],
+        "camera": {
+          "yaw": 1.05,
+          "pitch": 0.16,
+          "distance": 6.55,
+          "target": [
+            -0.15,
+            -0.1,
+            0.2
+          ],
+          "focal": 6,
+          "orbitId": "experience-depth",
+          "orbitWeight": 1,
+          "locked": true
+        }
+      }
+    },
+    {
+      "viewport": "desktop",
+      "id": "conviction-rear",
+      "traversal": [
+        {
+          "direction": "forward",
+          "samples": [
+            {
+              "current": 4.809533333333333,
+              "track": 12.4286,
+              "camera": {
+                "yaw": 0.3421570770656787,
+                "pitch": 0.12,
+                "distance": 6.55,
+                "target": [
+                  -0.3,
+                  -0.2,
+                  0.18
+                ],
+                "focal": 6,
+                "orbitId": null,
+                "orbitWeight": 0,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.8253273454643155,
+              "track": 12.475982036392946,
+              "camera": {
+                "yaw": 0.361240809184618,
+                "pitch": 0.12,
+                "distance": 6.550529337502034,
+                "target": [
+                  -0.2999379045193146,
+                  -0.2000310477403427,
+                  0.1799689522596573
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.0015523870171339977,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.85149282288947,
+              "track": 12.55447846866841,
+              "camera": {
+                "yaw": 0.38586585975944654,
+                "pitch": 0.12,
+                "distance": 6.576127935452436,
+                "target": [
+                  -0.2969409596272574,
+                  -0.2015295201863713,
+                  0.1784704798136287
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.07647600931856395,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.879077677326527,
+              "track": 12.63723303197958,
+              "camera": {
+                "yaw": 0.381191180253628,
+                "pitch": 0.12,
+                "distance": 6.658160409676258,
+                "target": [
+                  -0.28741503910602473,
+                  -0.20629248044698764,
+                  0.17370751955301236
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.31462402234938114,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.908903641772143,
+              "track": 12.726710925316429,
+              "camera": {
+                "yaw": 0.33931753057836234,
+                "pitch": 0.12,
+                "distance": 6.77998709765235,
+                "target": [
+                  -0.2734824732228973,
+                  -0.21325876338855135,
+                  0.16674123661144866
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.6629381694275667,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.938155869490725,
+              "track": 12.814467608472174,
+              "camera": {
+                "yaw": 0.29515459095587837,
+                "pitch": 0.12,
+                "distance": 6.871860823432917,
+                "target": [
+                  -0.2631400425804967,
+                  -0.21842997870975164,
+                  0.16157002129024836
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.9214989354875818,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.969184322136966,
+              "track": 12.907552966410899,
+              "camera": {
+                "yaw": 0.2800356188691929,
+                "pitch": 0.12000761406212909,
+                "distance": 6.899996637075319,
+                "target": [
+                  -0.2599919094409866,
+                  -0.2199989452421948,
+                  0.16000102858046794
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.9998215608688794,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.991202675331435,
+              "track": 12.973608025994304,
+              "camera": {
+                "yaw": 0.32651342766007624,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.013193739496272,
+              "track": 13.065968697481358,
+              "camera": {
+                "yaw": 0.8811147524344367,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.031740938272687,
+              "track": 13.158704691363436,
+              "camera": {
+                "yaw": 1.7910980953669873,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.049828234875963,
+              "track": 13.249141174379815,
+              "camera": {
+                "yaw": 2.309802617852882,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.065871070201642,
+              "track": 13.32935535100821,
+              "camera": {
+                "yaw": 2.3500000000000005,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.084290353660816,
+              "track": 13.421451768304081,
+              "camera": {
+                "yaw": 2.3500000000000005,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.100363360252698,
+              "track": 13.501816801263487,
+              "camera": {
+                "yaw": 2.330643752365167,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.1168119454529615,
+              "track": 13.584059727264808,
+              "camera": {
+                "yaw": 2.0992087467211604,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.13209839564506,
+              "track": 13.660491978225298,
+              "camera": {
+                "yaw": 1.636498304869474,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.151655438528349,
+              "track": 13.758277192641742,
+              "camera": {
+                "yaw": 0.938050823714933,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.169211496341658,
+              "track": 13.846057481708291,
+              "camera": {
+                "yaw": 0.519892408125338,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.184711862546884,
+              "track": 13.923559312734419,
+              "camera": {
+                "yaw": 0.4206928051409289,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.200629626084077,
+              "track": 14.003148130420385,
+              "camera": {
+                "yaw": 0.41999999999999993,
+                "pitch": 0.11671971050803012,
+                "distance": 6.6179923488830275,
+                "target": [
+                  -0.25835985525401506,
+                  -0.21835985525401508,
+                  0.17476130271386442
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.8359855254015065,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.2191891251274924,
+              "track": 14.095945625637462,
+              "camera": {
+                "yaw": 0.42,
+                "pitch": 0.1022295150021493,
+                "distance": 5.503910072827672,
+                "target": [
+                  -0.25111475750107465,
+                  -0.21111475750107464,
+                  0.23996718249032814
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.11147575010746513,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.22728797981786,
+              "track": 14.1364398990893,
+              "camera": {
+                "yaw": 0.42,
+                "pitch": 0.10004876613320338,
+                "distance": 5.353319986769262,
+                "target": [
+                  -0.2500243830666017,
+                  -0.21002438306660168,
+                  0.24978055240058483
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.002438306660168421,
+                "locked": false
+              }
+            }
+          ]
+        },
+        {
+          "direction": "reverse",
+          "samples": [
+            {
+              "current": 5.233580626505319,
+              "track": 14.167903132526593,
+              "camera": {
+                "yaw": 0.42,
+                "pitch": 0.1,
+                "distance": 5.35,
+                "target": [
+                  -0.25,
+                  -0.21,
+                  0.25
+                ],
+                "focal": 6,
+                "orbitId": null,
+                "orbitWeight": 0,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.2244319645000905,
+              "track": 14.122159822500453,
+              "camera": {
+                "yaw": 0.42,
+                "pitch": 0.1003782479757919,
+                "distance": 5.375805080124678,
+                "target": [
+                  -0.25018912398789594,
+                  -0.21018912398789594,
+                  0.2482978841089365
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.018912398789594498,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.203335726519538,
+              "track": 14.016678632597689,
+              "camera": {
+                "yaw": 0.41999999999999993,
+                "pitch": 0.11481744797618179,
+                "distance": 6.4597648122491185,
+                "target": [
+                  -0.2574087239880909,
+                  -0.21740872398809089,
+                  0.18332148410718196
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.7408723988090893,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.187940189298638,
+              "track": 13.939700946493192,
+              "camera": {
+                "yaw": 0.4200000043834715,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.16947725722124,
+              "track": 13.847386286106202,
+              "camera": {
+                "yaw": 0.5161625534479153,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.150847331403104,
+              "track": 13.754236657015518,
+              "camera": {
+                "yaw": 0.9642756548772118,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.132706564372212,
+              "track": 13.66353282186106,
+              "camera": {
+                "yaw": 1.6148484650126531,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.113976763595922,
+              "track": 13.569883817979608,
+              "camera": {
+                "yaw": 2.160927835537061,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.095557666099544,
+              "track": 13.47778833049772,
+              "camera": {
+                "yaw": 2.3467725386414857,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.08005330022656,
+              "track": 13.400266501132801,
+              "camera": {
+                "yaw": 2.3500000000000005,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.061491349655959,
+              "track": 13.307456748279794,
+              "camera": {
+                "yaw": 2.3500000000000005,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.048412981834152,
+              "track": 13.242064909170757,
+              "camera": {
+                "yaw": 2.2923956107401144,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.029094516838362,
+              "track": 13.145472584191811,
+              "camera": {
+                "yaw": 1.6689793319540671,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.0171776598333375,
+              "track": 13.085888299166687,
+              "camera": {
+                "yaw": 1.0713588257668512,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 4.996215747758249,
+              "track": 12.988647243274748,
+              "camera": {
+                "yaw": 0.3713569277866439,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 4.970863412646145,
+              "track": 12.912590237938435,
+              "camera": {
+                "yaw": 0.280007641806172,
+                "pitch": 0.1200018135918578,
+                "distance": 6.900000690156583,
+                "target": [
+                  -0.2599979033816301,
+                  -0.2199998349891374,
+                  0.16000016036488912
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.9999617358663575,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.944404556878808,
+              "track": 12.833213670636425,
+              "camera": {
+                "yaw": 0.28913884750847246,
+                "pitch": 0.1200147269648855,
+                "distance": 6.883324371387878,
+                "target": [
+                  -0.26184290771981666,
+                  -0.21906815047692305,
+                  0.160931219319537
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.9531909587603083,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.913929506422653,
+              "track": 12.741788519267958,
+              "camera": {
+                "yaw": 0.3307026868796291,
+                "pitch": 0.12,
+                "distance": 6.799407757426672,
+                "target": [
+                  -0.27128461318336017,
+                  -0.21435769340831992,
+                  0.16564230659168008
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.7178846704159955,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.887624219821394,
+              "track": 12.662872659464181,
+              "camera": {
+                "yaw": 0.37212393531843957,
+                "pitch": 0.12,
+                "distance": 6.692082407806345,
+                "target": [
+                  -0.2835101440273261,
+                  -0.20824492798633695,
+                  0.17175507201366305
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.41224639931684764,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.865727459753694,
+              "track": 12.597182379261083,
+              "camera": {
+                "yaw": 0.3883011621377843,
+                "pitch": 0.12,
+                "distance": 6.6119770257796695,
+                "target": [
+                  -0.2927634930089376,
+                  -0.2036182534955312,
+                  0.1763817465044688
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.18091267477655884,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.833926770211206,
+              "track": 12.501780310633617,
+              "camera": {
+                "yaw": 0.3712061515558376,
+                "pitch": 0.12,
+                "distance": 6.553840328856259,
+                "target": [
+                  -0.2995496128314654,
+                  -0.2002251935842673,
+                  0.1797748064157327
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.01125967921336484,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.820996003238392,
+              "track": 12.462988009715176,
+              "camera": {
+                "yaw": 0.35596029852173006,
+                "pitch": 0.12,
+                "distance": 6.550069003871804,
+                "target": [
+                  -0.2999919050149706,
+                  -0.2000040474925147,
+                  0.1799959525074853
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.0002023746257345143,
+                "locked": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "drawing-side",
+      "mode": "system",
+      "reduced": false,
+      "current": 1.5262917105836835,
+      "target": 1.5262917105836835,
+      "detail": 2,
+      "draws": 54,
+      "drawCost": 6.877940667693947,
+      "anchors": [
+        -20.00687499999998,
+        699.461875,
+        1929.88375,
+        2954.07125,
+        4060.3525,
+        5130.930625,
+        6568.54,
+        7928.649375,
+        9399.57125,
+        11001.765625,
+        13787.515625
+      ],
+      "width": 390,
+      "height": 285.953125,
+      "exploded": 0,
+      "dirty": false,
+      "trailEnergy": 0,
+      "trailDirection": 1,
+      "trailSpan": 0,
+      "layoutCorrection": null,
+      "shot": 3,
+      "sceneCount": 31,
+      "camera": {
+        "yaw": 1,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "probe": {
+        "points": [
+          [
+            244.42382989483585,
+            104.40527409724723,
+            -0.5898415544269635
+          ],
+          [
+            143.74228465282073,
+            61.86702866967222,
+            0.23079434667511628
+          ]
+        ],
+        "camera": {
+          "yaw": 1,
+          "pitch": 0.2,
+          "distance": 6.1,
+          "target": [
+            -0.24,
+            -0.2,
+            0.2
+          ],
+          "focal": 6,
+          "orbitId": "drawing-side",
+          "orbitWeight": 1,
+          "locked": true
+        }
+      }
+    },
+    {
+      "viewport": "mobile",
+      "id": "conviction-rear",
+      "mode": "system",
+      "reduced": false,
+      "current": 5.0751728310527096,
+      "target": 5.0751728310527096,
+      "detail": 2,
+      "draws": 112,
+      "drawCost": 4.458032594965872,
+      "anchors": [
+        -20.00687499999998,
+        699.461875,
+        1929.88375,
+        2954.07125,
+        4060.3525,
+        5130.930625,
+        6568.54,
+        7928.649375,
+        9399.57125,
+        11001.765625,
+        13787.515625
+      ],
+      "width": 390,
+      "height": 285.953125,
+      "exploded": 0,
+      "dirty": false,
+      "trailEnergy": 0,
+      "trailDirection": 1,
+      "trailSpan": 0,
+      "layoutCorrection": null,
+      "shot": 13,
+      "sceneCount": 31,
+      "camera": {
+        "yaw": 2.1,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "probe": {
+        "points": [
+          [
+            177.58851044736133,
+            109.67688749974191,
+            -0.8927342555289856
+          ],
+          [
+            177.37997573735018,
+            68.74349183238343,
+            0.6440461974277446
+          ]
+        ],
+        "camera": {
+          "yaw": 2.1,
+          "pitch": 0.12,
+          "distance": 6.9,
+          "target": [
+            -0.26,
+            -0.22,
+            0.16
+          ],
+          "focal": 6,
+          "orbitId": "conviction-rear",
+          "orbitWeight": 1,
+          "locked": true
+        }
+      }
+    },
+    {
+      "viewport": "mobile",
+      "id": "synthesis-side",
+      "mode": "system",
+      "reduced": false,
+      "current": 6.490002259315848,
+      "target": 6.490002259315848,
+      "detail": 2,
+      "draws": 163,
+      "drawCost": 6.167155675110254,
+      "anchors": [
+        -20.00687499999998,
+        699.461875,
+        1929.88375,
+        2954.07125,
+        4060.3525,
+        5130.930625,
+        6568.54,
+        7928.649375,
+        9399.57125,
+        11001.765625,
+        13787.515625
+      ],
+      "width": 390,
+      "height": 285.953125,
+      "exploded": 0,
+      "dirty": false,
+      "trailEnergy": 0,
+      "trailDirection": 1,
+      "trailSpan": 0,
+      "layoutCorrection": null,
+      "shot": 20,
+      "sceneCount": 31,
+      "camera": {
+        "yaw": -1,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "probe": {
+        "points": [
+          [
+            223.69086438253103,
+            126.82082741546184,
+            0.8780303787355965
+          ],
+          [
+            209.97125095565514,
+            71.23862344462391,
+            -0.4796995703152164
+          ]
+        ],
+        "camera": {
+          "yaw": -1,
+          "pitch": 0.16,
+          "distance": 6.4,
+          "target": [
+            -0.18,
+            -0.12,
+            0.22
+          ],
+          "focal": 6,
+          "orbitId": "synthesis-side",
+          "orbitWeight": 1,
+          "locked": true
+        }
+      }
+    },
+    {
+      "viewport": "mobile",
+      "id": "experience-depth",
+      "mode": "system",
+      "reduced": false,
+      "current": 7.234776235141652,
+      "target": 7.234776235141652,
+      "detail": 2,
+      "draws": 215,
+      "drawCost": 4.640692678931896,
+      "anchors": [
+        -20.00687499999998,
+        699.461875,
+        1929.88375,
+        2954.07125,
+        4060.3525,
+        5130.930625,
+        6568.54,
+        7928.649375,
+        9399.57125,
+        11001.765625,
+        13787.515625
+      ],
+      "width": 390,
+      "height": 285.953125,
+      "exploded": 0,
+      "dirty": false,
+      "trailEnergy": 0,
+      "trailDirection": 1,
+      "trailSpan": 0,
+      "layoutCorrection": null,
+      "shot": 23,
+      "sceneCount": 31,
+      "camera": {
+        "yaw": 0.98,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "probe": {
+        "points": [
+          [
+            239.11489269484628,
+            116.01482198861514,
+            -0.5391291803743101
+          ],
+          [
+            143.41822554845845,
+            75.32737273689003,
+            0.23738280645595372
+          ]
+        ],
+        "camera": {
+          "yaw": 0.98,
+          "pitch": 0.16,
+          "distance": 6.55,
+          "target": [
+            -0.15,
+            -0.1,
+            0.2
+          ],
+          "focal": 6,
+          "orbitId": "experience-depth",
+          "orbitWeight": 1,
+          "locked": true
+        }
+      }
+    },
+    {
+      "viewport": "mobile",
+      "id": "conviction-rear",
+      "traversal": [
+        {
+          "direction": "forward",
+          "samples": [
+            {
+              "current": 4.80997358319833,
+              "track": 12.42992074959499,
+              "camera": {
+                "yaw": 0.15273747670233284,
+                "pitch": 0.12,
+                "distance": 6.314733823859006,
+                "target": [
+                  -0.27899999999999997,
+                  -0.193,
+                  0.187
+                ],
+                "focal": 6,
+                "orbitId": null,
+                "orbitWeight": 0,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.825067891260253,
+              "track": 12.475203673780758,
+              "camera": {
+                "yaw": 0.16460256460911654,
+                "pitch": 0.12,
+                "distance": 6.315529039729622,
+                "target": [
+                  -0.27897300725536317,
+                  -0.19303835811079964,
+                  0.18696164188920036
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.0014206707703573144,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.850597911204023,
+              "track": 12.551793733612069,
+              "camera": {
+                "yaw": 0.18050472878105087,
+                "pitch": 0.12,
+                "distance": 6.354851198246388,
+                "target": [
+                  -0.27764248086958665,
+                  -0.19492910613269265,
+                  0.18507089386730735
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.0714483752849126,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.877816175586313,
+              "track": 12.633448526758938,
+              "camera": {
+                "yaw": 0.17846097771683023,
+                "pitch": 0.12,
+                "distance": 6.485385441055965,
+                "target": [
+                  -0.27328394339543155,
+                  -0.2011228172801762,
+                  0.1788771827198238
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.30084508445097025,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.9094374207025275,
+              "track": 12.728312262107583,
+              "camera": {
+                "yaw": 0.1499614797346495,
+                "pitch": 0.12,
+                "distance": 6.700455037222831,
+                "target": [
+                  -0.2662906118938246,
+                  -0.21106070941403876,
+                  0.16893929058596124
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.6689151634829175,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.930134363652113,
+              "track": 12.790403090956339,
+              "camera": {
+                "yaw": 0.12832094657737472,
+                "pitch": 0.12,
+                "distance": 6.819438774344026,
+                "target": [
+                  -0.2625174978398509,
+                  -0.21642250306968555,
+                  0.16357749693031445
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.8675001136920575,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.961497507982179,
+              "track": 12.884492523946536,
+              "camera": {
+                "yaw": 0.11249618101106579,
+                "pitch": 0.12005558583174955,
+                "distance": 6.898099812892163,
+                "target": [
+                  -0.2599617505057554,
+                  -0.21991440002168716,
+                  0.1600850519619021
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.9961619910918699,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.987380111305967,
+              "track": 12.962140333917901,
+              "camera": {
+                "yaw": 0.13480204097285908,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.007682803850566,
+              "track": 13.038414019252828,
+              "camera": {
+                "yaw": 0.46742177984703037,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.024175020891589,
+              "track": 13.120875104457948,
+              "camera": {
+                "yaw": 1.2124434288517154,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.042282055632966,
+              "track": 13.21141027816483,
+              "camera": {
+                "yaw": 1.9279790090136761,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.057941365665355,
+              "track": 13.289706828326777,
+              "camera": {
+                "yaw": 2.0996207739270396,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.0744493945394735,
+              "track": 13.372246972697369,
+              "camera": {
+                "yaw": 2.1,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.095564844464423,
+              "track": 13.477824222322116,
+              "camera": {
+                "yaw": 2.0968157795513984,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.110981768454872,
+              "track": 13.55490884227436,
+              "camera": {
+                "yaw": 1.9684964158239497,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.126780342113956,
+              "track": 13.63390171056978,
+              "camera": {
+                "yaw": 1.576963115076694,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.142340228280729,
+              "track": 13.711701141403648,
+              "camera": {
+                "yaw": 1.0306426510384423,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.158094399373528,
+              "track": 13.790471996867641,
+              "camera": {
+                "yaw": 0.5254374960438128,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.174731773640741,
+              "track": 13.873658868203705,
+              "camera": {
+                "yaw": 0.24103578777800494,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.184953422719737,
+              "track": 13.924767113598683,
+              "camera": {
+                "yaw": 0.2035436891481781,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.214534119724908,
+              "track": 14.072670598624539,
+              "camera": {
+                "yaw": 0.20300000000000004,
+                "pitch": 0.11043383607811191,
+                "distance": 5.867939029267977,
+                "target": [
+                  -0.25006590669650086,
+                  -0.2049148953539457,
+                  0.21334976033360664
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.2641412367778396,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.230292401397912,
+              "track": 14.151462006989558,
+              "camera": {
+                "yaw": 0.203,
+                "pitch": 0.107,
+                "distance": 5.536408954407982,
+                "target": [
+                  -0.2465,
+                  -0.19949999999999998,
+                  0.2325
+                ],
+                "focal": 6,
+                "orbitId": null,
+                "orbitWeight": 0,
+                "locked": false
+              }
+            }
+          ]
+        },
+        {
+          "direction": "reverse",
+          "samples": [
+            {
+              "current": 5.233769459570105,
+              "track": 14.168847297850526,
+              "camera": {
+                "yaw": 0.203,
+                "pitch": 0.107,
+                "distance": 5.536408954407982,
+                "target": [
+                  -0.2465,
+                  -0.19949999999999998,
+                  0.2325
+                ],
+                "focal": 6,
+                "orbitId": null,
+                "orbitWeight": 0,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.222148408664427,
+              "track": 14.110742043322137,
+              "camera": {
+                "yaw": 0.203,
+                "pitch": 0.10762896372828991,
+                "distance": 5.595700704076028,
+                "target": [
+                  -0.24715315464091644,
+                  -0.20049182741768792,
+                  0.22899231766915246
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.04838182525306989,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.207202839097007,
+              "track": 14.036014195485034,
+              "camera": {
+                "yaw": 0.20300000000000004,
+                "pitch": 0.11453791391041684,
+                "distance": 6.290323147872876,
+                "target": [
+                  -0.2543278336762021,
+                  -0.21138671039719578,
+                  0.19046163396113686
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.5798395315705263,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.196356930351149,
+              "track": 13.981784651755744,
+              "camera": {
+                "yaw": 0.20300000000000007,
+                "pitch": 0.11925723890523453,
+                "distance": 6.813742926204554,
+                "target": [
+                  -0.2592286711708205,
+                  -0.21882872288902366,
+                  0.1641423214900382
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.9428645311718867,
+                "locked": false
+              }
+            },
+            {
+              "current": 5.174480304953255,
+              "track": 13.872401524766273,
+              "camera": {
+                "yaw": 0.24306893061574186,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.156193365213708,
+              "track": 13.780966826068541,
+              "camera": {
+                "yaw": 0.5768013335166589,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.141277094201444,
+              "track": 13.706385471007218,
+              "camera": {
+                "yaw": 1.0689725898257394,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.121987250593788,
+              "track": 13.609936252968941,
+              "camera": {
+                "yaw": 1.721143279987793,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.106911317137718,
+              "track": 13.534556585688591,
+              "camera": {
+                "yaw": 2.0260096882928846,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.093159967220892,
+              "track": 13.465799836104459,
+              "camera": {
+                "yaw": 2.099394392838517,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.066552886593976,
+              "track": 13.332764432969878,
+              "camera": {
+                "yaw": 2.1,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.051519078208691,
+              "track": 13.257595391043456,
+              "camera": {
+                "yaw": 2.076792520768663,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.032686250529886,
+              "track": 13.163431252649428,
+              "camera": {
+                "yaw": 1.6031413926224052,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 5.017067272659085,
+              "track": 13.085336363295422,
+              "camera": {
+                "yaw": 0.8667731907919556,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 4.996765714566259,
+              "track": 12.990297143698779,
+              "camera": {
+                "yaw": 0.20551763468170875,
+                "pitch": 0.12,
+                "distance": 6.9,
+                "target": [
+                  -0.26,
+                  -0.22,
+                  0.16
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 1,
+                "locked": true
+              }
+            },
+            {
+              "current": 4.971994402242143,
+              "track": 12.91598320672643,
+              "camera": {
+                "yaw": 0.11200080020309247,
+                "pitch": 0.12000020255291521,
+                "distance": 6.899997840755304,
+                "target": [
+                  -0.2599997119826837,
+                  -0.21999990074579237,
+                  0.16000009883649313
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.9999938374466265,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.94509405308401,
+              "track": 12.835282159252031,
+              "camera": {
+                "yaw": 0.11757348411443441,
+                "pitch": 0.1200136346889602,
+                "distance": 6.873329390176209,
+                "target": [
+                  -0.2608062869561599,
+                  -0.21881950663278013,
+                  0.16117993608566444
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.9561286139957726,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.917682333789899,
+              "track": 12.753047001369698,
+              "camera": {
+                "yaw": 0.14083317073774598,
+                "pitch": 0.12,
+                "distance": 6.75277687358791,
+                "target": [
+                  -0.26462323823979245,
+                  -0.21343013513292652,
+                  0.16656986486707348
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.7566716715898715,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.892752332812112,
+              "track": 12.678256998436336,
+              "camera": {
+                "yaw": 0.16742918294079837,
+                "pitch": 0.12,
+                "distance": 6.585172227807444,
+                "target": [
+                  -0.2700108247042226,
+                  -0.20577409120978893,
+                  0.17422590879021108
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.4731144892514419,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.8680028065370635,
+              "track": 12.60400841961119,
+              "camera": {
+                "yaw": 0.18203041393242722,
+                "pitch": 0.12,
+                "distance": 6.428568296357628,
+                "target": [
+                  -0.27517018524681325,
+                  -0.19844236833347587,
+                  0.18155763166652414
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.20156919753614305,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.839645643398184,
+              "track": 12.51893693019455,
+              "camera": {
+                "yaw": 0.17508664203900723,
+                "pitch": 0.12,
+                "distance": 6.32875306983826,
+                "target": [
+                  -0.27852462934707606,
+                  -0.19367552671731292,
+                  0.1863244732826871
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 0.02501950804862602,
+                "locked": false
+              }
+            },
+            {
+              "current": 4.817373318461442,
+              "track": 12.452119955384326,
+              "camera": {
+                "yaw": 0.1584941529743556,
+                "pitch": 0.12,
+                "distance": 6.314734334020708,
+                "target": [
+                  -0.27899998268202186,
+                  -0.19300002460975837,
+                  0.18699997539024163
+                ],
+                "focal": 6,
+                "orbitId": "conviction-rear",
+                "orbitWeight": 9.114725322162416e-7,
+                "locked": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Camera phases use the public linear cameraTrack API, independently inverted.",
+    "Background surroundings may deliberately extend beyond the stage; clipping checks cover actor, hand light, and primary work.",
+    "Browser evidence is headless Chromium, not a physical-device frame-rate measurement."
+  ]
+}

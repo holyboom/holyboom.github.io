@@ -1,0 +1,4700 @@
+{
+  "capturedAt": "2026-11-14T20:57:59.992Z",
+  "base": "http://127.0.0.1:4174/",
+  "loadedScripts": [
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+      "bytes": 8839,
+      "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+      "bytes": 4898,
+      "sha256": "5941a9c11a942a9cdb26d9f77cb967bf715f91c319993d3af0909604b7351e92"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+      "bytes": 32630,
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+      "bytes": 24695,
+      "sha256": "cca0ddfcf512b768f215a982e7453f0c848be89bd8d922afcf6fc2cae1f6c218"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6",
+      "bytes": 14776,
+      "sha256": "5786d5f87bdb4aeed633ca13ef0dde2babcdaec4619de5bc95a1e5c27c576760"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+      "bytes": 28857,
+      "sha256": "e4156bf33f8da24429303d157e20c2c4060c99c434343a8da7258e6fb669653f"
+    }
+  ],
+  "unlabelledDiagnostic": false,
+  "release": "faceless-performance-v6",
+  "sequence": [
+    {
+      "verb": "Imagine",
+      "shot": "establish",
+      "shape": "maker",
+      "pose": "design",
+      "label": "00 / THE PERSON BEHIND THE SYSTEM",
+      "caption": "A world begins at the end of a drawn line.",
+      "scale": 1,
+      "action": "Imagine",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 0,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "draw",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "Before software, there was a wish to make a place for people.",
+      "scale": 1,
+      "action": "Imagine a place",
+      "prop": "blueprint",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "establish",
+      "chapter": 1,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "sketch",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "A hand, a drawing, and something that did not exist before.",
+      "scale": 1,
+      "action": "Draw the first lines",
+      "prop": "house",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 1,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "type",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "The medium changed. The instinct to create stayed.",
+      "scale": 1,
+      "action": "Turn the drawing into an interface",
+      "prop": "code",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 1,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "type",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "An idea has to become something that works.",
+      "scale": 1,
+      "action": "Build one component",
+      "prop": "component",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "build",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "A beautiful part still has to belong to the whole.",
+      "scale": 1,
+      "action": "Fit it into a larger system",
+      "prop": "assembly",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 2,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "Other people will rely on the work. The details matter.",
+      "scale": 1,
+      "action": "Make it dependable",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Dependability",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "read",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "The work begins with understanding someone else’s need.",
+      "scale": 1,
+      "action": "Listen to the requirement",
+      "prop": "brief",
+      "tone": "human",
+      "meaning": "Understanding",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 3,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "My part had to connect with the work around it.",
+      "scale": 1,
+      "action": "Connect across boundaries",
+      "prop": "network",
+      "tone": "build",
+      "meaning": "Connection",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 3,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "build",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "A shared system asks more of us than a single screen.",
+      "scale": 1,
+      "action": "Bring the pieces together",
+      "prop": "assembly",
+      "tone": "care",
+      "meaning": "Collaboration",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 3,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "type",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "A new possibility enters a familiar process.",
+      "scale": 1,
+      "action": "Invite intelligence into the workflow",
+      "prop": "ai",
+      "tone": "dream",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 4,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "An answer is not the end of a human decision.",
+      "scale": 1,
+      "action": "Pause at the review boundary",
+      "prop": "review",
+      "tone": "human",
+      "meaning": "Human judgment",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 4,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "approve",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "Move forward with a visible path to inspect and review.",
+      "scale": 1,
+      "action": "Keep the person in control",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 4,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "alone",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Not everyone saw it yet. I still wanted to find out.",
+      "scale": 1,
+      "action": "Hold on to the possibility",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Conviction",
+      "energy": 0.22,
+      "shot": "isolate",
+      "chapter": 5,
+      "step": 0,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reach",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Belief did not make the difficult parts disappear.",
+      "scale": 1,
+      "action": "Meet the resistance",
+      "prop": "fracture",
+      "tone": "friction",
+      "meaning": "An obstacle",
+      "energy": 0.38,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 1,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reflect",
+      "label": "05 / KEEP BUILDING",
+      "caption": "What could this difficulty teach me?",
+      "scale": 1,
+      "action": "Stay with the problem",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Reflection",
+      "energy": 0.28,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 2,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "repair",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Another attempt. Another refinement. Then back again.",
+      "scale": 1,
+      "action": "Return to the work",
+      "prop": "repair",
+      "tone": "build",
+      "meaning": "Iteration",
+      "energy": 0.65,
+      "shot": "detail",
+      "chapter": 5,
+      "step": 3,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "rise",
+      "label": "05 / KEEP BUILDING",
+      "caption": "The work continued, week after week.",
+      "scale": 1,
+      "action": "Keep the light alive",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Persistence",
+      "energy": 0.85,
+      "shot": "rise",
+      "chapter": 5,
+      "step": 4,
+      "count": 5
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "read",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "A problem I had lived through became a starting point.",
+      "scale": 1,
+      "action": "Keep the lesson",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Experience",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 6,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "research",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Seek the strongest ideas and methods I can find.",
+      "scale": 1,
+      "action": "Look beyond my own methods",
+      "prop": "library",
+      "tone": "build",
+      "meaning": "Research",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 6,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Experience and selected methods become a skill with character.",
+      "scale": 1,
+      "action": "Distil a capability",
+      "prop": "skill",
+      "tone": "dream",
+      "meaning": "Synthesis",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 6,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "protect",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Purpose. Method. Character. A MOAT I keep developing.",
+      "scale": 1,
+      "action": "Build a distinctive advantage",
+      "prop": "moat",
+      "tone": "dream",
+      "meaning": "Identity",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 6,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "There is depth behind an experience that feels simple.",
+      "scale": 1,
+      "action": "Face the hidden complexity",
+      "prop": "complexity",
+      "tone": "build",
+      "meaning": "Depth",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 7,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Design gives that complexity a human starting point.",
+      "scale": 1,
+      "action": "Shape a clear way in",
+      "prop": "interface",
+      "tone": "dream",
+      "meaning": "Design",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 7,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "The next step should feel understandable and in their control.",
+      "scale": 1,
+      "action": "Give the person agency",
+      "prop": "choice",
+      "tone": "human",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 7,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "welcome",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Useful enough to work. Engaging enough to want to return.",
+      "scale": 1,
+      "action": "Make the experience inviting",
+      "prop": "recipient",
+      "tone": "care",
+      "meaning": "AI experiences",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 7,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "An experience becomes meaningful when someone can enter it.",
+      "scale": 1,
+      "action": "Open the door",
+      "prop": "interface",
+      "tone": "care",
+      "meaning": "Invitation",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "Explore the demonstration. Look beneath the surface.",
+      "scale": 1,
+      "action": "Make the work inspectable",
+      "prop": "review",
+      "tone": "build",
+      "meaning": "Transparency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 8,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "This story continues through what we choose to build next.",
+      "scale": 1,
+      "action": "Offer the next possibility",
+      "prop": "recipient",
+      "tone": "human",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Reflect",
+      "shot": "portrait",
+      "shape": "maker",
+      "pose": "stand",
+      "label": "09 / THE EXPERIENCE BEHIND THE STORY",
+      "caption": "The work that brought me here.",
+      "scale": 0.9,
+      "action": "Reflect",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 9,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Begin",
+      "shot": "reveal",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "10 / YOUR NEXT CHAPTER",
+      "caption": "What could we make possible, together?",
+      "scale": 1,
+      "action": "Begin",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 10,
+      "step": 0,
+      "count": 1
+    }
+  ],
+  "shots": {
+    "establish": {
+      "yaw": -0.3,
+      "pitch": 0.12,
+      "distance": 6.4,
+      "target": [
+        0.1,
+        0,
+        0
+      ]
+    },
+    "draft": {
+      "yaw": 0.58,
+      "pitch": 0.3,
+      "distance": 5.25,
+      "target": [
+        -0.25,
+        -0.09,
+        0.22
+      ]
+    },
+    "detail": {
+      "yaw": 0.44,
+      "pitch": 0.18,
+      "distance": 5.05,
+      "target": [
+        -0.26,
+        -0.08,
+        0.25
+      ]
+    },
+    "connect": {
+      "yaw": 0.28,
+      "pitch": 0.17,
+      "distance": 6.25,
+      "target": [
+        -0.2,
+        -0.07,
+        0.15
+      ]
+    },
+    "isolate": {
+      "yaw": 0.48,
+      "pitch": 0.21,
+      "distance": 7.25,
+      "target": [
+        -0.12,
+        -0.08,
+        0.15
+      ]
+    },
+    "intimate": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.06,
+        0.25
+      ]
+    },
+    "rise": {
+      "yaw": -0.42,
+      "pitch": 0.02,
+      "distance": 6.2,
+      "target": [
+        -0.3,
+        -0.1,
+        0.2
+      ]
+    },
+    "reveal": {
+      "yaw": 0.2,
+      "pitch": 0.19,
+      "distance": 6.35,
+      "target": [
+        -0.08,
+        -0.08,
+        0.2
+      ]
+    },
+    "portrait": {
+      "yaw": -0.15,
+      "pitch": 0.1,
+      "distance": 5.9,
+      "target": [
+        -0.25,
+        -0.08,
+        0.2
+      ]
+    }
+  },
+  "morph": {
+    "start": 0.16,
+    "end": 0.91
+  },
+  "scripts": [
+    "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6"
+  ],
+  "viewport": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "art": [
+      720,
+      720
+    ]
+  },
+  "notes": [
+    "All artwork is captured from the live browser canvas.",
+    "The art view overrides capture CSS only: 720-square canvas, no caption overlays, desktop camera behavior.",
+    "Desktop and mobile captures retain the real layout.",
+    "Steady key poses allow two settled rendering frames. Pilot transitions use fixed scroll positions.",
+    "Continuous sweeps drive native scroll at requestAnimationFrame cadence and retain the runtime camera damping.",
+    "These are headless review captures, not physical-device performance measurements."
+  ],
+  "metadataHash": "d980ddac9ce6e8a93bc09219b3ff09d417d9bbbe6b2f0e07de121273f19ec2a1",
+  "snapshots": [],
+  "pilots": [],
+  "performances": [],
+  "sweeps": [
+    {
+      "index": 3,
+      "from": 1.2833333319353146,
+      "to": 1.6126864449972578,
+      "direction": "forward",
+      "durationMs": 3000,
+      "samples": [
+        {
+          "elapsed": -4.899999998882436,
+          "position": 1.2837333333333334,
+          "target": 1.2837333333333334,
+          "camera": {
+            "yaw": 0.5663006682160747,
+            "pitch": 0.29719786395328807,
+            "distance": 5.2662130327446794,
+            "target": [
+              -0.24984432577518267,
+              -0.24015567422481732,
+              0.21906595465109602
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 111.80000000111761,
+          "position": 1.2909330972284359,
+          "target": 1.2922666666666667,
+          "camera": {
+            "yaw": 0.5726598627913935,
+            "pitch": 0.2984986082982396,
+            "distance": 5.258680767477007,
+            "target": [
+              -0.2499165893499022,
+              -0.24008341065009778,
+              0.2194995360994132
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 245.00000000111754,
+          "position": 1.30485400494902,
+          "target": 1.3061333333333334,
+          "camera": {
+            "yaw": 0.5788804754252945,
+            "pitch": 0.29977100633699205,
+            "distance": 5.2513230720447694,
+            "target": [
+              -0.2499872781298329,
+              -0.2400127218701671,
+              0.21992366877899736
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 345.00000000111754,
+          "position": 1.3161989992225218,
+          "target": 1.3178666666666667,
+          "camera": {
+            "yaw": 0.5799812235950341,
+            "pitch": 0.29999615937171153,
+            "distance": 5.2500221875068735,
+            "target": [
+              -0.24999978663176176,
+              -0.24000021336823824,
+              0.2199987197905705
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 445.00000000111754,
+          "position": 1.3270268250104138,
+          "target": 1.3285333333333333,
+          "camera": {
+            "yaw": 0.5799999999999998,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.24,
+              0.22
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 545.1000000011177,
+          "position": 1.3377033774089404,
+          "target": 1.3392,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.24,
+              0.22
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 678.4000000011176,
+          "position": 1.351715439731728,
+          "target": 1.3541333333333332,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.24,
+              0.22
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 795.0000000011175,
+          "position": 1.3639564040558527,
+          "target": 1.3648,
+          "camera": {
+            "yaw": 0.579996633973725,
+            "pitch": 0.2999971148346213,
+            "distance": 5.249995097406059,
+            "target": [
+              -0.2500002404304482,
+              -0.23999975956955177,
+              0.22000072129134465
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 895.0000000011175,
+          "position": 1.3756065064424874,
+          "target": 1.3765333333333334,
+          "camera": {
+            "yaw": 0.5798056246867573,
+            "pitch": 0.29983339258864916,
+            "distance": 5.249716901204358,
+            "target": [
+              -0.2500138839509459,
+              -0.2399861160490541,
+              0.2200416518528377
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 995.0000000011175,
+          "position": 1.387740297565433,
+          "target": 1.3893333333333333,
+          "camera": {
+            "yaw": 0.5789775416876684,
+            "pitch": 0.29912360716085856,
+            "distance": 5.248511007051421,
+            "target": [
+              -0.2500730327365951,
+              -0.23992696726340487,
+              0.22021909820978536
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 1111.6000000011177,
+          "position": 1.4005744250382866,
+          "target": 1.4021333333333332,
+          "camera": {
+            "yaw": 0.5770211043635018,
+            "pitch": 0.2974466608830016,
+            "distance": 5.24566304945926,
+            "target": [
+              -0.25021277825974986,
+              -0.23978722174025013,
+              0.2206383347792496
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1211.7000000011176,
+          "position": 1.4110711537107488,
+          "target": 1.4128,
+          "camera": {
+            "yaw": 0.5744065082159298,
+            "pitch": 0.295205578470797,
+            "distance": 5.241859432029908,
+            "target": [
+              -0.25039953512743357,
+              -0.2396004648725664,
+              0.22119860538230074
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1345.0000000011178,
+          "position": 1.4259809202507192,
+          "target": 1.4277333333333333,
+          "camera": {
+            "yaw": 0.5689591139888042,
+            "pitch": 0.29053638341897503,
+            "distance": 5.233943621788208,
+            "target": [
+              -0.2507886347150854,
+              -0.23921136528491457,
+              0.22236590414525625
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1445.0000000011178,
+          "position": 1.4369681375415002,
+          "target": 1.4384,
+          "camera": {
+            "yaw": 0.5636180467330705,
+            "pitch": 0.2859583257712033,
+            "distance": 5.226193925393414,
+            "target": [
+              -0.2511701395190664,
+              -0.2388298604809336,
+              0.22351041855719916
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1545.0000000011178,
+          "position": 1.4476418895441614,
+          "target": 1.4490666666666667,
+          "camera": {
+            "yaw": 0.5573943958525873,
+            "pitch": 0.2806237678736462,
+            "distance": 5.2171781062687455,
+            "target": [
+              -0.2516146860105295,
+              -0.2383853139894705,
+              0.22484405803158844
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0934508277664538,
+            0.11423479123709313,
+            0.5119270552662777
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1661.6000000011177,
+          "position": 1.4605721480925926,
+          "target": 1.4618666666666666,
+          "camera": {
+            "yaw": 0.5486136424584909,
+            "pitch": 0.2730974078215636,
+            "distance": 5.204484415999524,
+            "target": [
+              -0.25224188268153636,
+              -0.23775811731846364,
+              0.2267256480446091
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.00587672622587479,
+            -0.025696426015217183,
+            0.5793203937536683
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1778.3000000011175,
+          "position": 1.473112037058871,
+          "target": 1.4746666666666666,
+          "camera": {
+            "yaw": 0.5389962505818895,
+            "pitch": 0.264853929070191,
+            "distance": 5.190616694896162,
+            "target": [
+              -0.25292883924415077,
+              -0.23707116075584925,
+              0.22878651773245226
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.1281316033989674,
+            -0.2086643741440768,
+            0.5217423660005819
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1878.3000000011175,
+          "position": 1.484641864311262,
+          "target": 1.4864,
+          "camera": {
+            "yaw": 0.5294153874962717,
+            "pitch": 0.25664176071109,
+            "distance": 5.176838387591684,
+            "target": [
+              -0.25361318660740917,
+              -0.23638681339259082,
+              0.2308395598222275
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.13,
+            -0.2106621221769952,
+            0.5208122171804785
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1978.3000000011175,
+          "position": 1.4953327993072656,
+          "target": 1.4970666666666668,
+          "camera": {
+            "yaw": 0.5201022173720622,
+            "pitch": 0.24865904346176748,
+            "distance": 5.163480107769145,
+            "target": [
+              -0.2542784130448527,
+              -0.23572158695514728,
+              0.23283523913455814
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.055823559166559455,
+            -0.16518067887596063,
+            0.49052176156505123
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 2078.3000000011175,
+          "position": 1.506224963756121,
+          "target": 1.5077333333333334,
+          "camera": {
+            "yaw": 0.5103952715213957,
+            "pitch": 0.2403388041611963,
+            "distance": 5.149593703752865,
+            "target": [
+              -0.2549717663199003,
+              -0.23502823368009967,
+              0.23491529895970092
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08087358902039549,
+            -0.13855253203191026,
+            0.3594163123208543
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 2178.3000000011175,
+          "position": 1.5169678994946436,
+          "target": 1.5183999999999997,
+          "camera": {
+            "yaw": 0.5008118390105896,
+            "pitch": 0.23212443343764821,
+            "distance": 5.135920629484584,
+            "target": [
+              -0.25565629721352934,
+              -0.23434370278647068,
+              0.23696889164058793
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.10503092203032235,
+            -0.18083544048692762,
+            0.35234868228838
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2295.0000000011178,
+          "position": 1.5297812336775105,
+          "target": 1.5312000000000001,
+          "camera": {
+            "yaw": 0.4896550453414285,
+            "pitch": 0.22256146743551009,
+            "distance": 5.120048504088652,
+            "target": [
+              -0.25645321104704083,
+              -0.23354678895295916,
+              0.23935963314112246
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08852793911184292,
+            -0.17153327439774368,
+            0.3535683136794595
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2411.6000000011177,
+          "position": 1.5419642250827719,
+          "target": 1.5429333333333335,
+          "camera": {
+            "yaw": 0.4796111884390947,
+            "pitch": 0.21395244723350976,
+            "distance": 5.105801649682981,
+            "target": [
+              -0.25717062939720753,
+              -0.23282937060279246,
+              0.24151188819162256
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.058027210113186706,
+            -0.13986299451725187,
+            0.3577206871305675
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2545.0000000011178,
+          "position": 1.5557623185906722,
+          "target": 1.5568,
+          "camera": {
+            "yaw": 0.4692366747019329,
+            "pitch": 0.20506000688737108,
+            "distance": 5.091127390906201,
+            "target": [
+              -0.2579116660927191,
+              -0.2320883339072809,
+              0.24373499827815723
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0758662284263211,
+            -0.13999667961512696,
+            0.3577031593267931
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2678.3000000011175,
+          "position": 1.5721231984588073,
+          "target": 1.5738666666666665,
+          "camera": {
+            "yaw": 0.4587371596231668,
+            "pitch": 0.1960604225341429,
+            "distance": 5.0763192627938345,
+            "target": [
+              -0.2586616314554881,
+              -0.2313383685445119,
+              0.24598489436646429
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08199999999999999,
+            -0.11938288885011937,
+            0.3689235562084284
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 2794.9000000011174,
+          "position": 1.5851840827362413,
+          "target": 1.5866666666666664,
+          "camera": {
+            "yaw": 0.452006501328515,
+            "pitch": 0.19029128685301286,
+            "distance": 5.066849253976118,
+            "target": [
+              -0.25914239276224893,
+              -0.23085760723775106,
+              0.2474271782867468
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08200000000000005,
+            -0.1157314388822485,
+            0.3709702250231616
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2894.9000000011174,
+          "position": 1.5964016882216179,
+          "target": 1.5994666666666668,
+          "camera": {
+            "yaw": 0.44748692871450907,
+            "pitch": 0.1864173674695792,
+            "distance": 5.060500150115586,
+            "target": [
+              -0.2594652193775351,
+              -0.2305347806224649,
+              0.2483956581326052
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08200000000000005,
+            -0.1157314388822485,
+            0.3709702250231616
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2994.9000000011174,
+          "position": 1.6068748147799268,
+          "target": 1.608,
+          "camera": {
+            "yaw": 0.444324425488318,
+            "pitch": 0.18370665041855827,
+            "distance": 5.056062191607009,
+            "target": [
+              -0.25969111246512017,
+              -0.23030888753487985,
+              0.24907333739536042
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08200000000000005,
+            -0.1157314388822485,
+            0.3709702250231616
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 3011.6000000011177,
+          "position": 1.6092969684629903,
+          "target": 1.6122666666666667,
+          "camera": {
+            "yaw": 0.4437341325467931,
+            "pitch": 0.18320068504010845,
+            "distance": 5.0552342613412655,
+            "target": [
+              -0.25973327624665765,
+              -0.23026672375334234,
+              0.2491998287399729
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08200000000000005,
+            -0.1157314388822485,
+            0.3709702250231616
+          ],
+          "stage": "hold"
+        }
+      ],
+      "file": "sweep-03-forward-end.png",
+      "position": 1.6122666666666667,
+      "shot": 3,
+      "detail": 2,
+      "drawCost": 11.392514737615587,
+      "camera": {
+        "yaw": 0.44308004121600003,
+        "pitch": 0.18264003532800005,
+        "distance": 5.05431700737772,
+        "target": [
+          -0.259779997056,
+          -0.230220002944,
+          0.24933999116799999
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 3,
+      "from": 1.2833333319353146,
+      "to": 1.6126864449972578,
+      "direction": "reverse",
+      "durationMs": 3000,
+      "samples": [
+        {
+          "elapsed": -5.299999999255306,
+          "position": 1.6122666666666667,
+          "target": 1.6122666666666667,
+          "camera": {
+            "yaw": 0.44308004121600003,
+            "pitch": 0.18264003532800005,
+            "distance": 5.05431700737772,
+            "target": [
+              -0.259779997056,
+              -0.230220002944,
+              0.24933999116799999
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08200000000000005,
+            -0.1157314388822485,
+            0.3709702250231616
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 94.7000000007447,
+          "position": 1.6071292987269337,
+          "target": 1.6058666666666666,
+          "camera": {
+            "yaw": 0.44425997108701837,
+            "pitch": 0.1836514037888729,
+            "distance": 5.0559717828652975,
+            "target": [
+              -0.25969571635092725,
+              -0.2303042836490727,
+              0.2490871490527818
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08200000000000005,
+            -0.1157314388822485,
+            0.3709702250231616
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 194.7000000007447,
+          "position": 1.5961143659148231,
+          "target": 1.5930666666666666,
+          "camera": {
+            "yaw": 0.44758796590915767,
+            "pitch": 0.18650397077927794,
+            "distance": 5.060642000373538,
+            "target": [
+              -0.2594580024350602,
+              -0.23054199756493982,
+              0.2483740073051805
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08200000000000005,
+            -0.1157314388822485,
+            0.3709702250231616
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 311.4000000007454,
+          "position": 1.58368199961389,
+          "target": 1.5823999999999998,
+          "camera": {
+            "yaw": 0.45270112500923226,
+            "pitch": 0.19088667857934186,
+            "distance": 5.067825768567216,
+            "target": [
+              -0.2590927767850549,
+              -0.23090722321494514,
+              0.24727833035516453
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08200000000000005,
+            -0.1157314388822485,
+            0.3709702250231616
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 444.7000000007447,
+          "position": 1.5688963644078573,
+          "target": 1.5674666666666668,
+          "camera": {
+            "yaw": 0.4606340755492457,
+            "pitch": 0.19768635047078198,
+            "distance": 5.0789914114367765,
+            "target": [
+              -0.2585261374607682,
+              -0.2314738625392318,
+              0.24557841238230452
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08199999999999999,
+            -0.12502833802277957,
+            0.3657592338519642
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 544.7000000007447,
+          "position": 1.5573047795659094,
+          "target": 1.5546666666666664,
+          "camera": {
+            "yaw": 0.46815705233074284,
+            "pitch": 0.20413461628349386,
+            "distance": 5.089602741027975,
+            "target": [
+              -0.25798878197637554,
+              -0.23201121802362448,
+              0.24396634592912653
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.080009150771058,
+            -0.1392283245637685,
+            0.357803900372604
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 661.3000000007451,
+          "position": 1.545277661415483,
+          "target": 1.544,
+          "camera": {
+            "yaw": 0.4770107743204742,
+            "pitch": 0.21172352084612073,
+            "distance": 5.102119519575825,
+            "target": [
+              -0.2573563732628233,
+              -0.2326436267371767,
+              0.24206911978846982
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.05716492910846452,
+            -0.15918857913765472,
+            0.35518685904923325
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 777.9000000007454,
+          "position": 1.5326220267375907,
+          "target": 1.5312000000000001,
+          "camera": {
+            "yaw": 0.4872532937247193,
+            "pitch": 0.22050282319261652,
+            "distance": 5.116638092393133,
+            "target": [
+              -0.25662476473394863,
+              -0.23337523526605136,
+              0.23987429420184586
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.07938598533645569,
+            -0.18167906849996718,
+            0.35223807200715807
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 911.3000000007451,
+          "position": 1.5192205493504185,
+          "target": 1.5183999999999997,
+          "camera": {
+            "yaw": 0.49882045261704094,
+            "pitch": 0.2304175308146065,
+            "distance": 5.133083996164579,
+            "target": [
+              -0.2557985390987828,
+              -0.23420146090121718,
+              0.23739561729634837
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.10688528920711032,
+            -0.1575964922973283,
+            0.35539560173014983
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 1011.3000000007451,
+          "position": 1.5069220791443232,
+          "target": 1.5055999999999998,
+          "camera": {
+            "yaw": 0.5097714353187466,
+            "pitch": 0.2398040874160685,
+            "distance": 5.14870254458319,
+            "target": [
+              -0.255016326048661,
+              -0.23498367395133904,
+              0.23504897814598286
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.08164421106255146,
+            -0.13900661185728916,
+            0.3583134530095095
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1111.300000000745,
+          "position": 1.4956146905986185,
+          "target": 1.4938666666666667,
+          "camera": {
+            "yaw": 0.5198528866462031,
+            "pitch": 0.24844533141103115,
+            "distance": 5.163122956160041,
+            "target": [
+              -0.25429622238241406,
+              -0.23570377761758593,
+              0.2328886671472422
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.049957217228143835,
+            -0.1617452172068566,
+            0.48742604781758647
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1228.0000000007449,
+          "position": 1.4827931042208087,
+          "target": 1.4810666666666668,
+          "camera": {
+            "yaw": 0.5309897566959132,
+            "pitch": 0.25799122002506836,
+            "distance": 5.179099985330773,
+            "target": [
+              -0.25350073166457765,
+              -0.23649926833542234,
+              0.2305021949937329
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.13,
+            -0.2106621221769952,
+            0.5208122171804785
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1328.0000000007449,
+          "position": 1.4718311464021652,
+          "target": 1.4704,
+          "camera": {
+            "yaw": 0.5400212607984058,
+            "pitch": 0.2657325092557764,
+            "distance": 5.192092939169383,
+            "target": [
+              -0.2528556242286853,
+              -0.2371443757713147,
+              0.2285668726860559
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.12394746434159154,
+            -0.2041385596098809,
+            0.5238419601382975
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1444.6000000007452,
+          "position": 1.4586429821305207,
+          "target": 1.4554666666666667,
+          "camera": {
+            "yaw": 0.5500028286876435,
+            "pitch": 0.27428813887512304,
+            "distance": 5.20649060199592,
+            "target": [
+              -0.25214265509373973,
+              -0.23785734490626023,
+              0.22642796528121925
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.027646570387067193,
+            0.0105985546536176,
+            0.576950481954267
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1544.7000000007447,
+          "position": 1.4484169700407552,
+          "target": 1.4469333333333332,
+          "camera": {
+            "yaw": 0.5569048000195984,
+            "pitch": 0.28020411430251296,
+            "distance": 5.2164695192309685,
+            "target": [
+              -0.25164965714145726,
+              -0.23835034285854273,
+              0.22494897142437176
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.09182725539713663,
+            0.11200653577494053,
+            0.5144408250512242
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1661.300000000745,
+          "position": 1.4350414769052888,
+          "target": 1.432,
+          "camera": {
+            "yaw": 0.5646346619092106,
+            "pitch": 0.28682971020789483,
+            "distance": 5.227668112729656,
+            "target": [
+              -0.2510975241493421,
+              -0.23890247585065788,
+              0.22329257244802628
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1777.9000000007454,
+          "position": 1.4227490330214947,
+          "target": 1.4213333333333333,
+          "camera": {
+            "yaw": 0.570316628332252,
+            "pitch": 0.29169996714193025,
+            "distance": 5.235915157153324,
+            "target": [
+              -0.25069166940483917,
+              -0.23930833059516085,
+              0.22207500821451742
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1878.0000000007449,
+          "position": 1.4119191168386065,
+          "target": 1.4106666666666667,
+          "camera": {
+            "yaw": 0.5741521748876461,
+            "pitch": 0.2949875784751253,
+            "distance": 5.241489584565773,
+            "target": [
+              -0.25041770179373957,
+              -0.23958229820626042,
+              0.22125310538121867
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1978.0000000007449,
+          "position": 1.4003788279091816,
+          "target": 1.3989333333333334,
+          "camera": {
+            "yaw": 0.5770607287524592,
+            "pitch": 0.29748062464496505,
+            "distance": 5.245720714775431,
+            "target": [
+              -0.2502099479462529,
+              -0.2397900520537471,
+              0.22062984383875872
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 2094.500000000745,
+          "position": 1.3878213887280613,
+          "target": 1.3861333333333332,
+          "camera": {
+            "yaw": 0.5789690066092734,
+            "pitch": 0.29911629137937723,
+            "distance": 5.248498579303536,
+            "target": [
+              -0.2500736423850519,
+              -0.2399263576149481,
+              0.2202209271551557
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2211.2000000007447,
+          "position": 1.3748171089657957,
+          "target": 1.3733333333333333,
+          "camera": {
+            "yaw": 0.5798329550384631,
+            "pitch": 0.2998568186043969,
+            "distance": 5.249756705695178,
+            "target": [
+              -0.25001193178296693,
+              -0.23998806821703306,
+              0.22003579534890078
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2327.9000000007454,
+          "position": 1.3622214658479048,
+          "target": 1.3605333333333334,
+          "camera": {
+            "yaw": 0.5799993988039729,
+            "pitch": 0.2999994846891195,
+            "distance": 5.249999124361818,
+            "target": [
+              -0.2500000429425734,
+              -0.23999995705742663,
+              0.2200001288277201
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2444.6000000007452,
+          "position": 1.3492097748693923,
+          "target": 1.3477333333333334,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.24,
+              0.22
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2544.6000000007452,
+          "position": 1.337604569383592,
+          "target": 1.3349333333333333,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.24,
+              0.22
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2644.6000000007452,
+          "position": 1.326816194983414,
+          "target": 1.3242666666666667,
+          "camera": {
+            "yaw": 0.5799999999999998,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.24,
+              0.22
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2761.2000000007447,
+          "position": 1.3140161994958672,
+          "target": 1.3114666666666666,
+          "camera": {
+            "yaw": 0.5799275655689882,
+            "pitch": 0.29998518386638395,
+            "distance": 5.250085594081712,
+            "target": [
+              -0.24999917688146578,
+              -0.2400008231185342,
+              0.21999506128879465
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2861.2000000007447,
+          "position": 1.303347381812727,
+          "target": 1.3008,
+          "camera": {
+            "yaw": 0.5785239185857891,
+            "pitch": 0.2996980742561841,
+            "distance": 5.251744526623707,
+            "target": [
+              -0.24998322634756578,
+              -0.2400167736524342,
+              0.21989935808539474
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2961.300000000745,
+          "position": 1.2926958999842277,
+          "target": 1.2912,
+          "camera": {
+            "yaw": 0.5738569098262325,
+            "pitch": 0.29874345882809306,
+            "distance": 5.257264108368963,
+            "target": [
+              -0.2499301921571163,
+              -0.2400698078428837,
+              0.21958115294269767
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 3011.2000000007447,
+          "position": 1.2873063485153848,
+          "target": 1.2858666666666667,
+          "camera": {
+            "yaw": 0.569762178611293,
+            "pitch": 0.29790590017049173,
+            "distance": 5.2621116459159145,
+            "target": [
+              -0.24988366112058288,
+              -0.2401163388794171,
+              0.21930196672349725
+            ],
+            "focal": 6
+          },
+          "hand": [
+            0.0967834865111469,
+            0.11874310626629533,
+            0.5066979007086003
+          ],
+          "stage": "hold"
+        }
+      ],
+      "file": "sweep-03-reverse-end.png",
+      "position": 1.2837333333333334,
+      "shot": 2,
+      "detail": 2,
+      "drawCost": 11.721761952840636,
+      "camera": {
+        "yaw": 0.5663006682160747,
+        "pitch": 0.29719786395328807,
+        "distance": 5.2662130327446794,
+        "target": [
+          -0.24984432577518267,
+          -0.24015567422481732,
+          0.21906595465109602
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 15,
+      "from": 5.169999997677439,
+      "to": 5.367611866998359,
+      "direction": "forward",
+      "durationMs": 3000,
+      "samples": [
+        {
+          "elapsed": 1.9000000011183147,
+          "position": 5.169722475834384,
+          "target": 5.169722475834384,
+          "camera": {
+            "yaw": 0.42099745716291753,
+            "pitch": 0.10182867146534887,
+            "distance": 5.377097675177545,
+            "target": [
+              -0.24783884281367863,
+              -0.21033248572097252,
+              0.2483375713951374
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 101.90000000111831,
+          "position": 5.173742420887339,
+          "target": 5.17435995536426,
+          "camera": {
+            "yaw": 0.4205698978611829,
+            "pitch": 0.10104481274550194,
+            "distance": 5.365465509641388,
+            "target": [
+              -0.24876522130077044,
+              -0.21018996595372763,
+              0.2490501702313619
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 218.60000000111722,
+          "position": 5.1810930957128605,
+          "target": 5.18177992261206,
+          "camera": {
+            "yaw": 0.4201298517222493,
+            "pitch": 0.10023806149079036,
+            "distance": 5.353519903743456,
+            "target": [
+              -0.2497186546017932,
+              -0.21004328390741642,
+              0.24978358046291788
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 351.9000000011183,
+          "position": 5.190307938895453,
+          "target": 5.191054881671811,
+          "camera": {
+            "yaw": 0.42000052550549655,
+            "pitch": 0.10000096342674372,
+            "distance": 5.350014240265497,
+            "target": [
+              -0.24999886140475744,
+              -0.21000017516849884,
+              0.24999912415750572
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 451.9000000011183,
+          "position": 5.197005831041169,
+          "target": 5.198474848919612,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 551.9000000011183,
+          "position": 5.2034657676752545,
+          "target": 5.204967320261438,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 651.9000000011183,
+          "position": 5.2097759033061575,
+          "target": 5.210532295697289,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 768.5000000011169,
+          "position": 5.217906507475313,
+          "target": 5.218879758851064,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 868.5000000011169,
+          "position": 5.2243238136976,
+          "target": 5.2262997260988655,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 968.5000000011169,
+          "position": 5.231169651919258,
+          "target": 5.232792197440691,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 1068.6000000011172,
+          "position": 5.23771283420101,
+          "target": 5.239284668782517,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 1185.2000000011176,
+          "position": 5.245362526097352,
+          "target": 5.246704636030318,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1318.5000000011169,
+          "position": 5.254102920460078,
+          "target": 5.255052099184094,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06802196642817356,
+            -0.33676206947261306,
+            0.07909436371236639
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1418.5000000011169,
+          "position": 5.260612475448986,
+          "target": 5.261544570525919,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.07071026446474024,
+            -0.336762069472613,
+            0.07909436371236636
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1518.5000000011169,
+          "position": 5.2674206195819515,
+          "target": 5.26896453777372,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.08416585863538337,
+            -0.336762069472613,
+            0.0790943637123664
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1618.5000000011169,
+          "position": 5.274092678479359,
+          "target": 5.275457009115546,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.10279573876527479,
+            -0.336762069472613,
+            0.07909436371236638
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1718.6000000011172,
+          "position": 5.2805828204049705,
+          "target": 5.281949480457372,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.1887535738987326,
+            -0.22780079303232792,
+            0.2654457989243885
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1835.2000000011176,
+          "position": 5.287742230830871,
+          "target": 5.288441951799197,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.0993008474841989,
+            -0.129581748557541,
+            0.5777984060439927
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 1968.5000000011169,
+          "position": 5.2947110048001065,
+          "target": 5.294934423141023,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06273606345020846,
+            -0.10722703737136319,
+            0.5778138812792804
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2068.500000001117,
+          "position": 5.303693097263913,
+          "target": 5.305136878106749,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 2201.800000001118,
+          "position": 5.311857560088231,
+          "target": 5.31255684535455,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 2301.800000001118,
+          "position": 5.318380398303348,
+          "target": 5.3190493166963755,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2401.800000001118,
+          "position": 5.325519160204324,
+          "target": 5.326469283944176,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2518.4000000011183,
+          "position": 5.333091659315963,
+          "target": 5.333889251191977,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2618.500000001117,
+          "position": 5.339839596845266,
+          "target": 5.341309218439778,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2718.500000001117,
+          "position": 5.346442243061591,
+          "target": 5.347801689781604,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2851.800000001118,
+          "position": 5.354556128641224,
+          "target": 5.3552216570294044,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2951.800000001118,
+          "position": 5.361651297765844,
+          "target": 5.363569120183181,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 3001.800000001118,
+          "position": 5.3650794777353426,
+          "target": 5.366351607901105,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        }
+      ],
+      "file": "sweep-15-forward-end.png",
+      "position": 5.367279103807081,
+      "shot": 15,
+      "detail": 2,
+      "drawCost": 7.629582420865299,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.21,
+          0.25
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 15,
+      "from": 5.169999997677439,
+      "to": 5.367611866998359,
+      "direction": "reverse",
+      "durationMs": 3000,
+      "samples": [
+        {
+          "elapsed": 2.6000000011172233,
+          "position": 5.367279103807081,
+          "target": 5.367279103807081,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 119.30000000111795,
+          "position": 5.362466613869921,
+          "target": 5.36171412837123,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 219.30000000111795,
+          "position": 5.355855224657807,
+          "target": 5.35429416112343,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 335.9000000011183,
+          "position": 5.348506807849129,
+          "target": 5.347801689781604,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 435.9000000011183,
+          "position": 5.341709623734987,
+          "target": 5.340381722533802,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 552.5000000011169,
+          "position": 5.334059444019994,
+          "target": 5.332961755286002,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 652.5000000011169,
+          "position": 5.327452367932137,
+          "target": 5.325541788038201,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 769.300000001118,
+          "position": 5.319812480010727,
+          "target": 5.3190493166963755,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 902.5000000011169,
+          "position": 5.311401466733558,
+          "target": 5.310701853542599,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 1002.5000000011169,
+          "position": 5.304950328059899,
+          "target": 5.304209382200774,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09059162987924813,
+            -0.132,
+            0.5753454413970711
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 1102.5000000011169,
+          "position": 5.297456782489106,
+          "target": 5.295861919046998,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.061479307905674324,
+            -0.10904810106328952,
+            0.5768283399936935
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 1202.6000000011172,
+          "position": 5.291256605066108,
+          "target": 5.290296943611147,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.07726346999680189,
+            -0.1147009984565312,
+            0.5779388812950946
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 1302.6000000011172,
+          "position": 5.284443864786418,
+          "target": 5.2828769763633465,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.12182137917637281,
+            -0.15213783765829547,
+            0.5426085454975719
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1402.6000000011172,
+          "position": 5.278075426262926,
+          "target": 5.277312000927496,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.1315400289787334,
+            -0.30393483883109157,
+            0.11204220839225573
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1519.2000000011176,
+          "position": 5.270653658328386,
+          "target": 5.269892033679695,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.09374876581829597,
+            -0.336762069472613,
+            0.07909436371236642
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1619.2000000011176,
+          "position": 5.263782421385815,
+          "target": 5.2624720664318945,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.07538344065733932,
+            -0.33676206947261306,
+            0.07909436371236639
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1719.2000000011176,
+          "position": 5.257605285435505,
+          "target": 5.256907090996044,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.0686458730910821,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1819.2000000011176,
+          "position": 5.250380868836868,
+          "target": 5.248559627842268,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1919.2000000011176,
+          "position": 5.243963499179286,
+          "target": 5.242994652406417,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 2035.9000000011183,
+          "position": 5.236408202548099,
+          "target": 5.235574685158617,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2135.9000000011183,
+          "position": 5.229522357300745,
+          "target": 5.228154717910815,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2252.500000001117,
+          "position": 5.222175317735804,
+          "target": 5.220734750663015,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2369.2000000011176,
+          "position": 5.214283457868598,
+          "target": 5.213314783415214,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2469.2000000011176,
+          "position": 5.207461957996882,
+          "target": 5.205894816167413,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2569.2000000011176,
+          "position": 5.201809828017224,
+          "target": 5.201257336637537,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2702.500000001117,
+          "position": 5.192750169067934,
+          "target": 5.191982377577786,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2819.2000000011176,
+          "position": 5.184642274900483,
+          "target": 5.182707418518035,
+          "camera": {
+            "yaw": 0.4200411343353729,
+            "pitch": 0.1000754129481837,
+            "distance": 5.351114782065524,
+            "target": [
+              -0.249910875606692,
+              -0.2100137114451243,
+              0.24993144277437845
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2919.2000000011176,
+          "position": 5.1781139297888625,
+          "target": 5.177142443082185,
+          "camera": {
+            "yaw": 0.42026090645913333,
+            "pitch": 0.10047832850841104,
+            "distance": 5.357074765848855,
+            "target": [
+              -0.24943470267187787,
+              -0.2100869688197111,
+              0.2495651559014445
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 3002.500000001117,
+          "position": 5.172654505441079,
+          "target": 5.171577467646334,
+          "camera": {
+            "yaw": 0.42067120791173135,
+            "pitch": 0.10123054783817403,
+            "distance": 5.368219470956824,
+            "target": [
+              -0.24854571619124888,
+              -0.21022373597057709,
+              0.2488813201471145
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.06799999999999999,
+            -0.336762069472613,
+            0.07909436371236639
+          ],
+          "stage": "hold"
+        }
+      ],
+      "file": "sweep-15-reverse-end.png",
+      "position": 5.169722475834384,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 8.377449180938852,
+      "camera": {
+        "yaw": 0.42099745716291753,
+        "pitch": 0.10182867146534887,
+        "distance": 5.377097675177545,
+        "target": [
+          -0.24783884281367863,
+          -0.21033248572097252,
+          0.2483375713951374
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 17,
+      "from": 5.5699999976774395,
+      "to": 5.76761186699835,
+      "direction": "forward",
+      "durationMs": 3000,
+      "samples": [
+        {
+          "elapsed": 0.8999999999996362,
+          "position": 5.5704007072156285,
+          "target": 5.5704007072156285,
+          "camera": {
+            "yaw": 0.43969504264144316,
+            "pitch": 0.17878017056577283,
+            "distance": 5.054445596084541,
+            "target": [
+              -0.2598475213207216,
+              -0.2296950426414432,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 101,
+          "position": 5.574145357919568,
+          "target": 5.5759656826514785,
+          "camera": {
+            "yaw": 0.43982167769730424,
+            "pitch": 0.17928671078921676,
+            "distance": 5.052599065317312,
+            "target": [
+              -0.2599108388486521,
+              -0.2298216776973042,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 217.60000000000036,
+          "position": 5.5814748898732125,
+          "target": 5.58338564989928,
+          "camera": {
+            "yaw": 0.43996097187088895,
+            "pitch": 0.1798438874835555,
+            "distance": 5.050568724559011,
+            "target": [
+              -0.2599804859354444,
+              -0.22996097187088888,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 334.2999999999993,
+          "position": 5.589006394484792,
+          "target": 5.589878121241106,
+          "camera": {
+            "yaw": 0.4399990407566376,
+            "pitch": 0.1799961630265505,
+            "distance": 5.050013977490302,
+            "target": [
+              -0.2599995203783188,
+              -0.2299990407566376,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 467.5,
+          "position": 5.597395014477016,
+          "target": 5.598225584394881,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.22999999999999998,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 567.5,
+          "position": 5.604619568505653,
+          "target": 5.605645551642683,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.1795393896218073,
+            "distance": 5.061515259454818,
+            "target": [
+              -0.2603070735854618,
+              -0.22976969481090362,
+              0.24946262122544183
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 667.5999999999985,
+          "position": 5.611552125693372,
+          "target": 5.613065518890483,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17436477254835392,
+            "distance": 5.190880686291153,
+            "target": [
+              -0.2637568183010974,
+              -0.22718238627417695,
+              0.24342556797307957
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 767.5999999999985,
+          "position": 5.617799874796865,
+          "target": 5.618630494326334,
+          "camera": {
+            "yaw": 0.4399909426452963,
+            "pitch": 0.16389671023244218,
+            "distance": 5.452559405845148,
+            "target": [
+              -0.2707350128175949,
+              -0.22194796984563833,
+              0.2312138816774421
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 884.2000000000007,
+          "position": 5.625286873283757,
+          "target": 5.626050461574135,
+          "camera": {
+            "yaw": 0.43883441135683715,
+            "pitch": 0.14689211996172824,
+            "distance": 5.8758900725547845,
+            "target": [
+              -0.2820312755176564,
+              -0.2134155765999705,
+              0.21145746119645878
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 984.2000000000007,
+          "position": 5.632035291336848,
+          "target": 5.633470428821935,
+          "camera": {
+            "yaw": 0.4343523354057263,
+            "pitch": 0.13230793042847194,
+            "distance": 6.238238769118161,
+            "target": [
+              -0.2917033047175497,
+              -0.20608540896663421,
+              0.19454663924332874
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 1084.2000000000007,
+          "position": 5.638274209359741,
+          "target": 5.639035404257786,
+          "camera": {
+            "yaw": 0.4257090523756039,
+            "pitch": 0.12343774577228038,
+            "distance": 6.461105287906038,
+            "target": [
+              -0.29764175265377957,
+              -0.2016690602626151,
+              0.18414685790529572
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 1184.2000000000007,
+          "position": 5.644684727441053,
+          "target": 5.646455371505587,
+          "camera": {
+            "yaw": 0.4112770377990675,
+            "pitch": 0.12016194168360812,
+            "distance": 6.545658505310479,
+            "target": [
+              -0.29988544169069975,
+              -0.20007602295163296,
+              0.18020245619734382
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.035068719366972784,
+            -0.13246564031651364,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1284.2000000000007,
+          "position": 5.651946870557123,
+          "target": 5.653875338753387,
+          "camera": {
+            "yaw": 0.3873413725059455,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651364,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1384.2000000000007,
+          "position": 5.658855566954934,
+          "target": 5.660367810095213,
+          "camera": {
+            "yaw": 0.3567719438251286,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.1324656403165136,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1484.2000000000007,
+          "position": 5.664845780803844,
+          "target": 5.665932785531064,
+          "camera": {
+            "yaw": 0.3241959211836222,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1584.2000000000007,
+          "position": 5.671578828760557,
+          "target": 5.67242525687289,
+          "camera": {
+            "yaw": 0.28125588267925467,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03509973100503916,
+            -0.13251119830723918,
+            0.5168256134179419
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1684.2000000000007,
+          "position": 5.678045504245381,
+          "target": 5.678917728214715,
+          "camera": {
+            "yaw": 0.2343630673778514,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.04651978073712776,
+            -0.1494584731067229,
+            0.48310849697556385
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1800.9000000000015,
+          "position": 5.685583741274992,
+          "target": 5.686337695462516,
+          "camera": {
+            "yaw": 0.173866778208844,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.12291006587968102,
+            -0.24765344224136215,
+            0.35424321260386604
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1917.5,
+          "position": 5.693800231139319,
+          "target": 5.695612654522267,
+          "camera": {
+            "yaw": 0.10261600631340473,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.2034555704061876,
+            -0.4272326424842448,
+            0.32814397537559015
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 2017.5,
+          "position": 5.700308367299334,
+          "target": 5.702105125864093,
+          "camera": {
+            "yaw": 0.043782826749788784,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21172464697632581,
+            -0.4532574467217245,
+            0.31880557129475406
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2117.5,
+          "position": 5.706701942866742,
+          "target": 5.707670101299944,
+          "camera": {
+            "yaw": -0.014739462536665526,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21355602754771463,
+            -0.3558702702917022,
+            0.33878242799834835
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2217.5,
+          "position": 5.713319485971402,
+          "target": 5.7141625726417695,
+          "camera": {
+            "yaw": -0.07474822333699432,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21470250673298708,
+            -0.1890278805576585,
+            0.37300650794379325
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2334.2000000000007,
+          "position": 5.720720335191506,
+          "target": 5.72158253988957,
+          "camera": {
+            "yaw": -0.13954356786964756,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.2150644015095985,
+            -0.0797092318785721,
+            0.39543084613437507
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 2434.2000000000007,
+          "position": 5.727499033001166,
+          "target": 5.729002507137371,
+          "camera": {
+            "yaw": -0.19528065869575012,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651354,
+            0.3969167110701819
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 2550.7999999999993,
+          "position": 5.73479106186078,
+          "target": 5.735494978479196,
+          "camera": {
+            "yaw": -0.24992604133479396,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651354,
+            0.39691671107018195
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 2650.9000000000015,
+          "position": 5.741930212711805,
+          "target": 5.743842441632973,
+          "camera": {
+            "yaw": -0.2968715362184616,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651354,
+            0.39691671107018195
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2767.5,
+          "position": 5.749501187440801,
+          "target": 5.7503349129747985,
+          "camera": {
+            "yaw": -0.33853646061988557,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651354,
+            0.39691671107018195
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2884.0999999999985,
+          "position": 5.756992163051772,
+          "target": 5.757754880222599,
+          "camera": {
+            "yaw": -0.37090698337876477,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651365,
+            0.3969167110701819
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2984.0999999999985,
+          "position": 5.763485654859132,
+          "target": 5.764247351564425,
+          "camera": {
+            "yaw": -0.39173962846197413,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651354,
+            0.396916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 3000.7999999999993,
+          "position": 5.764661136282324,
+          "target": 5.7661023433763745,
+          "camera": {
+            "yaw": -0.3948106333251424,
+            "pitch": 0.1199942577882406,
+            "distance": 6.549976676268366,
+            "target": [
+              -0.299999929416516,
+              -0.19999420485062763,
+              0.18000129313849406
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651359,
+            0.39691671107018195
+          ],
+          "stage": "hold"
+        }
+      ],
+      "file": "sweep-17-forward-end.png",
+      "position": 5.767957335188325,
+      "shot": 17,
+      "detail": 2,
+      "drawCost": 7.3577368899855955,
+      "camera": {
+        "yaw": -0.4023234192164619,
+        "pitch": 0.11891787664650319,
+        "distance": 6.545791852324476,
+        "target": [
+          -0.2999908006064325,
+          -0.1989109771013276,
+          0.18023528342751266
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 17,
+      "from": 5.5699999976774395,
+      "to": 5.76761186699835,
+      "direction": "reverse",
+      "durationMs": 3000,
+      "samples": [
+        {
+          "elapsed": 6.899999999626743,
+          "position": 5.767957335188325,
+          "target": 5.767957335188325,
+          "camera": {
+            "yaw": -0.4023234192164619,
+            "pitch": 0.11891787664650319,
+            "distance": 6.545791852324476,
+            "target": [
+              -0.2999908006064325,
+              -0.1989109771013276,
+              0.18023528342751266
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651365,
+            0.39691671107018195
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 106.89999999962674,
+          "position": 5.763269984047391,
+          "target": 5.762392359752474,
+          "camera": {
+            "yaw": -0.391153331069312,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651354,
+            0.3969167110701819
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 206.89999999962674,
+          "position": 5.756736703407957,
+          "target": 5.754972392504674,
+          "camera": {
+            "yaw": -0.3699509447857679,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651359,
+            0.39691671107018195
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 323.4999999996289,
+          "position": 5.7488101603920665,
+          "target": 5.747552425256873,
+          "camera": {
+            "yaw": -0.33510044070456474,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651359,
+            0.39691671107018195
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 423.4999999996289,
+          "position": 5.742330393523189,
+          "target": 5.741059953915047,
+          "camera": {
+            "yaw": -0.29929046995877867,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651365,
+            0.39691671107018195
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 523.5999999996275,
+          "position": 5.735832278361442,
+          "target": 5.734567482573222,
+          "camera": {
+            "yaw": -0.2572028732743296,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651365,
+            0.396916711070182
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 656.7999999996282,
+          "position": 5.727153445931796,
+          "target": 5.726220019419445,
+          "camera": {
+            "yaw": -0.19254372586736185,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506871936697275,
+            -0.07246564031651359,
+            0.3969167110701819
+          ],
+          "stage": "response"
+        },
+        {
+          "elapsed": 756.8999999996267,
+          "position": 5.720364271099337,
+          "target": 5.718800052171645,
+          "camera": {
+            "yaw": -0.13650782094701835,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21506178385631747,
+            -0.081708082358116,
+            0.3950208255231866
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 873.4999999996289,
+          "position": 5.712862017251345,
+          "target": 5.711380084923844,
+          "camera": {
+            "yaw": -0.07064592372346395,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21465113389890922,
+            -0.19991997013172003,
+            0.37077223315937036
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 990.199999999626,
+          "position": 5.70558527085586,
+          "target": 5.704887613582018,
+          "camera": {
+            "yaw": -0.0045210015496143785,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21327987611794386,
+            -0.3804579492176474,
+            0.33373880155200064
+          ],
+          "stage": "action"
+        },
+        {
+          "elapsed": 1090.199999999626,
+          "position": 5.698355401164087,
+          "target": 5.696540150428242,
+          "camera": {
+            "yaw": 0.06157375464496795,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.21081233320484893,
+            -0.4604084851522644,
+            0.31750328811126205
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1206.7999999996282,
+          "position": 5.690693534221166,
+          "target": 5.689120183180441,
+          "camera": {
+            "yaw": 0.13006736703562694,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.18669054089374476,
+            -0.3667622828047617,
+            0.3278027273855808
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1306.7999999996282,
+          "position": 5.684008635253577,
+          "target": 5.682627711838616,
+          "camera": {
+            "yaw": 0.1869553859496445,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.10156558712511578,
+            -0.21784687987827567,
+            0.37878092987684653
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1406.8999999996267,
+          "position": 5.6776335304291905,
+          "target": 5.67613524049679,
+          "camera": {
+            "yaw": 0.23749987838738096,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.044778888771925915,
+            -0.14694877560883124,
+            0.4880585567420046
+          ],
+          "stage": "preparation"
+        },
+        {
+          "elapsed": 1523.499999999629,
+          "position": 5.670400393506897,
+          "target": 5.669642769154964,
+          "camera": {
+            "yaw": 0.2892277221548307,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651364,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1640.199999999626,
+          "position": 5.662911336684004,
+          "target": 5.662222801907164,
+          "camera": {
+            "yaw": 0.3353162427074034,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.1324656403165136,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1756.7999999996282,
+          "position": 5.654719683283966,
+          "target": 5.653875338753387,
+          "camera": {
+            "yaw": 0.3759883170157689,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1873.3999999996267,
+          "position": 5.647212609475334,
+          "target": 5.646455371505587,
+          "camera": {
+            "yaw": 0.4038871736856637,
+            "pitch": 0.12000229442527105,
+            "distance": 6.549937287881281,
+            "target": [
+              -0.29999834983221535,
+              -0.20000105679943259,
+              0.18000292395890427
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 1973.499999999629,
+          "position": 5.640364509010234,
+          "target": 5.639035404257786,
+          "camera": {
+            "yaw": 0.42165969599011016,
+            "pitch": 0.12176885769284598,
+            "distance": 6.503804253862554,
+            "target": [
+              -0.29877632026231793,
+              -0.20085109788958444,
+              0.182154771923679
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697284,
+            -0.13246564031651364,
+            0.516916711070182
+          ],
+          "stage": "attention"
+        },
+        {
+          "elapsed": 2073.499999999629,
+          "position": 5.63416814377446,
+          "target": 5.633470428821935,
+          "camera": {
+            "yaw": 0.43194430463732875,
+            "pitch": 0.1286451871070637,
+            "distance": 6.329768879600608,
+            "target": [
+              -0.29414425876874933,
+              -0.20425338118362574,
+              0.19027523210265113
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2223.3999999996267,
+          "position": 5.624656765636016,
+          "target": 5.624195469762184,
+          "camera": {
+            "yaw": 0.43905065946709926,
+            "pitch": 0.14837769204053045,
+            "distance": 5.8390057357099865,
+            "target": [
+              -0.2810466295559983,
+              -0.21416266420752916,
+              0.21317887100209745
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2340.0999999996275,
+          "position": 5.6166200896302465,
+          "target": 5.615848006608408,
+          "camera": {
+            "yaw": 0.4399996258671553,
+            "pitch": 0.16623722725173712,
+            "distance": 5.394068325047643,
+            "target": [
+              -0.26917515948219406,
+              -0.22311859686338267,
+              0.23394347761115475
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2456.799999999628,
+          "position": 5.609117352473622,
+          "target": 5.608428039360607,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17697070043417407,
+            "distance": 5.125732489145649,
+            "target": [
+              -0.262019533043884,
+              -0.22848535021708702,
+              0.24646581717320307
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2556.799999999628,
+          "position": 5.60167095720572,
+          "target": 5.600080576206832,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17997599148516152,
+            "distance": 5.050600212870961,
+            "target": [
+              -0.26001600567655897,
+              -0.22998799574258075,
+              0.2499719900660218
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2673.3999999996267,
+          "position": 5.5942383652193355,
+          "target": 5.592660608959031,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.22999999999999998,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2773.3999999996267,
+          "position": 5.5878624013135285,
+          "target": 5.58709563352318,
+          "camera": {
+            "yaw": 0.4399974921878908,
+            "pitch": 0.17998996875156342,
+            "distance": 5.050036542340687,
+            "target": [
+              -0.2599987460939454,
+              -0.22999749218789084,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2873.3999999996267,
+          "position": 5.581005300799195,
+          "target": 5.57967566627538,
+          "camera": {
+            "yaw": 0.43995569708443355,
+            "pitch": 0.17982278833773407,
+            "distance": 5.050645594560616,
+            "target": [
+              -0.2599778485422168,
+              -0.2299556970844335,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 2973.3999999996267,
+          "position": 5.57445235253307,
+          "target": 5.573183194933554,
+          "camera": {
+            "yaw": 0.4398302418238546,
+            "pitch": 0.17932096729541838,
+            "distance": 5.052474211747158,
+            "target": [
+              -0.2599151209119273,
+              -0.2298302418238546,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        },
+        {
+          "elapsed": 3006.699999999626,
+          "position": 5.572279314927696,
+          "target": 5.571328203121603,
+          "camera": {
+            "yaw": 0.43976381218860755,
+            "pitch": 0.17905524875443019,
+            "distance": 5.053442748295927,
+            "target": [
+              -0.2598819060943038,
+              -0.22976381218860753,
+              0.25
+            ],
+            "focal": 6
+          },
+          "hand": [
+            -0.03506871936697281,
+            -0.13246564031651362,
+            0.516916711070182
+          ],
+          "stage": "hold"
+        }
+      ],
+      "file": "sweep-17-reverse-end.png",
+      "position": 5.5704007072156285,
+      "shot": 16,
+      "detail": 2,
+      "drawCost": 7.869232671982307,
+      "camera": {
+        "yaw": 0.43969504264144316,
+        "pitch": 0.17878017056577283,
+        "distance": 5.054445596084541,
+        "target": [
+          -0.2598475213207216,
+          -0.2296950426414432,
+          0.25
+        ],
+        "focal": 6
+      }
+    }
+  ],
+  "errors": []
+}

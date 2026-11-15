@@ -1,0 +1,239 @@
+{
+  "generatedAt": "2026-11-15T07:37:37.426Z",
+  "sources": {
+    "assets/profile/living.js": "9a39a3d96829553eba703c7fae350a145f738aac280c31970de63f10e0b24a32",
+    "scripts/build-profile-art.cjs": "3d52ac85d92a1a6ecb9b20222e2b7e42424448ddefd44b844f07cad597ababb9",
+    "assets/profile/geometry.js": "d9adc6de13d1da7ead4ddebde45b09f63586ffa7da2b1d251974ddfcdf75786e"
+  },
+  "cases": 160,
+  "pointSamples": 2702400,
+  "frontContactSignSamples": 270228,
+  "maxKey": 2.440586835811162,
+  "maxParityError": 0,
+  "maxIntersectionError": 2.7755575615628914e-16,
+  "checks": [
+    {
+      "name": "side-and-rear-keys-obey-geometric-distance-bound",
+      "pass": true
+    },
+    {
+      "name": "canvas-and-svg-use-identical-plane-depth",
+      "pass": true
+    },
+    {
+      "name": "split-intersections-land-on-the-work-plane",
+      "pass": true
+    },
+    {
+      "name": "front-contact-ordering-keeps-its-previous-side",
+      "pass": true
+    },
+    {
+      "name": "labels-face-front-and-disappear-behind-work",
+      "pass": true
+    },
+    {
+      "name": "glove-skin-patches-remain-closed-after-clipping",
+      "pass": true
+    },
+    {
+      "name": "glove-skin-does-not-leak-across-the-work-plane",
+      "pass": true
+    }
+  ],
+  "failures": [],
+  "labels": [
+    {
+      "timeline": 2,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 2,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 2,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 2,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 3,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 3,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 3,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 3,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 6,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 6,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 6,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 6,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 14,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 14,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 14,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 14,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 15,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 15,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 15,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 15,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 20,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 20,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 20,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 20,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 23,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 23,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 23,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 23,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 27,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 27,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 27,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 27,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-11-14T21:53:01.099Z",
+  "environment": "Node.js V8 in development container; microbenchmark, not measured mobile frame rate",
+  "sampling": {
+    "rounds": 7,
+    "samplesPerRound": 1000,
+    "statistic": "median mean call time, alternating evaluation order"
+  },
+  "refactorParity": {
+    "before": "a664b2671fc8b5bfc539264c53c3da681cc7d234e1e100ec1490680695badaef",
+    "after": "a664b2671fc8b5bfc539264c53c3da681cc7d234e1e100ec1490680695badaef",
+    "fullPoseHashUnchanged": true,
+    "lightSamples": 6001,
+    "lightExactMatches": 6001,
+    "maxLightError": 0
+  },
+  "currentLightParity": {
+    "samples": 6001,
+    "exactMatches": 6001
+  },
+  "performance": [
+    {
+      "name": "drawing",
+      "fullPoseMeanMs": 0.119008836,
+      "lightOnlyMeanMs": 0.018261423000000002,
+      "speedup": 6.516953032630589,
+      "savedMsPer36TrailSamples": 3.6269068680000003
+    },
+    {
+      "name": "typing",
+      "fullPoseMeanMs": 0.033707346,
+      "lightOnlyMeanMs": 0.014335406,
+      "speedup": 2.351335288306449,
+      "savedMsPer36TrailSamples": 0.6973898399999999
+    },
+    {
+      "name": "rise",
+      "fullPoseMeanMs": 0.029105259,
+      "lightOnlyMeanMs": 0.013867125,
+      "speedup": 2.0988675734876554,
+      "savedMsPer36TrailSamples": 0.5485728240000001
+    },
+    {
+      "name": "invitation",
+      "fullPoseMeanMs": 0.025686802,
+      "lightOnlyMeanMs": 0.013954850000000001,
+      "speedup": 1.8407078542585553,
+      "savedMsPer36TrailSamples": 0.422350272
+    }
+  ],
+  "typing": [
+    {
+      "beat": 3,
+      "side": "left",
+      "wristNormalTravel": 0.002739659860025518,
+      "indexMCPTravel": 0.1499987918439311
+    },
+    {
+      "beat": 3,
+      "side": "right",
+      "wristNormalTravel": 0.002739693462031418,
+      "indexMCPTravel": 0.15
+    },
+    {
+      "beat": 4,
+      "side": "left",
+      "wristNormalTravel": 0.002739659860025504,
+      "indexMCPTravel": 0.1499987918439311
+    },
+    {
+      "beat": 4,
+      "side": "right",
+      "wristNormalTravel": 0.002739693462031411,
+      "indexMCPTravel": 0.15
+    },
+    {
+      "beat": 10,
+      "side": "left",
+      "wristNormalTravel": 0.002739659860025532,
+      "indexMCPTravel": 0.14999879184393106
+    },
+    {
+      "beat": 10,
+      "side": "right",
+      "wristNormalTravel": 0.002739693462031411,
+      "indexMCPTravel": 0.15000000000000002
+    }
+  ],
+  "finalStaging": {
+    "editorOriginSeated": [
+      0.18,
+      0.31,
+      0.4
+    ],
+    "editorSize": [
+      0.82,
+      0.42
+    ],
+    "standingEditorYOffset": 0.33,
+    "keyboardTargetsChanged": false,
+    "penVisibilityFadeLocal": [
+      0.52,
+      0.66
+    ],
+    "penVisibilityAtKeyboardArrival": 1,
+    "firstPressSamples": {
+      "left": {
+        "localProgress": 0.56176,
+        "penAlpha": 0.8391805812390791
+      },
+      "right": {
+        "localProgress": 0.59344,
+        "penAlpha": 0.45400269331469556
+      }
+    },
+    "palmTilt": "Welcome/invitation expose the palm plane toward the authored view while preserving world targets.",
+    "typing": "Only the index joint angles vary through each press; wrist-normal travel is about .00274 units."
+  },
+  "sourceContinuityReview": {
+    "scope": "Drawing-to-typing handoff; source review using existing parity/contact evidence, not an additional test run",
+    "drawingFrameFixedUntil": 0.36,
+    "toolPlacement": [
+      0.1,
+      0.28
+    ],
+    "toolSettling": [
+      0.28,
+      0.3
+    ],
+    "toolRelease": [
+      0.3,
+      0.36
+    ],
+    "sharedWorkTransformAndPropCrossfade": [
+      0.36,
+      0.5
+    ],
+    "keyboardArrival": 0.5,
+    "dock": "Fixed in the original drafting frame until invisible",
+    "emitter": "Separate fixed local point in the right wrist frame"
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "engine": "chromium",
+  "base": "http://127.0.0.1:4174/",
+  "checks": [
+    {
+      "name": "deterministic-forward-reverse-geometry",
+      "pass": true
+    },
+    {
+      "name": "native-career-and-identity",
+      "pass": true
+    },
+    {
+      "name": "narrative-bridges",
+      "pass": true
+    },
+    {
+      "name": "human-geometry",
+      "pass": true
+    },
+    {
+      "name": "chapter-target-intro",
+      "pass": true,
+      "data": 0
+    },
+    {
+      "name": "chapter-target-origins",
+      "pass": true,
+      "data": 1
+    },
+    {
+      "name": "chapter-target-allianz",
+      "pass": true,
+      "data": 2
+    },
+    {
+      "name": "chapter-target-accenture",
+      "pass": true,
+      "data": 3
+    },
+    {
+      "name": "chapter-target-ttb",
+      "pass": true,
+      "data": 4
+    },
+    {
+      "name": "chapter-target-conviction",
+      "pass": true,
+      "data": 5
+    },
+    {
+      "name": "chapter-target-craft",
+      "pass": true,
+      "data": 6
+    },
+    {
+      "name": "chapter-target-ai-experiences",
+      "pass": true,
+      "data": 7
+    },
+    {
+      "name": "chapter-target-work-heading",
+      "pass": true,
+      "data": 8
+    },
+    {
+      "name": "chapter-target-experience",
+      "pass": true,
+      "data": 9
+    },
+    {
+      "name": "chapter-target-contact",
+      "pass": true,
+      "data": 10
+    },
+    {
+      "name": "contact-canvas-docked",
+      "pass": true
+    },
+    {
+      "name": "return-from-contact",
+      "pass": true
+    },
+    {
+      "name": "inspect-structure",
+      "pass": true
+    },
+    {
+      "name": "scroll-preserves-disclosure",
+      "pass": true
+    },
+    {
+      "name": "reduced-removes-sticky",
+      "pass": true
+    },
+    {
+      "name": "reduced-shows-art",
+      "pass": true
+    },
+    {
+      "name": "preference-persists",
+      "pass": true
+    },
+    {
+      "name": "system-change",
+      "pass": true
+    },
+    {
+      "name": "explicit-full-overrides-system",
+      "pass": true
+    },
+    {
+      "name": "no-overflow-320",
+      "pass": true
+    },
+    {
+      "name": "no-overflow-390",
+      "pass": true
+    },
+    {
+      "name": "no-overflow-768",
+      "pass": true
+    },
+    {
+      "name": "no-overflow-1024",
+      "pass": true
+    },
+    {
+      "name": "no-overflow-1440",
+      "pass": true
+    },
+    {
+      "name": "no-overflow-1920",
+      "pass": true
+    },
+    {
+      "name": "no-overflow-844",
+      "pass": true
+    },
+    {
+      "name": "short-phone-static",
+      "pass": true
+    },
+    {
+      "name": "toolbar-no-reset",
+      "pass": true
+    },
+    {
+      "name": "deep-link",
+      "pass": true
+    },
+    {
+      "name": "fast-scroll-no-backlog",
+      "pass": true
+    },
+    {
+      "name": "no-runtime-third-party",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "runtime-errors",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "no-js-complete",
+      "pass": true
+    },
+    {
+      "name": "no-js-fallback",
+      "pass": true
+    },
+    {
+      "name": "native-inspection",
+      "pass": true
+    },
+    {
+      "name": "native-faq",
+      "pass": true
+    },
+    {
+      "name": "print-readable",
+      "pass": true
+    },
+    {
+      "name": "thai-no-runtime",
+      "pass": true
+    },
+    {
+      "name": "thai-profile",
+      "pass": true
+    },
+    {
+      "name": "script-failure-fallback",
+      "pass": true
+    },
+    {
+      "name": "blocked-storage",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "physicalDevice": false
+}

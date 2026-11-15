@@ -1,0 +1,206 @@
+[
+  {
+    "requestedTimeline": 2,
+    "actualTimeline": 2,
+    "file": "live-390-t2.00.png",
+    "current": 1.349658526674032,
+    "camera": {
+      "yaw": 0.307,
+      "pitch": 0.237,
+      "distance": 5.468922276473751,
+      "target": [
+        -0.2465,
+        -0.219,
+        0.213
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 6.16,
+    "actualTimeline": 6.158523971179625,
+    "file": "live-390-t6.16.png",
+    "current": 2.7879367791542076,
+    "camera": {
+      "yaw": 0.21347658357704935,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 6.48,
+    "actualTimeline": 6.479527083296095,
+    "file": "live-390-t6.48.png",
+    "current": 2.838708732531885,
+    "camera": {
+      "yaw": 0.2096072943799852,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 12.16,
+    "actualTimeline": 12.163060013776287,
+    "file": "live-390-t12.16.png",
+    "current": 4.788801222081138,
+    "camera": {
+      "yaw": 0.13778547978829603,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 13,
+    "actualTimeline": 13,
+    "file": "live-390-t13.00.png",
+    "current": 5.010250234583601,
+    "camera": {
+      "yaw": 0.24199999999999994,
+      "pitch": 0.1785,
+      "distance": 6.74555842765346,
+      "target": [
+        -0.16199999999999998,
+        -0.2125,
+        0.16749999999999998
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 14,
+    "actualTimeline": 14,
+    "file": "live-390-t14.00.png",
+    "current": 5.2096553523101505,
+    "camera": {
+      "yaw": 0.203,
+      "pitch": 0.107,
+      "distance": 5.536408954407982,
+      "target": [
+        -0.2465,
+        -0.19949999999999998,
+        0.2325
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 15,
+    "actualTimeline": 15,
+    "file": "live-390-t15.00.png",
+    "current": 5.409987935700545,
+    "camera": {
+      "yaw": 0.203,
+      "pitch": 0.107,
+      "distance": 5.536408954407982,
+      "target": [
+        -0.2465,
+        -0.19949999999999998,
+        0.2325
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16,
+    "actualTimeline": 16,
+    "file": "live-390-t16.00.png",
+    "current": 5.610320519090939,
+    "camera": {
+      "yaw": 0.21600000000000003,
+      "pitch": 0.15626617251231584,
+      "distance": 5.404492277248812,
+      "target": [
+        -0.25482255165845613,
+        -0.2111330862561579,
+        0.2293105345977018
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16.3,
+    "actualTimeline": 16.300819042756906,
+    "file": "live-390-t16.30.png",
+    "current": 5.687300169190025,
+    "camera": {
+      "yaw": 0.03358985732812303,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16.48,
+    "actualTimeline": 16.477703714224482,
+    "file": "live-390-t16.48.png",
+    "current": 5.70306708547538,
+    "camera": {
+      "yaw": -0.05794467172707177,
+      "pitch": 0.12,
+      "distance": 6.314733823859006,
+      "target": [
+        -0.27899999999999997,
+        -0.193,
+        0.187
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 17,
+    "actualTimeline": 17,
+    "file": "live-390-t17.00.png",
+    "current": 5.809725636817489,
+    "camera": {
+      "yaw": -0.34299999999999997,
+      "pitch": 0.05499999999999999,
+      "distance": 6.0933033864672925,
+      "target": [
+        -0.27899999999999997,
+        -0.128,
+        0.2
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 25,
+    "actualTimeline": 25,
+    "file": "live-390-t25.00.png",
+    "current": 7.762336544896376,
+    "camera": {
+      "yaw": 0.06,
+      "pitch": 0.1655,
+      "distance": 6.188724152823644,
+      "target": [
+        -0.136,
+        -0.11499999999999999,
+        0.2
+      ],
+      "focal": 6
+    }
+  }
+]

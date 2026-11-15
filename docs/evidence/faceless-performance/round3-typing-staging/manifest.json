@@ -1,0 +1,3717 @@
+{
+  "capturedAt": "2026-11-14T22:00:30.373Z",
+  "base": "http://127.0.0.1:4173/",
+  "loadedScripts": [
+    {
+      "url": "http://127.0.0.1:4173/assets/profile/scenes.js?v=faceless-performance-v6",
+      "bytes": 8839,
+      "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+      "bytes": 32630,
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+      "bytes": 5439,
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/profile/geometry.js?v=faceless-performance-v6",
+      "bytes": 33098,
+      "sha256": "8e67a3485c6c8d5af9462bef4ee1d7810124f5f90b884262616a64d343068d58"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/profile/motion.js?v=faceless-performance-v6",
+      "bytes": 28132,
+      "sha256": "4c2941df5262bdac4ba2b4a8303780a3fd42b61ff361fc735a65751a1d30aed6"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/profile/living.js?v=faceless-performance-v6",
+      "bytes": 19167,
+      "sha256": "c201ac92c2d046e8c6f0e940d73ee2ba3deba76d15c4158d5e90601175928fe5"
+    }
+  ],
+  "unlabelledDiagnostic": false,
+  "release": "faceless-performance-v6",
+  "sequence": [
+    {
+      "verb": "Imagine",
+      "shot": "establish",
+      "shape": "maker",
+      "pose": "design",
+      "label": "00 / THE PERSON BEHIND THE SYSTEM",
+      "caption": "A world begins at the end of a drawn line.",
+      "scale": 1,
+      "action": "Imagine",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 0,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "draw",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "Before software, there was a wish to make a place for people.",
+      "scale": 1,
+      "action": "Imagine a place",
+      "prop": "blueprint",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "establish",
+      "chapter": 1,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "sketch",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "A hand, a drawing, and something that did not exist before.",
+      "scale": 1,
+      "action": "Draw the first lines",
+      "prop": "house",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 1,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "type",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "The medium changed. The instinct to create stayed.",
+      "scale": 1,
+      "action": "Turn the drawing into an interface",
+      "prop": "code",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 1,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "type",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "An idea has to become something that works.",
+      "scale": 1,
+      "action": "Build one component",
+      "prop": "component",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "build",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "A beautiful part still has to belong to the whole.",
+      "scale": 1,
+      "action": "Fit it into a larger system",
+      "prop": "assembly",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 2,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "Other people will rely on the work. The details matter.",
+      "scale": 1,
+      "action": "Make it dependable",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Dependability",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "read",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "The work begins with understanding someone else’s need.",
+      "scale": 1,
+      "action": "Listen to the requirement",
+      "prop": "brief",
+      "tone": "human",
+      "meaning": "Understanding",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 3,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "My part had to connect with the work around it.",
+      "scale": 1,
+      "action": "Connect across boundaries",
+      "prop": "network",
+      "tone": "build",
+      "meaning": "Connection",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 3,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "build",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "A shared system asks more of us than a single screen.",
+      "scale": 1,
+      "action": "Bring the pieces together",
+      "prop": "assembly",
+      "tone": "care",
+      "meaning": "Collaboration",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 3,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "type",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "A new possibility enters a familiar process.",
+      "scale": 1,
+      "action": "Invite intelligence into the workflow",
+      "prop": "ai",
+      "tone": "dream",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 4,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "An answer is not the end of a human decision.",
+      "scale": 1,
+      "action": "Pause at the review boundary",
+      "prop": "review",
+      "tone": "human",
+      "meaning": "Human judgment",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 4,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "approve",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "Move forward with a visible path to inspect and review.",
+      "scale": 1,
+      "action": "Keep the person in control",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 4,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "alone",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Not everyone saw it yet. I still wanted to find out.",
+      "scale": 1,
+      "action": "Hold on to the possibility",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Conviction",
+      "energy": 0.22,
+      "shot": "isolate",
+      "chapter": 5,
+      "step": 0,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reach",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Belief did not make the difficult parts disappear.",
+      "scale": 1,
+      "action": "Meet the resistance",
+      "prop": "fracture",
+      "tone": "friction",
+      "meaning": "An obstacle",
+      "energy": 0.38,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 1,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reflect",
+      "label": "05 / KEEP BUILDING",
+      "caption": "What could this difficulty teach me?",
+      "scale": 1,
+      "action": "Stay with the problem",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Reflection",
+      "energy": 0.28,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 2,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "repair",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Another attempt. Another refinement. Then back again.",
+      "scale": 1,
+      "action": "Return to the work",
+      "prop": "repair",
+      "tone": "build",
+      "meaning": "Iteration",
+      "energy": 0.65,
+      "shot": "detail",
+      "chapter": 5,
+      "step": 3,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "rise",
+      "label": "05 / KEEP BUILDING",
+      "caption": "The work continued, week after week.",
+      "scale": 1,
+      "action": "Keep the light alive",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Persistence",
+      "energy": 0.85,
+      "shot": "rise",
+      "chapter": 5,
+      "step": 4,
+      "count": 5
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "read",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "A problem I had lived through became a starting point.",
+      "scale": 1,
+      "action": "Keep the lesson",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Experience",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 6,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "research",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Seek the strongest ideas and methods I can find.",
+      "scale": 1,
+      "action": "Look beyond my own methods",
+      "prop": "library",
+      "tone": "build",
+      "meaning": "Research",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 6,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Experience and selected methods become a skill with character.",
+      "scale": 1,
+      "action": "Distil a capability",
+      "prop": "skill",
+      "tone": "dream",
+      "meaning": "Synthesis",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 6,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "protect",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Purpose. Method. Character. A MOAT I keep developing.",
+      "scale": 1,
+      "action": "Build a distinctive advantage",
+      "prop": "moat",
+      "tone": "dream",
+      "meaning": "Identity",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 6,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "There is depth behind an experience that feels simple.",
+      "scale": 1,
+      "action": "Face the hidden complexity",
+      "prop": "complexity",
+      "tone": "build",
+      "meaning": "Depth",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 7,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Design gives that complexity a human starting point.",
+      "scale": 1,
+      "action": "Shape a clear way in",
+      "prop": "interface",
+      "tone": "dream",
+      "meaning": "Design",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 7,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "The next step should feel understandable and in their control.",
+      "scale": 1,
+      "action": "Give the person agency",
+      "prop": "choice",
+      "tone": "human",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 7,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "welcome",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Useful enough to work. Engaging enough to want to return.",
+      "scale": 1,
+      "action": "Make the experience inviting",
+      "prop": "recipient",
+      "tone": "care",
+      "meaning": "AI experiences",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 7,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "An experience becomes meaningful when someone can enter it.",
+      "scale": 1,
+      "action": "Open the door",
+      "prop": "interface",
+      "tone": "care",
+      "meaning": "Invitation",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "Explore the demonstration. Look beneath the surface.",
+      "scale": 1,
+      "action": "Make the work inspectable",
+      "prop": "review",
+      "tone": "build",
+      "meaning": "Transparency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 8,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "This story continues through what we choose to build next.",
+      "scale": 1,
+      "action": "Offer the next possibility",
+      "prop": "recipient",
+      "tone": "human",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Reflect",
+      "shot": "portrait",
+      "shape": "maker",
+      "pose": "stand",
+      "label": "09 / THE EXPERIENCE BEHIND THE STORY",
+      "caption": "The work that brought me here.",
+      "scale": 0.9,
+      "action": "Reflect",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 9,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Begin",
+      "shot": "reveal",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "10 / YOUR NEXT CHAPTER",
+      "caption": "What could we make possible, together?",
+      "scale": 1,
+      "action": "Begin",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 10,
+      "step": 0,
+      "count": 1
+    }
+  ],
+  "shots": {
+    "establish": {
+      "yaw": -0.3,
+      "pitch": 0.12,
+      "distance": 6.4,
+      "target": [
+        0.1,
+        0,
+        0
+      ]
+    },
+    "draft": {
+      "yaw": 0.58,
+      "pitch": 0.3,
+      "distance": 5.25,
+      "target": [
+        -0.25,
+        -0.09,
+        0.22
+      ]
+    },
+    "detail": {
+      "yaw": 0.44,
+      "pitch": 0.18,
+      "distance": 5.05,
+      "target": [
+        -0.26,
+        -0.08,
+        0.25
+      ]
+    },
+    "connect": {
+      "yaw": 0.28,
+      "pitch": 0.17,
+      "distance": 6.25,
+      "target": [
+        -0.2,
+        -0.07,
+        0.15
+      ]
+    },
+    "isolate": {
+      "yaw": 0.48,
+      "pitch": 0.21,
+      "distance": 7.25,
+      "target": [
+        -0.12,
+        -0.08,
+        0.15
+      ]
+    },
+    "intimate": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.06,
+        0.25
+      ]
+    },
+    "rise": {
+      "yaw": -0.42,
+      "pitch": 0.02,
+      "distance": 6.2,
+      "target": [
+        -0.3,
+        -0.1,
+        0.2
+      ]
+    },
+    "reveal": {
+      "yaw": 0.2,
+      "pitch": 0.19,
+      "distance": 6.35,
+      "target": [
+        -0.08,
+        -0.08,
+        0.2
+      ]
+    },
+    "portrait": {
+      "yaw": -0.15,
+      "pitch": 0.1,
+      "distance": 5.9,
+      "target": [
+        -0.25,
+        -0.08,
+        0.2
+      ]
+    }
+  },
+  "morph": {
+    "start": 0.16,
+    "end": 0.91
+  },
+  "scripts": [
+    "http://127.0.0.1:4173/assets/profile/scenes.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4173/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4173/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4173/assets/profile/motion.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4173/assets/profile/geometry.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4173/assets/profile/living.js?v=faceless-performance-v6"
+  ],
+  "viewport": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "art": [
+      720,
+      720
+    ]
+  },
+  "artDeviceScaleFactor": 2,
+  "stillDelayMs": 800,
+  "notes": [
+    "All artwork is captured from the live browser canvas.",
+    "The art view overrides capture CSS only: 720-square canvas, no caption overlays, desktop camera behavior.",
+    "Desktop and mobile captures retain the real layout.",
+    "Steady key poses allow two settled rendering frames. Pilot transitions use fixed scroll positions.",
+    "Continuous sweeps drive native scroll at requestAnimationFrame cadence and retain the runtime camera damping.",
+    "These are headless review captures, not physical-device performance measurements."
+  ],
+  "metadataHash": "3cc02650db5ec8ea27b3020206c3bf576cb5458c9bff8aa1299514a27da53f20",
+  "snapshots": [],
+  "pilots": [],
+  "performances": [
+    {
+      "index": 3,
+      "stage": "preparation",
+      "u": 0.3,
+      "position": 1.4789333333333332,
+      "shot": 3,
+      "detail": 2,
+      "drawCost": 7.106913063608077,
+      "camera": {
+        "yaw": 0.5342329386817719,
+        "pitch": 0.2607710902986615,
+        "distance": 5.183761964498912,
+        "target": [
+          -0.2532690758084449,
+          -0.23673092419155511,
+          0.2298072274253346
+        ],
+        "focal": 6
+      },
+      "file": "performance-03-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 2,
+          "to": 3,
+          "beat": 3,
+          "progress": 0.30145838119617574,
+          "stage": "preparation",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.1,
+          "actionStart": 0.5,
+          "actionEnd": 0.82,
+          "settle": 0.92
+        },
+        "hand": [
+          0.4118501867585549,
+          0.06414053907058022,
+          0.1936962872256326
+        ],
+        "head": [
+          -0.4181092588914946,
+          0.44633736623746884,
+          0.06158312883779312
+        ],
+        "hip": [
+          -0.4775356084013282,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.39,
+            -0.056677167422928235,
+            0.28562371042602863
+          ],
+          "tip": [
+            0.39000000000000007,
+            -0.056677167422928235,
+            0.28562371042602863
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "write",
+          "gripOffset": [
+            -0.02,
+            -0.025,
+            0.15
+          ],
+          "fingerCurl": 0.6799280232114768,
+          "shape": {
+            "side": 1,
+            "grip": "transition",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.0306947685703055,
+                    -0.010336394339844897,
+                    0.05045444283480953
+                  ],
+                  [
+                    -0.02266700666603729,
+                    -0.021371631616549626,
+                    0.06219235478946341
+                  ],
+                  [
+                    -0.018045120604792082,
+                    -0.030144780968851308,
+                    0.06895031451700513
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.027478719073329428,
+                    -0.014775362073547306,
+                    0.10102225355637381
+                  ],
+                  [
+                    -0.025614585891891587,
+                    -0.0334043344571712,
+                    0.11257588482156662
+                  ],
+                  [
+                    -0.025017746821119447,
+                    -0.046893599436648295,
+                    0.11627500815514885
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.012343150835467394,
+                    0.112817844807925
+                  ],
+                  [
+                    -0.01,
+                    -0.02992378323085806,
+                    0.13059202171089693
+                  ],
+                  [
+                    -0.01,
+                    -0.044227887224776274,
+                    0.13977856670513567
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.01378938100883884,
+                    -0.012610203338003008,
+                    0.1075651651254528
+                  ],
+                  [
+                    0.01417320723733128,
+                    -0.02973582633778428,
+                    0.12291331531678479
+                  ],
+                  [
+                    0.0143582379369786,
+                    -0.04392111943661328,
+                    0.1303121816718761
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.03348946870539003,
+                    -0.009964439787255894,
+                    0.08887993493657304
+                  ],
+                  [
+                    0.034216395077394955,
+                    -0.024063472310570398,
+                    0.1000463515487277
+                  ],
+                  [
+                    0.03452060723711171,
+                    -0.035112006355577194,
+                    0.10471939663926622
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.019997231661979878,
+              -0.024996539577474847,
+              0.14998961873242453
+            ],
+            "contactFeature": "transition",
+            "parameters": {
+              "yaw": [
+                0.5998505097469133,
+                0.15996747202826356,
+                0,
+                0.025002768338020124,
+                0.06500761292955534
+              ],
+              "flex": [
+                [
+                  0.33996677994375857,
+                  0.31997231661979875,
+                  0.15998754247890945
+                ],
+                [
+                  0.4799446332395975,
+                  0.5299418649015775,
+                  0.2899667799437585
+                ],
+                [
+                  0.34996539577474844,
+                  0.42995847492969813,
+                  0.21997785329583902
+                ],
+                [
+                  0.37996539577474847,
+                  0.45995847492969816,
+                  0.24997646912682894
+                ],
+                [
+                  0.40996539577474844,
+                  0.48995847492969813,
+                  0.2699750849578189
+                ]
+              ],
+              "features": {
+                "index": 0,
+                "palm": 0,
+                "tool": 0.9998615830989939,
+                "none": 0.0001384169010061668
+              }
+            }
+          },
+          "space": "stylus-dock",
+          "effector": "stylus"
+        },
+        "projectedWrist": [
+          484.85763694642253,
+          273.0072404018709,
+          -0.27967239011018497
+        ],
+        "projectedTip": [
+          489.26049471129784,
+          287.30885888108605,
+          -0.28956282583808346
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "stage": "action",
+      "u": 0.66,
+      "position": 1.5322666666666667,
+      "shot": 3,
+      "detail": 2,
+      "drawCost": 5.206324779017375,
+      "camera": {
+        "yaw": 0.48755195699582127,
+        "pitch": 0.22075882028213253,
+        "distance": 5.1170620611280855,
+        "target": [
+          -0.25660343164315563,
+          -0.23339656835684436,
+          0.23981029492946687
+        ],
+        "focal": 6
+      },
+      "file": "performance-03-action.png",
+      "actual": {
+        "phase": {
+          "from": 2,
+          "to": 3,
+          "beat": 3,
+          "progress": 0.6629966592116521,
+          "stage": "action",
+          "action": 0.5093645600364128,
+          "bridge": 0,
+          "attentionEnd": 0.1,
+          "actionStart": 0.5,
+          "actionEnd": 0.82,
+          "settle": 0.92
+        },
+        "hand": [
+          0.07924814192740778,
+          -0.18355557341925877,
+          0.35148432088705617
+        ],
+        "head": [
+          -0.42101939995508975,
+          0.4556989333578619,
+          0.022364329937261916
+        ],
+        "hip": [
+          -0.47001940145916044,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.04724814192740777,
+            -0.22893884482228727,
+            0.4801391308382517
+          ],
+          "tip": [
+            0.04724814192740778,
+            -0.22893884482228727,
+            0.48013913083825166
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "type",
+          "gripOffset": [
+            -0.032,
+            -0.028273023389131208,
+            0.13346286972509178
+          ],
+          "fingerCurl": 0.32,
+          "shape": {
+            "side": 1,
+            "grip": "type",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.04695919920607919,
+                    -0.005735953311839981,
+                    0.055541511626435974
+                  ],
+                  [
+                    -0.049004630414517636,
+                    -0.011398151402930101,
+                    0.07250487579598681
+                  ],
+                  [
+                    -0.05032777735019538,
+                    -0.01607117151063391,
+                    0.08347812350391734
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.032,
+                    -0.007667802457210988,
+                    0.10406774541992368
+                  ],
+                  [
+                    -0.032,
+                    -0.019190747654322052,
+                    0.12280865612309858
+                  ],
+                  [
+                    -0.032,
+                    -0.028273023389131208,
+                    0.13346286972509178
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": true
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.007856266430911295,
+                    0.1141323081759018
+                  ],
+                  [
+                    -0.01,
+                    -0.020060697602983985,
+                    0.13595092086704558
+                  ],
+                  [
+                    -0.01,
+                    -0.03034886650049666,
+                    0.14948434544237954
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.013821345918308912,
+                    -0.008740738764333275,
+                    0.10884699189783076
+                  ],
+                  [
+                    0.014305388554242526,
+                    -0.021152275885214566,
+                    0.12820466347846216
+                  ],
+                  [
+                    0.014603427267217308,
+                    -0.03182219004527373,
+                    0.14012372823802016
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.03343214508559944,
+                    -0.007388005166533489,
+                    0.08984043498162456
+                  ],
+                  [
+                    0.03429139981857822,
+                    -0.0182813604697822,
+                    0.1041441579774406
+                  ],
+                  [
+                    0.03477701887197502,
+                    -0.02713653692310175,
+                    0.11222809415454844
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.032,
+              -0.028273023389131208,
+              0.13346286972509178
+            ],
+            "contactFeature": "index-tip",
+            "parameters": {
+              "yaw": [
+                -0.12,
+                0,
+                0,
+                0.025,
+                0.06
+              ],
+              "flex": [
+                [
+                  0.15,
+                  0.17,
+                  0.08
+                ],
+                [
+                  0.24197322087009177,
+                  0.30929762782678905,
+                  0.15464881391339452
+                ],
+                [
+                  0.22,
+                  0.29,
+                  0.14
+                ],
+                [
+                  0.26,
+                  0.31,
+                  0.16
+                ],
+                [
+                  0.3,
+                  0.35,
+                  0.18
+                ]
+              ],
+              "features": {
+                "index": 1,
+                "palm": 0,
+                "tool": 0,
+                "none": 0
+              }
+            }
+          },
+          "space": "keyboard",
+          "effector": "fingertip"
+        },
+        "projectedWrist": [
+          443.22640371551887,
+          345.3404857847843,
+          -0.046334931590607295
+        ],
+        "projectedTip": [
+          452.4543611803741,
+          357.00110969607556,
+          -0.01926826082275502
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "stage": "response",
+      "u": 0.88,
+      "position": 1.5695999999999999,
+      "shot": 3,
+      "detail": 2,
+      "drawCost": 5.1825238058107255,
+      "camera": {
+        "yaw": 0.46021281491389204,
+        "pitch": 0.1973252699261932,
+        "distance": 5.07839786828155,
+        "target": [
+          -0.2585562275061506,
+          -0.23144377249384943,
+          0.2456686825184517
+        ],
+        "focal": 6
+      },
+      "file": "performance-03-response.png",
+      "actual": {
+        "phase": {
+          "from": 2,
+          "to": 3,
+          "beat": 3,
+          "progress": 0.8789342742139277,
+          "stage": "response",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.1,
+          "actionStart": 0.5,
+          "actionEnd": 0.82,
+          "settle": 0.92
+        },
+        "hand": [
+          0.08199999999999999,
+          -0.13703282731046723,
+          0.36185171851776404
+        ],
+        "head": [
+          -0.42101559107382164,
+          0.455704127893788,
+          0.022318350365110387
+        ],
+        "hip": [
+          -0.47,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.05,
+            -0.17811532795679375,
+            0.49349942427356847
+          ],
+          "tip": [
+            0.04999999999999999,
+            -0.17811532795679372,
+            0.4934994242735684
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "type",
+          "gripOffset": [
+            -0.032,
+            -0.02361967254492198,
+            0.13587126759912457
+          ],
+          "fingerCurl": 0.32,
+          "shape": {
+            "side": 1,
+            "grip": "type",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.04695919920607919,
+                    -0.005735953311839981,
+                    0.055541511626435974
+                  ],
+                  [
+                    -0.049004630414517636,
+                    -0.011398151402930101,
+                    0.07250487579598681
+                  ],
+                  [
+                    -0.05032777735019538,
+                    -0.01607117151063391,
+                    0.08347812350391734
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.032,
+                    -0.006344807693452621,
+                    0.10436468420585651
+                  ],
+                  [
+                    -0.032,
+                    -0.015961468982438644,
+                    0.12415154412987978
+                  ],
+                  [
+                    -0.032,
+                    -0.02361967254492198,
+                    0.13587126759912457
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": true
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.007856266430911295,
+                    0.1141323081759018
+                  ],
+                  [
+                    -0.01,
+                    -0.020060697602983985,
+                    0.13595092086704558
+                  ],
+                  [
+                    -0.01,
+                    -0.03034886650049666,
+                    0.14948434544237954
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.013821345918308912,
+                    -0.008740738764333275,
+                    0.10884699189783076
+                  ],
+                  [
+                    0.014305388554242526,
+                    -0.021152275885214566,
+                    0.12820466347846216
+                  ],
+                  [
+                    0.014603427267217308,
+                    -0.03182219004527373,
+                    0.14012372823802016
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.03343214508559944,
+                    -0.007388005166533489,
+                    0.08984043498162456
+                  ],
+                  [
+                    0.03429139981857822,
+                    -0.0182813604697822,
+                    0.1041441579774406
+                  ],
+                  [
+                    0.03477701887197502,
+                    -0.02713653692310175,
+                    0.11222809415454844
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.032,
+              -0.02361967254492198,
+              0.13587126759912457
+            ],
+            "contactFeature": "index-tip",
+            "parameters": {
+              "yaw": [
+                -0.12,
+                0,
+                0,
+                0.025,
+                0.06
+              ],
+              "flex": [
+                [
+                  0.15,
+                  0.17,
+                  0.08
+                ],
+                [
+                  0.19959791065813262,
+                  0.2527972142108435,
+                  0.12639860710542175
+                ],
+                [
+                  0.22,
+                  0.29,
+                  0.14
+                ],
+                [
+                  0.26,
+                  0.31,
+                  0.16
+                ],
+                [
+                  0.3,
+                  0.35,
+                  0.18
+                ]
+              ],
+              "features": {
+                "index": 1,
+                "palm": 0,
+                "tool": 0,
+                "none": 0
+              }
+            }
+          },
+          "space": "keyboard",
+          "effector": "fingertip"
+        },
+        "projectedWrist": [
+          446.0142914836621,
+          335.4479495174523,
+          -0.027734960049639223
+        ],
+        "projectedTip": [
+          455.15128708655004,
+          347.0719338615619,
+          0.0014409511471063455
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "stage": "preparation",
+      "u": 0.2,
+      "position": 1.7957333333333332,
+      "shot": 3,
+      "detail": 2,
+      "drawCost": 5.004236839181203,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.18,
+        "distance": 5.05,
+        "target": [
+          -0.26,
+          -0.22999999999999998,
+          0.25
+        ],
+        "focal": 6
+      },
+      "file": "performance-04-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 3,
+          "to": 4,
+          "beat": 4,
+          "progress": 0.20105625599999888,
+          "stage": "preparation",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.12,
+          "actionStart": 0.28,
+          "actionEnd": 0.68,
+          "settle": 0.8400000000000001
+        },
+        "hand": [
+          0.08199999999999996,
+          -0.11340492551251408,
+          0.35729181046582714
+        ],
+        "head": [
+          -0.41984099545019804,
+          0.4551206512995164,
+          0.02442607157530234
+        ],
+        "hip": [
+          -0.47,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.05,
+            -0.1516558109423093,
+            0.4906044069794561
+          ],
+          "tip": [
+            0.04999999999999996,
+            -0.1516558109423093,
+            0.490604406979456
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "type",
+          "gripOffset": [
+            -0.032,
+            -0.020595650634015965,
+            0.13715392010558974
+          ],
+          "fingerCurl": 0.32,
+          "shape": {
+            "side": 1,
+            "grip": "type",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.04695919920607919,
+                    -0.005735953311839981,
+                    0.055541511626435974
+                  ],
+                  [
+                    -0.049004630414517636,
+                    -0.011398151402930101,
+                    0.07250487579598681
+                  ],
+                  [
+                    -0.05032777735019538,
+                    -0.01607117151063391,
+                    0.08347812350391734
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.032,
+                    -0.005512950698121179,
+                    0.10452153826513047
+                  ],
+                  [
+                    -0.032,
+                    -0.013890690566041027,
+                    0.1248639440890606
+                  ],
+                  [
+                    -0.032,
+                    -0.020595650634015965,
+                    0.13715392010558974
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": true
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.007856266430911295,
+                    0.1141323081759018
+                  ],
+                  [
+                    -0.01,
+                    -0.020060697602983985,
+                    0.13595092086704558
+                  ],
+                  [
+                    -0.01,
+                    -0.03034886650049666,
+                    0.14948434544237954
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.013821345918308912,
+                    -0.008740738764333275,
+                    0.10884699189783076
+                  ],
+                  [
+                    0.014305388554242526,
+                    -0.021152275885214566,
+                    0.12820466347846216
+                  ],
+                  [
+                    0.014603427267217308,
+                    -0.03182219004527373,
+                    0.14012372823802016
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.03343214508559944,
+                    -0.007388005166533489,
+                    0.08984043498162456
+                  ],
+                  [
+                    0.03429139981857822,
+                    -0.0182813604697822,
+                    0.1041441579774406
+                  ],
+                  [
+                    0.03477701887197502,
+                    -0.02713653692310175,
+                    0.11222809415454844
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.032,
+              -0.020595650634015965,
+              0.13715392010558974
+            ],
+            "contactFeature": "index-tip",
+            "parameters": {
+              "yaw": [
+                -0.12,
+                0,
+                0,
+                0.025,
+                0.06
+              ],
+              "flex": [
+                [
+                  0.15,
+                  0.17,
+                  0.08
+                ],
+                [
+                  0.17314351576757137,
+                  0.21752468769009514,
+                  0.10876234384504757
+                ],
+                [
+                  0.22,
+                  0.29,
+                  0.14
+                ],
+                [
+                  0.26,
+                  0.31,
+                  0.16
+                ],
+                [
+                  0.3,
+                  0.35,
+                  0.18
+                ]
+              ],
+              "features": {
+                "index": 1,
+                "palm": 0,
+                "tool": 0,
+                "none": 0
+              }
+            }
+          },
+          "space": "keyboard",
+          "effector": "fingertip"
+        },
+        "projectedWrist": [
+          446.1207309368577,
+          330.07157567594976,
+          -0.026939708634121106
+        ],
+        "projectedTip": [
+          455.15045647433936,
+          341.6321698272806,
+          0.003773319238271785
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "stage": "action",
+      "u": 0.48,
+      "position": 1.8384,
+      "shot": 4,
+      "detail": 2,
+      "drawCost": 4.529072842369621,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.18,
+        "distance": 5.05,
+        "target": [
+          -0.26,
+          -0.22999999999999998,
+          0.25
+        ],
+        "focal": 6
+      },
+      "file": "performance-04-action.png",
+      "actual": {
+        "phase": {
+          "from": 3,
+          "to": 4,
+          "beat": 4,
+          "progress": 0.4773914697642243,
+          "stage": "action",
+          "action": 0.4934786744105607,
+          "bridge": 0,
+          "attentionEnd": 0.12,
+          "actionStart": 0.28,
+          "actionEnd": 0.68,
+          "settle": 0.8400000000000001
+        },
+        "hand": [
+          0.08391858284975556,
+          -0.18369762160040987,
+          0.35172238569862324
+        ],
+        "head": [
+          -0.4158192418187302,
+          0.45318154266251376,
+          0.03538448519528106
+        ],
+        "hip": [
+          -0.47,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.05191858284975555,
+            -0.22947919642990494,
+            0.4800682839218935
+          ],
+          "tip": [
+            0.05191858284975556,
+            -0.22947919642990494,
+            0.4800682839218935
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "type",
+          "gripOffset": [
+            -0.032,
+            -0.028708105334901438,
+            0.13320835886943022
+          ],
+          "fingerCurl": 0.32,
+          "shape": {
+            "side": 1,
+            "grip": "type",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.04695919920607919,
+                    -0.005735953311839981,
+                    0.055541511626435974
+                  ],
+                  [
+                    -0.049004630414517636,
+                    -0.011398151402930101,
+                    0.07250487579598681
+                  ],
+                  [
+                    -0.05032777735019538,
+                    -0.01607117151063391,
+                    0.08347812350391734
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.032,
+                    -0.007794721936179791,
+                    0.10403614521711158
+                  ],
+                  [
+                    -0.032,
+                    -0.01949587404373246,
+                    0.1226663099870731
+                  ],
+                  [
+                    -0.032,
+                    -0.028708105334901438,
+                    0.13320835886943022
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": true
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.007856266430911295,
+                    0.1141323081759018
+                  ],
+                  [
+                    -0.01,
+                    -0.020060697602983985,
+                    0.13595092086704558
+                  ],
+                  [
+                    -0.01,
+                    -0.03034886650049666,
+                    0.14948434544237954
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.013821345918308912,
+                    -0.008740738764333275,
+                    0.10884699189783076
+                  ],
+                  [
+                    0.014305388554242526,
+                    -0.021152275885214566,
+                    0.12820466347846216
+                  ],
+                  [
+                    0.014603427267217308,
+                    -0.03182219004527373,
+                    0.14012372823802016
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.03343214508559944,
+                    -0.007388005166533489,
+                    0.08984043498162456
+                  ],
+                  [
+                    0.03429139981857822,
+                    -0.0182813604697822,
+                    0.1041441579774406
+                  ],
+                  [
+                    0.03477701887197502,
+                    -0.02713653692310175,
+                    0.11222809415454844
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.032,
+              -0.028708105334901438,
+              0.13320835886943022
+            ],
+            "contactFeature": "index-tip",
+            "parameters": {
+              "yaw": [
+                -0.12,
+                0,
+                0,
+                0.025,
+                0.06
+              ],
+              "flex": [
+                [
+                  0.15,
+                  0.17,
+                  0.08
+                ],
+                [
+                  0.24606054296768226,
+                  0.3147473906235764,
+                  0.1573736953117882
+                ],
+                [
+                  0.22,
+                  0.29,
+                  0.14
+                ],
+                [
+                  0.26,
+                  0.31,
+                  0.16
+                ],
+                [
+                  0.3,
+                  0.35,
+                  0.18
+                ]
+              ],
+              "features": {
+                "index": 1,
+                "palm": 0,
+                "tool": 0,
+                "none": 0
+              }
+            }
+          },
+          "space": "keyboard",
+          "effector": "fingertip"
+        },
+        "projectedWrist": [
+          445.65687019584993,
+          346.6367661077156,
+          -0.045285712802192145
+        ],
+        "projectedTip": [
+          454.65107329907966,
+          358.25593903072433,
+          -0.014572684929799226
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "stage": "response",
+      "u": 0.76,
+      "position": 1.8810666666666664,
+      "shot": 4,
+      "detail": 2,
+      "drawCost": 6.174328511656446,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.18,
+        "distance": 5.05,
+        "target": [
+          -0.26,
+          -0.22999999999999998,
+          0.25
+        ],
+        "focal": 6
+      },
+      "file": "performance-04-response.png",
+      "actual": {
+        "phase": {
+          "from": 3,
+          "to": 4,
+          "beat": 4,
+          "progress": 0.760742644930358,
+          "stage": "response",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.12,
+          "actionStart": 0.28,
+          "actionEnd": 0.68,
+          "settle": 0.8400000000000001
+        },
+        "hand": [
+          0.07691297629690697,
+          -0.16301715826990643,
+          0.34290401786676017
+        ],
+        "head": [
+          -0.41501127199975435,
+          0.4528023903970867,
+          0.03837466359337098
+        ],
+        "hip": [
+          -0.47,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.04491297629690692,
+            -0.201611967717907,
+            0.4760261868391094
+          ],
+          "tip": [
+            0.044912976296906965,
+            -0.20161196771790701,
+            0.47602618683910947
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "type",
+          "gripOffset": [
+            -0.032,
+            -0.020961411691254005,
+            0.1370098186559633
+          ],
+          "fingerCurl": 0.32,
+          "shape": {
+            "side": 1,
+            "grip": "type",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.04695919920607919,
+                    -0.005735953311839981,
+                    0.055541511626435974
+                  ],
+                  [
+                    -0.049004630414517636,
+                    -0.011398151402930101,
+                    0.07250487579598681
+                  ],
+                  [
+                    -0.05032777735019538,
+                    -0.01607117151063391,
+                    0.08347812350391734
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.032,
+                    -0.005612589028536344,
+                    0.10450394966344304
+                  ],
+                  [
+                    -0.032,
+                    -0.014140178203677262,
+                    0.12478399460570141
+                  ],
+                  [
+                    -0.032,
+                    -0.020961411691254005,
+                    0.1370098186559633
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": true
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.007856266430911295,
+                    0.1141323081759018
+                  ],
+                  [
+                    -0.01,
+                    -0.020060697602983985,
+                    0.13595092086704558
+                  ],
+                  [
+                    -0.01,
+                    -0.03034886650049666,
+                    0.14948434544237954
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.013821345918308912,
+                    -0.008740738764333275,
+                    0.10884699189783076
+                  ],
+                  [
+                    0.014305388554242526,
+                    -0.021152275885214566,
+                    0.12820466347846216
+                  ],
+                  [
+                    0.014603427267217308,
+                    -0.03182219004527373,
+                    0.14012372823802016
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.03343214508559944,
+                    -0.007388005166533489,
+                    0.08984043498162456
+                  ],
+                  [
+                    0.03429139981857822,
+                    -0.0182813604697822,
+                    0.1041441579774406
+                  ],
+                  [
+                    0.03477701887197502,
+                    -0.02713653692310175,
+                    0.11222809415454844
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.032,
+              -0.020961411691254005,
+              0.1370098186559633
+            ],
+            "contactFeature": "index-tip",
+            "parameters": {
+              "yaw": [
+                -0.12,
+                0,
+                0,
+                0.025,
+                0.06
+              ],
+              "flex": [
+                [
+                  0.15,
+                  0.17,
+                  0.08
+                ],
+                [
+                  0.17630535554639615,
+                  0.22174047406186154,
+                  0.11087023703093077
+                ],
+                [
+                  0.22,
+                  0.29,
+                  0.14
+                ],
+                [
+                  0.26,
+                  0.31,
+                  0.16
+                ],
+                [
+                  0.3,
+                  0.35,
+                  0.18
+                ]
+              ],
+              "features": {
+                "index": 1,
+                "palm": 0,
+                "tool": 0,
+                "none": 0
+              }
+            }
+          },
+          "space": "keyboard",
+          "effector": "fingertip"
+        },
+        "projectedWrist": [
+          443.1979229187283,
+          341.508711143652,
+          -0.04649707475911086
+        ],
+        "projectedTip": [
+          452.175067072952,
+          353.0940150510248,
+          -0.015784046886717962
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "stage": "preparation",
+      "u": 0.29,
+      "position": 3.8106666666666666,
+      "shot": 10,
+      "detail": 2,
+      "drawCost": 6.177222969972964,
+      "camera": {
+        "yaw": 0.32062719999999995,
+        "pitch": 0.22491839999999996,
+        "distance": 5.977899414249724,
+        "target": [
+          -0.13396479999999997,
+          -0.0831744,
+          0.2063488
+        ],
+        "focal": 6
+      },
+      "file": "performance-10-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 9,
+          "to": 10,
+          "beat": 10,
+          "progress": 0.2912424724624483,
+          "stage": "preparation",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.2,
+          "actionStart": 0.36,
+          "actionEnd": 0.62,
+          "settle": 0.8
+        },
+        "hand": [
+          -0.056439691306053724,
+          0.16224012102689422,
+          0.3695958186843305
+        ],
+        "head": [
+          -0.47773910394729824,
+          0.8582582595229378,
+          0.24128686834886304
+        ],
+        "hip": [
+          -0.4911627977412506,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            -0.050323885572464505,
+            0.11581954980914677,
+            0.4779382950436318
+          ],
+          "tip": [
+            -0.050323885572464526,
+            0.11581954980914683,
+            0.4779382950436318
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "type",
+          "gripOffset": [
+            -0.02133006345837785,
+            -0.007050521702430618,
+            0.11586925058963594
+          ],
+          "fingerCurl": 0.24600468323225097,
+          "shape": {
+            "side": 1,
+            "grip": "transition",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.050208307880068845,
+                    -0.005278062494093235,
+                    0.054993982986388364
+                  ],
+                  [
+                    -0.05453786051996872,
+                    -0.010304379171751848,
+                    0.07172691801268387
+                  ],
+                  [
+                    -0.05735184856327075,
+                    -0.014523836338237204,
+                    0.08260247098769845
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.03288402607474498,
+                    -0.002958981949241927,
+                    0.10485063458901928
+                  ],
+                  [
+                    -0.0334811390596345,
+                    -0.007521443746567042,
+                    0.12636405826892724
+                  ],
+                  [
+                    -0.0338559852082044,
+                    -0.011190888340928004,
+                    0.13986941523325133
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": true
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.006289261519289343,
+                    0.11444637061169996
+                  ],
+                  [
+                    -0.01,
+                    -0.016172040010663975,
+                    0.1374100525745391
+                  ],
+                  [
+                    -0.01,
+                    -0.024571874414200473,
+                    0.1521898625189587
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.014076755917354735,
+                    -0.007150905745100236,
+                    0.10922205808975619
+                  ],
+                  [
+                    0.014742235003765704,
+                    -0.017493535809249068,
+                    0.12975464538268433
+                  ],
+                  [
+                    0.015170939801410363,
+                    -0.026485623578411846,
+                    0.14298183592898514
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.033989748818268294,
+                    -0.006141567371142116,
+                    0.0901520609858853
+                  ],
+                  [
+                    0.03525811818590485,
+                    -0.015380680359633957,
+                    0.10554784061320922
+                  ],
+                  [
+                    0.036020689935234,
+                    -0.02297934457511711,
+                    0.11480412423394282
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.02133006345837785,
+              -0.007050521702430618,
+              0.11586925058963594
+            ],
+            "contactFeature": "transition",
+            "parameters": {
+              "yaw": [
+                -0.25319157018194827,
+                -0.027748243787905892,
+                0,
+                0.0323995316767749,
+                0.0821985950303247
+              ],
+              "flex": [
+                [
+                  0.13150117080806273,
+                  0.15150117080806275,
+                  0.07630023416161255
+                ],
+                [
+                  0.0926004683232251,
+                  0.11630023416161255,
+                  0.05630023416161255
+                ],
+                [
+                  0.17560280993935057,
+                  0.23080374658580077,
+                  0.11040187329290038
+                ],
+                [
+                  0.2119030441009631,
+                  0.2545035124241882,
+                  0.13040187329290037
+                ],
+                [
+                  0.24820327826257566,
+                  0.29080374658580077,
+                  0.14670210745451293
+                ]
+              ],
+              "features": {
+                "index": 0.6300234161612548,
+                "palm": 0,
+                "tool": 0,
+                "none": 0.3699765838387452
+              }
+            }
+          },
+          "space": "keyboard",
+          "effector": "fingertip"
+        },
+        "projectedWrist": [
+          386.5579818868331,
+          315.36351412688896,
+          0.18194181688457176
+        ],
+        "projectedTip": [
+          398.62839729876424,
+          319.2416242228419,
+          0.2133239872228368
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "stage": "action",
+      "u": 0.5,
+      "position": 3.8416,
+      "shot": 10,
+      "detail": 2,
+      "drawCost": 5.485922399669128,
+      "camera": {
+        "yaw": 0.39388605530777804,
+        "pitch": 0.2461249107469884,
+        "distance": 5.76264227826978,
+        "target": [
+          -0.16673849842716387,
+          -0.08510226461336258,
+          0.21020452922672517
+        ],
+        "focal": 6
+      },
+      "file": "performance-10-action.png",
+      "actual": {
+        "phase": {
+          "from": 9,
+          "to": 10,
+          "beat": 10,
+          "progress": 0.4995384615967229,
+          "stage": "action",
+          "action": 0.5366863907566265,
+          "bridge": 0,
+          "attentionEnd": 0.2,
+          "actionStart": 0.36,
+          "actionEnd": 0.62,
+          "settle": 0.8
+        },
+        "hand": [
+          0.07156340068676603,
+          0.20868314433515156,
+          0.34752011924243437
+        ],
+        "head": [
+          -0.4404251248352631,
+          0.8567078541055195,
+          0.2688419382334183
+        ],
+        "hip": [
+          -0.4678110142126123,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.03956340068676602,
+            0.17176810843460588,
+            0.48154294755897364
+          ],
+          "tip": [
+            0.03956340068676603,
+            0.17176810843460588,
+            0.48154294755897364
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "type",
+          "gripOffset": [
+            -0.032,
+            -0.01917880699770904,
+            0.13768446443825014
+          ],
+          "fingerCurl": 0.32,
+          "shape": {
+            "side": 1,
+            "grip": "type",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.04695919920607919,
+                    -0.005735953311839981,
+                    0.055541511626435974
+                  ],
+                  [
+                    -0.049004630414517636,
+                    -0.011398151402930101,
+                    0.07250487579598681
+                  ],
+                  [
+                    -0.05032777735019538,
+                    -0.01607117151063391,
+                    0.08347812350391734
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.032,
+                    -0.005129259465707774,
+                    0.10458624221608906
+                  ],
+                  [
+                    -0.032,
+                    -0.012926536293154624,
+                    0.12515812774163484
+                  ],
+                  [
+                    -0.032,
+                    -0.01917880699770904,
+                    0.13768446443825014
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": true
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.007856266430911295,
+                    0.1141323081759018
+                  ],
+                  [
+                    -0.01,
+                    -0.020060697602983985,
+                    0.13595092086704558
+                  ],
+                  [
+                    -0.01,
+                    -0.03034886650049666,
+                    0.14948434544237954
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.013821345918308912,
+                    -0.008740738764333275,
+                    0.10884699189783076
+                  ],
+                  [
+                    0.014305388554242526,
+                    -0.021152275885214566,
+                    0.12820466347846216
+                  ],
+                  [
+                    0.014603427267217308,
+                    -0.03182219004527373,
+                    0.14012372823802016
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.03343214508559944,
+                    -0.007388005166533489,
+                    0.08984043498162456
+                  ],
+                  [
+                    0.03429139981857822,
+                    -0.0182813604697822,
+                    0.1041441579774406
+                  ],
+                  [
+                    0.03477701887197502,
+                    -0.02713653692310175,
+                    0.11222809415454844
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.032,
+              -0.01917880699770904,
+              0.13768446443825014
+            ],
+            "contactFeature": "index-tip",
+            "parameters": {
+              "yaw": [
+                -0.12,
+                0,
+                0,
+                0.025,
+                0.06
+              ],
+              "flex": [
+                [
+                  0.15,
+                  0.17,
+                  0.08
+                ],
+                [
+                  0.160983794674598,
+                  0.2013117262327973,
+                  0.10065586311639865
+                ],
+                [
+                  0.22,
+                  0.29,
+                  0.14
+                ],
+                [
+                  0.26,
+                  0.31,
+                  0.16
+                ],
+                [
+                  0.3,
+                  0.35,
+                  0.18
+                ]
+              ],
+              "features": {
+                "index": 1,
+                "palm": 0,
+                "tool": 0,
+                "none": 0
+              }
+            }
+          },
+          "space": "keyboard",
+          "effector": "fingertip"
+        },
+        "projectedWrist": [
+          419.3647107888449,
+          299.85886579790935,
+          0.10586005975212212
+        ],
+        "projectedTip": [
+          426.897324010308,
+          310.58281642289194,
+          0.13484429761863076
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "stage": "response",
+      "u": 0.71,
+      "position": 3.872533333333333,
+      "shot": 10,
+      "detail": 2,
+      "drawCost": 4.55120151938315,
+      "camera": {
+        "yaw": 0.46646886991954134,
+        "pitch": 0.2671357255030251,
+        "distance": 5.557016606972522,
+        "target": [
+          -0.1992097575955843,
+          -0.0870123386820932,
+          0.2140246773641864
+        ],
+        "focal": 6
+      },
+      "file": "performance-10-response.png",
+      "actual": {
+        "phase": {
+          "from": 9,
+          "to": 10,
+          "beat": 10,
+          "progress": 0.7079097112353203,
+          "stage": "response",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.2,
+          "actionStart": 0.36,
+          "actionEnd": 0.62,
+          "settle": 0.8
+        },
+        "hand": [
+          0.08200000000000002,
+          0.23040360081009842,
+          0.3460158421676579
+        ],
+        "head": [
+          -0.42849328461756875,
+          0.8561849710901821,
+          0.2765626610210332
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.05,
+            0.1923063763370574,
+            0.4794125035492537
+          ],
+          "tip": [
+            0.05000000000000002,
+            0.19230637633705744,
+            0.4794125035492537
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "type",
+          "gripOffset": [
+            -0.032,
+            -0.020432365212250114,
+            0.13721729567419202
+          ],
+          "fingerCurl": 0.32,
+          "shape": {
+            "side": 1,
+            "grip": "type",
+            "palm": {
+              "center": [
+                0,
+                0,
+                0.035
+              ],
+              "radii": [
+                0.048,
+                0.018,
+                0.055
+              ]
+            },
+            "fingers": [
+              {
+                "name": "thumb",
+                "points": [
+                  [
+                    -0.044,
+                    -0.002,
+                    0.031
+                  ],
+                  [
+                    -0.04695919920607919,
+                    -0.005735953311839981,
+                    0.055541511626435974
+                  ],
+                  [
+                    -0.049004630414517636,
+                    -0.011398151402930101,
+                    0.07250487579598681
+                  ],
+                  [
+                    -0.05032777735019538,
+                    -0.01607117151063391,
+                    0.08347812350391734
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.01,
+                  0.008,
+                  0.006,
+                  0.0045
+                ],
+                "active": false
+              },
+              {
+                "name": "index",
+                "points": [
+                  [
+                    -0.032,
+                    0,
+                    0.073
+                  ],
+                  [
+                    -0.032,
+                    -0.005468549754836273,
+                    0.10452927153581065
+                  ],
+                  [
+                    -0.032,
+                    -0.013779393097257503,
+                    0.12489909929496788
+                  ],
+                  [
+                    -0.032,
+                    -0.020432365212250114,
+                    0.13721729567419202
+                  ]
+                ],
+                "lengths": [
+                  0.032,
+                  0.022,
+                  0.014
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": true
+              },
+              {
+                "name": "middle",
+                "points": [
+                  [
+                    -0.01,
+                    0,
+                    0.079
+                  ],
+                  [
+                    -0.01,
+                    -0.007856266430911295,
+                    0.1141323081759018
+                  ],
+                  [
+                    -0.01,
+                    -0.020060697602983985,
+                    0.13595092086704558
+                  ],
+                  [
+                    -0.01,
+                    -0.03034886650049666,
+                    0.14948434544237954
+                  ]
+                ],
+                "lengths": [
+                  0.036,
+                  0.025,
+                  0.017
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "ring",
+                "points": [
+                  [
+                    0.013,
+                    0,
+                    0.076
+                  ],
+                  [
+                    0.013821345918308912,
+                    -0.008740738764333275,
+                    0.10884699189783076
+                  ],
+                  [
+                    0.014305388554242526,
+                    -0.021152275885214566,
+                    0.12820466347846216
+                  ],
+                  [
+                    0.014603427267217308,
+                    -0.03182219004527373,
+                    0.14012372823802016
+                  ]
+                ],
+                "lengths": [
+                  0.034,
+                  0.023,
+                  0.016
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              },
+              {
+                "name": "little",
+                "points": [
+                  [
+                    0.032,
+                    0,
+                    0.066
+                  ],
+                  [
+                    0.03343214508559944,
+                    -0.007388005166533489,
+                    0.08984043498162456
+                  ],
+                  [
+                    0.03429139981857822,
+                    -0.0182813604697822,
+                    0.1041441579774406
+                  ],
+                  [
+                    0.03477701887197502,
+                    -0.02713653692310175,
+                    0.11222809415454844
+                  ]
+                ],
+                "lengths": [
+                  0.025,
+                  0.018,
+                  0.012
+                ],
+                "radii": [
+                  0.0085,
+                  0.007,
+                  0.0055,
+                  0.004
+                ],
+                "active": false
+              }
+            ],
+            "contactOffset": [
+              -0.032,
+              -0.020432365212250114,
+              0.13721729567419202
+            ],
+            "contactFeature": "index-tip",
+            "parameters": {
+              "yaw": [
+                -0.12,
+                0,
+                0,
+                0.025,
+                0.06
+              ],
+              "flex": [
+                [
+                  0.15,
+                  0.17,
+                  0.08
+                ],
+                [
+                  0.17173509814104254,
+                  0.21564679752139004,
+                  0.10782339876069502
+                ],
+                [
+                  0.22,
+                  0.29,
+                  0.14
+                ],
+                [
+                  0.26,
+                  0.31,
+                  0.16
+                ],
+                [
+                  0.3,
+                  0.35,
+                  0.18
+                ]
+              ],
+              "features": {
+                "index": 1,
+                "palm": 0,
+                "tool": 0,
+                "none": 0
+              }
+            }
+          },
+          "space": "keyboard",
+          "effector": "fingertip"
+        },
+        "projectedWrist": [
+          429.7474117724134,
+          290.7252690021088,
+          0.07551212546035899
+        ],
+        "projectedTip": [
+          438.1693811516001,
+          301.7684154139588,
+          0.10101714779897539
+        ]
+      }
+    }
+  ],
+  "sweeps": [],
+  "errors": []
+}

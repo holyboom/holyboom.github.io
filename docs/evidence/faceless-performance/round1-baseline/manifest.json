@@ -1,0 +1,4895 @@
+{
+  "capturedAt": "2026-11-14T20:48:23.517Z",
+  "base": "http://127.0.0.1:4174/",
+  "loadedScripts": [
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+      "bytes": 8839,
+      "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+      "bytes": 21362,
+      "sha256": "0bc8d3ec53b41176000509d7057af40ed3f3e81a018a57d271732864f8308bb5"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+      "bytes": 32630,
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+      "bytes": 28374,
+      "sha256": "65725893e3237b809484f6428551bd5f1894f57e3331b73f1451b628ede32581"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6",
+      "bytes": 14743,
+      "sha256": "544593e082ecb4a460a8b1bc1ae5653f33b23579c31e834b98fe2d9cce89ce62"
+    }
+  ],
+  "unlabelledDiagnostic": false,
+  "release": "faceless-performance-v6",
+  "sequence": [
+    {
+      "verb": "Imagine",
+      "shot": "establish",
+      "shape": "maker",
+      "pose": "design",
+      "label": "00 / THE PERSON BEHIND THE SYSTEM",
+      "caption": "A world begins at the end of a drawn line.",
+      "scale": 1,
+      "action": "Imagine",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 0,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "draw",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "Before software, there was a wish to make a place for people.",
+      "scale": 1,
+      "action": "Imagine a place",
+      "prop": "blueprint",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "establish",
+      "chapter": 1,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "sketch",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "A hand, a drawing, and something that did not exist before.",
+      "scale": 1,
+      "action": "Draw the first lines",
+      "prop": "house",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 1,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "type",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "The medium changed. The instinct to create stayed.",
+      "scale": 1,
+      "action": "Turn the drawing into an interface",
+      "prop": "code",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 1,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "type",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "An idea has to become something that works.",
+      "scale": 1,
+      "action": "Build one component",
+      "prop": "component",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "build",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "A beautiful part still has to belong to the whole.",
+      "scale": 1,
+      "action": "Fit it into a larger system",
+      "prop": "assembly",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 2,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "Other people will rely on the work. The details matter.",
+      "scale": 1,
+      "action": "Make it dependable",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Dependability",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "read",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "The work begins with understanding someone else’s need.",
+      "scale": 1,
+      "action": "Listen to the requirement",
+      "prop": "brief",
+      "tone": "human",
+      "meaning": "Understanding",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 3,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "My part had to connect with the work around it.",
+      "scale": 1,
+      "action": "Connect across boundaries",
+      "prop": "network",
+      "tone": "build",
+      "meaning": "Connection",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 3,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "build",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "A shared system asks more of us than a single screen.",
+      "scale": 1,
+      "action": "Bring the pieces together",
+      "prop": "assembly",
+      "tone": "care",
+      "meaning": "Collaboration",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 3,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "type",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "A new possibility enters a familiar process.",
+      "scale": 1,
+      "action": "Invite intelligence into the workflow",
+      "prop": "ai",
+      "tone": "dream",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 4,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "An answer is not the end of a human decision.",
+      "scale": 1,
+      "action": "Pause at the review boundary",
+      "prop": "review",
+      "tone": "human",
+      "meaning": "Human judgment",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 4,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "approve",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "Move forward with a visible path to inspect and review.",
+      "scale": 1,
+      "action": "Keep the person in control",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 4,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "alone",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Not everyone saw it yet. I still wanted to find out.",
+      "scale": 1,
+      "action": "Hold on to the possibility",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Conviction",
+      "energy": 0.22,
+      "shot": "isolate",
+      "chapter": 5,
+      "step": 0,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reach",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Belief did not make the difficult parts disappear.",
+      "scale": 1,
+      "action": "Meet the resistance",
+      "prop": "fracture",
+      "tone": "friction",
+      "meaning": "An obstacle",
+      "energy": 0.38,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 1,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reflect",
+      "label": "05 / KEEP BUILDING",
+      "caption": "What could this difficulty teach me?",
+      "scale": 1,
+      "action": "Stay with the problem",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Reflection",
+      "energy": 0.28,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 2,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "repair",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Another attempt. Another refinement. Then back again.",
+      "scale": 1,
+      "action": "Return to the work",
+      "prop": "repair",
+      "tone": "build",
+      "meaning": "Iteration",
+      "energy": 0.65,
+      "shot": "detail",
+      "chapter": 5,
+      "step": 3,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "rise",
+      "label": "05 / KEEP BUILDING",
+      "caption": "The work continued, week after week.",
+      "scale": 1,
+      "action": "Keep the light alive",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Persistence",
+      "energy": 0.85,
+      "shot": "rise",
+      "chapter": 5,
+      "step": 4,
+      "count": 5
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "read",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "A problem I had lived through became a starting point.",
+      "scale": 1,
+      "action": "Keep the lesson",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Experience",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 6,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "research",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Seek the strongest ideas and methods I can find.",
+      "scale": 1,
+      "action": "Look beyond my own methods",
+      "prop": "library",
+      "tone": "build",
+      "meaning": "Research",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 6,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Experience and selected methods become a skill with character.",
+      "scale": 1,
+      "action": "Distil a capability",
+      "prop": "skill",
+      "tone": "dream",
+      "meaning": "Synthesis",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 6,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "protect",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Purpose. Method. Character. A MOAT I keep developing.",
+      "scale": 1,
+      "action": "Build a distinctive advantage",
+      "prop": "moat",
+      "tone": "dream",
+      "meaning": "Identity",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 6,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "There is depth behind an experience that feels simple.",
+      "scale": 1,
+      "action": "Face the hidden complexity",
+      "prop": "complexity",
+      "tone": "build",
+      "meaning": "Depth",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 7,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Design gives that complexity a human starting point.",
+      "scale": 1,
+      "action": "Shape a clear way in",
+      "prop": "interface",
+      "tone": "dream",
+      "meaning": "Design",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 7,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "The next step should feel understandable and in their control.",
+      "scale": 1,
+      "action": "Give the person agency",
+      "prop": "choice",
+      "tone": "human",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 7,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "welcome",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Useful enough to work. Engaging enough to want to return.",
+      "scale": 1,
+      "action": "Make the experience inviting",
+      "prop": "recipient",
+      "tone": "care",
+      "meaning": "AI experiences",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 7,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "An experience becomes meaningful when someone can enter it.",
+      "scale": 1,
+      "action": "Open the door",
+      "prop": "interface",
+      "tone": "care",
+      "meaning": "Invitation",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "Explore the demonstration. Look beneath the surface.",
+      "scale": 1,
+      "action": "Make the work inspectable",
+      "prop": "review",
+      "tone": "build",
+      "meaning": "Transparency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 8,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "This story continues through what we choose to build next.",
+      "scale": 1,
+      "action": "Offer the next possibility",
+      "prop": "recipient",
+      "tone": "human",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Reflect",
+      "shot": "portrait",
+      "shape": "maker",
+      "pose": "stand",
+      "label": "09 / THE EXPERIENCE BEHIND THE STORY",
+      "caption": "The work that brought me here.",
+      "scale": 0.9,
+      "action": "Reflect",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 9,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Begin",
+      "shot": "reveal",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "10 / YOUR NEXT CHAPTER",
+      "caption": "What could we make possible, together?",
+      "scale": 1,
+      "action": "Begin",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 10,
+      "step": 0,
+      "count": 1
+    }
+  ],
+  "shots": {
+    "establish": {
+      "yaw": -0.3,
+      "pitch": 0.12,
+      "distance": 6.4,
+      "target": [
+        0.1,
+        0,
+        0
+      ]
+    },
+    "draft": {
+      "yaw": 0.58,
+      "pitch": 0.3,
+      "distance": 5.25,
+      "target": [
+        -0.25,
+        -0.09,
+        0.22
+      ]
+    },
+    "detail": {
+      "yaw": 0.44,
+      "pitch": 0.18,
+      "distance": 5.05,
+      "target": [
+        -0.26,
+        -0.08,
+        0.25
+      ]
+    },
+    "connect": {
+      "yaw": 0.28,
+      "pitch": 0.17,
+      "distance": 6.25,
+      "target": [
+        -0.2,
+        -0.07,
+        0.15
+      ]
+    },
+    "isolate": {
+      "yaw": 0.48,
+      "pitch": 0.21,
+      "distance": 7.25,
+      "target": [
+        -0.12,
+        -0.08,
+        0.15
+      ]
+    },
+    "intimate": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.06,
+        0.25
+      ]
+    },
+    "rise": {
+      "yaw": -0.42,
+      "pitch": 0.02,
+      "distance": 6.2,
+      "target": [
+        -0.3,
+        -0.1,
+        0.2
+      ]
+    },
+    "reveal": {
+      "yaw": 0.2,
+      "pitch": 0.19,
+      "distance": 6.35,
+      "target": [
+        -0.08,
+        -0.08,
+        0.2
+      ]
+    },
+    "portrait": {
+      "yaw": -0.15,
+      "pitch": 0.1,
+      "distance": 5.9,
+      "target": [
+        -0.25,
+        -0.08,
+        0.2
+      ]
+    }
+  },
+  "morph": {
+    "start": 0.16,
+    "end": 0.91
+  },
+  "scripts": [
+    "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6"
+  ],
+  "viewport": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "art": [
+      720,
+      720
+    ]
+  },
+  "notes": [
+    "All artwork is captured from the live browser canvas.",
+    "The art view overrides capture CSS only: 720-square canvas, no caption overlays, desktop camera behavior.",
+    "Desktop and mobile captures retain the real layout.",
+    "Steady key poses allow two settled rendering frames. Pilot transitions use fixed scroll positions.",
+    "These are headless review captures, not physical-device performance measurements."
+  ],
+  "metadataHash": "384d05f5f35fb9d80751f7b1688c76bc927597382b88ab933ee7d1638937ec93",
+  "snapshots": [
+    {
+      "index": 0,
+      "action": "Imagine",
+      "pose": "design",
+      "prop": "none",
+      "position": 0,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-00.png",
+          "position": 0,
+          "shot": 0,
+          "detail": 1,
+          "drawCost": 6.516699999906122,
+          "camera": {
+            "yaw": -0.3,
+            "pitch": 0.12,
+            "distance": 6.4,
+            "target": [
+              0.09999999999999998,
+              0,
+              0
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-00.png",
+          "position": 0,
+          "shot": 0,
+          "detail": 2,
+          "drawCost": 3.082386856623788,
+          "camera": {
+            "yaw": -0.265,
+            "pitch": 0.12,
+            "distance": 6.2203552331347245,
+            "target": [
+              -0.019000000000000017,
+              -0.063,
+              0.07
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-00.png",
+          "position": 0,
+          "shot": 0,
+          "detail": 2,
+          "drawCost": 4.687462199767071,
+          "camera": {
+            "yaw": -0.3,
+            "pitch": 0.12,
+            "distance": 6.4,
+            "target": [
+              0.09999999999999998,
+              0,
+              0
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "action": "Imagine a place",
+      "pose": "draw",
+      "prop": "blueprint",
+      "position": 1,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-01.png",
+          "position": 1,
+          "shot": 1,
+          "detail": 2,
+          "drawCost": 16.255202488243228,
+          "camera": {
+            "yaw": -0.3,
+            "pitch": 0.12,
+            "distance": 6.4,
+            "target": [
+              -0.24,
+              -0.25,
+              0.16
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-01.png",
+          "position": 1,
+          "shot": 1,
+          "detail": 2,
+          "drawCost": 13.747021257731502,
+          "camera": {
+            "yaw": -0.265,
+            "pitch": 0.12,
+            "distance": 6.2203552331347245,
+            "target": [
+              -0.24,
+              -0.2255,
+              0.17400000000000002
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-01.png",
+          "position": 1,
+          "shot": 1,
+          "detail": 2,
+          "drawCost": 12.005568818975862,
+          "camera": {
+            "yaw": -0.3,
+            "pitch": 0.12,
+            "distance": 6.4,
+            "target": [
+              -0.24,
+              -0.25,
+              0.16
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "action": "Draw the first lines",
+      "pose": "sketch",
+      "prop": "house",
+      "position": 1.35,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-02.png",
+          "position": 1.3497999999999999,
+          "shot": 2,
+          "detail": 2,
+          "drawCost": 16.615978507852315,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.24,
+              0.22
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-02.png",
+          "position": 1.349658526674032,
+          "shot": 2,
+          "detail": 2,
+          "drawCost": 16.832215997132415,
+          "camera": {
+            "yaw": 0.307,
+            "pitch": 0.237,
+            "distance": 5.468922276473751,
+            "target": [
+              -0.2465,
+              -0.219,
+              0.213
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-02.png",
+          "position": 1.3498666666666665,
+          "shot": 2,
+          "detail": 2,
+          "drawCost": 12.466387767489756,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.24,
+              0.22
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "action": "Turn the drawing into an interface",
+      "pose": "type",
+      "prop": "code",
+      "position": 1.6833333333333331,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-03.png",
+          "position": 1.6836666666666664,
+          "shot": 3,
+          "detail": 2,
+          "drawCost": 10.72344921446959,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.22999999999999998,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-03.png",
+          "position": 1.6834193895217173,
+          "shot": 3,
+          "detail": 2,
+          "drawCost": 13.191994015806529,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.159,
+            "distance": 5.332582705543059,
+            "target": [
+              -0.253,
+              -0.2125,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-03.png",
+          "position": 1.683733333333333,
+          "shot": 3,
+          "detail": 2,
+          "drawCost": 13.677901319420922,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.22999999999999998,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "action": "Build one component",
+      "pose": "type",
+      "prop": "component",
+      "position": 2,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-04.png",
+          "position": 2,
+          "shot": 4,
+          "detail": 2,
+          "drawCost": 8.764518545897928,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.22999999999999998,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-04.png",
+          "position": 2,
+          "shot": 4,
+          "detail": 2,
+          "drawCost": 9.925876976394548,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.159,
+            "distance": 5.332582705543059,
+            "target": [
+              -0.253,
+              -0.2125,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-04.png",
+          "position": 2,
+          "shot": 4,
+          "detail": 2,
+          "drawCost": 9.050725384488278,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.22999999999999998,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "action": "Fit it into a larger system",
+      "pose": "build",
+      "prop": "assembly",
+      "position": 2.35,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-05.png",
+          "position": 2.3498,
+          "shot": 5,
+          "detail": 2,
+          "drawCost": 7.2363556828579,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.17,
+            "distance": 6.250000000000001,
+            "target": [
+              -0.2,
+              -0.22,
+              0.15
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-05.png",
+          "position": 2.3505168731311405,
+          "shot": 5,
+          "detail": 2,
+          "drawCost": 12.588380112576024,
+          "camera": {
+            "yaw": 0.11200000000000004,
+            "pitch": 0.15250000000000002,
+            "distance": 6.125199174914617,
+            "target": [
+              -0.214,
+              -0.206,
+              0.16749999999999998
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-05.png",
+          "position": 2.3498666666666668,
+          "shot": 5,
+          "detail": 2,
+          "drawCost": 7.902929090552415,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.17,
+            "distance": 6.250000000000001,
+            "target": [
+              -0.2,
+              -0.22,
+              0.15
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "action": "Make it dependable",
+      "pose": "inspect",
+      "prop": "verified",
+      "position": 2.683333333333333,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-06.png",
+          "position": 2.6836666666666664,
+          "shot": 6,
+          "detail": 2,
+          "drawCost": 6.923266439568122,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17592176619873062,
+            "distance": 5.1519558450317335,
+            "target": [
+              -0.2627188225341796,
+              -0.2279608830993653,
+              0.24524206056518572
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-06.png",
+          "position": 2.6837891824820486,
+          "shot": 6,
+          "detail": 2,
+          "drawCost": 8.581895375552518,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.156298706728704,
+            "distance": 5.403639545096957,
+            "target": [
+              -0.254800862180864,
+              -0.21114935336435198,
+              0.229348491183488
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-06.png",
+          "position": 2.683733333333333,
+          "shot": 6,
+          "detail": 2,
+          "drawCost": 8.112649605051034,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17587964002607423,
+            "distance": 5.153008999348143,
+            "target": [
+              -0.26274690664928385,
+              -0.2279398200130371,
+              0.24519291336375326
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "action": "Listen to the requirement",
+      "pose": "read",
+      "prop": "brief",
+      "position": 3,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-07.png",
+          "position": 3,
+          "shot": 7,
+          "detail": 2,
+          "drawCost": 7.610312197285981,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.06,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-07.png",
+          "position": 3,
+          "shot": 7,
+          "detail": 2,
+          "drawCost": 9.647788792607496,
+          "camera": {
+            "yaw": 0.203,
+            "pitch": 0.107,
+            "distance": 5.536408954407982,
+            "target": [
+              -0.2465,
+              -0.102,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-07.png",
+          "position": 3,
+          "shot": 7,
+          "detail": 2,
+          "drawCost": 7.990149096317397,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.06,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "action": "Connect across boundaries",
+      "pose": "connect",
+      "prop": "network",
+      "position": 3.35,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-08.png",
+          "position": 3.3498,
+          "shot": 8,
+          "detail": 2,
+          "drawCost": 8.947806413443056,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.17,
+            "distance": 6.250000000000001,
+            "target": [
+              -0.2,
+              -0.07,
+              0.15
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-08.png",
+          "position": 3.349427417304596,
+          "shot": 8,
+          "detail": 2,
+          "drawCost": 11.91518688653667,
+          "camera": {
+            "yaw": 0.11200000000000004,
+            "pitch": 0.15250000000000002,
+            "distance": 6.125199174914617,
+            "target": [
+              -0.214,
+              -0.1085,
+              0.16749999999999998
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-08.png",
+          "position": 3.3498666666666668,
+          "shot": 8,
+          "detail": 2,
+          "drawCost": 8.80519638525187,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.17,
+            "distance": 6.250000000000001,
+            "target": [
+              -0.2,
+              -0.07,
+              0.15
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "action": "Bring the pieces together",
+      "pose": "build",
+      "prop": "assembly",
+      "position": 3.683333333333333,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-09.png",
+          "position": 3.6836666666666664,
+          "shot": 9,
+          "detail": 2,
+          "drawCost": 6.6863111769200945,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-09.png",
+          "position": 3.6832786267807878,
+          "shot": 9,
+          "detail": 2,
+          "drawCost": 8.566048061173374,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-09.png",
+          "position": 3.683733333333333,
+          "shot": 9,
+          "detail": 2,
+          "drawCost": 6.420312965029612,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "action": "Invite intelligence into the workflow",
+      "pose": "type",
+      "prop": "ai",
+      "position": 4,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-10.png",
+          "position": 4,
+          "shot": 10,
+          "detail": 2,
+          "drawCost": 6.891717334721994,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.09,
+              0.22
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-10.png",
+          "position": 4,
+          "shot": 10,
+          "detail": 2,
+          "drawCost": 6.8472146167436705,
+          "camera": {
+            "yaw": 0.307,
+            "pitch": 0.237,
+            "distance": 5.468922276473751,
+            "target": [
+              -0.2465,
+              -0.1215,
+              0.213
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-10.png",
+          "position": 4,
+          "shot": 10,
+          "detail": 2,
+          "drawCost": 7.594889394925176,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.09,
+              0.22
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "action": "Pause at the review boundary",
+      "pose": "inspect",
+      "prop": "review",
+      "position": 4.35,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-11.png",
+          "position": 4.3498,
+          "shot": 11,
+          "detail": 2,
+          "drawCost": 7.996700633185043,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-11.png",
+          "position": 4.350408803654568,
+          "shot": 11,
+          "detail": 2,
+          "drawCost": 9.495433370406623,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.159,
+            "distance": 5.332582705543059,
+            "target": [
+              -0.253,
+              -0.11499999999999999,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-11.png",
+          "position": 4.349866666666666,
+          "shot": 11,
+          "detail": 2,
+          "drawCost": 7.362770349725751,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "action": "Keep the person in control",
+      "pose": "approve",
+      "prop": "verified",
+      "position": 4.683333333333334,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-12.png",
+          "position": 4.683666666666666,
+          "shot": 12,
+          "detail": 2,
+          "drawCost": 7.798796151914336,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.16660147183227553,
+            "distance": 6.270391169006348,
+            "target": [
+              -0.20679705633544898,
+              -0.07883617323608366,
+              0.15203911690063468
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-12.png",
+          "position": 4.682939416495176,
+          "shot": 12,
+          "detail": 2,
+          "drawCost": 8.5967993988005,
+          "camera": {
+            "yaw": 0.11200000000000004,
+            "pitch": 0.15053141358788805,
+            "distance": 6.136768957376938,
+            "target": [
+              -0.2179371728242239,
+              -0.11361832467149106,
+              0.16868115184726717
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-12.png",
+          "position": 4.6837333333333335,
+          "shot": 12,
+          "detail": 2,
+          "drawCost": 8.74000080653386,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.16656636668839497,
+            "distance": 6.270601799869631,
+            "target": [
+              -0.2068672666232101,
+              -0.07892744661017312,
+              0.15206017998696303
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "action": "Hold on to the possibility",
+      "pose": "alone",
+      "prop": "ember",
+      "position": 5,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-13.png",
+          "position": 5,
+          "shot": 13,
+          "detail": 2,
+          "drawCost": 7.239154091548456,
+          "camera": {
+            "yaw": 0.4799999999999999,
+            "pitch": 0.21,
+            "distance": 7.25,
+            "target": [
+              -0.12,
+              -0.22999999999999998,
+              0.15
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-13.png",
+          "position": 5,
+          "shot": 13,
+          "detail": 2,
+          "drawCost": 7.418403616921986,
+          "camera": {
+            "yaw": 0.24199999999999994,
+            "pitch": 0.1785,
+            "distance": 6.74555842765346,
+            "target": [
+              -0.16199999999999998,
+              -0.2125,
+              0.16749999999999998
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-13.png",
+          "position": 5,
+          "shot": 13,
+          "detail": 2,
+          "drawCost": 7.090090146098905,
+          "camera": {
+            "yaw": 0.4799999999999999,
+            "pitch": 0.21,
+            "distance": 7.25,
+            "target": [
+              -0.12,
+              -0.22999999999999998,
+              0.15
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "action": "Meet the resistance",
+      "pose": "reach",
+      "prop": "fracture",
+      "position": 5.21,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-14.png",
+          "position": 5.21015439351679,
+          "shot": 14,
+          "detail": 2,
+          "drawCost": 7.9099543539527835,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-14.png",
+          "position": 5.2096553523101505,
+          "shot": 14,
+          "detail": 2,
+          "drawCost": 8.319620528328581,
+          "camera": {
+            "yaw": 0.203,
+            "pitch": 0.107,
+            "distance": 5.536408954407982,
+            "target": [
+              -0.2465,
+              -0.19949999999999998,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-14.png",
+          "position": 5.209604799791314,
+          "shot": 14,
+          "detail": 2,
+          "drawCost": 7.354738139066177,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "action": "Stay with the problem",
+      "pose": "reflect",
+      "prop": "lesson",
+      "position": 5.41,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-15.png",
+          "position": 5.409745898579052,
+          "shot": 15,
+          "detail": 2,
+          "drawCost": 11.547325120459282,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-15.png",
+          "position": 5.409987935700545,
+          "shot": 15,
+          "detail": 2,
+          "drawCost": 10.958829367701735,
+          "camera": {
+            "yaw": 0.203,
+            "pitch": 0.107,
+            "distance": 5.536408954407982,
+            "target": [
+              -0.2465,
+              -0.19949999999999998,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-15.png",
+          "position": 5.409943915481936,
+          "shot": 15,
+          "detail": 2,
+          "drawCost": 10.946879438780476,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "action": "Return to the work",
+      "pose": "repair",
+      "prop": "repair",
+      "position": 5.61,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-16.png",
+          "position": 5.610274452960856,
+          "shot": 16,
+          "detail": 2,
+          "drawCost": 10.467866554355872,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17584316292005944,
+            "distance": 5.153920926998514,
+            "target": [
+              -0.2627712247199604,
+              -0.22792158146002972,
+              0.24515035674006935
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-16.png",
+          "position": 5.610320519090939,
+          "shot": 16,
+          "detail": 2,
+          "drawCost": 8.816928360618,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.15626617251231584,
+            "distance": 5.404492277248812,
+            "target": [
+              -0.25482255165845613,
+              -0.2111330862561579,
+              0.2293105345977018
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-16.png",
+          "position": 5.610283031172558,
+          "shot": 16,
+          "detail": 2,
+          "drawCost": 7.4839734651464225,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17583405298358826,
+            "distance": 5.154148675410293,
+            "target": [
+              -0.2627772980109412,
+              -0.2279170264917941,
+              0.24513972848085297
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "action": "Keep the light alive",
+      "pose": "rise",
+      "prop": "ember",
+      "position": 5.81,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-17.png",
+          "position": 5.809865958023119,
+          "shot": 17,
+          "detail": 2,
+          "drawCost": 7.143304949227274,
+          "camera": {
+            "yaw": -0.42,
+            "pitch": 0.020000000000000004,
+            "distance": 6.200000000000001,
+            "target": [
+              -0.3,
+              -0.1,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-17.png",
+          "position": 5.809725636817489,
+          "shot": 17,
+          "detail": 2,
+          "drawCost": 10.686276971777591,
+          "camera": {
+            "yaw": -0.34299999999999997,
+            "pitch": 0.05499999999999999,
+            "distance": 6.0933033864672925,
+            "target": [
+              -0.27899999999999997,
+              -0.128,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-17.png",
+          "position": 5.809694650957205,
+          "shot": 17,
+          "detail": 2,
+          "drawCost": 8.806896190032859,
+          "camera": {
+            "yaw": -0.42,
+            "pitch": 0.020000000000000004,
+            "distance": 6.200000000000001,
+            "target": [
+              -0.3,
+              -0.1,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "action": "Keep the lesson",
+      "pose": "read",
+      "prop": "lesson",
+      "position": 6,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-18.png",
+          "position": 6,
+          "shot": 18,
+          "detail": 2,
+          "drawCost": 7.084544901620753,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.06,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-18.png",
+          "position": 6,
+          "shot": 18,
+          "detail": 2,
+          "drawCost": 11.421618901182482,
+          "camera": {
+            "yaw": 0.203,
+            "pitch": 0.107,
+            "distance": 5.536408954407982,
+            "target": [
+              -0.2465,
+              -0.102,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-18.png",
+          "position": 6,
+          "shot": 18,
+          "detail": 2,
+          "drawCost": 10.491625534777826,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.06,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "action": "Look beyond my own methods",
+      "pose": "research",
+      "prop": "library",
+      "position": 6.2625,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-19.png",
+          "position": 6.262898784182871,
+          "shot": 19,
+          "detail": 2,
+          "drawCost": 7.880208009715778,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.17,
+            "distance": 6.250000000000001,
+            "target": [
+              -0.2,
+              -0.07,
+              0.15
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-19.png",
+          "position": 6.262569569696065,
+          "shot": 19,
+          "detail": 2,
+          "drawCost": 9.82232912077108,
+          "camera": {
+            "yaw": 0.11200000000000004,
+            "pitch": 0.15250000000000002,
+            "distance": 6.125199174914617,
+            "target": [
+              -0.214,
+              -0.1085,
+              0.16749999999999998
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-19.png",
+          "position": 6.262089309709071,
+          "shot": 19,
+          "detail": 2,
+          "drawCost": 8.206610126191789,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.17,
+            "distance": 6.250000000000001,
+            "target": [
+              -0.2,
+              -0.07,
+              0.15
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "action": "Distil a capability",
+      "pose": "shape",
+      "prop": "skill",
+      "position": 6.5125,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-20.png",
+          "position": 6.512290875618456,
+          "shot": 20,
+          "detail": 2,
+          "drawCost": 8.534684729392854,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-20.png",
+          "position": 6.512549465614361,
+          "shot": 20,
+          "detail": 2,
+          "drawCost": 11.287788116020113,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.159,
+            "distance": 5.332582705543059,
+            "target": [
+              -0.253,
+              -0.11499999999999999,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-20.png",
+          "position": 6.512081497453204,
+          "shot": 20,
+          "detail": 2,
+          "drawCost": 8.395000046644583,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "action": "Build a distinctive advantage",
+      "pose": "protect",
+      "prop": "moat",
+      "position": 6.7625,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-21.png",
+          "position": 6.76266482568174,
+          "shot": 21,
+          "detail": 2,
+          "drawCost": 7.759396872326603,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-21.png",
+          "position": 6.762529361532659,
+          "shot": 21,
+          "detail": 2,
+          "drawCost": 11.561660383761199,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-21.png",
+          "position": 6.762073685197338,
+          "shot": 21,
+          "detail": 2,
+          "drawCost": 10.466878247126955,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "action": "Face the hidden complexity",
+      "pose": "connect",
+      "prop": "complexity",
+      "position": 7,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-22.png",
+          "position": 7,
+          "shot": 22,
+          "detail": 2,
+          "drawCost": 8.918325727722296,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.17,
+            "distance": 6.250000000000001,
+            "target": [
+              -0.2,
+              -0.07,
+              0.15
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-22.png",
+          "position": 7,
+          "shot": 22,
+          "detail": 2,
+          "drawCost": 12.871275356842034,
+          "camera": {
+            "yaw": 0.11200000000000004,
+            "pitch": 0.15250000000000002,
+            "distance": 6.125199174914617,
+            "target": [
+              -0.214,
+              -0.1085,
+              0.16749999999999998
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-22.png",
+          "position": 7,
+          "shot": 22,
+          "detail": 2,
+          "drawCost": 10.558585955351026,
+          "camera": {
+            "yaw": 0.28,
+            "pitch": 0.17,
+            "distance": 6.250000000000001,
+            "target": [
+              -0.2,
+              -0.07,
+              0.15
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "action": "Shape a clear way in",
+      "pose": "shape",
+      "prop": "interface",
+      "position": 7.2625,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-23.png",
+          "position": 7.262090919001417,
+          "shot": 23,
+          "detail": 2,
+          "drawCost": 8.685658761452492,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.09,
+              0.22
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-23.png",
+          "position": 7.262876526554704,
+          "shot": 23,
+          "detail": 2,
+          "drawCost": 10.464074527928517,
+          "camera": {
+            "yaw": 0.307,
+            "pitch": 0.237,
+            "distance": 5.468922276473751,
+            "target": [
+              -0.2465,
+              -0.1215,
+              0.213
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-23.png",
+          "position": 7.262302095567325,
+          "shot": 23,
+          "detail": 2,
+          "drawCost": 8.373313794849865,
+          "camera": {
+            "yaw": 0.5800000000000001,
+            "pitch": 0.3,
+            "distance": 5.25,
+            "target": [
+              -0.25,
+              -0.09,
+              0.22
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "action": "Give the person agency",
+      "pose": "offer",
+      "prop": "choice",
+      "position": 7.5125,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-24.png",
+          "position": 7.512332570224209,
+          "shot": 24,
+          "detail": 2,
+          "drawCost": 7.276876221193547,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-24.png",
+          "position": 7.512153305218878,
+          "shot": 24,
+          "detail": 2,
+          "drawCost": 8.694871715183814,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.159,
+            "distance": 5.332582705543059,
+            "target": [
+              -0.253,
+              -0.11499999999999999,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-24.png",
+          "position": 7.512854240993936,
+          "shot": 24,
+          "detail": 2,
+          "drawCost": 8.206288410573924,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "action": "Make the experience inviting",
+      "pose": "welcome",
+      "prop": "recipient",
+      "position": 7.7625,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-25.png",
+          "position": 7.762574221447,
+          "shot": 25,
+          "detail": 2,
+          "drawCost": 7.406332461000765,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-25.png",
+          "position": 7.762336544896376,
+          "shot": 25,
+          "detail": 2,
+          "drawCost": 10.85866073868261,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-25.png",
+          "position": 7.762460906626484,
+          "shot": 25,
+          "detail": 2,
+          "drawCost": 9.560123512756123,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "action": "Open the door",
+      "pose": "invite",
+      "prop": "interface",
+      "position": 8,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-26.png",
+          "position": 8,
+          "shot": 26,
+          "detail": 2,
+          "drawCost": 10.237647621917336,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-26.png",
+          "position": 8,
+          "shot": 26,
+          "detail": 2,
+          "drawCost": 11.692133520480585,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-26.png",
+          "position": 8,
+          "shot": 26,
+          "detail": 2,
+          "drawCost": 11.796614628512426,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "action": "Make the work inspectable",
+      "pose": "inspect",
+      "prop": "review",
+      "position": 8.35,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-27.png",
+          "position": 8.34992201648372,
+          "shot": 27,
+          "detail": 2,
+          "drawCost": 9.811948118759169,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-27.png",
+          "position": 8.349585257614784,
+          "shot": 27,
+          "detail": 2,
+          "drawCost": 9.281122203830876,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.159,
+            "distance": 5.332582705543059,
+            "target": [
+              -0.253,
+              -0.11499999999999999,
+              0.2325
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-27.png",
+          "position": 8.349870144781105,
+          "shot": 27,
+          "detail": 2,
+          "drawCost": 9.69194969833937,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "action": "Offer the next possibility",
+      "pose": "offer",
+      "prop": "recipient",
+      "position": 8.683333333333334,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-28.png",
+          "position": 8.683177325235203,
+          "shot": 28,
+          "detail": 2,
+          "drawCost": 8.36805911195969,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-28.png",
+          "position": 8.683294247615867,
+          "shot": 28,
+          "detail": 2,
+          "drawCost": 10.918126615440224,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-28.png",
+          "position": 8.682985330531858,
+          "shot": 28,
+          "detail": 2,
+          "drawCost": 9.664157022423868,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "action": "Reflect",
+      "pose": "stand",
+      "prop": "none",
+      "position": 9,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-29.png",
+          "position": 9,
+          "shot": 29,
+          "detail": 1,
+          "drawCost": 7.371522346650552,
+          "camera": {
+            "yaw": -0.15,
+            "pitch": 0.1,
+            "distance": 5.9,
+            "target": [
+              -0.25,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-29.png",
+          "position": 9,
+          "shot": 29,
+          "detail": 2,
+          "drawCost": 6.9280010840769535,
+          "camera": {
+            "yaw": -0.16749999999999998,
+            "pitch": 0.107,
+            "distance": 5.9,
+            "target": [
+              -0.2465,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-29.png",
+          "position": 9,
+          "shot": 29,
+          "detail": 2,
+          "drawCost": 9.482607174463542,
+          "camera": {
+            "yaw": -0.15,
+            "pitch": 0.1,
+            "distance": 5.9,
+            "target": [
+              -0.25,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "action": "Begin",
+      "pose": "invite",
+      "prop": "none",
+      "position": 10,
+      "entries": [
+        {
+          "viewport": "desktop",
+          "file": "desktop-30.png",
+          "position": 10,
+          "shot": 30,
+          "detail": 2,
+          "drawCost": 10.725933100786946,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "file": "mobile-30.png",
+          "position": 10,
+          "shot": 30,
+          "detail": 2,
+          "drawCost": 8.26368087788999,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-30.png",
+          "position": 10,
+          "shot": 30,
+          "detail": 2,
+          "drawCost": 9.237461246837153,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    }
+  ],
+  "pilots": [
+    {
+      "index": 2,
+      "phase": 0.25,
+      "position": 1.4170666666666667,
+      "file": "transition-02-25.png",
+      "from": "Draw the first lines",
+      "to": "Turn the drawing into an interface",
+      "shot": 2,
+      "detail": 2,
+      "drawCost": 4.153009500693177,
+      "camera": {
+        "yaw": 0.5724656869015081,
+        "pitch": 0.2935420173441498,
+        "distance": 5.239037780808455,
+        "target": [
+          -0.25053816522132083,
+          -0.23946183477867913,
+          0.22161449566396255
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 2,
+      "phase": 0.5,
+      "position": 1.5002666666666666,
+      "file": "transition-02-50.png",
+      "from": "Draw the first lines",
+      "to": "Turn the drawing into an interface",
+      "shot": 3,
+      "detail": 2,
+      "drawCost": 8.605634559988165,
+      "camera": {
+        "yaw": 0.5157200065573044,
+        "pitch": 0.24490286276340373,
+        "distance": 5.157206445618955,
+        "target": [
+          -0.2545914281030497,
+          -0.2354085718969503,
+          0.23377428430914907
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 2,
+      "phase": 0.75,
+      "position": 1.5834666666666668,
+      "file": "transition-02-75.png",
+      "from": "Draw the first lines",
+      "to": "Turn the drawing into an interface",
+      "shot": 3,
+      "detail": 2,
+      "drawCost": 13.731658452374852,
+      "camera": {
+        "yaw": 0.4528024221107964,
+        "pitch": 0.19097350466639695,
+        "distance": 5.067968189596007,
+        "target": [
+          -0.25908554127780026,
+          -0.23091445872219973,
+          0.24725662383340075
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 13,
+      "phase": 0.25,
+      "position": 5.050075503963596,
+      "file": "transition-13-25.png",
+      "from": "Hold on to the possibility",
+      "to": "Meet the resistance",
+      "shot": 13,
+      "detail": 2,
+      "drawCost": 7.35897323958755,
+      "camera": {
+        "yaw": 0.4768121666904193,
+        "pitch": 0.20415563893243543,
+        "distance": 7.133876907132854,
+        "target": [
+          -0.1269069721707581,
+          -0.22893738889680643,
+          0.15531305551596777
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 13,
+      "phase": 0.5,
+      "position": 5.100160282886251,
+      "file": "transition-13-50.png",
+      "from": "Hold on to the possibility",
+      "to": "Meet the resistance",
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 7.08124759890273,
+      "camera": {
+        "yaw": 0.45245125124743674,
+        "pitch": 0.15949396062030063,
+        "distance": 6.305768207324079,
+        "target": [
+          -0.1796889556305538,
+          -0.22081708374914555,
+          0.19591458125427214
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 13,
+      "phase": 0.75,
+      "position": 5.150245061808907,
+      "file": "transition-13-75.png",
+      "from": "Hold on to the possibility",
+      "to": "Meet the resistance",
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 6.8572232281366965,
+      "camera": {
+        "yaw": 0.4254313218102825,
+        "pitch": 0.10995742331885124,
+        "distance": 5.499222123556772,
+        "target": [
+          -0.23823213607772126,
+          -0.2118104406034275,
+          0.2409477969828625
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 15,
+      "phase": 0.25,
+      "position": 5.449826239438865,
+      "file": "transition-15-25.png",
+      "from": "Stay with the problem",
+      "to": "Return to the work",
+      "shot": 15,
+      "detail": 2,
+      "drawCost": 6.991901582412389,
+      "camera": {
+        "yaw": 0.42104201298302174,
+        "pitch": 0.10416805193208693,
+        "distance": 5.333938629155361,
+        "target": [
+          -0.2505210064915109,
+          -0.21104201298302172,
+          0.25
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 15,
+      "phase": 0.5,
+      "position": 5.49991101836152,
+      "file": "transition-15-50.png",
+      "from": "Stay with the problem",
+      "to": "Return to the work",
+      "shot": 16,
+      "detail": 2,
+      "drawCost": 6.742890621315899,
+      "camera": {
+        "yaw": 0.42913002133324857,
+        "pitch": 0.1365200853329943,
+        "distance": 5.210900348038536,
+        "target": [
+          -0.2545650106666243,
+          -0.21913002133324858,
+          0.25
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 15,
+      "phase": 0.75,
+      "position": 5.549995797284176,
+      "file": "transition-15-75.png",
+      "from": "Stay with the problem",
+      "to": "Return to the work",
+      "shot": 16,
+      "detail": 2,
+      "drawCost": 7.225761720137614,
+      "camera": {
+        "yaw": 0.4381616183608987,
+        "pitch": 0.1726464734435949,
+        "distance": 5.076858876079001,
+        "target": [
+          -0.25908080918044935,
+          -0.2281616183608987,
+          0.25
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 20,
+      "phase": 0.25,
+      "position": 6.562079935002031,
+      "file": "transition-20-25.png",
+      "from": "Distil a capability",
+      "to": "Build a distinctive advantage",
+      "shot": 20,
+      "detail": 2,
+      "drawCost": 7.937008039359073,
+      "camera": {
+        "yaw": 0.4276552927773984,
+        "pitch": 0.1805143628009417,
+        "distance": 5.1098526875006804,
+        "target": [
+          -0.2507414695830488,
+          -0.08,
+          0.24742818599529134
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 20,
+      "phase": 0.5,
+      "position": 6.625077966313553,
+      "file": "transition-20-50.png",
+      "from": "Distil a capability",
+      "to": "Build a distinctive advantage",
+      "shot": 21,
+      "detail": 2,
+      "drawCost": 7.748565008455475,
+      "camera": {
+        "yaw": 0.3300543658676915,
+        "pitch": 0.1845810680888462,
+        "distance": 5.608734969740992,
+        "target": [
+          -0.1775407744007686,
+          -0.08,
+          0.22709465955576907
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 20,
+      "phase": 0.75,
+      "position": 6.687076028874097,
+      "file": "transition-20-75.png",
+      "from": "Distil a capability",
+      "to": "Build a distinctive advantage",
+      "shot": 21,
+      "detail": 2,
+      "drawCost": 7.03376446748356,
+      "camera": {
+        "yaw": 0.22251548195994952,
+        "pitch": 0.18906185491833544,
+        "distance": 6.214995776137644,
+        "target": [
+          -0.09688661146996216,
+          -0.08,
+          0.20469072540832284
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 23,
+      "phase": 0.25,
+      "position": 7.312412524652647,
+      "file": "transition-23-25.png",
+      "from": "Shape a clear way in",
+      "to": "Give the person agency",
+      "shot": 23,
+      "detail": 2,
+      "drawCost": 7.2789135760388195,
+      "camera": {
+        "yaw": 0.5726460732616983,
+        "pitch": 0.2936966342243128,
+        "distance": 5.239299970380446,
+        "target": [
+          -0.2505252804813073,
+          -0.08947471951869274,
+          0.2215758414439218
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 23,
+      "phase": 0.5,
+      "position": 7.374814191060784,
+      "file": "transition-23-50.png",
+      "from": "Shape a clear way in",
+      "to": "Give the person agency",
+      "shot": 24,
+      "detail": 2,
+      "drawCost": 6.866888025977404,
+      "camera": {
+        "yaw": 0.5161784509477021,
+        "pitch": 0.24529581509803033,
+        "distance": 5.1578624067706595,
+        "target": [
+          -0.25455868207516413,
+          -0.08544131792483586,
+          0.2336760462254924
+        ],
+        "focal": 6
+      }
+    },
+    {
+      "index": 23,
+      "phase": 0.75,
+      "position": 7.437215857468921,
+      "file": "transition-23-75.png",
+      "from": "Shape a clear way in",
+      "to": "Give the person agency",
+      "shot": 24,
+      "detail": 2,
+      "drawCost": 6.770485020984195,
+      "camera": {
+        "yaw": 0.453045094614905,
+        "pitch": 0.19118150966991854,
+        "distance": 5.068309396957879,
+        "target": [
+          -0.2590682075275068,
+          -0.08093179247249321,
+          0.24720462258252035
+        ],
+        "focal": 6
+      }
+    }
+  ],
+  "performances": [
+    {
+      "index": 2,
+      "stage": "attention",
+      "u": 0.06,
+      "position": 1.0992,
+      "shot": 1,
+      "detail": 2,
+      "drawCost": 16.845934040753736,
+      "camera": {
+        "yaw": -0.21141906896097715,
+        "pitch": 0.13811882680343648,
+        "distance": 6.273662051205989,
+        "target": [
+          -0.2410066014890798,
+          -0.2489933985109202,
+          0.16603960893447883
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-attention.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.060867742004551584,
+          "stage": "attention",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.12,
+          "actionStart": 0.28,
+          "actionEnd": 0.68,
+          "settle": 0.8400000000000001
+        },
+        "hand": [
+          -0.15534651797544802,
+          0.09977692941320489,
+          0.5250420492191296
+        ],
+        "head": [
+          -0.4208430253033081,
+          0.4521663010029433,
+          0.01767670392493525
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.15213000448659492,
+            -0.017121923475865483,
+            0.42668396752679744
+          ],
+          "tip": [
+            -0.15213000448659494,
+            -0.017121923475865483,
+            0.4266839675267973
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "fingerCurl": 0.68,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "stage": "preparation",
+      "u": 0.2,
+      "position": 1.1290666666666667,
+      "shot": 1,
+      "detail": 2,
+      "drawCost": 9.780302018987628,
+      "camera": {
+        "yaw": -0.09429160849857585,
+        "pitch": 0.16207671644347313,
+        "distance": 6.1104306851622825,
+        "target": [
+          -0.24233759535797073,
+          -0.24766240464202927,
+          0.17402557214782438
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.201056256,
+          "stage": "preparation",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.12,
+          "actionStart": 0.28,
+          "actionEnd": 0.68,
+          "settle": 0.8400000000000001
+        },
+        "hand": [
+          -0.2149366927270556,
+          0.08530132712069899,
+          0.4968950780820404
+        ],
+        "head": [
+          -0.4070079119651549,
+          0.4442998356917441,
+          0.05166584695862684
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.21172017923820252,
+            -0.03159752576837139,
+            0.3985369963897082
+          ],
+          "tip": [
+            -0.21172017923820252,
+            -0.03159752576837138,
+            0.3985369963897082
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "fingerCurl": 0.68,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "stage": "action",
+      "u": 0.48,
+      "position": 1.1717333333333333,
+      "shot": 2,
+      "detail": 2,
+      "drawCost": 7.718390599226191,
+      "camera": {
+        "yaw": 0.13100071402409313,
+        "pitch": 0.20815923695947358,
+        "distance": 5.808303826035639,
+        "target": [
+          -0.24489773538663742,
+          -0.24510226461336257,
+          0.18938641231982453
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-action.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.47739146976422364,
+          "stage": "action",
+          "action": 0.49347867441055904,
+          "bridge": 0,
+          "attentionEnd": 0.12,
+          "actionStart": 0.28,
+          "actionEnd": 0.68,
+          "settle": 0.8400000000000001
+        },
+        "hand": [
+          0.04723441663549191,
+          -0.012873067529156665,
+          0.4700306235533986
+        ],
+        "head": [
+          -0.38809865859045195,
+          0.4326592843171536,
+          0.10174438932394683
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.050450930124344984,
+            -0.12977192041822705,
+            0.37167254186106635
+          ],
+          "tip": [
+            0.05045093012434499,
+            -0.12977192041822705,
+            0.37167254186106635
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "fingerCurl": 0.68,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "stage": "response",
+      "u": 0.76,
+      "position": 1.2144,
+      "shot": 2,
+      "detail": 2,
+      "drawCost": 9.74903906292013,
+      "camera": {
+        "yaw": 0.3592103710719999,
+        "pitch": 0.254838484992,
+        "distance": 5.517491310706373,
+        "target": [
+          -0.247491026944,
+          -0.242508973056,
+          0.204946161664
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-response.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.7607426449303589,
+          "stage": "response",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.12,
+          "actionStart": 0.28,
+          "actionEnd": 0.68,
+          "settle": 0.8400000000000001
+        },
+        "hand": [
+          0.07158974634933687,
+          0.04498493368662082,
+          0.5260864173202895
+        ],
+        "head": [
+          -0.4042024063060662,
+          0.44390557319257334,
+          0.06981313258891354
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.07480625983818998,
+            -0.07191391920244955,
+            0.4277283356279571
+          ],
+          "tip": [
+            0.07480625983818996,
+            -0.07191391920244955,
+            0.42772833562795726
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "fingerCurl": 0.68,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 1.2794666666666665,
+      "shot": 2,
+      "detail": 2,
+      "drawCost": 9.403818959776231,
+      "camera": {
+        "yaw": 0.5613280058967594,
+        "pitch": 0.2961807284788826,
+        "distance": 5.27211051028641,
+        "target": [
+          -0.24978781824882682,
+          -0.24021218175117318,
+          0.21872690949296086
+        ],
+        "focal": 6
+      },
+      "file": "performance-02-hold.png",
+      "actual": {
+        "phase": {
+          "from": 1,
+          "to": 2,
+          "beat": 2,
+          "progress": 0.9990559118507054,
+          "stage": "hold",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.12,
+          "actionStart": 0.28,
+          "actionEnd": 0.68,
+          "settle": 0.8400000000000001
+        },
+        "hand": [
+          0.09669626694491829,
+          0.11892938652758815,
+          0.5066009902682748
+        ],
+        "head": [
+          -0.40401966157916924,
+          0.44437195939624874,
+          0.06341778440477908
+        ],
+        "hip": [
+          -0.48,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.09991278043377134,
+            0.002030533638517785,
+            0.40824290857594253
+          ],
+          "tip": [
+            0.09991278043377137,
+            0.0020305336385177813,
+            0.40824290857594253
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "write",
+          "gripOffset": [
+            0.015,
+            -0.025,
+            0.15
+          ],
+          "fingerCurl": 0.68,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "attention",
+      "u": 0.07,
+      "position": 4.101333333333334,
+      "shot": 10,
+      "detail": 2,
+      "drawCost": 8.073367678391516,
+      "camera": {
+        "yaw": 0.5648285292783031,
+        "pitch": 0.2869958822385454,
+        "distance": 5.227949285801374,
+        "target": [
+          -0.2510836764801212,
+          -0.08891632351987878,
+          0.22325102944036365
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-attention.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.06860800000000111,
+          "stage": "attention",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.30000000000000004,
+          "actionEnd": 0.5800000000000001,
+          "settle": 0.76
+        },
+        "hand": [
+          0.04999999999999999,
+          0.2577555270383949,
+          0.555545689975471
+        ],
+        "head": [
+          -0.42833112457895683,
+          0.856145277623823,
+          0.2768179080019216
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.05,
+            0.20591812972324142,
+            0.4759348600615019
+          ],
+          "tip": [
+            0.04999999999999999,
+            0.2059181297232414,
+            0.47593486006150193
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.095
+          ],
+          "fingerCurl": 0.32,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "preparation",
+      "u": 0.22,
+      "position": 4.132266666666666,
+      "shot": 10,
+      "detail": 2,
+      "drawCost": 8.921347153877834,
+      "camera": {
+        "yaw": 0.5448743772160003,
+        "pitch": 0.2698923233280002,
+        "distance": 5.199088215680073,
+        "target": [
+          -0.252508973056,
+          -0.08749102694400002,
+          0.22752691916799994
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.21949839066363097,
+          "stage": "preparation",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.30000000000000004,
+          "actionEnd": 0.5800000000000001,
+          "settle": 0.76
+        },
+        "hand": [
+          -0.06364804152033665,
+          0.39021634474049816,
+          0.5599926528497289
+        ],
+        "head": [
+          -0.4231980189599495,
+          0.8547852990609577,
+          0.2852825627120212
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            -0.06364804152033665,
+            0.3485663300503373,
+            0.45570804842715956
+          ],
+          "tip": [
+            -0.06364804152033665,
+            0.3485663300503373,
+            0.4557080484271596
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.11229426718787733
+          ],
+          "fingerCurl": 0.2607053696415635,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "action",
+      "u": 0.44,
+      "position": 4.1664,
+      "shot": 11,
+      "detail": 2,
+      "drawCost": 6.797579543492091,
+      "camera": {
+        "yaw": 0.5161953080753026,
+        "pitch": 0.24531026406454498,
+        "distance": 5.157886528234728,
+        "target": [
+          -0.25455747799462125,
+          -0.08544252200537875,
+          0.23367243398386375
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-action.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.44058660727901966,
+          "stage": "action",
+          "action": 0.5020950259964986,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.30000000000000004,
+          "actionEnd": 0.5800000000000001,
+          "settle": 0.76
+        },
+        "hand": [
+          -0.06409653061360643,
+          0.5280291317009496,
+          0.5629438321165805
+        ],
+        "head": [
+          -0.4129485810183871,
+          0.8518319954057374,
+          0.30455046230886057
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            -0.06409653061360641,
+            0.5049992419199651,
+            0.43500000000000005
+          ],
+          "tip": [
+            -0.06409653061360643,
+            0.5049992419199651,
+            0.43500000000000005
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "fingerCurl": 0.2,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "response",
+      "u": 0.67,
+      "position": 4.199466666666667,
+      "shot": 11,
+      "detail": 2,
+      "drawCost": 8.618333094300828,
+      "camera": {
+        "yaw": 0.48710391378464374,
+        "pitch": 0.22037478324398035,
+        "distance": 5.11642605263343,
+        "target": [
+          -0.2566354347296683,
+          -0.08336456527033169,
+          0.2399063041890049
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-response.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.6665047107583089,
+          "stage": "response",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.30000000000000004,
+          "actionEnd": 0.5800000000000001,
+          "settle": 0.76
+        },
+        "hand": [
+          0.012909813545679105,
+          0.49766616308777456,
+          0.588443335303926
+        ],
+        "head": [
+          -0.410544716829906,
+          0.8512658535042752,
+          0.3106047258807426
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.012909813545679112,
+            0.4746362733067901,
+            0.4604995031873456
+          ],
+          "tip": [
+            0.012909813545679105,
+            0.4746362733067901,
+            0.46049950318734556
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "fingerCurl": 0.2,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 4.279466666666667,
+      "shot": 11,
+      "detail": 2,
+      "drawCost": 15.448953864617904,
+      "camera": {
+        "yaw": 0.4429705445164244,
+        "pitch": 0.18254618101407816,
+        "distance": 5.0541634727883435,
+        "target": [
+          -0.25978781824882685,
+          -0.08021218175117319,
+          0.24936345474648047
+        ],
+        "focal": 6
+      },
+      "file": "performance-11-hold.png",
+      "actual": {
+        "phase": {
+          "from": 10,
+          "to": 11,
+          "beat": 11,
+          "progress": 0.9990559118507054,
+          "stage": "hold",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.30000000000000004,
+          "actionEnd": 0.5800000000000001,
+          "settle": 0.76
+        },
+        "hand": [
+          -0.03,
+          0.5030298897809844,
+          0.6179438321165804
+        ],
+        "head": [
+          -0.41053440318383283,
+          0.8512633818158992,
+          0.31062982478966644
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            -0.03,
+            0.48,
+            0.49
+          ],
+          "tip": [
+            -0.03,
+            0.4799999999999999,
+            0.49
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "fingerCurl": 0.2,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "attention",
+      "u": 0.07,
+      "position": 5.061205454835297,
+      "shot": 13,
+      "detail": 2,
+      "drawCost": 7.057130580441415,
+      "camera": {
+        "yaw": 0.47334774694928233,
+        "pitch": 0.19780420274035102,
+        "distance": 7.009786632646322,
+        "target": [
+          -0.1344132149432215,
+          -0.22778258231642745,
+          0.1610870884178627
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-attention.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.07114285081873462,
+          "stage": "attention",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.32,
+          "actionEnd": 0.54,
+          "settle": 0.68
+        },
+        "hand": [
+          -0.2610962071137619,
+          -0.36945189644311904,
+          0.16768339549825467
+        ],
+        "head": [
+          -0.4637255582311316,
+          0.4327237871080878,
+          0.12169759142970543
+        ],
+        "hip": [
+          -0.51,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.24,
+            -0.38,
+            0.27
+          ],
+          "tip": [
+            -0.24,
+            -0.38,
+            0.27
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.105
+          ],
+          "fingerCurl": 0.47,
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "preparation",
+      "u": 0.23,
+      "position": 5.080682868860774,
+      "shot": 13,
+      "detail": 2,
+      "drawCost": 5.944955978805663,
+      "camera": {
+        "yaw": 0.464221505941716,
+        "pitch": 0.1810727608931461,
+        "distance": 6.693133203222368,
+        "target": [
+          -0.15418673712628186,
+          -0.224740501980572,
+          0.17629749009713988
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.23250763633039284,
+          "stage": "preparation",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.32,
+          "actionEnd": 0.54,
+          "settle": 0.68
+        },
+        "hand": [
+          -0.3449774031706938,
+          -0.3231050286728664,
+          0.2743998331788853
+        ],
+        "head": [
+          -0.4479971736618545,
+          0.43060962241860634,
+          0.13691490351737795
+        ],
+        "hip": [
+          -0.5050339313955242,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.22977285443678142,
+            -0.3398565837346832,
+            0.25421676912377167
+          ],
+          "tip": [
+            -0.22977285443678142,
+            -0.3398565837346832,
+            0.25421676912377167
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.11815269239685694
+          ],
+          "fingerCurl": 0.327950922113945,
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "action",
+      "u": 0.43,
+      "position": 5.099232786980276,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 5.925814998843481,
+      "camera": {
+        "yaw": 0.4530412676867132,
+        "pitch": 0.16057565742564106,
+        "distance": 6.3246410656788505,
+        "target": [
+          -0.17841058667878784,
+          -0.2210137558955711,
+          0.19493122052214448
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-action.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.4336298559694711,
+          "stage": "action",
+          "action": 0.5164993453157778,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.32,
+          "actionEnd": 0.54,
+          "settle": 0.68
+        },
+        "hand": [
+          0.07397344472654158,
+          0.06394102065374885,
+          0.5636157991988492
+        ],
+        "head": [
+          -0.395510695854498,
+          0.42846974194431275,
+          0.14510152206237487
+        ],
+        "hip": [
+          -0.4784893455300962,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            0.07397344472654155,
+            0.04091113087276438,
+            0.43567196708226874
+          ],
+          "tip": [
+            0.07397344472654158,
+            0.04091113087276438,
+            0.43567196708226874
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "fingerCurl": 0.2,
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "response",
+      "u": 0.62,
+      "position": 5.115927713287828,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 7.084503895613336,
+      "camera": {
+        "yaw": 0.4424686169893865,
+        "pitch": 0.14119246448054185,
+        "distance": 5.9948570533097065,
+        "target": [
+          -0.20131799652299598,
+          -0.21748953899646215,
+          0.21255230501768924
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-response.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.6249010777790573,
+          "stage": "response",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.32,
+          "actionEnd": 0.54,
+          "settle": 0.68
+        },
+        "hand": [
+          -0.04536156954827794,
+          -0.20514179476139655,
+          0.4153472003376111
+        ],
+        "head": [
+          -0.3697082347420982,
+          0.43334034227724244,
+          0.12217659976670542
+        ],
+        "hip": [
+          -0.4607349544947303,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.04536156954827794,
+            -0.228171684542381,
+            0.28740336822103063
+          ],
+          "tip": [
+            -0.04536156954827794,
+            -0.22817168454238101,
+            0.28740336822103063
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "fingerCurl": 0.2,
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 5.167867484022434,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 7.081929146593226,
+      "camera": {
+        "yaw": 0.4212460733139413,
+        "pitch": 0.10228446774222567,
+        "distance": 5.383873110460141,
+        "target": [
+          -0.24730017448646058,
+          -0.21041535777131376,
+          0.24792321114343122
+        ],
+        "focal": 6
+      },
+      "file": "performance-14-hold.png",
+      "actual": {
+        "phase": {
+          "from": 13,
+          "to": 14,
+          "beat": 14,
+          "progress": 0.9992015576920696,
+          "stage": "hold",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.14,
+          "actionStart": 0.32,
+          "actionEnd": 0.54,
+          "settle": 0.68
+        },
+        "hand": [
+          -0.09999999999999998,
+          -0.3169701102190155,
+          0.3479438321165804
+        ],
+        "head": [
+          -0.3725962533982795,
+          0.43697094881304144,
+          0.10549484894937214
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.09999999999999998,
+            -0.33999999999999997,
+            0.22000000000000003
+          ],
+          "tip": [
+            -0.09999999999999998,
+            -0.33999999999999997,
+            0.22
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "point",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "fingerCurl": 0.2,
+          "space": "body"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "attention",
+      "u": 0.1,
+      "position": 5.26525455414982,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 6.966914145649545,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.21,
+          0.25
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-attention.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.09855473206472709,
+          "stage": "attention",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.18,
+          "actionStart": 0.3,
+          "actionEnd": 0.48,
+          "settle": 0.6
+        },
+        "hand": [
+          -0.10001280726661799,
+          -0.3169701102190155,
+          0.3479438321165804
+        ],
+        "head": [
+          -0.3730526008425151,
+          0.436682914337965,
+          0.10657867209064126
+        ],
+        "hip": [
+          -0.460012807266618,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.10001280726661799,
+            -0.33999999999999997,
+            0.22000000000000003
+          ],
+          "tip": [
+            -0.10001280726661799,
+            -0.33999999999999997,
+            0.22
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.13
+          ],
+          "fingerCurl": 0.2,
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "preparation",
+      "u": 0.24,
+      "position": 5.281021984551396,
+      "shot": 14,
+      "detail": 2,
+      "drawCost": 6.472418062608272,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.21,
+          0.25
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.23588047307472237,
+          "stage": "preparation",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.18,
+          "actionStart": 0.3,
+          "actionEnd": 0.48,
+          "settle": 0.6
+        },
+        "hand": [
+          -0.10296240748256878,
+          -0.1811669451266502,
+          0.4789698880332861
+        ],
+        "head": [
+          -0.38632654231859137,
+          0.4337492330791308,
+          0.11838888826687932
+        ],
+        "hip": [
+          -0.46525095370070263,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.10296240748256878,
+            -0.20110846012900183,
+            0.3681836935757772
+          ],
+          "tip": [
+            -0.10296240748256878,
+            -0.2011084601290018,
+            0.3681836935757772
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.11256662428520268
+          ],
+          "fingerCurl": 0.3830504450053718,
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "action",
+      "u": 0.39,
+      "position": 5.294934423141023,
+      "shot": 15,
+      "detail": 2,
+      "drawCost": 10.469469748119726,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.21,
+          0.25
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-action.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.3847870875392765,
+          "stage": "action",
+          "action": 0.47103937521820277,
+          "bridge": 0,
+          "attentionEnd": 0.18,
+          "actionStart": 0.3,
+          "actionEnd": 0.48,
+          "settle": 0.6
+        },
+        "hand": [
+          -0.06514476182284568,
+          -0.05915963145365878,
+          0.6485764991576326
+        ],
+        "head": [
+          -0.4242137459397626,
+          0.42987176961205065,
+          0.13530453577740742
+        ],
+        "hip": [
+          -0.4842119057714909,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.06514476182284568,
+            -0.07510340130203264,
+            0.56
+          ],
+          "tip": [
+            -0.06514476182284568,
+            -0.07510340130203265,
+            0.56
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.09
+          ],
+          "fingerCurl": 0.62,
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "response",
+      "u": 0.54,
+      "position": 5.3088468617306495,
+      "shot": 15,
+      "detail": 2,
+      "drawCost": 6.625991985555678,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.21,
+          0.25
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-response.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.5443350434667753,
+          "stage": "response",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.18,
+          "actionStart": 0.3,
+          "actionEnd": 0.48,
+          "settle": 0.6
+        },
+        "hand": [
+          -0.1,
+          -0.08405623015162615,
+          0.6485764991576326
+        ],
+        "head": [
+          -0.4599014676248746,
+          0.4285826916700226,
+          0.14288986352180053
+        ],
+        "hip": [
+          -0.5047674988967636,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.1,
+            -0.1,
+            0.56
+          ],
+          "tip": [
+            -0.1,
+            -0.1,
+            0.56
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.09
+          ],
+          "fingerCurl": 0.62,
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 5.367279103807081,
+      "shot": 15,
+      "detail": 2,
+      "drawCost": 7.021509272778148,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.21,
+          0.25
+        ],
+        "focal": 6
+      },
+      "file": "performance-15-hold.png",
+      "actual": {
+        "phase": {
+          "from": 14,
+          "to": 15,
+          "beat": 15,
+          "progress": 0.9987041462973796,
+          "stage": "hold",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.18,
+          "actionStart": 0.3,
+          "actionEnd": 0.48,
+          "settle": 0.6
+        },
+        "hand": [
+          -0.1,
+          -0.08405623015162618,
+          0.6485764991576326
+        ],
+        "head": [
+          -0.46714930477023725,
+          0.4379886715869479,
+          0.11841947713921636
+        ],
+        "hip": [
+          -0.51,
+          -0.61,
+          -0.12
+        ],
+        "contact": {
+          "target": [
+            -0.1,
+            -0.1,
+            0.56
+          ],
+          "tip": [
+            -0.1,
+            -0.10000000000000003,
+            0.56
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "hold",
+          "gripOffset": [
+            0,
+            0,
+            0.09
+          ],
+          "fingerCurl": 0.62,
+          "space": "fragment"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "attention",
+      "u": 0.08,
+      "position": 6.328087247273523,
+      "shot": 19,
+      "detail": 2,
+      "drawCost": 7.07679908936709,
+      "camera": {
+        "yaw": 0.2990185758523395,
+        "pitch": 0.17118866099077124,
+        "distance": 6.093605954705244,
+        "target": [
+          -0.20713196594462732,
+          -0.07118866099077123,
+          0.16188660990771217
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-attention.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.07929821279221372,
+          "stage": "attention",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.16,
+          "actionStart": 0.33999999999999997,
+          "actionEnd": 0.6599999999999999,
+          "settle": 0.8599999999999999
+        },
+        "hand": [
+          0.08000000000000004,
+          0.5259437698483739,
+          0.6085764991576326
+        ],
+        "head": [
+          -0.4295270790194189,
+          0.8577351132323382,
+          0.2603187109381428
+        ],
+        "hip": [
+          -0.44999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.08000000000000002,
+            0.51,
+            0.52
+          ],
+          "tip": [
+            0.08000000000000004,
+            0.51,
+            0.52
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.09
+          ],
+          "fingerCurl": 0.62,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "preparation",
+      "u": 0.25,
+      "position": 6.353086466047936,
+      "shot": 20,
+      "detail": 2,
+      "drawCost": 6.439367928553966,
+      "camera": {
+        "yaw": 0.3247380739706646,
+        "pitch": 0.17279612962316654,
+        "distance": 5.888314983468512,
+        "target": [
+          -0.21677677773899925,
+          -0.07279612962316655,
+          0.1779612962316654
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-preparation.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.25044084993473703,
+          "stage": "preparation",
+          "action": 0,
+          "bridge": 0,
+          "attentionEnd": 0.16,
+          "actionStart": 0.33999999999999997,
+          "actionEnd": 0.6599999999999999,
+          "settle": 0.8599999999999999
+        },
+        "hand": [
+          0.05434657611635002,
+          0.5130772974774381,
+          0.49019370320320815
+        ],
+        "head": [
+          -0.42480452317726536,
+          0.8566820590786595,
+          0.26828172198874917
+        ],
+        "hip": [
+          -0.451315044775657,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.1506428958711168,
+            0.49958306766696814,
+            0.48215559149761605
+          ],
+          "tip": [
+            0.15064289587111676,
+            0.4995830676669681,
+            0.48215559149761605
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.0975688817004768
+          ],
+          "fingerCurl": 0.5443111829952321,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "action",
+      "u": 0.5,
+      "position": 6.381085591075279,
+      "shot": 20,
+      "detail": 2,
+      "drawCost": 7.531833773813385,
+      "camera": {
+        "yaw": 0.3614802553475544,
+        "pitch": 0.17509251595922215,
+        "distance": 5.606981266187505,
+        "target": [
+          -0.2305550957553329,
+          -0.07509251595922216,
+          0.2009251595922215
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-action.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.49848238122773836,
+          "stage": "action",
+          "action": 0.4952574413366825,
+          "bridge": 0,
+          "attentionEnd": 0.16,
+          "actionStart": 0.33999999999999997,
+          "actionEnd": 0.6599999999999999,
+          "settle": 0.8599999999999999
+        },
+        "hand": [
+          0.13997080458582506,
+          0.43054810355688095,
+          0.34268339549825466
+        ],
+        "head": [
+          -0.4226859831534441,
+          0.855236898715519,
+          0.28039590103696205
+        ],
+        "hip": [
+          -0.4580227188037857,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.16106701169958695,
+            0.42,
+            0.445
+          ],
+          "tip": [
+            0.16106701169958698,
+            0.42,
+            0.445
+          ],
+          "active": true,
+          "weight": 1,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.105
+          ],
+          "fingerCurl": 0.47,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "response",
+      "u": 0.76,
+      "position": 6.411084653604575,
+      "shot": 20,
+      "detail": 2,
+      "drawCost": 6.8170316748757935,
+      "camera": {
+        "yaw": 0.40018559713829677,
+        "pitch": 0.17751159982114356,
+        "distance": 5.3251413086543575,
+        "target": [
+          -0.2450695989268613,
+          -0.07751159982114356,
+          0.22511599821143552
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-response.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.7630193035238513,
+          "stage": "response",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.16,
+          "actionStart": 0.33999999999999997,
+          "actionEnd": 0.6599999999999999,
+          "settle": 0.8599999999999999
+        },
+        "hand": [
+          0.10003534378197246,
+          0.43054810355688095,
+          0.35589061480808865
+        ],
+        "head": [
+          -0.4233305997370573,
+          0.8550796504276577,
+          0.2825256862483832
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.12113155089573438,
+            0.42,
+            0.458207219309834
+          ],
+          "tip": [
+            0.12113155089573438,
+            0.42,
+            0.458207219309834
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.105
+          ],
+          "fingerCurl": 0.47,
+          "space": "work"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "stage": "hold",
+      "u": 0.999,
+      "position": 6.459083153651449,
+      "shot": 20,
+      "detail": 2,
+      "drawCost": 6.871223204483519,
+      "camera": {
+        "yaw": 0.4364428793058887,
+        "pitch": 0.17977767995661803,
+        "distance": 5.073992362176172,
+        "target": [
+          -0.2586660797397083,
+          -0.07977767995661804,
+          0.24777679956618043
+        ],
+        "focal": 6
+      },
+      "file": "performance-20-hold.png",
+      "actual": {
+        "phase": {
+          "from": 19,
+          "to": 20,
+          "beat": 20,
+          "progress": 0.998692220624136,
+          "stage": "hold",
+          "action": 1,
+          "bridge": 0,
+          "attentionEnd": 0.16,
+          "actionStart": 0.33999999999999997,
+          "actionEnd": 0.6599999999999999,
+          "settle": 0.8599999999999999
+        },
+        "hand": [
+          0.11890379288623812,
+          0.43054810355688095,
+          0.3676833954982547
+        ],
+        "head": [
+          -0.4233305997370573,
+          0.8550796504276577,
+          0.2825256862483832
+        ],
+        "hip": [
+          -0.45999999999999996,
+          -0.22,
+          0.2
+        ],
+        "contact": {
+          "target": [
+            0.14,
+            0.42,
+            0.47000000000000003
+          ],
+          "tip": [
+            0.14000000000000004,
+            0.42,
+            0.47000000000000003
+          ],
+          "active": false,
+          "weight": 0,
+          "grip": "cup",
+          "gripOffset": [
+            0,
+            0,
+            0.105
+          ],
+          "fingerCurl": 0.47,
+          "space": "work"
+        }
+      }
+    }
+  ],
+  "errors": []
+}

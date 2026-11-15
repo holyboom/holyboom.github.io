@@ -1,0 +1,231 @@
+{
+  "generatedAt": "2026-11-15T05:37:33.659Z",
+  "sources": {
+    "assets/profile/living.js": "d8ff35d55eb4909c1c97ceb8126c3bd10de8169abf716648c863c06f4a735f42",
+    "scripts/build-profile-art.cjs": "3c5ae122f5f8f7e785b19880d11b07cc3a7a1a4b4fd5cb29dc9611c8bc6c35a6",
+    "assets/profile/geometry.js": "96d4998cb00fef6d97b4261ddf02ed349fd9db5e2b47f17a8a80156854950747"
+  },
+  "cases": 160,
+  "pointSamples": 2565120,
+  "frontContactSignSamples": 256500,
+  "maxKey": 2.440586835811162,
+  "maxParityError": 0,
+  "maxIntersectionError": 3.3306690738754696e-16,
+  "checks": [
+    {
+      "name": "side-and-rear-keys-obey-geometric-distance-bound",
+      "pass": true
+    },
+    {
+      "name": "canvas-and-svg-use-identical-plane-depth",
+      "pass": true
+    },
+    {
+      "name": "split-intersections-land-on-the-work-plane",
+      "pass": true
+    },
+    {
+      "name": "front-contact-ordering-keeps-its-previous-side",
+      "pass": true
+    },
+    {
+      "name": "labels-face-front-and-disappear-behind-work",
+      "pass": true
+    }
+  ],
+  "failures": [],
+  "labels": [
+    {
+      "timeline": 2,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 2,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 2,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 2,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 3,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 3,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 3,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 3,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 6,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 6,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 6,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 6,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 14,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 14,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 14,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 14,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 15,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 15,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 15,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 15,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 20,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 20,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 20,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 20,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 23,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 23,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 23,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 23,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 27,
+      "width": 696,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 27,
+      "width": 696,
+      "degrees": 180,
+      "visibility": 0
+    },
+    {
+      "timeline": 27,
+      "width": 390,
+      "degrees": 0,
+      "visibility": 1
+    },
+    {
+      "timeline": 27,
+      "width": 390,
+      "degrees": 180,
+      "visibility": 0
+    }
+  ]
+}

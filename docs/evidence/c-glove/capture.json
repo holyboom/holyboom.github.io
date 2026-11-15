@@ -1,0 +1,79 @@
+{
+  "release": "living-c-glove-v15",
+  "sourceHash": "d9adc6de13d1da7ead4ddebde45b09f63586ffa7da2b1d251974ddfcdf75786e",
+  "captures": [
+    {
+      "view": "desktop",
+      "name": "drawing",
+      "track": 1.45,
+      "position": 1.1499999999999977,
+      "file": "desktop-drawing.png"
+    },
+    {
+      "view": "desktop",
+      "name": "typing",
+      "track": 3.5,
+      "position": 1.8333333333333313,
+      "file": "desktop-typing.png"
+    },
+    {
+      "view": "desktop",
+      "name": "light",
+      "track": 17.24,
+      "position": 5.848,
+      "file": "desktop-light.png"
+    },
+    {
+      "view": "desktop",
+      "name": "choice",
+      "track": 24.5,
+      "position": 7.624999999999997,
+      "file": "desktop-choice.png"
+    },
+    {
+      "view": "mobile",
+      "name": "drawing",
+      "track": 1.45,
+      "position": 1.1499999999999977,
+      "file": "mobile-drawing.png"
+    },
+    {
+      "view": "mobile",
+      "name": "typing",
+      "track": 3.5,
+      "position": 1.8333333333333313,
+      "file": "mobile-typing.png"
+    },
+    {
+      "view": "mobile",
+      "name": "light",
+      "track": 17.24,
+      "position": 5.848,
+      "file": "mobile-light.png"
+    },
+    {
+      "view": "mobile",
+      "name": "choice",
+      "track": 24.5,
+      "position": 7.624999999999997,
+      "file": "mobile-choice.png"
+    }
+  ],
+  "sources": [
+    {
+      "view": "desktop",
+      "release": "living-c-glove-v15",
+      "geometry": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-c-glove-v15"
+    },
+    {
+      "view": "mobile",
+      "release": "living-c-glove-v15",
+      "geometry": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-c-glove-v15"
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Hand studies enlarge shared geometry in the actual authored viewing direction. They are not full-page screenshots.",
+    "Desktop/mobile images are actual native-scroll Canvas captures in headless Chromium."
+  ]
+}

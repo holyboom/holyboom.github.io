@@ -1,0 +1,30 @@
+{
+  "release": "living-complete-v11",
+  "sourceSHA256": {
+    "assets/profile/motion.js": "488d7dced2f6583dd86309948719b37a001127582e9c17941cd462f06b6b478a",
+    "assets/profile/geometry.js": "03565fc56c5cf2d76785f9827ec284958e4e1902f7fab2e7c8ad3247cbeb8203",
+    "assets/profile/scenes.js": "433fc7ac159a57e5cad01a7897b7560a2980dc066a68c83d06409013a7108d89",
+    "assets/profile/living.js": "73d68cad0586d4474014a9dbe25ed1e086f3e029b999578501f83644969ef1f0",
+    "assets/profile/living.css": "0e0d79277cda4914d68eedcfbba73b4b9948b4a9ce773306e02dbb0c557d7c69",
+    "profile/index.html": "6216612308208932958b928dcfc69070ead1273ab91de0e28d6d31d4eba029a0"
+  },
+  "builtFilesMatch": true,
+  "tourContains31CorrectSettledScenes": true,
+  "tourErrors": [],
+  "published": false,
+  "videoVisibilitySampleChecks": [
+    {
+      "frame": 1,
+      "visiblePixelsAboveBackground": 54930
+    },
+    {
+      "frame": 2,
+      "visiblePixelsAboveBackground": 47006
+    },
+    {
+      "frame": 3,
+      "visiblePixelsAboveBackground": 53152
+    }
+  ],
+  "publicRegressionPassed": true
+}

@@ -1,13 +1,14 @@
 """Static, bilingual professional profile. No AI-only content, tracking or private CV data."""
 from pathlib import Path
 import json, html
+from profile_living import render as render_living
 ROOT=Path(__file__).resolve().parents[1]
 BASE='https://holyboom.github.io'
 LI='https://www.linkedin.com/in/boom-theerawee'
 GITHUB='https://github.com/holyboom'
 PUBLIC_WORK=BASE+'/work/holymind-portfolio/'
 PUBLIC_WORK_TH=BASE+'/th/work/holymind-portfolio/'
-UPDATED='2026-11-14'
+UPDATED='2026-11-15'
 E=html.escape
 person={
  '@type':'Person','@id':BASE+'/#theerawee-rangram','name':'Theerawee Rangram',
@@ -59,7 +60,7 @@ data={
  ('How can I discuss a role or request a CV?','Use LinkedIn with the role, team, location and problem you need solved. We can discuss fit and the appropriate supporting project context.')],
  'closing':'Bring the problem your team is trying to solve.',
  'footer':'Professional history is self-reported. The linked portfolio demonstrates the stated browser behavior; it does not independently verify employment or business outcomes.',
- 'languageLabel':'ภาษาไทย','other':'/th/profile/','updated':'Profile updated 14 November 2026'
+ 'languageLabel':'ภาษาไทย','other':'/th/profile/','updated':'Profile updated 15 November 2026'
 },
  'th':{
  'path':'th/profile','title':'ธีรวีร์ รางแรม (Boom) | AI Engineer และ AI Solutions Architect กรุงเทพฯ',
@@ -101,7 +102,7 @@ data={
  ('ติดต่อคุยตำแหน่งงานหรือขอ CV อย่างไร','ติดต่อผ่าน LinkedIn พร้อมชื่อตำแหน่ง ทีม สถานที่ทำงาน และโจทย์ที่ต้องการแก้ เพื่อประเมินความเหมาะสมและแลกเปลี่ยนรายละเอียดโครงการที่เปิดเผยได้')],
  'closing':'เริ่มจากโจทย์ที่ทีมคุณอยากแก้ให้สำเร็จ',
  'footer':'ประวัติการทำงานเป็นข้อมูลที่เจ้าของโปรไฟล์ให้ไว้ ผลงานที่ลิงก์แสดงพฤติกรรมของเว็บไซต์ ไม่ใช่หลักฐานยืนยันการจ้างงานหรือผลลัพธ์ธุรกิจจากหน่วยงานอิสระ',
- 'languageLabel':'English','other':'/profile/','updated':'อัปเดตโปรไฟล์ 14 พฤศจิกายน 2026'
+ 'languageLabel':'English','other':'/profile/','updated':'อัปเดตโปรไฟล์ 15 พฤศจิกายน 2026'
 }}
 for lang,d in data.items():
  url=BASE+'/'+d['path']+'/'
@@ -128,6 +129,8 @@ for lang,d in data.items():
 <section class="questions"><h2>{E(d['questionsHeading'])}</h2>{faqs}</section>
 <section class="closing"><h2>{E(d['closing'])}</h2><div class="actions"><a class="primary" href="{LI}">{E(d['contact'])} <span aria-hidden="true">↗</span></a><a href="/profile/summary.txt">{E(d['plain'])}</a></div></section>
 </main><footer><p>{E(d['updated'])}</p><p>{E(d['footer'])}</p><a href="{GITHUB}" rel="me">GitHub</a><a href="/">HolyMind showcase</a><a href="{d['other']}">{E(d['languageLabel'])}</a></footer></body></html>'''
+ if lang == 'en':
+  page=render_living(page.split('<body>')[0], d)
  path=ROOT/d['path'];path.mkdir(parents=True,exist_ok=True);(path/'index.html').write_text(page)
 # A readable summary, not instructions to any model or a ranking assertion.
 en=data['en'];summary='THEERAWEE RANGRAM (BOOM)\nAI Engineer & AI Solutions Architect | Bangkok, Thailand\nธีรวีร์ รางแรม\n\n'+en['intro']+'\n'+en['experience']+'\n\nROLE FIT\n'+'\n'.join(k+': '+v for k,v in en['fits'])+'\n'+en['fitNote']+'\n\nCORE CAPABILITIES\n'+en['strengths']+'\n\nSELECTED EXPERIENCE\n'+'\n\n'.join(k+'\n'+v for k,v in en['jobs'])+'\n\nPUBLIC WORK\n'+en['workCopy']+'\n'+en['workNote']+'\nProject explanation: '+PUBLIC_WORK+'\nคำอธิบายโครงการภาษาไทย: '+PUBLIC_WORK_TH+'\nInteractive showcase: '+BASE+'/\n\nCONTACT\nLinkedIn: '+LI+'\nEnglish profile: '+BASE+'/profile/\nโปรไฟล์ภาษาไทย: '+BASE+'/th/profile/\n\n'+en['footer']+'\n'

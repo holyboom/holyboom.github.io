@@ -1,0 +1,14 @@
+{
+  "release": "living-dramatic-world-v12",
+  "productionFilesMatch": true,
+  "servedTourSourcesMatch": true,
+  "tourSettledScenes": 31,
+  "capturedSections": 11,
+  "viewports": [
+    "desktop",
+    "mobile",
+    "isolatedCanvas"
+  ],
+  "errors": [],
+  "published": false
+}

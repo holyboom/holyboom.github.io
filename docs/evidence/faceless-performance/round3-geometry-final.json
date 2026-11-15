@@ -1,0 +1,112 @@
+{
+  "capturedAt": "2026-11-14T22:09:00.140Z",
+  "node": "v24.22.1",
+  "platform": "linux",
+  "arch": "x64",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logicalCPUs": 5,
+  "sourceSHA256": {
+    "assets/profile/geometry.js": "0fb98eb8590f63cc4e1418e199bffea0f4c76f2ddd2baf77aff2bd200cea4dd8",
+    "assets/profile/motion.js": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07",
+    "assets/profile/hand-shapes.js": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0",
+    "assets/profile/scenes.js": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+  },
+  "method": "Fresh --expose-gc Node workers; warm full sequence; CPU geometry only. Not browser/device FPS. Timing is order- and JIT-sensitive; compare repeated runs with equal detail.",
+  "cases": [
+    {
+      "kind": "heap",
+      "sequenceCount": 31,
+      "lineCount": 777,
+      "samplesPerStrand": 48,
+      "heapBytes": {
+        "beforeImport": 5520768,
+        "afterImport": 8735344,
+        "afterAllFrameCaches": 44558504,
+        "afterAllSceneCaches": 45564592,
+        "frameCacheGrowth": 35823160,
+        "allCacheGrowth": 36829248
+      },
+      "sink": 47399.45309537128
+    },
+    {
+      "kind": "frame1",
+      "detail": 1,
+      "coldPerScene": {
+        "samples": 31,
+        "medianMs": 15.137988999999948,
+        "p95Ms": 38.60502500000001,
+        "minMs": 11.585042999999928,
+        "maxMs": 53.138127000000054,
+        "meanMs": 20.051788322580638
+      },
+      "warmMidTransitions": {
+        "samples": 180,
+        "medianMs": 8.74362100000053,
+        "p95Ms": 13.179732999999942,
+        "minMs": 8.053695000000062,
+        "maxMs": 27.06242099999963,
+        "meanMs": 9.853487011111143
+      },
+      "sink": 304595.1190902972
+    },
+    {
+      "kind": "frame2",
+      "detail": 2,
+      "coldPerScene": {
+        "samples": 31,
+        "medianMs": 14.137805000000014,
+        "p95Ms": 19.086163999999997,
+        "minMs": 8.501824,
+        "maxMs": 23.857685000000004,
+        "meanMs": 13.860227612903223
+      },
+      "warmMidTransitions": {
+        "samples": 180,
+        "medianMs": 4.8297019999999975,
+        "p95Ms": 10.743150999999898,
+        "minMs": 4.452527999999802,
+        "maxMs": 45.33015599999999,
+        "meanMs": 6.189529077777795
+      },
+      "sink": 165017.11909029697
+    },
+    {
+      "kind": "light",
+      "measurements": {
+        "pose": {
+          "samples": 180,
+          "medianMs": 0.03988100000003669,
+          "p95Ms": 0.1496909999999616,
+          "minMs": 0.0316490000000158,
+          "maxMs": 0.2837690000000066,
+          "meanMs": 0.059234727777776344
+        },
+        "lightAt": {
+          "samples": 180,
+          "medianMs": 0.01822900000001937,
+          "p95Ms": 0.044588999999973566,
+          "minMs": 0.014723000000003594,
+          "maxMs": 0.1273070000000871,
+          "meanMs": 0.02250336666666865
+        },
+        "trail36": {
+          "samples": 180,
+          "medianMs": 0.503910000000019,
+          "p95Ms": 0.9968420000000151,
+          "minMs": 0.3714750000000322,
+          "maxMs": 1.2941220000000158,
+          "meanMs": 0.5828049777777791
+        },
+        "frameDetail2": {
+          "samples": 180,
+          "medianMs": 5.480107999999973,
+          "p95Ms": 11.408488999999918,
+          "minMs": 4.6242939999999635,
+          "maxMs": 51.97697199999993,
+          "meanMs": 6.905430894444456
+        }
+      },
+      "sink": 25679.453095371264
+    }
+  ]
+}

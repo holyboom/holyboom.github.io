@@ -1,0 +1,411 @@
+{
+  "release": "living-orbits-v9",
+  "sourceHash": "76d1dc824c74c28b5466c6eed285f154b2145709467e069fc582ee6085696fc2",
+  "windows": [
+    {
+      "id": "drawing-side",
+      "start": 1.9,
+      "lockStart": 2.1,
+      "turnEnd": 2.52,
+      "holdEnd": 2.64,
+      "returnEnd": 2.9,
+      "end": 3.08,
+      "entryYaw": 0.58,
+      "yaw": 1.08,
+      "exitYaw": 0.44,
+      "compactYaw": 1,
+      "distance": 6.1,
+      "pitch": 0.2,
+      "target": [
+        -0.24,
+        -0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "conviction-rear",
+      "start": 12.45,
+      "lockStart": 12.92,
+      "turnEnd": 13.3,
+      "holdEnd": 13.45,
+      "returnEnd": 13.94,
+      "end": 14.15,
+      "entryYaw": 0.28,
+      "yaw": 2.35,
+      "exitYaw": 0.42,
+      "compactYaw": 2.1,
+      "distance": 6.9,
+      "pitch": 0.12,
+      "target": [
+        -0.26,
+        -0.22,
+        0.16
+      ]
+    },
+    {
+      "id": "synthesis-side",
+      "start": 18.92,
+      "lockStart": 19.12,
+      "turnEnd": 19.7,
+      "holdEnd": 20.22,
+      "returnEnd": 20.88,
+      "end": 21.12,
+      "entryYaw": 0.28,
+      "yaw": -1.08,
+      "exitYaw": 0.2,
+      "compactYaw": -1,
+      "distance": 6.4,
+      "pitch": 0.16,
+      "target": [
+        -0.18,
+        -0.12,
+        0.22
+      ]
+    },
+    {
+      "id": "experience-depth",
+      "start": 21.94,
+      "lockStart": 22.15,
+      "turnEnd": 22.68,
+      "holdEnd": 23.2,
+      "returnEnd": 23.76,
+      "end": 24.02,
+      "entryYaw": 0.2,
+      "yaw": 1.05,
+      "exitYaw": 0.44,
+      "compactYaw": 0.98,
+      "distance": 6.55,
+      "pitch": 0.16,
+      "target": [
+        -0.15,
+        -0.1,
+        0.2
+      ]
+    }
+  ],
+  "summaries": [
+    {
+      "id": "drawing-side",
+      "compact": false,
+      "peakCamera": {
+        "yaw": 1.08,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 0.6399999999996359
+    },
+    {
+      "id": "conviction-rear",
+      "compact": false,
+      "peakCamera": {
+        "yaw": 2.3500000000000005,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 2.0699999999992187
+    },
+    {
+      "id": "synthesis-side",
+      "compact": false,
+      "peakCamera": {
+        "yaw": -1.08,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 1.359999999999258
+    },
+    {
+      "id": "experience-depth",
+      "compact": false,
+      "peakCamera": {
+        "yaw": 1.05,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 0.8499999999995347
+    },
+    {
+      "id": "drawing-side",
+      "compact": true,
+      "peakCamera": {
+        "yaw": 1,
+        "pitch": 0.2,
+        "distance": 6.1,
+        "target": [
+          -0.24,
+          -0.2,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 0.7839999999995537
+    },
+    {
+      "id": "conviction-rear",
+      "compact": true,
+      "peakCamera": {
+        "yaw": 2.1,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 1.9879999999992493
+    },
+    {
+      "id": "synthesis-side",
+      "compact": true,
+      "peakCamera": {
+        "yaw": -1,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 1.1119999999993933
+    },
+    {
+      "id": "experience-depth",
+      "compact": true,
+      "peakCamera": {
+        "yaw": 0.98,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      },
+      "yawRange": 0.9199999999994963
+    }
+  ],
+  "checks": [
+    {
+      "name": "orbit-windows-have-ordered-nonoverlapping-phases",
+      "pass": true
+    },
+    {
+      "name": "camera-track-inversion-is-accurate",
+      "pass": true
+    },
+    {
+      "name": "desktop-camera-is-finite",
+      "pass": true
+    },
+    {
+      "name": "desktop-camera-retraces-in-reverse",
+      "pass": true
+    },
+    {
+      "name": "desktop-jumps-do-not-depend-on-history",
+      "pass": true
+    },
+    {
+      "name": "desktop-lock-fixes-distance-pivot-and-pitch",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "desktop-every-window-has-real-azimuth-travel",
+      "pass": true,
+      "data": [
+        {
+          "id": "drawing-side",
+          "range": 0.6399999999996359
+        },
+        {
+          "id": "conviction-rear",
+          "range": 2.0699999999992187
+        },
+        {
+          "id": "synthesis-side",
+          "range": 1.359999999999258
+        },
+        {
+          "id": "experience-depth",
+          "range": 0.8499999999995347
+        }
+      ]
+    },
+    {
+      "name": "desktop-includes-a-side-and-a-rear-view",
+      "pass": true,
+      "data": {
+        "rearMostCosine": -0.7027130767735543
+      }
+    },
+    {
+      "name": "desktop-orbit-releases-outside-authored-windows",
+      "pass": true
+    },
+    {
+      "name": "mobile-camera-is-finite",
+      "pass": true
+    },
+    {
+      "name": "mobile-camera-retraces-in-reverse",
+      "pass": true
+    },
+    {
+      "name": "mobile-jumps-do-not-depend-on-history",
+      "pass": true
+    },
+    {
+      "name": "mobile-lock-fixes-distance-pivot-and-pitch",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "mobile-every-window-has-real-azimuth-travel",
+      "pass": true,
+      "data": [
+        {
+          "id": "drawing-side",
+          "range": 0.7839999999995537
+        },
+        {
+          "id": "conviction-rear",
+          "range": 1.9879999999992493
+        },
+        {
+          "id": "synthesis-side",
+          "range": 1.1119999999993933
+        },
+        {
+          "id": "experience-depth",
+          "range": 0.9199999999994963
+        }
+      ]
+    },
+    {
+      "name": "mobile-includes-a-side-and-a-rear-view",
+      "pass": true,
+      "data": {
+        "rearMostCosine": -0.5048461045998576
+      }
+    },
+    {
+      "name": "mobile-orbit-releases-outside-authored-windows",
+      "pass": true
+    },
+    {
+      "name": "orbit-entry-hold-return-and-exit-have-no-cuts-or-velocity-kinks",
+      "pass": true,
+      "data": {
+        "maxJump": 0.00008096766865089977,
+        "maxSlopeChange": 0.00045252257052652567,
+        "maxCurvatureChange": 1.182496323082205,
+        "failures": []
+      }
+    },
+    {
+      "name": "locked-projector-suppresses-cursor-parallax",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "cursor-parallax-remains-available-outside-orbits",
+      "pass": true
+    },
+    {
+      "name": "zero-camera-strength-remains-static",
+      "pass": true
+    },
+    {
+      "name": "orbit-projection-is-finite-and-clear-of-the-near-plane",
+      "pass": true,
+      "data": {
+        "coreSamples": 442584,
+        "nonfinite": [],
+        "nearPlane": []
+      }
+    },
+    {
+      "name": "orbit-keeps-the-actor-hand-and-primary-work-in-frame",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "hand-light-and-trail-share-the-orbit-camera",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "ambient-dust-coexists-with-locked-orbits",
+      "pass": true,
+      "data": {
+        "activeSamples": 7
+      }
+    },
+    {
+      "name": "disclosure-preserves-front-work-during-an-orbit",
+      "pass": true
+    }
+  ],
+  "browserSources": [],
+  "browserStates": [],
+  "errors": [],
+  "notes": [
+    "Camera phases use the public linear cameraTrack API, independently inverted.",
+    "Background surroundings may deliberately extend beyond the stage; clipping checks cover actor, hand light, and primary work.",
+    "Browser evidence is headless Chromium, not a physical-device frame-rate measurement."
+  ]
+}

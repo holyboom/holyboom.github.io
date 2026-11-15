@@ -36,6 +36,28 @@ jobs:
         run: python3 scripts/test-discovery-gate.py
       - name: Build and validate public files
         run: npm run build
+      - name: Install browser test dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Verify Living Architecture against the public artifact
+        working-directory: dist
+        run: |
+          node ../scripts/preview.mjs --host 127.0.0.1 --port 4174 > /tmp/profile-preview.log 2>&1 &
+          PROFILE_PREVIEW_PID=$!
+          trap 'kill "$PROFILE_PREVIEW_PID"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4174/profile/ > /dev/null; then break; fi
+            sleep 1
+          done
+          npm --prefix .. run test:profile
+          npm --prefix .. run test:profile-camera
+          npm --prefix .. run test:profile-performance
+          npm --prefix .. run test:profile-glove
+          npm --prefix .. run test:profile-documentary
+          npm --prefix .. run test:profile-painter
+          npm --prefix .. run test:profile-accessibility
+          ENGINE=chromium PUBLIC_ARTIFACT=1 TEST_URL=http://127.0.0.1:4174/ node ../scripts/qa-professional-profile.cjs
       - name: Upload validated site
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0

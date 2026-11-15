@@ -1,0 +1,162 @@
+{
+  "before": {
+    "mode": "system",
+    "reduced": false,
+    "current": 7.797688524416023,
+    "target": 7.797688524416023,
+    "detail": 2,
+    "draws": 43,
+    "drawCost": 8.984905659308511,
+    "anchors": [
+      -20.00687499999998,
+      699.461875,
+      1929.88375,
+      2954.07125,
+      4060.3525,
+      5130.930625,
+      6568.54,
+      7928.649375,
+      9399.57125,
+      11001.765625,
+      13787.515625
+    ],
+    "width": 390,
+    "height": 285.953125,
+    "exploded": 0,
+    "dirty": false,
+    "trailEnergy": 0.06221107613238167,
+    "trailDirection": 1,
+    "trailSpan": 0.21904698910685827,
+    "layoutCorrection": null,
+    "shot": 25,
+    "sceneCount": 31,
+    "camera": {
+      "yaw": 0.06,
+      "pitch": 0.1655,
+      "distance": 6.188724152823644,
+      "target": [
+        -0.136,
+        -0.11499999999999999,
+        0.2
+      ],
+      "focal": 6
+    }
+  },
+  "open": {
+    "mode": "system",
+    "reduced": false,
+    "current": 7.797688524416023,
+    "target": 7.797688524416023,
+    "detail": 2,
+    "draws": 59,
+    "drawCost": 11.872063604216955,
+    "anchors": [
+      -20.00687499999998,
+      699.461875,
+      1929.88375,
+      2954.07125,
+      4060.3525,
+      5130.930625,
+      6568.54,
+      7928.649375,
+      9841.118125,
+      11443.3125,
+      14229.0625
+    ],
+    "width": 390,
+    "height": 285.953125,
+    "exploded": 0.9995630598311873,
+    "dirty": false,
+    "trailEnergy": 0,
+    "trailDirection": 1,
+    "trailSpan": 0,
+    "layoutCorrection": {
+      "origin": 7.564265864910646,
+      "delta": 0.23342265950537655,
+      "span": 0.5135298509118285
+    },
+    "shot": 25,
+    "sceneCount": 31,
+    "camera": {
+      "yaw": 0.06,
+      "pitch": 0.1655,
+      "distance": 6.188724152823644,
+      "target": [
+        -0.136,
+        -0.11499999999999999,
+        0.2
+      ],
+      "focal": 6
+    }
+  },
+  "close": {
+    "mode": "system",
+    "reduced": false,
+    "current": 7.797688524416023,
+    "target": 7.797688524416023,
+    "detail": 2,
+    "draws": 66,
+    "drawCost": 11.314354278790166,
+    "anchors": [
+      -20.00687499999998,
+      699.461875,
+      1929.88375,
+      2954.07125,
+      4060.3525,
+      5130.930625,
+      6568.54,
+      7928.649375,
+      9399.57125,
+      11001.765625,
+      13787.515625
+    ],
+    "width": 390,
+    "height": 285.953125,
+    "exploded": 0.002861420681636027,
+    "dirty": false,
+    "trailEnergy": 0,
+    "trailDirection": 1,
+    "trailSpan": 0,
+    "layoutCorrection": null,
+    "shot": 25,
+    "sceneCount": 31,
+    "camera": {
+      "yaw": 0.06,
+      "pitch": 0.1655,
+      "distance": 6.188724152823644,
+      "target": [
+        -0.136,
+        -0.11499999999999999,
+        0.2
+      ],
+      "focal": 6
+    }
+  },
+  "errors": [],
+  "scripts": [
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+      "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+      "sha256": "0959a3a6d195d749a280694a550f91f0dd88bd52e7e1480f243d7acc22ac42c5"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+      "sha256": "57ded308462d059d9ee17ca8184e8ed21d60183a52055b5fd1e8166c90e2c382"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6",
+      "sha256": "eca4dc5df646e33e021ee34c76cd2c657d0aff9804b8228395978003b3625855"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+      "sha256": "76211432ed7b8d9115f59e74c432aafb0e0959be8432db10b60099907c97a930"
+    }
+  ]
+}

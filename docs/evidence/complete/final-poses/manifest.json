@@ -1,0 +1,1497 @@
+{
+  "capturedAt": "2026-11-15T04:58:31.328Z",
+  "base": "http://127.0.0.1:4174/",
+  "loadedScripts": [
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-complete-v11",
+      "bytes": 11509,
+      "sha256": "433fc7ac159a57e5cad01a7897b7560a2980dc066a68c83d06409013a7108d89"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-complete-v11",
+      "bytes": 32630,
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-complete-v11",
+      "bytes": 5439,
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-complete-v11",
+      "bytes": 20642,
+      "sha256": "73d68cad0586d4474014a9dbe25ed1e086f3e029b999578501f83644969ef1f0"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-complete-v11",
+      "bytes": 29898,
+      "sha256": "488d7dced2f6583dd86309948719b37a001127582e9c17941cd462f06b6b478a"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-complete-v11",
+      "bytes": 46246,
+      "sha256": "03565fc56c5cf2d76785f9827ec284958e4e1902f7fab2e7c8ad3247cbeb8203"
+    }
+  ],
+  "unlabelledDiagnostic": false,
+  "release": "living-complete-v11",
+  "sequence": [
+    {
+      "verb": "Imagine",
+      "shot": "establish",
+      "shape": "maker",
+      "pose": "design",
+      "label": "00 / THE PERSON BEHIND THE SYSTEM",
+      "caption": "A world begins at the end of a drawn line.",
+      "scale": 1,
+      "action": "Imagine",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 0,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "draw",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "Before software, there was a wish to make a place for people.",
+      "scale": 1,
+      "action": "Imagine a place",
+      "prop": "blueprint",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "establish",
+      "chapter": 1,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "sketch",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "A hand, a drawing, and something that did not exist before.",
+      "scale": 1,
+      "action": "Draw the first lines",
+      "prop": "house",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 1,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "type",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "The medium changed. The instinct to create stayed.",
+      "scale": 1,
+      "action": "Turn the drawing into an interface",
+      "prop": "code",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 1,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "type",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "An idea has to become something that works.",
+      "scale": 1,
+      "action": "Build one component",
+      "prop": "component",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "build",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "A beautiful part still has to belong to the whole.",
+      "scale": 1,
+      "action": "Fit it into a larger system",
+      "prop": "assembly",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 2,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "Other people will rely on the work. The details matter.",
+      "scale": 1,
+      "action": "Make it dependable",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Dependability",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "read",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "The work begins with understanding someone else’s need.",
+      "scale": 1,
+      "action": "Listen to the requirement",
+      "prop": "brief",
+      "tone": "human",
+      "meaning": "Understanding",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 3,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "My part had to connect with the work around it.",
+      "scale": 1,
+      "action": "Connect across boundaries",
+      "prop": "network",
+      "tone": "build",
+      "meaning": "Connection",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 3,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "build",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "A shared system asks more of us than a single screen.",
+      "scale": 1,
+      "action": "Bring the pieces together",
+      "prop": "assembly",
+      "tone": "care",
+      "meaning": "Collaboration",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 3,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "type",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "A new possibility enters a familiar process.",
+      "scale": 1,
+      "action": "Invite intelligence into the workflow",
+      "prop": "ai",
+      "tone": "dream",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 4,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "An answer is not the end of a human decision.",
+      "scale": 1,
+      "action": "Pause at the review boundary",
+      "prop": "review",
+      "tone": "human",
+      "meaning": "Human judgment",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 4,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "approve",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "Move forward with a visible path to inspect and review.",
+      "scale": 1,
+      "action": "Keep the person in control",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 4,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "alone",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Not everyone saw it yet. I still wanted to find out.",
+      "scale": 1,
+      "action": "Hold on to the possibility",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Conviction",
+      "energy": 0.22,
+      "shot": "isolate",
+      "chapter": 5,
+      "step": 0,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reach",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Belief did not make the difficult parts disappear.",
+      "scale": 1,
+      "action": "Meet the resistance",
+      "prop": "fracture",
+      "tone": "friction",
+      "meaning": "An obstacle",
+      "energy": 0.38,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 1,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reflect",
+      "label": "05 / KEEP BUILDING",
+      "caption": "What could this difficulty teach me?",
+      "scale": 1,
+      "action": "Stay with the problem",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Reflection",
+      "energy": 0.28,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 2,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "repair",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Another attempt. Another refinement. Then back again.",
+      "scale": 1,
+      "action": "Return to the work",
+      "prop": "repair",
+      "tone": "build",
+      "meaning": "Iteration",
+      "energy": 0.65,
+      "shot": "detail",
+      "chapter": 5,
+      "step": 3,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "rise",
+      "label": "05 / KEEP BUILDING",
+      "caption": "The work continued, week after week.",
+      "scale": 1,
+      "action": "Keep the light alive",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Persistence",
+      "energy": 0.85,
+      "shot": "rise",
+      "chapter": 5,
+      "step": 4,
+      "count": 5
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "read",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "A problem I had lived through became a starting point.",
+      "scale": 1,
+      "action": "Keep the lesson",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Experience",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 6,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "research",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Seek the strongest ideas and methods I can find.",
+      "scale": 1,
+      "action": "Look beyond my own methods",
+      "prop": "library",
+      "tone": "build",
+      "meaning": "Research",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 6,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Experience and selected methods become a skill with character.",
+      "scale": 1,
+      "action": "Distil a capability",
+      "prop": "skill",
+      "tone": "dream",
+      "meaning": "Synthesis",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 6,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "protect",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Purpose. Method. Character. A MOAT I keep developing.",
+      "scale": 1,
+      "action": "Build a distinctive advantage",
+      "prop": "moat",
+      "tone": "dream",
+      "meaning": "Identity",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 6,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "There is depth behind an experience that feels simple.",
+      "scale": 1,
+      "action": "Face the hidden complexity",
+      "prop": "complexity",
+      "tone": "build",
+      "meaning": "Depth",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 7,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Design gives that complexity a human starting point.",
+      "scale": 1,
+      "action": "Shape a clear way in",
+      "prop": "interface",
+      "tone": "dream",
+      "meaning": "Design",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 7,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "The next step should feel understandable and in their control.",
+      "scale": 1,
+      "action": "Give the person agency",
+      "prop": "choice",
+      "tone": "human",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 7,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "welcome",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Useful enough to work. Engaging enough to want to return.",
+      "scale": 1,
+      "action": "Make the experience inviting",
+      "prop": "recipient",
+      "tone": "care",
+      "meaning": "AI experiences",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 7,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "An experience becomes meaningful when someone can enter it.",
+      "scale": 1,
+      "action": "Open the door",
+      "prop": "interface",
+      "tone": "care",
+      "meaning": "Invitation",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "Explore the demonstration. Look beneath the surface.",
+      "scale": 1,
+      "action": "Make the work inspectable",
+      "prop": "review",
+      "tone": "build",
+      "meaning": "Transparency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 8,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "This story continues through what we choose to build next.",
+      "scale": 1,
+      "action": "Offer the next possibility",
+      "prop": "recipient",
+      "tone": "human",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Reflect",
+      "shot": "portrait",
+      "shape": "maker",
+      "pose": "stand",
+      "label": "09 / THE EXPERIENCE BEHIND THE STORY",
+      "caption": "The work that brought me here.",
+      "scale": 0.9,
+      "action": "Reflect",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 9,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Begin",
+      "shot": "reveal",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "10 / YOUR NEXT CHAPTER",
+      "caption": "What could we make possible, together?",
+      "scale": 1,
+      "action": "Begin",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 10,
+      "step": 0,
+      "count": 1
+    }
+  ],
+  "shots": {
+    "establish": {
+      "yaw": -0.3,
+      "pitch": 0.12,
+      "distance": 6.4,
+      "target": [
+        0.1,
+        0,
+        0
+      ]
+    },
+    "draft": {
+      "yaw": 0.58,
+      "pitch": 0.3,
+      "distance": 5.25,
+      "target": [
+        -0.25,
+        -0.09,
+        0.22
+      ]
+    },
+    "detail": {
+      "yaw": 0.44,
+      "pitch": 0.18,
+      "distance": 5.05,
+      "target": [
+        -0.26,
+        -0.08,
+        0.25
+      ]
+    },
+    "connect": {
+      "yaw": 0.28,
+      "pitch": 0.17,
+      "distance": 6.25,
+      "target": [
+        -0.2,
+        -0.07,
+        0.15
+      ]
+    },
+    "isolate": {
+      "yaw": 0.48,
+      "pitch": 0.21,
+      "distance": 7.25,
+      "target": [
+        -0.12,
+        -0.08,
+        0.15
+      ]
+    },
+    "intimate": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.06,
+        0.25
+      ]
+    },
+    "rise": {
+      "yaw": -0.42,
+      "pitch": 0.02,
+      "distance": 6.2,
+      "target": [
+        -0.3,
+        -0.1,
+        0.2
+      ]
+    },
+    "reveal": {
+      "yaw": 0.2,
+      "pitch": 0.19,
+      "distance": 6.35,
+      "target": [
+        -0.08,
+        -0.08,
+        0.2
+      ]
+    },
+    "portrait": {
+      "yaw": -0.15,
+      "pitch": 0.1,
+      "distance": 5.9,
+      "target": [
+        -0.25,
+        -0.08,
+        0.2
+      ]
+    }
+  },
+  "morph": {
+    "start": 0.16,
+    "end": 0.91
+  },
+  "scripts": [
+    "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-complete-v11",
+    "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-complete-v11",
+    "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-complete-v11",
+    "http://127.0.0.1:4174/assets/profile/motion.js?v=living-complete-v11",
+    "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-complete-v11",
+    "http://127.0.0.1:4174/assets/profile/living.js?v=living-complete-v11"
+  ],
+  "viewport": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "art": [
+      720,
+      720
+    ]
+  },
+  "artDeviceScaleFactor": 1,
+  "stillDelayMs": 800,
+  "notes": [
+    "All artwork is captured from the live browser canvas.",
+    "The art view overrides capture CSS only: 720-square canvas, no caption overlays, desktop camera behavior.",
+    "Desktop and mobile captures retain the real layout.",
+    "Steady key poses allow two settled rendering frames. Pilot transitions use fixed scroll positions.",
+    "Continuous sweeps drive native scroll at requestAnimationFrame cadence and retain the runtime camera damping.",
+    "These are headless review captures, not physical-device performance measurements."
+  ],
+  "metadataHash": "cba8ad9259dd8f16f2162526f8e037b61b1ce14d2accd36497464e63d7f3e833",
+  "snapshots": [
+    {
+      "index": 6,
+      "action": "Make it dependable",
+      "pose": "inspect",
+      "prop": "verified",
+      "position": 2.683333333333333,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-06.png",
+          "position": 2.6837891824820486,
+          "shot": 6,
+          "detail": 2,
+          "drawCost": 6.16926283972854,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.156298706728704,
+            "distance": 5.403639545096957,
+            "target": [
+              -0.254800862180864,
+              -0.21114935336435198,
+              0.229348491183488
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-06.png",
+          "position": 2.683733333333333,
+          "shot": 6,
+          "detail": 2,
+          "drawCost": 6.076899242413039,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17587964002607423,
+            "distance": 5.153008999348143,
+            "target": [
+              -0.26274690664928385,
+              -0.2279398200130371,
+              0.24519291336375326
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "action": "Listen to the requirement",
+      "pose": "read",
+      "prop": "brief",
+      "position": 3,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-07.png",
+          "position": 3,
+          "shot": 7,
+          "detail": 2,
+          "drawCost": 3.701364514623435,
+          "camera": {
+            "yaw": 0.203,
+            "pitch": 0.107,
+            "distance": 5.536408954407982,
+            "target": [
+              -0.2465,
+              -0.102,
+              0.2325
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-07.png",
+          "position": 3,
+          "shot": 7,
+          "detail": 2,
+          "drawCost": 3.9491908134437064,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.06,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "action": "Hold on to the possibility",
+      "pose": "alone",
+      "prop": "ember",
+      "position": 5,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-13.png",
+          "position": 5,
+          "shot": 13,
+          "detail": 2,
+          "drawCost": 3.221222375712415,
+          "camera": {
+            "yaw": 0.2438514776670881,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-13.png",
+          "position": 5,
+          "shot": 13,
+          "detail": 2,
+          "drawCost": 2.859439823589602,
+          "camera": {
+            "yaw": 0.41729001950245087,
+            "pitch": 0.12,
+            "distance": 6.9,
+            "target": [
+              -0.26,
+              -0.22,
+              0.16
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "action": "Meet the resistance",
+      "pose": "reach",
+      "prop": "fracture",
+      "position": 5.21,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-14.png",
+          "position": 5.2096553523101505,
+          "shot": 14,
+          "detail": 2,
+          "drawCost": 6.34175698986357,
+          "camera": {
+            "yaw": 0.20300000000000004,
+            "pitch": 0.1131199084727416,
+            "distance": 6.141053487789763,
+            "target": [
+              -0.25285528956784703,
+              -0.2091506248993233,
+              0.19836974120971032
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.4707621902108923,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-14.png",
+          "position": 5.209604799791314,
+          "shot": 14,
+          "detail": 2,
+          "drawCost": 4.084956530998357,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.10946029871011703,
+            "distance": 6.034200178336471,
+            "target": [
+              -0.2547301493550585,
+              -0.21473014935505852,
+              0.20742865580447334
+            ],
+            "focal": 6,
+            "orbitId": "conviction-rear",
+            "orbitWeight": 0.47301493550585194,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "action": "Stay with the problem",
+      "pose": "reflect",
+      "prop": "lesson",
+      "position": 5.41,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-15.png",
+          "position": 5.409987935700545,
+          "shot": 15,
+          "detail": 2,
+          "drawCost": 6.091281313369352,
+          "camera": {
+            "yaw": 0.203,
+            "pitch": 0.107,
+            "distance": 5.536408954407982,
+            "target": [
+              -0.2465,
+              -0.19949999999999998,
+              0.2325
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-15.png",
+          "position": 5.409943915481936,
+          "shot": 15,
+          "detail": 2,
+          "drawCost": 4.128624716115934,
+          "camera": {
+            "yaw": 0.42,
+            "pitch": 0.1,
+            "distance": 5.35,
+            "target": [
+              -0.25,
+              -0.21,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "action": "Return to the work",
+      "pose": "repair",
+      "prop": "repair",
+      "position": 5.61,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-16.png",
+          "position": 5.610320519090939,
+          "shot": 16,
+          "detail": 2,
+          "drawCost": 4.613010416642338,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.15626617251231584,
+            "distance": 5.404492277248812,
+            "target": [
+              -0.25482255165845613,
+              -0.2111330862561579,
+              0.2293105345977018
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-16.png",
+          "position": 5.610283031172558,
+          "shot": 16,
+          "detail": 2,
+          "drawCost": 4.032439532698706,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.17583405298358826,
+            "distance": 5.154148675410293,
+            "target": [
+              -0.2627772980109412,
+              -0.2279170264917941,
+              0.24513972848085297
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "action": "Keep the light alive",
+      "pose": "rise",
+      "prop": "ember",
+      "position": 5.81,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-17.png",
+          "position": 5.809725636817489,
+          "shot": 17,
+          "detail": 2,
+          "drawCost": 3.6300385178624843,
+          "camera": {
+            "yaw": -0.34299999999999997,
+            "pitch": 0.05499999999999999,
+            "distance": 6.0933033864672925,
+            "target": [
+              -0.27899999999999997,
+              -0.128,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-17.png",
+          "position": 5.809694650957205,
+          "shot": 17,
+          "detail": 2,
+          "drawCost": 3.449193260589314,
+          "camera": {
+            "yaw": -0.42,
+            "pitch": 0.020000000000000004,
+            "distance": 6.200000000000001,
+            "target": [
+              -0.3,
+              -0.1,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "action": "Distil a capability",
+      "pose": "shape",
+      "prop": "skill",
+      "position": 6.5125,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-20.png",
+          "position": 6.512552142259384,
+          "shot": 20,
+          "detail": 2,
+          "drawCost": 4.604618213672219,
+          "camera": {
+            "yaw": -1,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-20.png",
+          "position": 6.512113813998419,
+          "shot": 20,
+          "detail": 2,
+          "drawCost": 3.963343100090316,
+          "camera": {
+            "yaw": -1.08,
+            "pitch": 0.16,
+            "distance": 6.4,
+            "target": [
+              -0.18,
+              -0.12,
+              0.22
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 1,
+            "locked": true
+          }
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "action": "Build a distinctive advantage",
+      "pose": "protect",
+      "prop": "moat",
+      "position": 6.7625,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-21.png",
+          "position": 6.762648219782272,
+          "shot": 21,
+          "detail": 2,
+          "drawCost": 5.493677950084327,
+          "camera": {
+            "yaw": 0.060000000000000005,
+            "pitch": 0.16468003754909408,
+            "distance": 6.219773931005561,
+            "target": [
+              -0.14255969960724751,
+              -0.11574542040991448,
+              0.20298168163965796
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 0.14908408198289758,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-21.png",
+          "position": 6.76222358830245,
+          "shot": 21,
+          "detail": 2,
+          "drawCost": 4.4338523812428825,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.18525444983425862,
+            "distance": 6.357883163197472,
+            "target": [
+              -0.0958185005524713,
+              -0.08632740022098852,
+              0.20316370011049426
+            ],
+            "focal": 6,
+            "orbitId": "synthesis-side",
+            "orbitWeight": 0.15818500552471293,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "action": "Make the experience inviting",
+      "pose": "welcome",
+      "prop": "recipient",
+      "position": 7.7625,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-25.png",
+          "position": 7.762336544896376,
+          "shot": 25,
+          "detail": 2,
+          "drawCost": 6.059630704607821,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-25.png",
+          "position": 7.762460906626484,
+          "shot": 25,
+          "detail": 2,
+          "drawCost": 4.525610119125318,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "action": "Open the door",
+      "pose": "invite",
+      "prop": "interface",
+      "position": 8,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-26.png",
+          "position": 8,
+          "shot": 26,
+          "detail": 2,
+          "drawCost": 4.200827445958256,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-26.png",
+          "position": 8,
+          "shot": 26,
+          "detail": 2,
+          "drawCost": 3.7891884179767303,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "action": "Make the work inspectable",
+      "pose": "inspect",
+      "prop": "review",
+      "position": 8.35,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-27.png",
+          "position": 8.35006787664756,
+          "shot": 27,
+          "detail": 2,
+          "drawCost": 4.850325677323196,
+          "camera": {
+            "yaw": 0.21600000000000003,
+            "pitch": 0.159,
+            "distance": 5.332582705543059,
+            "target": [
+              -0.253,
+              -0.11499999999999999,
+              0.2325
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-27.png",
+          "position": 8.34998879791623,
+          "shot": 27,
+          "detail": 2,
+          "drawCost": 3.631725473959348,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "action": "Offer the next possibility",
+      "pose": "offer",
+      "prop": "recipient",
+      "position": 8.683333333333334,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-28.png",
+          "position": 8.683150753763101,
+          "shot": 28,
+          "detail": 2,
+          "drawCost": 5.26035627996952,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-28.png",
+          "position": 8.683391954535933,
+          "shot": 28,
+          "detail": 2,
+          "drawCost": 4.2588925736302805,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "action": "Reflect",
+      "pose": "stand",
+      "prop": "none",
+      "position": 9,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-29.png",
+          "position": 9,
+          "shot": 29,
+          "detail": 2,
+          "drawCost": 7.800916318588819,
+          "camera": {
+            "yaw": -0.16749999999999998,
+            "pitch": 0.107,
+            "distance": 5.9,
+            "target": [
+              -0.2465,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-29.png",
+          "position": 9,
+          "shot": 29,
+          "detail": 2,
+          "drawCost": 3.5238019985256748,
+          "camera": {
+            "yaw": -0.15,
+            "pitch": 0.1,
+            "distance": 5.9,
+            "target": [
+              -0.25,
+              -0.08,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "action": "Begin",
+      "pose": "invite",
+      "prop": "none",
+      "position": 10,
+      "entries": [
+        {
+          "viewport": "mobile",
+          "file": "mobile-30.png",
+          "position": 10,
+          "shot": 30,
+          "detail": 2,
+          "drawCost": 3.3942383930532003,
+          "camera": {
+            "yaw": 0.06,
+            "pitch": 0.1655,
+            "distance": 6.188724152823644,
+            "target": [
+              -0.136,
+              -0.11499999999999999,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        },
+        {
+          "viewport": "art",
+          "file": "art-30.png",
+          "position": 10,
+          "shot": 30,
+          "detail": 2,
+          "drawCost": 3.284808047351348,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6,
+            "orbitId": null,
+            "orbitWeight": 0,
+            "locked": false
+          }
+        }
+      ]
+    }
+  ],
+  "pilots": [],
+  "performances": [],
+  "sweeps": [],
+  "errors": []
+}

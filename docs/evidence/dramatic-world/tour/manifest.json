@@ -1,0 +1,687 @@
+{
+  "rows": [
+    {
+      "index": 0,
+      "action": "Imagine",
+      "position": 0.04982456140350877,
+      "timeline": 0,
+      "shot": 0,
+      "camera": {
+        "yaw": -0.3,
+        "pitch": 0.12,
+        "distance": 6.4,
+        "target": [
+          0.09999999999999998,
+          0,
+          0
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 1,
+      "action": "Imagine a place",
+      "position": 1.0170666666666666,
+      "timeline": 1,
+      "shot": 1,
+      "camera": {
+        "yaw": -0.3,
+        "pitch": 0.12,
+        "distance": 6.4,
+        "target": [
+          -0.24,
+          -0.25,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 2,
+      "action": "Draw the first lines",
+      "position": 1.3498666666666665,
+      "timeline": 2,
+      "shot": 2,
+      "camera": {
+        "yaw": 0.58,
+        "pitch": 0.2105636239880193,
+        "distance": 6.004066103678969,
+        "target": [
+          -0.24105636239880193,
+          -0.20422544959520775,
+          0.20211272479760387
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 0.8943637601198068,
+        "locked": false
+      }
+    },
+    {
+      "index": 3,
+      "action": "Turn the drawing into an interface",
+      "position": 1.683733333333333,
+      "timeline": 3,
+      "shot": 3,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.18063517491200004,
+        "distance": 5.08038724032861,
+        "target": [
+          -0.25936482508799996,
+          -0.2290472376319999,
+          0.24841206271999988
+        ],
+        "focal": 6,
+        "orbitId": "drawing-side",
+        "orbitWeight": 0.03175874560000225,
+        "locked": false
+      }
+    },
+    {
+      "index": 4,
+      "action": "Build one component",
+      "position": 2.0170666666666666,
+      "timeline": 4,
+      "shot": 4,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.18,
+        "distance": 5.05,
+        "target": [
+          -0.26,
+          -0.22999999999999998,
+          0.25
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 5,
+      "action": "Fit it into a larger system",
+      "position": 2.3498666666666668,
+      "timeline": 5,
+      "shot": 5,
+      "camera": {
+        "yaw": 0.28,
+        "pitch": 0.17,
+        "distance": 6.250000000000001,
+        "target": [
+          -0.2,
+          -0.22,
+          0.15
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 6,
+      "action": "Make it dependable",
+      "position": 2.683733333333333,
+      "timeline": 6,
+      "shot": 6,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.17587964002607423,
+        "distance": 5.153008999348143,
+        "target": [
+          -0.26274690664928385,
+          -0.2279398200130371,
+          0.24519291336375326
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 7,
+      "action": "Listen to the requirement",
+      "position": 3.0170666666666666,
+      "timeline": 7,
+      "shot": 7,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.06,
+          0.25
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 8,
+      "action": "Connect across boundaries",
+      "position": 3.3498666666666668,
+      "timeline": 8,
+      "shot": 8,
+      "camera": {
+        "yaw": 0.28,
+        "pitch": 0.17,
+        "distance": 6.250000000000001,
+        "target": [
+          -0.2,
+          -0.07,
+          0.15
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 9,
+      "action": "Bring the pieces together",
+      "position": 3.683733333333333,
+      "timeline": 9,
+      "shot": 9,
+      "camera": {
+        "yaw": 0.2,
+        "pitch": 0.19,
+        "distance": 6.349999999999999,
+        "target": [
+          -0.08000000000000002,
+          -0.08,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 10,
+      "action": "Invite intelligence into the workflow",
+      "position": 4.017066666666667,
+      "timeline": 10,
+      "shot": 10,
+      "camera": {
+        "yaw": 0.5800000000000001,
+        "pitch": 0.3,
+        "distance": 5.25,
+        "target": [
+          -0.25,
+          -0.09,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 11,
+      "action": "Pause at the review boundary",
+      "position": 4.349866666666666,
+      "timeline": 11,
+      "shot": 11,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.18,
+        "distance": 5.05,
+        "target": [
+          -0.26,
+          -0.08,
+          0.25
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 12,
+      "action": "Keep the person in control",
+      "position": 4.6837333333333335,
+      "timeline": 12,
+      "shot": 12,
+      "camera": {
+        "yaw": 0.28,
+        "pitch": 0.16656636668839497,
+        "distance": 6.270601799869631,
+        "target": [
+          -0.2068672666232101,
+          -0.07892744661017312,
+          0.15206017998696303
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 13,
+      "action": "Hold on to the possibility",
+      "position": 5.010193180006667,
+      "timeline": 13,
+      "shot": 13,
+      "camera": {
+        "yaw": 0.7497186588647546,
+        "pitch": 0.12,
+        "distance": 6.9,
+        "target": [
+          -0.26,
+          -0.22,
+          0.16
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "index": 14,
+      "action": "Meet the resistance",
+      "position": 5.209604799791314,
+      "timeline": 14,
+      "shot": 14,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.10946029871011703,
+        "distance": 6.034200178336471,
+        "target": [
+          -0.2547301493550585,
+          -0.21473014935505852,
+          0.20742865580447334
+        ],
+        "focal": 6,
+        "orbitId": "conviction-rear",
+        "orbitWeight": 0.47301493550585194,
+        "locked": false
+      }
+    },
+    {
+      "index": 15,
+      "action": "Stay with the problem",
+      "position": 5.409943915481936,
+      "timeline": 15,
+      "shot": 15,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.21,
+          0.25
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 16,
+      "action": "Return to the work",
+      "position": 5.610283031172558,
+      "timeline": 16,
+      "shot": 16,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.17583405298358826,
+        "distance": 5.154148675410293,
+        "target": [
+          -0.2627772980109412,
+          -0.2279170264917941,
+          0.24513972848085297
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 17,
+      "action": "Keep the light alive",
+      "position": 5.809694650957205,
+      "timeline": 17,
+      "shot": 17,
+      "camera": {
+        "yaw": -0.42,
+        "pitch": 0.020000000000000004,
+        "distance": 6.200000000000001,
+        "target": [
+          -0.3,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 18,
+      "action": "Keep the lesson",
+      "position": 6.012831006118088,
+      "timeline": 18,
+      "shot": 18,
+      "camera": {
+        "yaw": 0.42,
+        "pitch": 0.1,
+        "distance": 5.35,
+        "target": [
+          -0.25,
+          -0.06,
+          0.25
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 19,
+      "action": "Look beyond my own methods",
+      "position": 6.262940780422118,
+      "timeline": 19,
+      "shot": 19,
+      "camera": {
+        "yaw": 0.28,
+        "pitch": 0.1622164308446533,
+        "distance": 6.366446000989413,
+        "target": [
+          -0.18443286168930653,
+          -0.10891784577673365,
+          0.2044849840874271
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 0.778356915534673,
+        "locked": false
+      }
+    },
+    {
+      "index": 20,
+      "action": "Distil a capability",
+      "position": 6.512113813998419,
+      "timeline": 20,
+      "shot": 20,
+      "camera": {
+        "yaw": -1.08,
+        "pitch": 0.16,
+        "distance": 6.4,
+        "target": [
+          -0.18,
+          -0.12,
+          0.22
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "index": 21,
+      "action": "Build a distinctive advantage",
+      "position": 6.76222358830245,
+      "timeline": 21,
+      "shot": 21,
+      "camera": {
+        "yaw": 0.2,
+        "pitch": 0.18525444983425862,
+        "distance": 6.357883163197472,
+        "target": [
+          -0.0958185005524713,
+          -0.08632740022098852,
+          0.20316370011049426
+        ],
+        "focal": 6,
+        "orbitId": "synthesis-side",
+        "orbitWeight": 0.15818500552471293,
+        "locked": false
+      }
+    },
+    {
+      "index": 22,
+      "action": "Face the hidden complexity",
+      "position": 7.012695429934777,
+      "timeline": 22,
+      "shot": 22,
+      "camera": {
+        "yaw": 0.23587854041573836,
+        "pitch": 0.1644848175519673,
+        "distance": 6.413714682650035,
+        "target": [
+          -0.17242408775983648,
+          -0.08654554734409813,
+          0.17757591224016353
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 0.5515182448032707,
+        "locked": false
+      }
+    },
+    {
+      "index": 23,
+      "action": "Shape a clear way in",
+      "position": 7.262302095567325,
+      "timeline": 23,
+      "shot": 23,
+      "camera": {
+        "yaw": 1.05,
+        "pitch": 0.16,
+        "distance": 6.55,
+        "target": [
+          -0.15,
+          -0.1,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": "experience-depth",
+        "orbitWeight": 1,
+        "locked": true
+      }
+    },
+    {
+      "index": 24,
+      "action": "Give the person agency",
+      "position": 7.512854240993936,
+      "timeline": 24,
+      "shot": 24,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.18,
+        "distance": 5.05,
+        "target": [
+          -0.26,
+          -0.08,
+          0.25
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 25,
+      "action": "Make the experience inviting",
+      "position": 7.762460906626484,
+      "timeline": 25,
+      "shot": 25,
+      "camera": {
+        "yaw": 0.2,
+        "pitch": 0.19,
+        "distance": 6.349999999999999,
+        "target": [
+          -0.08000000000000002,
+          -0.08,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 26,
+      "action": "Open the door",
+      "position": 8.016585641296528,
+      "timeline": 26,
+      "shot": 26,
+      "camera": {
+        "yaw": 0.2,
+        "pitch": 0.19,
+        "distance": 6.349999999999999,
+        "target": [
+          -0.08000000000000002,
+          -0.08,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 27,
+      "action": "Make the work inspectable",
+      "position": 8.34998879791623,
+      "timeline": 27,
+      "shot": 27,
+      "camera": {
+        "yaw": 0.44,
+        "pitch": 0.18,
+        "distance": 5.05,
+        "target": [
+          -0.26,
+          -0.08,
+          0.25
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 28,
+      "action": "Offer the next possibility",
+      "position": 8.683391954535933,
+      "timeline": 28,
+      "shot": 28,
+      "camera": {
+        "yaw": 0.2,
+        "pitch": 0.19,
+        "distance": 6.349999999999999,
+        "target": [
+          -0.08000000000000002,
+          -0.08,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 29,
+      "action": "Reflect",
+      "position": 9.04969303304397,
+      "timeline": 29,
+      "shot": 29,
+      "camera": {
+        "yaw": -0.15,
+        "pitch": 0.1,
+        "distance": 5.9,
+        "target": [
+          -0.25,
+          -0.08,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    },
+    {
+      "index": 30,
+      "action": "Begin",
+      "position": 10,
+      "timeline": 30,
+      "shot": 30,
+      "camera": {
+        "yaw": 0.2,
+        "pitch": 0.19,
+        "distance": 6.349999999999999,
+        "target": [
+          -0.08000000000000002,
+          -0.08,
+          0.2
+        ],
+        "focal": 6,
+        "orbitId": null,
+        "orbitWeight": 0,
+        "locked": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-dramatic-world-v12",
+      "sha256": "19e3dc13f0cb05b82f7bc812dd1b9e2fdb124b872a1504a0e87f4cb33a5223f1"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-dramatic-world-v12",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-dramatic-world-v12",
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-dramatic-world-v12",
+      "sha256": "488d7dced2f6583dd86309948719b37a001127582e9c17941cd462f06b6b478a"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-dramatic-world-v12",
+      "sha256": "67b62edca76959f6a070b559b99c9038b4cf02222bd762ac877b374100eda32e"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-dramatic-world-v12",
+      "sha256": "c5365a94b7ef390b1a91b7a70fe6d57491ca625914cb52d4f82d06aaab948338"
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Native browser scroll drives the shipped Canvas; no pose overrides.",
+    "Capture CSS isolates the Canvas and adds action labels from the public story metadata.",
+    "This is a review recording, not physical-device performance evidence."
+  ]
+}

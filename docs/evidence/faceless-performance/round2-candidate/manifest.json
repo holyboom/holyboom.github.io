@@ -1,0 +1,954 @@
+{
+  "capturedAt": "2026-11-14T21:33:03.595Z",
+  "base": "http://127.0.0.1:4174/",
+  "loadedScripts": [
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+      "bytes": 8839,
+      "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+      "bytes": 32630,
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+      "bytes": 4899,
+      "sha256": "0959a3a6d195d749a280694a550f91f0dd88bd52e7e1480f243d7acc22ac42c5"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6",
+      "bytes": 16492,
+      "sha256": "aea2f153719e934e2502ee05d9fd63404777707fcf573f97a08300449506d2eb"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+      "bytes": 32456,
+      "sha256": "9d815b7953b721473c1890f70d4fe891725f5c9fbf7679fbeebd38474b772da0"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+      "bytes": 27507,
+      "sha256": "f09e173ed282f21b235af4ccf3b5e65527f7a7d7884f633818134da448c677ff"
+    }
+  ],
+  "unlabelledDiagnostic": false,
+  "release": "faceless-performance-v6",
+  "sequence": [
+    {
+      "verb": "Imagine",
+      "shot": "establish",
+      "shape": "maker",
+      "pose": "design",
+      "label": "00 / THE PERSON BEHIND THE SYSTEM",
+      "caption": "A world begins at the end of a drawn line.",
+      "scale": 1,
+      "action": "Imagine",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 0,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "draw",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "Before software, there was a wish to make a place for people.",
+      "scale": 1,
+      "action": "Imagine a place",
+      "prop": "blueprint",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "establish",
+      "chapter": 1,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "sketch",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "A hand, a drawing, and something that did not exist before.",
+      "scale": 1,
+      "action": "Draw the first lines",
+      "prop": "house",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 1,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "type",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "The medium changed. The instinct to create stayed.",
+      "scale": 1,
+      "action": "Turn the drawing into an interface",
+      "prop": "code",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 1,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "type",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "An idea has to become something that works.",
+      "scale": 1,
+      "action": "Build one component",
+      "prop": "component",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "build",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "A beautiful part still has to belong to the whole.",
+      "scale": 1,
+      "action": "Fit it into a larger system",
+      "prop": "assembly",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 2,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "Other people will rely on the work. The details matter.",
+      "scale": 1,
+      "action": "Make it dependable",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Dependability",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "read",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "The work begins with understanding someone else’s need.",
+      "scale": 1,
+      "action": "Listen to the requirement",
+      "prop": "brief",
+      "tone": "human",
+      "meaning": "Understanding",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 3,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "My part had to connect with the work around it.",
+      "scale": 1,
+      "action": "Connect across boundaries",
+      "prop": "network",
+      "tone": "build",
+      "meaning": "Connection",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 3,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "build",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "A shared system asks more of us than a single screen.",
+      "scale": 1,
+      "action": "Bring the pieces together",
+      "prop": "assembly",
+      "tone": "care",
+      "meaning": "Collaboration",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 3,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "type",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "A new possibility enters a familiar process.",
+      "scale": 1,
+      "action": "Invite intelligence into the workflow",
+      "prop": "ai",
+      "tone": "dream",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 4,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "An answer is not the end of a human decision.",
+      "scale": 1,
+      "action": "Pause at the review boundary",
+      "prop": "review",
+      "tone": "human",
+      "meaning": "Human judgment",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 4,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "approve",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "Move forward with a visible path to inspect and review.",
+      "scale": 1,
+      "action": "Keep the person in control",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 4,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "alone",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Not everyone saw it yet. I still wanted to find out.",
+      "scale": 1,
+      "action": "Hold on to the possibility",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Conviction",
+      "energy": 0.22,
+      "shot": "isolate",
+      "chapter": 5,
+      "step": 0,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reach",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Belief did not make the difficult parts disappear.",
+      "scale": 1,
+      "action": "Meet the resistance",
+      "prop": "fracture",
+      "tone": "friction",
+      "meaning": "An obstacle",
+      "energy": 0.38,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 1,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reflect",
+      "label": "05 / KEEP BUILDING",
+      "caption": "What could this difficulty teach me?",
+      "scale": 1,
+      "action": "Stay with the problem",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Reflection",
+      "energy": 0.28,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 2,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "repair",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Another attempt. Another refinement. Then back again.",
+      "scale": 1,
+      "action": "Return to the work",
+      "prop": "repair",
+      "tone": "build",
+      "meaning": "Iteration",
+      "energy": 0.65,
+      "shot": "detail",
+      "chapter": 5,
+      "step": 3,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "rise",
+      "label": "05 / KEEP BUILDING",
+      "caption": "The work continued, week after week.",
+      "scale": 1,
+      "action": "Keep the light alive",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Persistence",
+      "energy": 0.85,
+      "shot": "rise",
+      "chapter": 5,
+      "step": 4,
+      "count": 5
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "read",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "A problem I had lived through became a starting point.",
+      "scale": 1,
+      "action": "Keep the lesson",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Experience",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 6,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "research",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Seek the strongest ideas and methods I can find.",
+      "scale": 1,
+      "action": "Look beyond my own methods",
+      "prop": "library",
+      "tone": "build",
+      "meaning": "Research",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 6,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Experience and selected methods become a skill with character.",
+      "scale": 1,
+      "action": "Distil a capability",
+      "prop": "skill",
+      "tone": "dream",
+      "meaning": "Synthesis",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 6,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "protect",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Purpose. Method. Character. A MOAT I keep developing.",
+      "scale": 1,
+      "action": "Build a distinctive advantage",
+      "prop": "moat",
+      "tone": "dream",
+      "meaning": "Identity",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 6,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "There is depth behind an experience that feels simple.",
+      "scale": 1,
+      "action": "Face the hidden complexity",
+      "prop": "complexity",
+      "tone": "build",
+      "meaning": "Depth",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 7,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Design gives that complexity a human starting point.",
+      "scale": 1,
+      "action": "Shape a clear way in",
+      "prop": "interface",
+      "tone": "dream",
+      "meaning": "Design",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 7,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "The next step should feel understandable and in their control.",
+      "scale": 1,
+      "action": "Give the person agency",
+      "prop": "choice",
+      "tone": "human",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 7,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "welcome",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Useful enough to work. Engaging enough to want to return.",
+      "scale": 1,
+      "action": "Make the experience inviting",
+      "prop": "recipient",
+      "tone": "care",
+      "meaning": "AI experiences",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 7,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "An experience becomes meaningful when someone can enter it.",
+      "scale": 1,
+      "action": "Open the door",
+      "prop": "interface",
+      "tone": "care",
+      "meaning": "Invitation",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "Explore the demonstration. Look beneath the surface.",
+      "scale": 1,
+      "action": "Make the work inspectable",
+      "prop": "review",
+      "tone": "build",
+      "meaning": "Transparency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 8,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "This story continues through what we choose to build next.",
+      "scale": 1,
+      "action": "Offer the next possibility",
+      "prop": "recipient",
+      "tone": "human",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Reflect",
+      "shot": "portrait",
+      "shape": "maker",
+      "pose": "stand",
+      "label": "09 / THE EXPERIENCE BEHIND THE STORY",
+      "caption": "The work that brought me here.",
+      "scale": 0.9,
+      "action": "Reflect",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 9,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Begin",
+      "shot": "reveal",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "10 / YOUR NEXT CHAPTER",
+      "caption": "What could we make possible, together?",
+      "scale": 1,
+      "action": "Begin",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 10,
+      "step": 0,
+      "count": 1
+    }
+  ],
+  "shots": {
+    "establish": {
+      "yaw": -0.3,
+      "pitch": 0.12,
+      "distance": 6.4,
+      "target": [
+        0.1,
+        0,
+        0
+      ]
+    },
+    "draft": {
+      "yaw": 0.58,
+      "pitch": 0.3,
+      "distance": 5.25,
+      "target": [
+        -0.25,
+        -0.09,
+        0.22
+      ]
+    },
+    "detail": {
+      "yaw": 0.44,
+      "pitch": 0.18,
+      "distance": 5.05,
+      "target": [
+        -0.26,
+        -0.08,
+        0.25
+      ]
+    },
+    "connect": {
+      "yaw": 0.28,
+      "pitch": 0.17,
+      "distance": 6.25,
+      "target": [
+        -0.2,
+        -0.07,
+        0.15
+      ]
+    },
+    "isolate": {
+      "yaw": 0.48,
+      "pitch": 0.21,
+      "distance": 7.25,
+      "target": [
+        -0.12,
+        -0.08,
+        0.15
+      ]
+    },
+    "intimate": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.06,
+        0.25
+      ]
+    },
+    "rise": {
+      "yaw": -0.42,
+      "pitch": 0.02,
+      "distance": 6.2,
+      "target": [
+        -0.3,
+        -0.1,
+        0.2
+      ]
+    },
+    "reveal": {
+      "yaw": 0.2,
+      "pitch": 0.19,
+      "distance": 6.35,
+      "target": [
+        -0.08,
+        -0.08,
+        0.2
+      ]
+    },
+    "portrait": {
+      "yaw": -0.15,
+      "pitch": 0.1,
+      "distance": 5.9,
+      "target": [
+        -0.25,
+        -0.08,
+        0.2
+      ]
+    }
+  },
+  "morph": {
+    "start": 0.16,
+    "end": 0.91
+  },
+  "scripts": [
+    "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+    "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6"
+  ],
+  "viewport": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "art": [
+      720,
+      720
+    ]
+  },
+  "artDeviceScaleFactor": 1,
+  "stillDelayMs": 800,
+  "notes": [
+    "All artwork is captured from the live browser canvas.",
+    "The art view overrides capture CSS only: 720-square canvas, no caption overlays, desktop camera behavior.",
+    "Desktop and mobile captures retain the real layout.",
+    "Steady key poses allow two settled rendering frames. Pilot transitions use fixed scroll positions.",
+    "Continuous sweeps drive native scroll at requestAnimationFrame cadence and retain the runtime camera damping.",
+    "These are headless review captures, not physical-device performance measurements."
+  ],
+  "metadataHash": "d980ddac9ce6e8a93bc09219b3ff09d417d9bbbe6b2f0e07de121273f19ec2a1",
+  "snapshots": [
+    {
+      "index": 3,
+      "action": "Turn the drawing into an interface",
+      "pose": "type",
+      "prop": "code",
+      "position": 1.6833333333333331,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-03.png",
+          "position": 1.683733333333333,
+          "shot": 3,
+          "detail": 2,
+          "drawCost": 8.849700492187543,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.22999999999999998,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "action": "Keep the light alive",
+      "pose": "rise",
+      "prop": "ember",
+      "position": 5.81,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-17.png",
+          "position": 5.809694650957205,
+          "shot": 17,
+          "detail": 2,
+          "drawCost": 3.5343475560544686,
+          "camera": {
+            "yaw": -0.42,
+            "pitch": 0.020000000000000004,
+            "distance": 6.200000000000001,
+            "target": [
+              -0.3,
+              -0.1,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "action": "Distil a capability",
+      "pose": "shape",
+      "prop": "skill",
+      "position": 6.5125,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-20.png",
+          "position": 6.512081497453204,
+          "shot": 20,
+          "detail": 2,
+          "drawCost": 3.8952225396649602,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "action": "Build a distinctive advantage",
+      "pose": "protect",
+      "prop": "moat",
+      "position": 6.7625,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-21.png",
+          "position": 6.762073685197338,
+          "shot": 21,
+          "detail": 2,
+          "drawCost": 3.420738451178406,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "action": "Give the person agency",
+      "pose": "offer",
+      "prop": "choice",
+      "position": 7.5125,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-24.png",
+          "position": 7.512854240993936,
+          "shot": 24,
+          "detail": 2,
+          "drawCost": 3.2949532003680004,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "action": "Make the experience inviting",
+      "pose": "welcome",
+      "prop": "recipient",
+      "position": 7.7625,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-25.png",
+          "position": 7.762460906626484,
+          "shot": 25,
+          "detail": 2,
+          "drawCost": 3.5605146928881526,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "action": "Open the door",
+      "pose": "invite",
+      "prop": "interface",
+      "position": 8,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-26.png",
+          "position": 8,
+          "shot": 26,
+          "detail": 2,
+          "drawCost": 2.961639212795169,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "action": "Make the work inspectable",
+      "pose": "inspect",
+      "prop": "review",
+      "position": 8.35,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-27.png",
+          "position": 8.349870144781105,
+          "shot": 27,
+          "detail": 2,
+          "drawCost": 3.0737665171402435,
+          "camera": {
+            "yaw": 0.44,
+            "pitch": 0.18,
+            "distance": 5.05,
+            "target": [
+              -0.26,
+              -0.08,
+              0.25
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "action": "Offer the next possibility",
+      "pose": "offer",
+      "prop": "recipient",
+      "position": 8.683333333333334,
+      "entries": [
+        {
+          "viewport": "art",
+          "file": "art-28.png",
+          "position": 8.682985330531858,
+          "shot": 28,
+          "detail": 2,
+          "drawCost": 3.490324053709725,
+          "camera": {
+            "yaw": 0.2,
+            "pitch": 0.19,
+            "distance": 6.349999999999999,
+            "target": [
+              -0.08000000000000002,
+              -0.08,
+              0.2
+            ],
+            "focal": 6
+          }
+        }
+      ]
+    }
+  ],
+  "pilots": [],
+  "performances": [],
+  "sweeps": [],
+  "errors": []
+}

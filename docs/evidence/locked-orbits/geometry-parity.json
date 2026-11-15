@@ -1,0 +1,12 @@
+{
+  "samples": 81,
+  "bodyUnchanged": true,
+  "foregroundAndDustUnchanged": true,
+  "lightTrajectoryUnchanged": true,
+  "closedOrbitPicturesUnchangedByFinalFanAdjustment": true,
+  "intendedChanges": [
+    "Authored camera orbits",
+    "Revealed rear graphs fan beside and below head at side view"
+  ],
+  "method": "Exact geometry JSON comparison with pre-orbit source, excluding intentional depth-layer fan. Closed scene and camera compared with pre-fan source."
+}

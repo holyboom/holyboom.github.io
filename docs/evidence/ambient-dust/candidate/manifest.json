@@ -1,0 +1,4876 @@
+{
+  "capturedAt": "2026-11-15T03:34:20.455Z",
+  "base": "http://127.0.0.1:4174/",
+  "release": "living-dust-v8",
+  "sequence": [
+    {
+      "verb": "Imagine",
+      "shot": "establish",
+      "shape": "maker",
+      "pose": "design",
+      "label": "00 / THE PERSON BEHIND THE SYSTEM",
+      "caption": "A world begins at the end of a drawn line.",
+      "scale": 1,
+      "action": "Imagine",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 0,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "draw",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "Before software, there was a wish to make a place for people.",
+      "scale": 1,
+      "action": "Imagine a place",
+      "prop": "blueprint",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "establish",
+      "chapter": 1,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "sketch",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "A hand, a drawing, and something that did not exist before.",
+      "scale": 1,
+      "action": "Draw the first lines",
+      "prop": "house",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 1,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Draw",
+      "shape": "maker",
+      "pose": "type",
+      "label": "01 / BEFORE CODE, A BLANK PAGE",
+      "caption": "The medium changed. The instinct to create stayed.",
+      "scale": 1,
+      "action": "Turn the drawing into an interface",
+      "prop": "code",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 1,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "type",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "An idea has to become something that works.",
+      "scale": 1,
+      "action": "Build one component",
+      "prop": "component",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "build",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "A beautiful part still has to belong to the whole.",
+      "scale": 1,
+      "action": "Fit it into a larger system",
+      "prop": "assembly",
+      "tone": "build",
+      "meaning": "Engineering",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 2,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Build",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "02 / THE DRAWING BECOMES A SYSTEM",
+      "caption": "Other people will rely on the work. The details matter.",
+      "scale": 1,
+      "action": "Make it dependable",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Dependability",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 2,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "read",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "The work begins with understanding someone else’s need.",
+      "scale": 1,
+      "action": "Listen to the requirement",
+      "prop": "brief",
+      "tone": "human",
+      "meaning": "Understanding",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 3,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "My part had to connect with the work around it.",
+      "scale": 1,
+      "action": "Connect across boundaries",
+      "prop": "network",
+      "tone": "build",
+      "meaning": "Connection",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 3,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Connect",
+      "shape": "maker",
+      "pose": "build",
+      "label": "03 / NOTHING IS BUILT ALONE",
+      "caption": "A shared system asks more of us than a single screen.",
+      "scale": 1,
+      "action": "Bring the pieces together",
+      "prop": "assembly",
+      "tone": "care",
+      "meaning": "Collaboration",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 3,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "type",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "A new possibility enters a familiar process.",
+      "scale": 1,
+      "action": "Invite intelligence into the workflow",
+      "prop": "ai",
+      "tone": "dream",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 4,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "An answer is not the end of a human decision.",
+      "scale": 1,
+      "action": "Pause at the review boundary",
+      "prop": "review",
+      "tone": "human",
+      "meaning": "Human judgment",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 4,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Review",
+      "shape": "maker",
+      "pose": "approve",
+      "label": "04 / KEEP A PERSON IN THE LOOP",
+      "caption": "Move forward with a visible path to inspect and review.",
+      "scale": 1,
+      "action": "Keep the person in control",
+      "prop": "verified",
+      "tone": "care",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 4,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "alone",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Not everyone saw it yet. I still wanted to find out.",
+      "scale": 1,
+      "action": "Hold on to the possibility",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Conviction",
+      "energy": 0.22,
+      "shot": "isolate",
+      "chapter": 5,
+      "step": 0,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reach",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Belief did not make the difficult parts disappear.",
+      "scale": 1,
+      "action": "Meet the resistance",
+      "prop": "fracture",
+      "tone": "friction",
+      "meaning": "An obstacle",
+      "energy": 0.38,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 1,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "reflect",
+      "label": "05 / KEEP BUILDING",
+      "caption": "What could this difficulty teach me?",
+      "scale": 1,
+      "action": "Stay with the problem",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Reflection",
+      "energy": 0.28,
+      "shot": "intimate",
+      "chapter": 5,
+      "step": 2,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "repair",
+      "label": "05 / KEEP BUILDING",
+      "caption": "Another attempt. Another refinement. Then back again.",
+      "scale": 1,
+      "action": "Return to the work",
+      "prop": "repair",
+      "tone": "build",
+      "meaning": "Iteration",
+      "energy": 0.65,
+      "shot": "detail",
+      "chapter": 5,
+      "step": 3,
+      "count": 5
+    },
+    {
+      "verb": "Persist",
+      "shape": "maker",
+      "pose": "rise",
+      "label": "05 / KEEP BUILDING",
+      "caption": "The work continued, week after week.",
+      "scale": 1,
+      "action": "Keep the light alive",
+      "prop": "ember",
+      "tone": "human",
+      "meaning": "Persistence",
+      "energy": 0.85,
+      "shot": "rise",
+      "chapter": 5,
+      "step": 4,
+      "count": 5
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "read",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "A problem I had lived through became a starting point.",
+      "scale": 1,
+      "action": "Keep the lesson",
+      "prop": "lesson",
+      "tone": "human",
+      "meaning": "Experience",
+      "energy": 1,
+      "shot": "intimate",
+      "chapter": 6,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "research",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Seek the strongest ideas and methods I can find.",
+      "scale": 1,
+      "action": "Look beyond my own methods",
+      "prop": "library",
+      "tone": "build",
+      "meaning": "Research",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 6,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Experience and selected methods become a skill with character.",
+      "scale": 1,
+      "action": "Distil a capability",
+      "prop": "skill",
+      "tone": "dream",
+      "meaning": "Synthesis",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 6,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Refine",
+      "shape": "maker",
+      "pose": "protect",
+      "label": "06 / EXPERIENCE TAKES SHAPE",
+      "caption": "Purpose. Method. Character. A MOAT I keep developing.",
+      "scale": 1,
+      "action": "Build a distinctive advantage",
+      "prop": "moat",
+      "tone": "dream",
+      "meaning": "Identity",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 6,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "connect",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "There is depth behind an experience that feels simple.",
+      "scale": 1,
+      "action": "Face the hidden complexity",
+      "prop": "complexity",
+      "tone": "build",
+      "meaning": "Depth",
+      "energy": 1,
+      "shot": "connect",
+      "chapter": 7,
+      "step": 0,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "shape",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Design gives that complexity a human starting point.",
+      "scale": 1,
+      "action": "Shape a clear way in",
+      "prop": "interface",
+      "tone": "dream",
+      "meaning": "Design",
+      "energy": 1,
+      "shot": "draft",
+      "chapter": 7,
+      "step": 1,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "The next step should feel understandable and in their control.",
+      "scale": 1,
+      "action": "Give the person agency",
+      "prop": "choice",
+      "tone": "human",
+      "meaning": "Agency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 7,
+      "step": 2,
+      "count": 4
+    },
+    {
+      "verb": "Create",
+      "shape": "maker",
+      "pose": "welcome",
+      "label": "07 / THE SOUL OF AI EXPERIENCES",
+      "caption": "Useful enough to work. Engaging enough to want to return.",
+      "scale": 1,
+      "action": "Make the experience inviting",
+      "prop": "recipient",
+      "tone": "care",
+      "meaning": "AI experiences",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 7,
+      "step": 3,
+      "count": 4
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "An experience becomes meaningful when someone can enter it.",
+      "scale": 1,
+      "action": "Open the door",
+      "prop": "interface",
+      "tone": "care",
+      "meaning": "Invitation",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 0,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "inspect",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "Explore the demonstration. Look beneath the surface.",
+      "scale": 1,
+      "action": "Make the work inspectable",
+      "prop": "review",
+      "tone": "build",
+      "meaning": "Transparency",
+      "energy": 1,
+      "shot": "detail",
+      "chapter": 8,
+      "step": 1,
+      "count": 3
+    },
+    {
+      "verb": "Share",
+      "shape": "maker",
+      "pose": "offer",
+      "label": "08 / STEP INTO WHAT I AM BUILDING",
+      "caption": "This story continues through what we choose to build next.",
+      "scale": 1,
+      "action": "Offer the next possibility",
+      "prop": "recipient",
+      "tone": "human",
+      "meaning": "Possibility",
+      "energy": 1,
+      "shot": "reveal",
+      "chapter": 8,
+      "step": 2,
+      "count": 3
+    },
+    {
+      "verb": "Reflect",
+      "shot": "portrait",
+      "shape": "maker",
+      "pose": "stand",
+      "label": "09 / THE EXPERIENCE BEHIND THE STORY",
+      "caption": "The work that brought me here.",
+      "scale": 0.9,
+      "action": "Reflect",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 9,
+      "step": 0,
+      "count": 1
+    },
+    {
+      "verb": "Begin",
+      "shot": "reveal",
+      "shape": "maker",
+      "pose": "invite",
+      "label": "10 / YOUR NEXT CHAPTER",
+      "caption": "What could we make possible, together?",
+      "scale": 1,
+      "action": "Begin",
+      "prop": "none",
+      "tone": "dream",
+      "meaning": "Imagination",
+      "energy": 1,
+      "chapter": 10,
+      "step": 0,
+      "count": 1
+    }
+  ],
+  "loadedScripts": [
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=living-dust-v8",
+      "sha256": "215e848fe7fc047a516b56b6a877fbad1623aabd963a79edf5b78853594aa6bf"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=living-dust-v8",
+      "sha256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=living-dust-v8",
+      "sha256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=living-dust-v8",
+      "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/living.js?v=living-dust-v8",
+      "sha256": "6059bb1098d003d2498f82e586ec4f598387101cf7e67006d8b9cbc56c8bdcbe"
+    },
+    {
+      "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=living-dust-v8",
+      "sha256": "4ff357b3fbd203b0b66475e7894391bbb8d2400f062886da1e4480c41a2da8e7"
+    }
+  ],
+  "captures": [
+    {
+      "index": 3,
+      "phase": "formed",
+      "fraction": 0.001,
+      "view": "art",
+      "file": "art-03-formed.png",
+      "position": 1.4042666666666668,
+      "timeline": 2.0011480881055985,
+      "camera": {
+        "yaw": 0.5762119581422507,
+        "pitch": 0.296753106979072,
+        "distance": 5.244485638758504,
+        "target": [
+          -0.25027057441841066,
+          -0.23972942558158933,
+          0.220811723255232
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 3,
+      "phase": "breakup",
+      "fraction": 0.35,
+      "view": "art",
+      "file": "art-03-breakup.png",
+      "position": 1.4864,
+      "timeline": 2.3502286049121524,
+      "camera": {
+        "yaw": 0.5279068196840231,
+        "pitch": 0.25534870258630543,
+        "distance": 5.174672240772954,
+        "target": [
+          -0.2537209414511412,
+          -0.23627905854885878,
+          0.23116282435342364
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 3,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "desktop",
+      "file": "desktop-03-cloud.png",
+      "position": 1.5108666666666668,
+      "timeline": 2.5175352646263094,
+      "camera": {
+        "yaw": 0.5062435315298617,
+        "pitch": 0.23678016988273848,
+        "distance": 5.143665783579415,
+        "target": [
+          -0.25526831917643844,
+          -0.23473168082356152,
+          0.23580495752931538
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 3,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "mobile",
+      "file": "mobile-03-cloud.png",
+      "position": 1.5111207622724252,
+      "timeline": 2.519293326380066,
+      "camera": {
+        "yaw": 0.25891075139952835,
+        "pitch": 0.1957806440567386,
+        "distance": 5.396444432756473,
+        "target": [
+          -0.24993494632860513,
+          -0.21556505367139486,
+          0.22330483898581535
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 3,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "art",
+      "file": "art-03-cloud.png",
+      "position": 1.5109333333333335,
+      "timeline": 2.5179965440000007,
+      "camera": {
+        "yaw": 0.5061839718047054,
+        "pitch": 0.23672911868974744,
+        "distance": 5.143580792927456,
+        "target": [
+          -0.2552725734425211,
+          -0.23472742655747894,
+          0.23581772032756315
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 3,
+      "phase": "reassembling",
+      "fraction": 0.72,
+      "view": "art",
+      "file": "art-03-reassembling.png",
+      "position": 1.5408,
+      "timeline": 2.718039978705507,
+      "camera": {
+        "yaw": 0.4805395592475495,
+        "pitch": 0.2147481936407567,
+        "distance": 5.10711684624776,
+        "target": [
+          -0.2571043171966036,
+          -0.23289568280339637,
+          0.2413129515898108
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 3,
+      "phase": "reformed",
+      "fraction": 0.999,
+      "view": "art",
+      "file": "art-03-reformed.png",
+      "position": 1.6122666666666667,
+      "timeline": 2.998779542780155,
+      "camera": {
+        "yaw": 0.44308004121600003,
+        "pitch": 0.18264003532800005,
+        "distance": 5.05431700737772,
+        "target": [
+          -0.259779997056,
+          -0.230220002944,
+          0.24933999116799999
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 13,
+      "phase": "formed",
+      "fraction": 0.001,
+      "view": "art",
+      "file": "art-13-formed.png",
+      "position": 4.737066666666666,
+      "timeline": 12.000880466614474,
+      "camera": {
+        "yaw": 0.2852341467528849,
+        "pitch": 0.12073093440395055,
+        "distance": 6.546052620813348,
+        "target": [
+          -0.2985381311920989,
+          -0.19819850087980195,
+          0.17957043302399997
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 13,
+      "phase": "breakup",
+      "fraction": 0.35,
+      "view": "art",
+      "file": "art-13-breakup.png",
+      "position": 4.8192,
+      "timeline": 12.346691357480204,
+      "camera": {
+        "yaw": 0.35376347760073473,
+        "pitch": 0.12,
+        "distance": 6.55,
+        "target": [
+          -0.3,
+          -0.2,
+          0.18
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 13,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "desktop",
+      "file": "desktop-13-cloud.png",
+      "position": 4.844733333333333,
+      "timeline": 12.521225098312243,
+      "camera": {
+        "yaw": 0.38604693605409907,
+        "pitch": 0.12,
+        "distance": 6.55,
+        "target": [
+          -0.3,
+          -0.2,
+          0.18
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 13,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "mobile",
+      "file": "mobile-13-cloud.png",
+      "position": 4.844845707391353,
+      "timeline": 12.522002426026402,
+      "camera": {
+        "yaw": 0.18102368838428495,
+        "pitch": 0.12,
+        "distance": 6.314733823859006,
+        "target": [
+          -0.27899999999999997,
+          -0.193,
+          0.187
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 13,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "art",
+      "file": "art-13-cloud.png",
+      "position": 4.8448,
+      "timeline": 12.521686258832956,
+      "camera": {
+        "yaw": 0.3861319833763727,
+        "pitch": 0.12,
+        "distance": 6.55,
+        "target": [
+          -0.3,
+          -0.2,
+          0.18
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 13,
+      "phase": "reassembling",
+      "fraction": 0.72,
+      "view": "art",
+      "file": "art-13-reassembling.png",
+      "position": 4.874666666666666,
+      "timeline": 12.721395182521618,
+      "camera": {
+        "yaw": 0.42269520844949676,
+        "pitch": 0.12,
+        "distance": 6.55,
+        "target": [
+          -0.3,
+          -0.2,
+          0.18
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 13,
+      "phase": "reformed",
+      "fraction": 0.999,
+      "view": "art",
+      "file": "art-13-reformed.png",
+      "position": 4.946133333333333,
+      "timeline": 12.999055911850705,
+      "camera": {
+        "yaw": 0.4757563649765361,
+        "pitch": 0.12081223200547508,
+        "distance": 6.5561698157288015,
+        "target": [
+          -0.2983755359890498,
+          -0.2002423914599279,
+          0.17972667849436613
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 20,
+      "phase": "formed",
+      "fraction": 0.001,
+      "view": "art",
+      "file": "art-20-formed.png",
+      "position": 6.3030880284991095,
+      "timeline": 19.00106964574849,
+      "camera": {
+        "yaw": 0.28428919072056397,
+        "pitch": 0.17026807442003525,
+        "distance": 6.214382097460727,
+        "target": [
+          -0.20160844652021148,
+          -0.07026807442003526,
+          0.15268074420035246
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 20,
+      "phase": "breakup",
+      "fraction": 0.35,
+      "view": "art",
+      "file": "art-20-breakup.png",
+      "position": 6.365086091059655,
+      "timeline": 19.35276306734611,
+      "camera": {
+        "yaw": 0.33991070479349,
+        "pitch": 0.17374441904959312,
+        "distance": 5.770466855936678,
+        "target": [
+          -0.22246651429755876,
+          -0.07374441904959313,
+          0.18744419049593122
+        ],
+        "focal": 6
+      },
+      "particles": 120,
+      "mobileParticles": 60
+    },
+    {
+      "index": 20,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "desktop",
+      "file": "desktop-20-cloud.png",
+      "position": 6.383667395389867,
+      "timeline": 19.522307834632475,
+      "camera": {
+        "yaw": 0.36499728903685497,
+        "pitch": 0.17531233056480344,
+        "distance": 5.58076675153115,
+        "target": [
+          -0.23187398338882062,
+          -0.07531233056480344,
+          0.20312330564803432
+        ],
+        "focal": 6
+      },
+      "particles": 120,
+      "mobileParticles": 60
+    },
+    {
+      "index": 20,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "mobile",
+      "file": "mobile-20-cloud.png",
+      "position": 6.383148107727243,
+      "timeline": 19.517517807035393,
+      "camera": {
+        "yaw": 0.16678884494123486,
+        "pitch": 0.15592430280882716,
+        "distance": 5.693968518159616,
+        "target": [
+          -0.23454581685296305,
+          -0.11192430280882718,
+          0.20174302808827174
+        ],
+        "focal": 6
+      },
+      "particles": 120,
+      "mobileParticles": 60
+    },
+    {
+      "index": 20,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "art",
+      "file": "art-20-cloud.png",
+      "position": 6.383085528577232,
+      "timeline": 19.516940458318874,
+      "camera": {
+        "yaw": 0.36420533244757963,
+        "pitch": 0.17526283327797373,
+        "distance": 5.586658956146874,
+        "target": [
+          -0.23157699966784237,
+          -0.07526283327797373,
+          0.20262833277973727
+        ],
+        "focal": 6
+      },
+      "particles": 120,
+      "mobileParticles": 60
+    },
+    {
+      "index": 20,
+      "phase": "reassembling",
+      "fraction": 0.72,
+      "view": "art",
+      "file": "art-20-reassembling.png",
+      "position": 6.406084809849692,
+      "timeline": 19.722105151458468,
+      "camera": {
+        "yaw": 0.39425921549530435,
+        "pitch": 0.1771412009684565,
+        "distance": 5.367358566816212,
+        "target": [
+          -0.24284720581073913,
+          -0.07714120096845653,
+          0.2214120096845652
+        ],
+        "focal": 6
+      },
+      "particles": 120,
+      "mobileParticles": 60
+    },
+    {
+      "index": 20,
+      "phase": "reformed",
+      "fraction": 0.999,
+      "view": "art",
+      "file": "art-20-reformed.png",
+      "position": 6.459083153651449,
+      "timeline": 19.998692220624136,
+      "camera": {
+        "yaw": 0.4364428793058887,
+        "pitch": 0.17977767995661803,
+        "distance": 5.073992362176172,
+        "target": [
+          -0.2586660797397083,
+          -0.07977767995661804,
+          0.24777679956618043
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 23,
+      "phase": "formed",
+      "fraction": 0.001,
+      "view": "art",
+      "file": "art-23-formed.png",
+      "position": 7.053351061079472,
+      "timeline": 22.001258250563765,
+      "camera": {
+        "yaw": 0.2882190763000279,
+        "pitch": 0.1735615997300121,
+        "distance": 6.2202165283350475,
+        "target": [
+          -0.20136984605000466,
+          -0.07054793842000186,
+          0.1519177844700065
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 23,
+      "phase": "breakup",
+      "fraction": 0.35,
+      "view": "art",
+      "file": "art-23-breakup.png",
+      "position": 7.114807247693546,
+      "timeline": 22.350292765557448,
+      "camera": {
+        "yaw": 0.3916460739849095,
+        "pitch": 0.2183799653934608,
+        "distance": 5.857337955360417,
+        "target": [
+          -0.21860767899748493,
+          -0.07744307159899397,
+          0.1760507505964789
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 23,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "desktop",
+      "file": "desktop-23-cloud.png",
+      "position": 7.133714161125041,
+      "timeline": 22.522739128768766,
+      "camera": {
+        "yaw": 0.439489219353522,
+        "pitch": 0.23911199505319283,
+        "distance": 5.696715866697417,
+        "target": [
+          -0.22658153655892033,
+          -0.08063261462356813,
+          0.18721415118248846
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 23,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "mobile",
+      "file": "mobile-23-cloud.png",
+      "position": 7.133252601649334,
+      "timeline": 22.518481810395,
+      "camera": {
+        "yaw": 0.21490245213864217,
+        "pitch": 0.19709106259341164,
+        "distance": 5.769622405183346,
+        "target": [
+          -0.2311504086897737,
+          -0.11536016347590947,
+          0.19151057216568318
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 23,
+      "phase": "cloud",
+      "fraction": 0.52,
+      "view": "art",
+      "file": "art-23-cloud.png",
+      "position": 7.1337168435748,
+      "timeline": 22.52276386704353,
+      "camera": {
+        "yaw": 0.4394960622488799,
+        "pitch": 0.23911496030784798,
+        "distance": 5.696693211245581,
+        "target": [
+          -0.22658267704148,
+          -0.080633070816592,
+          0.187215747858072
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 23,
+      "phase": "reassembling",
+      "fraction": 0.72,
+      "view": "art",
+      "file": "art-23-reassembling.png",
+      "position": 7.155462878838241,
+      "timeline": 22.716887288418743,
+      "camera": {
+        "yaw": 0.4928156791661837,
+        "pitch": 0.26222012763867963,
+        "distance": 5.5228701622145895,
+        "target": [
+          -0.2354692798610306,
+          -0.08418771194441224,
+          0.19965699180544286
+        ],
+        "focal": 6
+      },
+      "particles": 60,
+      "mobileParticles": 30
+    },
+    {
+      "index": 23,
+      "phase": "reformed",
+      "fraction": 0.999,
+      "view": "art",
+      "file": "art-23-reformed.png",
+      "position": 7.209355227099815,
+      "timeline": 22.998890943849982,
+      "camera": {
+        "yaw": 0.5734915770711404,
+        "pitch": 0.2971796833974942,
+        "distance": 5.269896002805668,
+        "target": [
+          -0.24891526284519008,
+          -0.08956610513807603,
+          0.21848136798326612
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    }
+  ],
+  "sweeps": [
+    {
+      "index": 3,
+      "direction": "forward",
+      "samples": [
+        {
+          "elapsed": -11.100000002980323,
+          "position": 1.4042666666666668,
+          "timeline": 2.0011480881055985,
+          "camera": {
+            "yaw": 0.5762119581422507,
+            "pitch": 0.296753106979072,
+            "distance": 5.244485638758504,
+            "target": [
+              -0.25027057441841066,
+              -0.23972942558158933,
+              0.220811723255232
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 122.29999999701977,
+          "position": 1.4200182506458565,
+          "timeline": 2.0240314395181547,
+          "camera": {
+            "yaw": 0.5713872179270485,
+            "pitch": 0.2926176153660415,
+            "distance": 5.237470511822071,
+            "target": [
+              -0.25061519871949656,
+              -0.23938480128050343,
+              0.22184559615848964
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 272.29999999701977,
+          "position": 1.4327635611707572,
+          "timeline": 2.0616836774777934,
+          "camera": {
+            "yaw": 0.5657931338913023,
+            "pitch": 0.28782268619254486,
+            "distance": 5.229348512662823,
+            "target": [
+              -0.2510147761506213,
+              -0.23898522384937873,
+              0.22304432845186378
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 405.5999999970197,
+          "position": 1.4424400373666062,
+          "timeline": 2.100072748895891,
+          "camera": {
+            "yaw": 0.5605504185991039,
+            "pitch": 0.28332893022780326,
+            "distance": 5.221748096275325,
+            "target": [
+              -0.25138925581434973,
+              -0.23861074418565026,
+              0.22416776744304917
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 555.5999999970197,
+          "position": 1.4513331138406071,
+          "timeline": 2.1417983439863875,
+          "camera": {
+            "yaw": 0.5550191618924127,
+            "pitch": 0.2785878530506395,
+            "distance": 5.2137413534583565,
+            "target": [
+              -0.2517843455791134,
+              -0.2382156544208866,
+              0.2253530367373401
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 705.59999999702,
+          "position": 1.458874382740574,
+          "timeline": 2.1813815485552768,
+          "camera": {
+            "yaw": 0.5498375831868259,
+            "pitch": 0.27414649987442213,
+            "distance": 5.206251923056456,
+            "target": [
+              -0.2521544583437982,
+              -0.23784554165620184,
+              0.22646337503139446
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 838.9999999970196,
+          "position": 1.4656215100997512,
+          "timeline": 2.2196241470731106,
+          "camera": {
+            "yaw": 0.54485802660666,
+            "pitch": 0.26987830851999434,
+            "distance": 5.199064632114546,
+            "target": [
+              -0.25251014095666713,
+              -0.23748985904333286,
+              0.22753042287000141
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 988.9999999970196,
+          "position": 1.4727991694552036,
+          "timeline": 2.262816756688932,
+          "camera": {
+            "yaw": 0.5392474299036736,
+            "pitch": 0.26506922563172014,
+            "distance": 5.190978410543561,
+            "target": [
+              -0.2529108978640233,
+              -0.23708910213597667,
+              0.22873269359206996
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1138.9999999970196,
+          "position": 1.4790797704920646,
+          "timeline": 2.3023978825334477,
+          "camera": {
+            "yaw": 0.5341110499955908,
+            "pitch": 0.26066661428193494,
+            "distance": 5.183586677209405,
+            "target": [
+              -0.2532777821431721,
+              -0.2367222178568279,
+              0.22983334642951628
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1288.8999999970197,
+          "position": 1.4857863263159057,
+          "timeline": 2.3461591620608138,
+          "camera": {
+            "yaw": 0.5284345873059872,
+            "pitch": 0.25580107483370335,
+            "distance": 5.175429957206697,
+            "target": [
+              -0.25368324376385804,
+              -0.23631675623614193,
+              0.23104973129157416
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1438.8999999970197,
+          "position": 1.4908660586362785,
+          "timeline": 2.3801206360759943,
+          "camera": {
+            "yaw": 0.5240307250898806,
+            "pitch": 0.25202633579132616,
+            "distance": 5.1691107265641065,
+            "target": [
+              -0.2539978053507228,
+              -0.23600219464927716,
+              0.23199341605216847
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1572.1999999970199,
+          "position": 1.4976557904473051,
+          "timeline": 2.426317918117041,
+          "camera": {
+            "yaw": 0.5180434416978257,
+            "pitch": 0.24689437859813632,
+            "distance": 5.160531772700994,
+            "target": [
+              -0.2544254684501553,
+              -0.23557453154984467,
+              0.23327640535046593
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1705.59999999702,
+          "position": 1.502959236800543,
+          "timeline": 2.462825235296018,
+          "camera": {
+            "yaw": 0.5133163154079077,
+            "pitch": 0.24284255606392088,
+            "distance": 5.15376851026262,
+            "target": [
+              -0.2547631203280066,
+              -0.2352368796719934,
+              0.23428936098401978
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1855.59999999702,
+          "position": 1.5084374941265812,
+          "timeline": 2.5007211129618123,
+          "camera": {
+            "yaw": 0.5084154646547685,
+            "pitch": 0.23864182684694446,
+            "distance": 5.146766052467868,
+            "target": [
+              -0.25511318109608794,
+              -0.23488681890391203,
+              0.23533954328826387
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1988.8999999970197,
+          "position": 1.514420578888806,
+          "timeline": 2.542098116929431,
+          "camera": {
+            "yaw": 0.5030740481885492,
+            "pitch": 0.23406346987589932,
+            "distance": 5.139144938620123,
+            "target": [
+              -0.2554947108436751,
+              -0.23450528915632493,
+              0.23648413253102518
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2122.19999999702,
+          "position": 1.5196825027020604,
+          "timeline": 2.578283733401625,
+          "camera": {
+            "yaw": 0.4984133160541339,
+            "pitch": 0.23006855661782913,
+            "distance": 5.132504242807704,
+            "target": [
+              -0.2558276202818476,
+              -0.2341723797181524,
+              0.2374828608455427
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2255.59999999702,
+          "position": 1.5252866835031769,
+          "timeline": 2.616411226488383,
+          "camera": {
+            "yaw": 0.49351537675085705,
+            "pitch": 0.2258703229293061,
+            "distance": 5.125534816881664,
+            "target": [
+              -0.2561774730892245,
+              -0.23382252691077549,
+              0.2385324192676735
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2388.8999999970197,
+          "position": 1.5307682139736936,
+          "timeline": 2.6530980363300625,
+          "camera": {
+            "yaw": 0.4888169915871345,
+            "pitch": 0.2218431356461152,
+            "distance": 5.118858236007752,
+            "target": [
+              -0.2565130720294904,
+              -0.2334869279705096,
+              0.2395392160884712
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2522.19999999702,
+          "position": 1.535878844812889,
+          "timeline": 2.686590031834893,
+          "camera": {
+            "yaw": 0.4845415543351747,
+            "pitch": 0.2181784751444355,
+            "distance": 5.112790238092518,
+            "target": [
+              -0.25681846040463036,
+              -0.2331815395953696,
+              0.24045538121389112
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2655.59999999702,
+          "position": 1.5413442499666268,
+          "timeline": 2.72146374409201,
+          "camera": {
+            "yaw": 0.4801046463329159,
+            "pitch": 0.2143754111424993,
+            "distance": 5.106500675296496,
+            "target": [
+              -0.2571353824047917,
+              -0.23286461759520827,
+              0.24140614721437517
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2805.4999999970196,
+          "position": 1.548240400158575,
+          "timeline": 2.7637827698087354,
+          "camera": {
+            "yaw": 0.47474102959457526,
+            "pitch": 0.20977802536677878,
+            "distance": 5.098907780636211,
+            "target": [
+              -0.25751849788610176,
+              -0.23248150211389823,
+              0.2425554936583053
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2938.7999999970198,
+          "position": 1.5558873115934697,
+          "timeline": 2.80807452984698,
+          "camera": {
+            "yaw": 0.46914853969874454,
+            "pitch": 0.2049844625989239,
+            "distance": 5.091002908951011,
+            "target": [
+              -0.25791796145008966,
+              -0.2320820385499103,
+              0.243753884350269
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3072.1999999970194,
+          "position": 1.562250479001854,
+          "timeline": 2.842452423860621,
+          "camera": {
+            "yaw": 0.46481634795320986,
+            "pitch": 0.20127115538846552,
+            "distance": 5.084887867839369,
+            "target": [
+              -0.25822740371762787,
+              -0.23177259628237212,
+              0.2446822111528836
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3205.4999999970196,
+          "position": 1.5695507149686696,
+          "timeline": 2.8787021109631077,
+          "camera": {
+            "yaw": 0.46024218397160394,
+            "pitch": 0.19735044340423186,
+            "distance": 5.078439246122554,
+            "target": [
+              -0.25855412971631403,
+              -0.23144587028368596,
+              0.24566238914894203
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3338.7999999970198,
+          "position": 1.5780501840733638,
+          "timeline": 2.916025556341832,
+          "camera": {
+            "yaw": 0.4554910173113253,
+            "pitch": 0.19327801483827883,
+            "distance": 5.071749746143941,
+            "target": [
+              -0.2588934987634768,
+              -0.2311065012365232,
+              0.2466804962904303
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3472.09999999702,
+          "position": 1.58747051012935,
+          "timeline": 2.9504197320557597,
+          "camera": {
+            "yaw": 0.4509895567527075,
+            "pitch": 0.18941962007374924,
+            "distance": 5.065419954193573,
+            "target": [
+              -0.2592150316605209,
+              -0.2307849683394791,
+              0.24764509498156267
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3622.1999999970194,
+          "position": 1.6062402462706944,
+          "timeline": 2.993275710577016,
+          "camera": {
+            "yaw": 0.44448765610014934,
+            "pitch": 0.18384656237155655,
+            "distance": 5.056291158753103,
+            "target": [
+              -0.2596794531357036,
+              -0.23032054686429637,
+              0.24903835940711086
+            ],
+            "focal": 6
+          }
+        }
+      ],
+      "position": 1.6122666666666667,
+      "timeline": 2.998779542780155,
+      "camera": {
+        "yaw": 0.44308004121600003,
+        "pitch": 0.18264003532800005,
+        "distance": 5.05431700737772,
+        "target": [
+          -0.259779997056,
+          -0.230220002944,
+          0.24933999116799999
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 3,
+      "direction": "reverse",
+      "samples": [
+        {
+          "elapsed": 9.499999997019586,
+          "position": 1.6122666666666667,
+          "timeline": 2.998779542780155,
+          "camera": {
+            "yaw": 0.44308004121600003,
+            "pitch": 0.18264003532800005,
+            "distance": 5.05431700737772,
+            "target": [
+              -0.259779997056,
+              -0.230220002944,
+              0.24933999116799999
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 142.79999999701977,
+          "position": 1.595883059780113,
+          "timeline": 2.9741608548601897,
+          "camera": {
+            "yaw": 0.447669865655903,
+            "pitch": 0.18657417056220252,
+            "distance": 5.060756985701961,
+            "target": [
+              -0.2594521524531498,
+              -0.2305478475468502,
+              0.24835645735944936
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 276.09999999701995,
+          "position": 1.5823154363286644,
+          "timeline": 2.9325616754774657,
+          "camera": {
+            "yaw": 0.4533512737157716,
+            "pitch": 0.19144394889923272,
+            "distance": 5.068739929941608,
+            "target": [
+              -0.2590463375917306,
+              -0.23095366240826937,
+              0.24713901277519182
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 426.09999999701995,
+          "position": 1.5727301663868345,
+          "timeline": 2.893313599949116,
+          "camera": {
+            "yaw": 0.45839042775656663,
+            "pitch": 0.1957632237913428,
+            "distance": 5.075830980338609,
+            "target": [
+              -0.25868639801738813,
+              -0.2313136019826119,
+              0.2460591940521643
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 559.4999999970196,
+          "position": 1.5643938140629614,
+          "timeline": 2.8534673305219345,
+          "camera": {
+            "yaw": 0.4634280495507656,
+            "pitch": 0.20008118532922758,
+            "distance": 5.0829297902631145,
+            "target": [
+              -0.25832656788923103,
+              -0.23167343211076896,
+              0.2449797036676931
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 709.4999999970196,
+          "position": 1.5577441872014521,
+          "timeline": 2.818354809969678,
+          "camera": {
+            "yaw": 0.4678527099810012,
+            "pitch": 0.20387375141228675,
+            "distance": 5.089173029244954,
+            "target": [
+              -0.2580105207156428,
+              -0.2319894792843572,
+              0.2440315621469283
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 859.3999999970201,
+          "position": 1.5502031873285194,
+          "timeline": 2.775435172853367,
+          "camera": {
+            "yaw": 0.47326788997783215,
+            "pitch": 0.20851533426671326,
+            "distance": 5.096824337530055,
+            "target": [
+              -0.25762372214444057,
+              -0.23237627785555942,
+              0.24287116643332168
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 992.7999999970198,
+          "position": 1.5434422044747313,
+          "timeline": 2.73455191080128,
+          "camera": {
+            "yaw": 0.4784434572009832,
+            "pitch": 0.21295153474369993,
+            "distance": 5.104147838919795,
+            "target": [
+              -0.25725403877135833,
+              -0.23274596122864163,
+              0.24176211631407502
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1142.6999999970194,
+          "position": 1.5371934762034427,
+          "timeline": 2.6950743861689577,
+          "camera": {
+            "yaw": 0.48346068629888445,
+            "pitch": 0.21725201682761525,
+            "distance": 5.1112573344422465,
+            "target": [
+              -0.2568956652643654,
+              -0.23310433473563458,
+              0.2406869957930962
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1276.09999999702,
+          "position": 1.531802864414369,
+          "timeline": 2.6599394194690933,
+          "camera": {
+            "yaw": 0.4879425443176994,
+            "pitch": 0.22109360941517087,
+            "distance": 5.11761657405961,
+            "target": [
+              -0.2565755325487358,
+              -0.23342446745126422,
+              0.2397265976462073
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1409.3999999970201,
+          "position": 1.5257103096954034,
+          "timeline": 2.619270389665782,
+          "camera": {
+            "yaw": 0.4931486767068302,
+            "pitch": 0.22555600860585454,
+            "distance": 5.12501340925295,
+            "target": [
+              -0.2562036659495121,
+              -0.23379633405048786,
+              0.23861099784853637
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1542.6999999970194,
+          "position": 1.5203128743684884,
+          "timeline": 2.5825972393139165,
+          "camera": {
+            "yaw": 0.4978584891530347,
+            "pitch": 0.2295929907026012,
+            "distance": 5.131714287129846,
+            "target": [
+              -0.25586725077478323,
+              -0.23413274922521676,
+              0.2376017523243497
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1692.6999999970194,
+          "position": 1.5147240127260386,
+          "timeline": 2.5441918440652893,
+          "camera": {
+            "yaw": 0.5028040851577358,
+            "pitch": 0.23383207299234499,
+            "distance": 5.1387600560712405,
+            "target": [
+              -0.2555139939173046,
+              -0.2344860060826954,
+              0.23654198175191377
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1825.9999999970196,
+          "position": 1.5086525130163269,
+          "timeline": 2.502209699103842,
+          "camera": {
+            "yaw": 0.5082231103649133,
+            "pitch": 0.2384769517413543,
+            "distance": 5.146491405987441,
+            "target": [
+              -0.25512692068822046,
+              -0.2348730793117795,
+              0.2353807620646614
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1959.2999999970198,
+          "position": 1.5064041460569582,
+          "timeline": 2.486645499898594,
+          "camera": {
+            "yaw": 0.5102349256120329,
+            "pitch": 0.24020136481031393,
+            "distance": 5.149364632541612,
+            "target": [
+              -0.2549832195991405,
+              -0.2350167804008595,
+              0.23494965879742152
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2109.2999999970198,
+          "position": 1.497897491947609,
+          "timeline": 2.427975346010281,
+          "camera": {
+            "yaw": 0.5178287328514086,
+            "pitch": 0.24671034244406442,
+            "distance": 5.160224389037699,
+            "target": [
+              -0.25444080479632797,
+              -0.23555919520367202,
+              0.2333224143889839
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2259.2999999970198,
+          "position": 1.491589827636645,
+          "timeline": 2.3850064033371305,
+          "camera": {
+            "yaw": 0.5233973105999066,
+            "pitch": 0.2514834090856342,
+            "distance": 5.168202456515376,
+            "target": [
+              -0.2540430492428638,
+              -0.23595695075713619,
+              0.23212914772859145
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2392.6999999970194,
+          "position": 1.4859172727386283,
+          "timeline": 2.347026673150409,
+          "camera": {
+            "yaw": 0.5283220779848947,
+            "pitch": 0.25570463827276685,
+            "distance": 5.175268418172012,
+            "target": [
+              -0.2536912801439361,
+              -0.2363087198560639,
+              0.2310738404318083
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2525.9999999970205,
+          "position": 1.4798860895593984,
+          "timeline": 2.307584165554383,
+          "camera": {
+            "yaw": 0.533438212536689,
+            "pitch": 0.2600898964600191,
+            "distance": 5.1826191809026625,
+            "target": [
+              -0.2533258419616651,
+              -0.23667415803833491,
+              0.2299775258849952
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2675.9999999970205,
+          "position": 1.474164928726088,
+          "timeline": 2.2712933297168174,
+          "camera": {
+            "yaw": 0.5381471786203424,
+            "pitch": 0.26412615310315063,
+            "distance": 5.189394158967345,
+            "target": [
+              -0.25298948724140413,
+              -0.2370105127585959,
+              0.22896846172421234
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2809.39999999702,
+          "position": 1.467033675832136,
+          "timeline": 2.2279306741001537,
+          "camera": {
+            "yaw": 0.5437782755406033,
+            "pitch": 0.26895280760623147,
+            "distance": 5.197507472490459,
+            "target": [
+              -0.25258726603281406,
+              -0.23741273396718596,
+              0.22776179809844213
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2942.6999999970194,
+          "position": 1.461911731753284,
+          "timeline": 2.1982901202321257,
+          "camera": {
+            "yaw": 0.5476338287452143,
+            "pitch": 0.2722575674958979,
+            "distance": 5.2030698880844355,
+            "target": [
+              -0.25231186937534184,
+              -0.23768813062465816,
+              0.2269356081260255
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3075.9999999970205,
+          "position": 1.4540228995146973,
+          "timeline": 2.1555041777246178,
+          "camera": {
+            "yaw": 0.5532203104363063,
+            "pitch": 0.2770459803739768,
+            "distance": 5.2111400815947535,
+            "target": [
+              -0.25191283496883526,
+              -0.23808716503116473,
+              0.2257385049065058
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3209.39999999702,
+          "position": 1.4478853679466628,
+          "timeline": 2.1249449781259706,
+          "camera": {
+            "yaw": 0.5572411284253602,
+            "pitch": 0.2804923957931658,
+            "distance": 5.216956273541258,
+            "target": [
+              -0.25162563368390284,
+              -0.23837436631609715,
+              0.22487690105170854
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3342.6999999970194,
+          "position": 1.4383755363716053,
+          "timeline": 2.0829995737762728,
+          "camera": {
+            "yaw": 0.5628543374388291,
+            "pitch": 0.28530371780471064,
+            "distance": 5.225086748760202,
+            "target": [
+              -0.2512246901829408,
+              -0.23877530981705922,
+              0.22367407054882232
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3492.599999997019,
+          "position": 1.4276600327390756,
+          "timeline": 2.0447313863935577,
+          "camera": {
+            "yaw": 0.5682151965795605,
+            "pitch": 0.2898987399253375,
+            "distance": 5.232863535955588,
+            "target": [
+              -0.2508417716728885,
+              -0.23915822832711145,
+              0.22252531501866563
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3609.2999999970198,
+          "position": 1.410340639778916,
+          "timeline": 2.0066159035354496,
+          "camera": {
+            "yaw": 0.5746203384058275,
+            "pitch": 0.2953888614907092,
+            "distance": 5.242170400670903,
+            "target": [
+              -0.2503842615424409,
+              -0.2396157384575591,
+              0.2211527846273227
+            ],
+            "focal": 6
+          }
+        }
+      ],
+      "position": 1.4042666666666668,
+      "timeline": 2.0011480881055985,
+      "camera": {
+        "yaw": 0.5762119581422507,
+        "pitch": 0.296753106979072,
+        "distance": 5.244485638758504,
+        "target": [
+          -0.25027057441841066,
+          -0.23972942558158933,
+          0.220811723255232
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 13,
+      "direction": "forward",
+      "samples": [
+        {
+          "elapsed": -3.100000000000364,
+          "position": 4.737066666666666,
+          "timeline": 12.000880466614474,
+          "camera": {
+            "yaw": 0.2852341467528849,
+            "pitch": 0.12073093440395055,
+            "distance": 6.546052620813348,
+            "target": [
+              -0.2985381311920989,
+              -0.19819850087980195,
+              0.17957043302399997
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 146.89999999999964,
+          "position": 4.754208594790097,
+          "timeline": 12.026059692432552,
+          "camera": {
+            "yaw": 0.29277318258607765,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 280.2999999999993,
+          "position": 4.7667151125583045,
+          "timeline": 12.063898006163624,
+          "camera": {
+            "yaw": 0.3007379780304012,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 430.2000000000007,
+          "position": 4.777502656472619,
+          "timeline": 12.107730760278484,
+          "camera": {
+            "yaw": 0.3092476306366679,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 563.5,
+          "position": 4.7849184506178615,
+          "timeline": 12.143062129466921,
+          "camera": {
+            "yaw": 0.3159242489824527,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 713.6000000000004,
+          "position": 4.793078828460057,
+          "timeline": 12.186177325588144,
+          "camera": {
+            "yaw": 0.3239826982191177,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 846.8999999999996,
+          "position": 4.799162776622275,
+          "timeline": 12.220841005672844,
+          "camera": {
+            "yaw": 0.3304288299342539,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 980.2000000000007,
+          "position": 4.80530938556571,
+          "timeline": 12.257745660827789,
+          "camera": {
+            "yaw": 0.33727750397064565,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1113.5,
+          "position": 4.811207183616461,
+          "timeline": 12.294683411138363,
+          "camera": {
+            "yaw": 0.34412579961603257,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1263.5,
+          "position": 4.817612758650514,
+          "timeline": 12.336209540123331,
+          "camera": {
+            "yaw": 0.35182138668543955,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1413.6000000000004,
+          "position": 4.824103130326762,
+          "timeline": 12.379471630182199,
+          "camera": {
+            "yaw": 0.3598359024374544,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1546.8999999999996,
+          "position": 4.8292672207977,
+          "timeline": 12.41453253503988,
+          "camera": {
+            "yaw": 0.3663280225883962,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1680.2000000000007,
+          "position": 4.835357896322152,
+          "timeline": 12.456373270424821,
+          "camera": {
+            "yaw": 0.37406945459638447,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1813.5,
+          "position": 4.840733300315085,
+          "timeline": 12.493538392836468,
+          "camera": {
+            "yaw": 0.38093744216639863,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1946.7999999999993,
+          "position": 4.846021936102271,
+          "timeline": 12.530135621106789,
+          "camera": {
+            "yaw": 0.3876898500810699,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2080.1000000000004,
+          "position": 4.851446603607475,
+          "timeline": 12.567523321812663,
+          "camera": {
+            "yaw": 0.39457412891078997,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2213.5,
+          "position": 4.85674443098342,
+          "timeline": 12.603710514984341,
+          "camera": {
+            "yaw": 0.4012209541228224,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2346.7999999999993,
+          "position": 4.861840381312097,
+          "timeline": 12.638049777714208,
+          "camera": {
+            "yaw": 0.40751092900524105,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2496.7999999999993,
+          "position": 4.868385186830031,
+          "timeline": 12.681223855492751,
+          "camera": {
+            "yaw": 0.4153919318236216,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2646.8999999999996,
+          "position": 4.874643286741357,
+          "timeline": 12.721248330032308,
+          "camera": {
+            "yaw": 0.4226685635998881,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2780.1000000000004,
+          "position": 4.878056249483747,
+          "timeline": 12.742452756653396,
+          "camera": {
+            "yaw": 0.4265118582860407,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2913.3999999999996,
+          "position": 4.887589053134873,
+          "timeline": 12.798881579265935,
+          "camera": {
+            "yaw": 0.4367030572085237,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3046.7999999999993,
+          "position": 4.894287111402369,
+          "timeline": 12.835645874366406,
+          "camera": {
+            "yaw": 0.4433228828537456,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3180.1000000000004,
+          "position": 4.901441932468162,
+          "timeline": 12.871831766188464,
+          "camera": {
+            "yaw": 0.4498418706472142,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3330.2000000000007,
+          "position": 4.909667407882957,
+          "timeline": 12.908945019554636,
+          "camera": {
+            "yaw": 0.4565733583788369,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3463.3999999999996,
+          "position": 4.9212970637913065,
+          "timeline": 12.952000834240872,
+          "camera": {
+            "yaw": 0.4646048608580597,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3596.7999999999993,
+          "position": 4.9367123178698975,
+          "timeline": 12.989178035248298,
+          "camera": {
+            "yaw": 0.47247349009580136,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3613.5,
+          "position": 4.939986125549191,
+          "timeline": 12.993789173481956,
+          "camera": {
+            "yaw": 0.47374124499260045,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        }
+      ],
+      "position": 4.946133333333333,
+      "timeline": 12.999055911850705,
+      "camera": {
+        "yaw": 0.4757563649765361,
+        "pitch": 0.12081223200547508,
+        "distance": 6.5561698157288015,
+        "target": [
+          -0.2983755359890498,
+          -0.2002423914599279,
+          0.17972667849436613
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 13,
+      "direction": "reverse",
+      "samples": [
+        {
+          "elapsed": 11.90000000298096,
+          "position": 4.946133333333333,
+          "timeline": 12.999055911850705,
+          "camera": {
+            "yaw": 0.4757563649765361,
+            "pitch": 0.12081223200547508,
+            "distance": 6.5561698157288015,
+            "target": [
+              -0.2983755359890498,
+              -0.2002423914599279,
+              0.17972667849436613
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 161.90000000298096,
+          "position": 4.927241919231806,
+          "timeline": 12.96921921743665,
+          "camera": {
+            "yaw": 0.46801519296789856,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 378.6000000029817,
+          "position": 4.915288792938108,
+          "timeline": 12.93122614130942,
+          "camera": {
+            "yaw": 0.46067798736953897,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 511.90000000298096,
+          "position": 4.90018503676237,
+          "timeline": 12.865724080955065,
+          "camera": {
+            "yaw": 0.44874006357242097,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 645.3000000029788,
+          "position": 4.892721221180272,
+          "timeline": 12.827287413643843,
+          "camera": {
+            "yaw": 0.44181841558053686,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 778.6000000029817,
+          "position": 4.88638811894181,
+          "timeline": 12.792022664592471,
+          "camera": {
+            "yaw": 0.43546677648209714,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 928.5000000029795,
+          "position": 4.88013720492898,
+          "timeline": 12.755139124966615,
+          "camera": {
+            "yaw": 0.4288074559879765,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1061.900000002981,
+          "position": 4.873628197592587,
+          "timeline": 12.714852116748645,
+          "camera": {
+            "yaw": 0.4215076569448816,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1195.3000000029788,
+          "position": 4.867799256792298,
+          "timeline": 12.677408788686725,
+          "camera": {
+            "yaw": 0.4146968281788432,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1328.6000000029817,
+          "position": 4.862388963059019,
+          "timeline": 12.641712336872978,
+          "camera": {
+            "yaw": 0.4081807129860749,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1478.5000000029795,
+          "position": 4.8565623846729,
+          "timeline": 12.602474314332847,
+          "camera": {
+            "yaw": 0.4009941868579247,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1611.900000002981,
+          "position": 4.850584067041608,
+          "timeline": 12.561596414813202,
+          "camera": {
+            "yaw": 0.39348386518954487,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1745.2000000029802,
+          "position": 4.84588857548771,
+          "timeline": 12.529213802306607,
+          "camera": {
+            "yaw": 0.3875199223861124,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1878.6000000029817,
+          "position": 4.840050228197255,
+          "timeline": 12.48881010261875,
+          "camera": {
+            "yaw": 0.38006421217896963,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2011.900000002981,
+          "position": 4.8345760032568394,
+          "timeline": 12.450980891178045,
+          "camera": {
+            "yaw": 0.373072232944581,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2145.2000000029802,
+          "position": 4.829241658082307,
+          "timeline": 12.414357885567675,
+          "camera": {
+            "yaw": 0.36629569287358593,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2278.6000000029817,
+          "position": 4.823972391533104,
+          "timeline": 12.378590483474733,
+          "camera": {
+            "yaw": 0.35967270074491936,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2411.800000002979,
+          "position": 4.818973083929459,
+          "timeline": 12.345188649105475,
+          "camera": {
+            "yaw": 0.3534850627373753,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2545.2000000029802,
+          "position": 4.812334037193004,
+          "timeline": 12.301890520175316,
+          "camera": {
+            "yaw": 0.34546160877446835,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2678.6000000029817,
+          "position": 4.8064389348537615,
+          "timeline": 12.264711927038839,
+          "camera": {
+            "yaw": 0.3385693964946414,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2811.900000002981,
+          "position": 4.801193757933098,
+          "timeline": 12.232839017313522,
+          "camera": {
+            "yaw": 0.3326564904319495,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2945.2000000029802,
+          "position": 4.794790719659619,
+          "timeline": 12.195727888818423,
+          "camera": {
+            "yaw": 0.3257606801785557,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3095.1000000029817,
+          "position": 4.787333921305407,
+          "timeline": 12.155388550539856,
+          "camera": {
+            "yaw": 0.3182350549214194,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3245.2000000029802,
+          "position": 4.778747310217447,
+          "timeline": 12.113383070977248,
+          "camera": {
+            "yaw": 0.31032281029852044,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3378.400000002981,
+          "position": 4.769163579679189,
+          "timeline": 12.072997190115277,
+          "camera": {
+            "yaw": 0.30253926330488373,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3511.900000002981,
+          "position": 4.757923413682696,
+          "timeline": 12.035718059358611,
+          "camera": {
+            "yaw": 0.2949209570537029,
+            "pitch": 0.12,
+            "distance": 6.55,
+            "target": [
+              -0.3,
+              -0.2,
+              0.18
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3628.5000000029795,
+          "position": 4.743399700239005,
+          "timeline": 12.00627506523067,
+          "camera": {
+            "yaw": 0.2875723366059625,
+            "pitch": 0.12003296881074083,
+            "distance": 6.549830543303687,
+            "target": [
+              -0.29993406237851833,
+              -0.1999206781150451,
+              0.17998080026109833
+            ],
+            "focal": 6
+          }
+        }
+      ],
+      "position": 4.737066666666666,
+      "timeline": 12.000880466614474,
+      "camera": {
+        "yaw": 0.2852341467528849,
+        "pitch": 0.12073093440395055,
+        "distance": 6.546052620813348,
+        "target": [
+          -0.2985381311920989,
+          -0.19819850087980195,
+          0.17957043302399997
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 20,
+      "direction": "forward",
+      "samples": [
+        {
+          "elapsed": 12.799999997019768,
+          "position": 6.3030880284991095,
+          "timeline": 19.00106964574849,
+          "camera": {
+            "yaw": 0.28428919072056397,
+            "pitch": 0.17026807442003525,
+            "distance": 6.214382097460727,
+            "target": [
+              -0.20160844652021148,
+              -0.07026807442003526,
+              0.15268074420035246
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 146.09999999701904,
+          "position": 6.317284599432538,
+          "timeline": 19.03153482303054,
+          "camera": {
+            "yaw": 0.29120465477895646,
+            "pitch": 0.1707002909236848,
+            "distance": 6.157382300560165,
+            "target": [
+              -0.20420174554210868,
+              -0.07070029092368478,
+              0.1570029092368478
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 279.4999999970205,
+          "position": 6.3261124771331785,
+          "timeline": 19.06916714013817,
+          "camera": {
+            "yaw": 0.29742730054796795,
+            "pitch": 0.171089206284248,
+            "distance": 6.106539976765326,
+            "target": [
+              -0.20653523770548798,
+              -0.071089206284248,
+              0.16089206284247995
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 412.79999999701977,
+          "position": 6.3332014940244745,
+          "timeline": 19.108177593870806,
+          "camera": {
+            "yaw": 0.30346620128994134,
+            "pitch": 0.17146663758062133,
+            "distance": 6.057600380473375,
+            "target": [
+              -0.208799825483728,
+              -0.07146663758062134,
+              0.16466637580621332
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 546.099999997019,
+          "position": 6.33820613200049,
+          "timeline": 19.139842947252813,
+          "camera": {
+            "yaw": 0.3082556160799576,
+            "pitch": 0.17176597600499735,
+            "distance": 6.01906572787767,
+            "target": [
+              -0.2105958560299841,
+              -0.07176597600499736,
+              0.16765976004997346
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 679.3999999970183,
+          "position": 6.344351414700265,
+          "timeline": 19.18281293748872,
+          "camera": {
+            "yaw": 0.3146847306287876,
+            "pitch": 0.17216779566429924,
+            "distance": 5.967723490760465,
+            "target": [
+              -0.21300677398579534,
+              -0.07216779566429923,
+              0.17167795664299224
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 829.3999999970183,
+          "position": 6.348752814575543,
+          "timeline": 19.216021824145738,
+          "camera": {
+            "yaw": 0.3196269233450489,
+            "pitch": 0.17247668270906555,
+            "distance": 5.928553579367578,
+            "target": [
+              -0.21486009625439334,
+              -0.07247668270906556,
+              0.17476682709065552
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 962.7999999970198,
+          "position": 6.354387382711971,
+          "timeline": 19.26107210254645,
+          "camera": {
+            "yaw": 0.3263155336145513,
+            "pitch": 0.17289472085090946,
+            "distance": 5.875951343293424,
+            "target": [
+              -0.21736832510545673,
+              -0.07289472085090946,
+              0.17894720850909454
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1096.099999997019,
+          "position": 6.358639938204998,
+          "timeline": 19.29667908673561,
+          "camera": {
+            "yaw": 0.3315965598889951,
+            "pitch": 0.1732247849930622,
+            "distance": 5.8347489149266965,
+            "target": [
+              -0.21934870995837316,
+              -0.0732247849930622,
+              0.18224784993062193
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1229.4999999970205,
+          "position": 6.3627982673707,
+          "timeline": 19.332604383540723,
+          "camera": {
+            "yaw": 0.33692270448825073,
+            "pitch": 0.17355766903051567,
+            "distance": 5.793487094983364,
+            "target": [
+              -0.22134601418309402,
+              -0.07355766903051567,
+              0.18557669030515667
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1379.4999999970205,
+          "position": 6.366662686139585,
+          "timeline": 19.366794630021683,
+          "camera": {
+            "yaw": 0.341990216669203,
+            "pitch": 0.1738743885418252,
+            "distance": 5.754499823146921,
+            "target": [
+              -0.22324633125095114,
+              -0.0738743885418252,
+              0.1887438854182519
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1529.3999999970183,
+          "position": 6.371294146175834,
+          "timeline": 19.408559755358368,
+          "camera": {
+            "yaw": 0.34817786223113906,
+            "pitch": 0.1742611163894462,
+            "distance": 5.707250312290397,
+            "target": [
+              -0.22556669833667714,
+              -0.07426111638944619,
+              0.19261116389446187
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1662.7999999970198,
+          "position": 6.376559693237675,
+          "timeline": 19.456752952744637,
+          "camera": {
+            "yaw": 0.3553117309384181,
+            "pitch": 0.17470698318365113,
+            "distance": 5.653256627701696,
+            "target": [
+              -0.22824189910190681,
+              -0.07470698318365114,
+              0.19706983183651133
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1796.099999997019,
+          "position": 6.379652152155656,
+          "timeline": 19.485252536694684,
+          "camera": {
+            "yaw": 0.3595256651926348,
+            "pitch": 0.17497035407453967,
+            "distance": 5.621603168639242,
+            "target": [
+              -0.22982212444723807,
+              -0.07497035407453968,
+              0.19970354074539676
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1929.3999999970183,
+          "position": 6.384313952252292,
+          "timeline": 19.5282692296606,
+          "camera": {
+            "yaw": 0.3658766331312779,
+            "pitch": 0.17536728957070488,
+            "distance": 5.574231659228211,
+            "target": [
+              -0.23220373742422923,
+              -0.07536728957070488,
+              0.20367289570704866
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2062.699999997021,
+          "position": 6.387689835376857,
+          "timeline": 19.559320155790914,
+          "camera": {
+            "yaw": 0.37045202489643,
+            "pitch": 0.17565325155602687,
+            "distance": 5.5403516485802005,
+            "target": [
+              -0.23391950933616124,
+              -0.07565325155602688,
+              0.20653251556026875
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2196.099999997019,
+          "position": 6.392539405375706,
+          "timeline": 19.603539265581418,
+          "camera": {
+            "yaw": 0.3769516333107756,
+            "pitch": 0.1760594770819235,
+            "distance": 5.492576868795832,
+            "target": [
+              -0.23635686249154086,
+              -0.07605947708192348,
+              0.21059477081923475
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2329.3999999970183,
+          "position": 6.3963190039592055,
+          "timeline": 19.63750363450504,
+          "camera": {
+            "yaw": 0.38192882829207847,
+            "pitch": 0.1763705517682549,
+            "distance": 5.456271161472264,
+            "target": [
+              -0.2382233106095294,
+              -0.0763705517682549,
+              0.21370551768254897
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2479.3999999970183,
+          "position": 6.40029422777685,
+          "timeline": 19.672573582522443,
+          "camera": {
+            "yaw": 0.3870523884422868,
+            "pitch": 0.17669077427764293,
+            "distance": 5.419148458797935,
+            "target": [
+              -0.24014464566585755,
+              -0.07669077427764293,
+              0.2169077427764292
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2612.699999997021,
+          "position": 6.40529396832097,
+          "timeline": 19.715465615938758,
+          "camera": {
+            "yaw": 0.3932952310054815,
+            "pitch": 0.1770809519378426,
+            "distance": 5.374257199341257,
+            "target": [
+              -0.2424857116270556,
+              -0.0770809519378426,
+              0.22080951937842597
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2745.9999999970205,
+          "position": 6.409233169782732,
+          "timeline": 19.74809301116852,
+          "camera": {
+            "yaw": 0.39802624477723575,
+            "pitch": 0.17737664029857722,
+            "distance": 5.340485111011478,
+            "target": [
+              -0.2442598417914634,
+              -0.07737664029857724,
+              0.22376640298577233
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2879.3999999970183,
+          "position": 6.4145256236032555,
+          "timeline": 19.789986509993607,
+          "camera": {
+            "yaw": 0.40407972861662284,
+            "pitch": 0.17775498303853893,
+            "distance": 5.29758196210945,
+            "target": [
+              -0.24652989823123359,
+              -0.07775498303853894,
+              0.22754983038538928
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3012.699999997021,
+          "position": 6.419296417221053,
+          "timeline": 19.825528564551107,
+          "camera": {
+            "yaw": 0.4092014567989723,
+            "pitch": 0.17807509104993577,
+            "distance": 5.261551772911647,
+            "target": [
+              -0.24845054629961463,
+              -0.07807509104993578,
+              0.2307509104993577
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3162.699999997021,
+          "position": 6.422595574026086,
+          "timeline": 19.848708920480398,
+          "camera": {
+            "yaw": 0.4125395653349699,
+            "pitch": 0.1782837228334356,
+            "distance": 5.238200948389992,
+            "target": [
+              -0.24970233700061367,
+              -0.07828372283343561,
+              0.23283722833435613
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3312.699999997021,
+          "position": 6.431603923571747,
+          "timeline": 19.90529820272183,
+          "camera": {
+            "yaw": 0.4207261265783084,
+            "pitch": 0.17879538291114427,
+            "distance": 5.181371880212241,
+            "target": [
+              -0.2527722974668657,
+              -0.07879538291114428,
+              0.2379538291114428
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3446.099999997019,
+          "position": 6.440149646835011,
+          "timeline": 19.948451550915177,
+          "camera": {
+            "yaw": 0.42713875547711483,
+            "pitch": 0.17919617221731968,
+            "distance": 5.137287963482758,
+            "target": [
+              -0.25517703330391805,
+              -0.07919617221731967,
+              0.24196172217319672
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3595.9999999970205,
+          "position": 6.450245608416695,
+          "timeline": 19.983796972683937,
+          "camera": {
+            "yaw": 0.4329332158152545,
+            "pitch": 0.1795583259884534,
+            "distance": 5.097776344557508,
+            "target": [
+              -0.2573499559307204,
+              -0.0795583259884534,
+              0.24558325988453403
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3612.699999997021,
+          "position": 6.455705630202335,
+          "timeline": 19.994901583710213,
+          "camera": {
+            "yaw": 0.43526810669012467,
+            "pitch": 0.17970425666813278,
+            "distance": 5.08194107823278,
+            "target": [
+              -0.2582255400087968,
+              -0.0797042566681328,
+              0.24704256668132796
+            ],
+            "focal": 6
+          }
+        }
+      ],
+      "position": 6.459083153651449,
+      "timeline": 19.998692220624136,
+      "camera": {
+        "yaw": 0.4364428793058887,
+        "pitch": 0.17977767995661803,
+        "distance": 5.073992362176172,
+        "target": [
+          -0.2586660797397083,
+          -0.07977767995661804,
+          0.24777679956618043
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 20,
+      "direction": "reverse",
+      "samples": [
+        {
+          "elapsed": -4.399999998509884,
+          "position": 6.459083153651449,
+          "timeline": 19.998692220624136,
+          "camera": {
+            "yaw": 0.4364428793058887,
+            "pitch": 0.17977767995661803,
+            "distance": 5.073992362176172,
+            "target": [
+              -0.2586660797397083,
+              -0.07977767995661804,
+              0.24777679956618043
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 128.9000000014894,
+          "position": 6.446457672321584,
+          "timeline": 19.972686187144415,
+          "camera": {
+            "yaw": 0.43098643716277335,
+            "pitch": 0.17943665232267333,
+            "distance": 5.111017142619073,
+            "target": [
+              -0.25661991393604,
+              -0.07943665232267333,
+              0.24436652322673333
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 262.30000000149084,
+          "position": 6.437070573502051,
+          "timeline": 19.93419821198073,
+          "camera": {
+            "yaw": 0.4249857057174881,
+            "pitch": 0.179061606607343,
+            "distance": 5.15204722050767,
+            "target": [
+              -0.25436963964405807,
+              -0.07906160660734302,
+              0.24061606607343006
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 412.20000000148866,
+          "position": 6.430689712594609,
+          "timeline": 19.90004203021587,
+          "camera": {
+            "yaw": 0.4199602570853755,
+            "pitch": 0.17874751606783595,
+            "distance": 5.186662110246878,
+            "target": [
+              -0.2524850964070158,
+              -0.07874751606783596,
+              0.2374751606783596
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 545.5000000014916,
+          "position": 6.423705043720793,
+          "timeline": 19.856226434356977,
+          "camera": {
+            "yaw": 0.4136226746828969,
+            "pitch": 0.17835141716768105,
+            "distance": 5.230646643346626,
+            "target": [
+              -0.25010850300608634,
+              -0.07835141716768106,
+              0.23351417167681054
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 695.6000000014901,
+          "position": 6.418511385200625,
+          "timeline": 19.81983849001778,
+          "camera": {
+            "yaw": 0.4083820191955842,
+            "pitch": 0.178023876199724,
+            "distance": 5.2672998192725515,
+            "target": [
+              -0.24814325719834407,
+              -0.07802387619972401,
+              0.2302387619972401
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 828.9000000014894,
+          "position": 6.412836667374492,
+          "timeline": 19.776880606301063,
+          "camera": {
+            "yaw": 0.4021882800144407,
+            "pitch": 0.17763676750090254,
+            "distance": 5.310950164810977,
+            "target": [
+              -0.24582060500541525,
+              -0.07763676750090255,
+              0.22636767500902544
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 978.9000000014894,
+          "position": 6.408554289018778,
+          "timeline": 19.742551856581265,
+          "camera": {
+            "yaw": 0.39722384101373803,
+            "pitch": 0.17732649006335863,
+            "distance": 5.3461980457210885,
+            "target": [
+              -0.24395894038015176,
+              -0.07732649006335862,
+              0.22326490063358623
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1112.2000000014887,
+          "position": 6.403396463185193,
+          "timeline": 19.699366181114566,
+          "camera": {
+            "yaw": 0.3909551109437948,
+            "pitch": 0.17693469443398718,
+            "distance": 5.391040881990978,
+            "target": [
+              -0.24160816660392306,
+              -0.07693469443398718,
+              0.21934694433987173
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1245.6000000014901,
+          "position": 6.399520022773382,
+          "timeline": 19.665803951159887,
+          "camera": {
+            "yaw": 0.38606468359454665,
+            "pitch": 0.17662904272465915,
+            "distance": 5.4262851590246335,
+            "target": [
+              -0.23977425634795496,
+              -0.07662904272465916,
+              0.2162904272465916
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1378.9000000014894,
+          "position": 6.394894134232433,
+          "timeline": 19.624761974000524,
+          "camera": {
+            "yaw": 0.3800633106652484,
+            "pitch": 0.17625395691657803,
+            "distance": 5.469850811872963,
+            "target": [
+              -0.2375237414994682,
+              -0.07625395691657803,
+              0.2125395691657803
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1512.3000000014908,
+          "position": 6.390879245458307,
+          "timeline": 19.588469195784246,
+          "camera": {
+            "yaw": 0.3747388758920262,
+            "pitch": 0.17592117974325164,
+            "distance": 5.50879510987863,
+            "target": [
+              -0.23552707845950985,
+              -0.07592117974325165,
+              0.2092117974325164
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1645.5000000014916,
+          "position": 6.386877040452795,
+          "timeline": 19.551858867536968,
+          "camera": {
+            "yaw": 0.3693533752816102,
+            "pitch": 0.17558458595510065,
+            "distance": 5.548468131276872,
+            "target": [
+              -0.23350751573060385,
+              -0.07558458595510065,
+              0.2058458595510064
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1795.6000000014901,
+          "position": 6.382801973883767,
+          "timeline": 19.514324170472474,
+          "camera": {
+            "yaw": 0.363819221022839,
+            "pitch": 0.17523870131392744,
+            "distance": 5.589533903802523,
+            "target": [
+              -0.2314322078835646,
+              -0.07523870131392743,
+              0.20238701313927432
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1928.8000000014908,
+          "position": 6.378519000363957,
+          "timeline": 19.47480026627556,
+          "camera": {
+            "yaw": 0.3579806990829761,
+            "pitch": 0.17487379369268602,
+            "distance": 5.633187731387697,
+            "target": [
+              -0.22924276215611603,
+              -0.074873793692686,
+              0.19873793692686
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2062.2000000014887,
+          "position": 6.374523402496381,
+          "timeline": 19.438050189517295,
+          "camera": {
+            "yaw": 0.35254424443332794,
+            "pitch": 0.174534015277083,
+            "distance": 5.674141826282408,
+            "target": [
+              -0.227204091662498,
+              -0.074534015277083,
+              0.19534015277082997
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2212.10000000149,
+          "position": 6.370509374071082,
+          "timeline": 19.401433269545922,
+          "camera": {
+            "yaw": 0.3471223192971699,
+            "pitch": 0.17419514495607313,
+            "distance": 5.715283014681367,
+            "target": [
+              -0.2251708697364387,
+              -0.07419514495607311,
+              0.19195144956073115
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2345.5000000014916,
+          "position": 6.366522281824594,
+          "timeline": 19.365540769133315,
+          "camera": {
+            "yaw": 0.34180440282730856,
+            "pitch": 0.17386277517670679,
+            "distance": 5.755924750803171,
+            "target": [
+              -0.22317665106024073,
+              -0.0738627751767068,
+              0.18862775176706786
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2495.5000000014916,
+          "position": 6.361556888912582,
+          "timeline": 19.32177713196327,
+          "camera": {
+            "yaw": 0.3353176574964762,
+            "pitch": 0.17345735359352976,
+            "distance": 5.805890636068073,
+            "target": [
+              -0.2207441215611786,
+              -0.07345735359352977,
+              0.18457353593529766
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2628.800000001491,
+          "position": 6.356607298487471,
+          "timeline": 19.279503758752565,
+          "camera": {
+            "yaw": 0.3290495650652045,
+            "pitch": 0.1730655978165753,
+            "distance": 5.854584307317147,
+            "target": [
+              -0.2183935868994517,
+              -0.07306559781657529,
+              0.1806559781657528
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2762.10000000149,
+          "position": 6.351448409513737,
+          "timeline": 19.23724478940298,
+          "camera": {
+            "yaw": 0.3227793596334609,
+            "pitch": 0.1726737099770913,
+            "distance": 5.903702991345343,
+            "target": [
+              -0.21604225986254783,
+              -0.07267370997709131,
+              0.17673709977091304
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2895.5000000014916,
+          "position": 6.3478193091909425,
+          "timeline": 19.208823305132672,
+          "camera": {
+            "yaw": 0.31855679951965915,
+            "pitch": 0.1724097999699787,
+            "distance": 5.937013101982594,
+            "target": [
+              -0.21445879981987218,
+              -0.0724097999699787,
+              0.17409799969978695
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3028.800000001491,
+          "position": 6.342472726198046,
+          "timeline": 19.169232946954903,
+          "camera": {
+            "yaw": 0.31265846608798026,
+            "pitch": 0.17204115413049878,
+            "distance": 5.9838575874152715,
+            "target": [
+              -0.21224692478299262,
+              -0.07204115413049877,
+              0.1704115413049877
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3162.10000000149,
+          "position": 6.336976170079576,
+          "timeline": 19.13176780855519,
+          "camera": {
+            "yaw": 0.30703995466525486,
+            "pitch": 0.17168999716657843,
+            "distance": 6.028823415525876,
+            "target": [
+              -0.21013998299947056,
+              -0.07168999716657844,
+              0.16689997166578424
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3295.5000000014916,
+          "position": 6.331939004485975,
+          "timeline": 19.100707346235367,
+          "camera": {
+            "yaw": 0.3023252722230498,
+            "pitch": 0.17139532951394063,
+            "distance": 6.066816388178405,
+            "target": [
+              -0.2083719770836437,
+              -0.07139532951394062,
+              0.16395329513940615
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3428.800000001491,
+          "position": 6.324218407920796,
+          "timeline": 19.060014764541712,
+          "camera": {
+            "yaw": 0.29596867185163284,
+            "pitch": 0.17099804199072707,
+            "distance": 6.118419950284568,
+            "target": [
+              -0.20598825194436232,
+              -0.07099804199072705,
+              0.15998041990727052
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3562.2000000014887,
+          "position": 6.315624665910564,
+          "timeline": 19.02595762161674,
+          "camera": {
+            "yaw": 0.29019980143259266,
+            "pitch": 0.17063748758953706,
+            "distance": 6.165632092308535,
+            "target": [
+              -0.20382492553722226,
+              -0.07063748758953704,
+              0.15637487589537039
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3612.10000000149,
+          "position": 6.307423119624323,
+          "timeline": 19.00606954227194,
+          "camera": {
+            "yaw": 0.2860026499751972,
+            "pitch": 0.17037516562344984,
+            "distance": 6.200210152253453,
+            "target": [
+              -0.20225099374069896,
+              -0.07037516562344984,
+              0.15375165623449824
+            ],
+            "focal": 6
+          }
+        }
+      ],
+      "position": 6.3030880284991095,
+      "timeline": 19.00106964574849,
+      "camera": {
+        "yaw": 0.28428919072056397,
+        "pitch": 0.17026807442003525,
+        "distance": 6.214382097460727,
+        "target": [
+          -0.20160844652021148,
+          -0.07026807442003526,
+          0.15268074420035246
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 23,
+      "direction": "forward",
+      "samples": [
+        {
+          "elapsed": -3.0999999985106115,
+          "position": 7.053351061079472,
+          "timeline": 22.001258250563765,
+          "camera": {
+            "yaw": 0.2882190763000279,
+            "pitch": 0.1735615997300121,
+            "distance": 6.2202165283350475,
+            "target": [
+              -0.20136984605000466,
+              -0.07054793842000186,
+              0.1519177844700065
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 146.80000000149084,
+          "position": 7.06602028288533,
+          "timeline": 22.02724143414041,
+          "camera": {
+            "yaw": 0.2995647216136858,
+            "pitch": 0.1784780460325972,
+            "distance": 6.179336348991744,
+            "target": [
+              -0.2032607869356143,
+              -0.07130431477424573,
+              0.15456510170986001
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 280.20000000148866,
+          "position": 7.076094941484622,
+          "timeline": 22.069079839429623,
+          "camera": {
+            "yaw": 0.3126502961256215,
+            "pitch": 0.184148461654436,
+            "distance": 6.132520446986125,
+            "target": [
+              -0.20544171602093692,
+              -0.07217668640837477,
+              0.1576184024293117
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 413.50000000149157,
+          "position": 7.082889585204541,
+          "timeline": 22.10631186791355,
+          "camera": {
+            "yaw": 0.32346577726664066,
+            "pitch": 0.18883517014887766,
+            "distance": 6.09409404057339,
+            "target": [
+              -0.2072442962111068,
+              -0.07289771848444272,
+              0.1601420146955495
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 546.9000000014894,
+          "position": 7.088435559625232,
+          "timeline": 22.141369529637277,
+          "camera": {
+            "yaw": 0.33340954199461165,
+            "pitch": 0.19314413486433168,
+            "distance": 6.058977250174552,
+            "target": [
+              -0.20890159033243527,
+              -0.0735606361329741,
+              0.16246222646540937
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 696.8000000014908,
+          "position": 7.093976845263098,
+          "timeline": 22.18007572439527,
+          "camera": {
+            "yaw": 0.3442686658889666,
+            "pitch": 0.19784975521855216,
+            "distance": 6.0208589495874625,
+            "target": [
+              -0.21071144431482777,
+              -0.07428457772593111,
+              0.16499602204075886
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 830.2000000014887,
+          "position": 7.099253821311445,
+          "timeline": 22.219918028595863,
+          "camera": {
+            "yaw": 0.3553861061032975,
+            "pitch": 0.20266731264476226,
+            "distance": 5.982082315267194,
+            "target": [
+              -0.21256435101721627,
+              -0.0750257404068865,
+              0.16759009142410275
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 963.5000000014916,
+          "position": 7.104016600855435,
+          "timeline": 22.258028804432872,
+          "camera": {
+            "yaw": 0.36599502537791045,
+            "pitch": 0.20726451099709456,
+            "distance": 5.94531224216434,
+            "target": [
+              -0.21433250422965175,
+              -0.0757330016918607,
+              0.17006550592151246
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1096.900000001493,
+          "position": 7.108622594791153,
+          "timeline": 22.296531400557548,
+          "camera": {
+            "yaw": 0.3767024895382744,
+            "pitch": 0.21190441213325226,
+            "distance": 5.908429785754632,
+            "target": [
+              -0.2161170815897124,
+              -0.07644683263588496,
+              0.17256391422559736
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1230.1000000014901,
+          "position": 7.112515033886936,
+          "timeline": 22.330126838254127,
+          "camera": {
+            "yaw": 0.3860414519750723,
+            "pitch": 0.21595129585586464,
+            "distance": 5.876448067986016,
+            "target": [
+              -0.21767357532917872,
+              -0.07706943013167149,
+              0.17474300546085017
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1380.2000000014887,
+          "position": 7.117281675336317,
+          "timeline": 22.3723319084383,
+          "camera": {
+            "yaw": 0.39777020369710464,
+            "pitch": 0.22103375493541202,
+            "distance": 5.836527520563107,
+            "target": [
+              -0.2196283672828508,
+              -0.07785134691314032,
+              0.1774797141959911
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1513.5000000014916,
+          "position": 7.121681698356726,
+          "timeline": 22.412085510988337,
+          "camera": {
+            "yaw": 0.40881255853000636,
+            "pitch": 0.2258187753630028,
+            "distance": 5.799191110541531,
+            "target": [
+              -0.22146875975500108,
+              -0.07858750390200044,
+              0.1800562636570015
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1646.8000000014872,
+          "position": 7.125637203326301,
+          "timeline": 22.44827198446316,
+          "camera": {
+            "yaw": 0.4188568147961506,
+            "pitch": 0.2301712864116653,
+            "distance": 5.765436946298799,
+            "target": [
+              -0.2231428024660251,
+              -0.07925712098641005,
+              0.18239992345243516
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1796.8000000014872,
+          "position": 7.129521746562487,
+          "timeline": 22.484049297327,
+          "camera": {
+            "yaw": 0.42877720832518035,
+            "pitch": 0.23447012360757818,
+            "distance": 5.7322918795962865,
+            "target": [
+              -0.22479620138753006,
+              -0.07991848055501202,
+              0.1847146819425421
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1930.1000000014901,
+          "position": 7.133984948517873,
+          "timeline": 22.525236143699644,
+          "camera": {
+            "yaw": 0.4401798779493415,
+            "pitch": 0.23941128044471466,
+            "distance": 5.694429689150066,
+            "target": [
+              -0.22669664632489026,
+              -0.08067865852995611,
+              0.18737530485484635
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2063.5000000014916,
+          "position": 7.138040240209549,
+          "timeline": 22.562533216870282,
+          "camera": {
+            "yaw": 0.4504843296146314,
+            "pitch": 0.24387654283300692,
+            "distance": 5.66042925438604,
+            "target": [
+              -0.2284140549357719,
+              -0.08136562197430876,
+              0.18977967691008066
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2213.5000000014916,
+          "position": 7.142276656135955,
+          "timeline": 22.601159631316012,
+          "camera": {
+            "yaw": 0.4611294981634106,
+            "pitch": 0.2484894492041446,
+            "distance": 5.625517770967038,
+            "target": [
+              -0.23018824969390178,
+              -0.08207529987756071,
+              0.19226354957146247
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2346.800000001487,
+          "position": 7.1465431433178255,
+          "timeline": 22.639500382447018,
+          "camera": {
+            "yaw": 0.4716643478172479,
+            "pitch": 0.25305455072080746,
+            "distance": 5.591180075485413,
+            "target": [
+              -0.23194405796954132,
+              -0.08277762318781653,
+              0.19472168115735786
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2496.800000001487,
+          "position": 7.150924683427069,
+          "timeline": 22.678062750073643,
+          "camera": {
+            "yaw": 0.4822239970330952,
+            "pitch": 0.2576303987143413,
+            "distance": 5.556971881474839,
+            "target": [
+              -0.23370399950551587,
+              -0.08348159980220635,
+              0.19718559930772223
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2630.10000000149,
+          "position": 7.155890829390629,
+          "timeline": 22.720480549652894,
+          "camera": {
+            "yaw": 0.49379387723958085,
+            "pitch": 0.26264401347048505,
+            "distance": 5.519731263322537,
+            "target": [
+              -0.23563231287326347,
+              -0.0842529251493054,
+              0.19988523802256886
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2780.10000000149,
+          "position": 7.160410671928674,
+          "timeline": 22.757617971021848,
+          "camera": {
+            "yaw": 0.5038835219087101,
+            "pitch": 0.26701619282710765,
+            "distance": 5.487458939631601,
+            "target": [
+              -0.23731392031811832,
+              -0.08492556812724733,
+              0.20223948844536566
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2930.10000000149,
+          "position": 7.165993530415146,
+          "timeline": 22.801161988224976,
+          "camera": {
+            "yaw": 0.5156709533794921,
+            "pitch": 0.2721240797977799,
+            "distance": 5.4499950504683685,
+            "target": [
+              -0.23927849222991537,
+              -0.08571139689196614,
+              0.20498988912188149
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3080.10000000149,
+          "position": 7.171665391526547,
+          "timeline": 22.84229637295049,
+          "camera": {
+            "yaw": 0.526779974478375,
+            "pitch": 0.27693798894062915,
+            "distance": 5.4149214931554495,
+            "target": [
+              -0.24112999574639585,
+              -0.08645199829855833,
+              0.20758199404495417
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3230.10000000149,
+          "position": 7.177641587757378,
+          "timeline": 22.881694195289406,
+          "camera": {
+            "yaw": 0.5374352180632957,
+            "pitch": 0.28155526116076146,
+            "distance": 5.3814927021194015,
+            "target": [
+              -0.24290586967721595,
+              -0.08716234787088638,
+              0.21006821754810234
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3363.5000000014916,
+          "position": 7.1848855547447394,
+          "timeline": 22.923180980242517,
+          "camera": {
+            "yaw": 0.5487804878858342,
+            "pitch": 0.28647154475052816,
+            "distance": 5.346125905986711,
+            "target": [
+              -0.2447967479809724,
+              -0.08791869919238895,
+              0.21271544717336133
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3496.800000001487,
+          "position": 7.1932147577892005,
+          "timeline": 22.961089370296815,
+          "camera": {
+            "yaw": 0.5595684347533059,
+            "pitch": 0.2911463217264325,
+            "distance": 5.312712067037385,
+            "target": [
+              -0.246594739125551,
+              -0.08863789565022039,
+              0.21523263477577137
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3630.0000000014916,
+          "position": 7.205402956071076,
+          "timeline": 22.99444432515228,
+          "camera": {
+            "yaw": 0.5709117678276721,
+            "pitch": 0.29606176605865786,
+            "distance": 5.2778032331269955,
+            "target": [
+              -0.24848529463794533,
+              -0.08939411785517813,
+              0.21787941249312348
+            ],
+            "focal": 6
+          }
+        }
+      ],
+      "position": 7.209355227099815,
+      "timeline": 22.998890943849982,
+      "camera": {
+        "yaw": 0.5734915770711404,
+        "pitch": 0.2971796833974942,
+        "distance": 5.269896002805668,
+        "target": [
+          -0.24891526284519008,
+          -0.08956610513807603,
+          0.21848136798326612
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    },
+    {
+      "index": 23,
+      "direction": "reverse",
+      "samples": [
+        {
+          "elapsed": 10.099999999998545,
+          "position": 7.209355227099815,
+          "timeline": 22.998890943849982,
+          "camera": {
+            "yaw": 0.5734915770711404,
+            "pitch": 0.2971796833974942,
+            "distance": 5.269896002805668,
+            "target": [
+              -0.24891526284519008,
+              -0.08956610513807603,
+              0.21848136798326612
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 143.40000000000146,
+          "position": 7.1953795636381646,
+          "timeline": 22.969038918566568,
+          "camera": {
+            "yaw": 0.561967359719113,
+            "pitch": 0.29218585587828233,
+            "distance": 5.3053102326222366,
+            "target": [
+              -0.2469945599531855,
+              -0.0887978239812742,
+              0.2157923839344597
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 276.8000000000029,
+          "position": 7.187689302984355,
+          "timeline": 22.937183814370993,
+          "camera": {
+            "yaw": 0.5526863808095142,
+            "pitch": 0.28816409835078943,
+            "distance": 5.334003863135907,
+            "target": [
+              -0.24544773013491902,
+              -0.08817909205396761,
+              0.21362682218888662
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 410.09999999999854,
+          "position": 7.180058449215977,
+          "timeline": 22.896345067015396,
+          "camera": {
+            "yaw": 0.541417444232084,
+            "pitch": 0.28328089250056976,
+            "distance": 5.369052273407017,
+            "target": [
+              -0.24356957403868068,
+              -0.08742782961547227,
+              0.21099740365415298
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 543.4000000000015,
+          "position": 7.174040881868189,
+          "timeline": 22.85847335766817,
+          "camera": {
+            "yaw": 0.5311497284958895,
+            "pitch": 0.2788315490148854,
+            "distance": 5.401187180254742,
+            "target": [
+              -0.24185828808264823,
+              -0.0867433152330593,
+              0.20860160331570754
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 676.6999999999971,
+          "position": 7.168456426558429,
+          "timeline": 22.819437717445332,
+          "camera": {
+            "yaw": 0.5206080600369372,
+            "pitch": 0.27426349268267275,
+            "distance": 5.434379588689748,
+            "target": [
+              -0.24010134333948951,
+              -0.08604053733579581,
+              0.20614188067528533
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 810.0999999999985,
+          "position": 7.164505035579931,
+          "timeline": 22.78982832257219,
+          "camera": {
+            "yaw": 0.5126067063945723,
+            "pitch": 0.27079623943764797,
+            "distance": 5.459709445913551,
+            "target": [
+              -0.23876778439909538,
+              -0.08550711375963815,
+              0.20427489815873354
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 960.0999999999985,
+          "position": 7.158703797296524,
+          "timeline": 22.74377522396751,
+          "camera": {
+            "yaw": 0.5001269339450944,
+            "pitch": 0.26538833804287426,
+            "distance": 5.4994525007461,
+            "target": [
+              -0.23668782232418242,
+              -0.08467512892967297,
+              0.2013629512538554
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1093.4000000000015,
+          "position": 7.154251168610388,
+          "timeline": 22.706646696507722,
+          "camera": {
+            "yaw": 0.4900259347592742,
+            "pitch": 0.26101123839568546,
+            "distance": 5.531831864241861,
+            "target": [
+              -0.23500432245987904,
+              -0.08400172898395161,
+              0.19900605144383066
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1226.699999999997,
+          "position": 7.150545399283095,
+          "timeline": 22.67476302521135,
+          "camera": {
+            "yaw": 0.48132192960909753,
+            "pitch": 0.2572395028306089,
+            "distance": 5.559885952816477,
+            "target": [
+              -0.23355365493484959,
+              -0.08342146197393983,
+              0.19697511690878944
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1360.0999999999985,
+          "position": 7.145814469850401,
+          "timeline": 22.633001288506158,
+          "camera": {
+            "yaw": 0.46988100968728225,
+            "pitch": 0.25228177086448894,
+            "distance": 5.596977984398245,
+            "target": [
+              -0.23164683494788035,
+              -0.08265873397915215,
+              0.19430556892703252
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1510,
+          "position": 7.141567741109472,
+          "timeline": 22.594728741606396,
+          "camera": {
+            "yaw": 0.45935927780016245,
+            "pitch": 0.2477223537134037,
+            "distance": 5.631308355291278,
+            "target": [
+              -0.22989321296669374,
+              -0.0819572851866775,
+              0.19185049815337124
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1643.4000000000015,
+          "position": 7.137046693549004,
+          "timeline": 22.55341715611587,
+          "camera": {
+            "yaw": 0.4479678825406776,
+            "pitch": 0.24278608243429367,
+            "distance": 5.6687137089222155,
+            "target": [
+              -0.22799464709011297,
+              -0.08119785883604518,
+              0.18919250592615813
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1793.4000000000015,
+          "position": 7.133172097702048,
+          "timeline": 22.517739130568312,
+          "camera": {
+            "yaw": 0.4381059818221325,
+            "pitch": 0.23851259212292408,
+            "distance": 5.701297338679112,
+            "target": [
+              -0.22635099697035543,
+              -0.08054039878814218,
+              0.18689139575849759
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 1943.300000000003,
+          "position": 7.128336728154858,
+          "timeline": 22.473119784147997,
+          "camera": {
+            "yaw": 0.4257479644663928,
+            "pitch": 0.23315745126877022,
+            "distance": 5.742392638763951,
+            "target": [
+              -0.22429132741106547,
+              -0.07971653096442619,
+              0.18400785837549166
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2076.699999999997,
+          "position": 7.123829869234411,
+          "timeline": 22.431696901739997,
+          "camera": {
+            "yaw": 0.41425715696807813,
+            "pitch": 0.22817810135283384,
+            "distance": 5.780869844727915,
+            "target": [
+              -0.22237619282801302,
+              -0.0789504771312052,
+              0.1813266699592182
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2210,
+          "position": 7.120296187988741,
+          "timeline": 22.39950047326836,
+          "camera": {
+            "yaw": 0.405317537775474,
+            "pitch": 0.22430426636937206,
+            "distance": 5.81098256735166,
+            "target": [
+              -0.22088625629591235,
+              -0.07835450251836494,
+              0.17924075881427726
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2343.300000000003,
+          "position": 7.115608477635623,
+          "timeline": 22.35740035563577,
+          "camera": {
+            "yaw": 0.3936212353699526,
+            "pitch": 0.21923586866031275,
+            "distance": 5.850618056150957,
+            "target": [
+              -0.21893687256165875,
+              -0.0775747490246635,
+              0.17651162158632225
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2493.300000000003,
+          "position": 7.1117500997275895,
+          "timeline": 22.323456867538244,
+          "camera": {
+            "yaw": 0.384187510601313,
+            "pitch": 0.21514792126056898,
+            "distance": 5.882783175995827,
+            "target": [
+              -0.21736458510021883,
+              -0.07694583404008754,
+              0.17431041914030637
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2626.5999999999985,
+          "position": 7.106685808236517,
+          "timeline": 22.280162012287974,
+          "camera": {
+            "yaw": 0.37215098196836144,
+            "pitch": 0.20993209218628994,
+            "distance": 5.924079665854317,
+            "target": [
+              -0.21535849699472692,
+              -0.07614339879789077,
+              0.17150189579261765
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2760,
+          "position": 7.102338031054744,
+          "timeline": 22.244384552876003,
+          "camera": {
+            "yaw": 0.3621985650006619,
+            "pitch": 0.2056193781669535,
+            "distance": 5.958444574957542,
+            "target": [
+              -0.21369976083344366,
+              -0.07547990433337746,
+              0.1691796651668211
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 2893.300000000003,
+          "position": 7.0976384171773965,
+          "timeline": 22.207437749063544,
+          "camera": {
+            "yaw": 0.3519076796618588,
+            "pitch": 0.20115999452013883,
+            "distance": 5.9941878338318,
+            "target": [
+              -0.21198461327697649,
+              -0.07479384531079059,
+              0.16677845858776705
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3026.699999999997,
+          "position": 7.09474371255419,
+          "timeline": 22.185695222341963,
+          "camera": {
+            "yaw": 0.34583934695446245,
+            "pitch": 0.19853038368026707,
+            "distance": 6.0153653451040725,
+            "target": [
+              -0.21097322449241043,
+              -0.07438928979696417,
+              0.16536251428937457
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3160,
+          "position": 7.087888366256188,
+          "timeline": 22.137739046625725,
+          "camera": {
+            "yaw": 0.332385980630506,
+            "pitch": 0.19270059160655256,
+            "distance": 6.062582634127239,
+            "target": [
+              -0.208730996771751,
+              -0.0734923987087004,
+              0.16222339548045137
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3293.4000000000015,
+          "position": 7.080804354253016,
+          "timeline": 22.094180909967083,
+          "camera": {
+            "yaw": 0.3199819370061095,
+            "pitch": 0.18732550603598078,
+            "distance": 6.106445442618485,
+            "target": [
+              -0.20666365616768492,
+              -0.07266546246707398,
+              0.15932911863475888
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3426.5999999999985,
+          "position": 7.074209348424506,
+          "timeline": 22.059972347716926,
+          "camera": {
+            "yaw": 0.309928479145071,
+            "pitch": 0.18296900762953078,
+            "distance": 6.142228912672124,
+            "target": [
+              -0.20498807985751183,
+              -0.07199523194300474,
+              0.15698331180051656
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3560,
+          "position": 7.06555936432611,
+          "timeline": 22.025748469408207,
+          "camera": {
+            "yaw": 0.29905252305979474,
+            "pitch": 0.17825609332591105,
+            "distance": 6.181176078434364,
+            "target": [
+              -0.2031754205099658,
+              -0.07127016820398632,
+              0.1544455887139521
+            ],
+            "focal": 6
+          }
+        },
+        {
+          "elapsed": 3626.5999999999985,
+          "position": 7.058103834660224,
+          "timeline": 22.007212925059093,
+          "camera": {
+            "yaw": 0.2918179730640813,
+            "pitch": 0.1751211216611019,
+            "distance": 6.207219923329486,
+            "target": [
+              -0.20196966217734688,
+              -0.07078786487093876,
+              0.15275752704828563
+            ],
+            "focal": 6
+          }
+        }
+      ],
+      "position": 7.053351061079472,
+      "timeline": 22.001258250563765,
+      "camera": {
+        "yaw": 0.2882190763000279,
+        "pitch": 0.1735615997300121,
+        "distance": 6.2202165283350475,
+        "target": [
+          -0.20136984605000466,
+          -0.07054793842000186,
+          0.1519177844700065
+        ],
+        "focal": 6
+      },
+      "particles": 0,
+      "mobileParticles": 0
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "All artwork is live Canvas capture.",
+    "Native desktop/mobile contexts retain the production layout.",
+    "Isolated art is 720-square with DOM overlays hidden by capture CSS.",
+    "Each recorded transition uses continuous native scroll in both directions; jumps between nonadjacent beats are capture navigation.",
+    "No physical-device performance claim is implied."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "geometry.js": {
+    "source": "f72937a1ef2799ccb1555bd52072f5103d06851ab6f59660c2f8dc8549ff4b33",
+    "served": "f72937a1ef2799ccb1555bd52072f5103d06851ab6f59660c2f8dc8549ff4b33",
+    "equal": true
+  },
+  "motion.js": {
+    "source": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07",
+    "served": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07",
+    "equal": true
+  },
+  "hand-shapes.js": {
+    "source": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0",
+    "served": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0",
+    "equal": true
+  },
+  "living.js": {
+    "source": "319547b1c435cd65c0c31cbab92e1be8f27bd43f569ed6498795efc4fe54d642",
+    "served": "319547b1c435cd65c0c31cbab92e1be8f27bd43f569ed6498795efc4fe54d642",
+    "equal": true
+  }
+}

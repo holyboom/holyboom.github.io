@@ -1,0 +1,25 @@
+{
+  "completedAtUTC": "2026-11-14 22:19:01",
+  "initialImplementationCompletedAtUTC": "2026-11-14 20:47:02",
+  "refinementRounds": [
+    {
+      "start": "2026-11-14 20:47:02",
+      "end": "2026-11-14 21:17:17",
+      "seconds": 1815
+    },
+    {
+      "start": "2026-11-14 21:17:17",
+      "end": "2026-11-14 21:48:38",
+      "seconds": 1881
+    },
+    {
+      "start": "2026-11-14 21:48:38",
+      "end": "2026-11-14 22:19:01",
+      "seconds": 1823
+    }
+  ],
+  "publicDeploymentPerformed": false,
+  "preview": "http://127.0.0.1:4174/profile/",
+  "verification": "verification-summary.json",
+  "visualReview": "FINAL-VISUAL.md"
+}

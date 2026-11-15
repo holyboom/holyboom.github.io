@@ -1,0 +1,971 @@
+{
+  "generatedAt": "2026-11-14T20:35:49.508Z",
+  "samples": 6001,
+  "timelineRange": [
+    0,
+    30
+  ],
+  "checks": [
+    {
+      "name": "all-31-beats-have-finite-joints",
+      "pass": true,
+      "data": {
+        "samples": 6001
+      }
+    },
+    {
+      "name": "fixed-limb-segment-lengths-throughout-scroll",
+      "pass": true,
+      "data": {
+        "upperArmL": {
+          "min": 0.38999999999999985,
+          "max": 0.39000000000000024,
+          "maxError": 2.220446049250313e-16
+        },
+        "forearmL": {
+          "min": 0.42999999999999966,
+          "max": 0.4300000000000004,
+          "maxError": 4.440892098500626e-16
+        },
+        "upperArmR": {
+          "min": 0.38999999999999974,
+          "max": 0.39000000000000024,
+          "maxError": 2.7755575615628914e-16
+        },
+        "forearmR": {
+          "min": 0.4299999999999996,
+          "max": 0.4300000000000004,
+          "maxError": 4.440892098500626e-16
+        },
+        "thighL": {
+          "min": 0.46999999999999975,
+          "max": 0.47000000000000025,
+          "maxError": 2.7755575615628914e-16
+        },
+        "shinL": {
+          "min": 0.4799999999999995,
+          "max": 0.4800000000000004,
+          "maxError": 5.551115123125783e-16
+        },
+        "thighR": {
+          "min": 0.46999999999999975,
+          "max": 0.4700000000000002,
+          "maxError": 2.7755575615628914e-16
+        },
+        "shinR": {
+          "min": 0.4799999999999995,
+          "max": 0.4800000000000005,
+          "maxError": 5.551115123125783e-16
+        }
+      }
+    },
+    {
+      "name": "bilaterally-consistent-limb-proportions",
+      "pass": true,
+      "data": {
+        "upperArmL": 0.39000000000000007,
+        "forearmL": 0.4300000000000001,
+        "upperArmR": 0.38999999999999996,
+        "forearmR": 0.42999999999999994,
+        "thighL": 0.47000000000000003,
+        "shinL": 0.47999999999999987,
+        "thighR": 0.4699999999999999,
+        "shinR": 0.48000000000000004
+      }
+    },
+    {
+      "name": "exact-reverse-sampling",
+      "pass": true
+    },
+    {
+      "name": "history-independent-random-seeks",
+      "pass": true
+    },
+    {
+      "name": "samples-own-their-coordinate-storage",
+      "pass": true
+    },
+    {
+      "name": "no-jumps-at-beat-or-contact-boundaries",
+      "pass": false,
+      "data": {
+        "maximumEpsilonJump": 0.24047767391126365,
+        "failures": [
+          {
+            "timeline": 8,
+            "joint": "elbowR",
+            "error": 0.24047767391126365
+          },
+          {
+            "timeline": 8,
+            "joint": "elbowR",
+            "error": 0.24047767391126365
+          },
+          {
+            "timeline": 22,
+            "joint": "elbowR",
+            "error": 0.23757770272689369
+          },
+          {
+            "timeline": 22,
+            "joint": "elbowR",
+            "error": 0.23757770272689369
+          },
+          {
+            "timeline": 20,
+            "joint": "elbowR",
+            "error": 0.23614068579671246
+          },
+          {
+            "timeline": 20,
+            "joint": "elbowR",
+            "error": 0.23614068579671246
+          },
+          {
+            "timeline": 20,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          },
+          {
+            "timeline": 22,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          },
+          {
+            "timeline": 23,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          },
+          {
+            "timeline": 20,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          },
+          {
+            "timeline": 22,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          },
+          {
+            "timeline": 23,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          }
+        ]
+      }
+    },
+    {
+      "name": "no-fast-hidden-pole-flips",
+      "pass": false,
+      "data": {
+        "stride": 0.005,
+        "maximumStep": 0.24047767391126365,
+        "failures": [
+          {
+            "timeline": 8.005,
+            "joint": "elbowR",
+            "error": 0.24047767391126365
+          },
+          {
+            "timeline": 22.005,
+            "joint": "elbowR",
+            "error": 0.23757770272689369
+          },
+          {
+            "timeline": 20.005,
+            "joint": "elbowR",
+            "error": 0.23614068579671246
+          },
+          {
+            "timeline": 20.005,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          },
+          {
+            "timeline": 22.005,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          },
+          {
+            "timeline": 23.005,
+            "joint": "handR",
+            "error": 0.23156146832664762
+          },
+          {
+            "timeline": 8.005,
+            "joint": "handL",
+            "error": 0.23156146832664756
+          },
+          {
+            "timeline": 13.005,
+            "joint": "handR",
+            "error": 0.2315614683266475
+          },
+          {
+            "timeline": 23.400000000000002,
+            "joint": "handR",
+            "error": 0.22835413482753383
+          },
+          {
+            "timeline": 8.005,
+            "joint": "handR",
+            "error": 0.21989751654316544
+          },
+          {
+            "timeline": 23.005,
+            "joint": "elbowR",
+            "error": 0.20183983273452982
+          },
+          {
+            "timeline": 12.685,
+            "joint": "handL",
+            "error": 0.19388565919505865
+          }
+        ]
+      }
+    },
+    {
+      "name": "orthonormal-head-chest-wrist-frames",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "authored-hand-targets-are-reachable",
+      "pass": false,
+      "data": [
+        {
+          "timeline": 5.1000000000000005,
+          "side": "right",
+          "error": 0.23039457769367933,
+          "reachDistance": 1.0503945776936792,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.095,
+          "side": "right",
+          "error": 0.23039108266778374,
+          "reachDistance": 1.0503910826677836,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.09,
+          "side": "right",
+          "error": 0.23038925856686832,
+          "reachDistance": 1.0503892585668682,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.085,
+          "side": "right",
+          "error": 0.230388575879231,
+          "reachDistance": 1.0503885758792308,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.005,
+          "side": "right",
+          "error": 0.23038847698196507,
+          "reachDistance": 1.050388476981965,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.01,
+          "side": "right",
+          "error": 0.23038847698196507,
+          "reachDistance": 1.050388476981965,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.015,
+          "side": "right",
+          "error": 0.23038847698196507,
+          "reachDistance": 1.050388476981965,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.0200000000000005,
+          "side": "right",
+          "error": 0.23038847698196507,
+          "reachDistance": 1.050388476981965,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.025,
+          "side": "right",
+          "error": 0.23038847698196507,
+          "reachDistance": 1.050388476981965,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.03,
+          "side": "right",
+          "error": 0.23038847698196507,
+          "reachDistance": 1.050388476981965,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.035,
+          "side": "right",
+          "error": 0.23038847698196507,
+          "reachDistance": 1.050388476981965,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        },
+        {
+          "timeline": 5.04,
+          "side": "right",
+          "error": 0.23038847698196507,
+          "reachDistance": 1.050388476981965,
+          "availableReach": 0.8199999999999998,
+          "requested": [
+            0.2,
+            0.10302988978098448,
+            0.8379438321165804
+          ]
+        }
+      ]
+    },
+    {
+      "name": "fully-weighted-hand-contacts-reach-their-targets",
+      "pass": false,
+      "data": {
+        "activeContactSamples": 2052,
+        "failures": [
+          {
+            "timeline": 2.395,
+            "side": "right",
+            "error": 0.20407771584550963
+          },
+          {
+            "timeline": 2.39,
+            "side": "right",
+            "error": 0.20343986053862104
+          },
+          {
+            "timeline": 3.35,
+            "side": "right",
+            "error": 0.19999965492483926
+          },
+          {
+            "timeline": 3.345,
+            "side": "right",
+            "error": 0.19973191481097824
+          },
+          {
+            "timeline": 5.54,
+            "side": "right",
+            "error": 0.1967547563551639
+          },
+          {
+            "timeline": 5.535,
+            "side": "right",
+            "error": 0.19556929705949336
+          },
+          {
+            "timeline": 5.53,
+            "side": "right",
+            "error": 0.1941242806857846
+          },
+          {
+            "timeline": 2.5,
+            "side": "right",
+            "error": 0.19344898022544094
+          },
+          {
+            "timeline": 5.525,
+            "side": "right",
+            "error": 0.19242080310764928
+          },
+          {
+            "timeline": 5.5200000000000005,
+            "side": "right",
+            "error": 0.1904648617734065
+          },
+          {
+            "timeline": 5.515,
+            "side": "right",
+            "error": 0.1882669305494049
+          },
+          {
+            "timeline": 3.475,
+            "side": "right",
+            "error": 0.187916342642268
+          }
+        ]
+      }
+    },
+    {
+      "name": "planted-feet-match-contact-targets",
+      "pass": true,
+      "data": {
+        "plantedFootSamples": 12002,
+        "failures": []
+      }
+    },
+    {
+      "name": "planted-feet-do-not-slide",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "rise-support-before-seat-transfer-beat-8",
+      "pass": true,
+      "data": {
+        "beat": 8,
+        "kind": "rise",
+        "hipVerticalTravel": 0.39,
+        "seatStart": 0.65,
+        "seatEnd": 0,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "rise-actually-changes-body-level-beat-8",
+      "pass": true,
+      "data": {
+        "beat": 8,
+        "kind": "rise",
+        "hipVerticalTravel": 0.39,
+        "seatStart": 0.65,
+        "seatEnd": 0,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "sit-support-before-seat-transfer-beat-14",
+      "pass": true,
+      "data": {
+        "beat": 14,
+        "kind": "sit",
+        "hipVerticalTravel": -0.39,
+        "seatStart": 0,
+        "seatEnd": 0.65,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "sit-actually-changes-body-level-beat-14",
+      "pass": true,
+      "data": {
+        "beat": 14,
+        "kind": "sit",
+        "hipVerticalTravel": -0.39,
+        "seatStart": 0,
+        "seatEnd": 0.65,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "rise-support-before-seat-transfer-beat-18",
+      "pass": true,
+      "data": {
+        "beat": 18,
+        "kind": "rise",
+        "hipVerticalTravel": 0.39,
+        "seatStart": 0.65,
+        "seatEnd": 0,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "rise-actually-changes-body-level-beat-18",
+      "pass": true,
+      "data": {
+        "beat": 18,
+        "kind": "rise",
+        "hipVerticalTravel": 0.39,
+        "seatStart": 0.65,
+        "seatEnd": 0,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "dramatic-return-remains-seated-until-persistence",
+      "pass": false,
+      "data": [
+        13,
+        13.005,
+        13.01,
+        13.015,
+        13.02,
+        13.025,
+        13.030000000000001,
+        13.035
+      ]
+    },
+    {
+      "name": "persistence-light-remains-below-the-head",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "head-hands-hips-feet-visible-at-readable-holds",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "support-bridges-show-feet-and-pelvis",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "rendered-hand-or-tool-meets-locked-contact",
+      "pass": false,
+      "data": [
+        {
+          "timeline": 1,
+          "side": "left",
+          "grip": "brace",
+          "error": 0.10620757400106164
+        },
+        {
+          "timeline": 2,
+          "side": "left",
+          "grip": "brace",
+          "error": 0.0675674576867413
+        }
+      ]
+    },
+    {
+      "name": "rendered-light-remains-on-rig-emitter",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "observations": [
+    {
+      "name": "projected-right-hand-to-torso-centreline",
+      "note": "Diagnostic only: a thin joint centreline is not a torso contour or an emotion recognition score.",
+      "measurements": [
+        {
+          "beat": 2,
+          "width": 696,
+          "pixels": 37.819825968
+        },
+        {
+          "beat": 3,
+          "width": 696,
+          "pixels": 51.622161479
+        },
+        {
+          "beat": 4,
+          "width": 696,
+          "pixels": 89.048124675
+        },
+        {
+          "beat": 5,
+          "width": 696,
+          "pixels": 89.731144921
+        },
+        {
+          "beat": 6,
+          "width": 696,
+          "pixels": 132.453084905
+        },
+        {
+          "beat": 7,
+          "width": 696,
+          "pixels": 38.924219984
+        },
+        {
+          "beat": 8,
+          "width": 696,
+          "pixels": 190.728842483
+        },
+        {
+          "beat": 9,
+          "width": 696,
+          "pixels": 170.731553267
+        },
+        {
+          "beat": 10,
+          "width": 696,
+          "pixels": 48.426425886
+        },
+        {
+          "beat": 11,
+          "width": 696,
+          "pixels": 64.653077014
+        },
+        {
+          "beat": 12,
+          "width": 696,
+          "pixels": 100.538959216
+        },
+        {
+          "beat": 13,
+          "width": 696,
+          "pixels": 52.91226764
+        },
+        {
+          "beat": 14,
+          "width": 696,
+          "pixels": 16.08729214
+        },
+        {
+          "beat": 15,
+          "width": 696,
+          "pixels": 76.466914621
+        },
+        {
+          "beat": 16,
+          "width": 696,
+          "pixels": 21.315019605
+        },
+        {
+          "beat": 17,
+          "width": 696,
+          "pixels": 99.145647259
+        },
+        {
+          "beat": 18,
+          "width": 696,
+          "pixels": 28.397689343
+        },
+        {
+          "beat": 19,
+          "width": 696,
+          "pixels": 187.881976263
+        },
+        {
+          "beat": 20,
+          "width": 696,
+          "pixels": 154.252002629
+        },
+        {
+          "beat": 21,
+          "width": 696,
+          "pixels": 151.582623305
+        },
+        {
+          "beat": 22,
+          "width": 696,
+          "pixels": 153.293419744
+        },
+        {
+          "beat": 23,
+          "width": 696,
+          "pixels": 172.69829234
+        },
+        {
+          "beat": 24,
+          "width": 696,
+          "pixels": 88.829726786
+        },
+        {
+          "beat": 25,
+          "width": 696,
+          "pixels": 94.83483181
+        },
+        {
+          "beat": 26,
+          "width": 696,
+          "pixels": 117.442277986
+        },
+        {
+          "beat": 27,
+          "width": 696,
+          "pixels": 112.391800187
+        },
+        {
+          "beat": 28,
+          "width": 696,
+          "pixels": 143.249090591
+        },
+        {
+          "beat": 29,
+          "width": 696,
+          "pixels": 113.428018298
+        },
+        {
+          "beat": 30,
+          "width": 696,
+          "pixels": 39.434077573
+        },
+        {
+          "beat": 31,
+          "width": 696,
+          "pixels": 75.012543322
+        },
+        {
+          "beat": 2,
+          "width": 390,
+          "pixels": 14.207736452
+        },
+        {
+          "beat": 3,
+          "width": 390,
+          "pixels": 22.600086853
+        },
+        {
+          "beat": 4,
+          "width": 390,
+          "pixels": 28.029136497
+        },
+        {
+          "beat": 5,
+          "width": 390,
+          "pixels": 28.243253936
+        },
+        {
+          "beat": 6,
+          "width": 390,
+          "pixels": 38.328796276
+        },
+        {
+          "beat": 7,
+          "width": 390,
+          "pixels": 12.213406967
+        },
+        {
+          "beat": 8,
+          "width": 390,
+          "pixels": 55.322546789
+        },
+        {
+          "beat": 9,
+          "width": 390,
+          "pixels": 51.883248282
+        },
+        {
+          "beat": 10,
+          "width": 390,
+          "pixels": 14.665844511
+        },
+        {
+          "beat": 11,
+          "width": 390,
+          "pixels": 26.449060133
+        },
+        {
+          "beat": 12,
+          "width": 390,
+          "pixels": 31.379329076
+        },
+        {
+          "beat": 13,
+          "width": 390,
+          "pixels": 15.564019132
+        },
+        {
+          "beat": 14,
+          "width": 390,
+          "pixels": 6.753108838
+        },
+        {
+          "beat": 15,
+          "width": 390,
+          "pixels": 20.780335115
+        },
+        {
+          "beat": 16,
+          "width": 390,
+          "pixels": 7.329108894
+        },
+        {
+          "beat": 17,
+          "width": 390,
+          "pixels": 31.015919921
+        },
+        {
+          "beat": 18,
+          "width": 390,
+          "pixels": 10.25594541
+        },
+        {
+          "beat": 19,
+          "width": 390,
+          "pixels": 54.481391405
+        },
+        {
+          "beat": 20,
+          "width": 390,
+          "pixels": 46.172589564
+        },
+        {
+          "beat": 21,
+          "width": 390,
+          "pixels": 46.598243406
+        },
+        {
+          "beat": 22,
+          "width": 390,
+          "pixels": 46.003571031
+        },
+        {
+          "beat": 23,
+          "width": 390,
+          "pixels": 52.590762027
+        },
+        {
+          "beat": 24,
+          "width": 390,
+          "pixels": 32.372395546
+        },
+        {
+          "beat": 25,
+          "width": 390,
+          "pixels": 29.537114673
+        },
+        {
+          "beat": 26,
+          "width": 390,
+          "pixels": 35.232707131
+        },
+        {
+          "beat": 27,
+          "width": 390,
+          "pixels": 33.484556869
+        },
+        {
+          "beat": 28,
+          "width": 390,
+          "pixels": 44.212233233
+        },
+        {
+          "beat": 29,
+          "width": 390,
+          "pixels": 33.922685046
+        },
+        {
+          "beat": 30,
+          "width": 390,
+          "pixels": 12.374876197
+        },
+        {
+          "beat": 31,
+          "width": 390,
+          "pixels": 22.676066253
+        }
+      ]
+    }
+  ],
+  "browserErrors": [],
+  "anatomy": {
+    "upperArmL": {
+      "min": 0.38999999999999985,
+      "max": 0.39000000000000024,
+      "maxError": 2.220446049250313e-16
+    },
+    "forearmL": {
+      "min": 0.42999999999999966,
+      "max": 0.4300000000000004,
+      "maxError": 4.440892098500626e-16
+    },
+    "upperArmR": {
+      "min": 0.38999999999999974,
+      "max": 0.39000000000000024,
+      "maxError": 2.7755575615628914e-16
+    },
+    "forearmR": {
+      "min": 0.4299999999999996,
+      "max": 0.4300000000000004,
+      "maxError": 4.440892098500626e-16
+    },
+    "thighL": {
+      "min": 0.46999999999999975,
+      "max": 0.47000000000000025,
+      "maxError": 2.7755575615628914e-16
+    },
+    "shinL": {
+      "min": 0.4799999999999995,
+      "max": 0.4800000000000004,
+      "maxError": 5.551115123125783e-16
+    },
+    "thighR": {
+      "min": 0.46999999999999975,
+      "max": 0.4700000000000002,
+      "maxError": 2.7755575615628914e-16
+    },
+    "shinR": {
+      "min": 0.4799999999999995,
+      "max": 0.4800000000000005,
+      "maxError": 5.551115123125783e-16
+    }
+  },
+  "choreography": [
+    {
+      "beat": 8,
+      "kind": "rise",
+      "hipVerticalTravel": 0.39,
+      "seatStart": 0.65,
+      "seatEnd": 0,
+      "unsupportedSamples": []
+    },
+    {
+      "beat": 14,
+      "kind": "sit",
+      "hipVerticalTravel": -0.39,
+      "seatStart": 0,
+      "seatEnd": 0.65,
+      "unsupportedSamples": []
+    },
+    {
+      "beat": 18,
+      "kind": "rise",
+      "hipVerticalTravel": 0.39,
+      "seatStart": 0.65,
+      "seatEnd": 0,
+      "unsupportedSamples": []
+    }
+  ],
+  "limits": [
+    "No human emotion-recognition test was performed.",
+    "Support checks validate contact choreography, not a force-based biomechanical simulation.",
+    "Browser captures are emulated viewports, not physical-device tests."
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "capturedAt": "2026-11-14T21:46:43.411Z",
+  "note": "Native pointer opens disclosure; native scrolling then samples three corrected story positions. The capture inverts the public snapshot layout correction to target the displayed position.",
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": [],
+      "scripts": [
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+          "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+          "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+          "sha256": "0959a3a6d195d749a280694a550f91f0dd88bd52e7e1480f243d7acc22ac42c5"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+          "sha256": "57ded308462d059d9ee17ca8184e8ed21d60183a52055b5fd1e8166c90e2c382"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6",
+          "sha256": "eca4dc5df646e33e021ee34c76cd2c657d0aff9804b8228395978003b3625855"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+          "sha256": "64547943983f9e6a9ec17cdf086346edc9a94070d52bdc88ae69c4ed331e28f5"
+        }
+      ],
+      "samples": [
+        {
+          "position": 7.25,
+          "file": "desktop-7_25-open.png",
+          "state": {
+            "mode": "system",
+            "reduced": false,
+            "current": 7.249795926978485,
+            "target": 7.249795926978485,
+            "detail": 1,
+            "draws": 54,
+            "drawCost": 13.322104095277624,
+            "anchors": [
+              -22,
+              893.0625,
+              2143.0625,
+              3393.0625,
+              4643.0625,
+              5893.0625,
+              7315.96875,
+              8673.9375,
+              10503.3125,
+              11771.609375,
+              13753.796875
+            ],
+            "width": 695.515625,
+            "height": 860,
+            "exploded": 1,
+            "dirty": false,
+            "trailEnergy": 0,
+            "trailDirection": -1,
+            "trailSpan": 0,
+            "layoutCorrection": {
+              "origin": 7.3122104543901605,
+              "delta": 0.14523640051009057,
+              "span": 0.31952008112219926
+            },
+            "shot": 23,
+            "sceneCount": 31,
+            "camera": {
+              "yaw": 0.5800000000000001,
+              "pitch": 0.3,
+              "distance": 5.25,
+              "target": [
+                -0.25,
+                -0.09,
+                0.22
+              ],
+              "focal": 6
+            }
+          }
+        },
+        {
+          "position": 7.6,
+          "file": "desktop-7_6-open.png",
+          "state": {
+            "mode": "system",
+            "reduced": false,
+            "current": 7.599793695819111,
+            "target": 7.599793695819111,
+            "detail": 1,
+            "draws": 98,
+            "drawCost": 6.01098229279655,
+            "anchors": [
+              -22,
+              893.0625,
+              2143.0625,
+              3393.0625,
+              4643.0625,
+              5893.0625,
+              7315.96875,
+              8673.9375,
+              10503.3125,
+              11771.609375,
+              13753.796875
+            ],
+            "width": 695.515625,
+            "height": 860,
+            "exploded": 1,
+            "dirty": false,
+            "trailEnergy": 0,
+            "trailDirection": 1,
+            "trailSpan": 0,
+            "layoutCorrection": {
+              "origin": 7.3122104543901605,
+              "delta": 0.14523640051009057,
+              "span": 0.31952008112219926
+            },
+            "shot": 24,
+            "sceneCount": 31,
+            "camera": {
+              "yaw": 0.37874985449001014,
+              "pitch": 0.18255208939624956,
+              "distance": 5.354022136290863,
+              "target": [
+                -0.2140623908675076,
+                -0.08,
+                0.2372395530187521
+              ],
+              "focal": 6
+            }
+          }
+        },
+        {
+          "position": 7.85,
+          "file": "desktop-7_85-open.png",
+          "state": {
+            "mode": "system",
+            "reduced": false,
+            "current": 7.850099077553809,
+            "target": 7.850099077553809,
+            "detail": 1,
+            "draws": 143,
+            "drawCost": 5.023981931617962,
+            "anchors": [
+              -22,
+              893.0625,
+              2143.0625,
+              3393.0625,
+              4643.0625,
+              5893.0625,
+              7315.96875,
+              8673.9375,
+              10503.3125,
+              11771.609375,
+              13753.796875
+            ],
+            "width": 695.515625,
+            "height": 860,
+            "exploded": 1,
+            "dirty": false,
+            "trailEnergy": 0,
+            "trailDirection": 1,
+            "trailSpan": 0,
+            "layoutCorrection": {
+              "origin": 7.3122104543901605,
+              "delta": 0.14523640051009057,
+              "span": 0.31952008112219926
+            },
+            "shot": 25,
+            "sceneCount": 31,
+            "camera": {
+              "yaw": 0.2,
+              "pitch": 0.19,
+              "distance": 6.349999999999999,
+              "target": [
+                -0.08000000000000002,
+                -0.08,
+                0.2
+              ],
+              "focal": 6
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "scripts": [
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/scenes.js?v=faceless-performance-v6",
+          "sha256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/hand-shapes.js?v=faceless-performance-v6",
+          "sha256": "0959a3a6d195d749a280694a550f91f0dd88bd52e7e1480f243d7acc22ac42c5"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/performance-source/pilot-clips.js?v=faceless-performance-v6",
+          "sha256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/living.js?v=faceless-performance-v6",
+          "sha256": "eca4dc5df646e33e021ee34c76cd2c657d0aff9804b8228395978003b3625855"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/geometry.js?v=faceless-performance-v6",
+          "sha256": "64547943983f9e6a9ec17cdf086346edc9a94070d52bdc88ae69c4ed331e28f5"
+        },
+        {
+          "url": "http://127.0.0.1:4174/assets/profile/motion.js?v=faceless-performance-v6",
+          "sha256": "57ded308462d059d9ee17ca8184e8ed21d60183a52055b5fd1e8166c90e2c382"
+        }
+      ],
+      "samples": [
+        {
+          "position": 7.25,
+          "file": "mobile-7_25-open.png",
+          "state": {
+            "mode": "system",
+            "reduced": false,
+            "current": 7.250408221391585,
+            "target": 7.250408221391585,
+            "detail": 2,
+            "draws": 92,
+            "drawCost": 6.548097466779825,
+            "anchors": [
+              -20.00687499999998,
+              699.461875,
+              1929.88375,
+              2954.07125,
+              4060.3525,
+              5130.930625,
+              6568.54,
+              7928.649375,
+              9841.118125,
+              11443.3125,
+              14229.0625
+            ],
+            "width": 390,
+            "height": 285.953125,
+            "exploded": 0.9999999999999999,
+            "dirty": false,
+            "trailEnergy": 0,
+            "trailDirection": -1,
+            "trailSpan": 0,
+            "layoutCorrection": {
+              "origin": 7.564265864910646,
+              "delta": 0.23342265950537655,
+              "span": 0.5135298509118285
+            },
+            "shot": 23,
+            "sceneCount": 31,
+            "camera": {
+              "yaw": 0.307,
+              "pitch": 0.237,
+              "distance": 5.468922276473751,
+              "target": [
+                -0.2465,
+                -0.1215,
+                0.213
+              ],
+              "focal": 6
+            }
+          }
+        },
+        {
+          "position": 7.6,
+          "file": "mobile-7_6-open.png",
+          "state": {
+            "mode": "system",
+            "reduced": false,
+            "current": 7.599742694732063,
+            "target": 7.599742694732063,
+            "detail": 2,
+            "draws": 148,
+            "drawCost": 3.6482435337073724,
+            "anchors": [
+              -20.00687499999998,
+              699.461875,
+              1929.88375,
+              2954.07125,
+              4060.3525,
+              5130.930625,
+              6568.54,
+              7928.649375,
+              9841.118125,
+              11443.3125,
+              14229.0625
+            ],
+            "width": 390,
+            "height": 285.953125,
+            "exploded": 1,
+            "dirty": false,
+            "trailEnergy": 0,
+            "trailDirection": 1,
+            "trailSpan": 0,
+            "layoutCorrection": {
+              "origin": 7.564265864910646,
+              "delta": 0.23342265950537655,
+              "span": 0.5135298509118285
+            },
+            "shot": 24,
+            "sceneCount": 31,
+            "camera": {
+              "yaw": 0.17624535688721232,
+              "pitch": 0.16065644346303282,
+              "distance": 5.53880771190695,
+              "target": [
+                -0.22318401766540924,
+                -0.11499999999999999,
+                0.22421778268483591
+              ],
+              "focal": 6
+            }
+          }
+        },
+        {
+          "position": 7.85,
+          "file": "mobile-7_85-open.png",
+          "state": {
+            "mode": "system",
+            "reduced": false,
+            "current": 7.849841273392258,
+            "target": 7.849841273392258,
+            "detail": 2,
+            "draws": 203,
+            "drawCost": 3.4050964586491297,
+            "anchors": [
+              -20.00687499999998,
+              699.461875,
+              1929.88375,
+              2954.07125,
+              4060.3525,
+              5130.930625,
+              6568.54,
+              7928.649375,
+              9841.118125,
+              11443.3125,
+              14229.0625
+            ],
+            "width": 390,
+            "height": 285.953125,
+            "exploded": 1,
+            "dirty": false,
+            "trailEnergy": 0,
+            "trailDirection": 1,
+            "trailSpan": 0,
+            "layoutCorrection": {
+              "origin": 7.564265864910646,
+              "delta": 0.23342265950537655,
+              "span": 0.5135298509118285
+            },
+            "shot": 25,
+            "sceneCount": 31,
+            "camera": {
+              "yaw": 0.06,
+              "pitch": 0.1655,
+              "distance": 6.188724152823644,
+              "target": [
+                -0.136,
+                -0.11499999999999999,
+                0.2
+              ],
+              "focal": 6
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

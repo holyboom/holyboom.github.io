@@ -1,0 +1,37 @@
+{
+  "release": "living-c-glove-v15",
+  "sources": {
+    "assets/profile/hand-shapes.js": "d569227b37146266847a5b8c939f5f63d1d9420ee43b9703b578d9c4acaa47ee",
+    "assets/profile/geometry.js": "d9adc6de13d1da7ead4ddebde45b09f63586ffa7da2b1d251974ddfcdf75786e",
+    "assets/profile/motion.js": "db34e9f6647968a43f7900bd4e51150670fde2b4da473ba33e58b18f36700c82",
+    "assets/profile/living.js": "9a39a3d96829553eba703c7fae350a145f738aac280c31970de63f10e0b24a32",
+    "assets/profile/scenes.js": "3d7c1a61781523234e02d0a3517985ef92d8192951c098f209ee043dbea0fb18"
+  },
+  "sourceBuildAndLocalHttpMatch": true,
+  "suites": [
+    {
+      "name": "skin",
+      "passed": 9
+    },
+    {
+      "name": "performance",
+      "passed": 69
+    },
+    {
+      "name": "camera",
+      "passed": 27
+    },
+    {
+      "name": "painter",
+      "passed": 7
+    },
+    {
+      "name": "profile",
+      "passed": 59
+    }
+  ],
+  "totalChecks": 171,
+  "nativeScreenshots": 8,
+  "captureBrowserErrors": [],
+  "publicDeployment": false
+}

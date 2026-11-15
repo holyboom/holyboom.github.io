@@ -1,0 +1,111 @@
+{
+  "ok": true,
+  "tests": 26,
+  "passed": 26,
+  "results": [
+    {
+      "case": "valid artifact",
+      "passed": true
+    },
+    {
+      "case": "missing IndexNow proof",
+      "passed": true
+    },
+    {
+      "case": "altered IndexNow proof",
+      "passed": true
+    },
+    {
+      "case": "blocked search crawler",
+      "passed": true
+    },
+    {
+      "case": "blocked rendering asset",
+      "passed": true
+    },
+    {
+      "case": "blocked query-versioned stylesheet",
+      "passed": true
+    },
+    {
+      "case": "blocked ad-review rendering asset",
+      "passed": true
+    },
+    {
+      "case": "blocked paid landing query",
+      "passed": true
+    },
+    {
+      "case": "noindex in generic meta",
+      "passed": true
+    },
+    {
+      "case": "agent-specific noarchive",
+      "passed": true
+    },
+    {
+      "case": "wrong canonical",
+      "passed": true
+    },
+    {
+      "case": "broken rendering resource",
+      "passed": true
+    },
+    {
+      "case": "broken local fragment",
+      "passed": true
+    },
+    {
+      "case": "leaked design document",
+      "passed": true
+    },
+    {
+      "case": "leaked nested script",
+      "passed": true
+    },
+    {
+      "case": "directory symlink in artifact",
+      "passed": true
+    },
+    {
+      "case": "source map file",
+      "passed": true
+    },
+    {
+      "case": "inline source map",
+      "passed": true
+    },
+    {
+      "case": "private implementation link",
+      "passed": true
+    },
+    {
+      "case": "conflicting Person identity",
+      "passed": true
+    },
+    {
+      "case": "one-way language alternative",
+      "passed": true
+    },
+    {
+      "case": "one-way project language alternative",
+      "passed": true
+    },
+    {
+      "case": "wrong Thai project HTML language",
+      "passed": true
+    },
+    {
+      "case": "wrong Thai project schema language",
+      "passed": true
+    },
+    {
+      "case": "conflicting project identity",
+      "passed": true
+    },
+    {
+      "case": "source mode leaves internal documents private",
+      "passed": true
+    }
+  ]
+}

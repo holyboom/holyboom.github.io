@@ -1,0 +1,823 @@
+{
+  "generatedAt": "2026-11-15T04:50:32.050Z",
+  "sources": {
+    "geometry.js": "e57833bd55bcb7d63f3c559f396dc945b5711db34eb79eb3e99afe0b577dac84",
+    "motion.js": "6d7197c7fbd20f4b0ee8624ca871821123d821be735b005dc71fc6f5bfec9c14",
+    "hand-shapes.js": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0",
+    "living.js": "843cc68131e9e6f0a640f77de49f94155e56e835ad870f5dc436f6e723511739",
+    "scenes.js": "475259fc54545a7ae78b90b8bba96a4d2c76b831240ce65f972019858265a82b",
+    "performance-source/pilot-clips.js": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95"
+  },
+  "samples": 6001,
+  "timelineRange": [
+    0,
+    30
+  ],
+  "coverage": {
+    "boundaryProbes": 1841,
+    "renderedPoseSamples": 124,
+    "contactIntervals": 56,
+    "paintedBoundaryProbes": 150,
+    "toolHandoffSamples": 401,
+    "renderedToolHandoffSamples": 41
+  },
+  "checks": [
+    {
+      "name": "all-31-beats-have-finite-joints",
+      "pass": true,
+      "data": {
+        "samples": 6001
+      }
+    },
+    {
+      "name": "fast-light-is-exactly-the-complete-pose-emitter",
+      "pass": true,
+      "data": {
+        "samples": 6001,
+        "failures": []
+      }
+    },
+    {
+      "name": "fixed-limb-segment-lengths-throughout-scroll",
+      "pass": true,
+      "data": {
+        "upperArmL": {
+          "min": 0.38999999999999985,
+          "max": 0.39000000000000024,
+          "maxError": 2.220446049250313e-16
+        },
+        "forearmL": {
+          "min": 0.4299999999999997,
+          "max": 0.4300000000000002,
+          "maxError": 2.7755575615628914e-16
+        },
+        "upperArmR": {
+          "min": 0.38999999999999985,
+          "max": 0.3900000000000002,
+          "maxError": 1.6653345369377348e-16
+        },
+        "forearmR": {
+          "min": 0.4299999999999997,
+          "max": 0.43000000000000027,
+          "maxError": 3.3306690738754696e-16
+        },
+        "thighL": {
+          "min": 0.4699999999999997,
+          "max": 0.4700000000000002,
+          "maxError": 2.7755575615628914e-16
+        },
+        "shinL": {
+          "min": 0.4799999999999994,
+          "max": 0.48000000000000054,
+          "maxError": 7.771561172376096e-16
+        },
+        "thighR": {
+          "min": 0.46999999999999975,
+          "max": 0.4700000000000002,
+          "maxError": 2.220446049250313e-16
+        },
+        "shinR": {
+          "min": 0.47999999999999954,
+          "max": 0.4800000000000005,
+          "maxError": 4.996003610813204e-16
+        }
+      }
+    },
+    {
+      "name": "bilaterally-consistent-limb-proportions",
+      "pass": true,
+      "data": {
+        "upperArmL": 0.39000000000000007,
+        "forearmL": 0.42999999999999994,
+        "upperArmR": 0.39,
+        "forearmR": 0.43000000000000005,
+        "thighL": 0.47,
+        "shinL": 0.4800000000000002,
+        "thighR": 0.47,
+        "shinR": 0.48000000000000004
+      }
+    },
+    {
+      "name": "finger-segments-do-not-stretch-during-nested-grips",
+      "pass": true,
+      "data": {
+        "segments": 30,
+        "failures": []
+      }
+    },
+    {
+      "name": "typing-presses-come-mainly-from-finger-flexion",
+      "pass": true,
+      "data": [
+        {
+          "hand": "3-left",
+          "fingerTravel": 0.01725683486370283,
+          "wristTravel": 0.002738779081418438
+        },
+        {
+          "hand": "3-right",
+          "fingerTravel": 0.017260306537968614,
+          "wristTravel": 0.0027396934620313555
+        },
+        {
+          "hand": "4-left",
+          "fingerTravel": 0.017241064503061627,
+          "wristTravel": 0.0027346279959196244
+        },
+        {
+          "hand": "4-right",
+          "fingerTravel": 0.017260306537968614,
+          "wristTravel": 0.0027396934620313902
+        },
+        {
+          "hand": "10-left",
+          "fingerTravel": 0.017247762320630276,
+          "wristTravel": 0.0027363884296772827
+        },
+        {
+          "hand": "10-right",
+          "fingerTravel": 0.017260306537965314,
+          "wristTravel": 0.002739693462031085
+        }
+      ]
+    },
+    {
+      "name": "typing-hands-make-staggered-contacts",
+      "pass": true,
+      "data": [
+        {
+          "beat": 3,
+          "left": true,
+          "right": true,
+          "staggered": 10
+        },
+        {
+          "beat": 4,
+          "left": true,
+          "right": true,
+          "staggered": 11
+        },
+        {
+          "beat": 10,
+          "left": true,
+          "right": true,
+          "staggered": 6
+        }
+      ]
+    },
+    {
+      "name": "exact-reverse-sampling",
+      "pass": true
+    },
+    {
+      "name": "history-independent-random-seeks",
+      "pass": true
+    },
+    {
+      "name": "samples-own-their-coordinate-storage",
+      "pass": true
+    },
+    {
+      "name": "no-jumps-at-beat-or-contact-boundaries",
+      "pass": true,
+      "data": {
+        "maximumEpsilonJump": 0.000029267239285116464,
+        "failures": []
+      }
+    },
+    {
+      "name": "head-chest-wrist-orientations-remain-continuous",
+      "pass": true,
+      "data": {
+        "boundaryProbes": 1841,
+        "failures": []
+      }
+    },
+    {
+      "name": "no-fast-hidden-pole-flips",
+      "pass": true,
+      "data": {
+        "stride": 0.005,
+        "maximumStep": 0.1068208371763099,
+        "failures": []
+      }
+    },
+    {
+      "name": "orthonormal-head-chest-wrist-frames",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "authored-hand-targets-are-reachable",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "fully-weighted-hand-contacts-reach-their-targets",
+      "pass": true,
+      "data": {
+        "activeContactSamples": 1786,
+        "failures": []
+      }
+    },
+    {
+      "name": "planted-feet-match-contact-targets",
+      "pass": true,
+      "data": {
+        "plantedFootSamples": 10490,
+        "failures": []
+      }
+    },
+    {
+      "name": "planted-feet-do-not-slide",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "rise-support-before-seat-transfer-beat-8",
+      "pass": true,
+      "data": {
+        "beat": 8,
+        "kind": "rise",
+        "hipVerticalTravel": 0.355,
+        "seatStart": 0.65,
+        "seatEnd": 0,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "rise-actually-changes-body-level-beat-8",
+      "pass": true,
+      "data": {
+        "beat": 8,
+        "kind": "rise",
+        "hipVerticalTravel": 0.355,
+        "seatStart": 0.65,
+        "seatEnd": 0,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "sit-support-before-seat-transfer-beat-14",
+      "pass": true,
+      "data": {
+        "beat": 14,
+        "kind": "sit",
+        "hipVerticalTravel": -0.37,
+        "seatStart": 0,
+        "seatEnd": 0.65,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "sit-actually-changes-body-level-beat-14",
+      "pass": true,
+      "data": {
+        "beat": 14,
+        "kind": "sit",
+        "hipVerticalTravel": -0.37,
+        "seatStart": 0,
+        "seatEnd": 0.65,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "rise-support-before-seat-transfer-beat-18",
+      "pass": true,
+      "data": {
+        "beat": 18,
+        "kind": "rise",
+        "hipVerticalTravel": 0.37,
+        "seatStart": 0.65,
+        "seatEnd": 0,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "rise-actually-changes-body-level-beat-18",
+      "pass": true,
+      "data": {
+        "beat": 18,
+        "kind": "rise",
+        "hipVerticalTravel": 0.37,
+        "seatStart": 0.65,
+        "seatEnd": 0,
+        "unsupportedSamples": []
+      }
+    },
+    {
+      "name": "dramatic-return-remains-seated-until-persistence",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "persistence-light-remains-below-the-head",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "head-hands-hips-feet-visible-at-readable-holds",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "support-bridges-show-feet-and-pelvis",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "rendered-hand-or-tool-meets-locked-contact",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "visible-index-tip-or-palm-pad-is-the-contact-feature",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "locked-contacts-meet-the-painted-object-or-support",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "stationary-emitter-has-no-phantom-stroke",
+      "pass": true,
+      "data": {
+        "samples": 124,
+        "failures": []
+      }
+    },
+    {
+      "name": "painted-contact-is-real-at-acquisition-and-release",
+      "pass": true,
+      "data": {
+        "intervals": 56,
+        "probes": 150,
+        "failures": []
+      }
+    },
+    {
+      "name": "load-bearing-palm-rest-remains-visible-until-release",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "moving-index-tip-meets-painted-keys-during-every-press",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "rendered-light-remains-on-rig-emitter",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "stylus-has-explicit-continuous-ownership-state",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "stylus-is-rigid-through-the-handoff",
+      "pass": true,
+      "data": {
+        "min": 0.20199999999999996,
+        "max": 0.2020000000000001
+      }
+    },
+    {
+      "name": "stylus-is-docked-before-grip-releases",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "no-visible-stylus-jump-through-release",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "right-hand-releases-stylus-before-typing-contact",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "typing-begins-with-the-released-pen-still-visible",
+      "pass": true
+    },
+    {
+      "name": "rendered-stylus-persists-at-the-dock-after-release",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "docked-pen-clears-the-painted-keyboard-during-typing",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "painted-tool-rewinds-exactly-after-release",
+      "pass": true
+    },
+    {
+      "name": "visible-thumb-and-index-grip-the-held-stylus",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "depth-disclosure-leaves-front-work-and-performer-fixed",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "disclosed-depth-layers-are-projectably-visible",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "later-frame-requests-do-not-mutate-held-snapshots",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "name": "projected-right-hand-to-torso-centreline",
+      "note": "Diagnostic only: a thin joint centreline is not a torso contour or an emotion recognition score.",
+      "measurements": [
+        {
+          "beat": 2,
+          "width": 696,
+          "pixels": 56.022237125
+        },
+        {
+          "beat": 3,
+          "width": 696,
+          "pixels": 129.358269545
+        },
+        {
+          "beat": 4,
+          "width": 696,
+          "pixels": 168.563358464
+        },
+        {
+          "beat": 5,
+          "width": 696,
+          "pixels": 206.040532684
+        },
+        {
+          "beat": 6,
+          "width": 696,
+          "pixels": 125.192082208
+        },
+        {
+          "beat": 7,
+          "width": 696,
+          "pixels": 144.644925487
+        },
+        {
+          "beat": 8,
+          "width": 696,
+          "pixels": 88.239893195
+        },
+        {
+          "beat": 9,
+          "width": 696,
+          "pixels": 133.125210441
+        },
+        {
+          "beat": 10,
+          "width": 696,
+          "pixels": 96.580037969
+        },
+        {
+          "beat": 11,
+          "width": 696,
+          "pixels": 206.478413814
+        },
+        {
+          "beat": 12,
+          "width": 696,
+          "pixels": 130.74485786
+        },
+        {
+          "beat": 13,
+          "width": 696,
+          "pixels": 90.381746934
+        },
+        {
+          "beat": 14,
+          "width": 696,
+          "pixels": 54.482540775
+        },
+        {
+          "beat": 15,
+          "width": 696,
+          "pixels": 98.015084956
+        },
+        {
+          "beat": 16,
+          "width": 696,
+          "pixels": 108.994747558
+        },
+        {
+          "beat": 17,
+          "width": 696,
+          "pixels": 128.764798983
+        },
+        {
+          "beat": 18,
+          "width": 696,
+          "pixels": 6.473240937
+        },
+        {
+          "beat": 19,
+          "width": 696,
+          "pixels": 110.696832785
+        },
+        {
+          "beat": 20,
+          "width": 696,
+          "pixels": 130.871593115
+        },
+        {
+          "beat": 21,
+          "width": 696,
+          "pixels": 19.933475055
+        },
+        {
+          "beat": 22,
+          "width": 696,
+          "pixels": 7.343194692
+        },
+        {
+          "beat": 23,
+          "width": 696,
+          "pixels": 140.964688368
+        },
+        {
+          "beat": 24,
+          "width": 696,
+          "pixels": 62.564923628
+        },
+        {
+          "beat": 25,
+          "width": 696,
+          "pixels": 67.61834248
+        },
+        {
+          "beat": 26,
+          "width": 696,
+          "pixels": 170.252784519
+        },
+        {
+          "beat": 27,
+          "width": 696,
+          "pixels": 186.182392928
+        },
+        {
+          "beat": 28,
+          "width": 696,
+          "pixels": 53.753775199
+        },
+        {
+          "beat": 29,
+          "width": 696,
+          "pixels": 122.977174268
+        },
+        {
+          "beat": 30,
+          "width": 696,
+          "pixels": 0.780880338
+        },
+        {
+          "beat": 31,
+          "width": 696,
+          "pixels": 89.375529301
+        },
+        {
+          "beat": 2,
+          "width": 390,
+          "pixels": 20.265705257
+        },
+        {
+          "beat": 3,
+          "width": 390,
+          "pixels": 38.320716366
+        },
+        {
+          "beat": 4,
+          "width": 390,
+          "pixels": 49.558342782
+        },
+        {
+          "beat": 5,
+          "width": 390,
+          "pixels": 61.827098789
+        },
+        {
+          "beat": 6,
+          "width": 390,
+          "pixels": 37.423829528
+        },
+        {
+          "beat": 7,
+          "width": 390,
+          "pixels": 39.785622686
+        },
+        {
+          "beat": 8,
+          "width": 390,
+          "pixels": 27.150291498
+        },
+        {
+          "beat": 9,
+          "width": 390,
+          "pixels": 44.912532485
+        },
+        {
+          "beat": 10,
+          "width": 390,
+          "pixels": 30.57203938
+        },
+        {
+          "beat": 11,
+          "width": 390,
+          "pixels": 69.402607108
+        },
+        {
+          "beat": 12,
+          "width": 390,
+          "pixels": 43.331562886
+        },
+        {
+          "beat": 13,
+          "width": 390,
+          "pixels": 28.915665535
+        },
+        {
+          "beat": 14,
+          "width": 390,
+          "pixels": 16.795476974
+        },
+        {
+          "beat": 15,
+          "width": 390,
+          "pixels": 28.676308618
+        },
+        {
+          "beat": 16,
+          "width": 390,
+          "pixels": 31.311621896
+        },
+        {
+          "beat": 17,
+          "width": 390,
+          "pixels": 34.173516606
+        },
+        {
+          "beat": 18,
+          "width": 390,
+          "pixels": 0.456480684
+        },
+        {
+          "beat": 19,
+          "width": 390,
+          "pixels": 35.418213188
+        },
+        {
+          "beat": 20,
+          "width": 390,
+          "pixels": 41.3913183
+        },
+        {
+          "beat": 21,
+          "width": 390,
+          "pixels": 9.845358045
+        },
+        {
+          "beat": 22,
+          "width": 390,
+          "pixels": 4.673568387
+        },
+        {
+          "beat": 23,
+          "width": 390,
+          "pixels": 44.865503259
+        },
+        {
+          "beat": 24,
+          "width": 390,
+          "pixels": 21.993193847
+        },
+        {
+          "beat": 25,
+          "width": 390,
+          "pixels": 16.980506259
+        },
+        {
+          "beat": 26,
+          "width": 390,
+          "pixels": 57.579516133
+        },
+        {
+          "beat": 27,
+          "width": 390,
+          "pixels": 62.365424114
+        },
+        {
+          "beat": 28,
+          "width": 390,
+          "pixels": 14.498933693
+        },
+        {
+          "beat": 29,
+          "width": 390,
+          "pixels": 38.587376
+        },
+        {
+          "beat": 30,
+          "width": 390,
+          "pixels": 0.052549697
+        },
+        {
+          "beat": 31,
+          "width": 390,
+          "pixels": 28.135533055
+        }
+      ]
+    }
+  ],
+  "browserErrors": [],
+  "anatomy": {
+    "upperArmL": {
+      "min": 0.38999999999999985,
+      "max": 0.39000000000000024,
+      "maxError": 2.220446049250313e-16
+    },
+    "forearmL": {
+      "min": 0.4299999999999997,
+      "max": 0.4300000000000002,
+      "maxError": 2.7755575615628914e-16
+    },
+    "upperArmR": {
+      "min": 0.38999999999999985,
+      "max": 0.3900000000000002,
+      "maxError": 1.6653345369377348e-16
+    },
+    "forearmR": {
+      "min": 0.4299999999999997,
+      "max": 0.43000000000000027,
+      "maxError": 3.3306690738754696e-16
+    },
+    "thighL": {
+      "min": 0.4699999999999997,
+      "max": 0.4700000000000002,
+      "maxError": 2.7755575615628914e-16
+    },
+    "shinL": {
+      "min": 0.4799999999999994,
+      "max": 0.48000000000000054,
+      "maxError": 7.771561172376096e-16
+    },
+    "thighR": {
+      "min": 0.46999999999999975,
+      "max": 0.4700000000000002,
+      "maxError": 2.220446049250313e-16
+    },
+    "shinR": {
+      "min": 0.47999999999999954,
+      "max": 0.4800000000000005,
+      "maxError": 4.996003610813204e-16
+    }
+  },
+  "choreography": [
+    {
+      "beat": 8,
+      "kind": "rise",
+      "hipVerticalTravel": 0.355,
+      "seatStart": 0.65,
+      "seatEnd": 0,
+      "unsupportedSamples": []
+    },
+    {
+      "beat": 14,
+      "kind": "sit",
+      "hipVerticalTravel": -0.37,
+      "seatStart": 0,
+      "seatEnd": 0.65,
+      "unsupportedSamples": []
+    },
+    {
+      "beat": 18,
+      "kind": "rise",
+      "hipVerticalTravel": 0.37,
+      "seatStart": 0.65,
+      "seatEnd": 0,
+      "unsupportedSamples": []
+    }
+  ],
+  "limits": [
+    "No human emotion-recognition test was performed.",
+    "Support checks validate contact choreography, not a force-based biomechanical simulation.",
+    "Browser captures are emulated viewports, not physical-device tests."
+  ]
+}

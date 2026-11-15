@@ -1,0 +1,44 @@
+[
+  {
+    "file": "assets/profile/scenes.js",
+    "sourceSHA256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c",
+    "builtSHA256": "71ce7893fca0825b0764225a37e0e091aa5242d0c5d98772fb94d9245d3ee45c",
+    "match": true
+  },
+  {
+    "file": "assets/profile/hand-shapes.js",
+    "sourceSHA256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0",
+    "builtSHA256": "1b86fd8cc05ba1e0b327ed39601b4843bb8b47d24b57994470ac50fb229e6bd0",
+    "match": true
+  },
+  {
+    "file": "assets/profile/motion.js",
+    "sourceSHA256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07",
+    "builtSHA256": "3ccaf993eada56f183be0bfd4b57f0b4c49dcf93507abec704082ae0c961dd07",
+    "match": true
+  },
+  {
+    "file": "assets/profile/geometry.js",
+    "sourceSHA256": "0fb98eb8590f63cc4e1418e199bffea0f4c76f2ddd2baf77aff2bd200cea4dd8",
+    "builtSHA256": "0fb98eb8590f63cc4e1418e199bffea0f4c76f2ddd2baf77aff2bd200cea4dd8",
+    "match": true
+  },
+  {
+    "file": "assets/profile/living.js",
+    "sourceSHA256": "319547b1c435cd65c0c31cbab92e1be8f27bd43f569ed6498795efc4fe54d642",
+    "builtSHA256": "319547b1c435cd65c0c31cbab92e1be8f27bd43f569ed6498795efc4fe54d642",
+    "match": true
+  },
+  {
+    "file": "assets/profile/living.css",
+    "sourceSHA256": "7de1efda46fb4a3056ace73d5dbc3a3739997fb577ad05fc1d359c146ddc4362",
+    "builtSHA256": "7de1efda46fb4a3056ace73d5dbc3a3739997fb577ad05fc1d359c146ddc4362",
+    "match": true
+  },
+  {
+    "file": "assets/profile/performance-source/pilot-clips.js",
+    "sourceSHA256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95",
+    "builtSHA256": "e07d0153269206483b540e75d2d03700f3a71e5ea19cb608a4a1f805e4c5eb95",
+    "match": true
+  }
+]

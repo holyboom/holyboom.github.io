@@ -1,0 +1,38 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "performance": 100,
+      "accessibility": 100,
+      "lcp_ms": 903.6786,
+      "tbt_ms": 75.5,
+      "cls": 0.003456818202113622,
+      "total_bytes": 256625
+    },
+    {
+      "run": 2,
+      "performance": 100,
+      "accessibility": 100,
+      "lcp_ms": 902.2733000000001,
+      "tbt_ms": 27,
+      "cls": 0.003456818202113622,
+      "total_bytes": 256625
+    },
+    {
+      "run": 3,
+      "performance": 100,
+      "accessibility": 100,
+      "lcp_ms": 1079.6596,
+      "tbt_ms": 54,
+      "cls": 0.003456818202113622,
+      "total_bytes": 256625
+    }
+  ],
+  "median": {
+    "lcp_ms": 903.6786,
+    "tbt_ms": 54,
+    "cls": 0.003456818202113622
+  },
+  "environment": "Linux Chromium, Lighthouse mobile simulation, production artifact over localhost",
+  "physicalDevice": false
+}

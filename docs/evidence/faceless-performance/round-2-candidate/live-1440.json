@@ -1,0 +1,291 @@
+[
+  {
+    "requestedTimeline": 2,
+    "actualTimeline": 2,
+    "file": "live-1440-t2.00.png",
+    "current": 1.3497999999999999,
+    "camera": {
+      "yaw": 0.5800000000000001,
+      "pitch": 0.3,
+      "distance": 5.25,
+      "target": [
+        -0.25,
+        -0.24,
+        0.22
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 2.28,
+    "actualTimeline": 2.280700533454711,
+    "file": "live-1440-t2.28.png",
+    "current": 1.4756666666666667,
+    "camera": {
+      "yaw": 0.5369263246420766,
+      "pitch": 0.2630797068360656,
+      "distance": 5.187636817496858,
+      "target": [
+        -0.25307669109699454,
+        -0.23692330890300545,
+        0.2292300732909836
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 2.32,
+    "actualTimeline": 2.321717278994993,
+    "file": "live-1440-t2.32.png",
+    "current": 1.4820666666666666,
+    "camera": {
+      "yaw": 0.5316048136071772,
+      "pitch": 0.25851841166329476,
+      "distance": 5.179983789352004,
+      "target": [
+        -0.2534567990280588,
+        -0.2365432009719412,
+        0.2303703970841763
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 2.42,
+    "actualTimeline": 2.4218246991351835,
+    "file": "live-1440-t2.42.png",
+    "current": 1.4969999999999999,
+    "camera": {
+      "yaw": 0.518625548736652,
+      "pitch": 0.24739332748855888,
+      "distance": 5.161365226819421,
+      "target": [
+        -0.2543838893759534,
+        -0.23561611062404655,
+        0.23315166812786028
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 2.58,
+    "actualTimeline": 2.5763488803422856,
+    "file": "live-1440-t2.58.png",
+    "current": 1.5194,
+    "camera": {
+      "yaw": 0.498662242681517,
+      "pitch": 0.2302819222984432,
+      "distance": 5.132858700976859,
+      "target": [
+        -0.25580983980846306,
+        -0.2341901601915369,
+        0.2374295194253892
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 2.72,
+    "actualTimeline": 2.717619808480655,
+    "file": "live-1440-t2.72.png",
+    "current": 1.5407333333333333,
+    "camera": {
+      "yaw": 0.48059294277179826,
+      "pitch": 0.21479395094725567,
+      "distance": 5.107192483470403,
+      "target": [
+        -0.2571005040877287,
+        -0.2328994959122713,
+        0.24130151226318608
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 6.16,
+    "actualTimeline": 6.159900204744651,
+    "file": "live-1440-t6.16.png",
+    "current": 2.7882,
+    "camera": {
+      "yaw": 0.43609207922236165,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 6.48,
+    "actualTimeline": 6.476930359581248,
+    "file": "live-1440-t6.48.png",
+    "current": 2.8383333333333334,
+    "camera": {
+      "yaw": 0.43021304983988223,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 12.16,
+    "actualTimeline": 12.15990020474465,
+    "file": "live-1440-t12.16.png",
+    "current": 4.7882,
+    "camera": {
+      "yaw": 0.3190792077763837,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 13,
+    "actualTimeline": 13,
+    "file": "live-1440-t13.00.png",
+    "current": 5.009625839134986,
+    "camera": {
+      "yaw": 0.4799999999999999,
+      "pitch": 0.21,
+      "distance": 7.25,
+      "target": [
+        -0.12,
+        -0.22999999999999998,
+        0.15
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 14,
+    "actualTimeline": 14,
+    "file": "live-1440-t14.00.png",
+    "current": 5.21015439351679,
+    "camera": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.21,
+        0.25
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 15,
+    "actualTimeline": 15,
+    "file": "live-1440-t15.00.png",
+    "current": 5.409745898579052,
+    "camera": {
+      "yaw": 0.42,
+      "pitch": 0.1,
+      "distance": 5.35,
+      "target": [
+        -0.25,
+        -0.21,
+        0.25
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16,
+    "actualTimeline": 16,
+    "file": "live-1440-t16.00.png",
+    "current": 5.610274452960856,
+    "camera": {
+      "yaw": 0.44,
+      "pitch": 0.17584316292005944,
+      "distance": 5.153920926998514,
+      "target": [
+        -0.2627712247199604,
+        -0.22792158146002972,
+        0.24515035674006935
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16.3,
+    "actualTimeline": 16.298815872808913,
+    "file": "live-1440-t16.30.png",
+    "current": 5.68711249716323,
+    "camera": {
+      "yaw": 0.16096548918262266,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 16.48,
+    "actualTimeline": 16.477418394467776,
+    "file": "live-1440-t16.48.png",
+    "current": 5.703042335595429,
+    "camera": {
+      "yaw": 0.018773363263638154,
+      "pitch": 0.12,
+      "distance": 6.55,
+      "target": [
+        -0.3,
+        -0.2,
+        0.18
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 17,
+    "actualTimeline": 17,
+    "file": "live-1440-t17.00.png",
+    "current": 5.809865958023119,
+    "camera": {
+      "yaw": -0.42,
+      "pitch": 0.020000000000000004,
+      "distance": 6.200000000000001,
+      "target": [
+        -0.3,
+        -0.1,
+        0.2
+      ],
+      "focal": 6
+    }
+  },
+  {
+    "requestedTimeline": 25,
+    "actualTimeline": 25,
+    "file": "live-1440-t25.00.png",
+    "current": 7.762574221447,
+    "camera": {
+      "yaw": 0.2,
+      "pitch": 0.19,
+      "distance": 6.349999999999999,
+      "target": [
+        -0.08000000000000002,
+        -0.08,
+        0.2
+      ],
+      "focal": 6
+    }
+  }
+]

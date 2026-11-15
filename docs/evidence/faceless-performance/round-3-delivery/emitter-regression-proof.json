@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-11-14T22:10:14.879Z",
+  "purpose": "Confirm the new all-vertices emitter assertion rejects the prior bowed stationary segment. The prior expression is substituted only in an isolated VM; no runtime files are edited.",
+  "position": 2.6,
+  "priorExpressionMaximumError": 0.12199739032349212,
+  "fixedExpressionMaximumError": 0,
+  "regressionDetected": true
+}

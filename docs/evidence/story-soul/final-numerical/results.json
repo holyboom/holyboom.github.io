@@ -1,0 +1,78 @@
+{
+  "release": "living-story-soul-v10",
+  "checks": [
+    {
+      "name": "pose-holds-13",
+      "pass": true
+    },
+    {
+      "name": "camera-continues-through-hold-13",
+      "pass": true
+    },
+    {
+      "name": "hold-releases-13",
+      "pass": true
+    },
+    {
+      "name": "pose-holds-20",
+      "pass": true
+    },
+    {
+      "name": "camera-continues-through-hold-20",
+      "pass": true
+    },
+    {
+      "name": "hold-releases-20",
+      "pass": true
+    },
+    {
+      "name": "pose-holds-23",
+      "pass": true
+    },
+    {
+      "name": "camera-continues-through-hold-23",
+      "pass": true
+    },
+    {
+      "name": "hold-releases-23",
+      "pass": true
+    },
+    {
+      "name": "story-retraces-without-history",
+      "pass": true
+    },
+    {
+      "name": "thread-attached-to-hand-light",
+      "pass": true
+    },
+    {
+      "name": "bounded-finite-thread",
+      "pass": true
+    },
+    {
+      "name": "thread-path-budget",
+      "pass": true
+    },
+    {
+      "name": "thread-clear-of-the-head",
+      "pass": true,
+      "data": []
+    },
+    {
+      "name": "thread-fractures-and-reforms",
+      "pass": true
+    },
+    {
+      "name": "one-stable-filament-across-the-story",
+      "pass": true
+    },
+    {
+      "name": "performance-time-remains-monotonic",
+      "pass": true
+    },
+    {
+      "name": "completed-actions-send-ripples",
+      "pass": true
+    }
+  ]
+}
