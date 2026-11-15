@@ -1,11 +1,12 @@
-"""English progressive-enhancement profile. The legacy Thai template stays separate."""
+"""Shared progressive-enhancement profile with independently authored native stories."""
 import html, json
 from pathlib import Path
+from profile_locales import localize_th
 ROOT = Path(__file__).resolve().parents[1]
 E = html.escape
 
-def render(head, data):
-    story = json.loads((ROOT/'scripts/data/profile-story.json').read_text())
+def render(head, data, lang='en'):
+    story = json.loads((ROOT/('scripts/data/profile-story.th.json' if lang=='th' else 'scripts/data/profile-story.json')).read_text())
     release = story['release']
     scene_total = 3 + sum(len(c['beats']) for c in story['chapters'])
     head = head.replace('/assets/profile/profile.css', '/assets/profile/living.css?v='+release)
@@ -21,6 +22,10 @@ def render(head, data):
 <script defer src="/assets/profile/reading-thread.js?v={release}"></script>
 <script defer src="/assets/profile/living.js?v={release}" onerror="document.documentElement.classList.remove('profile-boot')"></script>
 </head>''')
+    if lang == 'th':
+        head = head.replace('<script defer src="/assets/profile/performance-source/', f'<script defer src="/assets/profile/locale-th.js?v={release}"></script>\n<script defer src="/assets/profile/performance-source/', 1)
+        head = head.replace('/assets/fonts/instrument-serif.woff2', '/assets/fonts/noto-serif-thai.woff2')
+        head = head.replace('</head>', f'<link rel="stylesheet" href="/assets/profile/th.css?v={release}"></head>')
     def figure(scene, label, hero=False):
         return f'<figure class="scene-fallback"><img src="/assets/profile/fallback/scene-{scene}.svg?v={release}" width="720" height="720" alt="{E(label,quote=True)}" {"fetchpriority=high" if hero else "loading=lazy"}><figcaption>Living architecture · {scene:02d}</figcaption></figure>'
     def work_paths():
@@ -70,4 +75,7 @@ def render(head, data):
 </main><footer class="site-footer"><div><a class="brand" href="/">holyboom.</a><p>An architect at heart. An engineer by craft.</p></div><div class="footer-links"><a href="https://github.com/holyboom" rel="me">GitHub ↗</a><a href="/">HolyMind showcase ↗</a><a href="/th/profile/" lang="th">ภาษาไทย ↗</a></div><p class="caption">Profile updated {E(story['updated'])}. {E(data['footer'])}</p></footer>
 </body></html>'''
 
+    if lang == 'th':
+        page = localize_th(page)
+        page = page.replace('Profile updated '+E(story['updated'])+'.', E(data['updated'])+'.')
     return page.replace('↗', '<i class="arrow-ne" aria-hidden="true"></i>')

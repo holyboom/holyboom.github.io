@@ -51,6 +51,7 @@ jobs:
             sleep 1
           done
           npm --prefix .. run test:profile
+          npm --prefix .. run test:profile-thai
           npm --prefix .. run test:profile-camera
           npm --prefix .. run test:profile-performance
           npm --prefix .. run test:profile-floors

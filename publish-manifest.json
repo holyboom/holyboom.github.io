@@ -88,7 +88,11 @@
     "assets/profile/reading-thread.js",
     "assets/profile/living.js",
     "assets/fonts/instrument-serif.woff2",
-    "assets/fonts/instrument-serif-italic.woff2"
+    "assets/fonts/instrument-serif-italic.woff2",
+    "assets/profile/locale-th.js",
+    "assets/profile/th.css",
+    "assets/fonts/noto-sans-thai.woff2",
+    "assets/fonts/noto-serif-thai.woff2"
   ],
   "assetDirectories": [
     {
@@ -126,6 +130,9 @@
     "assets/audio/grand-boom-v22/source/provenance.json",
     "assets/audio/afterglow-v23/ATTRIBUTION.md",
     "assets/score/mozart-k545/ATTRIBUTION.md",
-    "assets/fonts/Instrument-Serif-OFL.txt"
+    "assets/fonts/Instrument-Serif-OFL.txt",
+    "assets/fonts/Noto-Sans-Thai-OFL.txt",
+    "assets/fonts/Noto-Serif-Thai-OFL.txt",
+    "assets/fonts/Thai-fonts.md"
   ]
 }

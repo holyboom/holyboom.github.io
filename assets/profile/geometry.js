@@ -18,7 +18,7 @@
  const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
  const sequence=[],starts=[];
  for(let chapter=0;chapter<cfg.scenes.length;chapter++){
-  starts.push(sequence.length);const base=cfg.scenes[chapter],beats=cfg.story?.find(s=>s.chapter===chapter)?.beats||[{action:base.verb,caption:base.caption,pose:base.pose,prop:'none',tone:'dream',meaning:'Imagination',energy:1}];
+  starts.push(sequence.length);const base=cfg.scenes[chapter],beats=cfg.story?.find(s=>s.chapter===chapter)?.beats||[{action:base.verb,caption:base.caption,pose:base.pose,prop:'none',tone:'dream',meaning:base.meaning||'Imagination',energy:1}];
   beats.forEach((beat,step)=>sequence.push({...base,...beat,chapter,step,count:beats.length}));
  }
  function resolve(position){
@@ -254,7 +254,7 @@
   const isDrawing=['blueprint','house'].includes(shot.prop);
   const point=(x,y,z=0)=>[x,y,z];
   const line=(points,{color=accent,width=2.1,fill=null,alpha=1,role='work'}={})=>paths.push({points:points.map(p=>point(...p)),color,width,fill,alpha,role});
-  const label=(text,x=.89,y=-.35,size=11)=>texts.push({text,point:point(x,y),color:accent,size});
+  const label=(text,x=.89,y=-.35,size=11)=>texts.push({text:cfg.text?.[text]??text,point:point(x,y),color:accent,size});
   const arc=(x,y,rx,ry,start=0,end=TAU,style={})=>line(Array.from({length:49},(_,i)=>{const a=mix(start,end,i/48);return [x+Math.cos(a)*rx,y+Math.sin(a)*ry];}),style);
   const roundRect=(x,y,w,h,style={})=>{
    const r=Math.min(.09,w*.15,h*.15),points=[];

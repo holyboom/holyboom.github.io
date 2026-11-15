@@ -19,9 +19,8 @@ const {webkit,chromium}=require('playwright'),fs=require('fs');
    check('example-not-production-claim-'+lang,text.includes(lang==='en'?'not a live agent service':'ไม่ใช่บริการ Agent'));
    check('no-private-identifiers-'+lang,!/(holyboom@|084217|110140201|986\/286|160,000|238,000)/.test(text));
    const runtimeScripts=await p.locator('script:not([type="application/ld+json"])').evaluateAll(items=>items.map(el=>({src:el.getAttribute('src'),defer:el.defer})));
-   // English progressively enhances native content with local deferred modules;
-   // the Thai page stays static. Adding a rig module must not break this contract.
-   check('expected-execution-'+lang,lang==='en'?runtimeScripts.filter(s=>!s.src).length===1&&runtimeScripts.some(s=>s.src?.startsWith('/assets/profile/living.js'))&&runtimeScripts.every(s=>!s.src||(s.src.startsWith('/assets/profile/')&&s.defer)):runtimeScripts.length===0);
+   // Both native stories progressively enhance the same approved cinematic rig.
+   check('expected-execution-'+lang,runtimeScripts.filter(s=>!s.src).length===1&&runtimeScripts.some(s=>s.src?.startsWith('/assets/profile/living.js'))&&runtimeScripts.every(s=>!s.src||(s.src.startsWith('/assets/profile/')&&s.defer))&&runtimeScripts.some(s=>s.src?.startsWith('/assets/profile/locale-th.js'))===(lang==='th'));
    check('indexable-meta-'+lang,(await p.locator('meta[name=robots]').getAttribute('content')).startsWith('index,follow'));
    const hrefs=await p.locator('a[href]').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
    check('public-proof-links-'+lang,hrefs.some(h=>h.includes('/work/holymind-portfolio/#workflow'))&&!hrefs.some(h=>h.includes('github.com/holyboom/holyboom.github.io/blob/')));

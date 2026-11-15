@@ -64,7 +64,7 @@ data={
 },
  'th':{
  'path':'th/profile','title':'ธีรวีร์ รางแรม (Boom) | AI Engineer และ AI Solutions Architect กรุงเทพฯ',
- 'description':'รู้จัก ธีรวีร์ รางแรม (Boom) AI Engineer และ AI Solutions Architect ในกรุงเทพฯ ประสบการณ์พัฒนาซอฟต์แวร์กว่า 9 ปี เน้น GenAI ระบบ Agentic AI และการกำกับดูแล',
+ 'description':'จากเด็กที่อยากเป็นสถาปนิก สู่ Frontend และการสร้าง AI experiences เรื่องราวของ ธีรวีร์ รางแรม (บูม) AI Engineer และ AI Solutions Architect ผู้สร้าง HolyMind',
  'name':'ธีรวีร์ รางแรม','nickname':'Theerawee Rangram · Boom','role':'AI Engineer & AI Solutions Architect',
  'place':'กรุงเทพฯ ประเทศไทย','lead':'เปลี่ยนความตั้งใจทางธุรกิจ ให้เป็นระบบ AI ที่คนใช้งานและตรวจสอบได้',
  'intro':'ผมเชื่อมโจทย์ธุรกิจ สถาปัตยกรรมซอฟต์แวร์ และการลงมือพัฒนาเข้าด้วยกัน โดยเน้นการนำ GenAI มาใช้จริง ระบบ Agentic AI และ Automation ที่กำหนดสิทธิ์ชัดเจน มีคนตรวจทาน และย้อนดูหลักฐานได้',
@@ -73,8 +73,8 @@ data={
  'fitHeading':'งานที่นำประสบการณ์นี้ไปใช้ได้',
  'fits':[
  ('AI Solutions Architect','แปลงความต้องการทางธุรกิจเป็นขอบเขตระบบ การเชื่อมต่อ การควบคุมสิทธิ์ และแผนส่งมอบที่ลงมือทำได้'),
- ('AI Engineer และ GenAI Engineer','พัฒนา AI-assisted workflows ที่เชื่อมโมเดล เครื่องมือ และแอปพลิเคชันเดิม พร้อมการประเมินผลและคนตรวจทาน'),
- ('Forward Deployed Engineer','เชื่อมการคุยโจทย์กับลูกค้า การลงมือพัฒนาซอฟต์แวร์ และการประสานงานกับทีมต่างประเทศให้เป็นงานส่งมอบเดียวกัน'),
+ ('AI Engineer และ GenAI Engineer','พัฒนาเครื่องมือที่ให้ AI ช่วยงาน เชื่อมกับแอปพลิเคชันเดิม และวางขั้นตอนประเมินผลกับการตรวจทานโดยคน'),
+ ('Forward Deployed Engineer','คุยโจทย์กับลูกค้า ลงมือพัฒนา และประสานงานกับทีมต่างประเทศ ตั้งแต่ทำความเข้าใจปัญหาจนส่งมอบงาน'),
  ('AI Transformation Consultant','เลือกกรณีใช้งานแรกที่มีประโยชน์ ออกแบบกระบวนการและการกำกับดูแล พร้อมตกลงว่าจะประเมินผลอย่างไร')],
  'fitNote':'รายการนี้เป็นบทบาทที่เหมาะนำมาพูดคุย ไม่ใช่รายชื่อตำแหน่งทั้งหมดที่เคยดำรง ขอบเขตงาน ความพร้อมเริ่มงาน และเงื่อนไขต้องตกลงกันอีกครั้ง',
  'strengthsHeading':'จุดเชื่อมระหว่างธุรกิจ ซอฟต์แวร์ และ AI',
@@ -82,7 +82,7 @@ data={
  'backgroundHeading':'ประสบการณ์ที่เกี่ยวข้อง',
  'backgroundIntro':'สรุปจากประวัติการทำงานของผม สามารถพูดคุยรายละเอียด CV และบริบทโครงการที่เหมาะสมกับผู้สรรหาได้',
  'jobs':[
- ('Independent AI Solutions Architect','ออกแบบและพัฒนาผลิตภัณฑ์ที่ใช้ AI ช่วยทำงาน ด้วย React, FastAPI และการควบคุมสิทธิ์ใน PostgreSQL แปลงความต้องการเป็นข้อกำหนดผลิตภัณฑ์ ผลลัพธ์ที่อ้างอิงแหล่งข้อมูล และขั้นตอนตรวจทานที่ชัดเจน'),
+ ('Independent AI Solutions Architect','ออกแบบและพัฒนาเครื่องมือที่ใช้ AI ช่วยงาน ด้วย React, FastAPI และ PostgreSQL ตั้งแต่ทำความเข้าใจโจทย์ วางสิทธิ์เข้าถึงข้อมูล ไปจนถึงการแสดงที่มาของคำตอบและจุดที่ต้องให้คนตรวจทาน'),
  ('ttb spark','งานวิศวกรรมซอฟต์แวร์อาวุโสในธุรกิจธนาคาร ทั้ง frontend และ workflow ที่ใช้ GPT ช่วยงาน Jira, Confluence และ Bitbucket โดยมีคนตรวจทาน'),
  ('Accenture','พัฒนา frontend สำหรับงานธนาคารองค์กร แปลงความต้องการของผู้เกี่ยวข้องและทำงานร่วมกับทีมวิศวกรรมที่อยู่ต่างสถานที่'),
  ('Allianz Technology','พัฒนา Angular และ frontend ของระบบองค์กร พร้อมประสานงานกับผู้เกี่ยวข้องและทีมวิศวกรรมในมิวนิกและกรุงเทพฯ')],
@@ -91,14 +91,14 @@ data={
  'workCopy':'เว็บไซต์ที่ใช้งานได้จริงในเบราว์เซอร์ แสดงการออกแบบปฏิสัมพันธ์ ขอบเขต workflow และงานวิศวกรรมซอฟต์แวร์ ผู้ชมทดลองโจทย์สมมติสามรูปแบบ ตรวจความสัมพันธ์ของแหล่งข้อมูลกับผลลัพธ์ และส่งต่อสิ่งที่เลือกไปยัง brief เริ่มต้นได้',
  'proofs':[
  ('ทดลอง Workbench บนเว็บไซต์',BASE+'/#workbench'),
- ('อ่านแนวคิดโครงการและ workflow',PUBLIC_WORK_TH+'#workflow'),
- ('ดูว่าตัวเลือกของผู้ใช้เชื่อมกับ brief อย่างไร',PUBLIC_WORK_TH+'#choices'),
+ ('อ่านแนวคิดและขั้นตอนการทำงาน',PUBLIC_WORK_TH+'#workflow'),
+ ('ดูว่าสิ่งที่เลือกไปต่อเป็นโจทย์อย่างไร',PUBLIC_WORK_TH+'#choices'),
  ('อ่านเรื่องภาพเคลื่อนไหวและเสียงที่เชื่อมกัน',PUBLIC_WORK_TH+'#experience')],
  'workNote':'ตัวอย่างสาธารณะนี้เป็นงานสาธิตใน portfolio ไม่ใช่บริการ Agent ที่รันจริงหรือผลลัพธ์ของลูกค้าที่อ้างว่าวัดแล้ว ไม่เผยแพร่โค้ดลูกค้า ข้อมูลส่วนตัว หรือเอกสารลับ',
  'questionsHeading':'ข้อมูลสำหรับ HR และทีมที่กำลังหาคน',
  'questions':[
  ('Boom อยู่ที่ไหน','กรุงเทพฯ ประเทศไทย มีประสบการณ์ทำงานร่วมกับทีมองค์กรทั้งในกรุงเทพฯ และมิวนิก'),
- ('ประสบการณ์ทั้งหมดเป็นงานวิจัย AI หรือไม่','ไม่ใช่ พื้นฐานคือการพัฒนาซอฟต์แวร์องค์กร ปัจจุบันเน้น applied GenAI, AI solutions architecture และ agentic automation ไม่ได้อ้างว่าทำวิจัย foundation model มาตลอดเก้าปี'),
+ ('ประสบการณ์ทั้งหมดเป็นงานวิจัย AI หรือไม่','พื้นฐานของผมคือการพัฒนาซอฟต์แวร์องค์กร ปัจจุบันนำ GenAI มาใช้กับงานจริง ออกแบบระบบ AI และขั้นตอนทำงานที่ใช้ Agent ประสบการณ์กว่าเก้าปีจึงรวมงานซอฟต์แวร์ก่อนหน้านี้ด้วย'),
  ('ติดต่อคุยตำแหน่งงานหรือขอ CV อย่างไร','ติดต่อผ่าน LinkedIn พร้อมชื่อตำแหน่ง ทีม สถานที่ทำงาน และโจทย์ที่ต้องการแก้ เพื่อประเมินความเหมาะสมและแลกเปลี่ยนรายละเอียดโครงการที่เปิดเผยได้')],
  'closing':'เริ่มจากโจทย์ที่ทีมคุณอยากแก้ให้สำเร็จ',
  'footer':'ประวัติการทำงานเป็นข้อมูลที่เจ้าของโปรไฟล์ให้ไว้ ผลงานที่ลิงก์แสดงพฤติกรรมของเว็บไซต์ ไม่ใช่หลักฐานยืนยันการจ้างงานหรือผลลัพธ์ธุรกิจจากหน่วยงานอิสระ',
@@ -129,8 +129,7 @@ for lang,d in data.items():
 <section class="questions"><h2>{E(d['questionsHeading'])}</h2>{faqs}</section>
 <section class="closing"><h2>{E(d['closing'])}</h2><div class="actions"><a class="primary" href="{LI}">{E(d['contact'])} <span aria-hidden="true">↗</span></a><a href="/profile/summary.txt">{E(d['plain'])}</a></div></section>
 </main><footer><p>{E(d['updated'])}</p><p>{E(d['footer'])}</p><a href="{GITHUB}" rel="me">GitHub</a><a href="/">HolyMind showcase</a><a href="{d['other']}">{E(d['languageLabel'])}</a></footer></body></html>'''
- if lang == 'en':
-  page=render_living(page.split('<body>')[0], d)
+ page=render_living(page.split('<body>')[0], d, lang)
  path=ROOT/d['path'];path.mkdir(parents=True,exist_ok=True);(path/'index.html').write_text(page)
 # A readable summary, not instructions to any model or a ranking assertion.
 en=data['en'];summary='THEERAWEE RANGRAM (BOOM)\nAI Engineer & AI Solutions Architect | Bangkok, Thailand\nธีรวีร์ รางแรม\n\n'+en['intro']+'\n'+en['experience']+'\n\nROLE FIT\n'+'\n'.join(k+': '+v for k,v in en['fits'])+'\n'+en['fitNote']+'\n\nCORE CAPABILITIES\n'+en['strengths']+'\n\nSELECTED EXPERIENCE\n'+'\n\n'.join(k+'\n'+v for k,v in en['jobs'])+'\n\nPUBLIC WORK\n'+en['workCopy']+'\n'+en['workNote']+'\nProject explanation: '+PUBLIC_WORK+'\nคำอธิบายโครงการภาษาไทย: '+PUBLIC_WORK_TH+'\nInteractive showcase: '+BASE+'/\n\nCONTACT\nLinkedIn: '+LI+'\nEnglish profile: '+BASE+'/profile/\nโปรไฟล์ภาษาไทย: '+BASE+'/th/profile/\n\n'+en['footer']+'\n'

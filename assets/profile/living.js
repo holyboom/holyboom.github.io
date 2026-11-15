@@ -92,7 +92,7 @@
   let active=0;for(let i=0;i<anchors.length;i++)if(scrollY>=anchors[i]-innerHeight*0.15)active=i;
   rail.forEach((a,i)=>{if(i===active)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
   if(shot.index!==lastLabel){
-   brief.textContent=shot.label;counter.textContent=String(shot.index+1).padStart(2,'0')+' / '+shot.total+' SCENES';
+   brief.textContent=shot.label;counter.textContent=String(shot.index+1).padStart(2,'0')+' / '+shot.total+' '+(g.config.sceneUnit||'SCENES');
    document.querySelector('.scene-caption').textContent=shot.caption;
    document.querySelector('.scene-meaning').textContent=shot.meaning+' · '+(shot.step+1)+' / '+shot.count;
    document.querySelectorAll('[data-story-beat]').forEach(el=>el.classList.toggle('is-active',el.dataset.storyBeat===shot.chapter+':'+shot.step));
@@ -258,7 +258,7 @@
   ctx.textAlign='center';
   for(const layer of illustrations){
    const alpha=(layer.textAlpha??layer.alpha)*(layer.role==='front-work'?labelVisibility:1);if(alpha<=.005||innerWidth<768)continue;
-   for(const item of layer.texts){const q=projectPoint(item.point);ctx.globalAlpha=alpha;ctx.fillStyle=item.color;ctx.font='500 '+(innerWidth<768?8:item.size)+'px Sora, sans-serif';ctx.fillText(item.text,q[0],q[1]);}
+   for(const item of layer.texts){const q=projectPoint(item.point);ctx.globalAlpha=alpha;ctx.fillStyle=item.color;ctx.font='500 '+(innerWidth<768?8:item.size)+'px '+(g.config.locale==='th'?'ProfileThai, sans-serif':'Sora, sans-serif');ctx.fillText(item.text,q[0],q[1]);}
   }
   ctx.textAlign='start';ctx.globalAlpha=1;
 

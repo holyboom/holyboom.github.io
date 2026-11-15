@@ -1,0 +1,50 @@
+/* Thai has its own reading rhythm; the cinematic rig is shared. */
+@font-face{font-family:ProfileThai;src:url('/assets/fonts/noto-sans-thai.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:ProfileThaiSerif;src:url('/assets/fonts/noto-serif-thai.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+html:lang(th){--display:ProfileThaiSerif,Georgia,serif}
+html:lang(th) body{font-family:ProfileThai,DM,Arial,sans-serif;line-height:1.95}
+:lang(th) :is(h1,h2){line-height:1.45;letter-spacing:0;text-wrap:balance}
+:lang(th) .hero h1{font-size:clamp(46px,4.3vw,64px);line-height:1.38}
+:lang(th) :is(h1,h2,blockquote,.hero-hook,.bridge-copy strong) em{font-style:normal}
+:lang(th) .chapter h2{font-size:clamp(38px,3.5vw,52px)}
+:lang(th) :is(h3,.eyebrow,.tags,.layers b,.scene-sequence li,.scene-transition,.scene-meaning,.stage-top,.stage-bottom,.hero-note,.scene-fallback figcaption){font-family:ProfileThai,DM,Arial,sans-serif;letter-spacing:0}
+:lang(th) .eyebrow{font-size:12px;line-height:1.9}
+:lang(th) .hero .eyebrow{font-size:11px}
+:lang(th) .hero-hook{font-style:normal;font-size:23px;line-height:1.75}
+:lang(th) .hero-description{max-width:34ch;line-height:1.9}
+:lang(th) :is(.lede,.chapter-copy>.lede){font-size:21px;line-height:1.85;max-width:none}
+:lang(th) :is(.career-context,.career-row p,.fit-row p,.questions p){line-height:1.95}
+:lang(th) :is(.scene-caption,blockquote,.bridge-copy strong){font-style:normal;line-height:1.8}
+:lang(th) .scene-transition{font-size:19px;line-height:1.7}
+:lang(th) .scene-caption{font-size:20px;line-height:1.8;max-width:34ch;min-height:72px;bottom:74px}
+:lang(th) .scene-meaning{font-size:11px;bottom:164px}
+:lang(th) .scene-sequence li{font-size:13px;line-height:1.9}
+:lang(th) .bridge-copy{line-height:1.95;font-size:14px}
+:lang(th) .bridge-copy strong{font-size:24px;line-height:1.8}
+:lang(th) .tags{font-size:12px;line-height:1.9}
+:lang(th) .contact h2{font-size:clamp(38px,4vw,60px)}
+:lang(th) .hero-facts{font-size:12px}
+:lang(th) .section-heading h2{font-size:52px}
+:lang(th) .proof-route h3{font-size:14px}
+@media(max-width:1099px){:lang(th) .hero h1{font-size:47px}:lang(th) .chapter h2{font-size:40px}:lang(th) .scene-caption{font-size:17px}}
+@media(max-width:767px){
+ :lang(th) .hero h1,:is(.profile-enhanced,.profile-boot):lang(th) .hero h1{font-size:45px;line-height:1.4}
+ :lang(th) .chapter h2{font-size:37px;line-height:1.5}
+ :lang(th) .hero-hook{font-size:20px;line-height:1.8}
+ :lang(th) .hero-description{max-width:none;line-height:1.95}
+ :lang(th) .hero .eyebrow{font-size:10px}
+ :lang(th) .hero-role{font-size:11px}
+ :lang(th) .scene-transition{font-size:13px;line-height:1.7}
+ :lang(th) .scene-caption{font-size:13px;line-height:1.75;min-height:44px;max-width:34ch;bottom:14px}
+ :lang(th) .scene-meaning{font-size:9px;bottom:66px}
+ :lang(th) .stage canvas{padding-bottom:48px}
+ :lang(th) .bridge-copy{font-size:13px}
+ :lang(th) .bridge-copy strong{font-size:22px}
+ :lang(th) .section-heading h2{font-size:38px}
+ :lang(th) :is(.contribution h2,.questions h2){font-size:29px;line-height:1.6}
+ :lang(th) .contact h2{font-size:37px}
+ :lang(th) .site-header nav a{font-size:11px}
+ :lang(th) .closing-line{font-size:24px;line-height:1.8}
+}
+@media(max-width:359px){:lang(th) .hero h1,:is(.profile-enhanced,.profile-boot):lang(th) .hero h1{font-size:39px}:lang(th) .chapter h2{font-size:32px}}
+@media print{:lang(th) body{font-size:11pt}:lang(th) .hero h1{font-size:28pt}:lang(th) :is(.chapter h2,.contact h2,.section-heading h2){font-size:21pt}}
