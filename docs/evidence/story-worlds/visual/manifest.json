@@ -1,0 +1,1312 @@
+{
+  "release": "living-story-worlds-v16",
+  "sources": {
+    "floors.js": "e2f77d6f93ee76fa6ec311b6ffbca4658ac0214b6f3697ced7fe623a5a6ff198",
+    "geometry.js": "27b37970769338365171e9c7282415aa77a03c94508b8c4e2ba3049fccfce2a1",
+    "scenes.js": "14772003499ebbda95fdf3b49db96ebd932340d11b9df2bdb232a299ef65cd56",
+    "living.js": "6b11545fc29bd46e6a623a80bba15414b1474b631459a531d9c69de3dd2d4b1c"
+  },
+  "captures": [
+    {
+      "beat": 0,
+      "view": "elevated-study",
+      "position": 0.020611620795107033,
+      "file": "world-00.png",
+      "recipe": {
+        "family": "islands",
+        "name": "Seeds of possibility",
+        "islands": 3,
+        "lift": 0.12,
+        "bridge": 0.06,
+        "spread": 0.1,
+        "turn": 0.25,
+        "phase": 0,
+        "ink": 0.2
+      }
+    },
+    {
+      "beat": 1,
+      "view": "elevated-study",
+      "position": 1.0063502279431482,
+      "file": "world-01.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "The blank site",
+        "levels": 2,
+        "rise": 0.1,
+        "lobes": 0.06,
+        "petals": 2,
+        "wide": 1.13,
+        "deep": 0.69,
+        "turn": 0.12,
+        "phase": 0.1,
+        "ink": 0.48
+      }
+    },
+    {
+      "beat": 2,
+      "view": "elevated-study",
+      "position": 1.3401002537285722,
+      "file": "world-02.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "An imagined home",
+        "levels": 3,
+        "rise": 0.12,
+        "lobes": 0.1,
+        "petals": 3,
+        "wide": 1.02,
+        "deep": 0.8,
+        "turn": 0.42,
+        "phase": 0.3,
+        "ink": 0.55
+      }
+    },
+    {
+      "beat": 3,
+      "view": "elevated-study",
+      "position": 1.6738502795139962,
+      "file": "world-03.png",
+      "recipe": {
+        "family": "paths",
+        "name": "The first executable line",
+        "branches": 3,
+        "bend": 0.2,
+        "width": 0.28,
+        "turn": 0.25,
+        "phase": 0.5,
+        "ink": 0.48
+      }
+    },
+    {
+      "beat": 4,
+      "view": "elevated-study",
+      "position": 2.006197916666667,
+      "file": "world-04.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "A component foundation",
+        "levels": 4,
+        "rise": 0.075,
+        "lobes": 0.04,
+        "petals": 4,
+        "wide": 1.1,
+        "deep": 0.72,
+        "turn": 0.78,
+        "phase": 0.4,
+        "ink": 0.49
+      }
+    },
+    {
+      "beat": 5,
+      "view": "elevated-study",
+      "position": 2.33953125,
+      "file": "world-05.png",
+      "recipe": {
+        "family": "islands",
+        "name": "Parts finding their place",
+        "islands": 3,
+        "lift": 0.2,
+        "bridge": 0.18,
+        "spread": 0.04,
+        "turn": 0.55,
+        "phase": 0.8,
+        "ink": 0.53
+      }
+    },
+    {
+      "beat": 6,
+      "view": "elevated-study",
+      "position": 2.6728645833333333,
+      "file": "world-06.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "A measured foundation",
+        "levels": 2,
+        "rise": 0.15,
+        "lobes": 0.035,
+        "petals": 2,
+        "wide": 1.02,
+        "deep": 0.86,
+        "turn": 0,
+        "phase": 0.9,
+        "ink": 0.48
+      }
+    },
+    {
+      "beat": 7,
+      "view": "elevated-study",
+      "position": 3.006197916666667,
+      "file": "world-07.png",
+      "recipe": {
+        "family": "paths",
+        "name": "Across the distance",
+        "branches": 2,
+        "bend": 0.35,
+        "width": 0.34,
+        "turn": 0.65,
+        "phase": 1.1,
+        "ink": 0.48
+      }
+    },
+    {
+      "beat": 8,
+      "view": "elevated-study",
+      "position": 3.33953125,
+      "file": "world-08.png",
+      "recipe": {
+        "family": "paths",
+        "name": "Connections become a network",
+        "branches": 4,
+        "bend": 0.58,
+        "width": 0.26,
+        "turn": 0.25,
+        "phase": 1.3,
+        "ink": 0.54
+      }
+    },
+    {
+      "beat": 9,
+      "view": "elevated-study",
+      "position": 3.6728645833333333,
+      "file": "world-09.png",
+      "recipe": {
+        "family": "islands",
+        "name": "A shared release",
+        "islands": 5,
+        "lift": 0.14,
+        "bridge": 0.12,
+        "spread": 0.03,
+        "turn": 0.15,
+        "phase": 1.5,
+        "ink": 0.51
+      }
+    },
+    {
+      "beat": 10,
+      "view": "elevated-study",
+      "position": 4.006197916666666,
+      "file": "world-10.png",
+      "recipe": {
+        "family": "paths",
+        "name": "An intelligence pipeline",
+        "branches": 3,
+        "bend": 0.09,
+        "width": 0.38,
+        "turn": 1.2,
+        "phase": 1.7,
+        "ink": 0.51
+      }
+    },
+    {
+      "beat": 11,
+      "view": "elevated-study",
+      "position": 4.33953125,
+      "file": "world-11.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "A human review boundary",
+        "levels": 2,
+        "rise": 0.09,
+        "lobes": 0.1,
+        "petals": 4,
+        "wide": 1.15,
+        "deep": 0.68,
+        "turn": 0.35,
+        "phase": 1.9,
+        "ink": 0.45
+      }
+    },
+    {
+      "beat": 12,
+      "view": "elevated-study",
+      "position": 4.672864583333333,
+      "file": "world-12.png",
+      "recipe": {
+        "family": "islands",
+        "name": "An approved connection",
+        "islands": 4,
+        "lift": 0.08,
+        "bridge": 0.08,
+        "spread": -0.1,
+        "turn": 0.85,
+        "phase": 2,
+        "ink": 0.48
+      }
+    },
+    {
+      "beat": 13,
+      "view": "elevated-study",
+      "position": 5.003747705246605,
+      "file": "world-13.png",
+      "recipe": {
+        "family": "well",
+        "name": "Alone with a conviction",
+        "depth": 0.53,
+        "skew": 0.08,
+        "wide": 1.02,
+        "deep": 0.86,
+        "turn": 0.2,
+        "phase": 2.2,
+        "ink": 0.36
+      }
+    },
+    {
+      "beat": 14,
+      "view": "elevated-study",
+      "position": 5.204134522568439,
+      "file": "world-14.png",
+      "recipe": {
+        "family": "well",
+        "name": "Resistance around the light",
+        "depth": 0.64,
+        "skew": 0.23,
+        "lobes": 0.055,
+        "petals": 3,
+        "wide": 1.14,
+        "deep": 0.72,
+        "turn": 0.7,
+        "phase": 2.4,
+        "ink": 0.43
+      }
+    },
+    {
+      "beat": 15,
+      "view": "elevated-study",
+      "position": 5.403622744296902,
+      "file": "world-15.png",
+      "recipe": {
+        "family": "well",
+        "name": "A place to question",
+        "depth": 0.31,
+        "skew": 0.17,
+        "wide": 1.22,
+        "deep": 0.65,
+        "turn": 0.4,
+        "phase": 2.6,
+        "ink": 0.36
+      }
+    },
+    {
+      "beat": 16,
+      "view": "elevated-study",
+      "position": 5.604009561618736,
+      "file": "world-16.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "Ground recovered through repair",
+        "levels": 3,
+        "rise": 0.1,
+        "lobes": 0.075,
+        "petals": 3,
+        "wide": 1,
+        "deep": 0.86,
+        "turn": 1.05,
+        "phase": 2.8,
+        "ink": 0.48
+      }
+    },
+    {
+      "beat": 17,
+      "view": "elevated-study",
+      "position": 5.80439637894057,
+      "file": "world-17.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "The next foothold",
+        "levels": 4,
+        "rise": 0.085,
+        "lobes": 0.06,
+        "petals": 2,
+        "wide": 1.17,
+        "deep": 0.68,
+        "turn": 0.15,
+        "phase": 3,
+        "ink": 0.53
+      }
+    },
+    {
+      "beat": 18,
+      "view": "elevated-study",
+      "position": 6.005120408271756,
+      "file": "world-18.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "A lesson condensed",
+        "levels": 3,
+        "rise": 0.075,
+        "lobes": 0.035,
+        "petals": 5,
+        "wide": 1.2,
+        "deep": 0.64,
+        "turn": 0.6,
+        "phase": 3.2,
+        "ink": 0.46
+      }
+    },
+    {
+      "beat": 19,
+      "view": "elevated-study",
+      "position": 6.254619814647458,
+      "file": "world-19.png",
+      "recipe": {
+        "family": "paths",
+        "name": "Tributaries of knowledge",
+        "branches": 5,
+        "bend": 0.4,
+        "width": 0.22,
+        "turn": 0.35,
+        "phase": 3.4,
+        "ink": 0.51
+      }
+    },
+    {
+      "beat": 20,
+      "view": "elevated-study",
+      "position": 6.505026491591799,
+      "file": "world-20.png",
+      "recipe": {
+        "family": "islands",
+        "name": "A capability of its own",
+        "islands": 4,
+        "lift": 0.28,
+        "bridge": 0.16,
+        "spread": 0.11,
+        "turn": 0.3,
+        "phase": 3.6,
+        "ink": 0.55
+      }
+    },
+    {
+      "beat": 21,
+      "view": "elevated-study",
+      "position": 6.75543316853614,
+      "file": "world-21.png",
+      "recipe": {
+        "family": "islands",
+        "name": "A constellation with a moat",
+        "islands": 6,
+        "lift": 0.17,
+        "bridge": 0.23,
+        "spread": 0.02,
+        "turn": 0.73,
+        "phase": 3.8,
+        "ink": 0.53
+      }
+    },
+    {
+      "beat": 22,
+      "view": "elevated-study",
+      "position": 7.005266269654257,
+      "file": "world-22.png",
+      "recipe": {
+        "family": "paths",
+        "name": "The depth behind an entrance",
+        "branches": 6,
+        "bend": 0.66,
+        "width": 0.2,
+        "turn": 0.85,
+        "phase": 4,
+        "ink": 0.48
+      }
+    },
+    {
+      "beat": 23,
+      "view": "elevated-study",
+      "position": 7.2547842851634465,
+      "file": "world-23.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "A clear place to begin",
+        "levels": 1,
+        "rise": 0.12,
+        "lobes": 0.045,
+        "petals": 2,
+        "wide": 1.06,
+        "deep": 0.82,
+        "turn": 0.2,
+        "phase": 4.2,
+        "ink": 0.4
+      }
+    },
+    {
+      "beat": 24,
+      "view": "elevated-study",
+      "position": 7.505216286077432,
+      "file": "world-24.png",
+      "recipe": {
+        "family": "paths",
+        "name": "A person chooses the way",
+        "branches": 2,
+        "bend": 0.16,
+        "width": 0.42,
+        "turn": 0.15,
+        "phase": 4.4,
+        "ink": 0.48
+      }
+    },
+    {
+      "beat": 25,
+      "view": "elevated-study",
+      "position": 7.7547343015866215,
+      "file": "world-25.png",
+      "recipe": {
+        "family": "islands",
+        "name": "Room for another person",
+        "islands": 2,
+        "lift": 0.1,
+        "bridge": 0.13,
+        "spread": 0.08,
+        "turn": 0.6,
+        "phase": 4.6,
+        "ink": 0.46
+      }
+    },
+    {
+      "beat": 26,
+      "view": "elevated-study",
+      "position": 8.006391343424367,
+      "file": "world-26.png",
+      "recipe": {
+        "family": "paths",
+        "name": "The work opens outward",
+        "branches": 5,
+        "bend": 0.29,
+        "width": 0.27,
+        "turn": 1,
+        "phase": 4.8,
+        "ink": 0.51
+      }
+    },
+    {
+      "beat": 27,
+      "view": "elevated-study",
+      "position": 8.339745440199804,
+      "file": "world-27.png",
+      "recipe": {
+        "family": "terraces",
+        "name": "Layers of lived experience",
+        "levels": 3,
+        "rise": 0.11,
+        "lobes": 0.07,
+        "petals": 4,
+        "wide": 1.11,
+        "deep": 0.72,
+        "turn": 0.95,
+        "phase": 5,
+        "ink": 0.46
+      }
+    },
+    {
+      "beat": 28,
+      "view": "elevated-study",
+      "position": 8.673099536975242,
+      "file": "world-28.png",
+      "recipe": {
+        "family": "islands",
+        "name": "An offer across the gap",
+        "islands": 3,
+        "lift": 0.17,
+        "bridge": 0.27,
+        "spread": 0.12,
+        "turn": 1.25,
+        "phase": 5.2,
+        "ink": 0.49
+      }
+    },
+    {
+      "beat": 29,
+      "view": "elevated-study",
+      "position": 9.019994813547015,
+      "file": "world-29.png",
+      "recipe": {
+        "family": "well",
+        "name": "A quiet centre after the journey",
+        "depth": 0.13,
+        "skew": 0.05,
+        "lobes": 0.035,
+        "petals": 2,
+        "wide": 1.12,
+        "deep": 0.73,
+        "turn": 0.4,
+        "phase": 5.4,
+        "ink": 0.4
+      }
+    },
+    {
+      "beat": 30,
+      "view": "elevated-study",
+      "position": 10,
+      "file": "world-30.png",
+      "recipe": {
+        "family": "islands",
+        "name": "An open pavilion for what comes next",
+        "islands": 6,
+        "lift": 0.12,
+        "bridge": 0.1,
+        "spread": -0.04,
+        "turn": 0.2,
+        "phase": 5.6,
+        "ink": 0.51
+      }
+    },
+    {
+      "beat": 1,
+      "view": "desktop",
+      "position": 1.0063333333333333,
+      "file": "desktop-01.png"
+    },
+    {
+      "beat": 5,
+      "view": "desktop",
+      "position": 2.3402,
+      "file": "desktop-05.png"
+    },
+    {
+      "beat": 8,
+      "view": "desktop",
+      "position": 3.3402,
+      "file": "desktop-08.png"
+    },
+    {
+      "beat": 13,
+      "view": "desktop",
+      "position": 5.004003543217739,
+      "file": "desktop-13.png"
+    },
+    {
+      "beat": 14,
+      "view": "desktop",
+      "position": 5.203595048280002,
+      "file": "desktop-14.png"
+    },
+    {
+      "beat": 17,
+      "view": "desktop",
+      "position": 5.804243662105872,
+      "file": "desktop-17.png"
+    },
+    {
+      "beat": 20,
+      "view": "desktop",
+      "position": 6.504942987662314,
+      "file": "desktop-20.png"
+    },
+    {
+      "beat": 21,
+      "view": "desktop",
+      "position": 6.755408798244668,
+      "file": "desktop-21.png"
+    },
+    {
+      "beat": 23,
+      "view": "desktop",
+      "position": 7.254648788110033,
+      "file": "desktop-23.png"
+    },
+    {
+      "beat": 25,
+      "view": "desktop",
+      "position": 7.755132090555616,
+      "file": "desktop-25.png"
+    },
+    {
+      "beat": 29,
+      "view": "desktop",
+      "position": 9.01990015239897,
+      "file": "desktop-29.png"
+    },
+    {
+      "beat": 30,
+      "view": "desktop",
+      "position": 10,
+      "file": "desktop-30.png"
+    },
+    {
+      "beat": 1,
+      "view": "mobile",
+      "position": 1.0061449113405379,
+      "file": "mobile-01.png"
+    },
+    {
+      "beat": 5,
+      "view": "mobile",
+      "position": 2.340102113463925,
+      "file": "mobile-05.png"
+    },
+    {
+      "beat": 8,
+      "view": "mobile",
+      "position": 3.339785505117558,
+      "file": "mobile-08.png"
+    },
+    {
+      "beat": 13,
+      "view": "mobile",
+      "position": 5.00375797493669,
+      "file": "mobile-13.png"
+    },
+    {
+      "beat": 14,
+      "view": "mobile",
+      "position": 5.204090558327084,
+      "file": "mobile-14.png"
+    },
+    {
+      "beat": 17,
+      "view": "mobile",
+      "position": 5.804160842834422,
+      "file": "mobile-17.png"
+    },
+    {
+      "beat": 20,
+      "view": "mobile",
+      "position": 6.5051963752734165,
+      "file": "mobile-20.png"
+    },
+    {
+      "beat": 21,
+      "view": "mobile",
+      "position": 6.755292452796305,
+      "file": "mobile-21.png"
+    },
+    {
+      "beat": 23,
+      "view": "mobile",
+      "position": 7.254718377434786,
+      "file": "mobile-23.png"
+    },
+    {
+      "beat": 25,
+      "view": "mobile",
+      "position": 7.755084856789782,
+      "file": "mobile-25.png"
+    },
+    {
+      "beat": 29,
+      "view": "mobile",
+      "position": 9.020198929073558,
+      "file": "mobile-29.png"
+    },
+    {
+      "beat": 30,
+      "view": "mobile",
+      "position": 10,
+      "file": "mobile-30.png"
+    }
+  ],
+  "takes": [
+    {
+      "beat": 2,
+      "direction": 1,
+      "samples": [
+        {
+          "position": 1.3401002537285722,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.3518622038140333,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.366722897343895,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.3825553061973683,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.404812347793188,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.423476279545223,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.4393724844287452,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.4572176100490477,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.47763330639028,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.498852471177934,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.5156230431262965,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.5388784087883807,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.5568016638601863,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.5781155834908795,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.5956776521163087,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.6119470728468246,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.6298971598165022,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.6478517302880389,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.6658069579759351,
+          "mode": "full",
+          "shot": 3
+        }
+      ]
+    },
+    {
+      "beat": 2,
+      "direction": -1,
+      "samples": [
+        {
+          "position": 1.6738502795139962,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.6618960703619376,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.6386721763082917,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.6192261759619608,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.603095881797494,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.586228652877786,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.568520167670739,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.5490913557402455,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.5287762596231678,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.5083418721636852,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.4903738508032944,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.4718834789657118,
+          "mode": "full",
+          "shot": 3
+        },
+        {
+          "position": 1.4486579953053567,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.4338802336842653,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.4151099543345287,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.3947902161376715,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.3745543893077343,
+          "mode": "full",
+          "shot": 2
+        },
+        {
+          "position": 1.3538936869607598,
+          "mode": "full",
+          "shot": 2
+        }
+      ]
+    },
+    {
+      "beat": 12,
+      "direction": 1,
+      "samples": [
+        {
+          "position": 4.672864583333333,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.6822080137688245,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.701449809733582,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.719242411297272,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.737183253468162,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.757553028500548,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.776074898414999,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.792859939033854,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.809523059266914,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.8250839488027735,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.841745402441865,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.859476234846687,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.875537626622281,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.896993938628299,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.915030912510524,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.933285787808415,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.953945338266881,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.9706342742452385,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.986224382847295,
+          "mode": "full",
+          "shot": 13
+        }
+      ]
+    },
+    {
+      "beat": 12,
+      "direction": -1,
+      "samples": [
+        {
+          "position": 5.003747705246605,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.999894663320375,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.98269314619692,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.965633047674967,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.94616837492975,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.927128230801938,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.912408875289461,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.890705437593833,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.872648676691728,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.854844023059061,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.837085708946706,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.8182169886806765,
+          "mode": "full",
+          "shot": 13
+        },
+        {
+          "position": 4.79950063271102,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.783597891364996,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.761727388373421,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.7426435662115605,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.722835332595042,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.70376819288609,
+          "mode": "full",
+          "shot": 12
+        },
+        {
+          "position": 4.687984066690249,
+          "mode": "full",
+          "shot": 12
+        }
+      ]
+    },
+    {
+      "beat": 19,
+      "direction": 1,
+      "samples": [
+        {
+          "position": 6.254619814647458,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.263886905638873,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.2782416564674,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.292904308952954,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.304688968213799,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.3158977535565,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.331268977074001,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.343703712075427,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.3562506810445525,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.368178541309754,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.379995007612914,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.393562842517682,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.406150824191909,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.417954515434697,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.4301707458780095,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.44620426878251,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.457996250938706,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.47056992608874,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.479084540019869,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.496979279505031,
+          "mode": "full",
+          "shot": 20
+        }
+      ]
+    },
+    {
+      "beat": 19,
+      "direction": -1,
+      "samples": [
+        {
+          "position": 6.505026491591799,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.498626727052356,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.484572987012626,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.470366022165038,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.4558133268025095,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.441288056922703,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.426062534751044,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.41140052554944,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.39881530044479,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.3832762593916295,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.369342334579621,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.355105019689055,
+          "mode": "full",
+          "shot": 20
+        },
+        {
+          "position": 6.339871593079653,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.329428562925446,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.313442424701186,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.301626118358431,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.2863430859167595,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.271683470716306,
+          "mode": "full",
+          "shot": 19
+        },
+        {
+          "position": 6.257112197373495,
+          "mode": "full",
+          "shot": 19
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Study atlas uses the actual Canvas/native-scroll renderer with a fixed elevated review camera.",
+    "Desktop/mobile captures use the unchanged authored camera.",
+    "Viewport emulation is not physical-device performance evidence."
+  ]
+}

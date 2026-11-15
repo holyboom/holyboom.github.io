@@ -25,10 +25,10 @@ const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass
   }
   await p.close();
  }
- for(const mode of ['no-js','reduced']){
+ for(const mode of ['no-js','os-reduced-full']){
   const p=await b.newPage({viewport:{width:390,height:844},...(mode==='no-js'?{javaScriptEnabled:false}:{reducedMotion:'reduce'})});await p.goto(base+'profile/');
   await p.locator('#work-sources summary').click();check(mode+'-work-path-is-native',await p.locator('#work-sources').evaluate(e=>e.open)&&await p.locator('#work-sources .path-links a').first().isVisible());
-  check(mode+'-closing-art-is-present',await p.locator('#contact .scene-fallback img').isVisible());await p.close();
+  if(mode==='no-js')check(mode+'-closing-art-is-present',await p.locator('#contact .scene-fallback img').isVisible());else {await p.locator('#contact').evaluate(el=>el.scrollIntoView({behavior:'instant'}));await p.waitForFunction(()=>window.ProfileExperience?.snapshot().target===10);check(mode+'-closing-art-is-present',await p.locator('#architecture').isVisible()&&await p.evaluate(()=>ProfileExperience.snapshot().mode==='full'));}await p.close();
  }
  check('no-browser-errors',errors.length===0,errors);fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({checks,errors},null,2));const failed=checks.filter(c=>!c.pass);console.log(JSON.stringify({checks:checks.length,failed,out},null,2));if(failed.length)process.exitCode=1;
  }finally{await b.close();}

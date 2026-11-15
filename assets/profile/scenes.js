@@ -1,6 +1,6 @@
 /* Owner-editable direction: a symbolic maker, not a likeness or documentary scene. */
 (function(root){'use strict';
- const config={release:'living-c-glove-v15',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
+ const config={release:'living-story-worlds-v16',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
  establish:{yaw:-.30,pitch:.12,distance:6.4,target:[.10,0,0]},
  draft:{yaw:.58,pitch:.30,distance:5.25,target:[-.25,-.09,.22]},
  detail:{yaw:.44,pitch:.18,distance:5.05,target:[-.26,-.08,.25]},
@@ -23,6 +23,42 @@
  {verb:'Reflect',shot:'portrait',shape:'maker',pose:'stand',label:'09 / THE EXPERIENCE BEHIND THE STORY',caption:'The work that brought me here.',scale:0.9},
  {verb:'Begin',shot:'reveal',shape:'maker',pose:'invite',label:'10 / YOUR NEXT CHAPTER',caption:'What could we make possible, together?',scale:1}
  ]};
+ // Every visual beat owns a different terrain recipe within the four selected
+ // families. The support plane stays fixed while the outer world reconfigures.
+ config.floorMotion={squeeze:.10,turn:.12,sink:.075};
+ config.floors=[
+  {family:'islands',name:'Seeds of possibility',islands:3,lift:.12,bridge:.06,spread:.10,turn:.25,phase:.0,ink:.20},
+  {family:'terraces',name:'The blank site',levels:2,rise:.10,lobes:.06,petals:2,wide:1.13,deep:.69,turn:.12,phase:.1,ink:.48},
+  {family:'terraces',name:'An imagined home',levels:3,rise:.12,lobes:.10,petals:3,wide:1.02,deep:.80,turn:.42,phase:.3,ink:.55},
+  {family:'paths',name:'The first executable line',branches:3,bend:.20,width:.28,turn:.25,phase:.5,ink:.48},
+  {family:'terraces',name:'A component foundation',levels:4,rise:.075,lobes:.04,petals:4,wide:1.10,deep:.72,turn:.78,phase:.4,ink:.49},
+  {family:'islands',name:'Parts finding their place',islands:3,lift:.20,bridge:.18,spread:.04,turn:.55,phase:.8,ink:.53},
+  {family:'terraces',name:'A measured foundation',levels:2,rise:.15,lobes:.035,petals:2,wide:1.02,deep:.86,turn:.0,phase:.9,ink:.48},
+  {family:'paths',name:'Across the distance',branches:2,bend:.35,width:.34,turn:.65,phase:1.1,ink:.48},
+  {family:'paths',name:'Connections become a network',branches:4,bend:.58,width:.26,turn:.25,phase:1.3,ink:.54},
+  {family:'islands',name:'A shared release',islands:5,lift:.14,bridge:.12,spread:.03,turn:.15,phase:1.5,ink:.51},
+  {family:'paths',name:'An intelligence pipeline',branches:3,bend:.09,width:.38,turn:1.2,phase:1.7,ink:.51},
+  {family:'terraces',name:'A human review boundary',levels:2,rise:.09,lobes:.10,petals:4,wide:1.15,deep:.68,turn:.35,phase:1.9,ink:.45},
+  {family:'islands',name:'An approved connection',islands:4,lift:.08,bridge:.08,spread:-.10,turn:.85,phase:2.0,ink:.48},
+  {family:'well',name:'Alone with a conviction',depth:.53,skew:.08,wide:1.02,deep:.86,turn:.2,phase:2.2,ink:.36},
+  {family:'well',name:'Resistance around the light',depth:.64,skew:.23,lobes:.055,petals:3,wide:1.14,deep:.72,turn:.7,phase:2.4,ink:.43},
+  {family:'well',name:'A place to question',depth:.31,skew:.17,wide:1.22,deep:.65,turn:.4,phase:2.6,ink:.36},
+  {family:'terraces',name:'Ground recovered through repair',levels:3,rise:.10,lobes:.075,petals:3,wide:1.0,deep:.86,turn:1.05,phase:2.8,ink:.48},
+  {family:'terraces',name:'The next foothold',levels:4,rise:.085,lobes:.06,petals:2,wide:1.17,deep:.68,turn:.15,phase:3.0,ink:.53},
+  {family:'terraces',name:'A lesson condensed',levels:3,rise:.075,lobes:.035,petals:5,wide:1.20,deep:.64,turn:.60,phase:3.2,ink:.46},
+  {family:'paths',name:'Tributaries of knowledge',branches:5,bend:.40,width:.22,turn:.35,phase:3.4,ink:.51},
+  {family:'islands',name:'A capability of its own',islands:4,lift:.28,bridge:.16,spread:.11,turn:.30,phase:3.6,ink:.55},
+  {family:'islands',name:'A constellation with a moat',islands:6,lift:.17,bridge:.23,spread:.02,turn:.73,phase:3.8,ink:.53},
+  {family:'paths',name:'The depth behind an entrance',branches:6,bend:.66,width:.20,turn:.85,phase:4.0,ink:.48},
+  {family:'terraces',name:'A clear place to begin',levels:1,rise:.12,lobes:.045,petals:2,wide:1.06,deep:.82,turn:.2,phase:4.2,ink:.40},
+  {family:'paths',name:'A person chooses the way',branches:2,bend:.16,width:.42,turn:.15,phase:4.4,ink:.48},
+  {family:'islands',name:'Room for another person',islands:2,lift:.10,bridge:.13,spread:.08,turn:.6,phase:4.6,ink:.46},
+  {family:'paths',name:'The work opens outward',branches:5,bend:.29,width:.27,turn:1.0,phase:4.8,ink:.51},
+  {family:'terraces',name:'Layers of lived experience',levels:3,rise:.11,lobes:.07,petals:4,wide:1.11,deep:.72,turn:.95,phase:5.0,ink:.46},
+  {family:'islands',name:'An offer across the gap',islands:3,lift:.17,bridge:.27,spread:.12,turn:1.25,phase:5.2,ink:.49},
+  {family:'well',name:'A quiet centre after the journey',depth:.13,skew:.05,lobes:.035,petals:2,wide:1.12,deep:.73,turn:.4,phase:5.4,ink:.40},
+  {family:'islands',name:'An open pavilion for what comes next',islands:6,lift:.12,bridge:.10,spread:-.04,turn:.2,phase:5.6,ink:.51}
+ ];
  // Stage dressing follows the story, with eight authored objects per chapter.
  // These are symbolic environments, not documentary representations of employers.
  config.environments=[

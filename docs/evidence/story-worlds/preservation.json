@@ -1,0 +1,13 @@
+{
+  "sourceBaseline": "d1366669ffbea3cefc31ec5f46476689a4bd434c",
+  "samples": 41,
+  "changedOutsideTerrain": [],
+  "preserved": [
+    "all non-terrain strand geometry",
+    "C glove surfaces",
+    "props and scenic objects",
+    "dust and memory filament",
+    "camera",
+    "hand light trail"
+  ]
+}

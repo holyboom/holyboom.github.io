@@ -1,0 +1,64 @@
+{
+  "release": "living-story-worlds-v16",
+  "suites": [
+    {
+      "name": "validation",
+      "passed": 20
+    },
+    {
+      "name": "profile",
+      "passed": 56
+    },
+    {
+      "name": "reflow",
+      "passed": 27
+    },
+    {
+      "name": "performance",
+      "passed": 69
+    },
+    {
+      "name": "camera",
+      "passed": 27
+    },
+    {
+      "name": "base-camera",
+      "passed": 18
+    },
+    {
+      "name": "orbits",
+      "passed": 42
+    },
+    {
+      "name": "glove",
+      "passed": 9
+    },
+    {
+      "name": "painter",
+      "passed": 7
+    },
+    {
+      "name": "completion",
+      "passed": 48
+    },
+    {
+      "name": "professional",
+      "passed": 42
+    }
+  ],
+  "totalChecks": 365,
+  "sourceBuildCaptureMatch": true,
+  "sceneCount": 31,
+  "floorFamilies": 4,
+  "floorStrands": 100,
+  "persistentStrands": 777,
+  "captureCount": 55,
+  "directionalTakes": 6,
+  "publicDeployment": false,
+  "sources": {
+    "floors.js": "e2f77d6f93ee76fa6ec311b6ffbca4658ac0214b6f3697ced7fe623a5a6ff198",
+    "geometry.js": "27b37970769338365171e9c7282415aa77a03c94508b8c4e2ba3049fccfce2a1",
+    "scenes.js": "14772003499ebbda95fdf3b49db96ebd932340d11b9df2bdb232a299ef65cd56",
+    "living.js": "6b11545fc29bd46e6a623a80bba15414b1474b631459a531d9c69de3dd2d4b1c"
+  }
+}

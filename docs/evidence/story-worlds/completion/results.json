@@ -1,0 +1,246 @@
+{
+  "checks": [
+    {
+      "name": "capability-links-into-real-work-1440",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-review-1440",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-review-1440",
+      "pass": true,
+      "data": {
+        "before": 8.405076614520658,
+        "after": 8.405076614520658
+      }
+    },
+    {
+      "name": "keyboard-closes-review-1440",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-sources-1440",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-sources-1440",
+      "pass": true,
+      "data": {
+        "before": 8.405076614520658,
+        "after": 8.405076614520658
+      }
+    },
+    {
+      "name": "keyboard-closes-sources-1440",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-intent-1440",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-intent-1440",
+      "pass": true,
+      "data": {
+        "before": 8.405076614520658,
+        "after": 8.405076614520658
+      }
+    },
+    {
+      "name": "keyboard-closes-intent-1440",
+      "pass": true
+    },
+    {
+      "name": "no-horizontal-overflow-1440",
+      "pass": true
+    },
+    {
+      "name": "ending-recalls-the-first-line-1440",
+      "pass": true
+    },
+    {
+      "name": "return-to-the-first-line-1440",
+      "pass": true
+    },
+    {
+      "name": "public-proof-link-/#workbench",
+      "pass": true,
+      "data": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public-proof-link-/work/holymind-portfolio/#workflow",
+      "pass": true,
+      "data": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public-proof-link-/#framework",
+      "pass": true,
+      "data": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public-proof-link-/work/holymind-portfolio/#choices",
+      "pass": true,
+      "data": {
+        "status": 200
+      }
+    },
+    {
+      "name": "capability-links-into-real-work-390",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-review-390",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-review-390",
+      "pass": true,
+      "data": {
+        "before": 8.324139269446949,
+        "after": 8.324139269446949
+      }
+    },
+    {
+      "name": "keyboard-closes-review-390",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-sources-390",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-sources-390",
+      "pass": true,
+      "data": {
+        "before": 8.324139269446949,
+        "after": 8.324139269446949
+      }
+    },
+    {
+      "name": "keyboard-closes-sources-390",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-intent-390",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-intent-390",
+      "pass": true,
+      "data": {
+        "before": 8.324139269446949,
+        "after": 8.324139269446949
+      }
+    },
+    {
+      "name": "keyboard-closes-intent-390",
+      "pass": true
+    },
+    {
+      "name": "no-horizontal-overflow-390",
+      "pass": true
+    },
+    {
+      "name": "ending-recalls-the-first-line-390",
+      "pass": true
+    },
+    {
+      "name": "return-to-the-first-line-390",
+      "pass": true
+    },
+    {
+      "name": "capability-links-into-real-work-320",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-review-320",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-review-320",
+      "pass": true,
+      "data": {
+        "before": 8.382330988112836,
+        "after": 8.382330988112836
+      }
+    },
+    {
+      "name": "keyboard-closes-review-320",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-sources-320",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-sources-320",
+      "pass": true,
+      "data": {
+        "before": 8.382330988112836,
+        "after": 8.382330988112836
+      }
+    },
+    {
+      "name": "keyboard-closes-sources-320",
+      "pass": true
+    },
+    {
+      "name": "keyboard-opens-intent-320",
+      "pass": true
+    },
+    {
+      "name": "work-disclosure-preserves-scene-intent-320",
+      "pass": true,
+      "data": {
+        "before": 8.382330988112836,
+        "after": 8.382330988112836
+      }
+    },
+    {
+      "name": "keyboard-closes-intent-320",
+      "pass": true
+    },
+    {
+      "name": "no-horizontal-overflow-320",
+      "pass": true
+    },
+    {
+      "name": "ending-recalls-the-first-line-320",
+      "pass": true
+    },
+    {
+      "name": "return-to-the-first-line-320",
+      "pass": true
+    },
+    {
+      "name": "no-js-work-path-is-native",
+      "pass": true
+    },
+    {
+      "name": "no-js-closing-art-is-present",
+      "pass": true
+    },
+    {
+      "name": "os-reduced-full-work-path-is-native",
+      "pass": true
+    },
+    {
+      "name": "os-reduced-full-closing-art-is-present",
+      "pass": true
+    },
+    {
+      "name": "no-browser-errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

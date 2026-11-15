@@ -337,3 +337,8 @@ The approved A woven material remains the environment. Thirty-one visual beats n
 ## Cinematic camera revision
 
 Shot blocking adds depth and motivated camera distance changes to the same 31-beat story. Wide isolation gives the personal passage room; detail shots bring the hand and task forward; elevated drafting and a low-angle rise change perspective. A prepared perspective projector is shared by all scene layers and SVG fallbacks. Native scrolling and deterministic camera keyframes preserve reverse scrubbing. See `docs/evidence/cinematic-camera/REPORT.md` for visual and performance evidence.
+
+
+## Story worlds and owner-fixed Full motion
+
+The owner selected all four terrain concepts and requested a distinct ground for every visual beat. The profile now authors31 recipes across terraces, gravity wells, flowing paths and floating islands. The owner explicitly replaced the English profile's System/Full/Reduced preference with fixed Full motion and removal of its selector. This applies to this profile; it is not a general change to other product motion policies. No-JS, failed-runtime and print fallbacks remain. Keyboard/reflow tests remain scoped checks, not a claim of reduced-motion accessibility conformance.
