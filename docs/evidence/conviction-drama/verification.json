@@ -1,0 +1,854 @@
+{
+  "release": "living-conviction-v17",
+  "localChecks": 295,
+  "suites": {
+    "profile": 56,
+    "floors": 20,
+    "performance": 69,
+    "framing": 18,
+    "documentary": 29,
+    "reflow": 27,
+    "completion": 48,
+    "glove": 9,
+    "continuity": 12,
+    "painter": 7
+  },
+  "captures": [
+    {
+      "view": "desktop",
+      "beat": 13.35,
+      "file": "desktop-13.35.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "desktop",
+      "beat": 14.35,
+      "file": "desktop-14.35.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "desktop",
+      "beat": 15.33,
+      "file": "desktop-15.33.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "desktop",
+      "beat": 16.6,
+      "file": "desktop-16.6.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "desktop",
+      "beat": 17.28,
+      "file": "desktop-17.28.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "desktop",
+      "beat": 17.8,
+      "file": "desktop-17.8.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "mobile",
+      "beat": 13.35,
+      "file": "mobile-13.35.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "mobile",
+      "beat": 14.35,
+      "file": "mobile-14.35.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "mobile",
+      "beat": 15.33,
+      "file": "mobile-15.33.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "mobile",
+      "beat": 16.6,
+      "file": "mobile-16.6.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "mobile",
+      "beat": 17.28,
+      "file": "mobile-17.28.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    },
+    {
+      "view": "mobile",
+      "beat": 17.8,
+      "file": "mobile-17.8.png",
+      "release": "living-conviction-v17",
+      "mode": "full",
+      "selectorCount": 0
+    }
+  ],
+  "takes": [
+    {
+      "reverse": false,
+      "samples": [
+        {
+          "current": 4.929539242061932,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 37.47249503034113
+        },
+        {
+          "current": 4.938581851815422,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 40.5727209742783
+        },
+        {
+          "current": 4.956626735694328,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 41.5209039888972
+        },
+        {
+          "current": 4.978552871613432,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 37.23913900758419
+        },
+        {
+          "current": 4.998674449884812,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 35.95223233497022
+        },
+        {
+          "current": 5.02161618716125,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 32.972977373680436
+        },
+        {
+          "current": 5.0401924019447115,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 31.808600505797486
+        },
+        {
+          "current": 5.062607152352507,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 29.86313279280085
+        },
+        {
+          "current": 5.081761506939886,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 27.327321423229048
+        },
+        {
+          "current": 5.1028483966865785,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 27.99072702829421
+        },
+        {
+          "current": 5.12368289583012,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 29.147140002783075
+        },
+        {
+          "current": 5.146619615794796,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 29.23877855634215
+        },
+        {
+          "current": 5.16882623921662,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 29.44606956760323
+        },
+        {
+          "current": 5.19029471865908,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 29.94938471529238
+        },
+        {
+          "current": 5.210989490529249,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 28.500801457689544
+        },
+        {
+          "current": 5.232173408860502,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 36.93928426200301
+        },
+        {
+          "current": 5.259164013302946,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 37.41133822909529
+        },
+        {
+          "current": 5.282728946624035,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 35.959665569305514
+        },
+        {
+          "current": 5.304830738829558,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 32.14206658012536
+        },
+        {
+          "current": 5.324804288281105,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 30.8123598838461
+        },
+        {
+          "current": 5.343644598835654,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 31.606910353464148
+        },
+        {
+          "current": 5.365258113723712,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 29.720583883733948
+        },
+        {
+          "current": 5.383744931223549,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 30.995905651087078
+        },
+        {
+          "current": 5.405338244754677,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 29.995015221341216
+        },
+        {
+          "current": 5.4208030470550606,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 31.978966095874956
+        },
+        {
+          "current": 5.442825873156882,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 31.276266284333918
+        },
+        {
+          "current": 5.464234337237519,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 29.03534830928321
+        },
+        {
+          "current": 5.4827595925453325,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 27.518692026582002
+        },
+        {
+          "current": 5.502630630079666,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 26.51758384096682
+        },
+        {
+          "current": 5.522711396288476,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 26.53427675868329
+        },
+        {
+          "current": 5.53857928875815,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 28.674187759020253
+        },
+        {
+          "current": 5.563347286113631,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.748034589015056
+        },
+        {
+          "current": 5.583374377727929,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 26.571955494088517
+        },
+        {
+          "current": 5.600872809609093,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.037569999728998
+        },
+        {
+          "current": 5.621998388708739,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 25.263259676325394
+        },
+        {
+          "current": 5.639411039522303,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 25.886514673567657
+        },
+        {
+          "current": 5.663896341761293,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.851922278224492
+        },
+        {
+          "current": 5.685460818961203,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.104486204964488
+        },
+        {
+          "current": 5.706287077545935,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.610783400215354
+        },
+        {
+          "current": 5.726316877389573,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.062354987531545
+        },
+        {
+          "current": 5.74674016614073,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 28.27329110675887
+        },
+        {
+          "current": 5.769989618875861,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.147026297229466
+        },
+        {
+          "current": 5.789036664740142,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.153353952748585
+        },
+        {
+          "current": 5.808561160776637,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 25.766435527474773
+        },
+        {
+          "current": 5.83087839142393,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 24.390070513486656
+        },
+        {
+          "current": 5.849294929100071,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 23.77929526353531
+        },
+        {
+          "current": 5.869690806585584,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 27.826085621686396
+        },
+        {
+          "current": 5.8933929773766724,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 27.597494776653686
+        },
+        {
+          "current": 5.912991256918703,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 26.401236322474027
+        },
+        {
+          "current": 5.934701786818007,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 24.726366036981265
+        },
+        {
+          "current": 5.951804262590878,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.31092084111432
+        },
+        {
+          "current": 5.971538537287895,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 26.564085165129754
+        },
+        {
+          "current": 5.991988081905166,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.170536278588642
+        },
+        {
+          "current": 6.015722097110421,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 26.324108852228825
+        },
+        {
+          "current": 6.034151859149714,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 24.912467818051944
+        },
+        {
+          "current": 6.055697954307463,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 30.541010136430305
+        },
+        {
+          "current": 6.083990957443553,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 30.23716674938033
+        },
+        {
+          "current": 6.106100040801409,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 31.42192510485584
+        },
+        {
+          "current": 6.12806846559177,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 30.228515059554567
+        }
+      ]
+    },
+    {
+      "reverse": true,
+      "samples": [
+        {
+          "current": 6.140207906190425,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 19.869515273858422
+        },
+        {
+          "current": 6.12545727158029,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 20.930701072783872
+        },
+        {
+          "current": 6.103027388142286,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 23.479365677998743
+        },
+        {
+          "current": 6.082232140573331,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 23.49971182031872
+        },
+        {
+          "current": 6.063418447424616,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 25.913680926722552
+        },
+        {
+          "current": 6.0352762103012285,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 25.352126054348673
+        },
+        {
+          "current": 6.016689622385475,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 24.453899904285286
+        },
+        {
+          "current": 5.997996927311481,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 24.203003728575467
+        },
+        {
+          "current": 5.9780144758454385,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 24.158670749041995
+        },
+        {
+          "current": 5.959944658096649,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.21997097530358
+        },
+        {
+          "current": 5.937299843572151,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 26.791932957803567
+        },
+        {
+          "current": 5.915797210357506,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 26.791537213489754
+        },
+        {
+          "current": 5.896440708179222,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 25.288947565861825
+        },
+        {
+          "current": 5.877919821739051,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 24.0088984977417
+        },
+        {
+          "current": 5.860023669098751,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 23.714728304601387
+        },
+        {
+          "current": 5.839083655667399,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 25.1962369353985
+        },
+        {
+          "current": 5.818035488612744,
+          "shot": "the-light-that-remains",
+          "mode": "full",
+          "drawCost": 25.238101051219857
+        },
+        {
+          "current": 5.799458794347487,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 24.68709809835352
+        },
+        {
+          "current": 5.780572323319159,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 25.21235506215689
+        },
+        {
+          "current": 5.757567991506279,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 25.95328615609577
+        },
+        {
+          "current": 5.7358141161832235,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 24.928741048192226
+        },
+        {
+          "current": 5.72051157046667,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.259652225184155
+        },
+        {
+          "current": 5.695981583086195,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 30.28713782403108
+        },
+        {
+          "current": 5.6783840517960495,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 30.155823473748463
+        },
+        {
+          "current": 5.656554712345133,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 28.873185780560124
+        },
+        {
+          "current": 5.634770007562181,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 34.1901371892388
+        },
+        {
+          "current": 5.604714439837914,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 31.63753901003452
+        },
+        {
+          "current": 5.584680719629462,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 30.680169343353842
+        },
+        {
+          "current": 5.562659259755943,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 32.44126910776829
+        },
+        {
+          "current": 5.5442822380887264,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 32.92178517899089
+        },
+        {
+          "current": 5.525768851608462,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 32.03268139542774
+        },
+        {
+          "current": 5.503991156623141,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 31.25719226168346
+        },
+        {
+          "current": 5.483940990301703,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 29.910063843424282
+        },
+        {
+          "current": 5.463837037153722,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 28.207822887454313
+        },
+        {
+          "current": 5.445212805472892,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 26.674422596840547
+        },
+        {
+          "current": 5.428103157277379,
+          "shot": "stay-with-the-question",
+          "mode": "full",
+          "drawCost": 30.376854072235474
+        },
+        {
+          "current": 5.408793759275163,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 29.73025179880876
+        },
+        {
+          "current": 5.3876646363948995,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 27.508358205766754
+        },
+        {
+          "current": 5.369127681643386,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 26.00261381917878
+        },
+        {
+          "current": 5.349145843350567,
+          "shot": null,
+          "mode": "full",
+          "drawCost": 26.324814927469514
+        },
+        {
+          "current": 5.330516033086989,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 25.180541074368428
+        },
+        {
+          "current": 5.31021650153397,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 25.99999300064312
+        },
+        {
+          "current": 5.289769638660172,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 25.558215408690828
+        },
+        {
+          "current": 5.270503041375025,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 25.239415129368172
+        },
+        {
+          "current": 5.249887085751479,
+          "shot": "the-weight-of-resistance",
+          "mode": "full",
+          "drawCost": 25.997950265225406
+        },
+        {
+          "current": 5.2285804780165135,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 27.00920516931242
+        },
+        {
+          "current": 5.205949096252388,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 31.478949511688104
+        },
+        {
+          "current": 5.1807098736064665,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 31.81485419569254
+        },
+        {
+          "current": 5.1582133376607375,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 30.46306583697789
+        },
+        {
+          "current": 5.137294820048595,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 29.75353749731043
+        },
+        {
+          "current": 5.1181511698973985,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 27.59332595058437
+        },
+        {
+          "current": 5.10085159180065,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 25.851511156419505
+        },
+        {
+          "current": 5.07863174198517,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 25.956755823187365
+        },
+        {
+          "current": 5.060455052097689,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 26.86067499434661
+        },
+        {
+          "current": 5.040085706506699,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 25.662408862557296
+        },
+        {
+          "current": 5.022718974585963,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 25.01789645332969
+        },
+        {
+          "current": 5.00299122433947,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 24.08621186329515
+        },
+        {
+          "current": 4.98741049438998,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 27.820348449146827
+        },
+        {
+          "current": 4.962611441480592,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 26.481310616258575
+        },
+        {
+          "current": 4.9424258035455795,
+          "shot": "conviction-rear",
+          "mode": "full",
+          "drawCost": 27.013727894412913
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "scenes.js": "c3af7e93d59c6160bf5b6ed652f8d387e7fe21de401285a2f5d0828dad90ef57",
+    "motion.js": "844dc6bcd23b2be64589eac5dfb772c4fd0320b8bec33512a79e3a3654abea06",
+    "geometry.js": "0563b0c2c2b308abef95e886b49ccd54749999cf9a61b0e8de6e97146e077933",
+    "living.js": "a227fee50d2d2a0b786c363d17e1ada28857940052667961f65b1c157ece9eb0",
+    "living.css": "cf7f705e16ce4132fa7cbf4f3a92d28687d79ab9ec65dceb7b698998dd6a112f"
+  },
+  "sourceAndBuildMatch": true,
+  "publicDeployment": false,
+  "notes": [
+    "Captures use native scroll and the authored camera.",
+    "Emulated browser viewports are not physical-device performance evidence.",
+    "Emotional quality was visually reviewed in addition to automated checks."
+  ]
+}

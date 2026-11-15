@@ -26,8 +26,17 @@
   const hold=cfg.actingHolds?.find(item=>item.beat===start+step),begin=hold?.until??.20;
   return Math.min(sequence.length-1,start+step+smooth((phase-begin)/(.85-begin)));
  }
- function storyAt(position){const timeline=resolve(position),index=Math.min(sequence.length-1,Math.floor(timeline)+(timeline%1>.24?1:0)),shot=sequence[index];return {...shot,index,total:sequence.length,timeline};}
+ function storyAt(position){const timeline=resolve(position),index=Math.min(sequence.length-1,Math.floor(timeline)+(timeline%1>(timeline>=13&&timeline<18?.62:.24)?1:0)),shot=sequence[index];return {...shot,index,total:sequence.length,timeline};}
  const rgb=hex=>hex.match(/[a-f\d]{2}/gi).map(v=>parseInt(v,16));
+ // One emotional clock for material, set, and source light. No time-based pulse.
+ function dramaState(timeline){
+  const keys=cfg.drama.keys,empty={strength:0,isolation:0,pressure:0,doubt:0,repair:0,rise:0,body:1,glow:1};
+  if(timeline<=cfg.drama.start||timeline>=cfg.drama.end)return empty;
+  const i=keys.findIndex(k=>k.at>=timeline),a=keys[i-1],b=keys[i],t=smooth((timeline-a.at)/(b.at-a.at)),state={};
+  for(const key of ['isolation','pressure','doubt','repair','rise','body','glow'])state[key]=mix(a[key],b[key],t);
+  state.strength=smooth((timeline-12)/.85)*(1-smooth((timeline-17.25)/1.15));return state;
+ }
+ function dramaAt(position){return dramaState(resolve(position));}
  function paletteAt(position){const timeline=resolve(position),a=sequence[Math.floor(timeline)],b=sequence[Math.min(sequence.length-1,Math.floor(timeline)+1)],t=timeline%1;
   const ac=rgb(cfg.tones[a.tone]),bc=rgb(cfg.tones[b.tone]);return {accent:'#'+ac.map((n,i)=>Math.round(mix(n,bc[i],t)).toString(16).padStart(2,'0')).join(''),energy:mix(a.energy??1,b.energy??1,t)};
  }
@@ -201,10 +210,10 @@
  function frame(position,detail=1,explode=0){
   const timeline=resolve(position),a=Math.floor(timeline),b=Math.min(a+1,sequence.length-1),raw=timeline-a;
   const source=scene(a),destination=raw?scene(b):source,p=motion.poseAt(timeline),body=createScene(a,p,true,a>0?detail:1);
-  const lines=[],pulse=Math.sin(PI*raw)**2,attractor=p.light,floorTransform=floors.deformer(raw,p);
+  const lines=[],pulse=Math.sin(PI*raw)**2,attractor=p.light,floorTransform=floors.deformer(raw,p),emotion=dramaState(timeline);
   for(let l=0;l<source.length;l++){
    const s=source[l],d=destination[l];if(detail>1&&Math.floor(l/2)%detail&&!s.important&&!s.floor)continue;
-   if(l<body.length&&a>0){const live=body[l];lines.push({...live,alpha:live.alpha*(live.group==='human'?.76:1)});continue;}
+   if(l<body.length&&a>0){const live=body[l],material=['human','hand','detail'].includes(live.group)?emotion.body:1;lines.push({...live,alpha:live.alpha*(live.group==='human'?.76:1)*material});continue;}
    if(s.alpha<=.005&&d.alpha<=.005&&!(a===0&&l<body.length)){lines.push(s);continue;}
    const range=a===0?[0,.88]:(timing[s.group]||[0,1]),t=smooth((raw-range[0])/(range[1]-range[0]));
    const targetLine=a===0&&l<body.length?body[l]:d;
@@ -275,6 +284,13 @@
    if(prop==='verified'){arc(1.24,.02,.22,.22,0,TAU,{color:cfg.tones.care,fill:'#101b19'});check(1.24,.02);}
    if(prop==='lesson'){arc(.90,.83,.12,.12,0,TAU,{fill:'#211c18'});line([[.84,.65],[.96,.65]],{width:2});}
    label({brief:'UNDERSTAND THE NEED',review:'A PERSON REVIEWS',verified:'REVIEWED BY A PERSON',lesson:'KEEP THE LESSON'}[prop]);
+  }else if(prop==='remnant'){
+   // A single piece of the failed surface stays in the left palm. The right
+   // hand can support the bowed head, making doubt legible without a face.
+   const outline=[[.46,-.035],[.63,-.01],[.70,.11],[.59,.23],[.40,.15],[.46,-.035]];
+   // Retain the same sampled closed-plane contract as the larger work objects.
+   line(outline.flatMap((a,i)=>i===outline.length-1?[a]:Array.from({length:4},(_,j)=>lerp(a,outline[i+1],j/4))),{color:cfg.tones.human,fill:'#17121d',width:1.7});
+   line([[.46,.025],[.57,.12],[.62,.08]],{color:cfg.tones.friction,width:1,alpha:.55});
   }else if(prop==='ember'){
    const x=.89,y=.32;
    for(let i=3;i>0;i--)arc(x,y,.07+i*.065,.09+i*.09,0,TAU,{color:cfg.tones.human,width:1,alpha:.16/i});
@@ -490,8 +506,43 @@
    const v=lerp(q,next.points[k],t),side=Math.sign(v[0]+.2);v[0]+=side*.055*pulse;v[1]-=.07*pulse;v[2]-=.08*pulse;
    const influence=response.reach*.65*Math.exp(-(Math.hypot(...sub(v,p.light))**2)/3);return lerp(v,p.light,influence);
   })};});
-  return {role:'surroundings',id:'story-world',name:t<.5?a.name:b.name,alpha:mix(a.strength,b.strength,t),textAlpha:0,texts:[],paths,
+  const emotion=dramaState(timeline),quiet=1-emotion.isolation*.57-emotion.doubt*.13;
+  return {role:'surroundings',id:'story-world',name:t<.5?a.name:b.name,alpha:mix(a.strength,b.strength,t)*quiet,textAlpha:0,texts:[],paths,
    focus:[{point:p.head,radius:.30},{point:p.handL,radius:.13},{point:p.handR,radius:.15},{point:p.work.origin,radius:.43}]};
+ }
+ // The room tightens around the maker, a broken working surface sheds material,
+ // then those same fragments become a path. Everything lives in the camera's
+ // 3D world, so the approved rear orbit also reveals the back of this pressure.
+ function dramaSet(timeline,p){
+  const e=dramaState(timeline);if(e.strength<=.001)return null;
+  const paths=[],strain=e.pressure*.85+e.doubt*.40,release=e.rise,source=p.work,
+   emit=(id,points,color,alpha,width=1,fill=null)=>paths.push({id:'drama-'+id,points,color,alpha,width,fill,role:'surroundings',secondary:false});
+  const warm=smooth((e.repair+release)/.85),cold=rgb('#e5859c'),gold=rgb(cfg.tones.human),color='#'+cold.map((v,i)=>Math.round(mix(v,gold[i],warm)).toString(16).padStart(2,'0')).join('');
+  // Tall bowed ribs suggest the weight of the room; the opening grows on rising.
+  for(let rib=0;rib<9;rib++){
+   const radius=1.42+rib*.045-strain*.24+release*.26,z=-.94-rib*.09;
+   emit('room-rib-'+rib,Array.from({length:49},(_,i)=>{const a=i/48*PI;return [-.46+Math.cos(a)*radius,-1.25+Math.sin(a)*(2.42-strain*.20+release*.30),z+.12*Math.sin(a*2+rib*.15)];}),color,(.14+strain*.19+release*.10)*(rib%3===0?1:.48),rib%3===0?1.3:.7);
+  }
+  // A split span is attached to the work plane. Fixed seeded paths keep each
+  // torn fragment identifiable when the visitor reverses or skips the passage.
+  const scatter=smooth((timeline-13.20)/1.15)*(1-smooth((timeline-15.45)/1.05));
+  const presence=smooth((timeline-13.14)/.55)*(1-smooth((timeline-16.75)/.60));
+  for(let j=0;j<28;j++){
+   const side=j%2?1:-1,row=Math.floor(j/2),u=(row+.5)/14,
+    local=[side*(.08+u*.37),-.16+u*.37,.018],
+    origin=add(source.origin,add(mul(source.u,local[0]),add(mul(source.v,local[1]),mul(source.normal,local[2])))),
+    drift=[side*(.32+u*.67),-.14-.55*u,-.18-.32*(j%4)/3],
+    centre=add(origin,mul(drift,scatter)),angle=(j*.83+scatter*side*1.8),r=.018+(j%4)*.008;
+   const points=Array.from({length:9},(_,i)=>{const a=angle+i/8*TAU;return add(centre,[Math.cos(a)*r*(1+scatter),Math.sin(a)*r*.65,Math.sin(a)*r*.35]);});
+   emit('fragment-'+j,points,j%5===0?cfg.tones.human:color,presence*(.44+(j%3)*.09),j%5===0?1.4:.8,'#17101c');
+  }
+  // Fine pressure threads converge toward the surviving warm source, then open
+  // outward into the repaired room. They stay behind the head and the hands.
+  for(let j=0;j<12;j++){
+   const side=j%2?1:-1,row=Math.floor(j/2);
+   emit('tension-'+j,Array.from({length:33},(_,i)=>{const t=i/32;return [-.46+side*(.69+t*(.80+release*.35)), -1.12+row*.18+Math.sin(PI*t)*(.12+strain*.25),-.62-row*.17-.12*strain];}),color,.16+strain*.20+release*.13,.8);
+  }
+  return {id:'drama-room',role:'surroundings',alpha:e.strength,textAlpha:0,texts:[],paths,focus:[{point:p.head,radius:.34},{point:p.handL,radius:.16},{point:p.handR,radius:.18}]};
  }
  // Soft, screen-space negative space keeps new scenic glyphs off the blank
  // head and the interaction. The 3D set itself stays anchored during orbits.
@@ -556,7 +607,7 @@
   return layers;
  }
  function illustration(position,explode=0){
-  const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline),work=p.work,handoff=p.phase.to===3?p.tool.handoff:[.10,.26],t=smooth((raw-handoff[0])/(handoff[1]-handoff[0]));
+  const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline),work=p.work,handoff=p.phase.to===3?p.tool.handoff:timeline>=13&&timeline<17?[.42,.66]:[.10,.26],t=smooth((raw-handoff[0])/(handoff[1]-handoff[0]));
   const map=(q,frame=work)=>add(frame.origin,add(add(mul(frame.u,(q[0]-.89)*(frame.width||1.3)/1.3),mul(frame.v,(q[1]-.32)*(frame.height||1.04)/1.04)),mul(frame.normal,(q[2]||0)*Math.min((frame.width||1.3)/1.3,(frame.height||1.04)/1.04))));
   const keyboard=q=>{const f=work.keyboard||work;return add(f.origin,add(mul(f.u,(q[0]-.855)*(f.width||.84)/1.59),mul(f.v,(q[1]+.34)*(f.height||.30)/.28)));};
   const layers=[{index:from,alpha:1-t,textAlpha:1-smooth((raw-handoff[0]+.08)/.08)},{index:to,alpha:t,textAlpha:smooth((raw-handoff[1])/.08)}].filter(o=>o.alpha>.005).map(o=>{
@@ -587,6 +638,7 @@
   }
   const ambient=surroundings(timeline,p);if(ambient.alpha>.005)layers.push(ambient);
   layers.push(storyWorld(timeline,p));
+  const drama=dramaSet(timeline,p);if(drama)layers.push(drama);
   const thread=storyThread(timeline,p);if(thread.alpha>.005)layers.push(thread);
   // The first imagined place returns as a soft, open pavilion for the visitor.
   const closing=smooth((position-9.15)/.85);
@@ -676,5 +728,5 @@
    return polygon.length>=3?[...polygon,polygon[0]]:null;
   }).filter(Boolean);
  }
- const api={motion,performanceAt:position=>motion.poseAt(resolve(position)),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,createProjector,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,illustration,lightAt,lightTrail,clamp,mix,smooth,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
+ const api={motion,performanceAt:position=>motion.poseAt(resolve(position)),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,createProjector,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,clamp,mix,smooth,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

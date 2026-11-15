@@ -64,7 +64,8 @@
     "test:profile-world": "node scripts/qa-profile-world.cjs",
     "test:profile-documentary": "node scripts/qa-profile-documentary.cjs",
     "test:profile-glove": "node scripts/qa-profile-glove.cjs",
-    "test:profile-floors": "node scripts/qa-profile-floors.cjs"
+    "test:profile-floors": "node scripts/qa-profile-floors.cjs",
+    "test:profile-drama": "node scripts/qa-profile-drama.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"
