@@ -189,21 +189,37 @@
  function pose(value){if(typeof value==='number')return poseAt(value);const aliases={build:5,review:11,experience:24};const i=aliases[value]??names.indexOf(value);return poseAt(i<0?0:i);}
  // Additive finale gestures reuse the original fixed-length rig and C glove.
  function finalePose(base,options={}){
-  if(!options.open&&!options.weight&&!options.headWeight)return base;
-  const p={...base,frames:{...base.frames},contacts:{...base.contacts},reach:{...base.reach}};
+  const controls=options.hands||{},torso=options.torso||{},bodyAmount=Math.abs(torso.yaw||0)+Math.abs(torso.pitch||0)+Math.abs(torso.roll||0);
+  if(!options.open&&!options.weight&&!options.headWeight&&!bodyAmount&&!Object.values(controls).some(c=>c?.weight||c?.prelude?.weight))return base;
+  const p={...base,frames:{...base.frames},contacts:{...base.contacts},reach:{...base.reach},spine:{...base.spine}};
+  // Rotate only the supported upper body; feet, knees and pelvis keep their marks.
+  if(bodyAmount){const turn=frame(torso.yaw||0,torso.pitch||0,torso.roll||0),at=q=>add(base.hip,apply(turn,sub(q,base.hip)));
+   for(const key of ['head','shoulder','shoulderL','shoulderR'])p[key]=at(base[key]);
+   for(const key of ['lumbar','ribcage','chest','neck'])p.spine[key]=at(base.spine[key]);
+   for(const key of ['head','chest'])p.frames[key]={x:apply(turn,base.frames[key].x),y:apply(turn,base.frames[key].y),z:apply(turn,base.frames[key].z)};
+  }
   const weight=clamp(options.weight||0),side=options.side===-1?-1:1,target=options.target;
   for(const handSide of [-1,1]){
    const suffix=handSide<0?'L':'R',key=handSide<0?'left':'right',shoulder=p['shoulder'+suffix],original=p['hand'+suffix];
-   let goal=original,wrist=p.frames['wrist'+suffix],shape=p.contacts[key].shape;
+   let goal=original,wrist=p.frames['wrist'+suffix],shape=p.contacts[key].shape,grip=p.contacts[key].grip;
    if(options.open){const amount=clamp(options.open),requested=add(shoulder,[handSide*.43,-.16,.30]);goal=lerp(original,requested,amount);shape=handShapes.blend(shape,handShapes.pose('open',handSide),amount);}
-   if(target&&handSide===side&&weight){const direction=norm(sub(target,shoulder)),requested=add(shoulder,mul(direction,.58));goal=lerp(goal,requested,weight);const aiming=norm(sub(target,goal));wrist=blendFrame(wrist,palm(aiming,[0,1,0]),weight);shape=handShapes.blend(shape,handShapes.pose('point',handSide),weight);}
-   const solution=twoBone(shoulder,goal,lengths.upperArm,lengths.forearm,add(shoulder,[handSide*.48,-.42,.12]));
+   if(target&&handSide===side&&weight){const direction=norm(sub(target,shoulder)),requested=add(shoulder,mul(direction,.58));goal=lerp(goal,requested,weight);const aiming=norm(sub(target,goal));wrist=blendFrame(wrist,palm(aiming,[0,1,0]),weight);shape=handShapes.blend(shape,handShapes.pose('point',handSide),weight);grip='point';}
+   function control(c){if(!c)return;if(c.prelude)control(c.prelude);const amount=clamp(c.weight||0);if(!amount)return;
+    const requested=c.point&&c.aim?add(shoulder,mul(norm(sub(c.aim,shoulder)),clamp(c.reach||.61,.38,.68))):c.goal||goal;
+    goal=add(lerp(goal,requested,amount),mul(c.arc||[handSide*.025,.018,.17],Math.sin(PI*amount)));if(c.aim)wrist=blendFrame(wrist,palm(norm(sub(c.aim,goal)),[0,1,0]),amount);
+    shape=handShapes.blend(shape,handShapes.pose(c.shape||'open',handSide),amount);if(amount>.5)grip=c.shape||'open';
+   }
+   control(controls[key]);
+   // Transport the resting bend plane with the arm swing. A linearly blended
+   // pole can pass through the wrist axis and flip the elbow by 180 degrees.
+   let pole=[handSide*.48,-.42,.12];if(options.acting){const from=norm(sub(base['hand'+suffix],base['shoulder'+suffix])),to=norm(sub(goal,shoulder)),v=cross(from,to),cos=dot(from,to),rest=sub(base['elbow'+suffix],base['shoulder'+suffix]),bend=norm(sub(rest,mul(from,dot(rest,from))));pole=cos>-.98?add(add(bend,cross(v,bend)),mul(cross(v,cross(v,bend)),1/(1+cos))):[handSide,-.1,.2];}
+   const solution=twoBone(shoulder,goal,lengths.upperArm,lengths.forearm,add(shoulder,pole));
    p['elbow'+suffix]=solution.joint;p['hand'+suffix]=solution.end;p.frames['wrist'+suffix]=wrist;
-   p.contacts[key]={...p.contacts[key],shape,grip:target&&handSide===side&&weight>.5?'point':'open',active:false,weight:0,tip:add(solution.end,apply(wrist,shape.contactOffset))};
+   p.contacts[key]={...p.contacts[key],shape,grip,active:false,weight:0,tip:add(solution.end,apply(wrist,shape.contactOffset))};
    p.reach[key]={requested:goal,solved:solution.end,clamped:solution.clamped,error:solution.error};
   }
-  if(target){const delta=sub(target,p.head),yaw=clamp(Math.atan2(delta[0],delta[2]),-.62,.62),pitch=clamp(-Math.atan2(delta[1],Math.hypot(delta[0],delta[2])),-.25,.30);p.frames.head=blendFrame(base.frames.head,frame(yaw,pitch,0),clamp(options.headWeight||weight));}
-  p.light=p.contacts[side<0?'left':'right'].tip;return p;
+  const look=options.headTarget||target;if(look){const delta=sub(look,p.head),yaw=clamp(Math.atan2(delta[0],delta[2]),-.76,.76),pitch=clamp(-Math.atan2(delta[1],Math.hypot(delta[0],delta[2])),-.28,.37);p.frames.head=blendFrame(p.frames.head,frame(yaw,pitch,options.headRoll||0),clamp(options.headWeight||weight));}
+  p.light=p.contacts[options.lead||(side<0?'left':'right')].tip;return p;
  }
  function restPose(){return poseAt(29);}
  const api={poseAt,lightAt,accentAt,pose,restPose,finalePose,setClips,lengths,names};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;

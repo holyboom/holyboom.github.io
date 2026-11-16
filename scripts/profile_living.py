@@ -21,6 +21,7 @@ def render(head, data, lang='en'):
 <script defer src="/assets/profile/floors.js?v={release}"></script>
 <script defer src="/assets/profile/geometry.js?v={release}"></script>
 <script defer src="/assets/profile/finale-data.js?v={release}"></script>
+<script defer src="/assets/profile/finale-acting.js?v={release}"></script>
 <script defer src="/assets/profile/finale.js?v={release}"></script>
 <script defer src="/assets/profile/cinematic-lines.js?v={release}"></script>
 <script defer src="/assets/profile/reading-thread.js?v={release}"></script>

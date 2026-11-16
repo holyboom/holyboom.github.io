@@ -118,3 +118,7 @@ main :is(a,summary),.site-footer a{scroll-margin-block:110px 20px}
 .profile-enhanced .reflection-art .finale-phase{visibility:hidden}.profile-enhanced .finale-settled .reflection-art .finale-phase{visibility:visible}
 
 @media(max-width:767px){.finale-portal-caption{font-size:11px;line-height:1.7;bottom:6px;left:8%;right:8%}}
+
+/* Reserve room for a pair of real names, so idle acting never shifts the CV. */
+.finale-caption{min-height:132px}.finale-skill-name{line-height:1.5}
+@media(max-width:767px){.finale-caption{min-height:152px}}

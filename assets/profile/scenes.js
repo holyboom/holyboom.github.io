@@ -1,6 +1,6 @@
 /* Owner-editable direction: a symbolic maker, not a likeness or documentary scene. */
 (function(root){'use strict';
- const config={release:'living-finale-v22',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
+ const config={release:'living-alchemy-v23',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
  establish:{yaw:-.30,pitch:.12,distance:6.4,target:[.10,0,0]},
  draft:{yaw:.58,pitch:.30,distance:5.25,target:[-.25,-.09,.22]},
  detail:{yaw:.44,pitch:.18,distance:5.05,target:[-.26,-.08,.25]},
