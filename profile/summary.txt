@@ -2,7 +2,7 @@ THEERAWEE RANGRAM (BOOM)
 AI Engineer & AI Solutions Architect | Bangkok, Thailand
 ธีรวีร์ รางแรม
 
-I connect business requirements, software architecture and hands-on implementation. My focus is practical GenAI integration, agentic workflows and automation with explicit permissions, human review and inspectable evidence.
+I connect business requirements, software architecture and hands-on implementation. I began developing my AI capabilities in 2024 while still at ttb. My focus is practical GenAI integration, agentic workflows and automation with explicit permissions, human review and inspectable evidence.
 9+ years of software delivery across banking, insurance, fintech and e-commerce. Creator of HolyMind Framework.
 
 ROLE FIT
@@ -20,7 +20,7 @@ Independent AI Solutions Architect
 AI-assisted product architecture and development using React, FastAPI and PostgreSQL access controls. Translate requirements into product specifications, source-backed outputs and explicit review paths.
 
 ttb spark
-Senior software engineering in banking, including frontend delivery and GPT-assisted Jira, Confluence and Bitbucket workflows with human review.
+Senior software engineering in banking, including frontend delivery. Began developing AI capabilities in 2024 while at ttb, with GPT-assisted Jira, Confluence and Bitbucket workflows and human review.
 
 Accenture
 Corporate-banking frontend delivery, translating stakeholder requirements and collaborating with distributed engineering squads.

@@ -8,7 +8,7 @@ LI='https://www.linkedin.com/in/boom-theerawee'
 GITHUB='https://github.com/holyboom'
 PUBLIC_WORK=BASE+'/work/holymind-portfolio/'
 PUBLIC_WORK_TH=BASE+'/th/work/holymind-portfolio/'
-UPDATED='2026-11-15'
+UPDATED='2026-11-16'
 E=html.escape
 person={
  '@type':'Person','@id':BASE+'/#theerawee-rangram','name':'Theerawee Rangram',
@@ -25,7 +25,7 @@ data={
  'description':'Theerawee (Boom) Rangram, AI Engineer and AI Solutions Architect in Bangkok. 9+ years in enterprise software, GenAI integration, agentic workflows and governance.',
  'name':'Theerawee Rangram','nickname':'Boom · ธีรวีร์ รางแรม','role':'AI Engineer & AI Solutions Architect',
  'place':'Bangkok, Thailand','lead':'Turn business ambition into AI systems people can use and trust.',
- 'intro':'I connect business requirements, software architecture and hands-on implementation. My focus is practical GenAI integration, agentic workflows and automation with explicit permissions, human review and inspectable evidence.',
+ 'intro':'I connect business requirements, software architecture and hands-on implementation. I began developing my AI capabilities in 2024 while still at ttb. My focus is practical GenAI integration, agentic workflows and automation with explicit permissions, human review and inspectable evidence.',
  'experience':'9+ years of software delivery across banking, insurance, fintech and e-commerce. Creator of HolyMind Framework.',
  'profileLabel':'Professional profile','showcase':'Explore the interactive showcase','contact':'Connect with Boom on LinkedIn','plain':'Read the plain-text profile',
  'fitHeading':'Where I can contribute',
@@ -41,7 +41,7 @@ data={
  'backgroundIntro':'Career highlights from my professional background. Detailed CV and project context are available in a recruiter conversation.',
  'jobs':[
  ('Independent AI Solutions Architect','AI-assisted product architecture and development using React, FastAPI and PostgreSQL access controls. Translate requirements into product specifications, source-backed outputs and explicit review paths.'),
- ('ttb spark','Senior software engineering in banking, including frontend delivery and GPT-assisted Jira, Confluence and Bitbucket workflows with human review.'),
+ ('ttb spark','Senior software engineering in banking, including frontend delivery. Began developing AI capabilities in 2024 while at ttb, with GPT-assisted Jira, Confluence and Bitbucket workflows and human review.'),
  ('Accenture','Corporate-banking frontend delivery, translating stakeholder requirements and collaborating with distributed engineering squads.'),
  ('Allianz Technology','Angular and enterprise frontend development, working with stakeholders and engineering teams in Munich and Bangkok.')],
  'workHeading':'Public work you can inspect',
@@ -56,18 +56,18 @@ data={
  'questionsHeading':'For recruiters and hiring teams',
  'questions':[
  ('Where is Boom based?','Bangkok, Thailand. My enterprise background includes collaboration with teams in Bangkok and Munich.'),
- ('Is the experience all AI research?','No. My background is enterprise software delivery; my current focus is applied GenAI, AI solutions architecture and agentic automation—not a claim of nine years of foundation-model research.'),
+ ('Is the experience all AI research?','No. My background is enterprise software delivery; I began developing AI capabilities in 2024 while at ttb. My current focus is applied GenAI, AI solutions architecture and agentic automation—not a claim of nine years of foundation-model research.'),
  ('How can I discuss a role or request a CV?','Use LinkedIn with the role, team, location and problem you need solved. We can discuss fit and the appropriate supporting project context.')],
  'closing':'Bring the problem your team is trying to solve.',
  'footer':'Professional history is self-reported. The linked portfolio demonstrates the stated browser behavior; it does not independently verify employment or business outcomes.',
- 'languageLabel':'ภาษาไทย','other':'/th/profile/','updated':'Profile updated 15 November 2026'
+ 'languageLabel':'ภาษาไทย','other':'/th/profile/','updated':'Profile updated 16 November 2026'
 },
  'th':{
  'path':'th/profile','title':'ธีรวีร์ รางแรม (Boom) | AI Engineer และ AI Solutions Architect กรุงเทพฯ',
  'description':'จากเด็กที่อยากเป็นสถาปนิก สู่ Frontend และการสร้าง AI experiences เรื่องราวของ ธีรวีร์ รางแรม (บูม) AI Engineer และ AI Solutions Architect ผู้สร้าง HolyMind',
  'name':'ธีรวีร์ รางแรม','nickname':'Theerawee Rangram · Boom','role':'AI Engineer & AI Solutions Architect',
  'place':'กรุงเทพฯ ประเทศไทย','lead':'เปลี่ยนความตั้งใจทางธุรกิจ ให้เป็นระบบ AI ที่คนใช้งานและตรวจสอบได้',
- 'intro':'ผมเชื่อมโจทย์ธุรกิจ สถาปัตยกรรมซอฟต์แวร์ และการลงมือพัฒนาเข้าด้วยกัน โดยเน้นการนำ GenAI มาใช้จริง ระบบ Agentic AI และ Automation ที่กำหนดสิทธิ์ชัดเจน มีคนตรวจทาน และย้อนดูหลักฐานได้',
+ 'intro':'ผมเชื่อมโจทย์ธุรกิจ สถาปัตยกรรมซอฟต์แวร์ และการลงมือพัฒนาเข้าด้วยกัน ผมเริ่มพัฒนาความสามารถด้าน AI ในปี 2567 ขณะยังทำงานอยู่ ttb ปัจจุบันเน้นการนำ GenAI มาใช้จริง ระบบ Agentic AI และ Automation ที่กำหนดสิทธิ์ชัดเจน มีคนตรวจทาน และย้อนดูหลักฐานได้',
  'experience':'ประสบการณ์พัฒนาซอฟต์แวร์กว่า 9 ปี ในงานธนาคาร ประกันภัย ฟินเทค และอีคอมเมิร์ซ เป็นผู้สร้าง HolyMind Framework',
  'profileLabel':'โปรไฟล์สำหรับผู้ว่าจ้าง','showcase':'ชมเว็บไซต์แบบโต้ตอบ','contact':'คุยกับ Boom ผ่าน LinkedIn','plain':'อ่านโปรไฟล์แบบข้อความ',
  'fitHeading':'งานที่นำประสบการณ์นี้ไปใช้ได้',
@@ -83,7 +83,7 @@ data={
  'backgroundIntro':'สรุปจากประวัติการทำงานของผม สามารถพูดคุยรายละเอียด CV และบริบทโครงการที่เหมาะสมกับผู้สรรหาได้',
  'jobs':[
  ('Independent AI Solutions Architect','ออกแบบและพัฒนาเครื่องมือที่ใช้ AI ช่วยงาน ด้วย React, FastAPI และ PostgreSQL ตั้งแต่ทำความเข้าใจโจทย์ วางสิทธิ์เข้าถึงข้อมูล ไปจนถึงการแสดงที่มาของคำตอบและจุดที่ต้องให้คนตรวจทาน'),
- ('ttb spark','งานวิศวกรรมซอฟต์แวร์อาวุโสในธุรกิจธนาคาร ทั้ง frontend และ workflow ที่ใช้ GPT ช่วยงาน Jira, Confluence และ Bitbucket โดยมีคนตรวจทาน'),
+ ('ttb spark','งานวิศวกรรมซอฟต์แวร์อาวุโสในธุรกิจธนาคารและ Frontend เริ่มพัฒนาความสามารถด้าน AI ในปี 2567 ขณะยังอยู่ ttb รวมถึงขั้นตอนงานที่ใช้ GPT ช่วยงาน Jira, Confluence และ Bitbucket โดยมีคนตรวจทาน'),
  ('Accenture','พัฒนา frontend สำหรับงานธนาคารองค์กร แปลงความต้องการของผู้เกี่ยวข้องและทำงานร่วมกับทีมวิศวกรรมที่อยู่ต่างสถานที่'),
  ('Allianz Technology','พัฒนา Angular และ frontend ของระบบองค์กร พร้อมประสานงานกับผู้เกี่ยวข้องและทีมวิศวกรรมในมิวนิกและกรุงเทพฯ')],
  'workHeading':'ผลงานสาธารณะที่เปิดดูได้',
@@ -98,11 +98,11 @@ data={
  'questionsHeading':'ข้อมูลสำหรับ HR และทีมที่กำลังหาคน',
  'questions':[
  ('Boom อยู่ที่ไหน','กรุงเทพฯ ประเทศไทย มีประสบการณ์ทำงานร่วมกับทีมองค์กรทั้งในกรุงเทพฯ และมิวนิก'),
- ('ประสบการณ์ทั้งหมดเป็นงานวิจัย AI หรือไม่','พื้นฐานของผมคือการพัฒนาซอฟต์แวร์องค์กร ปัจจุบันนำ GenAI มาใช้กับงานจริง ออกแบบระบบ AI และขั้นตอนทำงานที่ใช้ Agent ประสบการณ์กว่าเก้าปีจึงรวมงานซอฟต์แวร์ก่อนหน้านี้ด้วย'),
+ ('ประสบการณ์ทั้งหมดเป็นงานวิจัย AI หรือไม่','พื้นฐานของผมคือการพัฒนาซอฟต์แวร์องค์กร เริ่มพัฒนาความสามารถด้าน AI ในปี 2567 ขณะยังอยู่ ttb ปัจจุบันนำ GenAI มาใช้กับงานจริง ออกแบบระบบ AI และขั้นตอนทำงานที่ใช้ Agent ประสบการณ์กว่าเก้าปีจึงรวมงานซอฟต์แวร์ก่อนหน้านี้ด้วย'),
  ('ติดต่อคุยตำแหน่งงานหรือขอ CV อย่างไร','ติดต่อผ่าน LinkedIn พร้อมชื่อตำแหน่ง ทีม สถานที่ทำงาน และโจทย์ที่ต้องการแก้ เพื่อประเมินความเหมาะสมและแลกเปลี่ยนรายละเอียดโครงการที่เปิดเผยได้')],
  'closing':'เริ่มจากโจทย์ที่ทีมคุณอยากแก้ให้สำเร็จ',
  'footer':'ประวัติการทำงานเป็นข้อมูลที่เจ้าของโปรไฟล์ให้ไว้ ผลงานที่ลิงก์แสดงพฤติกรรมของเว็บไซต์ ไม่ใช่หลักฐานยืนยันการจ้างงานหรือผลลัพธ์ธุรกิจจากหน่วยงานอิสระ',
- 'languageLabel':'English','other':'/profile/','updated':'อัปเดตโปรไฟล์ 15 พฤศจิกายน 2026'
+ 'languageLabel':'English','other':'/profile/','updated':'อัปเดตโปรไฟล์ 16 พฤศจิกายน 2026'
 }}
 for lang,d in data.items():
  url=BASE+'/'+d['path']+'/'

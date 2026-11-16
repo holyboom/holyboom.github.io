@@ -40,18 +40,18 @@
   function measure(){
    const style=getComputedStyle(canvas);for(const side of ['left','right','top','bottom'])padding[side]=parseFloat(style['padding'+side[0].toUpperCase()+side.slice(1)])||0;
    headerBottom=document.querySelector('.site-header').getBoundingClientRect().bottom;
-   receivers=chapters.map((chapter,index)=>[...chapter.querySelectorAll('h1,h2,h3,.career-context,.lede,.scene-sequence li,.chapter-copy>p,blockquote,.story-bridge,.section-heading>p,.career-row p,.contact p')].filter(el=>!el.classList.contains('eyebrow')).map(el=>{
+   receivers=chapters.map((chapter,index)=>[...chapter.querySelectorAll('h1,h2,h3,.career-context,.lede,.scene-sequence li,.chapter-copy>p,blockquote,.story-bridge,.section-heading>p,.career-row p,.contact p')].filter(el=>!el.classList.contains('eyebrow')&&!el.classList.contains('story-era')&&!el.hasAttribute('data-career-context')).map(el=>{
     const range=document.createRange();range.selectNodeContents(el.dataset.storyBeat&&el.lastChild?.nodeType===3?el.lastChild:el);const lines=[...range.getClientRects()].filter(r=>r.width>5&&r.height>4).map(r=>({left:r.left,right:r.right,top:r.top+scrollY,bottom:r.bottom+scrollY}));range.detach();
-    const role=el.hasAttribute('data-company')?'company':/^H[123]$/.test(el.tagName)?'heading':el.classList.contains('career-context')?'company-context':el.dataset.storyBeat?'beat':'copy';return {el,index,lines,role};
+    const role=/^H[123]$/.test(el.tagName)?'heading':el.dataset.storyBeat?'beat':'copy';return {el,index,lines,role};
    }).filter(r=>r.lines.length));
   }
   function select(index,compact,safeTop){
    const groups=[index,index+1,index-1].filter(i=>i>=0&&i<receivers.length);
    for(const group of groups){const candidates=[];for(const item of receivers[group]){
     const lines=item.lines.map(r=>({...r,top:r.top-scrollY,bottom:r.bottom-scrollY})).filter(r=>r.top>=safeTop&&r.bottom<innerHeight-18);
-    if(!lines.length)continue;const r=lines[0],priority=item.role==='heading'?40:item.role==='company-context'?30:item.role==='beat'&&item.el.classList.contains('is-active')?25:item.el.classList.contains('lede')?20:10;
+    if(!lines.length)continue;const r=lines[0],priority=item.role==='beat'&&item.el.classList.contains('is-active')?60:item.role==='heading'?40:item.el.classList.contains('lede')?30:item.role==='beat'?20:10;
     candidates.push({...item,rect:r,priority});
-   }if(candidates.some(c=>c.role==='company'))return candidates.find(c=>c.role==='company');if(candidates.length)return candidates.sort((a,b)=>Math.abs(a.rect.top-b.rect.top)<12?b.priority-a.priority:a.rect.top-b.rect.top)[0];}
+   }if(candidates.length)return candidates.sort((a,b)=>b.priority-a.priority||a.rect.top-b.rect.top)[0];}
    return null;
   }
   function read({position,project,source,components=[],phase=0,accent,active=true}){

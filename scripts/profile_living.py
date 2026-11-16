@@ -39,7 +39,8 @@ def render(head, data, lang='en'):
     chapters=[]
     for chapter_index,c in enumerate(story['chapters']):
         paras = ''.join('<p>'+E(p)+'</p>' for p in c['paragraphs'])
-        career = '<p class="career-context">'+E(data['jobs'][c['careerIndex']][1])+'</p>' if 'careerIndex' in c else ''
+        career = ('<p class="career-context" data-career-context><span class="career-company">'+E(data['jobs'][c['careerIndex']][0])+'</span>'+E(data['jobs'][c['careerIndex']][1])+'</p>') if 'careerIndex' in c else ''
+        period = '<p class="story-era">'+(f'<time datetime="{E(c["year"],quote=True)}">{E(c["yearLabel"])}</time>' if 'year' in c else '')+'<span>'+E(c['period'])+'</span></p>'
         extras = '<blockquote>'+E(c['quote'])+'</blockquote>' if 'quote' in c else ''
         if 'steps' in c:
             extras += '<ol class="craft-steps">'+''.join('<li>'+E(s)+'</li>' for s in c['steps'])+'</ol><p class="caption">A visual metaphor for learning and synthesis. The scenes are symbolic, not documentary recreations.</p>'
@@ -54,8 +55,7 @@ def render(head, data, lang='en'):
         beats = '<ol class="scene-sequence" aria-label="Scenes in this chapter">'+''.join(f'<li data-story-beat="{c["scene"]}:{i}" data-tone="{b["tone"]}"><span>{i+1:02d}</span>{E(b["action"])}</li>' for i,b in enumerate(c['beats']))+'</ol>'
         tags = ''.join('<span>'+E(t)+'</span>' for t in c['tags'])
         title = '<br>'.join(E(s) for s in c['title'].split('\n'))
-        company_attr = ' data-company' if 'careerIndex' in c else ''
-        chapters.append(f'''<section class="chapter" id="{c['id']}" data-scene="{c['scene']}" aria-labelledby="title-{c['id']}"><div class="chapter-copy"><p class="eyebrow">{E(c['eyebrow'])}</p><h2 id="title-{c['id']}">{title}</h2><p class="lede"{company_attr}>{E(c['lede'])}</p>{beats}{career}{paras}{extras}<div class="tags">{tags}</div>{bridge}</div>{figure(c['scene'],c['sceneDescription'])}</section>''')
+        chapters.append(f'''<section class="chapter" id="{c['id']}" data-scene="{c['scene']}" data-story-era="{c['era']}" aria-labelledby="title-{c['id']}"><div class="chapter-copy"><p class="eyebrow">{E(c['eyebrow'])}</p>{period}<h2 id="title-{c['id']}">{title}</h2><p class="lede">{E(c['lede'])}</p>{beats}{paras}{career}{extras}<div class="tags">{tags}</div>{bridge}</div>{figure(c['scene'],c['sceneDescription'])}</section>''')
     rail = ''.join(f'<a href="#{c[0]}" aria-label="{c[1]}" title="{c[1]}"><span>{i:02d}</span></a>' for i,c in enumerate([('intro','Present')]+[(c['id'],c['eyebrow'].split(' / ')[1].title()) for c in story['chapters']]))
     jobs=''.join(f'<article class="career-row"><span class="row-number">0{i+1}</span><div><h3>{E(k)}</h3><p>{E(v)}</p></div></article>' for i,(k,v) in enumerate(data['jobs']))
     fits=''.join(f'<div class="fit-row"><h3>{E(k)}</h3><p>{E(v)}</p></div>' for k,v in data['fits'])

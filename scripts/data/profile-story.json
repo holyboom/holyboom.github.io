@@ -1,6 +1,6 @@
 {
-  "release": "living-thai-v19",
-  "updated": "2026-11-15",
+  "release": "living-story-v20",
+  "updated": "2026-11-16",
   "chapters": [
     {
       "id": "origins",
@@ -50,14 +50,16 @@
           "energy": 1,
           "shot": "detail"
         }
-      ]
+      ],
+      "era": "origins",
+      "period": "Before AI · the urge to design"
     },
     {
       "id": "allianz",
       "scene": 2,
       "eyebrow": "02 / FOUNDATIONS",
       "title": "A beautiful idea\nhas to hold up.",
-      "lede": "Allianz Technology",
+      "lede": "Frontend that has to work as part of a system people depend on.",
       "careerIndex": 3,
       "paragraphs": [
         "Enterprise frontend work gave my interest in design a practical setting. An interface sits within a larger application, with requirements and people depending on it. That context remains part of how I approach the experiences I build today."
@@ -101,14 +103,16 @@
           "energy": 1,
           "shot": "detail"
         }
-      ]
+      ],
+      "era": "before-ai",
+      "period": "Before AI · frontend foundations"
     },
     {
       "id": "accenture",
       "scene": 3,
       "eyebrow": "03 / CONNECTIONS",
       "title": "The world grows\nbeyond your screen.",
-      "lede": "Accenture",
+      "lede": "What I built on screen had to connect with other people’s work.",
       "careerIndex": 2,
       "paragraphs": [
         "The work connected business requirements with hands-on implementation. My contribution lived within a shared effort: understanding what needed to be built, translating it into frontend delivery, and working with engineers across locations."
@@ -118,7 +122,7 @@
         "Requirements",
         "Distributed teams"
       ],
-      "bridge": "Then the tools themselves began to change.",
+      "bridge": "In 2024, while I was still working at ttb, I began developing my AI capabilities.",
       "hook": "What if intelligence could become part of the workflow?",
       "sceneDescription": "Listen to the requirement. A symbolic maker interacts with a clearly outlined brief above a woven landscape.",
       "beats": [
@@ -152,29 +156,33 @@
           "energy": 1,
           "shot": "reveal"
         }
-      ]
+      ],
+      "era": "before-ai",
+      "period": "Before AI · working across a larger system"
     },
     {
       "id": "ttb",
       "scene": 4,
-      "eyebrow": "04 / APPLIED INTELLIGENCE",
-      "title": "Let intelligence in.\nKeep people close.",
-      "lede": "ttb spark",
+      "eyebrow": "04 / THE POSSIBILITY BECOMES PERSONAL",
+      "title": "I could see it.\nI wanted to build\nsomething to try.",
+      "lede": "I began developing my AI capabilities while I was still at ttb. What I believed still needed to become something I could show through the work.",
       "careerIndex": 1,
       "paragraphs": [
-        "AI-assisted engineering introduced another layer to the experience: how a model fits into an existing process, and where a person needs to inspect its output. Human review is part of that workflow. It also remains an explicit part of my current approach to applied AI."
+        "Some people around me were not yet convinced, including people working in the same field. I wanted to give them something they could actually try. My belief alone could only take the idea so far.",
+        "I started with the work in front of me: bringing GPT into Jira, Confluence and Bitbucket workflows, with people reviewing the outputs. The possibility I had imagined began to present real problems I had to work through.",
+        "A model’s answer was a starting point. I still needed to understand where it came from, what was missing, and where a person should stop and inspect it. Working through those details showed me the distance between an answer and a tool someone could trust enough to use."
       ],
       "tags": [
         "Jira · Confluence · Bitbucket",
         "Human review"
       ],
-      "bridge": "I wanted to explore what that possibility could become in my own hands.",
-      "hook": "What would I keep building before everyone saw its value?",
+      "bridge": "Look closer than the visible work, and there were problems and uncertainty I had to work through while building it.",
+      "hook": "What did I do when I could not yet see the next step?",
       "sceneDescription": "Invite intelligence into the workflow. A symbolic maker interacts with a clearly outlined ai above a woven landscape.",
       "beats": [
         {
-          "action": "Invite intelligence into the workflow",
-          "caption": "A new possibility enters a familiar process.",
+          "action": "See something worth building",
+          "caption": "In 2024, while still at ttb, I began developing AI.",
           "pose": "type",
           "prop": "ai",
           "tone": "dream",
@@ -183,8 +191,8 @@
           "shot": "draft"
         },
         {
-          "action": "Pause at the review boundary",
-          "caption": "An answer is not the end of a human decision.",
+          "action": "Put the belief to the test",
+          "caption": "The work had to be open to someone else’s inspection.",
           "pose": "inspect",
           "prop": "review",
           "tone": "human",
@@ -193,8 +201,8 @@
           "shot": "detail"
         },
         {
-          "action": "Keep the person in control",
-          "caption": "Move forward with a visible path to inspect and review.",
+          "action": "Build something people can try",
+          "caption": "Start with the work in front of me. Keep making it better.",
           "pose": "approve",
           "prop": "verified",
           "tone": "care",
@@ -202,14 +210,19 @@
           "energy": 1,
           "shot": "connect"
         }
-      ]
+      ],
+      "era": "ai-start",
+      "period": "Beginning AI development while still working at ttb",
+      "year": "2024",
+      "yearLabel": "2024",
+      "quote": "I wanted to give them something to try before asking them to believe."
     },
     {
       "id": "conviction",
       "scene": 5,
-      "eyebrow": "05 / THE PERSONAL THREAD",
+      "eyebrow": "05 / ANOTHER SIDE OF THE BEGINNING",
       "title": "Not everyone\nsaw it yet.\nI kept building.",
-      "lede": "I believed in a future I still had to build. At first, I was building it on my own.",
+      "lede": "As I began learning and developing AI, some people around me did not yet see the same possibility.",
       "paragraphs": [
         "Some people around me, including others working in the same field, were not yet convinced by AI. I could see its possibility. Making that possibility useful meant facing the problems myself, one after another.",
         "The skills and workflows I build come from those encounters. I work through a problem, reflect on what it taught me, seek better methods, and return to the next version. Week after week, that effort becomes HolyMind."
@@ -219,7 +232,7 @@
         "Independent exploration",
         "Continuous refinement"
       ],
-      "bridge": "I carried the experience forward. Then I searched for the methods that could give it a life of its own.",
+      "bridge": "The problems I encountered gradually became lessons I could carry into the next piece of work.",
       "hook": "How does a lesson become a skill with a character of its own?",
       "sceneDescription": "A symbolic maker protects a small light while the surrounding network closes in and fragments. In the quiet that follows, the pieces gather into a repaired path and the maker rises.",
       "beats": [
@@ -273,14 +286,16 @@
           "energy": 0.85,
           "shot": "rise"
         }
-      ]
+      ],
+      "era": "ai-development",
+      "period": "A closer look at the AI journey that began while at ttb"
     },
     {
       "id": "craft",
       "scene": 6,
       "eyebrow": "06 / EXPERIENCE, DISTILLED",
       "title": "The problem\nbecomes part\nof the craft.",
-      "lede": "A skill begins where a real problem refuses to go away.",
+      "lede": "I let my experience developing AI settle, then ask what is worth keeping.",
       "paragraphs": [
         "I let the experience settle, then look outward. I research approaches, ideas, and tools from around the world, selecting and combining the strongest methods I can find for the problem in front of me.",
         "A skill gradually earns its own purpose, method, and character. That is the moat I am working to build: accumulated experience, careful selection, and repeated refinement. Connected into workflows, those capabilities become a larger way of working."
@@ -341,7 +356,9 @@
           "energy": 1,
           "shot": "reveal"
         }
-      ]
+      ],
+      "era": "ai-development",
+      "period": "Lessons gathered through developing AI"
     },
     {
       "id": "ai-experiences",
@@ -404,7 +421,9 @@
           "energy": 1,
           "shot": "reveal"
         }
-      ]
+      ],
+      "era": "present",
+      "period": "Today · design, software and AI together"
     },
     {
       "id": "work-heading",
@@ -455,7 +474,9 @@
           "energy": 1,
           "shot": "reveal"
         }
-      ]
+      ],
+      "era": "present",
+      "period": "Current public work"
     }
   ],
   "workPaths": [
