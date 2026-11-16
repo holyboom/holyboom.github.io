@@ -283,7 +283,7 @@
   if(readingWidth===innerWidth&&readingHeight===innerHeight)readingContext=captureReadingContext();
   wake();}
  addEventListener('scroll',scroll,{passive:true});
- addEventListener('resize',()=>{const structural=previousWidth!==innerWidth||Math.abs(previousHeight-innerHeight)>120;previousWidth=innerWidth;previousHeight=innerHeight;if(structural){activate(true);}else {measure();readingWidth=innerWidth;readingHeight=innerHeight;readingContext=captureReadingContext();}});
+ addEventListener('resize',()=>{const structural=previousWidth!==innerWidth||Math.abs(previousHeight-innerHeight)>120;previousWidth=innerWidth;previousHeight=innerHeight;if(structural){activate(true);}else {measure();readingWidth=innerWidth;readingHeight=innerHeight;readingContext=captureReadingContext();}scroll();});
  beneath.addEventListener('toggle',()=>{measure();wake();});
  workPaths.forEach(el=>el.addEventListener('toggle',()=>{measure();wake();}));
  document.querySelector('.finale-catalog')?.addEventListener('toggle',()=>{measure({preserve:true});scroll();wake();});

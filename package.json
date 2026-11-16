@@ -74,7 +74,8 @@
     "test:profile-thai": "node scripts/qa-profile-thai.cjs",
     "test:profile-possibility": "node scripts/qa-profile-possibility.cjs",
     "test:profile-finale": "node scripts/qa-profile-finale.cjs",
-    "test:profile-alchemy": "node scripts/qa-profile-alchemy.cjs"
+    "test:profile-alchemy": "node scripts/qa-profile-alchemy.cjs",
+    "test:profile-handoff": "node scripts/qa-profile-handoff.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"

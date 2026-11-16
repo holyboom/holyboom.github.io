@@ -61,8 +61,7 @@ def render(head, data, lang='en'):
             extras += work_paths()
             extras += '<div class="proof-links">'+''.join(f'<a href="{E(u,quote=True)}">{E(t)} <span aria-hidden="true">↗</span></a>' for t,u in data['proofs'])+'</div>'
         next_id = story['chapters'][chapter_index+1]['id'] if chapter_index+1<len(story['chapters']) else 'experience'
-        passage = '<div class="finale-passage" aria-hidden="true"><i></i><i></i><i></i></div>' if c['id']=='work-heading' else ''
-        bridge = passage + f'<a class="story-bridge" href="#{next_id}"><span class="bridge-thread" aria-hidden="true"></span><span class="bridge-copy">{E(c["bridge"])}<strong>{E(c["hook"])}</strong></span><span class="bridge-arrow" aria-hidden="true">↓</span></a>'
+        bridge = f'<a class="story-bridge" href="#{next_id}"><span class="bridge-thread" aria-hidden="true"></span><span class="bridge-copy">{E(c["bridge"])}<strong>{E(c["hook"])}</strong></span><span class="bridge-arrow" aria-hidden="true">↓</span></a>'
         beats = '<ol class="scene-sequence" aria-label="Scenes in this chapter">'+''.join(f'<li data-story-beat="{c["scene"]}:{i}" data-tone="{b["tone"]}"><span>{i+1:02d}</span>{E(b["action"])}</li>' for i,b in enumerate(c['beats']))+'</ol>'
         tags = ''.join('<span>'+E(t)+'</span>' for t in c['tags'])
         title = '<br>'.join(E(s) for s in c['title'].split('\n'))

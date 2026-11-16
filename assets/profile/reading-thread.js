@@ -29,6 +29,23 @@
  }
  function strandPath(sample,offset,phase){return Array.from({length:49},(_,i)=>{const u=i/48,p=sample(u),a=sample(u-.008),b=sample(u+.008),dx=b[0]-a[0],dy=b[1]-a[1],n=Math.hypot(dx,dy)||1,k=offset*Math.sin(Math.PI*u)*Math.sin(TAU*(u*1.5-phase));return (i?'L':'M')+[p[0]-dy/n*k,p[1]+dx/n*k].join(' ');}).join(' ');}
  function canvasPoint(q,rect,padding,size){return [rect.left+padding.left+q[0]/size.width*(rect.width-padding.left-padding.right),rect.top+padding.top+q[1]/size.height*(rect.height-padding.top-padding.bottom)];}
+ // Closed disclosures can retain Range rectangles without painting their text.
+ // A tether must terminate on a visible glyph, never one of those retained boxes.
+ function visibleReceiver(el){
+  if(!el?.isConnected)return false;
+  for(let d=el.closest('details');d;d=d.parentElement?.closest('details'))if(!d.open&&!d.firstElementChild?.contains(el))return false;
+  if(el.checkVisibility&&!el.checkVisibility({checkOpacity:true,checkVisibilityCSS:true,contentVisibilityAuto:true}))return false;
+  const style=getComputedStyle(el);return style.display!=='none'&&style.visibility!=='hidden'&&style.visibility!=='collapse';
+ }
+ function textLines(el){
+  if(!visibleReceiver(el))return [];
+  const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),lines=[];let node;
+  while((node=walker.nextNode())){const parent=node.parentElement;if(!node.textContent.trim()||parent?.closest('[aria-hidden="true"]')||!visibleReceiver(parent))continue;
+   if(el.dataset.storyBeat&&node!==el.lastChild)continue;
+   const range=document.createRange();range.selectNodeContents(node);for(const r of range.getClientRects())if(r.width>5&&r.height>4)lines.push({left:r.left,right:r.right,top:r.top+scrollY,bottom:r.bottom+scrollY});range.detach();
+  }
+  return lines;
+ }
  function create({chapters,canvas,stage}){
   const svg=document.createElementNS(NS,'svg');svg.classList.add('reading-thread');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');
   svg.innerHTML='<defs><linearGradient id="reading-thread-ink" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffd394"/><stop offset=".5" stop-color="#e8c9ff"/><stop offset="1" stop-color="#c398ff"/></linearGradient></defs><path class="reading-component-trace" pathLength="1"/><path class="reading-thread-halo"/><path class="reading-thread-line"/><g class="reading-thread-weave"></g><path class="reading-thread-under"/><ellipse class="reading-thread-arrival"/><circle class="reading-thread-source"/><circle class="reading-thread-source-ring"/><g class="reading-thread-packet"></g><g class="reading-thread-dust"></g><circle class="reading-thread-end" r="2.5"/>';
@@ -41,13 +58,14 @@
    const style=getComputedStyle(canvas);for(const side of ['left','right','top','bottom'])padding[side]=parseFloat(style['padding'+side[0].toUpperCase()+side.slice(1)])||0;
    headerBottom=document.querySelector('.site-header').getBoundingClientRect().bottom;
    receivers=chapters.map((chapter,index)=>[...chapter.querySelectorAll('h1,h2,h3,.career-context,.lede,.scene-sequence li,.chapter-copy>p,blockquote,.story-bridge,.section-heading>p,.career-row p,.contact p')].filter(el=>!el.classList.contains('eyebrow')&&!el.classList.contains('story-era')&&!el.hasAttribute('data-career-context')).map(el=>{
-    const range=document.createRange();range.selectNodeContents(el.dataset.storyBeat&&el.lastChild?.nodeType===3?el.lastChild:el);const lines=[...range.getClientRects()].filter(r=>r.width>5&&r.height>4).map(r=>({left:r.left,right:r.right,top:r.top+scrollY,bottom:r.bottom+scrollY}));range.detach();
+    const lines=textLines(el);
     const role=/^H[123]$/.test(el.tagName)?'heading':el.dataset.storyBeat?'beat':'copy';return {el,index,lines,role};
    }).filter(r=>r.lines.length));
   }
   function select(index,compact,safeTop){
    const groups=[index,index+1,index-1].filter(i=>i>=0&&i<receivers.length);
    for(const group of groups){const candidates=[];for(const item of receivers[group]){
+    if(!visibleReceiver(item.el))continue;
     const lines=item.lines.map(r=>({...r,top:r.top-scrollY,bottom:r.bottom-scrollY})).filter(r=>r.top>=safeTop&&r.bottom<innerHeight-18);
     if(!lines.length)continue;const r=lines[0],priority=item.role==='beat'&&item.el.classList.contains('is-active')?60:item.role==='heading'?40:item.el.classList.contains('lede')?30:item.role==='beat'?20:10;
     candidates.push({...item,rect:r,priority});
