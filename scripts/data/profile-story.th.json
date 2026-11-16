@@ -1,5 +1,5 @@
 {
-  "release": "living-story-v20",
+  "release": "living-possibility-v21",
   "updated": "2026-11-16",
   "chapters": [
     {
@@ -473,7 +473,7 @@
           "action": "ส่งต่อสิ่งที่เป็นไปได้",
           "caption": "จากตรงนี้ เราอาจมีโจทย์ใหม่ให้ลงมือด้วยกัน",
           "pose": "offer",
-          "prop": "recipient",
+          "prop": "possibility",
           "tone": "human",
           "meaning": "เรื่องถัดไป",
           "energy": 1,

@@ -69,7 +69,8 @@
   // The original B study's missing optical layer: a visible charge, a moving
   // light, then a receiver bloom. Local falloff, never a full-screen flash.
   const launch=Math.sin(Math.PI*clamp((phase-.24)/.20))**2;
-  flares.push({p:frame.origin,radius:(frame.compact?34:58)*(1+s.charge*.48),alpha:s.visibility*(s.charge*.95+launch*.42),core:2+s.charge*3.8,tone:cue.review?warm:color,role:'source'});
+  const compactOffering=frame.compact&&String(frame.componentId||'').startsWith('work-28-vessel-');
+  flares.push({p:frame.origin,radius:(frame.compact?34:58)*(1+s.charge*.48)*(compactOffering ? .65 : 1),alpha:s.visibility*(s.charge*.95+launch*.42)*(compactOffering ? .75 : 1),core:2+s.charge*3.8,tone:cue.review?warm:color,role:'source'});
   flares.push({p:ribbonAt(s.travel),radius:frame.compact?17:24,alpha:s.flight*.68,core:2.5,tone:warm,role:'transfer'});
   flares.push({p:frame.endpoint,radius:frame.compact?26:38,alpha:s.impact*.64,core:1+s.impact*3,tone:color,role:'receiver'});
   if(s.charge>.02){const p=frame.origin,size=(frame.compact?12:20)*(1+s.charge*.6);for(const [x,y]of [[size,0],[0,size*.65]])paths.push({d:path([[p[0]-x,p[1]-y],[p[0]-x*.25,p[1]-y*.25],[p[0]+x*.25,p[1]+y*.25],[p[0]+x,p[1]+y]]),alpha:s.charge*s.visibility*.85,tone:'#fff2dc',width:1.1});}

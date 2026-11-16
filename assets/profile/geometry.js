@@ -327,6 +327,47 @@
   }
   return objectCache[index]={paths,texts,prop};
  }
+ // A single work-chapter offering replaces the repeated browser/recipient prop.
+ // World-space ribs share the approved palm and camera; every path retraces scroll.
+ function possibilityVessel(position,p){
+  const track=cameraTrack(position),unfold=smooth((track-27.62)/.36),work=p.work;
+  const source=p.contacts.right.tip,hub=add(source,add(mul(work.v,.045),mul(work.u,-.025)));
+  const height=.14+.30*unfold,ceiling=p.head[1]-(.35-.05*unfold);
+  if(hub[1]+height>ceiling)hub[1]=ceiling-height;
+  const world=q=>add(hub,add(add(mul(work.u,q[0]),mul(work.v,q[1])),mul(work.normal,q[2])));
+  const ribs=[],paths=[],path=(id,points,color,width=1,alpha=1,extra={})=>paths.push({id:'work-28-vessel-'+id,points,color,width,alpha,fill:null,role:'volume',...extra});
+  const cubic=(a,b,c,d,t)=>a.map((n,i)=>(1-t)**3*n+3*(1-t)**2*t*b[i]+3*(1-t)*t*t*c[i]+t**3*d[i]);
+  const leaves=[
+   {tip:[-.82,.20,-.07],c1:[-.18,.06,.10],c2:[-.64,.34,.05],bud:[-.065,.14,-.035],width:.18,color:cfg.tones.dream},
+   {tip:[-.48,.37,-.24],c1:[-.13,.14,-.11],c2:[-.62,.31,-.27],bud:[.005,.15,-.055],width:.12,color:cfg.tones.build},
+   {tip:[.12,.31,.10],c1:[.14,.05,.13],c2:[.23,.25,.14],bud:[.065,.10,.045],width:.095,color:cfg.tones.care}
+  ];
+  for(let index=0;index<leaves.length;index++){
+   const leaf=leaves[index],open=smooth((unfold-index*.065)/(1-index*.065)),tip=lerp(leaf.bud,leaf.tip,open),c1=lerp(mul(leaf.bud,.30),leaf.c1,open),c2=lerp(mul(leaf.bud,.72),leaf.c2,open);
+   const centre=t=>cubic([0,0,0],c1,c2,tip,t);
+   const surface=(t,s)=>{const q=centre(t),a=centre(clamp(t-.001)),b=centre(clamp(t+.001)),side=norm([-(b[1]-a[1]),b[0]-a[0],0]),span=leaf.width*(.16+.84*open)*Math.sin(PI*t)**.85;return world(add(q,add(mul(side,span*s),[0,0,(.025+.06*open)*Math.sin(PI*t)*(1-s*s)])));};
+   ribs.push(surface);
+   const sample=(fn,count=33)=>Array.from({length:count},(_,i)=>fn(i/(count-1)));
+   path(index+'-spine',sample(t=>surface(t,0)),leaf.color,1.35,.92);
+   path(index+'-reflected-light',sample(t=>surface(t*.20,0),13),cfg.tones.human,1.05,.25+.34*unfold);
+   for(const side of [-1,1])path(index+'-rim-'+side,sample(t=>surface(t,side)),leaf.color,1.15,.78);
+   for(let row=1;row<=7;row++){const v=-1+row/4;path(index+'-warp-'+row,sample(t=>surface(t,v),25),leaf.color,.55,.22+.10*(1-Math.abs(v)));}
+   for(let rib=1;rib<=10;rib++){const t=rib/11;path(index+'-weft-'+rib,sample(v=>surface(t,v*2-1),17),leaf.color,.60,.25+.13*Math.sin(PI*t));}
+   const rim=[...sample(t=>surface(t,-1),17),...sample(t=>surface(1-t,1),17)];rim.push(rim[0]);
+   path(index+'-contour',rim,leaf.color,.45,.13,{readingAnchor:true});
+   const q=surface(1,0),radius=.008+.005*open;
+   path(index+'-tip',sample(t=>add(q,add(mul(work.u,Math.cos(TAU*t)*radius),mul(work.v,Math.sin(TAU*t)*radius))),17),cfg.palette.highlight,1.35,.92);
+  }
+  for(const [index,[a,b]] of [[ribs[0](.36,.6),ribs[1](.42,-.6)],[ribs[1](.27,.4),ribs[2](.44,-.5)]].entries()){
+   const c=add(lerp(a,b,.35),mul(work.normal,index?-.06:.05)),d=add(lerp(a,b,.70),mul(work.v,-.045));
+   path('cross-span-'+index,Array.from({length:25},(_,i)=>cubic(a,c,d,b,i/24)),index?cfg.tones.care:cfg.palette.highlight,.65,.28*unfold);
+  }
+  const ring=Array.from({length:25},(_,i)=>world([Math.cos(i/24*TAU)*.025,Math.sin(i/24*TAU)*.025,0]));
+  path('hub',ring,cfg.tones.human,1.65,.90,{readingAnchor:true});
+  const light=p.light,gap=Math.hypot(...sub(light,hub));
+  if(gap>.008)path('hand-thread',Array.from({length:17},(_,i)=>{const t=i/16;return add(lerp(light,hub,t),mul(work.v,Math.sin(PI*t)*.025));}),cfg.tones.human,.95,.68);
+  return {id:'possibility-vessel',prop:'possibility',paths,texts:[],unfold,hub,source,track};
+ }
  // Quiet, authored surroundings share the camera and scroll timeline, but never
  // become hand targets. Stable path identities let their woven forms reconfigure.
  const surroundingsCache=[];
@@ -621,6 +662,7 @@
   const keyboard=q=>{const f=work.keyboard||work;return add(f.origin,add(mul(f.u,(q[0]-.855)*(f.width||.84)/1.59),mul(f.v,(q[1]+.34)*(f.height||.30)/.28)));};
   const layers=[{index:from,alpha:1-t,textAlpha:1-smooth((raw-handoff[0]+.08)/.08)},{index:to,alpha:t,textAlpha:smooth((raw-handoff[1])/.08)}].filter(o=>o.alpha>.005).map(o=>{
    const object=objectScene(o.index),ember=object.prop==='ember';
+   if(object.prop==='possibility')return {...o,role:'front-work',...possibilityVessel(position,p)};
    return {...o,role:'front-work',prop:object.prop,paths:object.paths.map((item,pathIndex)=>({...item,id:'work-'+o.index+'-'+pathIndex,alpha:item.alpha*(object.prop==='house'&&!item.fill? .32:1),points:item.points.map(q=>item.role==='keyboard'?keyboard(q):ember?add(p.light,add(mul(work.u,(q[0]-.89)*.42),mul(work.v,(q[1]-.32)*.42))):map(q))})),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):map(item.point)}))};
   });
   if(p.drawing?.strokes){const alpha=p.phase.to===3?1-smooth(p.phase.progress/.32):1,paths=p.drawing.strokes.filter(points=>points.length>1).map(points=>({points,color:cfg.tones.human,width:2.3,alpha:1,fill:null,role:'work'}));if(paths.length&&alpha>.005)layers.push({alpha,textAlpha:0,paths,texts:[]});}

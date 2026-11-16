@@ -130,14 +130,15 @@
   }
   if(!modelCache||modelCache.position!==current||modelCache.detail!==detail||modelCache.exploded!==exploded||modelCache.ambientPhase!==ambientPhase)modelCache={position:current,detail,exploded,ambientPhase,lines:g.frame(current,detail,exploded,ambientPhase)};
   const geom=modelCache.lines,theme=g.paletteAt(current),emotion=g.dramaAt(current);
-  const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow),lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength,lightHalo=(humanLight?12+handLight.charge*13:7)*sourceStrength;
+  const compactOffering=innerWidth<768&&g.storyAt(current).prop==='possibility';
+  const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow),lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength,lightHalo=(humanLight?12+handLight.charge*13:7)*sourceStrength*(compactOffering ? .65 : 1);
   const project=g.createProjector(current,w,h,{compact:innerWidth<768,yaw:px,pitch:py,expanded:exploded});renderedCamera=project.camera;
   // Performance is a pure function of story position. Scaling the whole body to
   // suggest breathing also moved planted feet, hands and the work surface.
   const projectPoint=project;
   const rawIllustrations=g.illustration(current,exploded);
   const readingSource=project.camera.eyeWeight>.5?g.performanceAt(current).contacts.left.tip:g.lightAt(current);
-  const readingComponents=rawIllustrations.filter(layer=>layer.role==='front-work'&&layer.alpha>.5).flatMap(layer=>layer.paths.filter(item=>item.fill&&item.points.length>=4&&!item.skin));
+  const readingComponents=rawIllustrations.filter(layer=>layer.role==='front-work'&&layer.alpha>.5).flatMap(layer=>layer.paths.filter(item=>(item.fill||item.readingAnchor)&&item.points.length>=4&&!item.skin));
   const readingFrame=readingThread?.read({position:current,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible});
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
   const halo=ctx.createRadialGradient(w*.5,h*.5,0,w*.5,h*.5,Math.min(w,h)*.43);halo.addColorStop(0,theme.accent+'16');halo.addColorStop(1,'rgba(133,83,222,0)');ctx.globalAlpha=1-emotion.isolation*.75-emotion.doubt*.15;ctx.fillStyle=halo;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
@@ -192,7 +193,7 @@
   // through a work surface. The sharp strands join the painter queue below.
   if(gc){gc.setTransform(.5,0,0,.5,0,0);gc.clearRect(0,0,w,h);gc.lineWidth=2;gc.lineCap=gc.lineJoin='round';
    for(const line of projected){if(!line.important)continue;gc.strokeStyle=ink(line);gc.globalAlpha=line.alpha*.65;path(gc,line.points);gc.stroke();}
-   if(seed){gc.globalAlpha=1;gc.fillStyle=g.config.tones.human;gc.beginPath();gc.arc(seed[0],seed[1],lightHalo,0,Math.PI*2);gc.fill();}ctx.save();ctx.globalAlpha=1;ctx.filter='blur(5px)';ctx.drawImage(glow,0,0,w,h);ctx.restore();}
+   if(seed){gc.globalAlpha=compactOffering ? .75 : 1;gc.fillStyle=g.config.tones.human;gc.beginPath();gc.arc(seed[0],seed[1],lightHalo,0,Math.PI*2);gc.fill();}ctx.save();ctx.globalAlpha=1;ctx.filter='blur(5px)';ctx.drawImage(glow,0,0,w,h);ctx.restore();}
   const commands=[];
   for(const line of projected){
    if(line.group==='hand'){

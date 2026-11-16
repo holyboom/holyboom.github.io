@@ -1,5 +1,5 @@
 {
-  "release": "living-story-v20",
+  "release": "living-possibility-v21",
   "updated": "2026-11-16",
   "chapters": [
     {
@@ -468,7 +468,7 @@
           "action": "Offer the next possibility",
           "caption": "This story continues through what we choose to build next.",
           "pose": "offer",
-          "prop": "recipient",
+          "prop": "possibility",
           "tone": "human",
           "meaning": "Possibility",
           "energy": 1,

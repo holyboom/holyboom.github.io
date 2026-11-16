@@ -71,7 +71,8 @@
     "test:profile-hand-light": "node scripts/qa-profile-hand-light.cjs",
     "test:profile-cinematic": "node scripts/qa-profile-cinematic.cjs",
     "test:profile-opening": "node scripts/qa-profile-opening.cjs",
-    "test:profile-thai": "node scripts/qa-profile-thai.cjs"
+    "test:profile-thai": "node scripts/qa-profile-thai.cjs",
+    "test:profile-possibility": "node scripts/qa-profile-possibility.cjs"
   },
   "devDependencies": {
     "playwright": "1.65.0"
