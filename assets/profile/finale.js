@@ -55,7 +55,7 @@
    portal.style.display='block';portal.style.left=mix(s.left,d.left,u)+'px';portal.style.top=top+'px';portal.style.width=w+'px';portal.style.height=h+'px';
    return portal;
   }
-  function drawPath(points,color,width,alpha,project){if(alpha<=.002||points.length<2)return;ctx.globalAlpha=alpha;ctx.strokeStyle=color||'#b17af5';ctx.lineWidth=width||.7;ctx.beginPath();const a=project(points[0]);ctx.moveTo(a[0],a[1]);for(let i=1;i<points.length;i++){const q=project(points[i]);ctx.lineTo(q[0],q[1]);}ctx.stroke();}
+  function drawPath(points,color,width,alpha,project){if(alpha<=.002||points.length<2)return;ctx.globalAlpha=clamp(alpha);ctx.strokeStyle=color||'#b17af5';ctx.lineWidth=width||.7;ctx.beginPath();const a=project(points[0]);ctx.moveTo(a[0],a[1]);for(let i=1;i<points.length;i++){const q=project(points[i]);ctx.lineTo(q[0],q[1]);}ctx.stroke();}
   const formationAt=p=>smooth((p-.94)/.06);
  function render(dt,y){const p=progress(y),r=canvas.getBoundingClientRect(),visible=r.bottom>0&&r.top<innerHeight&&r.right>0;if(!active||!r.width||!r.height)return {active:false,pending:false};
    const c=time.step(p,dt,visible&&!document.hidden),f=model.sample(p,c.time,c.held,innerWidth<768,c.glowTime),w=r.width,h=r.height,project0=g.projectorForCamera(f.camera,w,h),release=smooth(p/.12),sx=mix((sourceRect.width-padding.left-padding.right)/sourceRect.width,1,release),sy=mix((sourceRect.height-padding.top-padding.bottom)/sourceRect.height,1,release),project=q=>{const v=project0(q);return [v[0]*sx+padding.left*(1-release),v[1]*sy+padding.top*(1-release),v[2]];};
