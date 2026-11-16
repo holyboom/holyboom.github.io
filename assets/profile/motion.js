@@ -187,6 +187,24 @@
  function poseAt(timeline){return evaluate(timeline,false);}
  function lightAt(timeline){return evaluate(timeline,true);}
  function pose(value){if(typeof value==='number')return poseAt(value);const aliases={build:5,review:11,experience:24};const i=aliases[value]??names.indexOf(value);return poseAt(i<0?0:i);}
+ // Additive finale gestures reuse the original fixed-length rig and C glove.
+ function finalePose(base,options={}){
+  if(!options.open&&!options.weight&&!options.headWeight)return base;
+  const p={...base,frames:{...base.frames},contacts:{...base.contacts},reach:{...base.reach}};
+  const weight=clamp(options.weight||0),side=options.side===-1?-1:1,target=options.target;
+  for(const handSide of [-1,1]){
+   const suffix=handSide<0?'L':'R',key=handSide<0?'left':'right',shoulder=p['shoulder'+suffix],original=p['hand'+suffix];
+   let goal=original,wrist=p.frames['wrist'+suffix],shape=p.contacts[key].shape;
+   if(options.open){const amount=clamp(options.open),requested=add(shoulder,[handSide*.43,-.16,.30]);goal=lerp(original,requested,amount);shape=handShapes.blend(shape,handShapes.pose('open',handSide),amount);}
+   if(target&&handSide===side&&weight){const direction=norm(sub(target,shoulder)),requested=add(shoulder,mul(direction,.58));goal=lerp(goal,requested,weight);const aiming=norm(sub(target,goal));wrist=blendFrame(wrist,palm(aiming,[0,1,0]),weight);shape=handShapes.blend(shape,handShapes.pose('point',handSide),weight);}
+   const solution=twoBone(shoulder,goal,lengths.upperArm,lengths.forearm,add(shoulder,[handSide*.48,-.42,.12]));
+   p['elbow'+suffix]=solution.joint;p['hand'+suffix]=solution.end;p.frames['wrist'+suffix]=wrist;
+   p.contacts[key]={...p.contacts[key],shape,grip:target&&handSide===side&&weight>.5?'point':'open',active:false,weight:0,tip:add(solution.end,apply(wrist,shape.contactOffset))};
+   p.reach[key]={requested:goal,solved:solution.end,clamped:solution.clamped,error:solution.error};
+  }
+  if(target){const delta=sub(target,p.head),yaw=clamp(Math.atan2(delta[0],delta[2]),-.62,.62),pitch=clamp(-Math.atan2(delta[1],Math.hypot(delta[0],delta[2])),-.25,.30);p.frames.head=blendFrame(base.frames.head,frame(yaw,pitch,0),clamp(options.headWeight||weight));}
+  p.light=p.contacts[side<0?'left':'right'].tip;return p;
+ }
  function restPose(){return poseAt(29);}
- const api={poseAt,lightAt,accentAt,pose,restPose,setClips,lengths,names};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
+ const api={poseAt,lightAt,accentAt,pose,restPose,finalePose,setClips,lengths,names};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

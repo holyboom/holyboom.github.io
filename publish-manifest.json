@@ -92,7 +92,9 @@
     "assets/profile/locale-th.js",
     "assets/profile/th.css",
     "assets/fonts/noto-sans-thai.woff2",
-    "assets/fonts/noto-serif-thai.woff2"
+    "assets/fonts/noto-serif-thai.woff2",
+    "assets/profile/finale-data.js",
+    "assets/profile/finale.js"
   ],
   "assetDirectories": [
     {

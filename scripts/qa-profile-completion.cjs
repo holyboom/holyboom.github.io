@@ -5,7 +5,7 @@ const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass
 (async()=>{const b=await chromium.launch();try{
  for(const width of [1440,390,320]){
   const p=await b.newPage({viewport:{width,height:width===1440?1000:844}});p.on('pageerror',e=>errors.push(e.message));await p.goto(base+'profile/');await p.waitForFunction(()=>window.ProfileExperience);await p.evaluate(()=>document.fonts.ready);
-  await p.locator('.capability-link').click();await p.waitForFunction(()=>location.hash==='#work-paths');await p.waitForTimeout(700);
+  await p.locator('.capability-link[href="#work-paths"]').click();await p.waitForFunction(()=>location.hash==='#work-paths');await p.waitForTimeout(700);
   check('capability-links-into-real-work-'+width,await p.locator('.work-path').count()===3);
   for(const id of ['review','sources','intent']){
    const summary=p.locator('#work-'+id+' summary');await summary.focus();await p.waitForTimeout(200);await p.waitForFunction(()=>ProfileExperience.snapshot().current===ProfileExperience.snapshot().target);const before=await p.evaluate(()=>ProfileExperience.snapshot().current);

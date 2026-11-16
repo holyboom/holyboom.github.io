@@ -19,7 +19,7 @@ jobs:
   build:
     name: Validate production artifact
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -53,6 +53,7 @@ jobs:
           npm --prefix .. run test:profile
           npm --prefix .. run test:profile-thai
           npm --prefix .. run test:profile-possibility
+          npm --prefix .. run test:profile-finale
           npm --prefix .. run test:profile-camera
           npm --prefix .. run test:profile-performance
           npm --prefix .. run test:profile-floors

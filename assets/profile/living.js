@@ -8,6 +8,7 @@
  const readingThread=window.ProfileReadingThread?.create({chapters,canvas,stage});
  const professional=document.querySelector('#experience'),summaryHost=document.querySelector('.reflection-art');
  const originalHost=canvas.parentElement,contact=document.querySelector('#contact'),contactHost=contact.querySelector('.scene-fallback');
+ const finale=window.ProfileFinale?.create({g,canvas,ctx,stageHost:originalHost,summaryHost,professional,contact,requestMeasure:()=>measure(),wake});
  // Owner policy: Full is fixed. Stored preferences and OS motion settings are
  // not mode controls for this profile. No hidden selector or public setter.
  const mode='full',reduced=false;
@@ -78,6 +79,7 @@
    const preserved=current,origin=g.positionFromAnchors(scrollY,anchors),delta=preserved-origin;
    layoutCorrection=Math.abs(delta)>.00001?{origin,delta,span:Math.max(.30,2.2*Math.abs(delta))}:null;
   }
+  finale?.measure(anchors);
   const r=canvas.getBoundingClientRect();readingThread?.measure();w=r.width;h=r.height;
   dpr=Math.min(devicePixelRatio||1,innerWidth<768?1.5:1.75);
   if(w&&h){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);glow.width=Math.round(w*0.5);glow.height=Math.round(h*0.5);}
@@ -120,6 +122,8 @@
   px=g.mix(px,tx,follow);py=g.mix(py,ty,follow);
   openingActive=current<1&&g.resolve(current)<g.config.opening.stopAt;if(openingActive)openingSeconds+=dt/1000;ambientPhase=openingActive?g.openingPhase(openingSeconds):0;
   const desired=beneath.open&&current>6.5?1:0;exploded=g.mix(exploded,desired,follow);
+  const ending=finale?.render(dt/1000,scrollY);
+  if(ending?.active){resetTrail();readingThread?.hide();renderedCamera=finale.snapshot().camera;updateNavigation();draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;dirty=false;if(ending.pending||current!==target)wake();return;}
   const cue=window.ProfileCinematicLines?.cueFor(Math.floor(current+.001),g.storyAt(current));
   // The finite SVG event shares this RAF, but a settled rig keeps its bitmap.
   // This avoids repainting hundreds of anatomical strands just to move dust.
@@ -271,7 +275,8 @@
  function wake(){if(!frameId&&!document.hidden&&visible&&!staticLayout())frameId=requestAnimationFrame(render);}
  function scroll(){
   document.documentElement.classList.toggle('profile-story-active',scrollY<(anchors[9]??Infinity)-1);
-  const host=scrollY>=(anchors[10]??Infinity)-1?contactHost:scrollY>=(anchors[9]??Infinity)-1?summaryHost:originalHost;
+  const finaleHost=finale?.host(scrollY);
+  const host=finaleHost|| (scrollY>=(anchors[10]??Infinity)-1?contactHost:scrollY>=(anchors[9]??Infinity)-1?summaryHost:originalHost);
   if(canvas.parentElement!==host){host.appendChild(canvas);contact.classList.toggle('live-art',host===contactHost);professional.classList.toggle('live-art',host===summaryHost);layoutCorrection=null;measure({navigation:true});}
   const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible){resetTrail();readingThread?.hide();}
   target=positionAt(scrollY);dirty=true;updateNavigation();
@@ -281,6 +286,7 @@
  addEventListener('resize',()=>{const structural=previousWidth!==innerWidth||Math.abs(previousHeight-innerHeight)>120;previousWidth=innerWidth;previousHeight=innerHeight;if(structural){activate(true);}else {measure();readingWidth=innerWidth;readingHeight=innerHeight;readingContext=captureReadingContext();}});
  beneath.addEventListener('toggle',()=>{measure();wake();});
  workPaths.forEach(el=>el.addEventListener('toggle',()=>{measure();wake();}));
+ document.querySelector('.finale-catalog')?.addEventListener('toggle',()=>{measure({preserve:true});scroll();wake();});
  document.addEventListener('visibilitychange',()=>{last=0;resetTrail();if(!document.hidden){measure();wake();}});
  const observer=new IntersectionObserver(()=>scroll(),{rootMargin:'100px'});observer.observe(stage);observer.observe(summaryHost);observer.observe(contactHost);
  const ro=new ResizeObserver(()=>measure());ro.observe(journey);
@@ -289,5 +295,5 @@
  addEventListener('pageshow',measure);document.fonts.ready.then(measure);
  activate();scroll();
  // Read-only diagnostics for reproducible QA; no control over user content.
- window.ProfileExperience=Object.freeze({snapshot:()=>({opening:{active:openingActive,seconds:openingSeconds,phase:ambientPhase},readingThread:readingThread?.snapshot(),cinematic:readingThread?.cinematicSnapshot(),mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
+ window.ProfileExperience=Object.freeze({snapshot:()=>({finale:finale?.snapshot(),opening:{active:openingActive,seconds:openingSeconds,phase:ambientPhase},readingThread:readingThread?.snapshot(),cinematic:readingThread?.cinematicSnapshot(),mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
 })();

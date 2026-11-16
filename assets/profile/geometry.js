@@ -611,10 +611,8 @@
  }
  // One warm filament remembers the drawing through every chapter. Its route
  // stays below the work and head, attached to the same wrist-local light.
- function storyThread(timeline,p){
-  const chapter=Math.min(10,timeline<1?timeline:sequence[Math.floor(timeline)].chapter),raw=timeline%1;
-  const next=sequence[Math.min(sequence.length-1,Math.floor(timeline)+1)].chapter,c=mix(chapter,next,smooth(raw));
-  const response=responseAt(timeline,p),fracture=(sequence[Math.floor(timeline)].prop==='fracture'?1-smooth(raw):0)+(sequence[Math.ceil(timeline)].prop==='fracture'?smooth(raw):0);
+ function memoryRoute(timeline,p){
+  const chapter=Math.min(10,timeline<1?timeline:sequence[Math.floor(timeline)].chapter),raw=timeline%1,next=sequence[Math.min(sequence.length-1,Math.floor(timeline)+1)].chapter,c=mix(chapter,next,smooth(raw));
   const formA=cfg.memoryForms[Math.floor(c)],formB=cfg.memoryForms[Math.min(10,Math.floor(c)+1)],form=formA.map((v,i)=>mix(v,formB[i],smooth(c%1))),origin=p.light;
   const end=[.98,-.84,-.40],control1=add(origin,[.04,-.24,-.12]),control2=[.70,-1.04,-.35];
   const bezier=(a,b,c,d,t)=>a.map((v,k)=>(1-t)**3*v+3*(1-t)**2*t*b[k]+3*(1-t)*t*t*c[k]+t**3*d[k]);
@@ -623,6 +621,13 @@
    const u=(t-.42)/.58,a=u*TAU*form[2],x=Math.cos(a),y=Math.sin(a),r=1+form[4]*Math.sin(3*a);
    return [end[0]+form[0]*(Math.sign(x)*Math.abs(x)**form[3]*r-1),end[1]+form[1]*Math.sign(y)*Math.abs(y)**form[3]*r,end[2]-.20*u+.12*Math.sin(a*.7+c*.28)*Math.sin(PI*u)];
   };
+  return route;
+ }
+ function storyThread(timeline,p){
+  const chapter=Math.min(10,timeline<1?timeline:sequence[Math.floor(timeline)].chapter),raw=timeline%1;
+  const next=sequence[Math.min(sequence.length-1,Math.floor(timeline)+1)].chapter,c=mix(chapter,next,smooth(raw));
+  const response=responseAt(timeline,p),fracture=(sequence[Math.floor(timeline)].prop==='fracture'?1-smooth(raw):0)+(sequence[Math.ceil(timeline)].prop==='fracture'?smooth(raw):0);
+  const route=memoryRoute(timeline,p);
   const paths=[],color=cfg.tones.human,alpha=smooth((timeline-.85)/.30)*.46;
   for(let i=0;i<24;i++){
    const a=i/24,b=(i+1)/24,erosion=fracture*smooth((a-.24)/.30),points=Array.from({length:5},(_,k)=>route(mix(a,b,k/4)));
@@ -740,6 +745,21 @@
   return {id:event.id,track,incoming,outgoing,approach,eyeWeight,near,subject,eye,shoulder,rear,shoulderCamera,eyeCamera,phase:track<event.rear?'rear':track<event.shoulder?'shoulder':track<event.eye?'enter':track<=event.holdEnd?'eyes':'return'};
  }
  const blendCamera=(a,b,t)=>({yaw:mix(a.yaw,b.yaw,t),pitch:mix(a.pitch,b.pitch,t),distance:Math.exp(mix(Math.log(a.distance),Math.log(b.distance),t)),target:lerp(a.target,b.target,t),focal:Math.exp(mix(Math.log(a.focal),Math.log(b.focal),t))});
+ // A rail samples the same visible filament used by the environment. The eye
+ // travels parallel to it with a safe stand-off; the original held shots own priority.
+ const filamentRails=[
+  {id:'imagination-to-hand',start:.25,end:1.09,opening:true},
+  {id:'component-to-system',start:4.10,end:5.50},
+  {id:'fragment-to-repair',start:15.72,end:16.88},
+  {id:'listening-to-connection',start:7.15,end:8.80},
+  {id:'belief-to-first-prototype',start:9.25,end:10.94},
+  {id:'complexity-to-person',start:25.03,end:25.92}
+ ];
+ function filamentAt(position,{compact=false}={}){
+  const track=cameraTrack(position),event=filamentRails.find(e=>track>e.start&&track<e.end);if(!event)return null;
+  const u=clamp((track-event.start)/(event.end-event.start)),progress=smoother(u),p=motion.poseAt(resolve(position)),route=event.opening?t=>weave(t*.5,.32):memoryRoute(resolve(position),p),at=mix(event.opening?.80:.42,0,progress),point=route(at),ahead=route(Math.max(0,at-.035));
+  return {id:event.id,track,progress,point,ahead,weight:Math.sin(PI*u)**4*(compact?.60:1),standOff:compact?5.8:5.3};
+ }
  function cameraAt(position,{compact=false,strength=1,expanded=0}={}){
   position=clamp(position,0,cfg.scenes.length-1);const chapter=Math.floor(position),start=starts[chapter],count=sequence[start].count,local=(position-chapter)*count,step=Math.min(count-1,Math.floor(local));
   const a=start+step,b=Math.min(sequence.length-1,a+1),from=shotCamera(a),to=shotCamera(b),t=smoother((local-step-.08)/.88);
@@ -760,7 +780,9 @@
    const rear=blendCamera(base,perspective.rear,perspective.incoming),over=blendCamera(rear,perspective.shoulderCamera,perspective.approach),subjective=blendCamera(over,perspective.eyeCamera,perspective.eyeWeight);
    Object.assign(base,blendCamera(base,subjective,perspective.outgoing*clamp(strength)*(1-reveal)));
   }
-  return {...base,orbitId:orbit?.id||null,orbitWeight:weight,locked:!!orbit?.locked&&strength===1,focusId:focusWeight>0?focus.id:null,focusWeight,framing:povWeight>.001?'perspective':focusWeight>.02?focus.framing:'full',perspectiveId:povWeight>0?perspective.id:null,perspectiveWeight:povWeight,eyeWeight:(perspective?.eyeWeight||0)*clamp(strength)*(1-reveal),near:povWeight>0?perspective.near:.25};
+  const filament=filamentAt(position,{compact}),filamentWeight=(filament?.weight||0)*clamp(strength)*(1-Math.max(weight,focusWeight,povWeight))*(1-reveal);
+  if(filamentWeight>0){const eye=cameraEye(base),direction=norm(sub(eye,filament.point)),railEye=add(filament.point,mul(direction,filament.standOff)),target=lerp(base.target,lerp(filament.point,filament.ahead,.65),.36),guided=cameraFromEye(railEye,target,base.focal);Object.assign(base,blendCamera(base,guided,filamentWeight));}
+  return {...base,filamentId:filamentWeight>.001?filament.id:null,filamentWeight,orbitId:orbit?.id||null,orbitWeight:weight,locked:!!orbit?.locked&&strength===1,focusId:focusWeight>0?focus.id:null,focusWeight,framing:povWeight>.001?'perspective':focusWeight>.02?focus.framing:'full',perspectiveId:povWeight>0?perspective.id:null,perspectiveWeight:povWeight,eyeWeight:(perspective?.eyeWeight||0)*clamp(strength)*(1-reveal),near:povWeight>0?perspective.near:.25};
  }
  function prepareProjection(camera,w,h,yaw=0,pitch=0){
   const cy=Math.cos(camera.yaw+yaw),sy=Math.sin(camera.yaw+yaw),cx=Math.cos(camera.pitch+pitch),sx=Math.sin(camera.pitch+pitch),[tx,ty,tz]=camera.target,scale=Math.min(w,h)*.285*camera.focal,ox=w/2,oy=h/2;
@@ -778,7 +800,7 @@
   return project;
  }
  function createProjector(position,w,h,{compact=false,yaw=0,pitch=0,strength=1,expanded=0}={}){
-  const camera=cameraAt(position,{compact,strength,expanded}),free=1-Math.max(camera.orbitWeight,camera.focusWeight,camera.perspectiveWeight);
+  const camera=cameraAt(position,{compact,strength,expanded}),free=1-Math.max(camera.orbitWeight,camera.focusWeight,camera.perspectiveWeight,camera.filamentWeight||0);
   return prepareProjection(camera,w,h,yaw*free,pitch*free);
  }
  function projectLines(lines,project){return lines.flatMap(line=>{const alpha=line.alpha*(line.part==='head'?1-smoother(((project.camera.eyeWeight||0)-.03)/.40):1);return alpha>.001?project.clip(line.points).map(points=>({...line,alpha,points:points.map(project)})):[];});}
@@ -809,5 +831,5 @@
    return polygon.length>=3?[...polygon,polygon[0]]:null;
   }).filter(Boolean);
  }
- const api={motion,performanceAt:position=>motion.poseAt(resolve(position)),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,perspectiveAt,createProjector,projectLines,projectIllustrations,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
+ const api={motion,performanceAt:position=>motion.poseAt(resolve(position)),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
