@@ -278,7 +278,7 @@
   const finaleHost=finale?.host(scrollY);
   const host=finaleHost|| (scrollY>=(anchors[10]??Infinity)-1?contactHost:scrollY>=(anchors[9]??Infinity)-1?summaryHost:originalHost);
   if(canvas.parentElement!==host){host.appendChild(canvas);contact.classList.toggle('live-art',host===contactHost);professional.classList.toggle('live-art',host===summaryHost);layoutCorrection=null;measure({navigation:true});}
-  const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible){resetTrail();readingThread?.hide();}
+  const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible){resetTrail();readingThread?.hide();finale?.resetTime();}
   target=positionAt(scrollY);dirty=true;updateNavigation();
   if(readingWidth===innerWidth&&readingHeight===innerHeight)readingContext=captureReadingContext();
   wake();}
@@ -287,7 +287,7 @@
  beneath.addEventListener('toggle',()=>{measure();wake();});
  workPaths.forEach(el=>el.addEventListener('toggle',()=>{measure();wake();}));
  document.querySelector('.finale-catalog')?.addEventListener('toggle',()=>{measure({preserve:true});scroll();wake();});
- document.addEventListener('visibilitychange',()=>{last=0;resetTrail();if(!document.hidden){measure();wake();}});
+ document.addEventListener('visibilitychange',()=>{last=0;resetTrail();if(document.hidden)finale?.resetTime();if(!document.hidden){measure();wake();}});
  const observer=new IntersectionObserver(()=>scroll(),{rootMargin:'100px'});observer.observe(stage);observer.observe(summaryHost);observer.observe(contactHost);
  const ro=new ResizeObserver(()=>measure());ro.observe(journey);
  addEventListener('pointermove',e=>{if(!matchMedia('(hover: hover) and (pointer: fine)').matches||reduced)return;const r=stage.getBoundingClientRect();tx=g.clamp((e.clientX-r.left)/Math.max(r.width,1)-.5,-.5,.5)*.1;ty=g.clamp((e.clientY-r.top)/Math.max(r.height,1)-.5,-.5,.5)*.1;wake();},{passive:true});

@@ -56,6 +56,7 @@ jobs:
           npm --prefix .. run test:profile-finale
           npm --prefix .. run test:profile-alchemy
           npm --prefix .. run test:profile-handoff
+          npm --prefix .. run test:profile-thought
           npm --prefix .. run test:profile-camera
           npm --prefix .. run test:profile-performance
           npm --prefix .. run test:profile-floors

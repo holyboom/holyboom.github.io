@@ -4,10 +4,11 @@
  const TAU=Math.PI*2,clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),mix=(a,b,t)=>a+(b-a)*t;
  const ease=t=>{t=clamp(t);return t*t*t*(t*(t*6-15)+10);},gate=(u,a,b,c,d)=>ease((u-a)/(b-a))*(1-ease((u-c)/(d-c)));
  const add=(a,b)=>a.map((v,i)=>v+b[i]),lerp=(a,b,t)=>a.map((v,i)=>mix(v,b[i],t)),distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
- const spectrum=['#ff7ba6','#ffac67','#ffe397','#8fe6ba','#80dfff','#b49bff','#ed96ee'];
+ const thought=typeof module==='object'&&module.exports?require('./thought-light.js'):root.ProfileThoughtLight;
+ const spectrum=thought?.colors||['#fff8df','#ffe0a2','#edb662'];
  const phrase=[{kind:'think-point',duration:10.5},{kind:'pair',duration:15},{kind:'inspect',duration:11},{kind:'trace',duration:12},{kind:'pair',duration:15}],period=phrase.reduce((a,b)=>a+b.duration,0),center=[-.44,.12,.13];
  function beatAt(time){const lap=Math.floor(time/period);let u=time-lap*period,start=lap*period;for(let i=0;i<phrase.length;i++){const p=phrase[i];if(u<p.duration||i===phrase.length-1)return {...p,u,start,index:lap*phrase.length+i,variant:(lap+i)%4};u-=p.duration;start+=p.duration;}}
- function lightAt(p,charge,time=0){const scrollFlash=Math.exp(-(((p-.555)/.036)**2)),pulse=(.5+.5*Math.sin(TAU*time/3.8-.9))**10,after=(.5+.5*Math.sin(TAU*time/3.8-1.65))**4,flare=clamp(scrollFlash*.82+pulse*.72),energy=charge*(.52+flare*.74+after*.13);return {energy,flare:flare*charge,phase:time*.34+p*2.1,gold:charge*(.66+flare*.34),spectrum};}
+ function lightAt(p,charge,time=0,formation=0){return thought?thought.lightAt(p,charge,time,formation):{energy:charge*.7,flare:0,phase:time*.16,gold:charge,spectrum};}
  function create(skills,position){const plans=new Map();
   function plan(beat){if(plans.has(beat.index))return plans.get(beat.index);
    const at=t=>beat.start+t,score=(s,i,side,t,exclude)=>{const q=position(s,at(t)),anchor=[center[0]+side*.75,.40,.65],sidePenalty=side&&Math.sign(q[0]-center[0])!==side?8:0;return {id:s.id,category:s.category,side:q[0]<center[0]?-1:1,score:(s.id===exclude?100:0)+sidePenalty+Math.max(0,.05-q[2])*7+Math.max(0,q[1]-1.05)*3+Math.max(0,-.42-q[1])*3+distance(q,anchor)*.25+((i+beat.index*7)%skills.length)*.004};};

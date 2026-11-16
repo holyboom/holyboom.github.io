@@ -121,3 +121,7 @@ main :is(a,summary),.site-footer a{scroll-margin-block:110px 20px}
 /* Reserve room for a pair of real names, so idle acting never shifts the CV. */
 .finale-caption{min-height:132px}.finale-skill-name{line-height:1.5}
 @media(max-width:767px){.finale-caption{min-height:152px}}
+
+/* Unmasked light spills outside the scene bitmap; the shared renderer owns time. */
+.thought-light{display:none;position:fixed;inset:0;z-index:6;pointer-events:none;overflow:visible}.thought-light path{vector-effect:non-scaling-stroke}
+@media print{.thought-light{display:none!important}}
