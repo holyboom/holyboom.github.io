@@ -16,7 +16,9 @@ const {webkit,chromium}=require('playwright'),fs=require('fs');
    check('reciprocal-languages-'+lang,alternates.en===origin+'/profile/'&&alternates.th===origin+'/th/profile/'&&alternates['x-default']===origin+'/profile/');
    check('one-true-entity-'+lang,schema['@type']==='ProfilePage'&&schema.mainEntity['@id']===origin+'/#theerawee-rangram'&&schema.mainEntity.name==='Theerawee Rangram'&&schema.mainEntity.sameAs.includes('https://www.linkedin.com/in/boom-theerawee'));
    check('role-fit-not-fabricated-employment-'+lang,text.includes(lang==='en'?'not a list of job titles I have held':'ไม่ใช่รายชื่อตำแหน่งทั้งหมดที่เคยดำรง'));
-   check('example-not-production-claim-'+lang,text.includes(lang==='en'?'not a live agent service':'ไม่ใช่บริการ Agent'));
+   const approvedWorkCopy=require('./data/profile-story'+(lang==='th'?'.th':'')+'.json').chapters.find(c=>c.id==='work-heading').paragraphs;
+   const renderedWorkCopy=await p.locator('#work-heading>.chapter-copy>p:not([class])').allTextContents();
+   check('approved-work-introduction-'+lang,JSON.stringify(renderedWorkCopy)===JSON.stringify(approvedWorkCopy));
    check('no-private-identifiers-'+lang,!/(holyboom@|084217|110140201|986\/286|160,000|238,000)/.test(text));
    const runtimeScripts=await p.locator('script:not([type="application/ld+json"])').evaluateAll(items=>items.map(el=>({src:el.getAttribute('src'),defer:el.defer})));
    // Both native stories progressively enhance the same approved cinematic rig.
