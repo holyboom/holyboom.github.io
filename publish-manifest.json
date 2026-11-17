@@ -9,6 +9,7 @@
     "profile/person.json",
     "profile/summary.txt",
     "th/profile/index.html",
+    "th/profile/summary.txt",
     "work/holymind-portfolio/index.html",
     "th/work/holymind-portfolio/index.html",
     "robots.txt",
@@ -113,6 +114,12 @@
     },
     {
       "path": "assets/profile/fallback",
+      "extensions": [
+        ".svg"
+      ]
+    },
+    {
+      "path": "assets/profile/fallback/th",
       "extensions": [
         ".svg"
       ]

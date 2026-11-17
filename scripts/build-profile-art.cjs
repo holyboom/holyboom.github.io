@@ -5,7 +5,12 @@ const configPath=path.join(__dirname,'../assets/profile/scenes.js');
 const source=fs.readFileSync(configPath,'utf8');
 const beats=story.chapters.map(c=>({chapter:c.scene,beats:c.beats}));
 const assignment=' // BEGIN GENERATED STORY\n config.story='+JSON.stringify(beats)+';\n // END GENERATED STORY';
-const generated=source.includes('// BEGIN GENERATED STORY')?source.replace(/ \/\/ BEGIN GENERATED STORY[\s\S]*? \/\/ END GENERATED STORY/,assignment):source.replace(" if(typeof module",assignment+"\n if(typeof module");
+let generated=source.includes('// BEGIN GENERATED STORY')?source.replace(/ \/\/ BEGIN GENERATED STORY[\s\S]*? \/\/ END GENERATED STORY/,assignment):source.replace(" if(typeof module",assignment+"\n if(typeof module");
+const review=require('./data/profile-gemini-copy.json').items,baseScenes={},canvasText={};
+for(const row of review){if(row.kind==='In-scene label')canvasText[row.originalEnglish]=row.english;if(row.kind.startsWith('Animation / ')){const chapter=Number(/chapter (\d+)/.exec(row.sourceEn)[1]);if([0,9,10].includes(chapter)){const key=row.kind.split(' / ')[1];(baseScenes[chapter]??={})[key]=row.english;if(key==='action')baseScenes[chapter].verb=row.english;}}}
+const finaleLabels={en:{},th:{}};for(const row of review){if(row.kind==='Head / orbit caption'){const key=row.section.split(' / ')[1];finaleLabels.en[key]=row.english;finaleLabels.th[key]=row.thai;}if(row.kind==='Two-skill caption'){finaleLabels.en.synthesis=row.english;finaleLabels.th.synthesis=row.thai;}}
+const copyAssignment=' // BEGIN GENERATED REVIEW\n config.reviewFinale='+JSON.stringify(finaleLabels)+';config.text='+JSON.stringify(canvasText)+';Object.entries('+JSON.stringify(baseScenes)+').forEach(([i,s])=>Object.assign(config.scenes[i],s));\n // END GENERATED REVIEW';
+generated=generated.includes('// BEGIN GENERATED REVIEW')?generated.replace(/ \/\/ BEGIN GENERATED REVIEW[\s\S]*? \/\/ END GENERATED REVIEW/,copyAssignment):generated.replace(" if(typeof module",copyAssignment+"\n if(typeof module");
 if(generated!==source)fs.writeFileSync(configPath,generated);
 const g=require('../assets/profile/geometry.js');
 const dir=process.env.PROFILE_ART_DIR?path.resolve(process.env.PROFILE_ART_DIR):path.join(__dirname,'../assets/profile/fallback');fs.mkdirSync(dir,{recursive:true});
@@ -102,3 +107,18 @@ for(let state=0;state<g.config.scenes.length;state++){
  fs.writeFileSync(path.join(dir,`scene-${state}.svg`),svg);
 }
 console.log(`Generated ${g.config.scenes.length} woven narrative SVGs (${g.LINES} identity-preserving strands).`);
+// Localized fallback images reuse the identical paths and approved copy slots.
+const approved=require('./data/profile-gemini-copy.json').items;
+const thaiDir=path.join(dir,'th');fs.mkdirSync(thaiDir,{recursive:true});
+const thaiFont=fs.readFileSync(path.join(__dirname,'../assets/fonts/noto-sans-thai.woff2')).toString('base64');
+for(let state=0;state<g.config.scenes.length;state++){
+ const slots=approved.filter(r=>r.kind==='Shared SVG text'&&r.section===`Fallback / scene-${state}`);
+ const filename=path.join(dir,`scene-${state}.svg`),original=fs.readFileSync(filename,'utf8');
+ function localize(language){let index=0;const result=original.replace(/(<(?:title|desc|text)\b[^>]*>)([\s\S]*?)(<\/(?:title|desc|text)>)/g,(_,open,text,close)=>{
+  const slot=slots[index++];if(!slot)throw Error(`Missing approved fallback slot ${state}/${index}`);
+  return open+escape(language==='th'?slot.thai:slot.english)+close;
+ });if(index!==slots.length)throw Error(`Fallback copy count differs: ${state}`);return result;}
+ fs.writeFileSync(filename,localize('en'));
+ const thai=localize('th').replace(/(<svg\b[^>]*>)/,`$1<style>@font-face{font-family:ProfileThai;src:url(data:font/woff2;base64,${thaiFont}) format('woff2')}text{font-family:ProfileThai,Arial,sans-serif}</style>`);
+ fs.writeFileSync(path.join(thaiDir,`scene-${state}.svg`),thai);
+}

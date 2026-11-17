@@ -51,6 +51,7 @@ jobs:
             sleep 1
           done
           npm --prefix .. run test:profile
+          npm --prefix .. run test:profile-copy
           npm --prefix .. run test:profile-thai
           npm --prefix .. run test:profile-possibility
           npm --prefix .. run test:profile-finale

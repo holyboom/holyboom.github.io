@@ -2,6 +2,7 @@
 import html, json
 from pathlib import Path
 from profile_locales import localize_th
+from profile_review_copy import apply_review
 ROOT = Path(__file__).resolve().parents[1]
 E = html.escape
 
@@ -88,5 +89,6 @@ def render(head, data, lang='en'):
 
     if lang == 'th':
         page = localize_th(page)
+        page = page.replace('src="/assets/profile/fallback/scene-', 'src="/assets/profile/fallback/th/scene-')
         page = page.replace('Profile updated '+E(story['updated'])+'.', E(data['updated'])+'.')
-    return page.replace('↗', '<i class="arrow-ne" aria-hidden="true"></i>')
+    return apply_review(page.replace('↗', '<i class="arrow-ne" aria-hidden="true"></i>'), lang)

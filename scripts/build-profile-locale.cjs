@@ -11,12 +11,14 @@ const text={
  'THE PATH IS NOT CLEAR':'ยังหาทางไปต่อ','TRY · LEARN · REFINE':'ลอง · เรียนรู้ · ปรับ','SEEK · SELECT · SYNTHESIZE':'ค้น · คัด · ประกอบ','PURPOSE · METHOD · CHARACTER':'หน้าที่ · วิธี · ตัวตน','A SKILL OF ITS OWN':'สกิลที่มีตัวตน','YOUR NEXT STEP. YOUR CHOICE.':'ขั้นต่อไป คุณเลือกเอง','A CLEAR WAY IN':'รู้ว่าจะเริ่มตรงไหน'
 };
 const scenes=[
- {verb:'นึกถึงสิ่งที่อยากสร้าง',action:'นึกถึงสิ่งที่อยากสร้าง',meaning:'จินตนาการ',label:'00 / ก่อนเรื่องราวจะเริ่ม',caption:'ทุกอย่างเริ่มจากสิ่งที่ผมอยากสร้าง'},
+ {"action": "นึกถึงสิ่งที่อยากสร้าง", "caption": "ทุกอย่างเริ่มจากเส้นแรกที่ผมลากลงไป", "meaning": "จินตนาการ", "label": "00 / ก่อนเรื่องราวจะเริ่ม", "verb": "นึกถึงสิ่งที่อยากสร้าง"},
  ...story.chapters.map(c=>({label:c.eyebrow})),
- {verb:'มองย้อนกลับไป',action:'มองย้อนกลับไป',meaning:'ประสบการณ์',label:'09 / งานที่พาผมมาถึงตรงนี้',caption:'แต่ละงานมีบางอย่างติดตัวผมมา'},
- {verb:'เริ่มเรื่องถัดไป',action:'เริ่มเรื่องถัดไป',meaning:'สิ่งที่จะสร้างด้วยกัน',label:'10 / เรื่องที่เราจะเขียนต่อ',caption:'คุณมีเรื่องไหนที่อยากลองสร้างด้วยกันไหม'}
+ {"action": "มองย้อนกลับไป", "caption": "แต่ละงานมีบางอย่างติดตัวผมมา", "meaning": "ประสบการณ์", "label": "09 / งานที่พาผมมาถึงตรงนี้", "verb": "มองย้อนกลับไป"},
+ {"action": "เริ่มเรื่องถัดไป", "caption": "คุณมีเรื่องไหนที่อยากลองสร้างด้วยกันไหม", "meaning": "สิ่งที่จะสร้างด้วยกัน", "label": "10 / เรื่องที่เราจะเขียนต่อ", "verb": "เริ่มเรื่องถัดไป"}
 ];
-const data={scenes,story:story.chapters.map(c=>({chapter:c.scene,beats:c.beats.map(({action,caption,meaning})=>({action,caption,meaning}))})),text};
+const approved=require('./data/profile-gemini-copy.json').items;
+for(const row of approved){if(row.kind==='In-scene label')text[row.originalEnglish]=row.thai;if(row.kind.startsWith('Animation / ')){const chapter=Number(/chapter (\d+)/.exec(row.sourceEn)[1]);if([0,9,10].includes(chapter)){const key=row.kind.split(' / ')[1];scenes[chapter][key]=row.thai;if(key==='action')scenes[chapter].verb=row.thai;}}}
+const data={scenes,story:story.chapters.map(c=>({chapter:c.scene,beats:c.beats.map(({action,caption,meaning,label})=>({action,caption,meaning,label}))})),text};
 const source='/* Generated from independently authored Thai copy. Run npm run build:profile. */\n(()=>{\'use strict\';if(document.documentElement.lang!==\'th\')return;const c=window.ProfileScenes,d='+JSON.stringify(data)+';c.locale=\'th\';c.sceneUnit=\'ฉาก\';c.text=d.text;d.scenes.forEach((s,i)=>Object.assign(c.scenes[i],s));d.story.forEach(s=>s.beats.forEach((b,i)=>Object.assign(c.story.find(v=>v.chapter===s.chapter).beats[i],b)));})();\n';
 fs.writeFileSync(path.join(root,'assets/profile/locale-th.js'),source);
 console.log('Built Thai scene copy; approved performance structure matches English.');

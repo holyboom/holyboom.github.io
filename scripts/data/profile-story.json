@@ -1,5 +1,5 @@
 {
-  "release": "living-thought-hooks-v25",
+  "release": "living-gemini-copy-v26",
   "updated": "2026-11-16",
   "chapters": [
     {
@@ -7,18 +7,18 @@
       "scene": 1,
       "eyebrow": "01 / THE FIRST BLUEPRINT",
       "title": "A blank page.\nA world waiting\nto happen.",
-      "lede": "As a child, I wanted to be an architect. That instinct never really left.",
+      "lede": "As a child, I wanted to be an architect—to design spaces people could step into and inhabit.",
       "paragraphs": [
-        "That early interest in design stayed with me when I chose to study software engineering. Frontend became my creative space: a place where code could become something people could see, interact with, and make their own.",
-        "I care about the character of what I build. The shape of an interface, the rhythm of its interactions, and the clarity of its next step all influence how it feels to use. Software gave me a different medium for that same desire to create."
+        "That early pull toward design stayed with me when I chose to study software engineering. Frontend became my creative space—a place where code took visible form, where people could touch, test, and make it their own.",
+        "I care about the character of what I build. The proportion of an interface, the rhythm of its interactions, and the clarity of its next step all shape how it feels to use. Software simply gave that same architectural impulse a different medium."
       ],
       "tags": [
         "Architecture at heart",
         "Frontend by craft"
       ],
-      "bridge": "That instinct now had a new responsibility: make the idea work.",
-      "hook": "What makes a beautiful idea dependable?",
-      "sceneDescription": "Imagine a place. A symbolic maker interacts with a clearly outlined blueprint above a woven landscape.",
+      "bridge": "Designing for a screen was only the start; real software has to hold its weight in daily use.",
+      "hook": "What happens when people begin to rely on what you build?",
+      "sceneDescription": "A symbolic maker sketches an architectural blueprint above a woven landscape before the lines shift into a software interface.",
       "beats": [
         {
           "action": "Imagine a place",
@@ -28,7 +28,8 @@
           "tone": "dream",
           "meaning": "Imagination",
           "energy": 1,
-          "shot": "establish"
+          "shot": "establish",
+          "label": "01 / BEFORE CODE, A BLANK PAGE"
         },
         {
           "action": "Draw the first lines",
@@ -38,7 +39,8 @@
           "tone": "dream",
           "meaning": "Imagination",
           "energy": 1,
-          "shot": "draft"
+          "shot": "draft",
+          "label": "01 / BEFORE CODE, A BLANK PAGE"
         },
         {
           "action": "Turn the drawing into an interface",
@@ -48,7 +50,8 @@
           "tone": "build",
           "meaning": "Engineering",
           "energy": 1,
-          "shot": "detail"
+          "shot": "detail",
+          "label": "01 / BEFORE CODE, A BLANK PAGE"
         }
       ],
       "era": "origins",
@@ -62,16 +65,17 @@
       "lede": "Frontend that has to work as part of a system people depend on.",
       "careerIndex": 3,
       "paragraphs": [
-        "Enterprise frontend work gave my interest in design a practical setting. An interface sits within a larger application, with requirements and people depending on it. That context remains part of how I approach the experiences I build today."
+        "Enterprise frontend work at Allianz Technology gave my interest in design a practical discipline. A single screen is never an island; it lives inside a larger application with strict requirements, shared standards, and real users relying on it.",
+        "Collaborating across teams in Munich and Bangkok taught me to look beyond surface polish. The quiet details a user never consciously notices are often the ones an engineer has to get right."
       ],
       "tags": [
         "Angular",
         "Enterprise frontend",
         "Munich ↔ Bangkok"
       ],
-      "bridge": "Dependable parts need thoughtful connections.",
-      "hook": "What happens when your work has to connect with everyone else’s?",
-      "sceneDescription": "Build one component. A symbolic maker interacts with a clearly outlined component above a woven landscape.",
+      "bridge": "Reliable components are only half the craft; they still have to fit into a wider architecture.",
+      "hook": "How do you build when your screen is just one piece of a much larger effort?",
+      "sceneDescription": "A symbolic maker shapes a single component, connects it to a wider structure, and inspects its details above a woven landscape.",
       "beats": [
         {
           "action": "Build one component",
@@ -81,7 +85,8 @@
           "tone": "build",
           "meaning": "Engineering",
           "energy": 1,
-          "shot": "detail"
+          "shot": "detail",
+          "label": "02 / THE DRAWING BECOMES A SYSTEM"
         },
         {
           "action": "Fit it into a larger system",
@@ -91,7 +96,8 @@
           "tone": "build",
           "meaning": "Engineering",
           "energy": 1,
-          "shot": "connect"
+          "shot": "connect",
+          "label": "02 / THE DRAWING BECOMES A SYSTEM"
         },
         {
           "action": "Make it dependable",
@@ -101,7 +107,8 @@
           "tone": "care",
           "meaning": "Dependability",
           "energy": 1,
-          "shot": "detail"
+          "shot": "detail",
+          "label": "02 / THE DRAWING BECOMES A SYSTEM"
         }
       ],
       "era": "before-ai",
@@ -115,7 +122,8 @@
       "lede": "What I built on screen had to connect with other people’s work.",
       "careerIndex": 2,
       "paragraphs": [
-        "The work connected business requirements with hands-on implementation. My contribution lived within a shared effort: understanding what needed to be built, translating it into frontend delivery, and working with engineers across locations."
+        "Corporate banking work at Accenture sat right where business intent meets hands-on engineering. My role lived inside a shared delivery effort—listening closely to what stakeholders actually needed, translating those requirements into frontend architecture, and building alongside engineers across locations.",
+        "When squads work across different places, shared clarity matters just as much as clean code. It trained me to see the whole structure first, so the piece I owned would fit naturally into everyone else’s."
       ],
       "tags": [
         "Corporate banking",
@@ -124,7 +132,7 @@
       ],
       "bridge": "In 2024, while I was still working at ttb, I began developing my AI capabilities.",
       "hook": "What if intelligence could become part of the workflow?",
-      "sceneDescription": "Listen to the requirement. A symbolic maker interacts with a clearly outlined brief above a woven landscape.",
+      "sceneDescription": "A symbolic maker studies a brief, links nodes across a network, and assembles separate parts into a shared structure above a woven landscape.",
       "beats": [
         {
           "action": "Listen to the requirement",
@@ -134,7 +142,8 @@
           "tone": "human",
           "meaning": "Understanding",
           "energy": 1,
-          "shot": "intimate"
+          "shot": "intimate",
+          "label": "03 / NOTHING IS BUILT ALONE"
         },
         {
           "action": "Connect across boundaries",
@@ -144,7 +153,8 @@
           "tone": "build",
           "meaning": "Connection",
           "energy": 1,
-          "shot": "connect"
+          "shot": "connect",
+          "label": "03 / NOTHING IS BUILT ALONE"
         },
         {
           "action": "Bring the pieces together",
@@ -154,7 +164,8 @@
           "tone": "care",
           "meaning": "Collaboration",
           "energy": 1,
-          "shot": "reveal"
+          "shot": "reveal",
+          "label": "03 / NOTHING IS BUILT ALONE"
         }
       ],
       "era": "before-ai",
@@ -165,7 +176,7 @@
       "scene": 4,
       "eyebrow": "04 / THE POSSIBILITY BECOMES PERSONAL",
       "title": "I could see it.\nI wanted to build\nsomething to try.",
-      "lede": "I began developing my AI capabilities while I was still at ttb. What I believed still needed to become something I could show through the work.",
+      "lede": "I began developing my AI capabilities while I was still at ttb. What I believed still needed to take shape as something people could test in real work.",
       "careerIndex": 1,
       "paragraphs": [
         "Some people around me were not yet convinced, including people working in the same field. I wanted to give them something they could actually try. My belief alone could only take the idea so far.",
@@ -176,9 +187,9 @@
         "Jira · Confluence · Bitbucket",
         "Human review"
       ],
-      "bridge": "Look closer than the visible work, and there were problems and uncertainty I had to work through while building it.",
+      "bridge": "Beneath the visible progress lay real friction—edge cases, false starts, and moments when the path forward was unclear.",
       "hook": "What did I do when I could not yet see the next step?",
-      "sceneDescription": "Invite intelligence into the workflow. A symbolic maker interacts with a clearly outlined ai above a woven landscape.",
+      "sceneDescription": "A symbolic maker brings an AI element into the workflow, pauses to inspect the output, and decides what moves forward above a woven landscape.",
       "beats": [
         {
           "action": "See something worth building",
@@ -188,7 +199,8 @@
           "tone": "dream",
           "meaning": "Possibility",
           "energy": 1,
-          "shot": "draft"
+          "shot": "draft",
+          "label": "04 / 2024 · AI DEVELOPMENT BEGINS"
         },
         {
           "action": "Put the belief to the test",
@@ -198,7 +210,8 @@
           "tone": "human",
           "meaning": "Human judgment",
           "energy": 1,
-          "shot": "detail"
+          "shot": "detail",
+          "label": "04 / 2024 · AI DEVELOPMENT BEGINS"
         },
         {
           "action": "Build something people can try",
@@ -208,7 +221,8 @@
           "tone": "care",
           "meaning": "Agency",
           "energy": 1,
-          "shot": "connect"
+          "shot": "connect",
+          "label": "04 / 2024 · AI DEVELOPMENT BEGINS"
         }
       ],
       "era": "ai-start",
@@ -224,8 +238,8 @@
       "title": "Not everyone\nsaw it yet.\nI kept building.",
       "lede": "As I began learning and developing AI, some people around me did not yet see the same possibility.",
       "paragraphs": [
-        "Some people around me, including others working in the same field, were not yet convinced by AI. I could see its possibility. Making that possibility useful meant facing the problems myself, one after another.",
-        "The skills and workflows I build come from those encounters. I work through a problem, reflect on what it taught me, seek better methods, and return to the next version. Week after week, that effort becomes HolyMind."
+        "Even peers in the same discipline were unconvinced—and fairly so, while the idea existed mostly in theory. To make it tangible, I started building on my own, working through each obstacle one piece at a time.",
+        "Every skill and workflow I create traces back to those hands-on encounters. I test an approach against a real problem, examine where it breaks, look for sharper methods, and return to refine the next version. Week after week, that steady cadence became HolyMind."
       ],
       "quote": "Every difficult part asked something of me. Every return to the work left something I could build on.",
       "tags": [
@@ -238,13 +252,14 @@
       "beats": [
         {
           "action": "Hold on to the possibility",
-          "caption": "I could see the possibility. I still had to build a way toward it.",
+          "caption": "I could see what it might become, even before I knew how to build it.",
           "pose": "alone",
           "prop": "ember",
           "tone": "human",
           "meaning": "Conviction",
           "energy": 0.22,
-          "shot": "isolate"
+          "shot": "isolate",
+          "label": "05 / KEEP BUILDING"
         },
         {
           "action": "Meet the resistance",
@@ -254,7 +269,8 @@
           "tone": "friction",
           "meaning": "Resistance",
           "energy": 0.38,
-          "shot": "intimate"
+          "shot": "intimate",
+          "label": "05 / KEEP BUILDING"
         },
         {
           "action": "Stay with the problem",
@@ -264,17 +280,19 @@
           "tone": "human",
           "meaning": "Doubt",
           "energy": 0.28,
-          "shot": "intimate"
+          "shot": "intimate",
+          "label": "05 / KEEP BUILDING"
         },
         {
           "action": "Return to the work",
-          "caption": "Take it apart. Understand what failed. Return to the work.",
+          "caption": "Take it apart. See where it failed. Build it stronger.",
           "pose": "repair",
           "prop": "repair",
           "tone": "build",
           "meaning": "Resolve",
           "energy": 0.65,
-          "shot": "detail"
+          "shot": "detail",
+          "label": "05 / KEEP BUILDING"
         },
         {
           "action": "Keep the light alive",
@@ -284,11 +302,12 @@
           "tone": "human",
           "meaning": "Persistence",
           "energy": 0.85,
-          "shot": "rise"
+          "shot": "rise",
+          "label": "05 / KEEP BUILDING"
         }
       ],
       "era": "ai-development",
-      "period": "A closer look at the AI journey that began while at ttb"
+      "period": "A closer look at the AI work that began at ttb"
     },
     {
       "id": "craft",
@@ -297,8 +316,9 @@
       "title": "The problem\nbecomes part\nof the craft.",
       "lede": "I let my experience developing AI settle, then ask what is worth keeping.",
       "paragraphs": [
-        "I let the experience settle, then look outward. I research approaches, ideas, and tools from around the world, selecting and combining the strongest methods I can find for the problem in front of me.",
-        "A skill gradually earns its own purpose, method, and character. That is the moat I am working to build: accumulated experience, careful selection, and repeated refinement. Connected into workflows, those capabilities become a larger way of working."
+        "Once a lesson holds up in practice, I look outward. I study research, engineering patterns, and tools from around the world, selecting and combining the strongest methods I can find for the problem in front of me.",
+        "Through repeated testing and trimming, each skill earns its own purpose, method, and character. Connected into workflows, those capabilities give new work a stronger foundation from the start.",
+        "That is the moat I am building: not a secret shortcut, but lived experience, deliberate curation, and revision after revision until a capability proves its worth in real use."
       ],
       "steps": [
         "Encounter",
@@ -314,7 +334,7 @@
       ],
       "bridge": "All that depth still needs a way for someone to reach it.",
       "hook": "How do you make all that complexity feel human?",
-      "sceneDescription": "Keep the lesson. A symbolic maker interacts with a clearly outlined lesson above a woven landscape.",
+      "sceneDescription": "A symbolic maker examines a distilled lesson, draws methods from surrounding sources, and assembles them into a structured skill above a woven landscape.",
       "beats": [
         {
           "action": "Keep the lesson",
@@ -324,17 +344,19 @@
           "tone": "human",
           "meaning": "Experience",
           "energy": 1,
-          "shot": "intimate"
+          "shot": "intimate",
+          "label": "06 / EXPERIENCE TAKES SHAPE"
         },
         {
           "action": "Look beyond my own methods",
-          "caption": "Seek the strongest ideas and methods I can find.",
+          "caption": "Draw on the strongest ideas and tools from around the world.",
           "pose": "research",
           "prop": "library",
           "tone": "build",
           "meaning": "Research",
           "energy": 1,
-          "shot": "connect"
+          "shot": "connect",
+          "label": "06 / EXPERIENCE TAKES SHAPE"
         },
         {
           "action": "Distil a capability",
@@ -344,7 +366,8 @@
           "tone": "dream",
           "meaning": "Synthesis",
           "energy": 1,
-          "shot": "detail"
+          "shot": "detail",
+          "label": "06 / EXPERIENCE TAKES SHAPE"
         },
         {
           "action": "Build a distinctive advantage",
@@ -354,7 +377,8 @@
           "tone": "dream",
           "meaning": "Identity",
           "energy": 1,
-          "shot": "reveal"
+          "shot": "reveal",
+          "label": "06 / EXPERIENCE TAKES SHAPE"
         }
       ],
       "era": "ai-development",
@@ -368,8 +392,9 @@
       "lede": "I want people to feel the possibility, without carrying all the complexity.",
       "careerIndex": 0,
       "paragraphs": [
-        "The AI era gives my frontend instincts and software engineering background a wider creative space. I can shape a tool’s capabilities and the way someone enters, understands, and uses it.",
-        "I want the next step to feel clear, the interaction to feel inviting, and the person using it to feel in control. The aim is an experience people want to return to in their own work. Beautiful design can make depth approachable, while keeping the reasoning, sources, and moments for human review within reach."
+        "Working with AI brings my frontend instincts and software engineering background together in a wider creative space. I can shape both the underlying machinery of a tool and the way someone enters, understands, and works with it.",
+        "The interface should absorb the heavy complexity behind the scenes while keeping the next step clear, the interaction inviting, and the person in control. Reasoning, sources, and moments for human review remain within reach whenever they are needed.",
+        "Thoughtful design opens the door, but care in every detail of use is what makes people want to return. To me, that is the heart of AI experiences."
       ],
       "tags": [
         "Clarity",
@@ -379,7 +404,7 @@
       ],
       "bridge": "The work comes full circle: making a place someone wants to enter.",
       "hook": "What happens when you step inside?",
-      "sceneDescription": "Face the hidden complexity. A symbolic maker interacts with a clearly outlined complexity above a woven landscape.",
+      "sceneDescription": "A cutaway reveals layered architecture beneath the surface before a symbolic maker opens a clear threshold for another person to enter.",
       "beats": [
         {
           "action": "Face the hidden complexity",
@@ -389,7 +414,8 @@
           "tone": "build",
           "meaning": "Depth",
           "energy": 1,
-          "shot": "connect"
+          "shot": "connect",
+          "label": "07 / THE SOUL OF AI EXPERIENCES"
         },
         {
           "action": "Shape a clear way in",
@@ -399,7 +425,8 @@
           "tone": "dream",
           "meaning": "Design",
           "energy": 1,
-          "shot": "draft"
+          "shot": "draft",
+          "label": "07 / THE SOUL OF AI EXPERIENCES"
         },
         {
           "action": "Give the person agency",
@@ -409,7 +436,8 @@
           "tone": "human",
           "meaning": "Agency",
           "energy": 1,
-          "shot": "detail"
+          "shot": "detail",
+          "label": "07 / THE SOUL OF AI EXPERIENCES"
         },
         {
           "action": "Make the experience inviting",
@@ -419,7 +447,8 @@
           "tone": "care",
           "meaning": "AI experiences",
           "energy": 1,
-          "shot": "reveal"
+          "shot": "reveal",
+          "label": "07 / THE SOUL OF AI EXPERIENCES"
         }
       ],
       "era": "present",
@@ -432,17 +461,17 @@
       "title": "Now, step inside.",
       "lede": "HolyMind interactive portfolio",
       "paragraphs": [
-        "Explore a browser-based demonstration of how intentions, workflow boundaries, and interface choices can work together. Try three illustrative scenarios, inspect fictional source-to-output examples, and carry your choices into a planning brief.",
-        "This is a portfolio demonstration, not a live agent service or a claimed client result. The public project makes its browser behavior inspectable; client source code, private records, and confidential documents are not published here."
+        "Step into a browser-based demonstration of how human intent, workflow boundaries, and interface design work together. Explore three illustrative scenarios, trace fictional source-to-output examples, and carry your selections into a planning brief.",
+        "This is a portfolio demonstration, not a live agent service or a claimed client result. Its browser behavior is open to inspect here; client source code, private records, and confidential documents are never published."
       ],
       "tags": [
         "Input",
         "Workflow",
         "Output"
       ],
-      "bridge": "The experience grows from years of hands-on work.",
+      "bridge": "Every interface choice here is grounded in years of building software for real teams.",
       "hook": "See the work and responsibilities behind the story.",
-      "sceneDescription": "Open the door. A symbolic maker interacts with a clearly outlined interface above a woven landscape.",
+      "sceneDescription": "A symbolic maker opens an interface threshold, highlights points for human review, and offers the work outward for inspection.",
       "beats": [
         {
           "action": "Open the door",
@@ -452,7 +481,8 @@
           "tone": "care",
           "meaning": "Invitation",
           "energy": 1,
-          "shot": "reveal"
+          "shot": "reveal",
+          "label": "08 / STEP INTO WHAT I AM BUILDING"
         },
         {
           "action": "Make the work inspectable",
@@ -462,7 +492,8 @@
           "tone": "build",
           "meaning": "Transparency",
           "energy": 1,
-          "shot": "detail"
+          "shot": "detail",
+          "label": "08 / STEP INTO WHAT I AM BUILDING"
         },
         {
           "action": "Offer the next possibility",
@@ -472,7 +503,8 @@
           "tone": "human",
           "meaning": "Possibility",
           "energy": 1,
-          "shot": "reveal"
+          "shot": "reveal",
+          "label": "08 / STEP INTO WHAT I AM BUILDING"
         }
       ],
       "era": "present",

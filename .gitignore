@@ -5,3 +5,6 @@ dist/
 .dist-build-*/
 
 __pycache__/
+
+# Localized fallback art is generated from the reviewed copy during build:profile.
+assets/profile/fallback/th/

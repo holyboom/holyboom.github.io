@@ -7,7 +7,7 @@
     "description": "Turn an ambition into a clear result, a next action, and a way to see progress.",
     "example": "Example: define what a useful first automation should accomplish before adding features.",
     "concept": "Goal-directed behavior",
-    "concept_th": "มุ่งสู่เป้าหมาย"
+    "concept_th": "ยึดผลลัพธ์ทางธุรกิจเป็นหลัก"
   },
   {
     "id": "angle-agents",
@@ -17,7 +17,7 @@
     "description": "Look at the same question through different professional or user perspectives to uncover overlooked trade-offs.",
     "example": "Example: review an AI support workflow from the customer, operations, and engineering viewpoints.",
     "concept": "Perspective taking",
-    "concept_th": "มองหลายมุม"
+    "concept_th": "มองโจทย์จากหลายมุม"
   },
   {
     "id": "mcp-orchestrator",
@@ -27,7 +27,7 @@
     "description": "Connect the roles of tools and information sources into a coherent workflow with clear boundaries.",
     "example": "Example: plan how an approved knowledge source and a drafting tool should work together.",
     "concept": "Distributed cognition",
-    "concept_th": "กระจายและประสานความคิด"
+    "concept_th": "ประสานเครื่องมือให้ทำงานร่วมกัน"
   },
   {
     "id": "chain-of-verification",
@@ -43,11 +43,11 @@
     "id": "spec-before-build",
     "name": "Spec before build",
     "category": "reason",
-    "purpose": "Make the intended outcome explicit.",
+    "purpose": "Define the specification clearly before building.",
     "description": "Describe what a system should do, where its boundaries lie, and what would count as a useful result.",
     "example": "Example: agree on inputs, outputs, and acceptance criteria for a small prototype.",
     "concept": "Mental modeling",
-    "concept_th": "สร้างแบบจำลองก่อนทำ"
+    "concept_th": "กำหนดสเปกให้ชัดก่อนลงมือทำ"
   },
   {
     "id": "subagent-fanout",
@@ -57,7 +57,7 @@
     "description": "Divide a broad problem into independent parts, then bring the findings back into one coherent result.",
     "example": "Example: explore user needs, integration options, and evaluation methods at the same time.",
     "concept": "Parallel processing",
-    "concept_th": "แยกคิดพร้อมกัน"
+    "concept_th": "แยกงานย่อยทำพร้อมกัน"
   },
   {
     "id": "source-grounded-synthesis",
@@ -67,7 +67,7 @@
     "description": "Combine relevant evidence into a useful explanation while keeping the sources and uncertainties visible.",
     "example": "Example: compare several documents and clearly separate agreement, conflict, and missing information.",
     "concept": "Grounded integration",
-    "concept_th": "รวมความคิดบนฐานหลักฐาน"
+    "concept_th": "สรุปข้อมูลโดยไม่หลุดจากแหล่งอ้างอิง"
   },
   {
     "id": "decision-card",
@@ -77,7 +77,7 @@
     "description": "Put the question, options, evidence, and trade-offs in one concise view that supports a deliberate choice.",
     "example": "Example: compare a manual process, a rule-based automation, and an AI-assisted workflow.",
     "concept": "Deliberate choice",
-    "concept_th": "ตัดสินใจอย่างใคร่ครวญ"
+    "concept_th": "เทียบข้อดีข้อเสียให้เห็นชัดก่อนตัดสินใจ"
   },
   {
     "id": "anti-harking-reviewer",
@@ -87,7 +87,7 @@
     "description": "Revisit a conclusion without quietly rewriting the expectations to fit what happened.",
     "example": "Example: compare a pilot result with the success criteria agreed before the trial.",
     "concept": "Hindsight-bias resistance",
-    "concept_th": "ต้านอคติการมองย้อนหลัง"
+    "concept_th": "ตรวจผลลัพธ์เทียบกับโจทย์ตั้งต้น"
   },
   {
     "id": "choose",
@@ -97,7 +97,7 @@
     "description": "Match a challenge to a suitable way of thinking or working before moving into detailed execution.",
     "example": "Example: decide whether the next step needs planning, exploration, or evidence checking.",
     "concept": "Selective attention",
-    "concept_th": "เลือกจุดสนใจ"
+    "concept_th": "เลือกสกิลตั้งต้นให้เหมาะกับงาน"
   },
   {
     "id": "claude-environment-config",
@@ -107,7 +107,7 @@
     "description": "Make the working environment and relevant context clear enough to support the task ahead.",
     "example": "Example: identify the project context and available tools before beginning an engineering session.",
     "concept": "Context scaffolding",
-    "concept_th": "สร้างบริบทสนับสนุน"
+    "concept_th": "เตรียมสภาพแวดล้อมและบริบทให้พร้อมทำงาน"
   },
   {
     "id": "codex-offload",
@@ -117,7 +117,7 @@
     "description": "Reduce cognitive load by giving a bounded task a clear outcome, useful context, and a review point.",
     "example": "Example: delegate an isolated implementation task with explicit acceptance criteria.",
     "concept": "Cognitive offloading",
-    "concept_th": "ฝากภาระความจำ"
+    "concept_th": "ส่งต่องานย่อยที่กำหนดขอบเขตชัดแล้ว"
   },
   {
     "id": "constraint-discovery-loop",
@@ -137,7 +137,7 @@
     "description": "Distill working information so the next step has the essentials without repeating everything.",
     "example": "Example: carry forward the current goal, decisions, and open questions after a long session.",
     "concept": "Working-memory efficiency",
-    "concept_th": "ใช้ความจำทำงานอย่างคุ้มค่า"
+    "concept_th": "เก็บบริบทที่จำเป็นไว้ใช้ให้คุ้มค่า"
   },
   {
     "id": "controlled-gap-fill-inference",
@@ -157,7 +157,7 @@
     "description": "Reframe a disagreement to reveal new information, alternatives, or a useful next experiment.",
     "example": "Example: turn an architecture debate into a small test that can distinguish the options.",
     "concept": "Cognitive flexibility",
-    "concept_th": "ยืดหยุ่นทางความคิด"
+    "concept_th": "หาทางออกเมื่อทางเลือกขัดแย้งกัน"
   },
   {
     "id": "dual-agent-debate",
@@ -167,7 +167,7 @@
     "description": "Explore contrasting arguments around a proposal so that strengths, weaknesses, and unresolved questions become clearer.",
     "example": "Example: compare the case for a simpler workflow with the case for a more capable agent.",
     "concept": "Dialectical thinking",
-    "concept_th": "คิดจากมุมที่แตกต่าง"
+    "concept_th": "ตั้งคำถามและทบทวนข้อเสนอจากมุมตรงข้าม"
   },
   {
     "id": "dynamic-skill-sequencer",
@@ -187,7 +187,7 @@
     "description": "Examine an existing result for focused improvements that make the work more useful and complete.",
     "example": "Example: refine a prototype around the point where users struggle most.",
     "concept": "Growth orientation",
-    "concept_th": "พัฒนาอย่างต่อเนื่อง"
+    "concept_th": "ปรับปรุงจุดที่ส่งผลต่อคุณค่ามากที่สุด"
   },
   {
     "id": "evaluator-optimizer",
@@ -197,7 +197,7 @@
     "description": "Compare an output with a clear expectation, identify a gap, and use the feedback to guide a revision.",
     "example": "Example: review a generated answer for source support and clarity, then address the weakest part.",
     "concept": "Metacognitive feedback",
-    "concept_th": "ตรวจทวนและปรับความคิด"
+    "concept_th": "นำข้อสังเกตมาปรับปรุงงานในรอบถัดไป"
   },
   {
     "id": "evidence-manifest-builder",
@@ -217,7 +217,7 @@
     "description": "Think about where a group of tasks can pause safely and what context is needed to continue.",
     "example": "Example: pause several workstreams while a shared dependency is being clarified.",
     "concept": "Inhibitory control",
-    "concept_th": "หยุดและควบคุมการทำงาน"
+    "concept_th": "พักและกลับมาทำงานต่อได้อย่างเป็นระบบ"
   },
   {
     "id": "plan-mode",
@@ -227,7 +227,7 @@
     "description": "Map the intended steps, dependencies, and unknowns before beginning a piece of work.",
     "example": "Example: outline an AI pilot from the initial question through a small evaluation.",
     "concept": "Prospective thinking",
-    "concept_th": "คิดล่วงหน้า"
+    "concept_th": "วางแผนล่วงหน้าก่อนลงมือทำ"
   },
   {
     "id": "pre-registered-triggers",
@@ -237,7 +237,7 @@
     "description": "Make the conditions for continuing, changing direction, or stopping explicit in advance.",
     "example": "Example: agree on the evidence needed to expand a pilot before seeing its results.",
     "concept": "Precommitment",
-    "concept_th": "กำหนดเงื่อนไขไว้ก่อน"
+    "concept_th": "ตั้งเกณฑ์ตัดสินใจไว้ก่อนเห็นผลลัพธ์"
   },
   {
     "id": "scope-bridge",
@@ -247,7 +247,7 @@
     "description": "Bring relevant ideas from one area into another while making the relationship and limits explicit.",
     "example": "Example: connect a business requirement with the engineering decisions it affects.",
     "concept": "Context integration",
-    "concept_th": "เชื่อมบริบท"
+    "concept_th": "เชื่อมบริบทที่เกี่ยวข้องเข้าด้วยกัน"
   },
   {
     "id": "seed-expansion-via-search",
@@ -257,7 +257,7 @@
     "description": "Start from a known idea or source and explore related questions that may improve understanding.",
     "example": "Example: use one promising workflow as a starting point for investigating adjacent use cases.",
     "concept": "Associative expansion",
-    "concept_th": "ขยายความคิดเชื่อมโยง"
+    "concept_th": "ต่อยอดจุดตั้งต้นให้เห็นภาพกว้างขึ้น"
   },
   {
     "id": "skill-md-inspector",
@@ -267,7 +267,7 @@
     "description": "Read a capability with focused attention to its purpose, expectations, and limits.",
     "example": "Example: inspect whether a tool or skill actually fits the task before relying on it.",
     "concept": "Focused attention",
-    "concept_th": "เจาะจุดตรวจสอบ"
+    "concept_th": "ตรวจดูโครงสร้างและวิธีทำงานของสกิล"
   },
   {
     "id": "skill-triad-techniques",
@@ -277,7 +277,7 @@
     "description": "Use three complementary perspectives or techniques to reveal different aspects of the same problem.",
     "example": "Example: consider a proposed automation through usefulness, feasibility, and risk.",
     "concept": "Triangulation",
-    "concept_th": "ตรวจด้วยสามมุม"
+    "concept_th": "วิเคราะห์ปัญหาผ่านสามมุมมอง"
   },
   {
     "id": "structured-output-thai",
@@ -287,7 +287,7 @@
     "description": "Organize ideas into a Thai-language response that is easier to read, compare, and act on.",
     "example": "Example: turn a technical analysis into a concise Thai decision brief.",
     "concept": "Cognitive clarity",
-    "concept_th": "จัดความคิดให้ชัด"
+    "concept_th": "จัดโครงสร้างคำตอบภาษาไทยให้อ่านเข้าใจง่าย"
   },
   {
     "id": "the-crystallizer",
@@ -317,7 +317,7 @@
     "description": "Maintain focused awareness of a process and the signals that may deserve a closer look.",
     "example": "Example: identify which changes in a running workflow should prompt a review.",
     "concept": "Vigilant attention",
-    "concept_th": "เฝ้าตรวจอย่างมีสมาธิ"
+    "concept_th": "เฝ้าสังเกตความเปลี่ยนแปลงสำคัญ"
   },
   {
     "id": "workflow-blueprint",
@@ -337,6 +337,6 @@
     "description": "Follow a defined sequence of work while keeping its intended outcome and checkpoints visible.",
     "example": "Example: work through a small implementation plan and review the result at each checkpoint.",
     "concept": "Action initiation",
-    "concept_th": "เริ่มและเดินงานจริง"
+    "concept_th": "เปลี่ยนแผนให้เป็นการลงมือทำจริง"
   }
 ]
