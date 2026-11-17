@@ -7,7 +7,7 @@ for lang,field in [('en','english'),('th','thai')]:
  for row in rows:
   value=row[field];kind=row['kind']
   if kind.startswith('Story / '):
-   k=kind.split(' / ')[1];c=chapters[row['section']];c[k]=value.split('\n\n') if isinstance(c[k],list) else value
+   k=kind.split(' / ')[1];c=chapters[row['section']];c[k]=(value.split('\n\n') if value else []) if isinstance(c[k],list) else value
   elif kind=='Closing quotation':story['closingQuote']=value
   elif row['section'].startswith('work / '):
    target=work[row['section'].split(' / ')[1]];pathpart=row['sourceEn'].split(' :: ')[1].split('.',2)[2];keys=[int(b) if b else a for a,b in re.findall(r'([^.[\]]+)|\[(\d+)\]',pathpart)]

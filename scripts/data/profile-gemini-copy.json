@@ -718,9 +718,10 @@
       "kind": "Story / paragraphs",
       "originalEnglish": "Explore a browser-based demonstration of how intentions, workflow boundaries, and interface choices can work together. Try three illustrative scenarios, inspect fictional source-to-output examples, and carry your choices into a planning brief.\n\nThis is a portfolio demonstration, not a live agent service or a claimed client result. The public project makes its browser behavior inspectable; client source code, private records, and confidential documents are not published here.",
       "english": "Step into a browser-based demonstration of how human intent, workflow boundaries, and interface design work together. Explore three illustrative scenarios, trace fictional source-to-output examples, and carry your selections into a planning brief.\n\nThis is a portfolio demonstration, not a live agent service or a claimed client result. Its browser behavior is open to inspect here; client source code, private records, and confidential documents are never published.",
-      "thai": "ผมสร้างเว็บไซต์นี้ไว้ให้คุณลองสำรวจด้วยตัวเอง ลองเลือกโจทย์ตัวอย่าง ดูว่าแต่ละสกิลเข้ามาช่วยในขั้นตอนไหน และตามคำตอบกลับไปยังข้อมูลอ้างอิงได้ จากนั้นนำสิ่งที่เลือกไปเป็นข้อมูลตั้งต้นสำหรับคุยงานต่อ\n\nทั้งสามสถานการณ์และข้อมูลประกอบเป็นตัวอย่างสมมติในพอร์ตโฟลิโอ ไม่ใช่บริการ Agent ที่กำลังทำงานให้ลูกค้าจริง หรือผลลัพธ์ทางธุรกิจที่นำมาอ้าง ส่วนโค้ดและเอกสารลับของลูกค้าไม่ได้เผยแพร่บนเว็บไซต์นี้",
+      "thai": "",
       "sourceTh": "scripts/data/profile-story.th.json :: work-heading.paragraphs",
-      "sourceEn": "scripts/data/profile-story.json :: work-heading.paragraphs"
+      "sourceEn": "scripts/data/profile-story.json :: work-heading.paragraphs",
+      "thaiOverride": "Removed at the user’s request on 2026-11-17."
     },
     {
       "id": "P0073",
