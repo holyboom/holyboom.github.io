@@ -1,14 +1,22 @@
 /* The opening has its own visible-time clock; the formed person stays scroll-driven. */
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),g=require('../assets/profile/geometry.js'),out=process.env.OPENING_QA_DIR||'/tmp/profile-opening';fs.mkdirSync(out,{recursive:true});const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass,...(data===undefined?{}:{data})});if(!pass)console.error('FAIL',name,JSON.stringify(data));},hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex'),distance=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
 
-// Compare two composited page frames with only the lower copy of the SVG
-// removed. Container size alone cannot detect a clipped or unpainted <use>.
+// Hold the actual SVG frame while the browser paints it on the page and in
+// isolation. Text antialiasing can change when a layer disappears on Linux.
 async function paintedWeave(page,selector) {
- const styles='.reading-thread,.thought-light{visibility:hidden!important}';
+ const mesh=await page.locator('#profile-shared-fabric').elementHandle();
+ const still=await mesh.evaluateHandle(el=>{const copy=el.cloneNode(true);el.replaceWith(copy);return copy;});
  const frames=[];
- for(const style of [styles,styles+'.shared-weave-lower{visibility:hidden!important}']){
-  const png=await page.screenshot({style,scale:'css',animations:'disabled'});
-  frames.push(png.toString('base64'));
+ try{
+  const base='.reading-thread,.thought-light{visibility:hidden!important}';
+  const isolate='html,body{background:#000!important}body{visibility:hidden!important}.shared-weave,.shared-weave-lower{visibility:visible!important}';
+  for(const style of [base,base+'#profile-shared-fabric path{stroke:none!important}',isolate]){
+   const png=await page.screenshot({style,scale:'css',animations:'disabled'});
+   frames.push(png.toString('base64'));
+  }
+ }finally{
+  await still.evaluate((copy,el)=>copy.replaceWith(el),mesh);
+  await still.dispose();await mesh.dispose();
  }
  return page.evaluate(async ({images,selector})=>{
   const pixels=await Promise.all(images.map(async encoded=>{
@@ -19,8 +27,9 @@ async function paintedWeave(page,selector) {
   }));
   const seam=Math.ceil(document.querySelector('.stage').getBoundingClientRect().bottom);
   const band=Math.max(1,Math.floor((innerHeight-seam)/5));
-  const [a,b]=pixels;
-  const painted=i=>Math.max(Math.abs(a[i]-b[i]),Math.abs(a[i+1]-b[i+1]),Math.abs(a[i+2]-b[i+2]))>=3;
+  const [a,b,layer]=pixels;
+  const ink=i=>Math.max(layer[i],layer[i+1],layer[i+2])>=3;
+  const painted=i=>ink(i)&&Math.max(Math.abs(a[i]-b[i]),Math.abs(a[i+1]-b[i+1]),Math.abs(a[i+2]-b[i+2]))>=3;
   function changed(start,end){
    let count=0;
    for(let i=start*innerWidth*4;i<end*innerWidth*4;i+=4)if(painted(i))count++;
@@ -33,8 +42,11 @@ async function paintedWeave(page,selector) {
    metrics.overflow=document.documentElement.scrollWidth>innerWidth;
    metrics.rows=Array.from(range.getClientRects(),r=>{
     const y=Math.floor((r.top+r.bottom)/2);
-    let first=0;while(first<innerWidth&&!painted((innerWidth*y+first)*4))first++;
-    return {right:r.right,first,visible:first<innerWidth};
+    let first=0;while(first<innerWidth&&!ink((innerWidth*y+first)*4))first++;
+    let overlap=0;
+    for(let row=Math.ceil(r.top);row<Math.floor(r.bottom);row++)
+     for(let x=Math.ceil(r.left);x<Math.floor(r.right);x++)if(ink((innerWidth*row+x)*4))overlap++;
+    return {right:r.right,first,overlap,visible:first<innerWidth};
    });
   }
   return metrics;
@@ -114,7 +126,7 @@ async function checkThaiCopy(browser){
   const short=await edit('#hero-title','ฝัน'),wide=await edit('#hero-title','อยากชวนคุณมาดู');
   const wrapped=await edit('.hero-hook','ก่อนจะเขียนโค้ด ผมเคยฝันถึงบ้านที่มีคนอยู่');
   const restored=await edit('#hero-title','ฝัน');
-  const clear=m=>!m.overflow&&m.rows.every(r=>r.visible&&r.first>=r.right);
+  const clear=m=>!m.overflow&&m.rows.every(r=>r.visible&&r.first>=r.right&&r.overlap===0);
   check('thai-title-ink-clears-the-weave-after-a-same-height-edit',
    wide.height===short.height&&wide.rows[0].right>short.rows[0].right+50&&clear(wide)&&wide.rows[0].first>short.rows[0].first+10,{short,wide});
   check('a-rewrapped-thai-hook-keeps-both-lines-clear',wrapped.rows.length>1&&clear(wrapped),wrapped);
