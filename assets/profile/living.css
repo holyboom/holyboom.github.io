@@ -142,3 +142,27 @@ main :is(a,summary),.site-footer a{scroll-margin-block:110px 20px}
 .reading-thread.quiet-source .reading-thread-halo{display:none}
 .reading-thread.quiet-source .reading-thread-line{stroke-width:.85}
 .reading-thread.quiet-source .reading-thread-source{opacity:.6}
+
+/* The same strands pass from the stage into the page. Below the seam the
+   artwork sits under the chapter copy, so native selection and links stay on top. */
+.shared-weave-host,.shared-weave,.shared-weave-lower{display:none}
+@media screen and (max-width:767px){
+ .profile-enhanced .journey{isolation:isolate}
+ .profile-enhanced .shared-weave-host{
+  display:block;position:sticky;top:100px;z-index:1;height:0;
+  width:min(100vw,440px);margin-left:calc((100% - min(100vw,440px))/2);
+  pointer-events:none
+ }
+ .profile-enhanced .stage,.profile-enhanced .chapter{border-bottom-color:transparent}
+ .profile-enhanced .shared-weave,.profile-enhanced .shared-weave-lower{
+  display:block;position:absolute;top:0;left:0;max-width:none;
+  pointer-events:none;overflow:hidden
+ }
+ .profile-enhanced .shared-weave{
+  /* Bridge the fractional sticky edge and its one-pixel box border. */
+  z-index:1;clip-path:inset(0 0 calc(100% - var(--shared-weave-seam,0px) - 1px) 0)
+ }
+ .profile-enhanced .shared-weave-lower{clip-path:inset(var(--shared-weave-seam,100%) 0 0 0)}
+ .profile-enhanced .stage-frame :is(.scene-transition,.scene-meaning,.scene-caption){z-index:2}
+ .profile-finale-active .shared-weave-host,:root:not(.profile-story-active) .shared-weave-host{visibility:hidden}
+}

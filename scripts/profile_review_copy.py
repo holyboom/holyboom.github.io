@@ -56,8 +56,39 @@ class Document(HTMLParser):
    if owner is node:result.append(t)
   return result
 
+def set_hero_title(doc,node,value):
+ """Use the editor's line breaks while retaining any surviving emphasis."""
+ value=value.replace('\r\n','\n').replace('\r','\n')
+ emphasis=next((child for child in node.children if isinstance(child,Node) and child.tag=='em'),None)
+ match=None
+ if emphasis:
+  words=normalized(' '.join(unescape(t.value) for t in doc.texts(emphasis))).split()
+  pattern=''
+  for i,word in enumerate(words):
+   if i:
+    # A Thai phrase can continue across an old layout break without a space.
+    thai_join=re.fullmatch(r'[\u0e00-\u0e7f]{2}',words[i-1][-1]+word[0])
+    pattern+=r'\s*' if thai_join else r'\s+'
+   pattern+=re.escape(word)
+  matches=list(re.finditer(pattern,value)) if pattern else []
+  if len(matches)==1:match=matches[0]
+ def append_lines(parent,text):
+  for i,line in enumerate(text.split('\n')):
+   if i:parent.children.append(Node('br',raw='<br>',parent=parent))
+   if line:parent.children.append(Text(escape(line,quote=False),parent))
+ node.children=[]
+ if match:
+  append_lines(node,value[:match.start()])
+  emphasis.children=[];node.children.append(emphasis)
+  append_lines(emphasis,match.group())
+  append_lines(node,value[match.end():])
+ else:append_lines(node,value)
+
 def set_copy(doc,node,value):
  texts=doc.owned(node);old=normalized(' '.join(unescape(t.value) for t in texts))
+ if node.tag=='h1' and node.attrs.get('id')=='hero-title':
+  if old!=normalized(value) or '\n' in value or '\r' in value:set_hero_title(doc,node,value)
+  return
  if old==normalized(value):return
  if not texts:raise ValueError('Missing text owner: '+node.key())
  # Preserve purposeful emphasis and company spans when the exact phrase survives.

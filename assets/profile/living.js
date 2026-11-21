@@ -7,6 +7,7 @@
  const chapters=[...document.querySelectorAll('[data-scene]')],rail=[...document.querySelectorAll('.chapter-rail a')],beneath=document.querySelector('#beneath');
  const question=document.querySelector('#craft .story-bridge strong'),entranceTitle=document.querySelector('#ai-experiences h2'),entranceBody=document.querySelector('#ai-experiences .scene-sequence+p');
  const readingThread=window.ProfileReadingThread?.create({chapters,canvas,stage,question});
+ const sharedWeave=window.ProfileSharedWeave?.create({stage,canvas});
  const professional=document.querySelector('#experience'),summaryHost=document.querySelector('.reflection-art');
  const originalHost=canvas.parentElement,contact=document.querySelector('#contact'),contactHost=contact.querySelector('.scene-fallback');
  const finale=window.ProfileFinale?.create({g,canvas,ctx,stageHost:originalHost,summaryHost,professional,contact,requestMeasure:()=>measure(),wake});
@@ -20,7 +21,12 @@
  const idleDuration=2.4;
  let idleSeconds=0;
  let renderedCamera=null,modelCache=null,bitmapDetail=0,navPosition=-1,navScroll=-1;
- let readingStops=null;
+ let readingStops=null,copyLayoutDirty=false,measuredViewportHeight=0;
+ // A wording change can move the end of a line without resizing its block.
+ // Coalesce edits, font swaps and mobile toolbar resizes on the existing clock.
+ function requestCopyMeasure(){
+  copyLayoutDirty=true;wake();
+ }
  let layoutCorrection=null,measuredDisclosureOpen=beneath.open;
  const workPaths=[...document.querySelectorAll('.work-path')],workState=()=>workPaths.map(el=>el.open?'1':'0').join('');
  const inspecting=()=>(beneath.open&&current>6.45&&current<8.25)||(workPaths.some(el=>el.open)&&current>7.75&&current<9.1);
@@ -106,6 +112,7 @@
   return (low+high)/2;
  }
  function measure({navigation=false,preserve=false}={}){
+  copyLayoutDirty=false;measuredViewportHeight=window.visualViewport?.height||innerHeight;
   resetTrail();
   const hadAnchors=anchors.length>0;
   const nextAnchors=chapters.map(el=>el.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(el).scrollMarginTop||'0'));
@@ -118,7 +125,7 @@
    layoutCorrection=Math.abs(delta)>.00001?{origin,delta,span:Math.max(.30,2.2*Math.abs(delta))}:null;
   }
   finale?.measure(anchors);
-  const r=canvas.getBoundingClientRect();readingThread?.measure();w=r.width;h=r.height;
+  const r=canvas.getBoundingClientRect();readingThread?.measure();sharedWeave?.measure();w=r.width;h=r.height;
   dpr=Math.min(devicePixelRatio||1,innerWidth<768?1.5:1.75);
   if(w&&h){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);glow.width=Math.round(w*0.5);glow.height=Math.round(h*0.5);}
   detail=innerWidth<1100?2:1;dirty=true;target=positionAt(scrollY);if(!hadAnchors)current=target;wake();
@@ -164,10 +171,13 @@
  }
  function render(time){
   frameId=0;if(document.hidden||!visible||staticLayout()||!w||!h){last=0;return;}
+  if(copyLayoutDirty)measure();
   const started=performance.now(),elapsed=last?time-last:16,dt=Math.min(64,elapsed);last=time;
   target=positionAt(scrollY);const follow=1-Math.exp(-dt/28);
   const previous=current,hadVisibleTrail=trailEnergy>.01;
   current=g.mix(current,target,follow);if(Math.abs(current-target)<0.0001)current=target;
+  // The shared margin measures the caption belonging to this painted pose.
+  updateNavigation();
   const travel=current-previous;
   if(Math.abs(travel)>1){resetTrail();}
   else if(Math.abs(travel)>.00015){
@@ -181,7 +191,7 @@
   openingActive=current<1&&g.resolve(current)<g.config.opening.stopAt;if(openingActive)openingSeconds+=dt/1000;ambientPhase=openingActive?g.openingPhase(openingSeconds):0;
   const desired=beneath.open&&current>6.5?1:0;exploded=g.mix(exploded,desired,follow);
   const ending=finale?.render(dt/1000,scrollY);
-  if(ending?.active){resetTrail();readingThread?.hide();renderedCamera=finale.snapshot().camera;updateNavigation();draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;dirty=false;if(ending.pending||current!==target)wake();return;}
+  if(ending?.active){resetTrail();readingThread?.hide();sharedWeave?.hide();renderedCamera=finale.snapshot().camera;draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;dirty=false;if(ending.pending||current!==target)wake();return;}
   const formed=g.resolve(current)>=1;
   const moving=Math.abs(current-target)>.0001||Math.abs(travel)>.0001;
   if(!formed)idleSeconds=0;
@@ -233,6 +243,9 @@
   }
   ctx.lineCap=ctx.lineJoin='round';
   const projected=g.projectLines(geom.filter(line=>line.alpha>.005&&line.points.length>1),project);
+  if(innerWidth<768&&canvas.parentElement===originalHost){
+   sharedWeave?.draw({position:current,projected,theme,shot,ambientPhase});
+  }
   // Skip invisible or desktop-only paths before the per-vertex transform.
   // The world-set screen bounds can only be tested after projection.
   const compactCanvas=innerWidth<768;
@@ -355,7 +368,7 @@
   }
   ctx.textAlign='start';ctx.globalAlpha=1;
 
-  bitmapDetail=detail;readingThread?.write(readingFrame);if(cue)readingThread?.animate(dt/1000,cue,visible);updateNavigation();draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;
+  bitmapDetail=detail;readingThread?.write(readingFrame);if(cue)readingThread?.animate(dt/1000,cue,visible);draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;
   if(drawCost>8&&detail===1&&Math.abs(current-Math.round(current))<.02)detail=2;
   dirty=bitmapDetail!==detail||idlePending;
   if(openingActive||idlePending||bitmapDetail!==detail||readingThread?.pending()||trailEnergy>.01||current!==target||Math.abs(exploded-desired)>.001||Math.abs(px-tx)>.0001||Math.abs(py-ty)>.0001)wake();
@@ -366,7 +379,7 @@
   const finaleHost=finale?.host(scrollY);
   const host=finaleHost|| (scrollY>=(anchors[10]??Infinity)-1?contactHost:scrollY>=(anchors[9]??Infinity)-1?summaryHost:originalHost);
   if(canvas.parentElement!==host){host.appendChild(canvas);contact.classList.toggle('live-art',host===contactHost);professional.classList.toggle('live-art',host===summaryHost);layoutCorrection=null;measure({navigation:true});}
-  const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible){last=0;resetTrail();readingThread?.hide();finale?.resetTime();}
+  const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible){last=0;resetTrail();readingThread?.hide();sharedWeave?.hide();finale?.resetTime();}
   target=positionAt(scrollY);dirty=true;updateNavigation();
   if(readingWidth===innerWidth&&readingHeight===innerHeight)readingContext=captureReadingContext();
   wake();}
@@ -379,12 +392,23 @@
  const observer=new IntersectionObserver(()=>scroll(),{rootMargin:'100px'});observer.observe(stage);observer.observe(summaryHost);observer.observe(contactHost);
  const ro=new ResizeObserver(()=>measure());
  for(const element of [journey,question,entranceTitle,entranceBody])if(element)ro.observe(element);
+ const copyChanges=new MutationObserver(requestCopyMeasure);
+ for(const copy of journey.querySelectorAll('.chapter-copy')){
+  ro.observe(copy);
+  copyChanges.observe(copy,{subtree:true,childList:true,characterData:true});
+ }
+ window.visualViewport?.addEventListener('resize',()=>{
+  if(innerWidth<768&&window.visualViewport.height!==measuredViewportHeight)requestCopyMeasure();
+ },{passive:true});
  addEventListener('hashchange',()=>{
   if(location.hash==='#ai-experiences'||location.hash==='#title-ai-experiences'){layoutCorrection=null;scroll();}
  });
  addEventListener('pointermove',e=>{if(!matchMedia('(hover: hover) and (pointer: fine)').matches||reduced)return;const r=stage.getBoundingClientRect();tx=g.clamp((e.clientX-r.left)/Math.max(r.width,1)-.5,-.5,.5)*.1;ty=g.clamp((e.clientY-r.top)/Math.max(r.height,1)-.5,-.5,.5)*.1;wake();},{passive:true});
  document.addEventListener('pointerleave',()=>{tx=ty=0;wake();});
- addEventListener('pageshow',measure);document.fonts.ready.then(measure);
+ addEventListener('pageshow',measure);document.fonts.ready.then(()=>{
+  measure();
+  document.fonts.addEventListener('loadingdone',requestCopyMeasure);
+ });
  activate();scroll();
  // Read-only diagnostics for reproducible QA; no control over user content.
  window.ProfileExperience=Object.freeze({scrollForPosition,snapshot:()=>({idleSeconds,finale:finale?.snapshot(),opening:{active:openingActive,seconds:openingSeconds,phase:ambientPhase},readingThread:readingThread?.snapshot(),cinematic:readingThread?.cinematicSnapshot(),mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],readingStops:readingStops?.map(point=>[...point]),width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});

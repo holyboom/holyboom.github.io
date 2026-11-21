@@ -1,0 +1,694 @@
+{
+  "before": "Public v31, holyboom.github.io",
+  "after": "Local v32 release candidate. Real desktop browser engines used CSS viewport and touch emulation.",
+  "editions": [
+    {
+      "deviceViewport": "1440x900",
+      "edition": "en",
+      "engine": "Chromium 156.0.8078.79",
+      "release": "living-shared-weave-v32",
+      "nativePositions": [
+        {
+          "point": "opening",
+          "scrollY": 0,
+          "cameraTrack": 0
+        },
+        {
+          "point": "origins",
+          "scrollY": 1232,
+          "cameraTrack": 1.3313
+        },
+        {
+          "point": "doubt",
+          "scrollY": 7413,
+          "cameraTrack": 14.7994
+        },
+        {
+          "point": "gear",
+          "scrollY": 9277,
+          "cameraTrack": 19.9985
+        },
+        {
+          "point": "entrance",
+          "scrollY": 9723,
+          "cameraTrack": 23.08
+        },
+        {
+          "point": "plane",
+          "scrollY": 12729,
+          "cameraTrack": 28.099
+        },
+        {
+          "point": "finale",
+          "scrollY": 13269,
+          "cameraTrack": 29
+        }
+      ],
+      "maxScrollWidthOverflow": 0,
+      "maxReverseCoordinateDifference": 0.0,
+      "pageErrors": []
+    },
+    {
+      "deviceViewport": "320x568",
+      "edition": "en",
+      "engine": "Chromium 156.0.8078.79",
+      "release": "living-shared-weave-v32",
+      "nativePositions": [
+        {
+          "point": "opening",
+          "scrollY": 0,
+          "cameraTrack": 0
+        },
+        {
+          "point": "beat1",
+          "scrollY": 114,
+          "cameraTrack": 0.0193
+        },
+        {
+          "point": "heroRead",
+          "scrollY": 352,
+          "cameraTrack": 0.4326
+        },
+        {
+          "point": "origins",
+          "scrollY": 1090,
+          "cameraTrack": 1.3299
+        },
+        {
+          "point": "lesson",
+          "scrollY": 9464,
+          "cameraTrack": 18.039
+        },
+        {
+          "point": "gear",
+          "scrollY": 10119,
+          "cameraTrack": 20.0007
+        },
+        {
+          "point": "plane",
+          "scrollY": 14229,
+          "cameraTrack": 28.1004
+        },
+        {
+          "point": "finale",
+          "scrollY": 14910,
+          "cameraTrack": 29
+        }
+      ],
+      "maxScrollWidthOverflow": 0,
+      "maxReverseCoordinateDifference": 0.0,
+      "pageErrors": []
+    },
+    {
+      "deviceViewport": "680x320",
+      "edition": "en",
+      "engine": "Chromium 156.0.8078.79",
+      "release": "living-shared-weave-v32",
+      "nativePositions": [
+        {
+          "point": "opening",
+          "scrollY": 0,
+          "cameraTrack": 0
+        },
+        {
+          "point": "heroRead",
+          "scrollY": 381,
+          "cameraTrack": 0.5298
+        },
+        {
+          "point": "origins",
+          "scrollY": 951,
+          "cameraTrack": 1.3307
+        },
+        {
+          "point": "plane",
+          "scrollY": 10589,
+          "cameraTrack": 28.0992
+        },
+        {
+          "point": "finale",
+          "scrollY": 11096,
+          "cameraTrack": 29
+        }
+      ],
+      "maxScrollWidthOverflow": 0,
+      "maxReverseCoordinateDifference": 0.0,
+      "pageErrors": []
+    },
+    {
+      "deviceViewport": "393x800",
+      "edition": "th",
+      "engine": "Chromium 156.0.8078.79",
+      "release": "living-shared-weave-v32",
+      "nativePositions": [
+        {
+          "point": "opening",
+          "scrollY": 0,
+          "cameraTrack": 0
+        },
+        {
+          "point": "beat1",
+          "scrollY": 160,
+          "cameraTrack": 0.0951
+        },
+        {
+          "point": "heroRead",
+          "scrollY": 352,
+          "cameraTrack": 0.424
+        },
+        {
+          "point": "origins",
+          "scrollY": 1049,
+          "cameraTrack": 1.3294
+        },
+        {
+          "point": "lesson",
+          "scrollY": 8270,
+          "cameraTrack": 18.0413
+        },
+        {
+          "point": "gear",
+          "scrollY": 8893,
+          "cameraTrack": 20.0015
+        },
+        {
+          "point": "plane",
+          "scrollY": 12563,
+          "cameraTrack": 28.0996
+        },
+        {
+          "point": "finale",
+          "scrollY": 13101,
+          "cameraTrack": 29
+        }
+      ],
+      "maxScrollWidthOverflow": 0,
+      "maxReverseCoordinateDifference": 0.0,
+      "pageErrors": []
+    },
+    {
+      "deviceViewport": "393x680",
+      "edition": "en",
+      "engine": "WebKit 27.2",
+      "release": "living-shared-weave-v32",
+      "nativePositions": [
+        {
+          "point": "opening",
+          "scrollY": 0,
+          "cameraTrack": 0
+        },
+        {
+          "point": "origins",
+          "scrollY": 1006,
+          "cameraTrack": 1.3288
+        },
+        {
+          "point": "gear",
+          "scrollY": 9051,
+          "cameraTrack": 20.0016
+        },
+        {
+          "point": "bridge",
+          "scrollY": 9531,
+          "cameraTrack": 22.1
+        },
+        {
+          "point": "plane",
+          "scrollY": 12789,
+          "cameraTrack": 28.1005
+        },
+        {
+          "point": "finale",
+          "scrollY": 13415,
+          "cameraTrack": 29
+        }
+      ],
+      "maxScrollWidthOverflow": 0,
+      "maxReverseCoordinateDifference": 0.0,
+      "pageErrors": []
+    },
+    {
+      "deviceViewport": "393x680",
+      "edition": "th",
+      "engine": "WebKit 27.2",
+      "release": "living-shared-weave-v32",
+      "nativePositions": [
+        {
+          "point": "opening",
+          "scrollY": 0,
+          "cameraTrack": 0
+        },
+        {
+          "point": "beat1",
+          "scrollY": 136,
+          "cameraTrack": 0.054
+        },
+        {
+          "point": "heroRead",
+          "scrollY": 365,
+          "cameraTrack": 0.4463
+        },
+        {
+          "point": "introActions",
+          "scrollY": 519,
+          "cameraTrack": 0.7101
+        },
+        {
+          "point": "origins",
+          "scrollY": 1049,
+          "cameraTrack": 1.3294
+        },
+        {
+          "point": "drawing",
+          "scrollY": 1427,
+          "cameraTrack": 2.5897
+        },
+        {
+          "point": "ttb",
+          "scrollY": 5087,
+          "cameraTrack": 10.4794
+        },
+        {
+          "point": "doubt",
+          "scrollY": 7084,
+          "cameraTrack": 14.8015
+        },
+        {
+          "point": "lesson",
+          "scrollY": 8270,
+          "cameraTrack": 18.0413
+        },
+        {
+          "point": "gear",
+          "scrollY": 8893,
+          "cameraTrack": 20.0015
+        },
+        {
+          "point": "bridge",
+          "scrollY": 9375,
+          "cameraTrack": 22.0988
+        },
+        {
+          "point": "entrance",
+          "scrollY": 9603,
+          "cameraTrack": 23.08
+        },
+        {
+          "point": "plane",
+          "scrollY": 12536,
+          "cameraTrack": 28.1006
+        },
+        {
+          "point": "finale",
+          "scrollY": 13061,
+          "cameraTrack": 29
+        }
+      ],
+      "maxScrollWidthOverflow": 0,
+      "maxReverseCoordinateDifference": 0.0,
+      "pageErrors": []
+    }
+  ],
+  "visiblePixelsOnThai393x680": [
+    {
+      "point": "opening",
+      "scrollY": 0,
+      "sampledCoreGlyphPixels": 4441,
+      "p05Contrast": 9.89,
+      "medianContrast": 10.72,
+      "shareBelow3": 0.0,
+      "extensionPixelsBelowStage": 10303,
+      "extensionVisibleY": [
+        337.0,
+        675.0
+      ],
+      "extensionX": [
+        276.0,
+        385.0
+      ],
+      "bottomReach": 0.999,
+      "sharedBelowStageWithinTitleBand": 8269,
+      "distinctActiveRows": 348
+    },
+    {
+      "point": "heroRead",
+      "scrollY": 365,
+      "sampledCoreGlyphPixels": 1829,
+      "p05Contrast": 7.31,
+      "medianContrast": 10.85,
+      "shareBelow3": 0.0,
+      "extensionPixelsBelowStage": 9412,
+      "extensionVisibleY": [
+        336.0,
+        677.0
+      ],
+      "extensionX": [
+        316.0,
+        389.0
+      ],
+      "bottomReach": 0.999,
+      "sharedBelowStageWithinTitleBand": 0,
+      "distinctActiveRows": 348
+    },
+    {
+      "point": "origins",
+      "scrollY": 1049,
+      "sampledCoreGlyphPixels": 3361,
+      "p05Contrast": 7.5,
+      "medianContrast": 10.85,
+      "shareBelow3": 0.0,
+      "extensionPixelsBelowStage": 3639,
+      "extensionVisibleY": [
+        333.4,
+        675.0
+      ],
+      "extensionX": [
+        208.0,
+        389.0
+      ],
+      "bottomReach": 0.999,
+      "sharedBelowStageWithinTitleBand": 0,
+      "distinctActiveRows": 348
+    },
+    {
+      "point": "doubt",
+      "scrollY": 7084,
+      "sampledCoreGlyphPixels": 4833,
+      "p05Contrast": 9.5,
+      "medianContrast": 10.85,
+      "shareBelow3": 0.0,
+      "extensionPixelsBelowStage": 3485,
+      "extensionVisibleY": [
+        334.0,
+        675.0
+      ],
+      "extensionX": [
+        357.8,
+        390.0
+      ],
+      "bottomReach": 0.999,
+      "sharedBelowStageWithinTitleBand": 0,
+      "distinctActiveRows": 348
+    },
+    {
+      "point": "gear",
+      "scrollY": 8893,
+      "sampledCoreGlyphPixels": 2848,
+      "p05Contrast": 9.31,
+      "medianContrast": 10.85,
+      "shareBelow3": 0.0,
+      "extensionPixelsBelowStage": 3941,
+      "extensionVisibleY": [
+        336.0,
+        676.0
+      ],
+      "extensionX": [
+        347.0,
+        389.0
+      ],
+      "bottomReach": 0.999,
+      "sharedBelowStageWithinTitleBand": 0,
+      "distinctActiveRows": 348
+    },
+    {
+      "point": "entrance",
+      "scrollY": 9603,
+      "sampledCoreGlyphPixels": 2755,
+      "p05Contrast": 12.01,
+      "medianContrast": 17.43,
+      "shareBelow3": 0.0,
+      "extensionPixelsBelowStage": 4057,
+      "extensionVisibleY": [
+        335.0,
+        674.0
+      ],
+      "extensionX": [
+        349.0,
+        390.0
+      ],
+      "bottomReach": 0.999,
+      "sharedBelowStageWithinTitleBand": 0,
+      "distinctActiveRows": 348
+    }
+  ],
+  "measurement": "Absolute difference of at least 7/255 in one sRGB channel between matched screenshots at a stopped browser clock, toggling only the SVG continuation. Glyph contrast measured on near-opaque glyph interiors in sampled frames by alternating normal, transparent and white text.",
+  "editorialCopyTest": [
+    {
+      "variant": "long",
+      "shortLineRects": [
+        [
+          24,
+          392.2,
+          157.4,
+          464.2
+        ],
+        [
+          24,
+          455.2,
+          223.7,
+          527.2
+        ]
+      ],
+      "variantLineRects": [
+        [
+          24,
+          392.2,
+          210,
+          464.2
+        ],
+        [
+          24,
+          455.2,
+          228.8,
+          527.2
+        ],
+        [
+          24,
+          518.2,
+          353.5,
+          590.2
+        ]
+      ],
+      "matchedRowY": 530,
+      "leftmostWireShort": 275.1,
+      "leftmostWireAfterEdit": 368.5,
+      "wireReturnToShort": 275.5,
+      "reflowDeltaCssPx": 93.4
+    },
+    {
+      "variant": "equal-height-wide",
+      "shortLineRects": [
+        [
+          24,
+          392.2,
+          157.4,
+          464.2
+        ],
+        [
+          24,
+          455.2,
+          223.7,
+          527.2
+        ]
+      ],
+      "variantLineRects": [
+        [
+          24,
+          392.2,
+          353.5,
+          464.2
+        ],
+        [
+          24,
+          455.2,
+          241.6,
+          527.2
+        ]
+      ],
+      "matchedRowY": 460,
+      "leftmostWireShort": 283.6,
+      "leftmostWireAfterEdit": 370,
+      "wireReturnToShort": 283,
+      "reflowDeltaCssPx": 86.4
+    }
+  ],
+  "nativeTapChecks": [
+    {
+      "engine": "ch",
+      "lang": "en",
+      "view": "320x568",
+      "actions": [
+        {
+          "selector": ".hero .actions a[href=\"#origins\"]",
+          "x": 115.953125,
+          "y": 430.53125,
+          "hit": true,
+          "at": "A",
+          "top": 405.03125,
+          "bottom": 456.03125,
+          "scrollY": 424,
+          "after": {
+            "hash": "#origins",
+            "beneath": false,
+            "y": 748,
+            "overlayPointers": [
+              "none",
+              "none"
+            ]
+          }
+        },
+        {
+          "selector": "#craft .story-bridge[href=\"#ai-experiences\"]",
+          "x": 160,
+          "y": 430.65625,
+          "hit": true,
+          "at": "STRONG",
+          "top": 342.265625,
+          "bottom": 519.046875,
+          "scrollY": 10661,
+          "after": {
+            "hash": "#ai-experiences",
+            "beneath": false,
+            "y": 10947,
+            "overlayPointers": [
+              "none",
+              "none"
+            ]
+          }
+        },
+        {
+          "selector": "#beneath > summary",
+          "x": 160,
+          "y": 430.328125,
+          "hit": true,
+          "at": "SUMMARY",
+          "top": 400.953125,
+          "bottom": 459.703125,
+          "scrollY": 12292,
+          "after": {
+            "hash": "#ai-experiences",
+            "beneath": true,
+            "y": 12292,
+            "overlayPointers": [
+              "none",
+              "none"
+            ]
+          }
+        },
+        {
+          "selector": "#beneath > summary",
+          "x": 160,
+          "y": 430.328125,
+          "hit": true,
+          "at": "SUMMARY",
+          "top": 400.953125,
+          "bottom": 459.703125,
+          "scrollY": 12292,
+          "after": {
+            "hash": "#ai-experiences",
+            "beneath": false,
+            "y": 12292,
+            "overlayPointers": [
+              "none",
+              "none"
+            ]
+          }
+        }
+      ],
+      "overflow": 0
+    },
+    {
+      "engine": "wk",
+      "lang": "th",
+      "view": "393x680",
+      "actions": [
+        {
+          "selector": ".hero .actions a[href=\"#origins\"]",
+          "x": 109.953125,
+          "y": 505.7421875,
+          "hit": true,
+          "at": "A",
+          "top": 479.046875,
+          "bottom": 532.4375,
+          "scrollY": 448,
+          "after": {
+            "hash": "#origins",
+            "beneath": false,
+            "y": 758,
+            "overlayPointers": [
+              "none",
+              "none"
+            ]
+          }
+        },
+        {
+          "selector": "#craft .story-bridge[href=\"#ai-experiences\"]",
+          "x": 196.5,
+          "y": 506.515625,
+          "hit": true,
+          "at": "STRONG",
+          "top": 398.78125,
+          "bottom": 614.25,
+          "scrollY": 9338,
+          "after": {
+            "hash": "#ai-experiences",
+            "beneath": false,
+            "y": 9681,
+            "overlayPointers": [
+              "none",
+              "none"
+            ]
+          }
+        },
+        {
+          "selector": "#beneath > summary",
+          "x": 196.5,
+          "y": 506.390625,
+          "hit": true,
+          "at": "SUMMARY",
+          "top": 475.46875,
+          "bottom": 537.3125,
+          "scrollY": 10821,
+          "after": {
+            "hash": "#ai-experiences",
+            "beneath": true,
+            "y": 10821,
+            "overlayPointers": [
+              "none",
+              "none"
+            ]
+          }
+        },
+        {
+          "selector": "#beneath > summary",
+          "x": 196.5,
+          "y": 506.390625,
+          "hit": true,
+          "at": "SUMMARY",
+          "top": 475.46875,
+          "bottom": 537.3125,
+          "scrollY": 10821,
+          "after": {
+            "hash": "#ai-experiences",
+            "beneath": false,
+            "y": 10821,
+            "overlayPointers": [
+              "none",
+              "none"
+            ]
+          }
+        }
+      ],
+      "overflow": 0
+    }
+  ],
+  "film": {
+    "engine": "Chromium",
+    "viewport": [
+      393,
+      680
+    ],
+    "nativeOffsets": 72,
+    "timing": "Matched 80 ms browser-clock increments. Playback is 12 fps; no device frame-rate claim."
+  }
+}

@@ -18,11 +18,12 @@ def render(head, data, lang='en'):
     # while the fonts are still downloading.
     entrance_fragment = '''(() => {
   const hash = location.hash;
-  if (innerWidth < 768 || !['#ai-experiences', '#title-ai-experiences'].includes(hash)) return;
+  const summary = hash === '#experience';
+  if (!summary && (innerWidth < 768 || !['#ai-experiences', '#title-ai-experiences'].includes(hash))) return;
   const events = new AbortController();
   const options = {signal: events.signal, passive: true, capture: true};
-  let timer;
-  const cancel = () => { clearTimeout(timer); events.abort(); };
+  let timer, expiry;
+  const cancel = () => { clearTimeout(timer); clearTimeout(expiry); events.abort(); };
   for (const type of ['wheel', 'pointerdown', 'touchstart', 'keydown', 'hashchange', 'popstate', 'pagehide']) {
     addEventListener(type, cancel, options);
   }
@@ -34,8 +35,20 @@ def render(head, data, lang='en'):
     const afterScroll = () => {
       clearTimeout(timer);
       timer = setTimeout(() => {
+        if (location.hash !== hash || !document.documentElement.classList.contains('profile-enhanced')) return cancel();
+        if (summary) {
+          // A different line wrap upstream can move the native anchor after
+          // its initial jump, leaving the canvas between the story and CV.
+          const section = document.querySelector(hash);
+          const delta = section.getBoundingClientRect().top - parseFloat(getComputedStyle(section).scrollMarginTop);
+          // WebKit may still be travelling to the initial fragment. Its next
+          // scroll settles the offset. Reader input cancels this listener.
+          if (Math.abs(delta) > innerHeight * .5) return;
+          if (Math.abs(delta) > 1) section.scrollIntoView({block: 'start', behavior: 'instant'});
+          return cancel();
+        }
         cancel();
-        if (innerWidth < 768 || location.hash !== hash || !document.documentElement.classList.contains('profile-enhanced')) return;
+        if (innerWidth < 768) return;
         const heading = document.querySelector('#title-ai-experiences').getBoundingClientRect();
         const header = document.querySelector('.site-header').getBoundingClientRect();
         // A late font swap can move the entire heading behind the sticky
@@ -46,6 +59,7 @@ def render(head, data, lang='en'):
       }, 160);
     };
     addEventListener('scroll', afterScroll, options);
+    if (summary) expiry = setTimeout(cancel, 3500);
     afterScroll();
   }, options);
 })();'''
@@ -63,6 +77,7 @@ def render(head, data, lang='en'):
 <script defer src="/assets/profile/finale.js?v={release}"></script>
 <script defer src="/assets/profile/cinematic-lines.js?v={release}"></script>
 <script defer src="/assets/profile/reading-thread.js?v={release}"></script>
+<script defer src="/assets/profile/shared-weave.js?v={release}"></script>
 <script defer src="/assets/profile/living.js?v={release}" onerror="document.documentElement.classList.remove('profile-boot')"></script>
 </head>''')
     if lang == 'th':
@@ -112,7 +127,7 @@ def render(head, data, lang='en'):
 <a class="skip" href="#profile">Skip to profile</a>
 <header class="site-header"><a class="brand" href="/" aria-label="Holyboom showcase"><img src="/assets/favicon.png" alt="" width="26" height="26">holyboom<span>.</span></a><nav aria-label="Main"><a href="#origins">Story</a><a href="#work-heading">Work</a><a href="#experience">Experience</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav><div class="header-tools"><a href="/th/profile/" lang="th">ไทย</a></div></header>
 <main id="profile">
-<div class="journey" id="journey"><div class="stage" aria-hidden="true"><div class="stage-frame"><div class="stage-top"><span>HOLYMIND / A HUMAN STORY IN CODE</span><span class="stage-count">01 / {scene_total} SCENES</span></div><img class="stage-poster" src="/assets/profile/fallback/scene-0.svg?v={release}" width="720" height="720" alt=""><canvas id="architecture" aria-hidden="true"></canvas><div class="scene-transition"><span class="transition-copy">Imagine</span><span class="transition-track"><i></i></span></div><div class="scene-meaning">Imagination · 1 / 1</div><div class="scene-caption">A world begins at the end of a drawn line.</div><div class="stage-bottom"><span class="scene-label">00 / A MIND AT WORK</span><span>SCROLL TO CONTINUE ↓</span></div></div></div>
+<div class="journey" id="journey"><div class="shared-weave-host" aria-hidden="true"></div><div class="stage" aria-hidden="true"><div class="stage-frame"><div class="stage-top"><span>HOLYMIND / A HUMAN STORY IN CODE</span><span class="stage-count">01 / {scene_total} SCENES</span></div><img class="stage-poster" src="/assets/profile/fallback/scene-0.svg?v={release}" width="720" height="720" alt=""><canvas id="architecture" aria-hidden="true"></canvas><div class="scene-transition"><span class="transition-copy">Imagine</span><span class="transition-track"><i></i></span></div><div class="scene-meaning">Imagination · 1 / 1</div><div class="scene-caption">A world begins at the end of a drawn line.</div><div class="stage-bottom"><span class="scene-label">00 / A MIND AT WORK</span><span>SCROLL TO CONTINUE ↓</span></div></div></div>
 <nav class="chapter-rail" aria-label="Story chapters">{rail}</nav>
 <section class="chapter hero" id="intro" data-scene="0" aria-labelledby="hero-title"><div class="chapter-copy"><p class="eyebrow"><span class="status-dot"></span> BANGKOK, THAILAND / THEERAWEE RANGRAM</p><h1 id="hero-title">An architect<br>at heart.<br><em>An engineer<br>by craft.</em></h1><p class="hero-hook">Before I built systems,<br>I imagined spaces for people.</p><p class="hero-role">Boom · AI Engineer &amp; AI Solutions Architect</p><p class="hero-description">I design and build <strong>AI experiences</strong> that make complex work feel clear, intuitive, and engaging.</p><div class="actions"><a class="primary" href="#origins">Follow the first line <span aria-hidden="true">↓</span></a><a class="text-link" href="#experience">Experience at a glance <span aria-hidden="true">↗</span></a></div><div class="hero-facts"><span>9+ years in software delivery</span><a href="https://www.linkedin.com/in/boom-theerawee" rel="me">Connect on LinkedIn ↗</a></div></div>{figure(0,'A luminous purple woven membrane folds above a flowing network landscape.',True)}<div class="hero-note"><span>ONE PERSON. ONE DRAWN LINE. A WORLD OF POSSIBILITIES.</span><span>01 / THE STORY BELOW ↓</span></div></section>
 {''.join(chapters)}

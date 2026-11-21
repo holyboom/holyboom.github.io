@@ -87,6 +87,7 @@
     "assets/profile/geometry.js",
     "assets/profile/cinematic-lines.js",
     "assets/profile/reading-thread.js",
+    "assets/profile/shared-weave.js",
     "assets/profile/living.js",
     "assets/fonts/instrument-serif.woff2",
     "assets/fonts/instrument-serif-italic.woff2",
