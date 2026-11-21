@@ -17,7 +17,7 @@ for lang,field in [('en','english'),('th','thai')]:
    chapter=int(re.search(r'chapter (\d+)',row['sourceEn'])[1]);beat=int(re.search(r'beat (\d+)',row['sourceEn'])[1]);k=kind.split(' / ')[1]
    if chapter in (0,9,10):continue
    next(c for c in story['chapters'] if c['scene']==chapter)['beats'][beat][k]=value
- story['release']='living-materials-v29';path.write_text(json.dumps(story,ensure_ascii=False,indent=2)+'\n')
+ story['release']='living-new-era-v30';path.write_text(json.dumps(story,ensure_ascii=False,indent=2)+'\n')
 skillpath=ROOT/'assets/skills.json';skills=json.loads(skillpath.read_text());byid={s['id']:s for s in skills}
 for row in rows:
  if row['kind']=='Skill purpose':

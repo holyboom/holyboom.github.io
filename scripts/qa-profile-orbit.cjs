@@ -104,7 +104,12 @@ const frontWork=(position,explode)=>g.illustration(position,explode).filter(l=>l
     page.on('pageerror',e=>errors.push({viewport:label,message:e.message}));page.on('response',r=>{if(r.request().resourceType()==='script'&&r.url().includes('/assets/profile/'))pending.push(r.body().then(body=>browserSources.push({viewport:label,url:r.url(),sha256:hash(body.toString())})));});
     await page.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+'profile/');await page.waitForFunction(()=>window.ProfileExperience&&window.ProfileGeometry?.orbitAt);await page.evaluate(()=>document.fonts.ready);
     await page.evaluate(()=>{const original=ProfileGeometry.createProjector;window.__orbitProjectionOriginal=original;ProfileGeometry.createProjector=(...args)=>{const project=original(...args);window.__orbitProbe={points:[[.7,.2,.4],[-.6,.8,-.3]].map(project),camera:project.camera};return project;};});
-    async function go(position){await page.evaluate(position=>{const a=ProfileExperience.snapshot().anchors,c=Math.floor(position),m=ProfileGeometry.config.morph;scrollTo({top:Number.isInteger(position)?a[c]:a[c]+(a[c+1]-a[c])*(m.start+(m.end-m.start)*(position-c)),behavior:'instant'});},position);await page.waitForFunction(position=>Math.abs(ProfileExperience.snapshot().target-position)<.006&&Math.abs(ProfileExperience.snapshot().current-ProfileExperience.snapshot().target)<.0001,position);await page.waitForTimeout(800);return page.evaluate(()=>({...ProfileExperience.snapshot(),probe:window.__orbitProbe}));}
+    async function go(position){
+     await page.evaluate(p=>scrollTo({top:ProfileExperience.scrollForPosition(p),behavior:'instant'}),position);
+     await page.waitForFunction(p=>{const s=ProfileExperience.snapshot();return Math.abs(s.target-p)<.006&&Math.abs(s.current-s.target)<.0001;},position);
+     await page.waitForTimeout(800);
+     return page.evaluate(()=>({...ProfileExperience.snapshot(),probe:window.__orbitProbe}));
+    }
     const peaks=[];
     for(const event of windows){const state=await go(positionAt(peak(event)));peaks.push(state);browserStates.push({viewport:label,id:event.id,...state});await page.screenshot({path:path.join(out,`${label}-${event.id}.png`)});}
     const rearIndex=windows.findIndex(e=>Math.cos(compact?e.compactYaw:e.yaw)<-.2),rear=windows[rearIndex],p=positionAt(peak(rear));
@@ -117,8 +122,8 @@ const frontWork=(position,explode)=>g.illustration(position,explode).filter(l=>l
     await go(positionAt(rear.start-.02));
     for(const direction of ['forward','reverse']){
      const samples=await page.evaluate(async({start,end,direction})=>{
-      const g=ProfileGeometry,a=ProfileExperience.snapshot().anchors,started=performance.now(),rows=[];let last=-Infinity;
-      const yAt=track=>{let lo=0,hi=g.config.scenes.length-1;for(let n=0;n<45;n++){const p=(lo+hi)/2;if(g.cameraTrack(p)<track)lo=p;else hi=p;}const p=(lo+hi)/2,c=Math.floor(p),m=g.config.morph;return a[c]+(a[c+1]-a[c])*(m.start+(m.end-m.start)*(p-c));};
+      const g=ProfileGeometry,started=performance.now(),rows=[];let last=-Infinity;
+      const yAt=track=>{let lo=0,hi=g.config.scenes.length-1;for(let n=0;n<45;n++){const p=(lo+hi)/2;if(g.cameraTrack(p)<track)lo=p;else hi=p;}return ProfileExperience.scrollForPosition((lo+hi)/2);};
       await new Promise(done=>{function tick(now){const t=Math.min(1,(now-started)/2200),u=direction==='forward'?t:1-t;scrollTo({top:yAt(start+(end-start)*u),behavior:'instant'});if(now-last>90||t===1){const s=ProfileExperience.snapshot();rows.push({current:s.current,track:g.cameraTrack(s.current),camera:s.camera});last=now;}if(t===1)done();else requestAnimationFrame(tick);}requestAnimationFrame(tick);});return rows;
      },{start:rear.start-.02,end:rear.end+.02,direction});
      await go(positionAt(direction==='forward'?rear.end+.02:rear.start-.02));traversal.push({direction,samples});

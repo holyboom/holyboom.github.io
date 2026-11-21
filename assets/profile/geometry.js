@@ -391,19 +391,27 @@
    arc(.91,.65,.31,.23,PI*.10,PI*.90,{color:'#b5efd3',motion:'seam',width:2.4});
    label('PARTS BECOME A SYSTEM',.89,-.52);
   }else if(prop==='complexity'){
-   // Expose the routing harness through three staggered combs. The two
-   // distinct plugs sit on the same terminals that the hands acquire.
-   for(const [x,y] of [[.46,.13],[1,.30]]){
-    facet([[x-.12,y-.075],[x+.09,y-.075],[x+.14,y],[x+.09,y+.075],[x-.12,y+.075]],{fill:'#45657c',color:'#bddde7',width:1});
-   }
-   for(let i=0;i<5;i++){
-    const band=i-2,lead=Array.from({length:37},(_,j)=>{
-     const t=j/36;
-     return [.36+t*1.12,.13+.28*t+Math.sin(t*PI)*(.57+.10*band)*Math.sin(t*PI*1.9+band*.62),band*.075+.14*Math.sin(PI*t)];
+   // Five separate insulated leads leave each ferrule together, then bow out
+   // around the hands. Slack at the middle forms a looser, crossing loop.
+   const colors=['#65d9c0','#b199ff','#ffac70','#6fcff3','#eb83b4'];
+   for(let i=0;i<colors.length;i++){
+    const band=i-2,lead=Array.from({length:65},(_,j)=>{
+     const t=j/64,slack=Math.sin(PI*t),curl=Math.sin(TAU*t);
+     return [.30+.86*t-(.46+.07*band)*curl-.19*Math.sin(2*TAU*t)+.18*slack*Math.sin(2*TAU*t+band*.65),
+      .13+.17*t+band*.016+slack*(.47*Math.sin(TAU*t+band*.94)+.24*Math.cos(3*PI*t-band*.42)-.22)-.07*curl*curl,
+      .02+slack*(.14+.12*Math.cos(TAU*t+band*.80))];
     });
-    line(lead,{color:['#7fb89f','#a58cca','#db9c74','#86ced7','#ad90cc'][i],width:i===2?2.5:1.75,motion:'harness'});
+    line(lead,{color:colors[i],width:i===2?3.5:2.9,motion:'harness'});
    }
-   for(const [x,y] of [[.34,.13],[1.50,.40]])facet([[x-.045,y-.16],[x+.045,y-.14],[x+.045,y+.17],[x-.045,y+.14]],{fill:'#66838a',color:'#adcfcd',width:1});
+   for(const [side,x,y,d] of [['left',.46,.13,-1],['right',1,.30,1]]){
+    const style={motion:'ferrule-'+side,color:'#9ba9ad',width:1};
+    const sleeve=(vertices,finish)=>facet(vertices.map(([u,v,z])=>[x+d*u,y+v,z]),{...style,...finish});
+    sleeve([[-.035,-.052,.01],[.08,-.062,.01],[.125,-.039,.01],[.165,-.032,.01],[.165,.032,.01],[.115,.044,.01],[.085,.063,.01],[-.035,.052,.01]],
+     {fill:side==='left'?'#42616a':'#805340'});
+    sleeve([[-.035,.052,.01],[.085,.063,.01],[.106,.042,.032],[-.016,.035,.032]],
+     {fill:side==='left'?'#8bb2b8':'#dfac75',color:side==='left'?'#bad9d7':'#f3cfa9',width:.65});
+    for(const u of [.105,.142])line([[x+d*u,y-.036,.021],[x+d*u,y+.037,.021]],{...style,color:'#b8b9ae',width:1.4});
+   }
    label('THE DEPTH BENEATH',.89,-.52);
   }else if(prop==='network'){
    // Colour-coded plug shells travel with the two end grips. A slack cable
@@ -651,21 +659,50 @@
     line([[1.48,.075,.05],[1.58,.075,.05],[1.59,.02,.045]],{motion:'door-leaf',color:'#f6cc8e',width:2.4});
     facet([[.46,-.31,.17],[1.82,-.31,.17],[1.71,-.22,.025],[.54,-.22,.025]],jamb);
    }else{
-    // Clear a route by pulling a folded guide across its rail. Each leaf
-    // stays attached at the crease shared with its neighbour.
-    facet([[.31,-.09],[.55,-.09],[.55,.53],[.31,.53]],{fill:'#52656c',color:'#afc1bd',width:1.1});
-    const widths=[.40,.38,.36];
-    let start=.46;
-    for(const [i,width] of widths.entries()){
-     const end=start+width,face={motion:'route-pleat',width:1.1,color:'#bddcce'};
-     const foot=x=>-.06+(x-.46)*.18;
-     facet([[start,foot(start),0],[end,foot(end),0],[end,foot(end)+.35,0],[start,foot(start)+.35,0]],{...face,fill:['#78a899','#b8d5b3','#82b6a6'][i]});
-     line([[start+.025,foot(start)+.145,.02],[end-.025,foot(end)+.145,.02]],{...face,color:'#486a69',width:1.6});
-     if(i===2)line([[end-.24,foot(end)+.23,.026],[end-.14,foot(end)+.15,.026],[end-.24,foot(end)+.075,.026]],{...face,color:'#355960',width:1.8});
-     start=end;
+    // A landing, two deep sandstone piers and a rising sun. The opening
+    // stays empty; the far horizon is visible between the two capitals.
+    const stone={color:'#c58e78',width:1},sunX=.91,radius=.45,horizon=.04;
+    for(const s of [-1,1]){
+     const pier=(x,y,z)=>[sunX+s*x,y,z],face=(corners,fill,edge=stone.color)=>facet(corners.map(v=>pier(...v)),{...stone,fill,color:edge});
+     face([[.61,-.69,-.20],[.91,-.69,-.20],[.91,1.08,-.20],[.74,1.14,-.20],[.60,.99,-.20]],'#76585f');
+     face([[.61,-.69,.11],[.91,-.69,.11],[.91,1.08,.11],[.74,1.14,.11],[.60,.99,.11]],'#a46e68');
+     face([[.60,.99,.11],[.74,1.14,.11],[.74,1.14,-.20],[.60,.99,-.20]],'#d89e79','#f0bd94');
+     face([[.61,-.69,.11],[.60,.99,.11],[.60,.99,-.20],[.61,-.69,-.20]],'#724f58');
+     face([[.91,-.69,.11],[.91,-.69,-.20],[.91,1.08,-.20],[.91,1.08,.11]],'#775865');
+     face([[.52,-.73,.17],[.99,-.73,.17],[.99,-.53,.17],[.52,-.53,.17]],'#9a7572');
+     face([[.52,-.53,.17],[.99,-.53,.17],[.99,-.53,-.24],[.52,-.53,-.24]],'#c79983');
+     face([[.52,-1.29,.15],[.99,-1.29,.15],[.99,-.73,.15],[.52,-.73,.15]],'#574751','#74606a');
+     line([pier(.68,-.50,.117),pier(.665,.91,.117),pier(.765,1.012,.117)],{motion:'pier-inlay',color:'#ffdb9c',width:1.55});
     }
-    line([[.49,.43,.041],[1.25,.43,.041]],{color:'#afcbc4',width:1.2});
-    arc(1.12,.43,.075,.066,0,TAU,{color:'#e7d6aa',fill:'#ad865f',motion:'slider',width:1.2});
+    const disk=Array.from({length:65},(_,i)=>{const a=TAU*i/64;return [sunX+radius*Math.cos(a),.34+radius*Math.sin(a),-.27];});
+    line(disk,{motion:'sunrise-disc',fill:'#f9c184',color:'#ffe3ad',width:1.35});
+    paths.at(-1).dawnStops=[[0,'#fff2cc'],[.4,'#ffe5b1'],[.78,'#ffd194'],[1,'#f3b277']];
+    for(let i=0;i<7;i++){
+     const a=PI*(.10+i*.8/6),ray=(r,w)=>[sunX+r*Math.cos(a)-w*Math.sin(a),.34+r*Math.sin(a)+w*Math.cos(a),-.28];
+     facet([ray(.51,-.009),ray(i%2?.585:.63,0),ray(.51,.009)],{motion:'sunrise-ray',fill:'#e7b47d',color:'#e7b47d',width:.68});
+    }
+    // Each projecting tread has a real horizontal surface, a vertical riser
+    // and a lit nosing. The sides widen on their way down to the viewer.
+    for(let i=0;i<4;i++){
+     const y=horizon-.145*i,z=-.24+.27*i,back=.57+.11*i,front=back+.11,next=z+.27;
+     facet([[sunX-back,y,z],[sunX+back,y,z],[sunX+front,y,next],[sunX-front,y,next]],{fill:['#ddbc91','#cca780','#b48d78','#a67e73'][i],color:'#d2ae92',width:.85});
+     facet([[sunX-front,y,next],[sunX+front,y,next],[sunX+front,y-.145,next],[sunX-front,y-.145,next]],{fill:['#966d63','#85616a','#795c69','#675663'][i],color:'#a57e77',width:.65});
+     line([[sunX-front+.05,y+.006,next],[sunX+front-.05,y+.006,next]],{motion:'sunlit-step-'+i,color:'#ffe1a9',width:1.7});
+    }
+    // Unlit base courses meet the room floor under the bright nosings. The
+    // landing recedes into shadow while the open passage holds the eye.
+    for(let i=0;i<4;i++){
+     const y=-.54-.185*i,z=.84+.105*i,back=1.01+.014*i,front=back+.014,next=z+.105;
+     const top=['#85676b','#79616a','#685965','#534b59'][i],edge=['#a4837d','#917679','#786873','#625965'][i];
+     facet([[sunX-back,y,z],[sunX+back,y,z],[sunX+front,y,next],[sunX-front,y,next]],{fill:top,color:edge,width:.7});
+     facet([[sunX-front,y,next],[sunX+front,y,next],[sunX+front,y-.185,next],[sunX-front,y-.185,next]],{fill:['#6e5661','#5b4c59','#4a404f','#39323f'][i],color:top,width:.6});
+    }
+    // The operator steadies the lower brace with the left hand. The right
+    // thumb draws the brass carriage along a shallow slot in the near pier.
+    const rail={motion:'gate-rail',width:2.2,color:'#c79c78'};
+    line([[-.38,.21,.425],[-.37,.20,.42],[-.24,.21,.40],[-.15,.38,.40],[.10,.38,.40]],rail);
+    line([[-.19,.42,.425],[.10,.42,.425]],{...rail,color:'#765962',width:3.6});
+    facet([[-.036,-.037,0],[.038,-.037,0],[.042,.022,0],[0,.045,0],[-.036,.025,0]],{motion:'gate-carriage',fill:'#edb16c',color:'#ffe0a2',width:1.3});
    }
    if(prop!=='recipient')label(prop==='choice'?'YOUR NEXT STEP. YOUR CHOICE.':'A CLEAR WAY IN');
   }
@@ -1109,6 +1146,24 @@
   }
   return loose;
  }
+ // Released from the plugs, each lead uncoils towards its own lane on the
+ // staircase. Its crest travels back along the wire as the far end lands.
+ function unspoolEntrance(leads,steps,progress){
+  const paths=leads.map((lead,lane)=>{
+   const across=.17+.165*lane;
+   const landings=steps.map(step=>lerp(step.points[0],step.points.at(-1),across));
+   const points=lead.points.map((source,j)=>{
+    const along=j/(lead.points.length-1),row=along*(landings.length-1);
+    const target=lerp(landings[Math.floor(row)],landings[Math.ceil(row)],row%1);
+    const drop=smooth((progress-.11-.14*(1-along)-lane*.018)/.48);
+    const point=lerp(source,target,drop);
+    point[1]+=.26*Math.sin(PI*drop)*Math.sin(PI*along)+.018*drop;
+    return point;
+   });
+   return {...lead,id:'entrance-lead-'+lane,points,readingAnchor:false};
+  });
+  return {id:'unspooling-entrance',alpha:1-smooth((progress-.70)/.29),paths,texts:[],textAlpha:0};
+ }
  function illustration(position,explode=0,idleSeconds=0){
   const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline,idleSeconds),work=p.work;
   const handoff=lessonHandoffs[from]||(p.phase.to===3?p.tool.handoff:from===14?[.17,.30]:timeline>=13&&timeline<17?[.42,.66]:[.10,.26]);
@@ -1128,7 +1183,6 @@
     return sub(grip,map(pivot));
    };
    const offsets={
-    slider:()=>pin([.705,.43],[1.12,.43],[1.12,.43]),
     collar:()=>pin([.48,.18],[.91,.65],[.91,.65]),
     shuttle:()=>pin([.70,.12],[1.03,.40],[1.03,.40]),
     leaf:()=>{
@@ -1151,6 +1205,11 @@
     return lerp(target,seated,incoming?smooth((action-.85)/.15):1);
    };
    const plugs=prop==='network'?[plugTip('left',[.69,.36],[.49,.15]),plugTip('right',[.85,.36],[1.31,.15])]:null;
+   const ferrules=prop==='complexity'?['left','right'].map((side,i)=>{
+    const register=map(i?[1,.30,.02]:[.46,.13,.02]);
+    const held=incoming?acquired:1-smooth(raw/.18);
+    return mul(sub(p.contacts[side].tip,register),held);
+   }):null;
    return (item,pathIndex)=>{
     let alpha=item.alpha,color=item.color;
     let transform=q=>map(q);
@@ -1248,9 +1307,12 @@
      transform=([x,y,z])=>map([.9+(x-.9)*radius,.36+(y-.36)/Math.sqrt(radius),z]);
     }else if(item.motion==='harness'){
      transform=([x,y,z],i)=>{
-      const span=Math.sin(PI*i/(item.points.length-1));
-      return map([x,y-.17*(1-action)*span,z+.13*action*span]);
+      const t=i/(item.points.length-1),span=Math.sin(PI*t);
+      return add(map([x,y-.13*(1-action)*span,z+.07*action*span]),lerp(ferrules[0],ferrules[1],t));
      };
+    }else if(item.motion?.startsWith('ferrule-')){
+     const offset=ferrules[item.motion==='ferrule-left'?0:1];
+     transform=q=>add(map(q),offset);
     }else if(indexStrips[item.motion]){
      // The closed index deck waits for the notebook leaves to clear. Rotate
      // the swatches around the brass rivet and open their depth last.
@@ -1270,12 +1332,23 @@
       const hinge=x<.90?.49:1.31,offset=x-hinge;
       return map([hinge+offset*Math.cos(turn),y,z+Math.abs(offset)*Math.sin(turn)]);
      };
-    }else if(item.motion==='route-pleat'){
-     const open=smooth(action),width=.38;
-     transform=([x,y,z])=>{
-      const along=x-.46,fold=along/width,toCrease=1-Math.abs((fold%2)-1);
-      return map([.46+along*(.42+.58*open),y+toCrease*.12*(1-open),z+toCrease*(.34-.27*open)+along*.15]);
-     };
+    }else if(index===23){
+     // The gate stands beyond the working hand, facing the entrance approach
+     // at an angle to the maker. Its columns and staircase stay planted.
+     const opening=incoming?smooth((phase.progress-.44)/.30):1;
+     if(item.motion==='gate-rail')transform=q=>q;
+     else if(item.motion==='gate-carriage'){
+      // Same thumb travel as the rig. The carriage stops in its slot before
+      // the hand lifts toward the horizon.
+      const grip=[mix(-.19,.10,smoother(action)),.42,.425];
+      transform=q=>add(grip,q);
+     }else{
+      const sun=item.motion==='sunrise-disc'||item.motion==='sunrise-ray';
+      if(item.motion==='sunrise-ray')alpha*=smooth((opening-.34)/.6);
+      if(item.motion==='pier-inlay')alpha*=.26+.74*opening;
+      if(item.motion?.startsWith('sunlit-step-'))alpha*=.18+.82*smooth((opening-.09*Number(item.motion.at(-1)))/.58);
+      transform=([x,y,z])=>[.09+.73*x-.683*z,sun?Math.max(.038,y-.68*(1-opening)):y,.425+.683*x+.73*z];
+     }
     }else if(item.motion==='token'){
      transform=([x,y,z])=>map([x+.42*action*action,y+.80*action,z+.085*Math.sin(PI*action)]);
     }else if(item.motion==='gate'){
@@ -1290,6 +1363,15 @@
    if(object.prop==='possibility')return {...front,...possibilityVessel(position,p)};
    return {...front,prop:object.prop,paths:object.paths.map(workMaterial(o.index)),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):object.prop==='lesson'?heldPage(item.point):map(item.point)}))};
   });
+  if(from===22&&raw>0&&raw<.99){
+   const cableLayer=layers.find(layer=>layer.index===22);
+   const harnessPaths=cableLayer?.paths??objectScene(22).paths.filter(item=>item.motion==='harness').map(workMaterial(22));
+   const stepPaths=layers.find(layer=>layer.index===23)?.paths??objectScene(23).paths.filter(item=>item.motion?.startsWith('sunlit-step-')).map(workMaterial(23));
+   const steps=stepPaths.filter(item=>item.motion?.startsWith('sunlit-step-')).reverse();
+   const entrance=unspoolEntrance(harnessPaths.filter(item=>item.motion==='harness'),steps,raw);
+   if(cableLayer)cableLayer.paths=cableLayer.paths.filter(item=>item.motion!=='harness');
+   layers.push(entrance);
+  }
   if(timeline>=17&&timeline<19)layers.push(...lessonLeaves(position,p,layers.find(l=>l.prop==='lesson'),idleSeconds));
   if(p.drawing?.strokes){const alpha=p.phase.to===3?1-smooth(p.phase.progress/.32):1,paths=p.drawing.strokes.filter(points=>points.length>1).map(points=>({points,color:cfg.tones.human,width:2.3,alpha:1,fill:null,role:'work'}));if(paths.length&&alpha>.005)layers.push({id:'drawn-ink',alpha,textAlpha:0,paths,texts:[]});}
   // The disclosed architecture opens behind the unchanged interaction surface.
@@ -1302,10 +1384,11 @@
    // Once the invitation is in the outstretched palm, fan the hidden graph
    // past its far edge so both circuitry and envelope can still be read.
    const invitationClearance=.72*smooth((timeline-24.25)/.75);
-   // Reveal the circuitry below the unfolding guide while its solid leaves span the rail.
-   const guideClearance=.24*smooth((timeline-22.15)/.60)*(1-smooth((timeline-23.35)/.55));
+   // Lift the disclosed boards above the sunlit stair instead of burying
+   // their connection nodes in the solid courses of its foundation.
+   const gateClearance=.29*smooth((timeline-22.15)/.60)*(1-smooth((timeline-23.35)/.55));
    for(let level=2;level>=1;level--){
-    const color=level===1?cfg.tones.build:cfg.tones.human,origin=add(work.origin,add(mul(work.normal,-.34*level*reveal),add(mul(work.u,((.40+(fan?.[0]||0)*side)*level+invitationClearance)*reveal),mul(work.v,((.20+(fan?.[1]||0)*side)*level-guideClearance)*reveal)))),paths=[];
+    const color=level===1?cfg.tones.build:cfg.tones.human,origin=add(work.origin,add(mul(work.normal,-.34*level*reveal),add(mul(work.u,((.40+(fan?.[0]||0)*side)*level+invitationClearance+gateClearance)*reveal),mul(work.v,((.20+(fan?.[1]||0)*side)*level+gateClearance)*reveal)))),paths=[];
     const at=(x,y,z=0)=>add(origin,add(add(mul(work.u,x*work.width*.52),mul(work.v,y*work.height*.54)),mul(work.normal,z)));
     const path=(id,points,alpha,width=.65,fill=null,role='depth')=>paths.push({id:'depth-'+level+'-'+id,points,color,alpha,width,fill,role});
     const perimeter=Array.from({length:65},(_,i)=>{const a=i/64*TAU,c=Math.cos(a),sn=Math.sin(a);return at(Math.sign(c)*Math.abs(c)**.38,Math.sign(sn)*Math.abs(sn)**.38);});
@@ -1338,7 +1421,7 @@
  // A fixed focal length changes perspective through distance, not a CSS scale transform.
  const smoother=t=>{t=clamp(t);return t*t*t*(t*(t*6-15)+10);};
  const cameraCache=new Map();
- function shotCamera(i){if(cameraCache.has(i))return cameraCache.get(i);const base=cfg.camera.shots[sequence[i].shot||'establish'],seat=motion.poseAt(i).seatAmount||0;const value={...base,target:[...base.target]};if(i>0){if(sequence[i].shot==='establish')value.target=[-.24,-.10,.16];value.target[1]-=.15*seat;}cameraCache.set(i,value);return value;}
+ function shotCamera(i){if(cameraCache.has(i))return cameraCache.get(i);const base=cfg.camera.shots[i===22||i===23?'gateway':sequence[i].shot||'establish'],seat=motion.poseAt(i).seatAmount||0;const value={...base,target:[...base.target]};if(i>0){if(sequence[i].shot==='establish')value.target=[-.24,-.10,.16];value.target[1]-=.15*seat;}cameraCache.set(i,value);return value;}
  function cameraTrack(position){
   position=clamp(position,0,cfg.scenes.length-1);const chapter=Math.floor(position),start=starts[chapter];
   return Math.min(sequence.length-1,start+(position-chapter)*sequence[start].count);
@@ -1346,7 +1429,7 @@
  function orbitAt(position,{compact=false}={}){
   const track=cameraTrack(position),event=cfg.camera.orbits?.find(item=>track>item.start&&track<item.end);
   if(!event)return null;
-  const weight=smoother((track-event.start)/(event.lockStart-event.start))*(1-smoother((track-event.returnEnd)/(event.end-event.returnEnd)));
+  const weight=clamp(smoother((track-event.start)/(event.lockStart-event.start))*(1-smoother((track-event.returnEnd)/(event.end-event.returnEnd))));
   const entry=compact?mix(-.20,event.entryYaw,cfg.camera.compactStrength):event.entryYaw,exit=compact?mix(-.20,event.exitYaw,cfg.camera.compactStrength):event.exitYaw,peak=compact?event.compactYaw:event.yaw;
   const yaw=track<=event.holdEnd?mix(entry,peak,smoother((track-event.lockStart)/(event.turnEnd-event.lockStart))):mix(peak,exit,smoother((track-event.holdEnd)/(event.returnEnd-event.holdEnd)));
   return {id:event.id,track,weight,locked:track>=event.lockStart&&track<=event.returnEnd,progress:clamp((track-event.start)/(event.end-event.start)),disclosureFan:event.disclosureFan?[...event.disclosureFan]:null,camera:{yaw,pitch:event.pitch,distance:event.distance,target:[...event.target]}};
@@ -1354,7 +1437,13 @@
  function focusAt(position,{compact=false}={}){
   const track=cameraTrack(position),event=cfg.camera.inserts?.find(e=>track>e.start&&track<e.end);if(!event)return null;
   const weight=smoother((track-event.start)/(event.arrive-event.start))*(1-smoother((track-event.holdEnd)/(event.end-event.holdEnd))),p=motion.poseAt(resolve(position));
-  const point=event.subject==='head'?p.head:event.subject==='light'?p.light:event.subject==='drawing'?(p.tool?.held>.5?p.tool.tip:p.light):p.work.origin;
+  let point=event.subject==='head'?p.head:event.subject==='light'?p.light:event.subject==='drawing'?(p.tool?.held>.5?p.tool.tip:p.light):p.work.origin;
+  if(event.subject==='cables'){
+   // Look between the fingers while they work. On release the gaze travels
+   // along the raised end before the wider doorway occupies the frame.
+   const midpoint=lerp(p.contacts.left.tip,p.contacts.right.tip,.50);
+   point=lerp(midpoint,p.contacts.right.tip,.48*smoother((track-event.holdEnd)/(event.end-event.holdEnd)));
+  }
   return {id:event.id,subject:event.subject,framing:event.framing,track,weight,radius:event.radius,point:[...point],camera:{yaw:compact?event.compactYaw:event.yaw,pitch:event.pitch,distance:compact?event.compactDistance:event.distance,target:add(point,event.offset)}};
  }
  function cameraEye(camera){const cp=Math.cos(camera.pitch);return add(camera.target,mul([-Math.sin(camera.yaw)*cp,Math.sin(camera.pitch),Math.cos(camera.yaw)*cp],camera.distance));}
@@ -1443,9 +1532,11 @@
  function projectLines(lines,project){return lines.flatMap(line=>{const alpha=line.alpha*(line.part==='head'?1-smoother(((project.camera.eyeWeight||0)-.03)/.40):1);return alpha>.001?project.clip(line.points).map(points=>({...line,alpha,points:points.map(project)})):[];});}
  // Objects can have bevels, curled sheets and moving lids. A work label
  // faces out of the maker's work plane regardless of their tessellation.
- function workLabelVisibility(layers,project){
+ function workLabelVisibility(layers,project,{still=false}={}){
   const surface=layers.find(layer=>layer.labelSurface)?.labelSurface;
-  const focus=1-smooth(project.camera.focusWeight/.25);
+  // A static plate keeps its caption through a close-up. The live camera
+  // yields that space to the subject until it pulls back.
+  const focus=still?1:1-smooth(project.camera.focusWeight/.25);
   if(!surface)return focus;
   const towardEye=norm(sub(project.eye,surface.origin));
   const facing=surface.normal.reduce((sum,n,i)=>sum+n*towardEye[i],0);
@@ -1454,7 +1545,14 @@
  function projectIllustrations(layers,project){return layers.map(layer=>({...layer,paths:layer.paths.flatMap(item=>project.clip(item.points,!!item.fill).map(points=>({...item,points:points.map(project)})))}));}
  // Compatibility for callers that explicitly need the legacy neutral projection.
  function project(p,w,h,yaw=0,pitch=0){return prepareProjection({...cfg.camera,target:[0,0,0]},w,h,yaw,pitch)(p);}
- function positionFromAnchors(scroll,anchors){if(scroll<=anchors[0])return 0;for(let i=0;i<anchors.length-1;i++)if(scroll<anchors[i+1]){const p=(scroll-anchors[i])/(anchors[i+1]-anchors[i]);return i+clamp((p-cfg.morph.start)/(cfg.morph.end-cfg.morph.start));}return anchors.length-1;}
+ function positionFromAnchors(scroll,anchors,readingStops){
+  if(readingStops&&scroll>=readingStops[0][0]&&scroll<=readingStops.at(-1)[0]){
+   for(let i=1;i<readingStops.length;i++){
+    const [start,from]=readingStops[i-1],[end,to]=readingStops[i];
+    if(scroll<=end)return mix(from,to,clamp((scroll-start)/Math.max(.001,end-start)));
+   }
+  }
+  if(scroll<=anchors[0])return 0;for(let i=0;i<anchors.length-1;i++)if(scroll<anchors[i+1]){const p=(scroll-anchors[i])/(anchors[i+1]-anchors[i]);return i+clamp((p-cfg.morph.start)/(cfg.morph.end-cfg.morph.start));}return anchors.length-1;}
  // One continuous illustrated material per glove, shared by every patch.
  // A screen-space material avoids visible facet bands at this small scale.
  function skinMaterials(layers){

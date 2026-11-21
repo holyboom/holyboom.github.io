@@ -13,7 +13,7 @@
  const names=['design','draw','sketch','type','component','assemble','verify','read','connect','release','ai','inspect','approve','alone','reach','reflect','repair','rise','lesson','research','shape','protect','complexity','clear','agency','welcome','invite','reveal','offer','stand','begin'];
  const kinds=['paper','paper','paper','screen','screen','panel','panel','document','network','network','screen','document','document','light','barrier','lesson','repair','light','lesson','library','skill','skill','network','panel','panel','panel','panel','document','panel','none','none'];
  // Attention, preparation, action, response; the remainder is a readable hold.
- const timing=[[0.16,0.16,0.34,0.14],[0.2,0.15,0.25,0.15],[0.12,0.16,0.4,0.16],[0.12,0.22,0.32,0.16],[0.12,0.16,0.4,0.16],[0.14,0.2,0.34,0.18],[0.14,0.16,0.28,0.18],[0.24,0.14,0.24,0.16],[0.12,0.2,0.36,0.16],[0.16,0.16,0.34,0.14],[0.2,0.16,0.26,0.18],[0.14,0.16,0.28,0.18],[0.16,0.2,0.24,0.18],[0.26,0.16,0.18,0.12],[0.14,0.18,0.22,0.14],[0.18,0.12,0.18,0.12],[0.18,0.24,0.24,0.2],[0.14,0.3,0.28,0.16],[0.2,0.15,0.25,0.15],[0.18,0.16,0.3,0.18],[0.16,0.18,0.32,0.2],[0.14,0.16,0.28,0.18],[0.12,0.2,0.36,0.16],[0.16,0.18,0.3,0.16],[0.18,0.16,0.22,0.14],[0.18,0.18,0.22,0.12],[0.18,0.18,0.22,0.12],[0.16,0.16,0.34,0.14],[0.18,0.16,0.22,0.14],[0.18,0.16,0.18,0.14],[0.16,0.14,0.2,0.1]];
+ const timing=[[0.16,0.16,0.34,0.14],[0.2,0.15,0.25,0.15],[0.12,0.16,0.4,0.16],[0.12,0.22,0.32,0.16],[0.12,0.16,0.4,0.16],[0.14,0.2,0.34,0.18],[0.14,0.16,0.28,0.18],[0.24,0.14,0.24,0.16],[0.12,0.2,0.36,0.16],[0.16,0.16,0.34,0.14],[0.2,0.16,0.26,0.18],[0.14,0.16,0.28,0.18],[0.16,0.2,0.24,0.18],[0.26,0.16,0.18,0.12],[0.14,0.18,0.22,0.14],[0.18,0.12,0.18,0.12],[0.18,0.24,0.24,0.2],[0.14,0.3,0.28,0.16],[0.2,0.15,0.25,0.15],[0.18,0.16,0.3,0.18],[0.16,0.18,0.32,0.2],[0.14,0.16,0.28,0.18],[0.12,0.2,0.36,0.16],[0.15,0.29,0.30,0.20],[0.18,0.16,0.22,0.14],[0.18,0.18,0.22,0.12],[0.18,0.18,0.22,0.12],[0.16,0.16,0.34,0.14],[0.18,0.16,0.22,0.14],[0.18,0.16,0.18,0.14],[0.16,0.14,0.2,0.1]];
  const direction=[
  // yaw, forward lean, head inclination, lateral weight transfer.
  [.12,.02,.08,0],[-.18,-.07,.02,-.05],[-.22,.34,.43,-.015],[-.10,.23,.26,-.04],
@@ -21,16 +21,19 @@
  [.42,.055,.04,.07],[-.20,-.075,.015,-.06],[.08,.25,-.035,.035],[-.36,.28,.39,-.04],
  [.13,-.085,.07,.035],[-.18,.44,.65,-.065],[.38,-.10,.27,.06],[-.34,.38,.72,-.055],
  [.26,.32,.38,.035],[-.22,-.085,-.07,-.025],[.36,.025,.25,.055],[-.15,.13,.035,-.04],
- [-.26,.07,.28,-.05],[.46,-.055,.10,.065],[-.38,.12,-.02,-.045],[.25,.20,.19,.035],
+ [-.26,.07,.28,-.05],[.46,-.055,.10,.065],[.36,.48,.60,-.075],[.95,-.10,-.12,.075],
  [-.24,-.08,.04,-.07],[.08,-.025,-.04,.045],[-.16,.035,.12,-.035],[.48,.24,.34,.05],
  [.20,-.055,.045,-.065],[-.34,-.035,.09,.045],[.30,-.065,-.055,-.045]
  ];
+ const gazeYaw={22:1.48,25:-.04,26:.02,28:-.02,29:.02,30:.02};
  // Negative offsets bend the knees without changing the planted foot targets.
- const level=[0,0,0,0,0,0,0,-.015,0,-.025,-.025,-.075,0,0,0,0,0,0,-.025,-.045,-.25,0,-.035,-.07,-.02,0,-.025,-.055,-.015,0,0];
+ const level=[0,0,0,0,0,0,0,-.015,0,-.025,-.025,-.075,0,0,0,0,0,0,-.025,-.045,-.25,0,-.265,-.045,-.02,0,-.025,-.055,-.015,0,0];
  // Standing foot marks: width and fore/aft stagger. Transfers step one foot at
  // a time; the sit/rise marks retain the established support choreography.
  const stance={8:[.035,.045],9:[.015,-.055],10:[.045,.02],11:[.01,.065],18:[.02,-.035],19:[.05,.05],20:[.055,-.045],21:[.015,.06],22:[.07,.025],23:[.025,-.055],24:[.04,.06],25:[.065,0],26:[.015,-.065],27:[.035,.04],28:[.05,-.025],29:[0,.06],30:[.055,.035]};
- function footMark(i,side){const base=seated(i)?footTargets[side]:standingFeet[side],s=stance[i];return !s||seated(i)?base:add(base,[(side?1:-1)*s[0],0,(side?1:-1)*s[1]]);}
+ function footMark(i,side){
+  if(i===23)return side?[-.16,-1.18,.49]:[-.66,-1.18,.16];
+  const base=seated(i)?footTargets[side]:standingFeet[side],s=stance[i];return !s||seated(i)?base:add(base,[(side?1:-1)*s[0],0,(side?1:-1)*s[1]]);}
  let clips=root.ProfilePerformanceClips||null;if(typeof module==='object'&&module.exports){try{clips=require('./performance-source/pilot-clips.js');}catch(error){/* Secondary curves are optional; primary rig remains deterministic. */}}
  function setClips(value){clips=value&&value.clips?value.clips:value;}
  function frame(yaw=0,pitch=0,roll=0){const sy=Math.sin(yaw),cy=Math.cos(yaw),sp=Math.sin(pitch),cp=Math.cos(pitch),sr=Math.sin(roll),cr=Math.cos(roll);const x=[cy,0,-sy],y=[sy*sp,cp,cy*sp],z=[sy*cp,-sp,cy*cp];return {x:add(mul(x,cr),mul(y,sr)),y:add(mul(y,cr),mul(x,-sr)),z};}
@@ -60,7 +63,7 @@
    case 7:return right?{target:bodyAt([.31,.83,.16]),grip:'reflect',active:false,space:'body'}:work(-.32,-.15,.025,'hold',true);
    case 18:return {...(right?work(.224,-.136,-.004,'hold',true):work(-.30,-.12,-.025,'hold',true)),back:true};
    case 8:return right?work(.31,.18,.08,'point'):work(-.32,-.11,.07,'open');
-   case 22:return right?work(.20,-.10,.10,'hold'):work(-.32,.18,.07,'point');
+   case 22:return {target:painted(w,right?1.0:.46,right?.30:.13),grip:right?'hold':'point',active:true,space:'work'};
    case 9:return {target:bodyAt(right?[.48,.28,.31]:[-.43,.24,.26]),grip:'open',active:false,space:'body'};
    case 10:return right?work(.18,.27,.10,'point'):key(-.18,0,.06);
    case 11:return right?work(.03,.12,.09,'point'):work(-.32,-.15,.025,'hold',true);
@@ -73,7 +76,7 @@
    case 19:return right?work(.14,.15,.12,'hold'):work(-.31,-.12,.025,'hold',true);
    case 20:return right?work(.17,-.08,.07,'cup'):work(-.26,-.10,.07,'cup');
    case 21:return right?{target:bodyAt([.36,.67,.12]),grip:'open',active:false,space:'body'}:{target:painted(w,.40,.10,.015),grip:'hold',active:true,space:'work'};
-   case 23:return right?work(.13,.06,.09,'open'):work(-.32,-.15,.025,'brace',true);
+   case 23:return right?work(.27,.29,.21,'open',false,'invitation'):work(-.32,-.15,.025,'brace',true);
    case 24:return right?work(-.30,-.36,.15,'open',false,'agency'):{target:bodyAt([-.10,.31,.27]),grip:'relaxed',active:false,space:'body'};
    case 25:return right?work(.55,-.06,-.04,'open',false,'welcome'):{target:bodyAt([-.47,.30,.26]),grip:'open',active:false,space:'body'};
    case 28:return right?work(.09,-.30,.23,'open',false,'offer'):{target:bodyAt([-.16,.20,.34]),grip:'open',active:false,space:'body'};
@@ -120,7 +123,7 @@
   if(i===16&&right){target=at(w,mix(-.13,.10,smooth(a)),mix(-.11,.04,smooth(a)),.012+.10*Math.sin(PI*smooth(a/.86)));active=a>.86;grip='hold';}
   if(i===19&&right){target=at(w,mix(.21,-.02,smooth(a)),.15+.08*Math.sin(PI*a),.012+.10*Math.sin(PI*smooth(a/.80)));active=a>.8;grip='hold';}
   if(i===20){const t=smooth(a);target=painted(w,right?mix(1.30,1.17,t):mix(.42,.63,t),.36,.015);active=a>.85;grip='cup';}
-  if(i===23&&right){target=at(w,mix(-.13,.16,smooth(a)),.06,.025);active=true;grip='open';}
+  if(i===23&&right){target=at(w,mix(-.13,.16,smooth(a)),.06,.025);active=true;grip='hold';space='work';}
   if(i===24&&right){target=lerp(at(w,.13,.06,.09),spec.target,smooth(a));target[1]+=.025*Math.sin(PI*a);active=false;grip='open';}
   if(i===27&&right){target=at(w,mix(.18,.06,smooth(a)),.12,.012+.18*smooth((a-.16)/.84));active=a<.16;grip='hold';}
   if(i===26&&right){
@@ -202,8 +205,8 @@
   19: [ .02, .16,.38,.80,    7,  13, -6,  16], // carry the folio across the midline
   20: [ .04, .24,.50,.79,   11,  -6,  3, -14], // collect with both hands
   21: [ .025,.19,.45,.73,   -8,  -9, -6, -15], // follow the edge of the moat
-  22: [ .03, .18,.55,.82,    7,  12,  6, -17], // separate the two branches
-  23: [ .07, .24,.46,.78,    8,  11, -2,  11], // sweep the interface clear
+  22: [ .03, .18,.55,.82,    3,   9,  4, -11], // separate the two branches
+  23: [ .03, .18,.43,.76,   -6,   8, -5,  17], // sweep the interface clear
   24: [ .08, .27,.54,.82,   -8, -13, -5,  17], // leave the choice to the reader
   25: [ .02, .14,.39,.71,   -6,   9, -7,  12], // turn the open side out
   26: [ .035,.16,.44,.76,   -9, -14,  5, -15], // clear the entrance
@@ -245,14 +248,19 @@
  }
  function evaluate(timeline,lightOnly=false,idleSeconds=0){
   timeline=clamp(Number.isFinite(timeline)?timeline:0,0,30);const to=Math.ceil(timeline),from=Math.max(0,to-1),u=to===0?1:timeline-from,phase=phaseAt(to,u),a=direction[from],b=direction[to],isRise=to===7||to===17,isSit=to===13;
-  const stanceProgress=isRise?smooth((u-(to===17?.40:.17))/(to===17?.32:.17)):isSit?smooth((u-.02)/.22):smooth((u-.10)/.72),seat= mix(seated(from)?1:0,seated(to)?1:0,stanceProgress),stand=1-seat;
-  const prepPulse=Math.sin(PI*clamp((u-(to===17?.12:0))/(to===17?.74:to===7?.40:to===13?.32:.80)))**2,bodyT=to===15?smooth((u-.025)/.20):to===2?smooth((u-.02)/.42):smooth((u-.08)/.62),headT=smooth((u-.015)/.44),stepSway=isRise?.025*(Math.sin(PI*clamp((u-(to===17?.10:0))/(to===17?.16:.09)))-Math.sin(PI*clamp((u-(to===17?.23:.07))/(to===17?.16:.10)))):0,baseShift=mix(a[3],b[3],bodyT)+stepSway;
-  let yaw=mix(a[0],b[0],bodyT),lean=mix(a[1],b[1],bodyT)+(isRise?.42*prepPulse:isSit?.14*prepPulse:to===14?.07*smooth((u-.12)/.30)*(1-smooth((u-.60)/.25)):to===16?.045*prepPulse:0),headPitch=mix(a[2],b[2],headT),headYaw=mix(({25:-.04,26:.02,28:-.02,29:.02,30:.02})[from]??a[0]+.24,({25:-.04,26:.02,28:-.02,29:.02,30:.02})[to]??b[0]+.24,headT);headPitch+=.10*mix(seated(from)?1:0,seated(to)?1:0,headT);
+  const stanceProgress=isRise?smooth((u-(to===17?.40:.17))/(to===17?.32:.17)):isSit?smooth((u-.02)/.22):to===23?ramp(u,.19,.65):smooth((u-.10)/.72),seat= mix(seated(from)?1:0,seated(to)?1:0,stanceProgress),stand=1-seat;
+  const prepPulse=Math.sin(PI*clamp((u-(to===17?.12:0))/(to===17?.74:to===7?.40:to===13?.32:.80)))**2,bodyT=to===15?smooth((u-.025)/.20):to===2?smooth((u-.02)/.42):smooth((u-.08)/.62),headT=to===23?ramp(u,.035,.31):smooth((u-.015)/.44),stepSway=isRise?.025*(Math.sin(PI*clamp((u-(to===17?.10:0))/(to===17?.16:.09)))-Math.sin(PI*clamp((u-(to===17?.23:.07))/(to===17?.16:.10)))):0,baseShift=mix(a[3],b[3],bodyT)+stepSway;
+  let yaw=mix(a[0],b[0],bodyT),lean=mix(a[1],b[1],bodyT)+(isRise?.42*prepPulse:isSit?.14*prepPulse:to===14?.07*smooth((u-.12)/.30)*(1-smooth((u-.60)/.25)):to===16?.045*prepPulse:0),headPitch=mix(a[2],b[2],headT),headYaw=mix(gazeYaw[from]??a[0]+.24,gazeYaw[to]??b[0]+.24,headT);headPitch+=.10*mix(seated(from)?1:0,seated(to)?1:0,headT);
   if(to===3){const dockingAttention=Math.sin(PI*clamp((u-.02)/.40))**2;headPitch+=.10*dockingAttention;headYaw-=.14*dockingAttention;}
   if(to===15){headPitch-=.10*smooth((u-.82)/.14);headYaw+=.12*smooth((u-.82)/.14);}if(from===15){headPitch-=.10*(1-headT);headYaw+=.12*(1-headT);}
   const authored=sampleClip(to===2?'draw':to===16?'repair':to===17?'rise':'',u);if(authored){lean+=authored.lean||0;yaw+=authored.yaw||0;headPitch+=authored.headPitch||0;headYaw+=authored.headYaw||0;}
   const acting=bodyActing(to,u),previousActing=bodyActing(from,1),release=1-ramp(u,.02,.31);
-  const shift=baseShift+acting.shift+previousActing.shift*release;
+  // Load the standing leg before the lead foot leaves the floor. The
+  // chest opens towards the threshold only after the eyes leave the wiring.
+  const loadLeft=to===23?ramp(u,.04,.23)*(1-ramp(u,.28,.58)):0;
+  const shift=baseShift+acting.shift+previousActing.shift*release-.082*loadLeft;
+  const forward=beat=>beat===22?-.065:beat===23?.085:0;
+  const strideDepth=mix(forward(from),forward(to),stanceProgress);
   lean+=acting.lean+previousActing.lean*release;
   yaw+=acting.turn+previousActing.turn*release;
   headYaw+=acting.look+previousActing.look*release;
@@ -270,7 +278,7 @@
   headPitch+=mix(-.032,.046,collapsed)*glance;
   headYaw+=sceneDirection*radians*.23*glance;
   const shoulderRoll=acting.roll+previousActing.roll*release+.012*breath;
-  const hip=[-.48+shift,-.22-.39*seat-.02*stand+mix(level[from],level[to],stanceProgress),.20-.32*seat+(isRise?.24*seat*smooth((u-(to===17?.20:.08))/(to===17?.20:.09)):isSit?.12*prepPulse:0)],pelvisFrame=frame(yaw*.35,-pelvisLean*.15,-shift*.38),chestFrame=frame(yaw,lean,-shift*.22+shoulderRoll),lumbar=add(hip,mul(frame(yaw*.6,lean*.45,-shift*.25).y,.26)),ribcage=add(lumbar,mul(frame(yaw*.85,lean*.8,-shift*.23+shoulderRoll*.6).y,.28)),shoulder=add(ribcage,mul(chestFrame.y,.18)),neck=add(shoulder,mul(chestFrame.y,.105)),headFrame=frame(headYaw,headPitch,-shift*.15),head=add(neck,mul(headFrame.y,.255));
+  const hip=[-.48+shift,-.22-.39*seat-.02*stand+mix(level[from],level[to],stanceProgress),.20-.32*seat+strideDepth+(isRise?.24*seat*smooth((u-(to===17?.20:.08))/(to===17?.20:.09)):isSit?.12*prepPulse:0)],pelvisFrame=frame(yaw*.35,-pelvisLean*.15,-shift*.38),chestFrame=frame(yaw,lean,-shift*.22+shoulderRoll),lumbar=add(hip,mul(frame(yaw*.6,lean*.45,-shift*.25).y,.26)),ribcage=add(lumbar,mul(frame(yaw*.85,lean*.8,-shift*.23+shoulderRoll*.6).y,.28)),shoulder=add(ribcage,mul(chestFrame.y,.18)),neck=add(shoulder,mul(chestFrame.y,.105)),headFrame=frame(headYaw,headPitch,-shift*.15),head=add(neck,mul(headFrame.y,.255));
   const shoulderL=add(shoulder,mul(chestFrame.x,-lengths.shoulderSpan/2)),shoulderR=add(shoulder,mul(chestFrame.x,lengths.shoulderSpan/2)),hipL=add(add(hip,mul(pelvisFrame.x,-lengths.hipSpan/2)),mul(pelvisFrame.y,-.055)),hipR=add(add(hip,mul(pelvisFrame.x,lengths.hipSpan/2)),mul(pelvisFrame.y,-.055));
   const body={hip,head,headFrame},previousBase=workFrame(kinds[from],stand,from),currentBase=workFrame(kinds[to],stand,to),previousWork=from===15?inspectWork(previousBase,1):previousBase,currentWork=to===15?inspectWork(currentBase,1):currentBase,baseWork=blendWork(previousBase,currentBase,to===3?smooth((u-.36)/.14):smooth((u-.16)/.20)),work=inspectWork(baseWork,to===15?smooth(phase.action):from===15?1-smooth((u-.16)/.20):0);
   const hands=[],wrists=[],contacts=[],reach=[],handAmounts=[];
@@ -279,6 +287,20 @@
    if(u<phase.actionStart){const t=to===16?smooth((u-(side===-1?.18:.27))/(side===-1?.12:.15)):smooth((u-phase.attentionEnd)/Math.max(.01,phase.actionStart-phase.attentionEnd));spec={...actionStart,target:lerp(start.target,actionStart.target,t),active:false};spec.target[1]+=.035*Math.sin(PI*t);if(side===1&&(to===25||to===26))spec.target[2]+=.08*Math.sin(PI*t);wf=blendWrist(startWrist,actionStartWrist,t);}
    else if(u<=phase.actionEnd){spec=actionSpec(to,side,phase.action,work,body);weight=spec.active?1:0;wf=spec.grip==='type'?wristFor(spec,work,side):blendWrist(actionStartWrist,actionEndWrist,smooth(phase.action));}
    else {const t=smooth((u-phase.actionEnd)/Math.max(.01,phase.settle-phase.actionEnd));spec={...finish,target:lerp(actionEnd.target,finish.target,t),active:finish.active&&t>.999};weight=spec.active?1:0;wf=blendWrist(actionEndWrist,finishWrist,t);}
+   if(to===23&&u<phase.actionStart){
+    // Unhook one end at a time. The free hand passes below the old cable
+    // before taking the gate rail; the other hand finds the lower support.
+    const right=side===1,releaseAt=right?.06:.15,arriveAt=right?phase.actionStart:.40;
+    const travel=ramp(u,releaseAt,arriveAt);
+    const target=lerp(start.target,actionStart.target,travel),arc=Math.sin(PI*travel);
+    target[1]-=(right?.19:.09)*arc;
+    target[2]+=(right?.11:.055)*arc;
+    const active=travel===0||travel===1;
+    spec={...actionStart,target,active};
+    wf=blendWrist(startWrist,actionStartWrist,travel);
+    weight=active?1:0;
+   }
+   if(to===23&&side===-1&&u>=.40){spec.active=true;weight=1;}
    if(to===18&&side===1){
     // Let the ember register first. The outside fingers then skim up below
     // the fore-edge: the loose corners can riffle over this second support.
@@ -329,7 +351,7 @@
    contacts[index]={target:spec.target,tip:add(solution.end,apply(wf.frame,wf.offset)),active:weight===1,weight,grip:spec.grip,gripOffset:wf.offset,fingerCurl:wf.curl,shape:wf.shape,space:spec.space,effector:spec.effector||(spec.grip==='write'?'stylus':'fingertip')};}
   }
   const light=add(hands[1].end,apply(wrists[1],[.015,-.052,.055]));if(lightOnly)return light;
-  const footState=[0,1].map(side=>{const start=footMark(from,side),end=footMark(to,side);let progress=stanceProgress;if(isRise)progress=smooth((u-(to===17?(side?.25:.12):(side?.09:.02)))/(to===17?.12:.06));else if(isSit)progress=smooth((u-(side?.285:.25))/.035);else if(!seated(from)&&!seated(to))progress=smooth((u-(side?.35:.06))/.20);const stepping=len(sub(start,end))>.001,moving=stepping&&progress>0&&progress<1,target=lerp(start,end,progress);if(stepping)target[1]+=.045*Math.sin(PI*progress);return {target,weight:moving?0:1,frame:frame(side?.07:-.07,stepping?-.18*Math.sin(2*PI*progress):0,0)};});
+  const footState=[0,1].map(side=>{const start=footMark(from,side),end=footMark(to,side);let progress=stanceProgress;if(isRise)progress=smooth((u-(to===17?(side?.25:.12):(side?.09:.02)))/(to===17?.12:.06));else if(isSit)progress=smooth((u-(side?.285:.25))/.035);else if(to===23)progress=side?ramp(u,.20,.48):ramp(u,.57,.80);else if(!seated(from)&&!seated(to))progress=smooth((u-(side?.35:.06))/.20);const stepping=len(sub(start,end))>.001,moving=stepping&&progress>0&&progress<1,target=lerp(start,end,progress);if(stepping)target[1]+=(to===23&&side?.102:.045)*Math.sin(PI*progress);return {target,weight:moving?0:1,frame:frame(side?.07:-.07,stepping?-.18*Math.sin(2*PI*progress):0,0)};});
   const legs=[twoBone(hipL,footState[0].target,lengths.thigh,lengths.shin,add(hipL,[-.03,-.2,1])),twoBone(hipR,footState[1].target,lengths.thigh,lengths.shin,add(hipR,[.03,-.2,1]))];
   const seatWeight=Math.max(0,seat*.65*(1-smooth((1-seat)/.18))),leftWeight=(1-seatWeight)*(footState[0].weight===0?0:footState[1].weight===0?1:clamp(.53-shift*1.2,.35,.7)),rightWeight=1-seatWeight-leftWeight;
   let tool;const penAxis=norm(apply(wrists[1],[-.001,-.007,-.081]));if(to<3){tool={held:1,alpha:1,tip:[...contacts[1].tip],shaftEnd:add(contacts[1].tip,mul(penAxis,.202)),dock:toolDock(work),stage:'held',owner:'right-hand',handoff:[.36,.50],release:[.30,.36]};}else if(to===3){const dock=toolDock(previousWork),placed=u>=.28,released=u>=.36,held=1-smooth((u-.30)/.06),axis=penAxis,tip=released?dock.tip:contacts[1].tip;tool={held,alpha:1-smooth((u-.52)/.14),tip:[...tip],shaftEnd:released?dock.shaftEnd:add(tip,mul(axis,.202)),dock,stage:released?(u>=.66?'hidden':'released'):placed?'placing':u>.10?'placing':'held',owner:released?'drafting-surface':'right-hand',handoff:[.36,.50],release:[.30,.36]};}else{const dock=toolDock(workFrame('paper',0));tool={held:0,alpha:0,tip:dock.tip,shaftEnd:dock.shaftEnd,dock,stage:'hidden',owner:'drafting-surface',handoff:[.36,.50],release:[.30,.36]};}

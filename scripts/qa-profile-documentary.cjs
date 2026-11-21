@@ -23,13 +23,33 @@ const fields=c=>[c.yaw,c.pitch,c.distance,c.focal,...c.target];
  }
  check('the-focused-head-hand-or-work-remains-visible',clip.length===0,clip);check('closeups-have-no-nonfinite-or-eye-plane-crossings',near.length===0,near.slice(0,5));
  check('inserts-enlarge-the-subject-materially',magnifications.every(v=>v.magnification>1.4),magnifications);check('pointer-cannot-jostle-a-held-closeup',pointer.length===0,pointer);
+ const close=position(22.10),wide=position(23.08),closePose=g.performanceAt(close),widePose=g.performanceAt(wide);
+ const leads=g.illustration(close).find(layer=>layer.index===22).paths.filter(path=>path.motion==='harness');
+ const entrance=g.illustration(wide).find(layer=>layer.index===23).paths;
+ const bridgeShots=[];
+ for(const [w,h,compact] of [[393,222,true],[696,860,false]]){
+  const macro=g.createProjector(close,w,h,{compact}),establish=g.createProjector(wide,w,h,{compact});
+  const inside=([x,y])=>x>3&&x<w-3&&y>3&&y<h-3;
+  const closePoints=leads.flatMap(lead=>lead.points.map(macro));
+  const xs=closePoints.map(point=>point[0]),wireWidth=(Math.max(...xs)-Math.min(...xs))/w;
+  const fingerTips=[closePose.contacts.left.tip,closePose.contacts.right.tip].map(macro);
+  const widePoints=[widePose.head,...widePose.feet,...entrance.flatMap(path=>path.points)].map(establish);
+  const retreat=Array.from({length:25},(_,i)=>g.cameraAt(position(22.18+.02*i),{compact}).distance);
+  bridgeShots.push({w,wireWidth,macro:macro.camera.focusId,fingersVisible:fingerTips.every(inside),
+   wiresVisible:closePoints.every(inside),gatewayVisible:widePoints.every(inside),
+   scaleChange:establish.camera.distance/macro.camera.distance,
+   continuousRetreat:retreat.every((distance,i)=>i===0||distance>=retreat[i-1])});
+ }
+ check('bridge-question-frames-both-fingers-and-five-distinct-cables',new Set(leads.map(lead=>lead.color)).size===5&&
+  bridgeShots.every(s=>s.macro==='inside-the-cables'&&s.fingersVisible&&s.wiresVisible&&s.wireWidth>.56),bridgeShots);
+ check('pullback-reveals-the-whole-maker-and-grounded-sunrise',bridgeShots.every(s=>s.continuousRetreat&&s.scaleChange>2.65&&s.gatewayVisible),bridgeShots);
  const disclosure=[];for(const e of events){const p=position((e.arrive+e.holdEnd)/2);if(p<6.7||p>8)continue;const closed=g.cameraAt(p),open=g.cameraAt(p,{expanded:1});if(open.focusWeight!==0||open.distance<=closed.distance)disclosure.push(e.id);}
  check('opening-system-layers-reestablishes-the-wide-context',disclosure.length===0&&events.some(e=>position(e.arrive)>6.7&&position(e.arrive)<8),disclosure);
  const rear=g.config.camera.orbits.find(o=>o.id==='conviction-rear');check('rear-shot-reaches-behind-the-maker-on-both-viewports',Math.cos(rear.yaw)<-.90&&Math.cos(rear.compactYaw)<-.85);
  if(process.env.DOCUMENTARY_BASELINE){const m={exports:{}};vm.runInNewContext(fs.readFileSync(process.env.DOCUMENTARY_BASELINE,'utf8'),{module:m,exports:m.exports,require:createRequire(path.resolve('assets/profile/geometry.js'))});const old=m.exports,positions=Array.from({length:81},(_,i)=>i/8);check('actor-world-dust-and-light-are-unchanged',positions.every(p=>JSON.stringify(g.frame(p,2))===JSON.stringify(old.frame(p,2))&&JSON.stringify(g.illustration(p,1))===JSON.stringify(old.illustration(p,1))&&JSON.stringify(g.lightTrail(p))===JSON.stringify(old.lightTrail(p))));}
  if(process.env.SKIP_BROWSER!=='1'){
   const {chromium}=require('playwright'),b=await chromium.launch();try{for(const width of [1440,390]){const page=await b.newPage({viewport:{width,height:1000}});page.on('pageerror',e=>errors.push(e.message));await page.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+'profile/');await page.waitForFunction(()=>window.ProfileGeometry?.focusAt&&window.ProfileExperience);await page.evaluate(()=>document.fonts.ready);
-   for(const e of events){const p=position((e.arrive+e.holdEnd)/2);await page.evaluate(p=>{const a=ProfileExperience.snapshot().anchors,c=Math.floor(p),f=ProfileGeometry.config.morph;scrollTo({top:a[c]+(a[c+1]-a[c])*(f.start+(f.end-f.start)*(p-c)),behavior:'instant'});},p);await page.waitForFunction(p=>Math.abs(ProfileExperience.snapshot().current-p)<.001&&ProfileExperience.snapshot().current===ProfileExperience.snapshot().target,p);await page.waitForTimeout(300);const state=await page.evaluate(()=>{const s=ProfileExperience.snapshot(),r=document.querySelector('#architecture').getBoundingClientRect();return {camera:s.camera,visible:r.bottom>0&&r.top<innerHeight};});check('live-closeup-'+width+'-'+e.id,state.visible&&state.camera.focusId===e.id&&state.camera.focusWeight>.99);await page.screenshot({path:path.join(out,width+'-'+e.id+'.png')});}
+   for(const e of events){const p=position((e.arrive+e.holdEnd)/2);await page.evaluate(p=>{scrollTo({top:ProfileExperience.scrollForPosition(p),behavior:'instant'});},p);await page.waitForFunction(p=>Math.abs(ProfileExperience.snapshot().current-p)<.001&&ProfileExperience.snapshot().current===ProfileExperience.snapshot().target,p);await page.waitForTimeout(300);const state=await page.evaluate(()=>{const s=ProfileExperience.snapshot(),r=document.querySelector('#architecture').getBoundingClientRect();return {camera:s.camera,visible:r.bottom>0&&r.top<innerHeight};});check('live-closeup-'+width+'-'+e.id,state.visible&&state.camera.focusId===e.id&&state.camera.focusWeight>.99);await page.screenshot({path:path.join(out,width+'-'+e.id+'.png')});}
    await page.emulateMedia({reducedMotion:'reduce'});const count=await page.evaluate(()=>ProfileExperience.snapshot().draws);await page.evaluate(()=>document.querySelector('#conviction').scrollIntoView({behavior:'instant'}));await page.waitForTimeout(250);check('owner-full-motion-keeps-camera-active-'+width,await page.locator('.stage').isVisible()&&await page.evaluate(n=>ProfileExperience.snapshot().mode==='full'&&ProfileExperience.snapshot().draws>n,count)&&await page.locator('#motion').count()===0);await page.close();
   }}finally{await b.close();}check('no-browser-errors',errors.length===0,errors);
  }

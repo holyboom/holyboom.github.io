@@ -18,7 +18,7 @@ const check=(name,pass,data)=>{checks.push({name,pass:Boolean(pass),data});if(!p
   const cdp=await page.context().newCDPSession(page);await cdp.send('Performance.enable');
   const snap=()=>page.evaluate(()=>ProfileExperience.snapshot());
   async function go(position){
-   await page.evaluate(position=>{const a=ProfileExperience.snapshot().anchors,c=Math.floor(position),f=ProfileGeometry.config.morph;scrollTo({top:c===position?a[c]:a[c]+(a[c+1]-a[c])*(f.start+(f.end-f.start)*(position-c)),behavior:'instant'});},position);
+   await page.evaluate(position=>{scrollTo({top:ProfileExperience.scrollForPosition(position),behavior:'instant'});},position);
    await page.waitForFunction(position=>Math.abs(ProfileExperience.snapshot().target-position)<.007&&Math.abs(ProfileExperience.snapshot().current-ProfileExperience.snapshot().target)<.0001,position);
   }
   async function memory(label){

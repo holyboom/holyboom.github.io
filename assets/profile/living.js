@@ -5,7 +5,8 @@
  const canvas=document.querySelector('#architecture'),stage=document.querySelector('.stage'),journey=document.querySelector('#journey');
  const ctx=canvas?.getContext('2d');if(!ctx){clearBoot();return;}
  const chapters=[...document.querySelectorAll('[data-scene]')],rail=[...document.querySelectorAll('.chapter-rail a')],beneath=document.querySelector('#beneath');
- const readingThread=window.ProfileReadingThread?.create({chapters,canvas,stage});
+ const question=document.querySelector('#craft .story-bridge strong'),entranceTitle=document.querySelector('#ai-experiences h2'),entranceBody=document.querySelector('#ai-experiences .scene-sequence+p');
+ const readingThread=window.ProfileReadingThread?.create({chapters,canvas,stage,question});
  const professional=document.querySelector('#experience'),summaryHost=document.querySelector('.reflection-art');
  const originalHost=canvas.parentElement,contact=document.querySelector('#contact'),contactHost=contact.querySelector('.scene-fallback');
  const finale=window.ProfileFinale?.create({g,canvas,ctx,stageHost:originalHost,summaryHost,professional,contact,requestMeasure:()=>measure(),wake});
@@ -19,6 +20,7 @@
  const idleDuration=2.4;
  let idleSeconds=0;
  let renderedCamera=null,modelCache=null,bitmapDetail=0,navPosition=-1,navScroll=-1;
+ let readingStops=null;
  let layoutCorrection=null,measuredDisclosureOpen=beneath.open;
  const workPaths=[...document.querySelectorAll('.work-path')],workState=()=>workPaths.map(el=>el.open?'1':'0').join('');
  const inspecting=()=>(beneath.open&&current>6.45&&current<8.25)||(workPaths.some(el=>el.open)&&current>7.75&&current<9.1);
@@ -60,7 +62,7 @@
   readingWidth=innerWidth;readingHeight=innerHeight;readingContext=captureReadingContext();wake();
  }
  function positionAt(scroll){
-  const raw=g.positionFromAnchors(scroll,anchors);
+  const raw=g.positionFromAnchors(scroll,anchors,readingStops);
   if(!layoutCorrection)return raw;
   const progress=Math.abs(raw-layoutCorrection.origin)/layoutCorrection.span;
   // Retain the compact correction outside its support: it is zero there, but
@@ -71,16 +73,48 @@
   // smooth() has maximum slope 1.5; span >= 2.2*abs(delta) keeps this monotonic.
   return g.clamp(raw+layoutCorrection.delta*(1-g.smooth(progress)),0,anchors.length-1);
  }
+ // Native scroll selects the same performance track as the camera, rig and props.
+ // Keep the rest of the story on its original chapter map. In this passage the
+ // printed question and title, including their translated line breaks, set the pace.
+ function measureReadingStops(){
+  if(!question||!entranceTitle||!entranceBody)return null;
+  const header=document.querySelector('.site-header').getBoundingClientRect();
+  const top=innerWidth<768?Math.max(header.height,parseFloat(getComputedStyle(stage).top)+stage.getBoundingClientRect().height):header.height;
+  const bandTop=Math.min(innerHeight-40,top),height=innerHeight-bandTop;
+  const questionRect=question.getBoundingClientRect(),titleRect=entranceTitle.getBoundingClientRect();
+  const focusY=(rect,fraction)=>scrollY+rect.top+rect.height*.5-bandTop-height*fraction;
+  const halfSpan=(g.config.morph.start+g.config.morph.end)*.5;
+  const start=g.mix(anchors[6],anchors[7],halfSpan),end=g.mix(anchors[7],anchors[8],halfSpan);
+  const questionY=g.clamp(focusY(questionRect,.5),start+1,anchors[7]-2);
+  const titleY=g.clamp(focusY(titleRect,.70),questionY+1,end-3);
+  const titleAnchor=Math.min(titleY,anchors[7]),leave=Math.max(titleY,anchors[7]);
+  // On short phones the first sliver of heading is visible while the reader
+  // is still looking straight at the question below the sticky illustration.
+  const release=g.clamp(scrollY+titleRect.top+titleRect.height*.25-innerHeight,questionY,titleAnchor-1);
+  // Finish as the heading becomes readable below the canvas, including a
+  // cold native fragment jump before the final font metrics settle.
+  const titleVisible=scrollY+titleRect.top+titleRect.height*.90-innerHeight;
+  const arrive=innerWidth<768?Math.min(titleAnchor,Math.max(titleVisible,release+height*.22)):titleAnchor;
+  const explanation=g.clamp(scrollY+entranceBody.getBoundingClientRect().top-bandTop-height*.24,leave+1,end-1);
+  return [[start,6.5],[questionY,7.025],[release,7.025],[arrive,7.27],[leave,7.27],[explanation,7.32],[end,7.5]];
+ }
+ // Invert the measured map for review tools, including a preserved disclosure
+ // or reflow offset. This query has no effect on navigation or playback.
+ function scrollForPosition(position){
+  let low=anchors[0],high=anchors.at(-1);
+  for(let i=0;i<42;i++){const y=(low+high)/2;if(positionAt(y)<position)low=y;else high=y;}
+  return (low+high)/2;
+ }
  function measure({navigation=false,preserve=false}={}){
   resetTrail();
   const hadAnchors=anchors.length>0;
   const nextAnchors=chapters.map(el=>el.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(el).scrollMarginTop||'0'));
   const anchorsChanged=nextAnchors.some((value,i)=>Math.abs(value-(anchors[i]??value))>.01),disclosureChanged=measuredDisclosureOpen!==beneath.open||measuredWorkOpen!==workState();
-  anchors=nextAnchors;measuredDisclosureOpen=beneath.open;measuredWorkOpen=workState();
+  anchors=nextAnchors;readingStops=measureReadingStops();measuredDisclosureOpen=beneath.open;measuredWorkOpen=workState();
   if(hadAnchors&&!navigation&&(disclosureChanged||((layoutCorrection||preserve)&&anchorsChanged))){
    // Native scroll anchoring may also change scrollY during a width/font
    // resize. Preserve what is displayed, not an old map at that new offset.
-   const preserved=current,origin=g.positionFromAnchors(scrollY,anchors),delta=preserved-origin;
+   const preserved=current,origin=g.positionFromAnchors(scrollY,anchors,readingStops),delta=preserved-origin;
    layoutCorrection=Math.abs(delta)>.00001?{origin,delta,span:Math.max(.30,2.2*Math.abs(delta))}:null;
   }
   finale?.measure(anchors);
@@ -109,6 +143,24 @@
   c.beginPath();c.moveTo(points[0][0],points[0][1]);
   for(let i=1;i<points.length-1;i++){const p=points[i],n=points[i+1];c.quadraticCurveTo(p[0],p[1],(p[0]+n[0])/2,(p[1]+n[1])/2);}
   const end=points[points.length-1];c.lineTo(end[0],end[1]);
+ }
+ function paintDawn(layers){
+  const gate=layers.find(layer=>layer.index===23);
+  const disc=gate?.paths.find(item=>item.motion==='sunrise-disc');
+  if(!disc)return;
+  const xs=disc.points.map(point=>point[0]),ys=disc.points.map(point=>point[1]);
+  const left=Math.min(...xs),right=Math.max(...xs),top=Math.min(...ys),bottom=Math.max(...ys);
+  const radius=Math.min((right-left)*1.55,Math.min(w,h)*.72);
+  if(radius<1||bottom-top<1)return;
+  const x=(left+right)/2,y=bottom-(bottom-top)*.27;
+  const sky=ctx.createRadialGradient(x,y,0,x,y,radius);
+  sky.addColorStop(0,'#ffa84c80');sky.addColorStop(.32,'#dc885e55');
+  sky.addColorStop(.70,'#9b4b5a25');sky.addColorStop(1,'#a6536000');
+  ctx.globalAlpha=gate.alpha*Math.min(1,(bottom-top)/(radius*.39));
+  ctx.fillStyle=sky;ctx.fillRect(x-radius,y-radius,2*radius,2*radius);ctx.globalAlpha=1;
+  const sunlight=ctx.createLinearGradient(0,top,0,bottom);
+  for(const [offset,color] of disc.dawnStops)sunlight.addColorStop(offset,color);
+  return sunlight;
  }
  function render(time){
   frameId=0;if(document.hidden||!visible||staticLayout()||!w||!h){last=0;return;}
@@ -162,7 +214,12 @@
   const rawIllustrations=g.illustration(current,exploded,idlePose);
   const readingSource=project.camera.eyeWeight>.5?g.performanceAt(current,idlePose).contacts.left.tip:g.lightAt(current,ambientPhase,idlePose);
   const readingComponents=rawIllustrations.filter(layer=>layer.role==='front-work'&&layer.alpha>.5).flatMap(layer=>layer.paths.filter(item=>item.alpha*layer.alpha>.12&&item.readingAnchor!==false&&(item.fill||item.readingAnchor)&&item.points.length>=4&&!item.skin));
-  const readingFrame=readingThread?.read({position:current,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible,quietSource:innerWidth<768&&(shot.index===17||shot.index===18)});
+  // If both sections fit in the same viewport, point to the text cue that
+  // owns the current gesture. The selector still requires visible glyphs.
+  const preferred=current>=6.87&&current<7.16?question:
+   current>=7.16&&current<7.295?entranceTitle:
+   current>=7.295&&current<=7.34?entranceBody:null;
+  const readingFrame=readingThread?.read({position:current,preferred,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible,quietSource:innerWidth<768&&(shot.index===17||shot.index===18)});
   const smallDetail=readingFrame?.quietSource&&shot.prop!=='ember';
   const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow);
   const lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength*(smallDetail ? .82 : 1);
@@ -181,6 +238,7 @@
   const compactCanvas=innerWidth<768;
   const visibleLayers=rawIllustrations.map(layer=>({...layer,paths:layer.paths.filter(item=>item.alpha*layer.alpha>.001&&!(compactCanvas&&item.secondary))}));
   const illustrations=g.projectIllustrations(visibleLayers,project);
+  const sunlight=paintDawn(illustrations);
   for(const layer of illustrations){
    if(layer.id==='story-world')layer.paths=layer.paths.filter(item=>item.points.some(q=>q[0]>-16&&q[0]<w+16&&q[1]>-16&&q[1]<h+16));
   }
@@ -285,7 +343,7 @@
    }
    const item=command.item;
    if(item.skin){ctx.beginPath();ctx.moveTo(item.points[0][0],item.points[0][1]);for(const p of item.points.slice(1))ctx.lineTo(p[0],p[1]);ctx.closePath();}else path(ctx,item.points);
-   const material=item.skin?skinMaterials.get(item.surface):null;ctx.globalAlpha=command.alpha*item.alpha;if(item.fill){ctx.fillStyle=material||item.fill;ctx.fill();}ctx.strokeStyle=material||item.color;
+   const material=item.skin?skinMaterials.get(item.surface):null;ctx.globalAlpha=command.alpha*item.alpha;if(item.fill){ctx.fillStyle=(item.dawnStops&&sunlight)||material||item.fill;ctx.fill();}ctx.strokeStyle=material||item.color;
    // Fine dust retains its optical size on phones; other prop lines stay lighter.
    ctx.lineWidth=item.width*(innerWidth<768&&!item.particle?.7:1);ctx.stroke();
   }
@@ -319,11 +377,15 @@
  document.querySelector('.finale-catalog')?.addEventListener('toggle',()=>{measure({preserve:true});scroll();wake();});
  document.addEventListener('visibilitychange',()=>{last=0;resetTrail();if(document.hidden)finale?.resetTime();if(!document.hidden){measure();wake();}});
  const observer=new IntersectionObserver(()=>scroll(),{rootMargin:'100px'});observer.observe(stage);observer.observe(summaryHost);observer.observe(contactHost);
- const ro=new ResizeObserver(()=>measure());ro.observe(journey);
+ const ro=new ResizeObserver(()=>measure());
+ for(const element of [journey,question,entranceTitle,entranceBody])if(element)ro.observe(element);
+ addEventListener('hashchange',()=>{
+  if(location.hash==='#ai-experiences'||location.hash==='#title-ai-experiences'){layoutCorrection=null;scroll();}
+ });
  addEventListener('pointermove',e=>{if(!matchMedia('(hover: hover) and (pointer: fine)').matches||reduced)return;const r=stage.getBoundingClientRect();tx=g.clamp((e.clientX-r.left)/Math.max(r.width,1)-.5,-.5,.5)*.1;ty=g.clamp((e.clientY-r.top)/Math.max(r.height,1)-.5,-.5,.5)*.1;wake();},{passive:true});
  document.addEventListener('pointerleave',()=>{tx=ty=0;wake();});
  addEventListener('pageshow',measure);document.fonts.ready.then(measure);
  activate();scroll();
  // Read-only diagnostics for reproducible QA; no control over user content.
- window.ProfileExperience=Object.freeze({snapshot:()=>({idleSeconds,finale:finale?.snapshot(),opening:{active:openingActive,seconds:openingSeconds,phase:ambientPhase},readingThread:readingThread?.snapshot(),cinematic:readingThread?.cinematicSnapshot(),mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
+ window.ProfileExperience=Object.freeze({scrollForPosition,snapshot:()=>({idleSeconds,finale:finale?.snapshot(),opening:{active:openingActive,seconds:openingSeconds,phase:ambientPhase},readingThread:readingThread?.snapshot(),cinematic:readingThread?.cinematicSnapshot(),mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],readingStops:readingStops?.map(point=>[...point]),width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
 })();

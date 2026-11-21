@@ -79,7 +79,7 @@ function painter(lines,layers,project){
    const stack=stacks.get(role);commands.push({kind:'prop',depth:(role==='volume'?depthOf(item.points):stack.depth)+stack.index++*1e-6,item,alpha:layer.alpha});
   }
  }
- return {commands:commands.sort((a,b)=>a.depth-b.depth),labelVisibility:g.workLabelVisibility(layers,project)};
+ return {commands:commands.sort((a,b)=>a.depth-b.depth),labelVisibility:g.workLabelVisibility(layers,project,{still:true})};
 }
 for(let state=0;state<g.config.scenes.length;state++){
  const project=g.createProjector(state,720,720);
@@ -93,9 +93,12 @@ for(let state=0;state<g.config.scenes.length;state++){
   return svg;
  };
  const skinMaterials=g.skinMaterials(layers).map(m=>`<radialGradient id="${m.id}" gradientUnits="userSpaceOnUse" cx="${n(m.cx)}" cy="${n(m.cy)}" r="${n(m.r)}" fx="${n(m.fx)}" fy="${n(m.fy)}">${m.stops.map(([offset,color])=>`<stop offset="${offset}" stop-color="${color}"/>`).join('')}</radialGradient>`).join('');
+ const sunlight=layers.find(layer=>layer.index===23)?.paths.find(item=>item.dawnStops);
+ const dawnMaterial=sunlight?`<linearGradient id="dawn-sun" x2="0" y2="1">${sunlight.dawnStops.map(([offset,color])=>`<stop offset="${offset}" stop-color="${color}"/>`).join('')}</linearGradient>`:'';
  const painted=painter(lines,layers,project),objects=painted.commands.map(command=>{
   if(command.kind==='strand')return mesh(command.line);
-  const item=command.item,d=item.skin?item.points.map((p,i)=>(i?'L':'M')+n(p[0])+' '+n(p[1])).join('')+'Z':toPath(item.points),material=item.skin?`url(#${item.surface})`:null;return `<path${item.secondary?' class="ambient-secondary"':''} d="${d}" fill="${material||item.fill||'none'}" stroke="${material||item.color}" stroke-width="${item.width}" opacity="${(command.alpha*item.alpha).toFixed(3)}"/>`;
+  const item=command.item,d=item.skin?item.points.map((p,i)=>(i?'L':'M')+n(p[0])+' '+n(p[1])).join('')+'Z':toPath(item.points),material=item.skin?`url(#${item.surface})`:null;
+  return `<path${item.secondary?' class="ambient-secondary"':''} d="${d}" fill="${item.dawnStops?'url(#dawn-sun)':material||item.fill||'none'}" stroke="${material||item.color}" stroke-width="${item.width}" opacity="${(command.alpha*item.alpha).toFixed(3)}"/>`;
  }).join('');
  const labels=layers.map(layer=>{
   const alpha=(layer.textAlpha??layer.alpha)*(layer.role==='front-work'?painted.labelVisibility:1);if(alpha<=.005)return '';
@@ -103,7 +106,7 @@ for(let state=0;state<g.config.scenes.length;state++){
  }).join('');
  const seed=lines.find(line=>line.id===0)?.points[0],halo=seed?`<circle cx="${n(seed[0])}" cy="${n(seed[1])}" r="${state===0?9:7}" fill="${g.config.tones.human}" filter="url(#glow)"/>`:'';
  const shot=g.storyAt(state);
- const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="scene-title scene-description"><title id="scene-title">${escape(shot.action)}</title><desc id="scene-description">${escape(shot.caption)}</desc><style>@media(max-width:560px){.art-label,.ambient-secondary{display:none}}</style><defs><filter id="glow"><feGaussianBlur stdDeviation="4"/></filter>${skinMaterials}</defs>${halo}<g fill="none" stroke-linecap="round" stroke-linejoin="round">${objects}</g>${labels}</svg>`;
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="scene-title scene-description"><title id="scene-title">${escape(shot.action)}</title><desc id="scene-description">${escape(shot.caption)}</desc><style>@media(max-width:560px){.art-label,.ambient-secondary{display:none}}</style><defs><filter id="glow"><feGaussianBlur stdDeviation="4"/></filter>${skinMaterials}${dawnMaterial}</defs>${halo}<g fill="none" stroke-linecap="round" stroke-linejoin="round">${objects}</g>${labels}</svg>`;
  fs.writeFileSync(path.join(dir,`scene-${state}.svg`),svg);
 }
 console.log(`Generated ${g.config.scenes.length} woven narrative SVGs (${g.LINES} identity-preserving strands).`);

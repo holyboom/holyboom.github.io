@@ -46,23 +46,29 @@
   }
   return lines;
  }
- function create({chapters,canvas,stage}){
+ function create({chapters,canvas,stage,question}){
   const svg=document.createElementNS(NS,'svg');svg.classList.add('reading-thread');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');
   svg.innerHTML='<defs><linearGradient id="reading-thread-ink" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffd394"/><stop offset=".5" stop-color="#e8c9ff"/><stop offset="1" stop-color="#c398ff"/></linearGradient></defs><path class="reading-component-trace" pathLength="1"/><path class="reading-thread-halo"/><path class="reading-thread-line"/><g class="reading-thread-weave"></g><path class="reading-thread-under"/><ellipse class="reading-thread-arrival"/><circle class="reading-thread-source"/><circle class="reading-thread-source-ring"/><g class="reading-thread-packet"></g><g class="reading-thread-dust"></g><circle class="reading-thread-end" r="2.5"/>';
   document.body.appendChild(svg);
   const gradient=svg.querySelector('linearGradient'),stop=gradient.lastElementChild,halo=svg.querySelector('.reading-thread-halo'),line=svg.querySelector('.reading-thread-line'),under=svg.querySelector('.reading-thread-under'),sourceDot=svg.querySelector('.reading-thread-source'),sourceRing=svg.querySelector('.reading-thread-source-ring'),arrival=svg.querySelector('.reading-thread-arrival'),end=svg.querySelector('.reading-thread-end'),trace=svg.querySelector('.reading-component-trace');
   const nodes=(selector,tag,count)=>{const group=svg.querySelector(selector);return Array.from({length:count},()=>{const node=document.createElementNS(NS,tag);group.appendChild(node);return node;});},weave=nodes('.reading-thread-weave','path',4),packet=nodes('.reading-thread-packet','circle',12),dust=nodes('.reading-thread-dust','circle',8);
   const cinema=root.ProfileCinematicLines?.create(svg);
-  let receivers=[],padding={left:0,right:0,top:0,bottom:0},receiver=null,snapshot={visible:false},headerBottom=100;
+  let questionLines=[],receivers=[],padding={left:0,right:0,top:0,bottom:0},receiver=null,snapshot={visible:false},headerBottom=100;
   function measure(){
    const style=getComputedStyle(canvas);for(const side of ['left','right','top','bottom'])padding[side]=parseFloat(style['padding'+side[0].toUpperCase()+side.slice(1)])||0;
    headerBottom=document.querySelector('.site-header').getBoundingClientRect().bottom;
+   questionLines=question?textLines(question):[];
    receivers=chapters.map((chapter,index)=>[...chapter.querySelectorAll('h1,h2,h3,.career-context,.lede,.scene-sequence li,.chapter-copy>p,blockquote,.story-bridge,.section-heading>p,.career-row p,.contact p')].filter(el=>!el.classList.contains('eyebrow')&&!el.classList.contains('story-era')&&!el.hasAttribute('data-career-context')).map(el=>{
     const lines=textLines(el);
     const role=/^H[123]$/.test(el.tagName)?'heading':el.dataset.storyBeat?'beat':'copy';return {el,index,lines,role};
    }).filter(r=>r.lines.length));
   }
-  function select(index,compact,safeTop){
+  function select(index,compact,safeTop,preferred){
+   if(preferred&&visibleReceiver(preferred)){
+    const item=preferred===question?{el:question,lines:questionLines,index:6,role:'copy'}:receivers[7]?.find(item=>item.el===preferred);
+    const glyph=item?.lines.find(r=>r.top-scrollY>=safeTop&&r.bottom-scrollY<innerHeight-18);
+    if(glyph)return {...item,rect:{...glyph,top:glyph.top-scrollY,bottom:glyph.bottom-scrollY}};
+   }
    const groups=[index,index+1,index-1].filter(i=>i>=0&&i<receivers.length);
    for(const group of groups){const candidates=[];for(const item of receivers[group]){
     if(!visibleReceiver(item.el))continue;
@@ -72,10 +78,10 @@
    }if(candidates.length)return candidates.sort((a,b)=>b.priority-a.priority||a.rect.top-b.rect.top)[0];}
    return null;
   }
-  function read({position,project,source,components=[],phase=0,accent,active=true,quietSource=false}){
+  function read({position,project,source,components=[],phase=0,accent,active=true,quietSource=false,preferred=null}){
    if(!active||position<1||document.hidden||(project.camera.framing==='head'&&project.camera.focusWeight>.4))return null;
    const compact=innerWidth<768,r=canvas.getBoundingClientRect(),stageRect=stage.getBoundingClientRect(),safeTop=compact?Math.max(headerBottom,stageRect.bottom)+16:headerBottom+20;
-   const target=select(Math.min(chapters.length-1,Math.floor(position+.001)),compact,safeTop);if(!target)return null;
+   const target=select(Math.min(chapters.length-1,Math.floor(position+.001)),compact,safeTop,preferred);if(!target)return null;
    const q=project(source),handVisible=project.camera.distance-q[2]>=(project.camera.near||.25);
    const hand=canvasPoint(q,r,padding,{width:r.width,height:r.height}),inside=p=>p[0]>=r.left+5&&p[0]<=r.right-5&&p[1]>=Math.max(r.top,headerBottom)+24&&p[1]<=r.bottom-38;
    let origin=hand,componentId=null,contour=[];

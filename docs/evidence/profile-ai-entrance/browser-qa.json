@@ -1,0 +1,1124 @@
+{
+  "basis": "Live v29 baseline from GitHub Pages. Updated v30 comparison from the release candidate. Coordinates are CSS pixels in real browser engines with emulated viewport / touch. Native document offsets are sampled at matched text positions.",
+  "records": [
+    {
+      "release": "living-materials-v29",
+      "edition": "en",
+      "engine": "Chromium 156.0.8078.79",
+      "viewport": [
+        1440,
+        900
+      ],
+      "frames": [
+        {
+          "moment": "before",
+          "scrollY": 9373,
+          "bridgeQuestionY": [
+            604.38,
+            635.63
+          ],
+          "chapterHeadingY": [
+            935.63,
+            1076.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 20.3254,
+          "prop": "skill",
+          "readingTarget": "That is the moat I am building: not a secret shortcut, but lived experience, deliberate curation, and revision"
+        },
+        {
+          "moment": "sliver",
+          "scrollY": 9427,
+          "bridgeQuestionY": [
+            550.38,
+            581.63
+          ],
+          "chapterHeadingY": [
+            881.63,
+            1022.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 20.5093,
+          "prop": "skill",
+          "readingTarget": "That is the moat I am building: not a secret shortcut, but lived experience, deliberate curation, and revision"
+        },
+        {
+          "moment": "question",
+          "scrollY": 9464,
+          "bridgeQuestionY": [
+            513.38,
+            544.63
+          ],
+          "chapterHeadingY": [
+            844.63,
+            985.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 20.6353,
+          "prop": "moat",
+          "readingTarget": "That is the moat I am building: not a secret shortcut, but lived experience, deliberate curation, and revision"
+        },
+        {
+          "moment": "full",
+          "scrollY": 9580,
+          "bridgeQuestionY": [
+            397.38,
+            428.63
+          ],
+          "chapterHeadingY": [
+            728.63,
+            869.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 21.0304,
+          "prop": "moat",
+          "readingTarget": "A visual metaphor for learning and synthesis. The scenes are symbolic, not documentary recreations."
+        },
+        {
+          "moment": "read",
+          "scrollY": 10030,
+          "bridgeQuestionY": [
+            -52.63,
+            -21.38
+          ],
+          "chapterHeadingY": [
+            278.63,
+            419.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 22,
+          "prop": "complexity",
+          "readingTarget": "01Face the hidden complexity"
+        },
+        {
+          "moment": "action",
+          "scrollY": 10323,
+          "bridgeQuestionY": [
+            -345.63,
+            -314.38
+          ],
+          "chapterHeadingY": [
+            -14.38,
+            126.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 22.2365,
+          "prop": "complexity",
+          "readingTarget": "01Face the hidden complexity"
+        }
+      ]
+    },
+    {
+      "release": "living-materials-v29",
+      "edition": "th",
+      "engine": "Chromium 156.0.8078.79",
+      "viewport": [
+        393,
+        654
+      ],
+      "frames": [
+        {
+          "moment": "question",
+          "scrollY": 9361,
+          "bridgeQuestionY": [
+            451.64,
+            570.42
+          ],
+          "chapterHeadingY": [
+            808.47,
+            919.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 21.4732,
+          "prop": "complexity",
+          "readingTarget": "เมื่อข้างในเริ่มมีรายละเอียดมากขึ้น ผมยิ่งต้องคิดถึงคนที่จะเข้ามาใช้จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่"
+        },
+        {
+          "moment": "before",
+          "scrollY": 9479,
+          "bridgeQuestionY": [
+            333.64,
+            452.42
+          ],
+          "chapterHeadingY": [
+            690.47,
+            801.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 21.8444,
+          "prop": "complexity",
+          "readingTarget": "เมื่อข้างในเริ่มมีรายละเอียดมากขึ้น ผมยิ่งต้องคิดถึงคนที่จะเข้ามาใช้จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่"
+        },
+        {
+          "moment": "sliver",
+          "scrollY": 9533,
+          "bridgeQuestionY": [
+            279.64,
+            398.42
+          ],
+          "chapterHeadingY": [
+            636.47,
+            747.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22,
+          "prop": "complexity",
+          "readingTarget": "เมื่อข้างในเริ่มมีรายละเอียดมากขึ้น ผมยิ่งต้องคิดถึงคนที่จะเข้ามาใช้จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่"
+        },
+        {
+          "moment": "full",
+          "scrollY": 9656,
+          "bridgeQuestionY": [
+            156.64,
+            275.42
+          ],
+          "chapterHeadingY": [
+            513.47,
+            624.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22,
+          "prop": "complexity",
+          "readingTarget": "จิตวิญญาณของAI experiences"
+        },
+        {
+          "moment": "read",
+          "scrollY": 9837,
+          "bridgeQuestionY": [
+            -24.36,
+            94.42
+          ],
+          "chapterHeadingY": [
+            332.47,
+            443.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22,
+          "prop": "complexity",
+          "readingTarget": "01มองให้ถึงสิ่งที่ซ่อนอยู่"
+        },
+        {
+          "moment": "action",
+          "scrollY": 10171,
+          "bridgeQuestionY": [
+            -358.36,
+            -239.58
+          ],
+          "chapterHeadingY": [
+            -1.53,
+            109.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22.6713,
+          "prop": "interface",
+          "readingTarget": "04ชวนให้อยากกลับมาใช้"
+        }
+      ]
+    },
+    {
+      "release": "living-materials-v29",
+      "edition": "th",
+      "engine": "WebKit 27.2",
+      "viewport": [
+        393,
+        654
+      ],
+      "frames": [
+        {
+          "moment": "question",
+          "scrollY": 9361,
+          "bridgeQuestionY": [
+            451.64,
+            570.42
+          ],
+          "chapterHeadingY": [
+            808.47,
+            919.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 21.4732,
+          "prop": "complexity",
+          "readingTarget": "เมื่อข้างในเริ่มมีรายละเอียดมากขึ้น ผมยิ่งต้องคิดถึงคนที่จะเข้ามาใช้จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่"
+        },
+        {
+          "moment": "before",
+          "scrollY": 9479,
+          "bridgeQuestionY": [
+            333.64,
+            452.42
+          ],
+          "chapterHeadingY": [
+            690.47,
+            801.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 21.8444,
+          "prop": "complexity",
+          "readingTarget": "เมื่อข้างในเริ่มมีรายละเอียดมากขึ้น ผมยิ่งต้องคิดถึงคนที่จะเข้ามาใช้จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่"
+        },
+        {
+          "moment": "sliver",
+          "scrollY": 9533,
+          "bridgeQuestionY": [
+            279.64,
+            398.42
+          ],
+          "chapterHeadingY": [
+            636.47,
+            747.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22,
+          "prop": "complexity",
+          "readingTarget": "เมื่อข้างในเริ่มมีรายละเอียดมากขึ้น ผมยิ่งต้องคิดถึงคนที่จะเข้ามาใช้จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่"
+        },
+        {
+          "moment": "full",
+          "scrollY": 9656,
+          "bridgeQuestionY": [
+            156.64,
+            275.42
+          ],
+          "chapterHeadingY": [
+            513.47,
+            624.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22,
+          "prop": "complexity",
+          "readingTarget": "จิตวิญญาณของAI experiences"
+        },
+        {
+          "moment": "read",
+          "scrollY": 9837,
+          "bridgeQuestionY": [
+            -24.36,
+            94.42
+          ],
+          "chapterHeadingY": [
+            332.47,
+            443.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22,
+          "prop": "complexity",
+          "readingTarget": "01มองให้ถึงสิ่งที่ซ่อนอยู่"
+        },
+        {
+          "moment": "action",
+          "scrollY": 10171,
+          "bridgeQuestionY": [
+            -358.36,
+            -239.58
+          ],
+          "chapterHeadingY": [
+            -1.53,
+            109.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22.6709,
+          "prop": "interface",
+          "readingTarget": "04ชวนให้อยากกลับมาใช้"
+        }
+      ]
+    },
+    {
+      "release": "living-new-era-v30",
+      "edition": "th",
+      "engine": "Chromium 156.0.8078.79",
+      "viewport": [
+        393,
+        654
+      ],
+      "frames": [
+        {
+          "moment": "question",
+          "scrollY": 9361,
+          "bridgeQuestionY": [
+            451.64,
+            570.42
+          ],
+          "chapterHeadingY": [
+            808.47,
+            919.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22.0023,
+          "prop": "complexity",
+          "readingTarget": "จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่ทำให้เขารู้สึกหลงทางได้อย่างไร?"
+        },
+        {
+          "moment": "before",
+          "scrollY": 9479,
+          "bridgeQuestionY": [
+            333.64,
+            452.42
+          ],
+          "chapterHeadingY": [
+            690.47,
+            801.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22.1,
+          "prop": "complexity",
+          "readingTarget": "จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่ทำให้เขารู้สึกหลงทางได้อย่างไร?"
+        },
+        {
+          "moment": "sliver",
+          "scrollY": 9533,
+          "bridgeQuestionY": [
+            279.64,
+            398.42
+          ],
+          "chapterHeadingY": [
+            636.47,
+            747.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22.1,
+          "prop": "complexity",
+          "readingTarget": "จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่ทำให้เขารู้สึกหลงทางได้อย่างไร?"
+        },
+        {
+          "moment": "full",
+          "scrollY": 9656,
+          "bridgeQuestionY": [
+            156.64,
+            275.42
+          ],
+          "chapterHeadingY": [
+            513.47,
+            624.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 23.08,
+          "prop": "interface",
+          "readingTarget": "จิตวิญญาณของAI experiences"
+        },
+        {
+          "moment": "read",
+          "scrollY": 9837,
+          "bridgeQuestionY": [
+            -24.36,
+            94.42
+          ],
+          "chapterHeadingY": [
+            332.47,
+            443.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 23.1418,
+          "prop": "interface",
+          "readingTarget": "จิตวิญญาณของAI experiences"
+        },
+        {
+          "moment": "action",
+          "scrollY": 10171,
+          "bridgeQuestionY": [
+            -358.36,
+            -239.58
+          ],
+          "chapterHeadingY": [
+            -1.53,
+            109.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 23.2741,
+          "prop": "interface",
+          "readingTarget": "เมื่อมาถึงยุค AI ความชอบในงาน Frontend กับพื้นฐานวิศวกรรมซอฟต์แวร์ของผมทำงานร่วมกันได้เต็มที่ขึ้น ผมออกแบบได้ท"
+        }
+      ]
+    },
+    {
+      "release": "living-new-era-v30",
+      "edition": "en",
+      "engine": "WebKit 27.2",
+      "viewport": [
+        390,
+        560
+      ],
+      "frames": [
+        {
+          "moment": "question",
+          "scrollY": 9579,
+          "bridgeQuestionY": [
+            386.41,
+            446.41
+          ],
+          "chapterHeadingY": [
+            677.84,
+            790.03
+          ],
+          "stageY": [
+            100,
+            289.39
+          ],
+          "cameraTrack": 22.1,
+          "prop": "complexity",
+          "readingTarget": "How do you make all that complexity feel human?"
+        },
+        {
+          "moment": "before",
+          "scrollY": 9661,
+          "bridgeQuestionY": [
+            304.41,
+            364.41
+          ],
+          "chapterHeadingY": [
+            595.84,
+            708.03
+          ],
+          "stageY": [
+            100,
+            289.39
+          ],
+          "cameraTrack": 22.1,
+          "prop": "complexity",
+          "readingTarget": "How do you make all that complexity feel human?"
+        },
+        {
+          "moment": "sliver",
+          "scrollY": 9715,
+          "bridgeQuestionY": [
+            250.41,
+            310.41
+          ],
+          "chapterHeadingY": [
+            541.84,
+            654.03
+          ],
+          "stageY": [
+            100,
+            289.39
+          ],
+          "cameraTrack": 22.1,
+          "prop": "complexity",
+          "readingTarget": null
+        },
+        {
+          "moment": "full",
+          "scrollY": 9839,
+          "bridgeQuestionY": [
+            126.41,
+            186.41
+          ],
+          "chapterHeadingY": [
+            417.84,
+            530.03
+          ],
+          "stageY": [
+            100,
+            289.39
+          ],
+          "cameraTrack": 23.0823,
+          "prop": "interface",
+          "readingTarget": "The soul ofAI experiences."
+        },
+        {
+          "moment": "read",
+          "scrollY": 9956,
+          "bridgeQuestionY": [
+            9.41,
+            69.41
+          ],
+          "chapterHeadingY": [
+            300.84,
+            413.03
+          ],
+          "stageY": [
+            100,
+            289.39
+          ],
+          "cameraTrack": 23.1349,
+          "prop": "interface",
+          "readingTarget": "The soul ofAI experiences."
+        },
+        {
+          "moment": "action",
+          "scrollY": 10278,
+          "bridgeQuestionY": [
+            -312.59,
+            -252.59
+          ],
+          "chapterHeadingY": [
+            -21.16,
+            91.03
+          ],
+          "stageY": [
+            100,
+            289.39
+          ],
+          "cameraTrack": 23.2794,
+          "prop": "interface",
+          "readingTarget": "Working with AI brings my frontend instincts and software engineering background together in a wider creative "
+        }
+      ]
+    },
+    {
+      "release": "living-new-era-v30",
+      "edition": "th",
+      "engine": "WebKit 27.2",
+      "viewport": [
+        393,
+        654
+      ],
+      "frames": [
+        {
+          "moment": "question",
+          "scrollY": 9361,
+          "bridgeQuestionY": [
+            451.64,
+            570.42
+          ],
+          "chapterHeadingY": [
+            808.47,
+            919.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22.0023,
+          "prop": "complexity",
+          "readingTarget": "จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่ทำให้เขารู้สึกหลงทางได้อย่างไร?"
+        },
+        {
+          "moment": "before",
+          "scrollY": 9479,
+          "bridgeQuestionY": [
+            333.64,
+            452.42
+          ],
+          "chapterHeadingY": [
+            690.47,
+            801.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22.1,
+          "prop": "complexity",
+          "readingTarget": "จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่ทำให้เขารู้สึกหลงทางได้อย่างไร?"
+        },
+        {
+          "moment": "sliver",
+          "scrollY": 9533,
+          "bridgeQuestionY": [
+            279.64,
+            398.42
+          ],
+          "chapterHeadingY": [
+            636.47,
+            747.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 22.1,
+          "prop": "complexity",
+          "readingTarget": "จะพาคนเข้าไปถึงความสามารถทั้งหมดนี้ โดยไม่ทำให้เขารู้สึกหลงทางได้อย่างไร?"
+        },
+        {
+          "moment": "full",
+          "scrollY": 9656,
+          "bridgeQuestionY": [
+            156.64,
+            275.42
+          ],
+          "chapterHeadingY": [
+            513.47,
+            624.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 23.08,
+          "prop": "interface",
+          "readingTarget": "จิตวิญญาณของAI experiences"
+        },
+        {
+          "moment": "read",
+          "scrollY": 9837,
+          "bridgeQuestionY": [
+            -24.36,
+            94.42
+          ],
+          "chapterHeadingY": [
+            332.47,
+            443.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 23.1418,
+          "prop": "interface",
+          "readingTarget": "จิตวิญญาณของAI experiences"
+        },
+        {
+          "moment": "action",
+          "scrollY": 10171,
+          "bridgeQuestionY": [
+            -358.36,
+            -239.58
+          ],
+          "chapterHeadingY": [
+            -1.53,
+            109.47
+          ],
+          "stageY": [
+            100,
+            321.36
+          ],
+          "cameraTrack": 23.2741,
+          "prop": "interface",
+          "readingTarget": "เมื่อมาถึงยุค AI ความชอบในงาน Frontend กับพื้นฐานวิศวกรรมซอฟต์แวร์ของผมทำงานร่วมกันได้เต็มที่ขึ้น ผมออกแบบได้ท"
+        }
+      ]
+    },
+    {
+      "release": "living-new-era-v30",
+      "edition": "en",
+      "engine": "Chromium 156.0.8078.79",
+      "viewport": [
+        1440,
+        900
+      ],
+      "frames": [
+        {
+          "moment": "before",
+          "scrollY": 9373,
+          "bridgeQuestionY": [
+            604.38,
+            635.63
+          ],
+          "chapterHeadingY": [
+            935.63,
+            1076.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 20.9057,
+          "prop": "moat",
+          "readingTarget": "That is the moat I am building: not a secret shortcut, but lived experience, deliberate curation, and revision"
+        },
+        {
+          "moment": "sliver",
+          "scrollY": 9427,
+          "bridgeQuestionY": [
+            550.38,
+            581.63
+          ],
+          "chapterHeadingY": [
+            881.63,
+            1022.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 21.4175,
+          "prop": "complexity",
+          "readingTarget": "That is the moat I am building: not a secret shortcut, but lived experience, deliberate curation, and revision"
+        },
+        {
+          "moment": "question",
+          "scrollY": 9464,
+          "bridgeQuestionY": [
+            513.38,
+            544.63
+          ],
+          "chapterHeadingY": [
+            844.63,
+            985.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 21.7682,
+          "prop": "complexity",
+          "readingTarget": "How do you make all that complexity feel human?"
+        },
+        {
+          "moment": "full",
+          "scrollY": 9580,
+          "bridgeQuestionY": [
+            397.38,
+            428.63
+          ],
+          "chapterHeadingY": [
+            728.63,
+            869.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 22.4548,
+          "prop": "interface",
+          "readingTarget": "How do you make all that complexity feel human?"
+        },
+        {
+          "moment": "read",
+          "scrollY": 10030,
+          "bridgeQuestionY": [
+            -52.63,
+            -21.38
+          ],
+          "chapterHeadingY": [
+            278.63,
+            419.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 23.0911,
+          "prop": "interface",
+          "readingTarget": "The soul ofAI experiences."
+        },
+        {
+          "moment": "action",
+          "scrollY": 10323,
+          "bridgeQuestionY": [
+            -345.63,
+            -314.38
+          ],
+          "chapterHeadingY": [
+            -14.38,
+            126.63
+          ],
+          "stageY": [
+            105,
+            865
+          ],
+          "cameraTrack": 23.2243,
+          "prop": "interface",
+          "readingTarget": "Working with AI brings my frontend instincts and software engineering background together in a wider creative "
+        }
+      ]
+    }
+  ],
+  "forwardReverseHold": [
+    {
+      "route": "/th/profile/",
+      "engine": "Chromium",
+      "viewport": [
+        393,
+        654
+      ],
+      "pageErrors": [],
+      "horizontalOverflow": 0,
+      "reverseTrackMaxDifference": 0.0,
+      "heldScrollY": 9656,
+      "heldDrawCounts": [
+        71,
+        71
+      ],
+      "heldIdleSeconds": [
+        2.4,
+        2.4
+      ]
+    },
+    {
+      "route": "/profile/",
+      "engine": "WebKit",
+      "viewport": [
+        390,
+        560
+      ],
+      "pageErrors": [],
+      "horizontalOverflow": 0,
+      "reverseTrackMaxDifference": 0.0,
+      "heldScrollY": 9839,
+      "heldDrawCounts": [
+        35,
+        35
+      ],
+      "heldIdleSeconds": [
+        2.4,
+        2.4
+      ]
+    },
+    {
+      "route": "/th/profile/",
+      "engine": "WebKit",
+      "viewport": [
+        393,
+        654
+      ],
+      "pageErrors": [],
+      "horizontalOverflow": 0,
+      "reverseTrackMaxDifference": 0.0,
+      "heldScrollY": 9656,
+      "heldDrawCounts": [
+        41,
+        41
+      ],
+      "heldIdleSeconds": [
+        2.4,
+        2.4
+      ]
+    },
+    {
+      "route": "/profile/",
+      "engine": "Chromium",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pageErrors": [],
+      "horizontalOverflow": 0,
+      "reverseTrackMaxDifference": 0.0,
+      "heldScrollY": 9580,
+      "heldDrawCounts": [
+        72,
+        72
+      ],
+      "heldIdleSeconds": [
+        2.4,
+        2.4
+      ]
+    }
+  ],
+  "chromiumNativeSwipeDpr2": {
+    "first": {
+      "scrollY": 9533,
+      "track": 22.1,
+      "action": "มองให้ถึงสิ่งที่ซ่อนอยู่",
+      "draws": 14
+    },
+    "swipe": {
+      "scrollY": 9661,
+      "track": 23.08,
+      "action": "ออกแบบทางเข้าให้เข้าใจง่าย",
+      "draws": 54
+    },
+    "holdStart": {
+      "scrollY": 9661,
+      "track": 23.08,
+      "action": "ออกแบบทางเข้าให้เข้าใจง่าย",
+      "draws": 54
+    },
+    "holdEnd": {
+      "scrollY": 9661,
+      "track": 23.08,
+      "action": "ออกแบบทางเข้าให้เข้าใจง่าย",
+      "draws": 54
+    },
+    "returnSwipe": {
+      "scrollY": 9526,
+      "track": 22.1,
+      "action": "มองให้ถึงสิ่งที่ซ่อนอยู่",
+      "draws": 91
+    },
+    "exactBack": {
+      "scrollY": 9533,
+      "track": 22.1,
+      "action": "มองให้ถึงสิ่งที่ซ่อนอยู่",
+      "draws": 92
+    }
+  },
+  "chromiumNativeTabSwitch": {
+    "before": {
+      "hidden": false,
+      "draws": 3,
+      "time": 0
+    },
+    "hidden": {
+      "hidden": true,
+      "draws": 5,
+      "time": 0
+    },
+    "hiddenEnd": {
+      "hidden": true,
+      "draws": 5,
+      "time": 0
+    },
+    "resumed": {
+      "hidden": false,
+      "draws": 6,
+      "time": 0
+    }
+  },
+  "directHashNavigation": [
+    {
+      "viewport": [
+        393,
+        654
+      ],
+      "lang": "th",
+      "hash": "#ai-experiences",
+      "scrollY": 9623,
+      "track": 23.08,
+      "prop": "interface",
+      "titleY": [
+        546.46875,
+        657.46875
+      ]
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "lang": "en",
+      "hash": "#ai-experiences",
+      "scrollY": 10088,
+      "track": 23.117590994072952,
+      "prop": "interface",
+      "titleY": [
+        220.3125,
+        361.28125
+      ]
+    }
+  ],
+  "projectedFiveStrandBounds": [
+    {
+      "y": 9533,
+      "track": 22,
+      "idle": 2.4,
+      "viewport": [
+        393,
+        654
+      ],
+      "canvas": [
+        393,
+        221.359375
+      ],
+      "bounds": [
+        [
+          182.9265468889402,
+          234.69611509058672
+        ],
+        [
+          70.96923481123059,
+          112.03011837366704
+        ]
+      ],
+      "width": 51.76956820164651,
+      "height": 41.060883562436445,
+      "lines": 5,
+      "colors": [
+        "#7fb89f",
+        "#a58cca",
+        "#db9c74",
+        "#86ced7",
+        "#ad90cc"
+      ],
+      "release": "living-materials-v29"
+    },
+    {
+      "y": 9533,
+      "track": 22.1,
+      "idle": 2.4,
+      "viewport": [
+        393,
+        654
+      ],
+      "canvas": [
+        393,
+        221.359375
+      ],
+      "bounds": [
+        [
+          79.57313995731487,
+          326.9222087683618
+        ],
+        [
+          47.953111127927,
+          181.00473992672767
+        ]
+      ],
+      "width": 247.34906881104695,
+      "height": 133.05162879880066,
+      "lines": 5,
+      "colors": [
+        "#65d9c0",
+        "#b199ff",
+        "#ffac70",
+        "#6fcff3",
+        "#eb83b4"
+      ],
+      "release": "living-new-era-v30"
+    }
+  ]
+}

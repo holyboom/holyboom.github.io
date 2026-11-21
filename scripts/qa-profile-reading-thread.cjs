@@ -22,6 +22,56 @@ const phases=Array.from({length:101},(_,i)=>i/100),energy=phases.map(math.energy
  await p.locator('#craft').evaluate(el=>el.scrollIntoView({behavior:'instant'}));await p.waitForTimeout(150);await settle();const section=await p.evaluate(()=>ProfileExperience.snapshot().readingThread);check('other-sections-also-connect-to-real-copy-'+viewport.width,section.visible&&section.chapter===6&&section.receiver.length>5,section);await p.screenshot({path:path.join(out,viewport.width+'-craft.png')});
  await p.setViewportSize(viewport.width<768?{width:844,height:390}:{width:1024,height:800});await p.waitForTimeout(100);const rotated=await go('allianz');check('structural-reflow-measures-a-new-visible-receiver-'+viewport.width,rotated.visible&&rotated.chapter===2&&rotated.receiver.length>5&&rotated.target[1]< (viewport.width<768?390:800),rotated);await p.close();
  }
+ // Drive the physical text, independent of the story's stored control points.
+ for(const [width,height,locale] of [[393,654,'th/'],[1440,900,'']]){
+  const page=await b.newPage({viewport:{width,height}});
+  await page.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+locale+'profile/#ai-experiences');
+  await page.waitForFunction(()=>window.ProfileExperience&&scrollY>0&&document.fonts.status==='loaded');
+  async function atRest(){
+   await page.waitForFunction(()=>ProfileExperience.snapshot().current===ProfileExperience.snapshot().target);
+   return page.evaluate(()=>{const s=ProfileExperience.snapshot();return {beat:ProfileGeometry.resolve(s.current),text:s.readingThread?.receiver,tag:document.querySelector('.story-receiver')?.tagName,y:scrollY};});
+  }
+  async function read(selector,fraction,elementFraction=0){
+   await page.evaluate(({selector,fraction,elementFraction})=>{
+    const top=document.querySelector(innerWidth<768?'.stage':'.site-header').getBoundingClientRect().bottom;
+    const r=document.querySelector(selector).getBoundingClientRect();
+    scrollTo({top:scrollY+r.top+r.height*elementFraction-top-(innerHeight-top)*fraction,behavior:'instant'});
+   },{selector,fraction,elementFraction});
+   await page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
+   return atRest();
+  }
+  const map=await page.evaluate(()=>{
+   const {anchors,readingStops}=ProfileExperience.snapshot(),g=ProfileGeometry;
+   let monotonic=true,outsideError=0,previous=-1;
+   for(let i=0;i<=2048;i++){
+    const y=g.mix(anchors[0],anchors.at(-1),i/2048),value=g.positionFromAnchors(y,anchors,readingStops);
+    monotonic&&=value>=previous;previous=value;
+    if(y<readingStops[0][0]||y>readingStops.at(-1)[0])outsideError=Math.max(outsideError,Math.abs(value-g.positionFromAnchors(y,anchors)));
+   }
+   return {monotonic,outsideError};
+  });
+  check('reading-map-is-monotonic-and-confined-to-the-bridge-'+width,map.monotonic&&map.outsideError===0,map);
+  const anchor=await atRest();
+  await page.evaluate(()=>{location.hash='title-ai-experiences';});
+  await page.waitForFunction(()=>{const el=document.querySelector('#title-ai-experiences');return Math.abs(el.getBoundingClientRect().top-parseFloat(getComputedStyle(el).scrollMarginTop))<2;});
+  const heading=await atRest(),question=await read('#craft .story-bridge strong',.5,.5);
+  check('direct-heading-link-clears-sticky-art-'+width,heading.beat===23&&heading.tag==='H2',heading);
+  const body=await read('#ai-experiences .scene-sequence+p',.25);
+  const back=await read('#craft .story-bridge strong',.5,.5);
+  check('native-heading-opens-the-entrance-'+width,anchor.beat===23&&anchor.tag==='H2',anchor);
+  check('native-question-shows-wires-and-connects-to-question-'+width,question.beat===22&&question.tag==='STRONG',question);
+  check('entrance-stays-open-while-reading-the-explanation-'+width,body.beat===23&&body.tag==='P',body);
+  check('back-to-question-restores-reading-cue-'+width,Math.abs(back.y-question.y)<=1&&back.beat===question.beat&&back.text===question.text,back);
+  if(width<768){
+   const firstLine=await read('#ai-experiences h2',1,.16),visibleTitle=await read('#ai-experiences h2',1,.97);
+   check('question-holds-while-a-sliver-of-the-next-title-enters',firstLine.beat===22&&firstLine.tag==='STRONG',firstLine);
+   check('entrance-is-open-before-the-last-pixels-of-the-title-enter',visibleTitle.beat===23&&visibleTitle.tag==='H2',visibleTitle);
+   await page.setViewportSize({width:430,height:820});await page.evaluate(()=>document.fonts.ready);
+   const reflow=await read('#craft .story-bridge strong',.5,.5);
+   check('question-reschedules-after-native-reflow',reflow.beat===22&&reflow.tag==='STRONG',reflow);
+  }
+  await page.close();
+ }
  const p=await b.newPage({viewport:{width:390,height:844}});await p.route('**/reading-thread.js*',r=>r.abort());await p.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+'profile/');await p.waitForFunction(()=>window.ProfileExperience);check('a-failed-reading-module-does-not-break-full-motion',await p.evaluate(()=>ProfileExperience.snapshot().mode==='full')&&await p.locator('#architecture').isVisible());await p.close();
 }finally{await b.close();}
 check('no-browser-errors',errors.length===0,errors);const failed=checks.filter(c=>!c.pass);fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({checks,errors},null,2));console.log(JSON.stringify({checks:checks.length,failed,out}));if(failed.length)process.exitCode=1;

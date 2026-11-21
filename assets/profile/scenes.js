@@ -1,7 +1,8 @@
 /* Owner-editable direction: a symbolic maker, not a likeness or documentary scene. */
 (function(root){'use strict';
- const config={release:'living-materials-v29',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
+ const config={release:'living-new-era-v30',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
  establish:{yaw:-.30,pitch:.12,distance:6.4,target:[.10,0,0]},
+ gateway:{yaw:.60,pitch:.14,distance:7.20,target:[.43,-.24,.86]},
  draft:{yaw:.58,pitch:.30,distance:5.25,target:[-.25,-.09,.22]},
  detail:{yaw:.44,pitch:.18,distance:5.05,target:[-.26,-.08,.25]},
  connect:{yaw:.28,pitch:.17,distance:6.25,target:[-.20,-.07,.15]},
@@ -114,8 +115,8 @@
    entryYaw:.28,yaw:2.85,exitYaw:.42,compactYaw:2.65,distance:6.9,pitch:.12,target:[-.26,-.22,.16]},
   {id:'synthesis-side',start:18.92,lockStart:19.12,turnEnd:19.70,holdEnd:20.22,returnEnd:20.88,end:21.12,
    entryYaw:.28,yaw:-1.08,exitYaw:.20,compactYaw:-1.00,distance:6.4,pitch:.16,target:[-.18,-.12,.22]},
-  {id:'experience-depth',start:21.94,lockStart:22.15,turnEnd:22.68,holdEnd:23.20,returnEnd:23.76,end:24.02,
-   entryYaw:.20,yaw:1.05,exitYaw:.44,compactYaw:.98,distance:6.55,pitch:.16,target:[-.15,-.10,.20],disclosureFan:[.68,-.38]}
+  {id:'experience-depth',start:22.87,lockStart:23.05,turnEnd:23.40,holdEnd:23.51,returnEnd:23.81,end:24.02,
+   entryYaw:.60,yaw:1.05,exitYaw:.44,compactYaw:1.00,distance:7.20,pitch:.14,target:[.43,-.24,.86],disclosureFan:[.68,-.38]}
  ];
  // A rear establishing view becomes over-shoulder, then the maker's eye line.
  // This free interval preserves the existing locked orbits and close-ups.
@@ -129,7 +130,7 @@
   {id:'the-weight-of-resistance',subject:'light',framing:'hand',start:14.16,arrive:14.27,holdEnd:14.43,end:14.70,distance:2.65,compactDistance:3.10,yaw:-.46,compactYaw:-.30,pitch:.19,offset:[-.035,.015,0],radius:.29},
   {id:'stay-with-the-question',subject:'head',framing:'head',start:15.08,arrive:15.22,holdEnd:15.44,end:15.70,distance:2.15,compactDistance:2.75,yaw:.56,compactYaw:.38,pitch:.07,offset:[.015,-.10,.02],radius:.31},
   {id:'the-light-that-remains',subject:'light',framing:'hand',start:17.00,arrive:17.17,holdEnd:17.31,end:17.58,distance:2.55,compactDistance:3.0,yaw:-.34,compactYaw:-.22,pitch:.12,offset:[-.04,.035,0],radius:.29},
-  {id:'a-capability-of-its-own',subject:'work',framing:'work',start:21.24,arrive:21.43,holdEnd:21.62,end:21.87,distance:3.10,compactDistance:3.60,yaw:-.38,compactYaw:-.25,pitch:.11,offset:[0,.02,0],radius:.49},
+  {id:'inside-the-cables',subject:'cables',framing:'work',start:21.22,arrive:21.83,holdEnd:22.18,end:22.66,distance:2.53,compactDistance:2.12,yaw:-.22,compactYaw:-.18,pitch:.14,offset:[-.025,-.105,0],radius:.49},
   {id:'a-person-chooses',subject:'work',framing:'work',start:24.03,arrive:24.16,holdEnd:24.28,end:24.55,distance:3.10,compactDistance:3.60,yaw:.08,compactYaw:.02,pitch:.10,offset:[.055,.025,0],radius:.49},
   {id:'the-person-behind-it',subject:'head',framing:'head',start:27.14,arrive:27.40,holdEnd:27.62,end:27.91,distance:2.10,compactDistance:2.75,yaw:.10,compactYaw:.04,pitch:.035,offset:[0,-.11,.015],radius:.31}
  ];

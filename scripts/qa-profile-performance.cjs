@@ -193,10 +193,9 @@ async function browserChecks() {
       const parity=browserPoses.map((pose,i)=>{const expected=motion.poseAt(parityTimelines[i]);return {timeline:parityTimelines[i],error:maxDifference(Object.values(points(expected)).flat(),Object.values(points(pose)).flat()),toolError:Math.max(distance(expected.tool.tip,pose.tool.tip),distance(expected.tool.shaftEnd,pose.tool.shaftEnd)),sameOwnership:expected.tool.owner===pose.tool.owner};});
       const parityPass=parity.every(p=>p.error<1e-8&&p.toolError<1e-8&&p.sameOwnership);
       check(`browser-uses-the-verified-rig-and-tool-${viewport.width}`,parityPass,parity);
-      const anchors = await page.evaluate(() => ProfileExperience.snapshot().anchors);
       async function go(timeline) {
-        const position = positionForTimeline(timeline), chapter = Math.min(9, Math.floor(position));
-        const y = position >= 10 ? anchors[10] : anchors[chapter] + (anchors[chapter + 1] - anchors[chapter]) * (geometry.config.morph.start + (geometry.config.morph.end - geometry.config.morph.start) * (position - chapter));
+        const position = positionForTimeline(timeline);
+        const y = await page.evaluate(position => ProfileExperience.scrollForPosition(position), position);
         await page.evaluate(y => scrollTo({ top:y, behavior:'instant' }), y);
         await page.waitForFunction(position => Math.abs(ProfileExperience.snapshot().target - position) < .006 && Math.abs(ProfileExperience.snapshot().current - ProfileExperience.snapshot().target) < .0001, position);
         return page.evaluate(() => {
@@ -310,8 +309,44 @@ function checkEarlyWorkpieces() {
   }
   check('truss-bearing-points-follow-both-palms-through-opening-and-hold',bridgeGap<1e-6,{bridgeGap});
 }
+function checkEntranceActing() {
+  const study=motion.poseAt(22),load=motion.poseAt(22.20),step=motion.poseAt(22.34),stand=motion.poseAt(23);
+  const cableCenter=study.contacts.left.tip.map((v,i)=>(v+study.contacts.right.tip[i])/2);
+  const sight=subtract(cableCenter,study.head);
+  const aim=dot(study.frames.head.z,sight)/Math.hypot(...sight);
+  const rise=stand.hip[1]-study.hip[1],eyeRise=stand.head[1]-study.head[1];
+  const headLift=stand.frames.head.z[1]-study.frames.head.z[1];
+  const palmRise=stand.contacts.right.tip[1]-study.contacts.right.tip[1];
+  const disc=geometry.illustration(positionForTimeline(23)).flatMap(l=>l.paths).find(p=>p.motion==='sunrise-disc');
+  const sun=disc.points[0].map((_,i)=>disc.points.reduce((sum,p)=>sum+p[i],0)/disc.points.length);
+  const towardSun=(from,forward)=>dot(subtract(sun,from),forward)/distance(sun,from);
+  const look=towardSun(stand.head,stand.frames.head.z),offer=towardSun(stand.contacts.right.tip,stand.frames.wristR.z);
+  check('cable-study-sightline-lifts-toward-doorway-with-open-palm',
+    aim>.90&&rise>.18&&eyeRise>.25&&headLift>.55&&palmRise>.25&&stand.contacts.right.grip==='open'&&look>.85&&offer>.85,
+    {aim,rise,eyeRise,headLift,palmRise,look,offer});
+  const transfer=study.hip[0]-load.hip[0],lift=step.feet[1][1]-study.feet[1][1];
+  const stride=stand.feet[1][2]-study.feet[1][2];
+  check('entrance-loads-the-supporting-leg-before-stepping-forward',
+    transfer>.06&&load.support.footR.weight===1&&step.weights.left===1&&lift>.08&&stride>.20,
+    {transfer,lift,stride});
+  const cues=[22.04,22.12,22.27,22.42,22.55,22.83,23].map(t=>{
+    const {contacts}=motion.poseAt(t);
+    return [contacts.left.active,contacts.right.active].map(Number).join('');
+  });
+  const start=motion.poseAt(22.44),end=motion.poseAt(22.74);
+  const sliderTravel=end.contacts.right.tip[0]-start.contacts.right.tip[0];
+  let braceSlip=0;
+  for(let j=40;j<=100;j++){
+    const {contacts}=motion.poseAt(22+j/100);
+    braceSlip=Math.max(braceSlip,distance(contacts.left.tip,stand.contacts.left.tip));
+  }
+  check('entrance-releases-cables-in-order-braces-rail-and-sweeps-carriage',
+    cues.join(' ')==='11 10 00 10 11 10 10'&&braceSlip<1e-6&&sliderTravel>.26,
+    {cues,braceSlip,sliderTravel});
+}
 async function main() {
   checkEarlyWorkpieces();
+  checkEntranceActing();
   const stride = 1 / 200, timelines = Array.from({ length:6001 }, (_, i) => i * stride);
   const samples = timelines.map(timeline => ({ timeline, pose:motion.poseAt(timeline) }));
   check('all-31-beats-have-finite-joints', samples.every(({ pose }) => Object.values(points(pose)).every(isPoint)), { samples:samples.length });
@@ -594,6 +629,17 @@ async function main() {
     }
   }
   check('visible-thumb-and-index-grip-the-held-stylus',pinchGaps.length===0,pinchGaps);
+  const entryAt=beat=>geometry.illustration(positionForTimeline(beat));
+  const wires=entryAt(22).find(layer=>layer.index===22).paths.filter(path=>path.motion==='harness');
+  const unspooled=beat=>entryAt(beat).find(layer=>layer.id==='unspooling-entrance');
+  const lifted=unspooled(22.00001),landed=unspooled(22.83),sunrise=entryAt(23).find(layer=>layer.index===23);
+  const treads=sunrise.paths.filter(path=>path.motion?.startsWith('sunlit-step-'));
+  const sameWires=lifted.paths.length===5&&lifted.paths.every((path,lane)=>path.color===wires[lane].color&&
+    path.points.every((point,j)=>distance(point,wires[lane].points[j])<.002));
+  const endsOn=(point,step)=>pointToSegment(point,...step.points)<.025;
+  const landsOnStairs=landed.paths.every(path=>endsOn(path.points[0],treads.at(-1))&&endsOn(path.points.at(-1),treads[0]));
+  check('released-leads-become-five-continuous-routes-to-the-staircase',sameWires&&landsOnStairs&&
+    !unspooled(23)&&sunrise.paths.some(path=>path.motion==='sunrise-disc'&&path.fill));
   const depthVisibility=[],depthAttachment=[];
   for(const position of [6.85,7.25,7.60,7.85]) {
     const base=geometry.illustration(position,0),expanded=geometry.illustration(position,1),front=layers=>layers.filter(layer=>layer.role==='front-work').map(layer=>({index:layer.index,paths:layer.paths}));

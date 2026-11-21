@@ -71,7 +71,7 @@ const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass
   const visited=[];
   for(const [index,shot]of geometry.sequence.entries()){
    if(shot.chapter>=9)continue;
-   const local=(shot.step+.05)/shot.count,y=sceneAnchors[shot.chapter]+(sceneAnchors[shot.chapter+1]-sceneAnchors[shot.chapter])*(geometry.config.morph.start+(geometry.config.morph.end-geometry.config.morph.start)*local);
+   const local=(shot.step+.05)/shot.count,y=await p.evaluate(pos=>ProfileExperience.scrollForPosition(pos),shot.chapter+local);
    await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await p.waitForFunction(expected=>Math.abs(ProfileExperience.snapshot().target-expected)<.005,shot.chapter+local);await p.waitForFunction(()=>Math.abs(ProfileExperience.snapshot().current-ProfileExperience.snapshot().target)<.0001);
    const displayed=await p.locator('.transition-copy').innerText();if(displayed===shot.action)visited.push(index);
   }
@@ -79,8 +79,11 @@ const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass
   const names=['intro','origins','allianz','accenture','ttb','conviction','craft','ai-experiences','work-heading','experience','contact'];
   const screenshotStates=[0,1,2,3,4,5,6,7,8,10];
   for(let i=0;i<names.length;i++){
-   await p.evaluate(id=>document.getElementById(id).scrollIntoView({behavior:'instant'}),names[i]);await p.waitForFunction(i=>Math.abs(ProfileExperience.snapshot().target-i)<.05,i);await p.waitForTimeout(200);
-   const state=await p.evaluate(()=>ProfileExperience.snapshot());check('chapter-target-'+names[i],Math.abs(state.target-i)<.05,state.target);
+   const expectedBeat=i===7?23:geometry.starts[i];
+   await p.evaluate(id=>document.getElementById(id).scrollIntoView({behavior:'instant'}),names[i]);
+   await p.waitForFunction(beat=>ProfileGeometry.resolve(ProfileExperience.snapshot().target)===beat,expectedBeat);
+   const state=await p.evaluate(()=>ProfileExperience.snapshot());check('chapter-target-'+names[i],geometry.resolve(state.target)===expectedBeat,state.target);
+   await p.waitForTimeout(200);
    if(i===9)check('reflection-canvas-docked-and-visible',await p.locator('#experience canvas').count()===1&&await p.locator('#experience canvas').isVisible());
    if(screenshotStates.includes(i))await p.screenshot({path:path.join(out,`desktop-${String(i).padStart(2,'0')}.png`)});
   }

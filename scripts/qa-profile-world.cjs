@@ -51,8 +51,7 @@ const inverse=t=>{let a=0,b=10;for(let n=0;n<50;n++){const m=(a+b)/2;g.resolve(m
     for(const timeline of (process.env.WORLD_TEST_TIMELINES||'2,13,14,20,23,30').split(',').map(Number)){
      const target=timeline===30?10:inverse(timeline);
      await page.evaluate(target=>{
-      const a=ProfileExperience.snapshot().anchors,c=Math.floor(target),f=ProfileGeometry.config.morph;
-      scrollTo({top:c>=10?a[10]:a[c]+(a[c+1]-a[c])*(f.start+(f.end-f.start)*(target-c)),behavior:'instant'});
+      scrollTo({top:ProfileExperience.scrollForPosition(target),behavior:'instant'});
      },target);
      await page.waitForFunction(target=>{
       const s=ProfileExperience.snapshot();

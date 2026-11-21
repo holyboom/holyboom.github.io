@@ -26,7 +26,7 @@ for(let i=0;i<4;i++)c.step(cues[8],.04,true);check('latest-stable-intent-wins',c
   const scenes=[];
   for(const id of ['origins','allianz','accenture','ttb','conviction','craft','ai-experiences','work-heading','experience','contact']){
    await p.locator('#'+id).evaluate(el=>el.scrollIntoView({behavior:'instant'}));
-   await p.waitForFunction(id=>{const s=ProfileExperience.snapshot();return s.current===s.target&&Math.abs(s.target-Number(document.querySelector('#'+id).dataset.scene))<.01;},id,{polling:50});
+   await p.waitForFunction(id=>{const s=ProfileExperience.snapshot();const chapter=Number(document.getElementById(id).dataset.scene),expected=chapter===7?23:ProfileGeometry.starts[chapter];return s.current===s.target&&ProfileGeometry.resolve(s.target)===expected;},id,{polling:50});
    await p.waitForTimeout(240);const s=await p.evaluate(()=>{const s=ProfileExperience.snapshot();return {current:s.current,cinematic:s.cinematic,thread:s.readingThread,overflow:document.documentElement.scrollWidth>innerWidth};});
    scenes.push({id,kind:s.cinematic.kind,active:s.cinematic.active,sourceKind:s.thread.sourceKind});
    if(id==='experience')check('experience-hands-source-ownership-to-the-skill-finale-'+viewport.width,await p.evaluate(()=>{const f=ProfileExperience.snapshot().finale;return f.active&&f.p===1&&f.skillCount===34&&document.querySelector('#experience #architecture');}));else check('section-entry-owns-one-visible-source-'+viewport.width+'-'+id,s.cinematic.active&&s.cinematic.key?.startsWith(Math.floor(s.current)+':')&&s.thread.visible&&JSON.stringify(s.cinematic.source)===JSON.stringify(s.thread.source)&&JSON.stringify(s.cinematic.target)===JSON.stringify(s.thread.target),{key:s.cinematic.key,sourceKind:s.thread.sourceKind});
