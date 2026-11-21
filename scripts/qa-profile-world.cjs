@@ -12,8 +12,10 @@ const inverse=t=>{let a=0,b=10;for(let n=0;n<50;n++){const m=(a+b)/2;g.resolve(m
  for(const p of positions){const w=world(p);budget&&=w.paths.length<=120&&w.paths.filter(x=>!x.secondary).length<=75;backdrop&&=w.role==='surroundings'&&w.paths.every(x=>!x.fill);
   for(const item of w.paths)for(const q of item.points)finite&&=q.length===3&&q.every(Number.isFinite)&&q.every(v=>Math.abs(v)<5);
   for(const compact of [false,true]){const project=g.createProjector(p,720,720,{compact}),focus=g.sceneryFocus(w,project);
-   for(const item of w.paths){const points=item.points.map(project),opacity=g.sceneryOpacity(points,focus);if(!Number.isFinite(opacity)||opacity<0||opacity>1)finite=false;
-    if(points.some(q=>project.camera.distance-q[2]<=.25))nearPlane++;
+   // The POV camera clips at its own near plane before ink or focus testing.
+   const painted=g.projectIllustrations([w],project)[0];
+   for(const item of painted.paths){const points=item.points,opacity=g.sceneryOpacity(points,focus);if(!Number.isFinite(opacity)||opacity<0||opacity>1)finite=false;
+    if(points.some(q=>project.camera.distance-q[2]<(project.camera.near||.25)-1e-8))nearPlane++;
     if(points.some(q=>Math.hypot(q[0]-focus[0].x,q[1]-focus[0].y)<focus[0].radius)){protectedSamples++;if(opacity>.000001)protectedInk++;}
    }
   }
@@ -25,14 +27,65 @@ const inverse=t=>{let a=0,b=10;for(let n=0;n<50;n++){const m=(a+b)/2;g.resolve(m
  }
  if(process.env.SKIP_BROWSER!=='1'){
   const {chromium}=require('playwright'),browser=await chromium.launch();try{
-   for(const width of [1440,390]){const page=await browser.newPage({viewport:{width,height:1000}});page.on('pageerror',e=>errors.push(e.message));await page.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+'profile/');await page.waitForFunction(()=>window.ProfileExperience);await page.evaluate(()=>document.fonts.ready);
-    for(const timeline of (process.env.WORLD_TEST_TIMELINES||'2,13,14,20,23,30').split(',').map(Number)){const target=timeline===30?10:inverse(timeline);await page.evaluate(target=>{const a=ProfileExperience.snapshot().anchors,c=Math.floor(target),f=ProfileGeometry.config.morph;scrollTo({top:c>=10?a[10]:a[c]+(a[c+1]-a[c])*(f.start+(f.end-f.start)*(target-c)),behavior:'instant'});},target);await page.waitForFunction(()=>ProfileExperience.snapshot().current===ProfileExperience.snapshot().target);await page.waitForTimeout(850);for(let warm=0;warm<5;warm++){await page.evaluate(()=>document.dispatchEvent(new Event('pointerleave')));await page.waitForTimeout(90);}
-     const original=await page.evaluate(()=>{const canvas=document.querySelector('#architecture'),g=ProfileGeometry,p=ProfileExperience.snapshot().current,pose=g.performanceAt(p),project=g.createProjector(p,canvas.width,canvas.height,{compact:innerWidth<768}),q=project(pose.head),r=.20*project.scale/(project.camera.distance-q[2]),ctx=canvas.getContext('2d'),x=Math.max(0,Math.floor(q[0]-r)),y=Math.max(0,Math.floor(q[1]-r)),size=Math.max(1,Math.ceil(r*2));return {x,y,size,state:ProfileExperience.snapshot(),pixels:[...ctx.getImageData(x,y,size,size).data]};});
-     await page.evaluate(()=>{window.worldOriginal=ProfileGeometry.illustration;ProfileGeometry.illustration=(...args)=>window.worldOriginal(...args).filter(l=>l.id!=='story-world');document.dispatchEvent(new Event('pointerleave'));});await page.waitForTimeout(200);
-     const delta=await page.evaluate(original=>{const ctx=document.querySelector('#architecture').getContext('2d'),pixels=ctx.getImageData(original.x,original.y,original.size,original.size).data;let max=0,changed=0;for(let i=0;i<pixels.length;i++){const d=Math.abs(pixels[i]-original.pixels[i]);max=Math.max(max,d);if(d>2)changed++;}return {max,changed,before:{current:original.state.current,detail:original.state.detail},after:{current:ProfileExperience.snapshot().current,detail:ProfileExperience.snapshot().detail}};},original);
+   for(const width of [1440,390]){
+    const page=await browser.newPage({viewport:{width,height:1000}});
+    page.on('pageerror',e=>errors.push(e.message));
+    // Pause the visible-time clock only for the two measured repaints. The
+    // scroll clock has already reached its target. Both draws still go through
+    // the page's normal RAF, model projection, clipping and Canvas painter.
+    await page.addInitScript(()=>{
+     const raf=requestAnimationFrame.bind(window);
+     window.requestAnimationFrame=callback=>raf(t=>callback(window.worldSampleTime??t));
+    });
+    await page.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+'profile/');
+    await page.waitForFunction(()=>window.ProfileExperience);
+    await page.evaluate(()=>document.fonts.ready);
+    async function redraw(){
+     const before=await page.evaluate(()=>{
+      const {draws}=ProfileExperience.snapshot();
+      dispatchEvent(new Event('scroll'));
+      return draws;
+     });
+     await page.waitForFunction(n=>ProfileExperience.snapshot().draws>n,before);
+    }
+    for(const timeline of (process.env.WORLD_TEST_TIMELINES||'2,13,14,20,23,30').split(',').map(Number)){
+     const target=timeline===30?10:inverse(timeline);
+     await page.evaluate(target=>{
+      const a=ProfileExperience.snapshot().anchors,c=Math.floor(target),f=ProfileGeometry.config.morph;
+      scrollTo({top:c>=10?a[10]:a[c]+(a[c+1]-a[c])*(f.start+(f.end-f.start)*(target-c)),behavior:'instant'});
+     },target);
+     await page.waitForFunction(target=>{
+      const s=ProfileExperience.snapshot();
+      return Math.abs(s.current-target)<.003&&s.current===s.target&&s.trailEnergy<.01;
+     },target);
+     await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(t=>{window.worldSampleTime=t;resolve();})));
+     await redraw();
+     await redraw(); // allow the first draw to select compact strand detail
+     const original=await page.evaluate(()=>{
+      const canvas=document.querySelector('#architecture'),g=ProfileGeometry,state=ProfileExperience.snapshot(),p=state.current;
+      const pose=g.performanceAt(p,state.idleSeconds),project=g.createProjector(p,canvas.width,canvas.height,{compact:innerWidth<768}),q=project(pose.head);
+      const r=.20*project.scale/(project.camera.distance-q[2]),x=Math.max(0,Math.floor(q[0]-r)),y=Math.max(0,Math.floor(q[1]-r)),size=Math.max(1,Math.ceil(r*2));
+      return {x,y,size,state,pixels:[...canvas.getContext('2d').getImageData(x,y,size,size).data]};
+     });
+     await page.evaluate(()=>{
+      window.worldOriginal=ProfileGeometry.illustration;
+      window.worldRemoved=false;
+      ProfileGeometry.illustration=(...args)=>window.worldOriginal(...args).filter(layer=>{
+       if(layer.id==='story-world'){window.worldRemoved=true;return false;}
+       return true;
+      });
+     });
+     await redraw();
+     const delta=await page.evaluate(original=>{
+      const ctx=document.querySelector('#architecture').getContext('2d'),pixels=ctx.getImageData(original.x,original.y,original.size,original.size).data;
+      let max=0,changed=0;
+      for(let i=0;i<pixels.length;i++){const d=Math.abs(pixels[i]-original.pixels[i]);max=Math.max(max,d);if(d>2)changed++;}
+      const state=s=>({current:s.current,detail:s.detail,idleSeconds:s.idleSeconds});
+      return {max,changed,removed:window.worldRemoved,before:state(original.state),after:state(ProfileExperience.snapshot())};
+     },original);
      if(delta.max>2){const crops=await page.evaluate(original=>{const c=document.createElement('canvas');c.width=c.height=original.size;const ctx=c.getContext('2d');ctx.putImageData(new ImageData(new Uint8ClampedArray(original.pixels),original.size,original.size),0,0);const before=c.toDataURL();ctx.putImageData(document.querySelector('#architecture').getContext('2d').getImageData(original.x,original.y,original.size,original.size),0,0);return {before,after:c.toDataURL()};},original);for(const [name,data]of Object.entries(crops))fs.writeFileSync(path.join(out,'head-'+width+'-'+timeline+'-'+name+'.png'),Buffer.from(data.split(',')[1],'base64'));}
-     check('painted-head-remains-clear-'+width+'-'+timeline,delta.max<=2,delta);
-     await page.evaluate(()=>{ProfileGeometry.illustration=window.worldOriginal;delete window.worldOriginal;document.dispatchEvent(new Event('pointerleave'));});await page.waitForTimeout(200);
+     check('painted-head-remains-clear-'+width+'-'+timeline,delta.removed&&delta.max<=2&&JSON.stringify(delta.before)===JSON.stringify(delta.after),delta);
+     await page.evaluate(()=>{ProfileGeometry.illustration=window.worldOriginal;delete window.worldOriginal;delete window.worldSampleTime;delete window.worldRemoved;dispatchEvent(new Event('scroll'));});
     }await page.close();
    }
   }finally{await browser.close();}

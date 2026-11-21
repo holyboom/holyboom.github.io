@@ -20,11 +20,33 @@ for(const p of positions){const layer=thread(p);if(!layer)continue;
  budget&&=layer.paths.length<=44;
  for(const item of layer.paths)for(const q of item.points){finite&&=q.length===3&&q.every(Number.isFinite);far||=q.some(v=>Math.abs(v)>5);}
  for(const compact of [false,true]){
-  const project=g.createProjector(p,720,720,{compact}),head=g.frame(p,2).filter(l=>l.part==='head').flatMap(l=>l.points).map(project);
+  const project=g.createProjector(p,720,720,{compact});
+  const headLines=g.frame(p,2).filter(line=>line.part==='head');
+  const head=g.projectLines(headLines,project).flatMap(line=>line.points);
   if(!head.length||p<1)continue;
   const box=[Math.min(...head.map(q=>q[0])),Math.max(...head.map(q=>q[0])),Math.min(...head.map(q=>q[1])),Math.max(...head.map(q=>q[1]))];
-  const points=layer.paths.filter(x=>x.alpha*layer.alpha>.01&&x.id.startsWith('memory-')).flatMap(x=>x.points).map(project);
-  if(points.some(q=>q[0]>box[0]&&q[0]<box[1]&&q[1]>box[2]&&q[1]<box[3]))clearance.push({p,compact});
+  const pose=g.performanceAt(p),axes=pose.frames.head;
+  // The support wrist holds the temple briefly into the next shot's attention.
+  const temple=pose.head.map((n,i)=>n+.10*axes.x[i]+.06*axes.y[i]+.12*axes.z[i]);
+  const atTemple=(pose.phase.from===15||pose.phase.to===15)
+   &&distance(pose.contacts.right.tip,temple)<.01&&distance(filament.points[0],pose.contacts.right.tip)<.05;
+  const second=layer.paths.find(item=>item.id==='memory-filament-1');
+  const connected=second&&distance(filament.points.at(-1),second.points[0])<1e-9;
+  for(const item of layer.paths){
+   if(!item.id.startsWith('memory-')||item.alpha*layer.alpha<=.01)continue;
+   const sourcePath=item===filament||(item===second&&connected);
+   for(const fragment of project.clip(item.points,!!item.fill)){
+    for(const point of fragment){
+     // Permit only the connected emitter within one head radius of the glove's light.
+     if(atTemple&&sourcePath&&distance(point,filament.points[0])<=.25)continue;
+     const [x,y]=project(point);
+     if(x>box[0]&&x<box[1]&&y>box[2]&&y<box[3]){
+      clearance.push({p,compact,path:item.id});
+      break;
+     }
+    }
+   }
+  }
  }
 }
 check('thread-attached-to-hand-light',attached);check('bounded-finite-thread',finite&&!far);check('thread-path-budget',budget);
