@@ -1257,6 +1257,7 @@
   });
   return {id:'unspooling-entrance',alpha:1-smooth((progress-.70)/.29),paths,texts:[],textAlpha:0};
  }
+ const invitationSpread=timeline=>smooth((timeline-24.25)/.75);
  function illustration(position,explode=0,idleSeconds=0){
   const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline,idleSeconds),work=p.work;
   const handoff=lessonHandoffs[from]||(p.phase.to===3?p.tool.handoff:from===14?[.17,.30]:timeline>=13&&timeline<17?[.42,.66]:[.10,.26]);
@@ -1479,7 +1480,7 @@
    const orbit=orbitAt(position),fan=orbit?.disclosureFan,side=fan?orbit.weight*smooth((Math.abs(orbit.camera.yaw)-.45)/.60):0;
    // Once the invitation is in the outstretched palm, fan the hidden graph
    // past its far edge so both circuitry and envelope can still be read.
-   const invitationClearance=.72*smooth((timeline-24.25)/.75);
+   const invitationClearance=.72*invitationSpread(timeline);
    // Lift the disclosed boards above the sunlit stair instead of burying
    // their connection nodes in the solid courses of its foundation.
    const gateClearance=.29*smooth((timeline-22.15)/.60)*(1-smooth((timeline-23.35)/.55));
@@ -1621,6 +1622,10 @@
    base.distance=Math.exp(mix(Math.log(base.distance),Math.log(orbit.camera.distance),weight));base.target=lerp(base.target,orbit.camera.target,weight);
   }
   const reveal=clamp(expanded)*smooth((position-6.5)/.2)*smooth((8.2-position)/.2);
+  // As the invitation opens the two rear boards fan to the maker's right.
+  // Recenter the open composition with that same movement, keeping the
+  // outer review board clear of the edge in a narrower desktop picture.
+  if(!compact&&reveal>0)base.target[0]+=.20*invitationSpread(resolve(position))*reveal*clamp(strength);
   const focus=focusAt(position,{compact}),focusWeight=(focus?.weight||0)*clamp(strength)*(1-reveal);
   if(focusWeight>0){base.yaw=mix(base.yaw,focus.camera.yaw,focusWeight);base.pitch=mix(base.pitch,focus.camera.pitch,focusWeight);base.distance=Math.exp(mix(Math.log(base.distance),Math.log(focus.camera.distance),focusWeight));base.target=lerp(base.target,focus.camera.target,focusWeight);}
   const perspective=perspectiveAt(position,{compact}),povWeight=perspective?perspective.incoming*perspective.outgoing*clamp(strength)*(1-reveal):0;
