@@ -16,8 +16,7 @@ def render(head, data, lang='en'):
     head = head.replace('#100b1b', '#0B0912')
     # Register before deferred scripts. A reader can take over the viewport
     # while the fonts are still downloading.
-    entrance_fragment = '''<script>
-(() => {
+    entrance_fragment = '''(() => {
   const hash = location.hash;
   if (innerWidth < 768 || !['#ai-experiences', '#title-ai-experiences'].includes(hash)) return;
   const events = new AbortController();
@@ -49,10 +48,9 @@ def render(head, data, lang='en'):
     addEventListener('scroll', afterScroll, options);
     afterScroll();
   }, options);
-})();
-</script>'''
-    head = head.replace('</head>', f'''<script>document.documentElement.dataset.profileMotion='full';document.documentElement.classList.add('profile-boot');setTimeout(()=>document.documentElement.classList.remove('profile-boot'),4000)</script><link rel="preload" href="/assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
-{entrance_fragment}
+})();'''
+    head = head.replace('</head>', f'''<script>document.documentElement.dataset.profileMotion='full';document.documentElement.classList.add('profile-boot');setTimeout(()=>document.documentElement.classList.remove('profile-boot'),4000);
+{entrance_fragment}</script><link rel="preload" href="/assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
 <script defer src="/assets/profile/scenes.js?v={release}"></script>
 <script defer src="/assets/profile/performance-source/pilot-clips.js?v={release}"></script>
 <script defer src="/assets/profile/hand-shapes.js?v={release}"></script>
