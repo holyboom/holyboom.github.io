@@ -12,6 +12,27 @@ const points=[13.02,14.02,15.02,16.02,17.02].map(t=>g.dramaAt(position(t)));
 check('the-five-moments-have-distinct-emotional-compositions',new Set(points.map(hash)).size===5&&points[0].isolation>.9&&points[1].pressure>.9&&points[2].doubt>.9&&points[3].repair>.9&&points[4].rise>.9);
 check('the-light-survives-the-lowest-moment-and-recovers',points[2].glow>0&&points[2].glow<points[0].glow&&points[4].glow>points[3].glow);
 for(const id of ['the-weight-of-resistance','stay-with-the-question']){const event=g.config.camera.inserts.find(e=>e.id===id),p=position((event.arrive+event.holdEnd)/2),target=id==='the-weight-of-resistance'?'fracture':'remnant',front=g.illustration(p).filter(l=>l.role==='front-work'&&l.alpha>.5);check('held-closeup-keeps-its-own-object-'+id,front.some(l=>l.prop===target),{props:front.map(l=>l.prop),story:g.storyAt(p).action});}
+// The persistence caption and the highlighted prop must refer to the same
+// subject, including mid-scroll and while the actor breathes on a held frame.
+const contactIssues=[];
+for(let step=0;step<=60;step++){
+ const timeline=17+step/30;
+ let lo=5,hi=7;
+ for(let i=0;i<36;i++){const mid=(lo+hi)/2;if(g.resolve(mid)<timeline)lo=mid;else hi=mid;}
+ const pos=(lo+hi)/2,seconds=.85,p=g.performanceAt(pos,seconds);
+ const layers=g.illustration(pos,0,seconds).filter(l=>l.role==='front-work');
+ const dominant=layers.reduce((a,b)=>a.alpha>=b.alpha?a:b);
+ if(timeline<18&&p.contacts.left.active!==(dominant.prop==='lesson'))contactIssues.push({timeline,reason:'premature-or-missing-grasp'});
+ if(dominant.prop!==g.storyAt(pos).prop)contactIssues.push({timeline,prop:dominant.prop,reason:'caption'});
+ for(const layer of layers.filter(l=>l.prop==='ember'||l.prop==='lesson')){
+  const book=layer.prop==='lesson',tip=p.contacts[book?'left':'right'].tip;
+  // The ember base and lower corner of the ivory leaf are the real contact vertices.
+  const corners=layer.paths.filter(path=>path.fill).map(path=>path.points[0]);
+  if(!corners.some(q=>Math.hypot(...q.map((n,i)=>n-tip[i]))<1e-8))contactIssues.push({timeline,prop:layer.prop,reason:'hand'});
+  if(book&&layer.paths.filter(path=>path.fill&&path.points.length>=24).length<3)contactIssues.push({timeline,reason:'book-cover-or-leaf'});
+ }
+}
+check('persistence-and-lesson-hand-off-with-caption-and-palm',contactIssues.length===0,contactIssues);
 const bodies=points.map((_,i)=>g.performanceAt(position(13+i+.02))),closed=bodies[0],doubt=bodies[2],rise=bodies[4];
 check('doubt-is-bowed-and-the-return-reopens-the-silhouette',doubt.tilt>rise.tilt+.4&&closed.seatAmount>.99&&rise.seatAmount<.01);
 const active=samples.map(p=>g.illustration(p).find(l=>l.id==='drama-room')).filter(Boolean),ids=active[0].paths.map(p=>p.id);

@@ -29,8 +29,8 @@
   const add=(points,alpha=.6,tone=color,width=1.1,extra={})=>paths.push({d:softPath(points.map(fit)),alpha:alpha*s.visibility,tone,width,...extra});
   const particle=(p,alpha,size=1.4,tone=warm,role='local')=>particles.push({p:fit(p),alpha:alpha*s.visibility,size,tone,role});
   const rim=contour.map(p=>[mix(center[0],p[0],1.04),mix(center[1],p[1],1.04)]);
-  paths.push({d:softPath(rim),alpha:(.2+s.charge*.65)*s.visibility,tone:cue.review?warm:color,width:1.6,dash:[.08+s.transform*.8,1],offset:0});
-  for(let j=0;j<(frame.compact?4:6);j++){
+  if(!frame.quietSource)paths.push({d:softPath(rim),alpha:(.2+s.charge*.65)*s.visibility,tone:cue.review?warm:color,width:1.6,dash:[.08+s.transform*.8,1],offset:0});
+  for(let j=0;j<(frame.quietSource?0:frame.compact?4:6);j++){
    const points=[],side=j%2?-1:1,spread=(j+1)/6;
    for(let i=0;i<=36;i++){
     const u=i/36,a=u*TAU+j*.63;let p;
@@ -53,7 +53,7 @@
   }
   // A bounded dust family carries pressure out, or selected material inward.
   const inward=['distillation','repair','recovery','moat'].includes(cue.kind);
-  for(let i=0;i<(frame.compact?14:24);i++){
+  for(let i=0;i<(frame.quietSource?0:frame.compact?14:24);i++){
    const dustAge=smooth((s.phase-.14-(i%5)*.012)/(.58+(i%3)*.04)),a=i*2.399963+cue.chapter*.7,seed=.5+((i*17)%29)/29;
    const rimPoint=contour[(i*7)%contour.length],far=pt(center,r*(1.6+seed),a+dustAge*(inward?-.65:.3),.78),u=inward?1-dustAge:dustAge;
    let p=[mix(rimPoint[0],far[0],u),mix(rimPoint[1],far[1],u)];p[1]+=inward?0:dustAge*dustAge*r*.38;
@@ -69,11 +69,11 @@
   // The original B study's missing optical layer: a visible charge, a moving
   // light, then a receiver bloom. Local falloff, never a full-screen flash.
   const launch=Math.sin(Math.PI*clamp((phase-.24)/.20))**2;
-  const compactOffering=frame.compact&&String(frame.componentId||'').startsWith('work-28-vessel-');
-  flares.push({p:frame.origin,radius:(frame.compact?34:58)*(1+s.charge*.48)*(compactOffering ? .65 : 1),alpha:s.visibility*(s.charge*.95+launch*.42)*(compactOffering ? .75 : 1),core:2+s.charge*3.8,tone:cue.review?warm:color,role:'source'});
+  const smallSource=frame.quietSource||(frame.compact&&String(frame.componentId||'').startsWith('work-28-vessel-'));
+  flares.push({p:frame.origin,radius:(frame.compact?34:58)*(1+s.charge*.48)*(smallSource ? .65 : 1),alpha:s.visibility*(s.charge*.95+launch*.42)*(smallSource ? .75 : 1),core:2+s.charge*3.8,tone:cue.review?warm:color,role:'source'});
   flares.push({p:ribbonAt(s.travel),radius:frame.compact?17:24,alpha:s.flight*.68,core:2.5,tone:warm,role:'transfer'});
   flares.push({p:frame.endpoint,radius:frame.compact?26:38,alpha:s.impact*.64,core:1+s.impact*3,tone:color,role:'receiver'});
-  if(s.charge>.02){const p=frame.origin,size=(frame.compact?12:20)*(1+s.charge*.6);for(const [x,y]of [[size,0],[0,size*.65]])paths.push({d:path([[p[0]-x,p[1]-y],[p[0]-x*.25,p[1]-y*.25],[p[0]+x*.25,p[1]+y*.25],[p[0]+x,p[1]+y]]),alpha:s.charge*s.visibility*.85,tone:'#fff2dc',width:1.1});}
+  if(s.charge>.02&&!frame.quietSource){const p=frame.origin,size=(frame.compact?12:20)*(1+s.charge*.6);for(const [x,y]of [[size,0],[0,size*.65]])paths.push({d:path([[p[0]-x,p[1]-y],[p[0]-x*.25,p[1]-y*.25],[p[0]+x*.25,p[1]+y*.25],[p[0]+x,p[1]+y]]),alpha:s.charge*s.visibility*.85,tone:'#fff2dc',width:1.1});}
   if(s.impact>0){const end=frame.endpoint;paths.push({d:path([[end[0]-4,end[1]+2],[end[0]-18,end[1]-8*s.impact],[end[0]-32,end[1]-8*s.impact],[end[0]-50,end[1]+2]]),alpha:s.impact*.8,tone:color,width:1.4});}
   return {paths,particles,flares,state:s,kind:cue.kind,center,radius:r};
  }

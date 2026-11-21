@@ -7,6 +7,7 @@
  const smooth=v=>{v=clamp(v);return clamp(v*v*v*(v*(v*6-15)+10));};
  const add=(a,b)=>a.map((v,i)=>v+b[i]),sub=(a,b)=>a.map((v,i)=>v-b[i]),mul=(a,v)=>a.map(n=>n*v),dot=(a,b)=>a.reduce((n,v,i)=>n+v*b[i],0),len=a=>Math.hypot(...a),norm=a=>mul(a,1/(len(a)||1)),lerp=(a,b,t)=>a.map((v,i)=>mix(v,b[i],t)),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
  const lengths=Object.freeze({upperArm:.39,forearm:.43,thigh:.47,shin:.48,shoulderSpan:.49,hipSpan:.31,spine:.72});
+ const lessonHandoffs={17:[.54,.70],18:[.23,.41]};
  const floorY=-1.30,seatY=-.74,seatCenter=[-.48,seatY,-.12],footTargets=[[-.68,-1.18,.38],[-.26,-1.18,.33]],standingFeet=[[-.68,-1.18,.26],[-.26,-1.18,.21]],tableSupport=[-.35,-.10,.46];
  const seated=i=>i<7||(i>=13&&i<=16);
  const names=['design','draw','sketch','type','component','assemble','verify','read','connect','release','ai','inspect','approve','alone','reach','reflect','repair','rise','lesson','research','shape','protect','complexity','clear','agency','welcome','invite','reveal','offer','stand','begin'];
@@ -260,6 +261,16 @@
    if(u<phase.actionStart){const t=to===16?smooth((u-(side===-1?.18:.27))/(side===-1?.12:.15)):smooth((u-phase.attentionEnd)/Math.max(.01,phase.actionStart-phase.attentionEnd));spec={...actionStart,target:lerp(start.target,actionStart.target,t),active:false};spec.target[1]+=.035*Math.sin(PI*t);if(side===1&&(to===25||to===26))spec.target[2]+=.08*Math.sin(PI*t);wf=blendWrist(startWrist,actionStartWrist,t);}
    else if(u<=phase.actionEnd){spec=actionSpec(to,side,phase.action,work,body);weight=spec.active?1:0;wf=spec.grip==='type'?wristFor(spec,work,side):blendWrist(actionStartWrist,actionEndWrist,smooth(phase.action));}
    else {const t=smooth((u-phase.actionEnd)/Math.max(.01,phase.settle-phase.actionEnd));spec={...finish,target:lerp(actionEnd.target,finish.target,t),active:finish.active&&t>.999};weight=spec.active?1:0;wf=blendWrist(actionEndWrist,finishWrist,t);}
+   if(to===18&&side===-1){
+    // The left hand presents an open pad while the ember is still in the
+    // right. Curl around the cover as the notebook becomes legible.
+    const [appear,settle]=lessonHandoffs[17],catchAt=(appear+settle)*.5;
+    const reach=ramp(u,.18,catchAt),close=ramp(u,appear-.08,settle);
+    const target=lerp(start.target,finish.target,reach);
+    target[1]+=.045*Math.sin(PI*reach)-.012*Math.sin(PI*ramp(u,catchAt,settle));
+    spec={...finish,target,active:u>=catchAt};
+    wf=blendWrist(startWrist,finishWrist,close);weight=spec.active?1:0;
+   }
    if(to===15&&side===1){
     // Leave a visible gap when the first reach stalls. Lower the elbow before
     // raising the palm; weight transfers only after the temple reaches it.
@@ -337,5 +348,5 @@
   p.light=p.contacts[options.lead||(side<0?'left':'right')].tip;return p;
  }
  function restPose(){return poseAt(29);}
- const api={poseAt,lightAt,accentAt,pose,restPose,finalePose,setClips,lengths,names};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
+ const api={poseAt,lightAt,accentAt,pose,restPose,finalePose,setClips,lengths,names,lessonHandoffs};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

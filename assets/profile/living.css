@@ -125,3 +125,12 @@ main :is(a,summary),.site-footer a{scroll-margin-block:110px 20px}
 /* Unmasked light spills outside the scene bitmap; the shared renderer owns time. */
 .thought-light{display:none;position:fixed;inset:0;z-index:6;pointer-events:none;overflow:visible}.thought-light path{vector-effect:non-scaling-stroke}
 @media print{.thought-light{display:none!important}}
+
+/* Keep the mobile reading thread visible below the hand without tracing
+   around the ember or covering the notebook as the camera moves closer. */
+.reading-thread.quiet-source .reading-thread-weave,
+.reading-thread.quiet-source .reading-component-trace,
+.reading-thread.quiet-source .reading-thread-source-ring,
+.reading-thread.quiet-source .reading-thread-halo{display:none}
+.reading-thread.quiet-source .reading-thread-line{stroke-width:.85}
+.reading-thread.quiet-source .reading-thread-source{opacity:.6}

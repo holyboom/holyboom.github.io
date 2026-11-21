@@ -26,7 +26,15 @@
   const hold=cfg.actingHolds?.find(item=>item.beat===start+step),begin=hold?.until??.20;
   return Math.min(sequence.length-1,start+step+smooth((phase-begin)/(.85-begin)));
  }
- function storyAt(position){const timeline=resolve(position),index=Math.min(sequence.length-1,Math.floor(timeline)+(timeline%1>(timeline>=13&&timeline<18?.62:.24)?1:0)),shot=sequence[index];return {...shot,index,total:sequence.length,timeline};}
+ // During the recovered-light passage the caption changes when the new
+ // workpiece takes the lead. A single window controls both language editions.
+ const lessonHandoffs=motion.lessonHandoffs;
+ function storyAt(position){
+  const timeline=resolve(position),from=Math.floor(timeline),handoff=lessonHandoffs[from];
+  const switchAt=handoff?(handoff[0]+handoff[1])*.5:(timeline>=13&&timeline<18?.62:.24);
+  const index=Math.min(sequence.length-1,from+(timeline-from>switchAt?1:0));
+  return {...sequence[index],index,total:sequence.length,timeline};
+ }
  const rgb=hex=>hex.match(/[a-f\d]{2}/gi).map(v=>parseInt(v,16));
  // One emotional clock for material, set, and source light. No time-based pulse.
  function dramaState(timeline){
@@ -349,11 +357,22 @@
      check(.88,.34);
     }
    }else if(prop==='lesson'){
-    // An open folded folio lies across the left palm during the POV insert.
-    const leaf=[[.39,-.02],[.86,.02],[.88,.63],[.43,.73],[.39,-.02]];
-    line(leaf.flatMap((q,i)=>i?Array.from({length:7},(_,j)=>lerp(leaf[i-1],q,(j+1)/7)):[q]),{fill:'#1e1925',width:1.2});
-    line([[.86,.02],[1.30,.09],[1.38,.72],[.88,.63],[.86,.02]],{fill:'#241c2b',width:1.2});
-    for(let i=0;i<4;i++)line([[.51,.48-i*.10],[.76,.45-i*.10]],{width:.9,alpha:.5});
+    // Two leaves share a spine. Sample straight edges on both leaves:
+    // the Canvas strand painter otherwise rounds a four-vertex page into a loop.
+    const seamBottom=[.84,.06,-.045],seamTop=[.84,.63,-.045];
+    const leaf=(corners,fill)=>{
+     const points=corners.flatMap((q,i)=>Array.from({length:6},(_,j)=>lerp(q,corners[(i+1)%corners.length],j/6)));
+     line([...points,points[0]],{fill,color:'#a39ca7',width:.85});
+    };
+    leaf([[.437,.064,-.008],[.84,.016,-.054],[1.21,.057,.038],[1.21,.678,.038],[.84,.66,-.054],[.437,.692,-.008]],'#554161');
+    leaf([[.46,.095,0],seamBottom,seamTop,[.46,.66,0]],'#e2d9c5');
+    leaf([seamBottom,[1.18,.09,.045],[1.18,.65,.045],seamTop],'#f3ead5');
+    line([seamBottom,seamTop],{color:'#6d6475',width:1.45});
+    for(let i=0;i<3;i++){
+     line([[.51,.50-i*.11,-.006],[.75-i*.015,.47-i*.11,-.032]],{width:1.2,color:'#55536c',alpha:.94});
+     line([[.91,.47-i*.11,-.022],[1.11-i*.024,.49-i*.11,.028]],{width:1,color:'#686276',alpha:.90});
+    }
+    line([[1.05,.642,.012],[1.05,.46,.012],[1.08,.495,.020],[1.11,.47,.027],[1.11,.647,.027],[1.05,.642,.012]],{fill:'#9f4268',color:'#a64970',width:.7});
    }else{
     for(let i=0;i<3;i++)roundRect(.41+i*.08,-.06+i*.10,.77,.54,{fill:i===2?'#202a3a':'#141723',width:1.2,motion:i===2?'peel':null});
     line([[.72,.41],[.92,.57],[1.13,.40]],{width:1.9,motion:'peel'});
@@ -374,10 +393,18 @@
    }
    line([[.46,.025],[.57,.12],[.62,.08]],{color:cfg.palette.highlight,width:1.1,alpha:.75});
   }else if(prop==='ember'){
-   const x=.89,y=.32,rise=index===17;
-   for(let i=0;i<4;i++){const w=.09+i*.04,h=rise?.25+i*.035:.14+i*.022;
-    const points=Array.from({length:33},(_,k)=>{const a=k/32*TAU,f=.65+.35*Math.cos(a);return [x+w*Math.sin(a)*f,y-h*Math.cos(a),.04*Math.sin(a*2+i)];});
-    line(points,{color:i===1?cfg.palette.highlight:cfg.tones.human,width:i===0?2:.85,fill:i===0?'#ffd394':null,alpha:i===0?.94:.50});
+   const x=.89,y=.32;
+   if(index===17){
+    // A glowing coal on the palmar pad, with two loose incandescent fibres.
+    // Its first and last vertex meet the glove at the same physical point.
+    const heart=[[x,y],[x-.075,y+.035],[x-.09,y+.11],[x-.045,y+.165],[x-.01,y+.145],[x+.055,y+.23],[x+.085,y+.11],[x+.06,y+.04],[x,y]];
+    line(heart,{color:'#fff2c7',fill:'#f0ac58',width:1.3});
+    for(const side of [-1,1])line([[x,y,.015],[x+side*.04,y+.08,.03],[x-side*.018,y+.15,.018],[x+.05,y+.22,.008]],{color:side<0?'#fff8d7':'#ffcb8c',width:.85});
+   }else{
+    for(let i=0;i<4;i++){const w=.09+i*.04,h=.14+i*.022;
+     const points=Array.from({length:33},(_,k)=>{const a=k/32*TAU,f=.65+.35*Math.cos(a);return [x+w*Math.sin(a)*f,y-h*Math.cos(a),.04*Math.sin(a*2+i)];});
+     line(points,{color:i===1?cfg.palette.highlight:cfg.tones.human,width:i===0?2:.85,fill:i===0?'#ffd394':null,alpha:i===0?.94:.50});
+    }
    }
   }else if(['fracture','repair'].includes(prop)){
    // Five pulled fibres share two anchors. The free split ends recoil
@@ -770,9 +797,17 @@
   }
   return layers;
  }
+ // Both the moving ink and the compact camera use the page corner held in the left glove.
+ function lessonPagePoint(p,[x,y,z=0]){
+  const w=p.work,sx=w.width/1.3,sy=w.height/1.04;
+  return add(p.contacts.left.tip,add(mul(w.u,(x-.46)*sx),add(mul(w.v,(y-.095)*sy),mul(w.normal,z*Math.min(sx,sy)))));
+ }
  function illustration(position,explode=0,idleSeconds=0){
-  const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline,idleSeconds),work=p.work,handoff=p.phase.to===3?p.tool.handoff:from===14?[.17,.30]:timeline>=13&&timeline<17?[.42,.66]:[.10,.26],t=smooth((raw-handoff[0])/(handoff[1]-handoff[0]));
+  const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline,idleSeconds),work=p.work;
+  const handoff=lessonHandoffs[from]||(p.phase.to===3?p.tool.handoff:from===14?[.17,.30]:timeline>=13&&timeline<17?[.42,.66]:[.10,.26]);
+  const t=smooth((raw-handoff[0])/(handoff[1]-handoff[0]));
   const map=(q,frame=work)=>add(frame.origin,add(add(mul(frame.u,(q[0]-.89)*(frame.width||1.3)/1.3),mul(frame.v,(q[1]-.32)*(frame.height||1.04)/1.04)),mul(frame.normal,(q[2]||0)*Math.min((frame.width||1.3)/1.3,(frame.height||1.04)/1.04))));
+  const heldPage=q=>lessonPagePoint(p,q);
   const keyboard=q=>{const f=work.keyboard;return add(f.origin,add(mul(f.u,(q[0]-.855)*f.width/1.59),mul(f.v,(q[1]+.34)*f.height/.28)));};
   // Local contact registers on each loose piece. The socket/folio stays put
   // during acquisition. Only the acquired piece follows the solved finger.
@@ -797,7 +832,11 @@
    return (item,pathIndex)=>{
     let alpha=item.alpha,color=item.color;
     let transform=q=>map(q);
-    if(prop==='ember'){
+    if(index===17){
+     transform=([x,y,z])=>add(p.contacts.right.tip,[(x-.89)*.57,(y-.32)*.57,z*.57]);
+    }else if(prop==='lesson'){
+     transform=heldPage;
+    }else if(prop==='ember'){
      transform=([x,y,z])=>add(p.light,add(mul(work.u,(x-.89)*.52),add(mul(work.v,(y-.32)*.52),mul(work.normal,z*.52))));
     }else if(prop==='remnant'){
      const hinge=map([.46,-.035]),tilt=-.14+.66*smooth(action)-.26*smooth((action-.66)/.34);
@@ -845,7 +884,7 @@
   const layers=[{index:from,alpha:1-t,textAlpha:1-smooth((raw-handoff[0]+.08)/.08)},{index:to,alpha:t,textAlpha:smooth((raw-handoff[1])/.08)}].filter(o=>o.alpha>.005).map(o=>{
    const object=objectScene(o.index);
    if(object.prop==='possibility')return {...o,role:'front-work',...possibilityVessel(position,p)};
-   return {...o,role:'front-work',prop:object.prop,paths:object.paths.map(workMaterial(o.index)),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):map(item.point)}))};
+   return {...o,role:'front-work',prop:object.prop,paths:object.paths.map(workMaterial(o.index)),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):object.prop==='lesson'?heldPage(item.point):map(item.point)}))};
   });
   if(p.drawing?.strokes){const alpha=p.phase.to===3?1-smooth(p.phase.progress/.32):1,paths=p.drawing.strokes.filter(points=>points.length>1).map(points=>({points,color:cfg.tones.human,width:2.3,alpha:1,fill:null,role:'work'}));if(paths.length&&alpha>.005)layers.push({id:'drawn-ink',alpha,textAlpha:0,paths,texts:[]});}
   // The disclosed architecture opens behind the unchanged interaction surface.
@@ -912,13 +951,20 @@
  function cameraFromEye(eye,target,focal){const v=sub(eye,target),distance=Math.hypot(...v);return {yaw:Math.atan2(-v[0],v[2]),pitch:Math.asin(clamp(v[1]/distance,-1,1)),distance,target,focal};}
  function perspectiveAt(position,{compact=false}={}){
   const track=cameraTrack(position),event=cfg.camera.perspectives?.find(e=>track>e.start&&track<e.returnEnd);if(!event)return null;
-  const p=motion.poseAt(resolve(position)),f=p.frames.head,at=offset=>add(p.head,add(mul(f.x,offset[0]),add(mul(f.y,offset[1]),mul(f.z,offset[2])))),
-   subject=add(p.work.origin,mul(p.work.v,.025)),shoulder=at(event.shoulderOffset),eye=at(event.eyeOffset),
+  const timeline=resolve(position),p=motion.poseAt(timeline),f=p.frames.head,at=offset=>add(p.head,add(mul(f.x,offset[0]),add(mul(f.y,offset[1]),mul(f.z,offset[2])))),
+   workCentre=add(p.work.origin,mul(p.work.v,.025)),
+   // Follow the withdrawing book until the next piece has taken over. Its
+   // plane travels back towards the face during the handoff; an equal dolly
+   // along the page normal keeps the readable angle from collapsing edge-on.
+   [releaseStart,releaseEnd]=lessonHandoffs[18],release=(timeline-18-releaseStart)/(releaseEnd-releaseStart),
+   handoff=compact?smoother(release+1/3):0,
+   subject=compact?lerp(lessonPagePoint(p,[.84,.355]),workCentre,smoother(release)):workCentre,
+   shoulder=at(event.shoulderOffset),eye=at(event.eyeOffset),lens=add(eye,mul(p.work.normal,-.38*handoff)),
    rear={yaw:event.yaw,pitch:event.pitch,distance:event.distance,target:[...event.target],focal:cfg.camera.focal},
    incoming=smoother((track-event.start)/(event.rear-event.start)),outgoing=1-smoother((track-event.holdEnd)/(event.returnEnd-event.holdEnd)),
    approach=smoother((track-event.rear)/(event.shoulder-event.rear)),inhabit=smoother((track-event.shoulder)/(event.eye-event.shoulder)),
    eyeWeight=inhabit*outgoing,near=event.near,
-   shoulderCamera=cameraFromEye(shoulder,subject,compact?2.8:2.25),eyeCamera=cameraFromEye(eye,subject,compact?event.compactFocal:event.focal);
+   shoulderCamera=cameraFromEye(shoulder,subject,compact?2.8:2.25),eyeCamera=cameraFromEye(lens,subject,compact?event.compactFocal:event.focal);
   return {id:event.id,track,incoming,outgoing,approach,eyeWeight,near,subject,eye,shoulder,rear,shoulderCamera,eyeCamera,phase:track<event.rear?'rear':track<event.shoulder?'shoulder':track<event.eye?'enter':track<=event.holdEnd?'eyes':'return'};
  }
  const blendCamera=(a,b,t)=>({yaw:mix(a.yaw,b.yaw,t),pitch:mix(a.pitch,b.pitch,t),distance:Math.exp(mix(Math.log(a.distance),Math.log(b.distance),t)),target:lerp(a.target,b.target,t),focal:Math.exp(mix(Math.log(a.focal),Math.log(b.focal),t))});

@@ -144,7 +144,8 @@
   const idlePending=formed&&!moving&&idleSeconds<idleDuration;
   // Both endpoints have neutral offsets. Reuse the resting model afterwards.
   const idlePose=idleSeconds===idleDuration?0:idleSeconds;
-  const cue=window.ProfileCinematicLines?.cueFor(Math.floor(current+.001),g.storyAt(current));
+  const shot=g.storyAt(current);
+  const cue=window.ProfileCinematicLines?.cueFor(Math.floor(current+.001),shot);
   // The finite SVG event shares this RAF, but a settled rig keeps its bitmap.
   // This avoids repainting hundreds of anatomical strands just to move dust.
   if(!dirty&&modelCache?.idlePose===idlePose&&!openingActive&&!hadVisibleTrail&&bitmapDetail===detail&&current===previous&&trailEnergy<.01&&Math.abs(exploded-desired)<.001&&Math.abs(px-tx)<.0001&&Math.abs(py-ty)<.0001){
@@ -154,7 +155,7 @@
   }
   if(!modelCache||modelCache.position!==current||modelCache.detail!==detail||modelCache.exploded!==exploded||modelCache.ambientPhase!==ambientPhase||modelCache.idlePose!==idlePose)modelCache={position:current,detail,exploded,ambientPhase,idlePose,lines:g.frame(current,detail,exploded,ambientPhase,idlePose)};
   const geom=modelCache.lines,theme=g.paletteAt(current),emotion=g.dramaAt(current);
-  const compactOffering=innerWidth<768&&g.storyAt(current).prop==='possibility';
+  const compactOffering=innerWidth<768&&shot.prop==='possibility';
   const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow),lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength,lightHalo=(humanLight?12+handLight.charge*13:7)*sourceStrength*(compactOffering ? .65 : 1);
   const project=g.createProjector(current,w,h,{compact:innerWidth<768,yaw:px,pitch:py,expanded:exploded});renderedCamera=project.camera;
   // Idle articulation is solved on the same rig as the contact geometry.
@@ -162,7 +163,7 @@
   const rawIllustrations=g.illustration(current,exploded,idlePose);
   const readingSource=project.camera.eyeWeight>.5?g.performanceAt(current,idlePose).contacts.left.tip:g.lightAt(current,ambientPhase,idlePose);
   const readingComponents=rawIllustrations.filter(layer=>layer.role==='front-work'&&layer.alpha>.5).flatMap(layer=>layer.paths.filter(item=>(item.fill||item.readingAnchor)&&item.points.length>=4&&!item.skin));
-  const readingFrame=readingThread?.read({position:current,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible});
+  const readingFrame=readingThread?.read({position:current,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible,quietSource:innerWidth<768&&(shot.index===17||shot.index===18)});
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
   const halo=ctx.createRadialGradient(w*.5,h*.5,0,w*.5,h*.5,Math.min(w,h)*.43);halo.addColorStop(0,theme.accent+'16');halo.addColorStop(1,'rgba(133,83,222,0)');ctx.globalAlpha=1-emotion.isolation*.75-emotion.doubt*.15;ctx.fillStyle=halo;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
   if(emotion.strength>.001){

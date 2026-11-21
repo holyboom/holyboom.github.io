@@ -8,13 +8,30 @@ check('new-shot-preserves-all-locked-orbit-and-insert-windows',[...g.config.came
 const samples=Array.from({length:101},(_,i)=>position(event.start+(event.returnEnd-event.start)*i/100));
 const frame=(p,compact)=>{const project=g.createProjector(p,compact?390:696,compact?286:860,{compact});return {camera:project.camera,lines:g.projectLines(g.frame(p,2).filter(l=>l.points.length>1&&l.alpha>.005),project),art:g.projectIllustrations(g.illustration(p),project)};};
 const stats=[];for(const compact of [false,true]){const forward=samples.map(p=>hash(frame(p,compact)));check('all-projected-material-retraces-'+compact,[...samples].reverse().every((p,i)=>hash(frame(p,compact))===forward[samples.length-1-i]));check('fast-seeks-do-not-mutate-the-camera-'+compact,[11,89,2,67,48,99,32].every(i=>hash(frame(samples[i],compact))===forward[i]));
- const near=[],polygons=[],finite=[],subjects=[],hands=[];for(const p of samples){const project=g.createProjector(p,compact?390:696,compact?286:860,{compact}),view=frame(p,compact),subject=g.perspectiveAt(p,{compact})?.subject,w=compact?390:696,h=compact?286:860;
+ const near=[],polygons=[],finite=[],subjects=[],hands=[],pageErrors=[];let pageSamples=0;for(const p of samples){const project=g.createProjector(p,compact?390:696,compact?286:860,{compact}),view=frame(p,compact),subject=g.perspectiveAt(p,{compact})?.subject,w=compact?390:696,h=compact?286:860;
   if(subject){const q=project(subject);if(q[0]<0||q[0]>w||q[1]<0||q[1]>h)subjects.push(p);}
   for(const l of [...view.lines,...view.art.flatMap(a=>a.paths)]){if(!Number.isFinite(l.alpha)||l.points.some(q=>!q.every(Number.isFinite)))finite.push(p);for(const q of l.points)if(project.camera.perspectiveWeight&&project.camera.distance-q[2]<project.camera.near-1e-7)near.push(p);if(l.fill&&(l.points.length<4||distance(l.points[0],l.points.at(-1))>1e-7))polygons.push(p);}
+  // Assess the actual projected leaves, including their moving outer edges.
+  // A camera aimed at the nominal work origin can pass this shot while the
+  // reader sees an edge-on sliver or a page cut off by the canvas or caption.
+  if(compact&&project.camera.eyeWeight>.97){
+   const paper=view.art.find(layer=>layer.prop==='lesson'&&layer.alpha>.1);
+   if(paper){
+    pageSamples++;
+    const leaves=paper.paths.filter(path=>['#e2d9c5','#f3ead5'].includes(path.fill));
+    const readable=leaves.length===2&&leaves.every(leaf=>{
+     const xs=leaf.points.map(q=>q[0]),ys=leaf.points.map(q=>q[1]);
+     const area=Math.abs(leaf.points.slice(1).reduce((sum,b,i)=>sum+leaf.points[i][0]*b[1]-b[0]*leaf.points[i][1],0))/2;
+     return Math.min(...xs)>8&&Math.max(...xs)<w-8&&Math.min(...ys)>42&&Math.max(...ys)<h-74&&area>550;
+    });
+    if(!readable)pageErrors.push({track:g.cameraTrack(p),leaves:leaves.length});
+   }
+  }
   if(project.camera.eyeWeight>.999){const visible=view.lines.filter(l=>/^hand[LR]$/.test(l.part)).flatMap(l=>l.points).filter(q=>q[0]>=0&&q[0]<=w&&q[1]>=0&&q[1]<=h).length;hands.push(visible);}
  }
  check('projected-lines-and-filled-gloves-stay-finite-'+compact,finite.length===0,finite.slice(0,3));check('no-rendered-material-crosses-the-near-plane-'+compact,near.length===0,near.slice(0,3));check('clipped-filled-surfaces-remain-closed-'+compact,polygons.length===0,polygons.slice(0,3));check('work-stays-in-view-through-the-whole-dolly-'+compact,subjects.length===0,subjects);check('the-makers-hands-remain-visible-from-their-eyes-'+compact,hands.length>0&&Math.min(...hands)>12,{minimumVertices:Math.min(...hands)});
- const mid=position((event.eye+event.holdEnd)/2),pov=g.perspectiveAt(mid,{compact}),project=g.createProjector(mid,720,720,{compact}),eye=g.cameraEye(project.camera),q=project(pov.subject),hover=g.createProjector(mid,720,720,{compact,yaw:.05,pitch:-.05});
+ if(compact)check('both-painted-pages-remain-legible-inside-the-mobile-picture-during-handoff',pageSamples>10&&!pageErrors.length,{pageSamples,failures:pageErrors});
+ const mid=position(compact?event.eye+.02:(event.eye+event.holdEnd)/2),pov=g.perspectiveAt(mid,{compact}),project=g.createProjector(mid,720,720,{compact}),eye=g.cameraEye(project.camera),q=project(pov.subject),hover=g.createProjector(mid,720,720,{compact,yaw:.05,pitch:-.05});
  check('camera-is-at-the-anatomical-eye-point-'+compact,distance(eye,pov.eye)<1e-9&&project.camera.eyeWeight===1,{eye,expected:pov.eye});check('held-eye-line-faces-the-work-and-suppresses-hover-'+compact,distance(q.slice(0,2),project.center)<1e-8&&distance(q,hover(pov.subject))<1e-8);check('the-makers-own-head-does-not-obstruct-the-eyes-'+compact,!frame(mid,compact).lines.some(l=>l.part==='head'));stats.push({compact,eye,subject:pov.subject,camera:project.camera});
 }
 const cuts=[];for(const t of [event.start,event.rear,event.shoulder,event.eye,event.holdEnd,event.returnEnd])for(const compact of [false,true]){const a=fields(g.cameraAt(position(t-1e-6),{compact})),b=fields(g.cameraAt(position(t+1e-6),{compact}));if(Math.max(...a.map((v,i)=>Math.abs(v-b[i])))>.001)cuts.push({t,compact});}check('all-camera-phase-boundaries-are-continuous',cuts.length===0,cuts);
