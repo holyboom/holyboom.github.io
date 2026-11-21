@@ -79,7 +79,7 @@ function painter(lines,layers,project){
    const stack=stacks.get(role);commands.push({kind:'prop',depth:(role==='volume'?depthOf(item.points):stack.depth)+stack.index++*1e-6,item,alpha:layer.alpha});
   }
  }
- return {commands:commands.sort((a,b)=>a.depth-b.depth),labelVisibility:(plane?g.smooth((plane.facing-.10)/.25):1)*(1-g.smooth(project.camera.focusWeight/.25))};
+ return {commands:commands.sort((a,b)=>a.depth-b.depth),labelVisibility:g.workLabelVisibility(layers,project)};
 }
 for(let state=0;state<g.config.scenes.length;state++){
  const project=g.createProjector(state,720,720);

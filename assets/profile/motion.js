@@ -58,7 +58,7 @@
    case 5:return right?work(.08,-.06,.12,'open'):work(-.30,.18,.08,'open');
    case 6:return right?{target:bodyAt([.08,.52,.19]),grip:'reflect',active:false,space:'body'}:{target:add(tableSupport,[0,.02,0]),grip:'brace',active:false,space:'support'};
    case 7:return right?{target:bodyAt([.31,.83,.16]),grip:'reflect',active:false,space:'body'}:work(-.32,-.15,.025,'hold',true);
-   case 18:return right?{target:bodyAt([.02,.42,.24]),grip:'cup',active:false,space:'body'}:{...work(-.30,-.12,-.025,'hold',true),back:true};
+   case 18:return {...(right?work(.224,-.136,-.004,'hold',true):work(-.30,-.12,-.025,'hold',true)),back:true};
    case 8:return right?work(.31,.18,.08,'point'):work(-.32,-.11,.07,'open');
    case 22:return right?work(.20,-.10,.10,'hold'):work(-.32,.18,.07,'point');
    case 9:return {target:bodyAt(right?[.48,.28,.31]:[-.43,.24,.26]),grip:'open',active:false,space:'body'};
@@ -77,11 +77,18 @@
    case 24:return right?work(-.30,-.36,.15,'open',false,'agency'):{target:bodyAt([-.10,.31,.27]),grip:'relaxed',active:false,space:'body'};
    case 25:return right?work(.55,-.06,-.04,'open',false,'welcome'):{target:bodyAt([-.47,.30,.26]),grip:'open',active:false,space:'body'};
    case 28:return right?work(.09,-.30,.23,'open',false,'offer'):{target:bodyAt([-.16,.20,.34]),grip:'open',active:false,space:'body'};
-   case 26:return right?work(.56,-.14,.02,'open',false,'invitation'):{target:bodyAt([-.32,.12,.10]),grip:'open',active:false,space:'body'};
+   case 26:return right?work(.50,-.14,.02,'open',false,'invitation'):{target:bodyAt([-.32,.12,.10]),grip:'open',active:false,space:'body'};
    case 27:return right?{target:bodyAt([.20,.61,.26]),grip:'hold',active:false,space:'body'}:work(-.33,-.14,.025,'hold',true);
    case 29:return {target:bodyAt(right?[.06,.10,.28]:[-.08,.12,.30]),grip:'relaxed',active:false,space:'body'};
    case 30:return right?{target:bodyAt([.37,.94,.25]),grip:'open',active:false,space:'offer'}:{target:bodyAt([-.38,.26,.22]),grip:'open',active:false,space:'body'};
   }return rest();
+ }
+ // Local model of the small exhibition door. The renderer uses the same
+ // hinge and latch position as the hand solver during the push.
+ function doorPoint([x,y,z],action,moving){
+  const angle=moving?-1.15*smooth((action-.12)/.78):0,c=Math.cos(angle),s=Math.sin(angle);
+  const swung=.66+(x-.66)*c-z*s;
+  return [1.64+(1.56-swung)*.82,-.19+(y+.19)*1.55,(x-.66)*s+z*c];
  }
  function actionSpec(i,side,a,w,body){const spec=handSpec(i,side,w,body),right=side===1;let target=[...spec.target],active=spec.active,grip=spec.grip,space=spec.space;
   if(i===2&&right){const stroke=smooth(a<.62?a/.62:(a-.62)/.38),lift=smooth((a-.57)/.035)*(1-smooth((a-.635)/.035));target=a<.62?at(w,mix(-.19,.13,stroke),.03+.09*Math.sin(PI*stroke),.014):at(w,.13,mix(.03,-.08,stroke),.014);target=add(target,mul(w.normal,.045*lift));active=lift<.001;grip='write';}
@@ -116,7 +123,18 @@
   if(i===23&&right){target=at(w,mix(-.13,.16,smooth(a)),.06,.025);active=true;grip='open';}
   if(i===24&&right){target=lerp(at(w,.13,.06,.09),spec.target,smooth(a));target[1]+=.025*Math.sin(PI*a);active=false;grip='open';}
   if(i===27&&right){target=at(w,mix(.18,.06,smooth(a)),.12,.012+.18*smooth((a-.16)/.84));active=a<.16;grip='hold';}
-  if([25,26,28].includes(i)&&right){const from=i===25?at(w,.57,-.10,.06):i===26?at(w,.58,-.15,.03):at(w,.10,-.28,.10);target=lerp(from,spec.target,smooth(a));const arc=Math.sin(PI*smooth(a));target[1]+=(i===26?.11:i===28?.065:.08)*arc;target[0]+=(i===26?-.105:.05)*arc;target[2]+=.06*arc;}
+  if(i===26&&right){
+   const [x,y,z]=doorPoint([1.58,.075,.05],Math.min(a,.31),true);
+   const latch=painted(w,x,y,z*Math.min(w.width/1.3,w.height/1.04));
+   const release=ramp(a,.31,.82);
+   target=lerp(latch,spec.target,release);target[1]+=.07*Math.sin(PI*release);
+   active=release===0;grip=a<.31?'hold':'open';space='work';
+  }
+  if([25,28].includes(i)&&right){
+   const from=i===25?at(w,.57,-.10,.06):at(w,.10,-.28,.10);
+   target=lerp(from,spec.target,smooth(a));const arc=Math.sin(PI*smooth(a));
+   target[1]+=(i===28?.065:.08)*arc;target[0]+=.05*arc;target[2]+=.06*arc;
+  }
   if(i===30&&right){target=add(target,[.015*Math.sin(PI*a),.035*Math.sin(PI*a),.025*Math.sin(PI*a)]);}
   return {...spec,target,active,grip,space};
  }
@@ -147,7 +165,7 @@
   let f=wf.frame,target=spec.target;
   // Only gestures that never acquire a contact receive a free wrist arc.
   // Binary contact weights must not turn a rotation on/off at acquisition.
-  const free=[9,12,13,14,17,24,25,26,28,29,30].includes(to)&&['body','agency','welcome','offer','invitation'].includes(spec.space);
+  const free=(to!==26||side!==1)&&[9,12,13,14,17,24,25,26,28,29,30].includes(to)&&['body','agency','welcome','offer','invitation'].includes(spec.space);
   if(free){
    const roll=amount*side*mix(.28,.22,closure),yaw=amount*side*mix(.24,.14,closure),pitch=amount*mix(.12,-.16,closure),rotation=frame(yaw,pitch,roll);
    f={x:apply(wf.frame,rotation.x),y:apply(wf.frame,rotation.y),z:apply(wf.frame,rotation.z)};
@@ -261,6 +279,15 @@
    if(u<phase.actionStart){const t=to===16?smooth((u-(side===-1?.18:.27))/(side===-1?.12:.15)):smooth((u-phase.attentionEnd)/Math.max(.01,phase.actionStart-phase.attentionEnd));spec={...actionStart,target:lerp(start.target,actionStart.target,t),active:false};spec.target[1]+=.035*Math.sin(PI*t);if(side===1&&(to===25||to===26))spec.target[2]+=.08*Math.sin(PI*t);wf=blendWrist(startWrist,actionStartWrist,t);}
    else if(u<=phase.actionEnd){spec=actionSpec(to,side,phase.action,work,body);weight=spec.active?1:0;wf=spec.grip==='type'?wristFor(spec,work,side):blendWrist(actionStartWrist,actionEndWrist,smooth(phase.action));}
    else {const t=smooth((u-phase.actionEnd)/Math.max(.01,phase.settle-phase.actionEnd));spec={...finish,target:lerp(actionEnd.target,finish.target,t),active:finish.active&&t>.999};weight=spec.active?1:0;wf=blendWrist(actionEndWrist,finishWrist,t);}
+   if(to===18&&side===1){
+    // Let the ember register first. The outside fingers then skim up below
+    // the fore-edge: the loose corners can riffle over this second support.
+    const reach=ramp(u,.53,.89),close=ramp(u,.61,.91);
+    const target=lerp(start.target,finish.target,reach);
+    target[1]-=.065*Math.sin(PI*reach);
+    spec={...finish,target,active:reach===1};
+    wf=blendWrist(startWrist,finishWrist,close);weight=spec.active?1:0;
+   }
    if(to===18&&side===-1){
     // The left hand presents an open pad while the ember is still in the
     // right. Curl around the cover as the notebook becomes legible.
@@ -348,5 +375,5 @@
   p.light=p.contacts[options.lead||(side<0?'left':'right')].tip;return p;
  }
  function restPose(){return poseAt(29);}
- const api={poseAt,lightAt,accentAt,pose,restPose,finalePose,setClips,lengths,names,lessonHandoffs};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
+ const api={poseAt,lightAt,accentAt,pose,restPose,finalePose,setClips,lengths,names,lessonHandoffs,doorPoint};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

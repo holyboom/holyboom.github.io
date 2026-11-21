@@ -263,49 +263,62 @@
  }
  // Recognizable action props sit in front of the woven world. Colour supports their meaning.
  const objectCache=[];
+ const indexPivot=[.50,.14];
+ function indexPoint(u,v,angle,depth){return [.46+u*Math.cos(angle)-v*Math.sin(angle),.095+u*Math.sin(angle)+v*Math.cos(angle),u*depth+.03*v];}
+ const indexStrips={
+  'index-back':{angle:1.43,depth:-.17,start:18.56,end:18.78},
+  'index-middle':{angle:.78,depth:-.06,start:18.50,end:18.69}
+ };
  function objectScene(index){
   if(objectCache[index])return objectCache[index];
-  const shot=sequence[index],accent=cfg.tones[shot.tone],paths=[],texts=[],z=.95;
-  const isDrawing=['blueprint','house'].includes(shot.prop);
+  const shot=sequence[index],accent=cfg.tones[shot.tone],paths=[],texts=[];
   const point=(x,y,z=0)=>[x,y,z];
   const line=(points,{color=accent,width=2.1,fill=null,alpha=1,role='work',motion=null}={})=>paths.push({points:points.map(p=>point(...p)),color,width,fill,alpha,role,motion});
+  // The strand painter rounds a single vertex. A doubled corner keeps a cut
+  // edge sharp in Canvas and SVG; edge midpoints also follow folds and grips.
+  const facet=(vertices,style)=>{
+   const corners=vertices.map(p=>point(...p));
+   const boundary=corners.flatMap((a,i)=>[a,a,lerp(a,corners[(i+1)%corners.length],.5)]);
+   line([...boundary,corners[0]],style);
+  };
   const label=(text,x=.89,y=-.35,size=11)=>texts.push({text:cfg.text?.[text]??text,point:point(x,y),color:accent,size});
   const arc=(x,y,rx,ry,start=0,end=TAU,style={})=>line(Array.from({length:49},(_,i)=>{const a=mix(start,end,i/48);return [x+Math.cos(a)*rx,y+Math.sin(a)*ry];}),style);
-  const roundRect=(x,y,w,h,style={})=>{
-   const r=Math.min(.09,w*.15,h*.15),points=[];
-   for(const [cx,cy,start] of [[x+w-r,y+h-r,0],[x+r,y+h-r,PI/2],[x+r,y+r,PI],[x+w-r,y+r,PI*1.5]])for(let i=0;i<9;i++){const a=start+i/8*PI/2;points.push([cx+r*Math.cos(a),cy+r*Math.sin(a)]);}
-   points.push(points[0]);line(points,{fill:'#100f20',...style});
-  };
-  const check=(x,y)=>line([[x-.10,y],[x-.02,y-.07],[x+.14,y+.13]],{color:cfg.tones.care,width:3});
-  const page=(x=.42,y=-.07)=>{roundRect(x,y,.9,.73);for(let i=0;i<3;i++)line([[x+.12,y+.54-i*.14],[x+.70-(i%2)*.15,y+.54-i*.14]],{width:1.3,alpha:.6});};
   const orb=(x,y,r,style={})=>{
    // A real woven ellipsoid, with the original outline/contact rim retained.
    arc(x,y,r,r,0,TAU,{fill:'#100f20',...style});
    for(const meridian of [-1.12,-.56,0,.56,1.12])line(Array.from({length:33},(_,i)=>{const a=i/32*TAU;return [x+r*Math.sin(a)*Math.cos(meridian),y+r*Math.cos(a),r*Math.sin(a)*Math.sin(meridian)];}),{width:.65,alpha:.48,...style,fill:null,role:'volume'});
    if(r>.22)for(const latitude of [-.55,-.18,.18,.55]){const radius=r*Math.sqrt(1-latitude*latitude);line(Array.from({length:33},(_,i)=>{const a=i/32*TAU;return [x+Math.cos(a)*radius,y+r*latitude,Math.sin(a)*radius];}),{width:.55,alpha:.38,...style,fill:null,role:'volume'});}
   };
-  const link=(a,b,style={})=>line([a,[(a[0]+b[0])/2,(a[1]+b[1])/2+.12],b],{width:1.5,...style});
   const prop=shot.prop;
   if(prop==='none')return {paths,texts};
   if(['blueprint','house'].includes(prop)){
-   // Two registration ticks and a clipped corner make this a sheet on a desk.
-   // The valley folds sit flat until the pen clears them for inspection.
-   const corners=[[.24,-.20],[1.54,-.20],[1.54,.64],[1.34,.84],[.24,.84],[.24,-.20]];
-   const contour=corners.slice(1).flatMap((b,i)=>Array.from({length:6},(_,j)=>lerp(corners[i],b,j/6)));
-   line([...contour,corners.at(-1)],{fill:'#171427',width:1.1});
-   line([[1.34,.84],[1.33,.63],[1.54,.64]],{width:.9,alpha:.75});
-   for(let i=0;i<5;i++)line([[.29,-.09+i*.16],[1.47,-.09+i*.16]],{width:.55,alpha:.22});
-   for(const x of [.34,1.42])line([[x,-.12],[x,-.02]],{width:1});
+   // Cyanotype paper, a curled corner and the oversize white plan lines read
+   // even on the far side of the desk. The pen still owns the live ink.
+   facet([[.24,-.20],[1.54,-.20],[1.54,.64],[1.34,.84],[.24,.84]],
+    {fill:'#244365',color:'#99bdd0',width:1.3});
+   facet([[1.34,.84],[1.34,.64],[1.54,.64]],{fill:'#91a9bc',color:'#b5ccda',width:.8});
+   for(let i=0;i<4;i++)line([[.29,-.09+i*.20],[1.47,-.09+i*.20]],{color:'#90b1c6',width:.55,alpha:.40});
+   const chalk={color:'#f1ecda',width:1.6};
    if(prop==='house'){
-    const fold={color:cfg.tones.dream,width:1.55,motion:'fold'};
-    for(const y of [.03,.51])line([[.52,y,0],[.52,y,.20],[.85,y,.41],[1.18,y,.20],[1.18,y,0]],fold);
-    for(const [x,h] of [[.52,.20],[.85,.41],[1.18,.20]])line([[x,.03,h],[x,.51,h]],fold);
-    for(let j=1;j<=4;j++){const y=.03+j*.096;line([[.52,y,.20],[.85,y,.41],[1.18,y,.20]],{...fold,width:.75,alpha:.58});}
-    line([[.60,.03,.005],[.60,.03,.14],[.72,.03,.14],[.72,.03,.005]],fold);
-    line([[.52,.51],[1.18,.51],[1.18,.03],[.52,.03],[.52,.51]],{width:1.15});
+    const fold={color:'#f9e6c7',width:1.15,motion:'fold'};
+    // Upright leaves share a ridge. The visible entrance and deep side wall
+    // give the building a scale that the flat floor plan alone cannot supply.
+    const left=.48,right=1.28,ridge=.87,front=-.015,back=.58,wall=.32,peak=.61;
+    facet([[left,back,0],[left,back,wall],[ridge,back,peak],[right,back,wall],[right,back,0]],{...fold,fill:'#c2a88b'});
+    facet([[left,front,0],[left,back,0],[left,back,wall],[left,front,wall]],{...fold,fill:'#b29577'});
+    facet([[left,front,0],[left,front,wall],[ridge,front,peak],[right,front,wall],[right,front,0]],{...fold,fill:'#efe4c7'});
+    facet([[left-.04,front-.035,wall],[ridge,front-.035,peak],[ridge,back+.035,peak],[left-.04,back+.035,wall]],{...fold,fill:'#b86748'});
+    facet([[ridge,front-.035,peak],[right+.035,front-.035,wall],[right+.035,back+.035,wall],[ridge,back+.035,peak]],{...fold,fill:'#d38a64'});
+    facet([[.61,front-.014,0],[.61,front-.014,.23],[.77,front-.014,.23],[.77,front-.014,0]],{...fold,color:'#455269',fill:'#354961'});
+    facet([[.94,front-.014,.12],[.94,front-.014,.24],[1.13,front-.014,.24],[1.13,front-.014,.12]],{...fold,color:'#597284',fill:'#73909c'});
+    for(const y of [.14,.35])line([[left-.04,y,wall],[ridge,y,peak],[right+.035,y,wall]],{...fold,width:.75,alpha:.74});
    }else{
-    line([[.50,-.01],[1.23,-.01],[1.23,.48],[.50,.48],[.50,-.01]],{width:1.7});
-    line([[.83,-.01],[.83,.23],[1.23,.23]],{width:1.3});arc(.83,.23,.15,.15,-PI/2,0,{width:.9});
+    facet([[.44,-.02],[1.31,-.02],[1.31,.56],[.44,.56]],{...chalk,fill:'#345774'});
+    line([[.45,.55],[.76,.55],[.76,.16],[1.30,.16]],chalk);
+    line([[1.02,.17],[1.02,.34],[1.30,.34]],chalk);
+    arc(.76,.16,.18,.18,0,PI/2,{width:.95,color:'#e2decf'});
+    line([[.39,-.115],[1.37,-.115]],{color:'#b3c8d5',width:.8});
+    for(const x of [.44,.76,1.31])line([[x-.022,-.15],[x+.022,-.08]],chalk);
    }
    label(prop==='house'?'A PLACE FOR PEOPLE':'THE FIRST DRAWING');
   }else if(['code','component','ai'].includes(prop)){
@@ -317,44 +330,154 @@
     line([[x,y],[x+.095,y]],{width:2,alpha:.7,role:'keyboard',motion:'key'});
    }
    if(prop==='code'){
-    roundRect(.29,-.15,1.19,.88,{width:1.3});
-    for(let i=0;i<4;i++){const x=.42+(i%3)*.09,y=.52-i*.15;line([[x,y],[x+.19,y]],{width:2.4});line([[x+.25,y],[x+.54-i*.04,y]],{color:cfg.tones.care,width:1.35,motion:'output'});}
+    // A perforated listing rises from the printer's mouth as keys land.
+    // The last visible lines stay inside the two sprocket tracks.
+    // The machine's sloping back joins the platen to the keyboard bed.
+    facet([[.18,0],[1.54,0],[1.54,1],[.18,1]],{motion:'printer-back',fill:'#354b56',color:'#8b9e9f',width:.9});
+    for(const x of [.30,1.40])line([[x,.10],[x,.87]],{motion:'printer-back',color:'#78938e',width:1.25});
+    facet([[.18,-.07],[1.55,-.07],[1.48,.065],[.27,.065]],{fill:'#465660',color:'#91a7b2',width:1.2});
+    const tape={motion:'listing',color:'#e7dfc9',width:1};
+    facet([[.32,.01],[1.39,.01],[1.39,.76],[1.28,.71],[1.16,.77],[1.04,.72],[.93,.78],[.82,.72],[.70,.78],[.59,.73],[.47,.79],[.32,.74]],{...tape,fill:'#dfd7ba'});
+    for(let row=0;row<4;row++){
+     const y=.14+row*.153;
+     for(const x of [.375,1.33])arc(x,y,.018,.022,0,TAU,{...tape,fill:'#5b666a',color:'#5b666a',width:.55});
+     const x=.47+.06*(row%3);
+     line([[x,y],[x+.14,y]],{...tape,color:'#314656',width:2.1});
+     line([[x+.20,y],[x+.47-row*.038,y]],{...tape,color:'#587a79',width:1.6});
+    }
    }else if(prop==='component'){
-    roundRect(.57,.06,.64,.54,{fill:'#132532',width:2.1});
-    for(const dir of [-1,1])for(let i=0;i<4;i++){const y=.12+i*.12,x=dir===1?1.21:.57;line([[x,y],[x+dir*.13,y],[x+dir*.22,y+.06]],{width:1.35});}
-    line([[.65,.24],[.82,.24],[.86,.43],[.91,.17],[.97,.33],[1.13,.33]],{color:cfg.tones.care,width:2,motion:'output'});
+    // A keyed IC package has a clipped corner, a central die and broad
+    // plated terminals. Clock traces come alive under the typing fingers.
+    const pins={fill:'#c89764',color:'#edc59a',width:.8};
+    for(const side of [-1,1])for(let i=0;i<5;i++){
+     const x=side<0?.47:1.33,y=-.015+i*.156;
+     facet([[x,y],[x+side*.085,y],[x+side*.145,y-.04],[x+side*.21,y-.04],[x+side*.21,y+.018],[x+side*.15,y+.018],[x+side*.085,y+.059],[x,y+.059]],pins);
+    }
+    facet([[.43,-.13],[1.36,-.13],[1.36,.75],[.59,.75],[.43,.59]],{fill:'#36525d',color:'#a3c6c4',width:1.5});
+    facet([[.58,.03],[1.21,.03],[1.21,.60],[.58,.60]],{fill:'#688589',color:'#c8d7c8',width:1.1});
+    const circuit={color:'#ecbb81',width:1.55,motion:'output'};
+    line([[.57,.18],[.73,.18],[.81,.37],[.94,.37],[1.03,.49],[1.21,.49]],circuit);
+    line([[.61,.10],[.84,.10],[.95,.25],[1.16,.25]],{...circuit,width:.95});
+    arc(.54,.59,.034,.034,0,TAU,{fill:'#f9d8a4',color:'#edc59a'});
    }else{
-    for(let i=0;i<3;i++){const y=.04+i*.22;orb(.42,y,.065);link([.48,y],[.88,.36],{color:cfg.tones.build});}
-    orb(.89,.36,.17);link([1.02,.36],[1.34,.62],{color:cfg.tones.care,motion:'output'});orb(1.36,.63,.11,{color:cfg.tones.care});
+    // Incoming signals meet a faceted inference prism. The three distinct
+    // output bands are only revealed after keystrokes reach the new branch.
+    for(let i=0;i<3;i++){
+     const y=.08+.22*i;
+     line([[.11,y],[.33,y],[.64,.31+i*.045]],{color:'#8daec2',width:1.7});
+     arc(.12,y,.042,.039,0,TAU,{fill:'#b6cdd2',color:'#b6cdd2',width:.75});
+    }
+    facet([[.60,.04],[.93,.84],[1.18,.27],[1.07,-.02]],{fill:'#576185',color:'#b4a9d4',width:1.4});
+    facet([[.60,.04],[.88,.30],[.93,.84]],{fill:'#a39bc1',color:'#cbc6df',width:1});
+    facet([[.60,.04],[.88,.30],[1.18,.27],[1.07,-.02]],{fill:'#526f89',color:'#9ac2ca',width:1});
+    for(let i=0;i<3;i++){
+     const y=.35+i*.095,x=1.61+i*.055;
+     facet([[1.10,y-.07],[x,y+.01+i*.075],[x,y+.09+i*.075],[1.10,y]],{color:['#96d4c0','#f2c285','#a9a9e0'][i],fill:['#6aafa0','#d3a270','#8b88c0'][i],motion:'output',width:.75});
+    }
    }
    label(prop==='ai'?'AI ENTERS THE WORKFLOW':prop==='code'?'DRAWING → CODE':'ONE WORKING COMPONENT');
   }else if(prop==='assembly'&&index===5){
-   // The moving collar travels with the pinching hand into a fixed socket.
-   for(const radius of [.24,.19])arc(.91,.65,radius,radius*.65,0,TAU,{fill:radius===.24?'#13212b':null,width:1.35});
-   for(let i=0;i<3;i++)link([.91+(i-1)*.08,.55],[.50+i*.36,-.12],{width:.95,alpha:.55});
-   for(const r of [.14,.10])arc(.91,.65,r,r*.74,0,TAU,{fill:r===.14?'#233148':null,color:cfg.palette.highlight,width:1.6,motion:'collar'});
-   arc(.91,.65,.21,.143,0,TAU,{color:cfg.tones.care,motion:'seam',width:2.2});
+   // Four mounting ears, a copper winding and a keyed centre distinguish the
+   // fixed socket from the loose cartridge being pressed into it.
+   const block=[[.23,.16],[.23,.83],[.38,.98],[1.40,.98],[1.56,.82],[1.56,.15],[1.39,-.02],[.41,-.02]];
+   facet(block,{fill:'#405965',color:'#a8c1c3',width:1.35});
+   for(const [x,y] of [[.38,.16],[1.4,.16],[.38,.82],[1.4,.82]])arc(x,y,.041,.046,0,TAU,{color:'#b4c1bd',fill:'#24333d',width:1});
+   for(let i=0;i<5;i++)line([[.44+i*.15,.10],[.53+i*.15,.22],[.53+i*.15,.36]],{color:'#c7875c',width:1.8});
+   arc(.91,.65,.36,.28,0,TAU,{fill:'#16272f',color:'#b98361',width:2.5});
+   const brass={fill:'#c79b68',color:'#f1c590',width:1,motion:'collar'};
+   facet([[.68,.45],[1.10,.45],[1.17,.53],[1.17,.79],[1.06,.86],[.76,.86],[.66,.74],[.66,.62],[.73,.62],[.73,.54]],brass);
+   arc(.91,.65,.14,.13,0,TAU,{...brass,fill:'#806751',color:'#e2bf8b'});
+   line([[.84,.66],[.98,.66]],{width:1.8,color:'#3d3c37',motion:'collar'});
+   arc(.91,.65,.31,.23,PI*.10,PI*.90,{color:'#b5efd3',motion:'seam',width:2.4});
    label('PARTS BECOME A SYSTEM',.89,-.52);
-  }else if(['assembly','network','complexity'].includes(prop)){
-   const nodes=prop==='complexity'?[[.36,.75],[.87,.88],[1.38,.69],[.46,.13],[1.0,.30],[1.48,-.05],[.79,-.25]]:prop==='assembly'?[[.33,.30],[.68,.57],[1.03,.37],[1.40,.53]]:[[.49,.15],[.91,.65],[1.31,.15]];
-   for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++)if(prop==='complexity'||j===i+1)link(nodes[i],nodes[j],{width:1.5,alpha:prop==='complexity'?.48:.98,motion:'span'});
-   for(const [i,node]of nodes.entries())orb(...node,prop==='complexity'?.073:prop==='assembly'?.085:.102,{color:i===1?cfg.palette.highlight:accent});
-   label(prop==='complexity'?'THE DEPTH BENEATH':prop==='network'?'PEOPLE · REQUIREMENTS · CODE':'PARTS BECOME A SYSTEM',.89,-.52);
+  }else if(prop==='complexity'){
+   // Expose the routing harness through three staggered combs. The two
+   // distinct plugs sit on the same terminals that the hands acquire.
+   for(const [x,y] of [[.46,.13],[1,.30]]){
+    facet([[x-.12,y-.075],[x+.09,y-.075],[x+.14,y],[x+.09,y+.075],[x-.12,y+.075]],{fill:'#45657c',color:'#bddde7',width:1});
+   }
+   for(let i=0;i<5;i++){
+    const band=i-2,lead=Array.from({length:37},(_,j)=>{
+     const t=j/36;
+     return [.36+t*1.12,.13+.28*t+Math.sin(t*PI)*(.57+.10*band)*Math.sin(t*PI*1.9+band*.62),band*.075+.14*Math.sin(PI*t)];
+    });
+    line(lead,{color:['#7fb89f','#a58cca','#db9c74','#86ced7','#ad90cc'][i],width:i===2?2.5:1.75,motion:'harness'});
+   }
+   for(const [x,y] of [[.34,.13],[1.50,.40]])facet([[x-.045,y-.16],[x+.045,y-.14],[x+.045,y+.17],[x-.045,y+.14]],{fill:'#66838a',color:'#adcfcd',width:1});
+   label('THE DEPTH BENEATH',.89,-.52);
+  }else if(prop==='network'){
+   // Colour-coded plug shells travel with the two end grips. A slack cable
+   // becomes a continuous span when the second plug is seated.
+   for(const side of [-1,1]){
+    const x=side<0?.49:1.31,y=.15,d=side<0?1:-1,plug={motion:side<0?'left-plug':'right-plug',color:'#d9c6ab',width:1};
+    facet([[x-d*.24,y-.24],[x+d*.10,y-.24],[x+d*.10,y+.24],[x-d*.24,y+.24]],{fill:'#3b5760',color:'#88a7a9',width:1.2});
+    facet([[x-d*.13,y-.13],[x+d*.04,y-.13],[x+d*.04,y+.13],[x-d*.13,y+.13]],{fill:'#152a35',color:'#607d88',width:1});
+    facet([[x-d*.09,y-.067],[x+d*.05,y-.067],[x+d*.05,y+.067],[x-d*.09,y+.067]],{...plug,fill:'#d3bc93'});
+    facet([[x,y-.103],[x+d*.17,y-.103],[x+d*.22,y-.05],[x+d*.22,y+.05],[x+d*.17,y+.103],[x,y+.103]],{...plug,fill:side<0?'#b78059':'#6daca3'});
+   }
+   for(const dy of [-.016,.016])line(Array.from({length:27},(_,i)=>[i/26,dy,0]),{color:dy>0?'#d3bb8a':'#719397',width:1.8,motion:'cable'});
+   label('PEOPLE · REQUIREMENTS · CODE',.89,-.52);
+  }else if(prop==='assembly'){
+   // A folding truss opens across the palms. Its deck stays between the two
+   // pads and the triangulated sections rise together as the span widens.
+   const bridge={motion:'truss',color:'#d4b485',width:1.2};
+   facet([[0,-.025],[1,-.025],[1,.045],[0,.045]],{...bridge,fill:'#a58160'});
+   for(let i=0;i<4;i++){
+    const x=i/4,h0=.10+.29*Math.sin(PI*x),h1=.10+.29*Math.sin(PI*(x+.25));
+    facet([[x,0],[x+.035,0],[x+.25,h1],[x+.215,h1]],{...bridge,fill:'#b58e67'});
+    facet([[x+.25,0],[x+.215,0],[x,h0],[x+.035,h0]],{...bridge,fill:'#cda579'});
+    facet([[x,h0],[x+.25,h1],[x+.25,h1+.05],[x,h0+.05]],{...bridge,fill:'#65878a',color:'#b6ccc4'});
+   }
+   label('PARTS BECOME A SYSTEM',.89,-.52);
   }else if(['brief','review','verified','lesson'].includes(prop)){
-   if(prop==='brief'||prop==='review'&&index===11){
-    page(.40,-.08);
-    if(prop==='review'){
-     arc(1.00,.50,.20,.18,0,TAU,{color:cfg.tones.human,fill:'#262033',motion:'lens'});
-     line([[1.15,.38],[1.33,.20]],{width:3,motion:'lens'});
-    }else line([[.43,.02],[.76,.18],[1.11,.17]],{color:cfg.tones.care,width:1.65});
+   if(prop==='brief'){
+    // Take the clipped field notes by their bottom corner. A folded sheet,
+    // metal jaws and a small sketched route are readable without printed text.
+    const card={motion:'brief-grip',color:'#d6baa1',width:1};
+    facet([[.32,-.19],[1.22,-.19],[1.39,-.02],[1.39,.90],[.32,.90]],{...card,fill:'#8d7059'});
+    facet([[.40,-.09],[1.19,-.09],[1.31,.034],[1.31,.79],[.40,.79]],{...card,fill:'#e4d9ba'});
+    facet([[1.19,-.09],[1.19,.039],[1.31,.034]],{...card,fill:'#baa987'});
+    facet([[.62,.76],[1.08,.76],[1.06,.90],[.96,.90],[.94,.97],[.76,.97],[.74,.90],[.65,.90]],{...card,fill:'#536674',color:'#b0bcc1'});
+    for(let i=0;i<2;i++)line([[.49,.58-i*.12],[1.12-i*.19,.58-i*.12]],{...card,color:'#736b64',width:1.4});
+    line([[.50,.12],[.68,.25],[.88,.21],[1.13,.34]],{...card,color:'#54877c',width:2.2});
+   }else if(prop==='review'&&index===11){
+    // A registration proof has physical paper edges. Coloured registration
+    // marks on it become a larger pair of marks inside the moving loupe.
+    facet([[.31,-.13],[1.39,-.13],[1.48,-.04],[1.48,.76],[.31,.76]],{fill:'#d9d6c1',color:'#f0ead8',width:.9});
+    for(let i=0;i<3;i++){
+     const x=.46+i*.20;
+     facet([[x,.07],[x+.16,.07],[x+.16,.24],[x,.24]],{fill:['#527f87','#a2778c','#d5ac73'][i],color:'#d9d6c1',width:.55});
+    }
+    for(let i=0;i<2;i++)line([[.45,.59-i*.12],[.70+i*.12,.59-i*.12]],{color:'#646d71',width:1.2});
+    const lens={motion:'lens',color:'#97abb0',width:1.15};
+    facet([[1.08,.37],[1.18,.41],[1.44,.13],[1.36,.06]],{...lens,fill:'#866653',color:'#b79171'});
+    arc(.99,.55,.27,.275,0,TAU,{...lens,fill:'#506977',color:'#c1cdd1',width:2.4});
+    arc(.99,.55,.206,.21,0,TAU,{...lens,fill:'#bcd4d2',color:'#e0e8d9'});
+    for(const [dx,clr] of [[-.025,'#765e7a'],[.035,'#5a8792']])arc(.99+dx,.55,.082,.086,0,TAU,{...lens,color:clr,width:1.4});
    }else if(prop==='verified'){
     if(index===6){
-     arc(.90,.33,.51,.32,0,TAU,{fill:'#122020',width:1.15});
-     for(let i=0;i<7;i++){const a=PI*.15+i*PI*.118;line([[.90+Math.cos(a)*.40,.30+Math.sin(a)*.26],[.90+Math.cos(a)*.45,.30+Math.sin(a)*.3]],{width:1.35});}
-     line([[.90,.28],[1.12,.51]],{width:2.3,motion:'needle'});
+     // A stem, compression nut and circular bezel form a gauge, with no
+     // enclosing UI panel competing for the work light.
+     facet([[.78,.09],[.78,-.28],[1.0,-.28],[1.0,.09]],{fill:'#b78b60',color:'#e4b884',width:1.15});
+     facet([[.69,-.06],[.76,.04],[1.01,.04],[1.09,-.06],[1.01,-.17],[.76,-.17]],{fill:'#a07856',color:'#d6b88e',width:1});
+     arc(.89,.38,.57,.465,0,TAU,{fill:'#536263',color:'#afbdb1',width:1.6});
+     arc(.89,.38,.51,.40,0,TAU,{fill:'#d9d5b7',color:'#a9997f',width:1.5});
+     arc(.89,.31,.44,.31,.12*PI,.88*PI,{color:'#536c67',width:2.4});
+     arc(.89,.31,.44,.31,.12*PI,.34*PI,{color:'#498673',width:3.1});
+     for(let i=0;i<7;i++){const a=PI*.12+i*PI*.125;line([[.89+Math.cos(a)*.365,.31+Math.sin(a)*.235],[.89+Math.cos(a)*.43,.31+Math.sin(a)*.305]],{color:'#42545c',width:1.2});}
+     facet([[.86,.24],[.91,.28],[1.18,.54],[.89,.30]],{fill:'#975c48',color:'#754634',width:1.1,motion:'needle'});
+     arc(.89,.28,.053,.053,0,TAU,{fill:'#4d5055',color:'#655e60',width:.9});
     }else{
-     for(const r of [.32,.27,.18])arc(.88,.34,r,r*.88,0,TAU,{fill:r===.32?'#142321':null,width:r===.32?1.9:.9});
-     check(.88,.34);
+     // A spring-return switch in a cast foot, held up for another person
+     // to try. The handle stands clear of its base in silhouette.
+     const device={motion:'prototype',color:'#b3c9c2',width:1.05};
+     facet([[.31,-.08],[.51,-.24],[1.27,-.24],[1.50,-.06],[1.39,.08],[.47,.08]],{...device,fill:'#456a70'});
+     facet([[.31,-.08],[.52,.16],[1.29,.16],[1.50,-.06],[1.28,-.13],[.52,-.13]],{...device,fill:'#85a7a2'});
+     arc(.82,.10,.19,.095,0,TAU,{...device,fill:'#506369',color:'#bccbc1'});
+     arc(1.23,.07,.071,.045,0,TAU,{...device,fill:'#9ae7b0',color:'#baf3c4',motion:'pilot-lamp'});
+     const rocker={motion:'rocker',color:'#f0ce9c',width:1.15};
+     facet([[.76,.105],[.81,.58],[.93,.58],[.885,.105]],{...rocker,fill:'#b19473'});
+     facet([[.72,.53],[.76,.72],[.86,.79],[1.03,.73],[1.0,.56],[.94,.49]],{...rocker,fill:'#d19469'});
     }
    }else if(prop==='lesson'){
     // Two leaves share a spine. Sample straight edges on both leaves:
@@ -374,8 +497,20 @@
     }
     line([[1.05,.642,.012],[1.05,.46,.012],[1.08,.495,.020],[1.11,.47,.027],[1.11,.647,.027],[1.05,.642,.012]],{fill:'#9f4268',color:'#a64970',width:.7});
    }else{
-    for(let i=0;i<3;i++)roundRect(.41+i*.08,-.06+i*.10,.77,.54,{fill:i===2?'#202a3a':'#141723',width:1.2,motion:i===2?'peel':null});
-    line([[.72,.41],[.92,.57],[1.13,.40]],{width:1.9,motion:'peel'});
+    // A hinged cutaway: the copper traces belong to the fixed instrument.
+    // The translucent cover rotates about its left edge, exposing the chip.
+    facet([[.43,.055,-.065],[1.43,.055,-.065],[1.49,.13,-.065],[1.49,.67,-.065],[1.43,.73,-.065],[.43,.73,-.065]],{fill:'#25424c',color:'#86c9cc',width:1.3});
+    facet([[.50,.13,-.041],[1.41,.13,-.041],[1.41,.65,-.041],[.50,.65,-.041]],{fill:'#172f37',color:'#668f9a',width:.75});
+    for(const side of [-1,1])for(let i=0;i<3;i++){
+     const x=.99+side*.15,y=.32+i*.086,end=x+side*(.14+i*.026);
+     line([[x,y,-.018],[x+side*.07,y,-.018],[end,y+(i-1)*.055,-.018],[end+side*.056,y+(i-1)*.055,-.018]],{color:'#e4bb85',width:1.25});
+    }
+    facet([[.84,.25,0],[1.14,.25,0],[1.14,.55,0],[.84,.55,0]],{fill:'#344358',color:'#c1dce7',width:1.6});
+    arc(1.065,.46,.028,.028,0,TAU,{color:'#e6ce9f',fill:'#e6ce9f',width:.7});
+    const lid={motion:'cutaway',color:'#a9e9f4',width:1.35};
+    facet([[.43,.055,.035],[1.43,.055,.035],[1.49,.13,.035],[1.49,.67,.035],[1.43,.73,.035],[.43,.73,.035]],{...lid,fill:'#43566e',alpha:.82});
+    line([[1.34,.55,.045],[1.18,.42,.045],[1.04,.30,.045]],{...lid,width:.8,alpha:.58});
+    for(const y of [.19,.52])line([[.43,y,.045],[.43,y+.105,.045]],{width:2.7,color:'#f0dab9'});
    }
    label({brief:'UNDERSTAND THE NEED',review:'A PERSON REVIEWS',verified:'REVIEWED BY A PERSON',lesson:'KEEP THE LESSON'}[prop]);
   }else if(prop==='remnant'){
@@ -383,13 +518,13 @@
    // hand can support the bowed head, making doubt legible without a face.
    const outline=[[.46,-.035],[.66,-.01],[.77,.12],[.68,.11],[.76,.24],[.63,.19],[.65,.33],[.48,.25],[.40,.15],[.46,-.035]];
    // Retain the same sampled closed-plane contract as the larger work objects.
-   line(outline.flatMap((a,i)=>i===outline.length-1?[a]:Array.from({length:4},(_,j)=>lerp(a,outline[i+1],j/4))),{color:cfg.tones.human,fill:'#17121d',width:1.7});
+   line(outline.flatMap((a,i)=>i===outline.length-1?[a]:Array.from({length:4},(_,j)=>lerp(a,outline[i+1],j/4))),{color:'#f0b098',fill:'#9d4e46',width:1.35});
    // The selvedge rests on the palm. Loose ends taper and hang away
    // from that corner as the hand turns the failed piece to find the seam.
    for(let i=0;i<9;i++){
     const t=i/8,root=[.43+t*.26,.12+t*.08,.014];
     line([[.46+t*.16,-.018+t*.018,.014],root,[root[0]-.025,.15+.06*Math.sin(PI*t),.02]],{color:cfg.tones.human,width:.8,alpha:.65});
-    if(i%2===0)line([root,[root[0]+.025,.16+t*.06,.05],[root[0]+.064,.16+t*.08,.07],[root[0]+.14,.10+t*.12,.11]],{color:cfg.tones.friction,width:1.1,motion:'fray'});
+    if(i%2===0)line([root,[root[0]+.025,.16+t*.06,.05],[root[0]+.064,.16+t*.08,.07],[root[0]+.14,.10+t*.12,.11]],{color:'#ffccb0',width:1.35,motion:'fray'});
    }
    line([[.46,.025],[.57,.12],[.62,.08]],{color:cfg.palette.highlight,width:1.1,alpha:.75});
   }else if(prop==='ember'){
@@ -401,60 +536,136 @@
     line(heart,{color:'#fff2c7',fill:'#f0ac58',width:1.3});
     for(const side of [-1,1])line([[x,y,.015],[x+side*.04,y+.08,.03],[x-side*.018,y+.15,.018],[x+.05,y+.22,.008]],{color:side<0?'#fff8d7':'#ffcb8c',width:.85});
    }else{
-    for(let i=0;i<4;i++){const w=.09+i*.04,h=.14+i*.022;
-     const points=Array.from({length:33},(_,k)=>{const a=k/32*TAU,f=.65+.35*Math.cos(a);return [x+w*Math.sin(a)*f,y-h*Math.cos(a),.04*Math.sin(a*2+i)];});
-     line(points,{color:i===1?cfg.palette.highlight:cfg.tones.human,width:i===0?2:.85,fill:i===0?'#ffd394':null,alpha:i===0?.94:.50});
-    }
+    // The spark is half sheltered by an open, charred husk. Break the
+    // silhouette at the top so the ember reads through either profile.
+    facet([[x-.17,y-.07],[x-.20,y+.13],[x-.10,y+.065],[x-.025,y+.14],[x+.095,y+.075],[x+.20,y+.15],[x+.15,y-.055],[x+.02,y-.13]],{fill:'#894b42',color:'#da8f6a',width:1.1});
+    facet([[x-.09,y+.065,.025],[x-.03,y+.18,.05],[x+.02,y+.32,.01],[x+.10,y+.16,.02],[x+.07,y+.065,.04]],{fill:'#ffd68c',color:'#fff0b6',width:1.5});
+    line([[x-.13,y+.012,.07],[x-.045,y-.036,.09],[x+.064,y-.018,.085],[x+.13,y+.05,.06]],{color:'#ffc180',width:1});
    }
   }else if(['fracture','repair'].includes(prop)){
-   // Five pulled fibres share two anchors. The free split ends recoil
-   // independently. In repair, a shuttle lays a seam across the same break.
-   orb(.35,.40,.13);orb(1.42,.40,.13);
-   for(let i=0;i<5;i++){const y=.28+i*.05,offset=(i%3)*.025;
-    for(const side of [-1,1]){const x=side<0?.35:1.42,end=side<0?.78-offset:1.01+offset;
-     line(Array.from({length:19},(_,j)=>{const t=j/18;return [mix(x,end,t),mix(.4,y,t)+.055*Math.sin(PI*t),.025*Math.sin(t*PI+i)];}),{width:i===2?1.7:1.0,motion:prop==='fracture'?'tension':null});}
-    if(prop==='repair')line([[.77,y],[.88,y+.043],[1.04,y-.014]],{width:1.55,color:cfg.tones.care,motion:'seam'});
+   // Broad cut faces keep the tear visible at phone size. The loom's
+   // brass end bars stay put while the free teeth take the strain.
+   const torn=prop==='fracture';
+   for(const side of [-1,1]){
+    const edge=side<0?.29:1.48,cut=side<0?.75:1.03;
+    const contour=[[edge,.22],[cut,.25],[cut+side*.06,.34],[cut-side*.055,.39],[cut+side*.075,.46],[cut-side*.04,.52],[edge,.59]];
+    facet(contour,{fill:torn?'#98534b':'#40777a',color:torn?'#e8a28c':'#8cc5c0',width:1.2,motion:torn?'strap':null});
+    for(let i=0;i<4;i++){
+     const y=.29+.072*i,end=cut-side*(i%2?.02:.09);
+     line(Array.from({length:15},(_,j)=>{const t=j/14;return [mix(edge,end,t),y+.031*Math.sin(PI*t),.018];}),{width:1.2,color:torn?'#e7b398':'#87c0b8',motion:torn?'strap':null});
+    }
+    facet([[edge-.034,.17],[edge+.034,.17],[edge+.034,.64],[edge-.034,.64]],{fill:'#a87c62',color:'#e4bd8c',width:.95});
    }
-   if(prop==='repair')arc(1.03,.40,.08,.045,0,TAU,{fill:'#bcf4e8',width:1.2,motion:'shuttle'});
-   label(prop==='fracture'?'THE PATH IS NOT CLEAR':'TRY · LEARN · REFINE');
+   if(!torn){
+    // Four crossing stitches bridge the old cleft in sequence. The lighter
+    // working end of the wooden shuttle identifies the direction of travel.
+    for(let i=0;i<4;i++){
+     const y=.26+.072*i;
+     line([[.70,y,.022],[.81,y+.046,.09],[.94,y+.065,.09],[1.08,y+.044,.021]],{color:'#edcd90',width:2.8,motion:'seam'});
+     line([[.72,y+.04,.03],[.87,y+.006,.08],[1.07,y-.006,.025]],{color:'#c8ac74',width:1.6,motion:'seam'});
+    }
+    facet([[.78,.33],[.89,.435],[1.23,.50],[1.13,.41],[.86,.32]],{fill:'#d49865',color:'#ffdfaf',width:1.15,motion:'shuttle'});
+    line([[.92,.37],[1.08,.43]],{color:'#623f39',width:2,motion:'shuttle'});
+   }
+   label(torn?'THE PATH IS NOT CLEAR':'TRY · LEARN · REFINE');
   }else if(prop==='library'){
-   for(let i=0;i<3;i++){const x=.28+i*.41,y=.08+Math.sin(i*2)*.15,motion=i===2?'leaf':null;roundRect(x,y,.33,.54,{motion});line([[x+.07,y+.04],[x+.07,y+.50]],{width:1,motion});line([[x+.13,y+.39],[x+.27,y+.39]],{width:1.5,motion});link([x+.16,y+.56],[.9,.92],{width:1,alpha:.5});}
-   orb(.9,.93,.12);label('SEEK · SELECT · SYNTHESIZE');
-  }else if(['skill','moat'].includes(prop)){
-   orb(.9,.36,.29,{color:cfg.tones.dream,motion:prop==='skill'?'compress':null});
-   if(prop==='moat')line([[.90,1.0],[1.44,.76],[1.40,.10],[.90,-.33],[.40,.10],[.36,.76],[.90,1.0]],{width:2.7});
-   else for(let i=0;i<3;i++){const a=i/3*TAU;orb(.9+Math.cos(a)*.55,.36+Math.sin(a)*.55,.07,{color:cfg.tones.human});link([.9+Math.cos(a)*.46,.36+Math.sin(a)*.46],[.9+Math.cos(a)*.30,.36+Math.sin(a)*.30],{alpha:.5});}
-   label(prop==='moat'?'PURPOSE · METHOD · CHARACTER':'A SKILL OF ITS OWN',.90,-.53);
+   // A fan of indexed field samples. The back two stay on their pivot
+   // while the flagged sheet is drawn free by the right hand.
+   const folio=(angle,fill,tab,motion,depth)=>{
+    const at=(u,v)=>indexPoint(u,v,angle,depth);
+    const face=[[0,-.07],[.87,-.07],[.96,.02],[.96,.22],[0,.22]];
+    facet(face.map(([u,v])=>at(u,v)),{fill,color:'#dfcbb3',width:1.15,motion});
+    const flag=[[.61,.19],[.79,.19],[.80,.36],[.62,.35]];
+    facet(flag.map(([u,v])=>at(u,v)),{fill:tab,color:'#e9d6b8',width:.85,motion});
+    for(let j=0;j<2;j++)line([at(.25,.021+j*.098),at(.66-j*.20,.021+j*.098)],{color:'#59515e',width:1.3,motion});
+   };
+   folio(indexStrips['index-back'].angle,'#95c7c0','#668fa3','index-back',indexStrips['index-back'].depth);
+   folio(indexStrips['index-middle'].angle,'#c2a6b9','#995777','index-middle',indexStrips['index-middle'].depth);
+   folio(.12,'#f3dcae','#cf8c59','leaf',.13);
+   arc(...indexPivot,.061,.061,0,TAU,{fill:'#bc8a61',color:'#ffe1a4',width:1});
+   label('SEEK · SELECT · SYNTHESIZE');
+  }else if(prop==='skill'||prop==='moat'){
+   // A cut stone has a stable ridge in side view. Its negative is picked
+   // up in the shield in the next beat.
+   const skill=prop==='skill',motion=skill?'compress':null;
+   const a=[.50,.41,.01],b=[.71,.70,-.12],c=[1.12,.69,-.08],d=[1.30,.37,.015],e=[.91,-.045,.145],f=[.91,.40,.35];
+   if(!skill){
+    facet([[.36,.67,-.08],[.62,.73,-.09],[.90,.9,-.10],[1.18,.73,-.09],[1.43,.67,-.08],[1.37,.23,-.06],[1.20,.035,-.02],[.90,-.27,.03],[.59,.035,-.02],[.41,.20,-.04]],{fill:'#35475b',color:'#a4cecb',width:2});
+    line([[.43,.58],[.53,.26],[.65,.10],[.89,-.12],[1.17,.12],[1.29,.33]],{color:'#6b929c',width:1});
+    for(const side of [-1,1]){
+     const cheek=[[1.32,.68,-.07],[1.44,.67,-.08],[1.37,.23,-.06],[1.16,.035,-.02],[1.26,.26,-.035]];
+     facet(cheek.map(([x,y,z])=>[.90+side*(x-.90),y,z]),{fill:'#537878',color:'#89b6ad',width:.9,motion:'shield-rim'});
+    }
+    // A raised leather strap wraps back into two rivets at the shield rim.
+    // Its lower bend sits on the palmar contact of the defending hand.
+    facet([[.43,.29,-.045],[.37,.24,.035],[.363,.10,.035],[.405,.049,.035],[.51,.105,-.025],[.55,.17,-.04],[.45,.134,.035],[.426,.157,.035],[.43,.22,.015],[.49,.25,-.045]],{fill:'#9b765c',color:'#dcbb8a',width:1.2});
+   }
+   for(const [corners,fill] of [[[a,b,f],'#648ea0'],[[b,c,f],'#c2e7df'],[[c,d,f],'#96b8d3'],[[d,e,f],'#6076a2'],[[e,a,f],'#8273ab']]){
+    facet(corners,{fill,color:'#cfbddc',width:.8,motion});
+   }
+   if(skill){
+    for(let i=0;i<3;i++){
+     const path=Array.from({length:25},(_,j)=>{const t=j/24;return [.9+(i-1)*(.03+.55*t),.36+(.48+.12*(i%2))*t+.14*Math.sin(t*PI*2+i)*t,.05+i*.035];});
+     line(path,{color:['#d9ab83','#8eb3bf','#bb9cce'][i],width:1.65,motion:'gather'});
+    }
+   }
+   label(skill?'A SKILL OF ITS OWN':'PURPOSE · METHOD · CHARACTER',.90,-.53);
   }else if(['interface','choice','recipient'].includes(prop)){
    // Gates open into depth; the choice is a fork with a movable token.
    // Neither shape needs a simulated browser surrounding the action.
    if(prop==='choice'){
+    // A tangible fork in the path, with a round stepping stone on each arm.
     for(const side of [-1,1]){
-     const path=Array.from({length:25},(_,i)=>{const t=i/24;return [.87+side*.42*t*t,-.15+t*.85,.09*Math.sin(PI*t)];});
-     line(path,{width:side===1?2.4:1.15,color:side===1?cfg.tones.care:accent});
+     const rail=(t,v)=>[.87+side*.43*t*t+v,-.15+t*.85,.09*Math.sin(PI*t)];
+     const left=Array.from({length:18},(_,j)=>rail(j/17,-.07)),right=Array.from({length:18},(_,j)=>rail(1-j/17,.07));
+     line([...left,...right,left[0]],{fill:side===1?'#517d75':'#55516b',color:side===1?'#add7ba':'#b1a2c0',width:1.15});
+     arc(.87+side*.43,.70,.145,.092,0,TAU,{fill:side===1?'#9bb9a5':'#92819e',color:'#d4d4bd',width:1});
     }
-    orb(.87,-.1,.085,{color:cfg.palette.highlight,motion:'token'});
-    arc(1.29,.70,.078,.052,0,TAU,{width:1.45,fill:'#18352d'});
+    orb(.87,-.10,.107,{fill:'#f6ce91',color:'#ffebc6',motion:'token'});
    }else if(prop==='recipient'){
-    for(let i=0;i<5;i++){const x=.42+i*.24;arc(x,.24,.15,.34,0,TAU,{width:i===2?1.5:.95,color:i===2?cfg.palette.highlight:accent});}
-    line([[.27,.24],[.89,.21],[1.55,.26]],{width:1.6,motion:'span'});
-    orb(1.55,.26,.086,{color:cfg.tones.human});
+    // The triangular pocket stays on the open palm. The card slides out
+    // from inside it after the wrist has offered the mouth to the reader.
+    const paper={width:1.1,color:'#b2e2d1'};
+    facet([[.31,.09,-.04],[.93,.58,-.04],[1.55,.09,-.04]],{...paper,fill:'#607d77'});
+    facet([[.31,-.37,-.032],[1.55,-.37,-.032],[1.55,.09,-.032],[.31,.09,-.032]],{...paper,fill:'#415e58'});
+    const card={motion:'invitation-slip',color:'#e5dccc'};
+    facet([[.40,-.36,-.018],[1.46,-.36,-.018],[1.46,.36,-.018],[.40,.36,-.018]],{...card,fill:'#e4daca',width:.8});
+    line([[.48,.22],[.85,.22]],{...card,color:'#575367',width:1.4});
+    line([[.48,.13],[.77,.13]],{...card,color:'#756d78',width:1});
+    arc(1.29,.21,.073,.073,0,TAU,{...card,color:'#915c79',fill:'#bc7b94',width:1});
+    facet([[.31,-.37,.025],[1.55,-.37,.025],[1.55,.09,.025],[.93,-.17,.035],[.31,.09,.025]],{...paper,fill:'#679987'});
+    for(const x of [.31,1.55])line([[x,-.37,.04],[.93,-.13,.04]],{color:'#b8dac5',width:.95});
+   }else if(index===26){
+    // Hinged leaf and fixed sill enclose the steps revealed by the opening.
+    const jamb={color:'#a6c8bd',width:1.25,fill:'#42635d'};
+    facet([[.56,-.22,-.48],[1.71,-.22,-.48],[1.71,.90,-.48],[.56,.90,-.48]],{fill:'#17232b',color:'#5c7c78',width:.8});
+    for(let i=0;i<3;i++){
+     const w=.47-i*.11,y=-.18+i*.13,z=-.10-i*.15;
+     facet([[1.14-w,y,z],[1.14+w,y,z],[1.14+w-.09,y+.085,z-.13],[1.14-w+.09,y+.085,z-.13]],{color:'#9ac0b4',width:1,fill:i%2?'#405456':'#304246'});
+    }
+    facet([[.53,-.24,.02],[.66,-.24,.02],[.66,.85,.02],[.53,.96,.02]],jamb);
+    facet([[.53,.96,.02],[1.74,.96,.02],[1.62,.85,.02],[.66,.85,.02]],jamb);
+    facet([[1.62,-.24,.02],[1.74,-.24,.02],[1.74,.96,.02],[1.62,.85,.02]],jamb);
+    facet([[.66,-.20,0],[1.62,-.20,0],[1.62,.85,0],[.66,.85,0]],{motion:'door-leaf',color:'#9bcab8',fill:'#36574f',width:1.35});
+    facet([[.76,.28,.018],[1.51,.28,.018],[1.51,.75,.018],[.76,.75,.018]],{motion:'door-leaf',color:'#8ab3a3',fill:'#46695d',width:.85});
+    line([[1.48,.075,.05],[1.58,.075,.05],[1.59,.02,.045]],{motion:'door-leaf',color:'#f6cc8e',width:2.4});
+    facet([[.46,-.31,.17],[1.82,-.31,.17],[1.71,-.22,.025],[.54,-.22,.025]],jamb);
    }else{
-    const openDoor=index===26;
-    // A strand through the left jamb gives the bracing hand a contact.
-    roundRect(.37,-.02,.13,.35,{fill:'#17262d',width:1.2});
-    for(let rib=0;rib<5;rib++){
-     const inset=rib*.052,span=.53-inset;
-     const points=Array.from({length:33},(_,k)=>{const a=k/32*PI;return [.89+Math.cos(a)*span,-.12+Math.sin(a)*(.84-inset),-rib*.075];});
-     line(points,{width:rib===0?2.2:1,alpha:1-rib*.105,motion:openDoor?'gate':null});
+    // Clear a route by pulling a folded guide across its rail. Each leaf
+    // stays attached at the crease shared with its neighbour.
+    facet([[.31,-.09],[.55,-.09],[.55,.53],[.31,.53]],{fill:'#52656c',color:'#afc1bd',width:1.1});
+    const widths=[.40,.38,.36];
+    let start=.46;
+    for(const [i,width] of widths.entries()){
+     const end=start+width,face={motion:'route-pleat',width:1.1,color:'#bddcce'};
+     const foot=x=>-.06+(x-.46)*.18;
+     facet([[start,foot(start),0],[end,foot(end),0],[end,foot(end)+.35,0],[start,foot(start)+.35,0]],{...face,fill:['#78a899','#b8d5b3','#82b6a6'][i]});
+     line([[start+.025,foot(start)+.145,.02],[end-.025,foot(end)+.145,.02]],{...face,color:'#486a69',width:1.6});
+     if(i===2)line([[end-.24,foot(end)+.23,.026],[end-.14,foot(end)+.15,.026],[end-.24,foot(end)+.075,.026]],{...face,color:'#355960',width:1.8});
+     start=end;
     }
-    const threshold=[[.32,-.12],[1.46,-.12],[1.22,.02,-.30],[.55,.02,-.30],[.32,-.12]];
-    line(threshold,{fill:'#18282a',width:1.35});
-    if(!openDoor){
-     line([[.55,.43,.041],[1.18,.43,.041]],{width:.9,alpha:.6});
-     arc(1.12,.43,.065,.06,0,TAU,{color:cfg.palette.highlight,fill:'#244034',motion:'slider',width:1.35});
-     line([[.36,.01],[.61,.12],[1.15,.12],[1.31,.21]],{color:cfg.tones.care,width:1.45,motion:'output'});
-    }
+    line([[.49,.43,.041],[1.25,.43,.041]],{color:'#afcbc4',width:1.2});
+    arc(1.12,.43,.075,.066,0,TAU,{color:'#e7d6aa',fill:'#ad865f',motion:'slider',width:1.2});
    }
    if(prop!=='recipient')label(prop==='choice'?'YOUR NEXT STEP. YOUR CHOICE.':'A CLEAR WAY IN');
   }
@@ -756,15 +967,29 @@
   };
   return route;
  }
- function storyThread(timeline,p){
+ function storyThread(timeline,p,position){
   const chapter=Math.min(10,timeline<1?timeline:sequence[Math.floor(timeline)].chapter),raw=timeline%1;
   const next=sequence[Math.min(sequence.length-1,Math.floor(timeline)+1)].chapter,c=mix(chapter,next,smooth(raw));
   const response=responseAt(timeline,p),fracture=(sequence[Math.floor(timeline)].prop==='fracture'?1-smooth(raw):0)+(sequence[Math.ceil(timeline)].prop==='fracture'?smooth(raw):0);
   const route=memoryRoute(timeline,p);
   const paths=[],color=cfg.tones.human,alpha=smooth((timeline-.85)/.30)*.46;
+  // A wire head is translucent. During the rear-to-eye move, attenuate
+  // the filament where the head lies on its sightline, including its
+  // wrist-locked first vertex. The distal thread keeps its own material.
+  const shot=cfg.camera.perspectives[0],track=cameraTrack(position);
+  const shoulderView=track>shot.rear&&track<shot.eye?cameraAt(position):null;
+  const eye=shoulderView&&cameraEye(shoulderView),headRay=eye&&sub(p.head,eye);
+  const coverage=shoulderView?smooth((track-shot.rear)/(.5*(shot.shoulder-shot.rear)))*
+   (1-smooth((shoulderView.eyeWeight-.43)/.57)):0;
+  function headClearance(point){
+   const ray=norm(sub(point,eye)),along=ray.reduce((sum,n,i)=>sum+n*headRay[i],0);
+   return Math.hypot(...sub(headRay,mul(ray,along)));
+  }
   for(let i=0;i<24;i++){
    const a=i/24,b=(i+1)/24,erosion=fracture*smooth((a-.24)/.30),points=Array.from({length:5},(_,k)=>route(mix(a,b,k/4)));
-   paths.push({id:'memory-filament-'+i,points,color,width:1.05,alpha:(.88-.50*a)*(1-erosion*.95),fill:null,role:'surroundings',secondary:false});
+   const veil=coverage*(1-smooth((i-3)/4));
+   const clearance=veil?mix(1,smooth((Math.min(...points.map(headClearance))-.30)/.12),veil):1;
+   paths.push({id:'memory-filament-'+i,points,color,width:1.05,alpha:(.88-.50*a)*(1-erosion*.95)*clearance,fill:null,role:'surroundings',secondary:false});
    if(i>=6){const u=(i+.5)/24,point=route(u),angle=i*2.399,drift=erosion*.15;
     point[0]+=Math.cos(angle)*drift;point[1]-=drift*(.4+dustNoise(i));point[2]-=drift;
     paths.push({id:'memory-grain-'+i,points:[point,add(point,[.002,.002,0])],color,width:1.2,alpha:erosion*.8,fill:null,role:'surroundings',secondary:i%2===1,memoryGrain:true});}
@@ -802,6 +1027,88 @@
   const w=p.work,sx=w.width/1.3,sy=w.height/1.04;
   return add(p.contacts.left.tip,add(mul(w.u,(x-.46)*sx),add(mul(w.v,(y-.095)*sy),mul(w.normal,z*Math.min(sx,sy)))));
  }
+ // The right leaf lifts at its outer corner and rolls across the fixed spine.
+ // The three turned sheets leave the left stack in reverse stacking order.
+ const pageTurns=[
+  {start:17.74,end:17.94,release:18.45,flight:.36},
+  {start:18.015,end:18.19,release:18.395,flight:.34},
+  {start:18.22,end:18.335,release:18.345,flight:.33}
+ ];
+ function lessonLeaves(position,p,book,idleSeconds){
+  const track=cameraTrack(position),loose=[];
+  if(track<17.70||track>=18.83)return loose;
+  const ramp=(x,a,b)=>smooth((x-a)/(b-a));
+  function sheet(id,turn,flight,opacity,depart){
+   if(opacity<.002)return;
+   // Freeze each sheet's launch frame once it is free of the moving hand.
+   // The short blend preserves a paused breath right at detachment.
+   const released=flight>0,free=ramp(flight,0,.18),swing=Math.sin(PI*flight),side=id%2?1:-1;
+   const launch=depart?motion.poseAt(depart):p;
+   // The upper leaf catches a rising crosswind. The next rolls forward and
+   // left, while the last, heavier one slips lower across the departing book.
+   const gust=flight*(.85+.15*flight),destinations=[[.44,-.10,.09],[-.33,.11,-.04],[.17,.28,.24]];
+   const drift=mul(destinations[id]||[0,0,0],gust);
+   drift[1]+=(.08+.03*id)*swing;
+   const sail=side*.60*Math.sin(flight*PI*(2.4+id*.35))*swing;
+   const tumble=side*(flight*(.65+id*.47)+sail*.7);
+   const roll=(id-1)*.68*gust+.22*sail;
+   const at=(u,v)=>{
+    // Integrate a bent cross-section: its arc length stays constant while
+    // the outer corner peels ahead and the opposite corner catches up.
+    const bend=Math.sin(PI*turn),curl=bend*(1.38+.55*(v-.5))+sail;
+    const mean=PI*turn+curl*(u*.5-.22)+sail*.85;
+    const half=curl*u*.5,length=.321*u*(Math.abs(half)<1e-7?1:Math.sin(half)/half);
+    let x=.84+length*Math.cos(mean),y=.078+.526*v+u*.02
+      +.035*u*(v-.5)*bend+.03*u*sail;
+    let z=-.045+.077*u-length*Math.sin(mean)-.004*(id+1);
+    if(released){
+     const height=y-.34,depth=z+.005,tilted=height*Math.cos(tumble)-depth*Math.sin(tumble);
+     z=-.005+height*Math.sin(tumble)+depth*Math.cos(tumble);
+     const across=x-.68;
+     x=.68+across*Math.cos(roll)-tilted*Math.sin(roll);
+     y=.34+across*Math.sin(roll)+tilted*Math.cos(roll);
+    }
+    const world=lessonPagePoint(p,[x,y,z]);
+    return released?add(lerp(world,lessonPagePoint(launch,[x,y,z]),free),drift):world;
+   };
+   const paths=[],key='lesson-leaf-'+id;
+   const path=(part,points,fill,color,width,alpha=1)=>paths.push({id:key+'-'+part,points,fill,color,width,alpha,role:'work',readingAnchor:false});
+   // A single unbroken face stays legible even as the flying paper fades.
+   // Three soft shadows describe the curl without gaps between adjacent faces.
+   const shade=8*(1-Math.cos(PI*turn))*.5,cream='rgb('+[246,236,215].map(value=>Math.round(value-shade)).join(',')+')';
+   for(let j=0;j<4;j++){
+    const near=j/4,far=j?(j+1)/4:1,corners=[[near,0],[far,0],[far,1],[near,1]],points=[];
+    for(let edge=0;edge<4;edge++)for(let n=0;n<5;n++)points.push(at(...lerp(corners[edge],corners[(edge+1)%4],n/5)));
+    points.push(points[0]);
+    if(!j)path('band-0',points,cream,'#c0b4a0',.55);
+    else path('band-'+j,points,'#8f7e83','#8f7e83',.24,(.16*Math.sin(PI*turn)+.08*Math.abs(sail))*j/3);
+   }
+   const stroke=(name,fn,color,width)=>path(name,Array.from({length:15},(_,i)=>at(...fn(i/14))),null,color,width);
+   stroke('edge',t=>[1,t],'#aa9c87',.85);
+   for(let k=0;k<3;k++)stroke('ink-'+k,t=>[.14+t*(.52+.08*((id+k)%3)),.74-k*.17+.014*Math.sin(t*PI)],k?'#746978':'#895a65',k?.75:1);
+   if(book&&!released)book.paths.push(...paths.map(item=>({...item,alpha:opacity*item.alpha})));
+   else loose.push({id:key,role:'loose-page',alpha:opacity,textAlpha:0,texts:[],paths});
+  }
+  let idleSpace=1;
+  pageTurns.forEach((beat,i)=>{
+   const turn=ramp(track,beat.start,beat.end),flight=clamp((track-beat.release)/beat.flight);
+   idleSpace*=1-Math.sin(PI*turn)**2;
+   const opacity=ramp(track,beat.start-.018,beat.start+.025)*(1-ramp(flight,.28,1));
+   // Left-over leaves fade with the cover until they slip free, then carry
+   // their own bounded opacity into the research scene.
+   const launchTime=resolve(6+(beat.release-starts[6])/sequence[starts[6]].count);
+   const launchAlpha=1-ramp(launchTime-18,...lessonHandoffs[18]);
+   sheet(i,turn,flight,opacity*(flight>0?mix(launchAlpha,.85,ramp(flight,0,.30)):1),flight>0?launchTime:null);
+  });
+  // At a native scroll hold a fresh loose corner turns once and settles
+  // onto the identical underleaf. Both ends of the finite idle are neutral.
+  if(book&&idleSeconds>0&&idleSeconds<2.4){
+   const visibility=ramp(track,17.7,17.83)*(1-ramp(track,18.22,18.34))*idleSpace;
+   const opacity=ramp(idleSeconds,.08,.34)*(1-ramp(idleSeconds,1.84,2.38))*visibility;
+   sheet(3,ramp(idleSeconds,.27,1.80),0,opacity,null);
+  }
+  return loose;
+ }
  function illustration(position,explode=0,idleSeconds=0){
   const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline,idleSeconds),work=p.work;
   const handoff=lessonHandoffs[from]||(p.phase.to===3?p.tool.handoff:from===14?[.17,.30]:timeline>=13&&timeline<17?[.42,.66]:[.10,.26]);
@@ -816,24 +1123,49 @@
    const incoming=phase.to===index,action=incoming?phase.action:1;
    const acquired=incoming?smooth((phase.progress-phase.actionStart+.09)/.09):0;
    const released=incoming?smooth((phase.progress-phase.actionEnd)/.12):1;
-   const pin=(start,finish,pivot)=>{
-    const grip=lerp(lerp(map(start),p.contacts.right.tip,acquired),map(finish),released);
+   const pin=(start,finish,pivot,release=released)=>{
+    const grip=lerp(lerp(map(start),p.contacts.right.tip,acquired),map(finish),release);
     return sub(grip,map(pivot));
    };
    const offsets={
     slider:()=>pin([.705,.43],[1.12,.43],[1.12,.43]),
     collar:()=>pin([.48,.18],[.91,.65],[.91,.65]),
     shuttle:()=>pin([.70,.12],[1.03,.40],[1.03,.40]),
-    leaf:()=>pin([1.23,.52],[.86,.60],[1.23,.52]),
+    leaf:()=>{
+     const rest=[1.23,.52,0],tab=indexPoint(.773,.33,.12,.13);
+     // Only the gripped portion of the move uses the raised index tab as
+     // its register. The entry and the parked card retain their old marks.
+     const release=incoming?smooth((phase.progress-phase.actionEnd-.06)/.12):1;
+     return pin(rest,[.86,.60],lerp(rest,tab,acquired*(1-release)),release);
+    },
     lens:()=>pin([.78,.52],[1.05,.52],[1.33,.20]),
     peel:()=>pin([1.14,.55],[1.02,.56,.32],[1.14,.55])
    };
    const prop=sequence[index].prop;
+   // Cable ends share their ferrules' grip. The plug is seated before the
+   // hands retreat and the slack follows the distance between the two ends.
+   const plugTip=(side,start,finish)=>{
+    const target=lerp(map(start),p.contacts[side].tip,acquired);
+    // Match the rig's raised contact pad; the socket face sits behind it.
+    const seated=add(map(finish),mul(work.normal,.012));
+    return lerp(target,seated,incoming?smooth((action-.85)/.15):1);
+   };
+   const plugs=prop==='network'?[plugTip('left',[.69,.36],[.49,.15]),plugTip('right',[.85,.36],[1.31,.15])]:null;
    return (item,pathIndex)=>{
     let alpha=item.alpha,color=item.color;
     let transform=q=>map(q);
     if(index===17){
      transform=([x,y,z])=>add(p.contacts.right.tip,[(x-.89)*.57,(y-.32)*.57,z*.57]);
+    }else if(index===25){
+     const rise=item.motion==='invitation-slip'?.19*smooth((action-.18)/.67):0;
+     transform=([x,y,z])=>add(p.contacts.right.tip,add(mul(work.u,(x-.97)*.65),add(mul(work.v,(y+.37+rise)*.58),mul(work.normal,z*.60))));
+    }else if(index===26){
+     // The latch is on the palm side. The leaf swings away, leaving the
+     // aperture beside the hand and the entire projecting forearm readable.
+     transform=q=>map(motion.doorPoint(q,action,item.motion==='door-leaf'));
+    }else if(item.motion==='cutaway'){
+     const hinge=.43,angle=1.40*smooth((action-.08)/.76);
+     transform=([x,y,z])=>map([hinge+(x-hinge)*Math.cos(angle)-z*Math.sin(angle),y,(x-hinge)*Math.sin(angle)+z*Math.cos(angle)]);
     }else if(prop==='lesson'){
      transform=heldPage;
     }else if(prop==='ember'){
@@ -847,6 +1179,38 @@
       const local=map([.46+dx*Math.cos(tilt)-dy*Math.sin(tilt),-.035+dy*Math.cos(tilt)+dx*Math.sin(tilt),z+.09*curl]);
       return add(palm,sub(local,hinge));
      };
+    }else if(item.motion==='printer-back'){
+     transform=([x,t])=>lerp(keyboard([x,-.19]),map([x,-.04]),t);
+    }else if(item.motion==='listing'){
+     const keyTravel=action*4,feed=(Math.floor(keyTravel)+smooth(keyTravel%1))/4,buried=(1-feed)*.55;
+     // The printer mouth masks the hidden strip; the paper and type keep
+     // their dimensions above it as the rollers advance in short steps.
+     const paperTop=Math.max(...item.points.map(q=>q[1]));
+     alpha*=smooth((paperTop-buried)/.045);
+     transform=([x,y,z])=>map([x,Math.max(.012,y-buried),z]);
+    }else if(item.motion==='brief-grip'){
+     const grip=incoming?acquired:1,pivot=map([.44,.04]),tip=lerp(pivot,p.contacts.left.tip,grip);
+     const tilt=.14*(1-grip)+.12*Math.sin(PI*action);
+     transform=([x,y,z])=>add(tip,sub(map([x,y,(y-.04)*tilt+z]),pivot));
+    }else if(item.motion==='left-plug'||item.motion==='right-plug'){
+     const left=item.motion==='left-plug',offset=sub(plugs[left?0:1],map([left?.49:1.31,.15]));
+     transform=q=>add(map(q),offset);
+    }else if(item.motion==='cable'){
+     const a=add(plugs[0],mul(work.u,.145)),b=add(plugs[1],mul(work.u,-.145));
+     const sag=.045+.16*(1-action);
+     transform=([t,y])=>add(lerp(a,b,t),add(mul(work.v,y-sag*Math.sin(PI*t)),mul(work.normal,.065*Math.sin(2*PI*t))));
+    }else if(item.motion==='truss'){
+     const a=p.contacts.left.tip,b=p.contacts.right.tip,width=Math.hypot(...sub(a,b));
+     const fold=Math.sqrt(Math.max(.22,1-(width/1.2)**2));
+     transform=([x,y])=>add(lerp(a,b,x),mul(work.v,y*(.58+.40*fold)));
+    }else if(['prototype','rocker','pilot-lamp'].includes(item.motion)){
+     const pivot=map([.98,.105]),pad=lerp(pivot,p.contacts.right.tip,incoming?acquired:1);
+     const load=smooth((action-.08)/.56);
+     transform=([x,y,z])=>{
+      const throwDistance=item.motion==='rocker'?(y-.105)*(.39-.70*load):0;
+      return add(pad,sub(map([x+throwDistance,y,z]),pivot));
+     };
+     if(item.motion==='pilot-lamp')alpha*=.25+.75*smooth((action-.60)/.25);
     }else if(offsets[item.motion]){
      const offset=offsets[item.motion]();transform=q=>add(map(q),offset);
     }else if(item.role==='keyboard'){
@@ -859,20 +1223,59 @@
      }
     }else if(item.motion==='fold'){
      const rise=incoming?smooth((phase.progress-phase.actionEnd)/.18):1;
+     if(item.fill)alpha*=.14+.86*rise;
      transform=([x,y,h])=>map([x,y+h*.36*(1-rise),h*rise]);
     }else if(item.motion==='output'||item.motion==='seam'){
      const onset=item.motion==='seam'?.71+(pathIndex%5)*.042:.08+(pathIndex%4)*.09;
      alpha*=smooth((action-onset)/.18);
-    }else if(item.motion==='tension'){
-     const load=Math.sin(PI*action)**2;
-     transform=([x,y,z],i)=>{const free=i/(item.points.length-1);return map([x+(x>.89?-.12:.12)*load*free,y-.075*load*free,z+.18*free*load]);};
+    }else if(item.motion==='strap'){
+     const tension=Math.sin(PI*action)**2;
+     transform=([x,y,z])=>{
+      const side=x<.89?-1:1,bar=side<0?.29:1.48,free=clamp(Math.abs(x-bar)/.47);
+      return map([x-side*.095*tension*free,y-.068*tension*free,z+.15*free*tension]);
+     };
+    }else if(item.motion==='gather'){
+     const extent=1-.87*smooth(action);
+     transform=([x,y,z])=>map([.9+(x-.9)*extent,.36+(y-.36)*extent,z*extent]);
+     alpha*=.35+.65*extent;
     }else if(item.motion==='span'){
      transform=([x,y,z],i)=>map([x,y-(.14*(1-action)+.035)*Math.sin(PI*i/(item.points.length-1)),z]);
     }else if(item.motion==='needle'){
-     transform=([x,y])=>map([x-(y-.28)*.95*(1-action),y,0]);
+     const settle=.10*Math.sin(PI*smooth(action))*Math.sin(3*PI*smooth(action));
+     transform=([x,y])=>map([x-(y-.28)*(1.9*(1-action)+settle),y,0]);
     }else if(item.motion==='compress'){
      const radius=1.33-.33*smooth(action);
      transform=([x,y,z])=>map([.9+(x-.9)*radius,.36+(y-.36)/Math.sqrt(radius),z]);
+    }else if(item.motion==='harness'){
+     transform=([x,y,z],i)=>{
+      const span=Math.sin(PI*i/(item.points.length-1));
+      return map([x,y-.17*(1-action)*span,z+.13*action*span]);
+     };
+    }else if(indexStrips[item.motion]){
+     // The closed index deck waits for the notebook leaves to clear. Rotate
+     // the swatches around the brass rivet and open their depth last.
+     const strip=indexStrips[item.motion],track=cameraTrack(position);
+     if(track<strip.end){
+      const folded=1-smooth((track-strip.start)/(strip.end-strip.start));
+      const angle=(.12-strip.angle)*folded,c=Math.cos(angle),s=Math.sin(angle);
+      transform=([x,y,z])=>{
+       const dx=x-indexPivot[0],dy=y-indexPivot[1];
+       const length=dx*Math.cos(strip.angle)+dy*Math.sin(strip.angle);
+       return map([indexPivot[0]+dx*c-dy*s,indexPivot[1]+dx*s+dy*c,z+length*(.10-strip.depth)*folded]);
+      };
+     }
+    }else if(item.motion==='shield-rim'){
+     const turn=.90*smooth(action);
+     transform=([x,y,z])=>{
+      const hinge=x<.90?.49:1.31,offset=x-hinge;
+      return map([hinge+offset*Math.cos(turn),y,z+Math.abs(offset)*Math.sin(turn)]);
+     };
+    }else if(item.motion==='route-pleat'){
+     const open=smooth(action),width=.38;
+     transform=([x,y,z])=>{
+      const along=x-.46,fold=along/width,toCrease=1-Math.abs((fold%2)-1);
+      return map([.46+along*(.42+.58*open),y+toCrease*.12*(1-open),z+toCrease*(.34-.27*open)+along*.15]);
+     };
     }else if(item.motion==='token'){
      transform=([x,y,z])=>map([x+.42*action*action,y+.80*action,z+.085*Math.sin(PI*action)]);
     }else if(item.motion==='gate'){
@@ -883,9 +1286,11 @@
   }
   const layers=[{index:from,alpha:1-t,textAlpha:1-smooth((raw-handoff[0]+.08)/.08)},{index:to,alpha:t,textAlpha:smooth((raw-handoff[1])/.08)}].filter(o=>o.alpha>.005).map(o=>{
    const object=objectScene(o.index);
-   if(object.prop==='possibility')return {...o,role:'front-work',...possibilityVessel(position,p)};
-   return {...o,role:'front-work',prop:object.prop,paths:object.paths.map(workMaterial(o.index)),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):object.prop==='lesson'?heldPage(item.point):map(item.point)}))};
+   const front={...o,role:'front-work',labelSurface:{origin:work.origin,normal:work.normal}};
+   if(object.prop==='possibility')return {...front,...possibilityVessel(position,p)};
+   return {...front,prop:object.prop,paths:object.paths.map(workMaterial(o.index)),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):object.prop==='lesson'?heldPage(item.point):map(item.point)}))};
   });
+  if(timeline>=17&&timeline<19)layers.push(...lessonLeaves(position,p,layers.find(l=>l.prop==='lesson'),idleSeconds));
   if(p.drawing?.strokes){const alpha=p.phase.to===3?1-smooth(p.phase.progress/.32):1,paths=p.drawing.strokes.filter(points=>points.length>1).map(points=>({points,color:cfg.tones.human,width:2.3,alpha:1,fill:null,role:'work'}));if(paths.length&&alpha>.005)layers.push({id:'drawn-ink',alpha,textAlpha:0,paths,texts:[]});}
   // The disclosed architecture opens behind the unchanged interaction surface.
   // These are visible layers with their own world-space depth, not a moved hand target.
@@ -894,8 +1299,13 @@
    // The rear graphs fan beside/below the head as the camera turns. Preserve
    // the front interaction plane and real layer depth; only their spread changes.
    const orbit=orbitAt(position),fan=orbit?.disclosureFan,side=fan?orbit.weight*smooth((Math.abs(orbit.camera.yaw)-.45)/.60):0;
+   // Once the invitation is in the outstretched palm, fan the hidden graph
+   // past its far edge so both circuitry and envelope can still be read.
+   const invitationClearance=.72*smooth((timeline-24.25)/.75);
+   // Reveal the circuitry below the unfolding guide while its solid leaves span the rail.
+   const guideClearance=.24*smooth((timeline-22.15)/.60)*(1-smooth((timeline-23.35)/.55));
    for(let level=2;level>=1;level--){
-    const color=level===1?cfg.tones.build:cfg.tones.human,origin=add(work.origin,add(mul(work.normal,-.34*level*reveal),add(mul(work.u,(.40+(fan?.[0]||0)*side)*level*reveal),mul(work.v,(.20+(fan?.[1]||0)*side)*level*reveal)))),paths=[];
+    const color=level===1?cfg.tones.build:cfg.tones.human,origin=add(work.origin,add(mul(work.normal,-.34*level*reveal),add(mul(work.u,((.40+(fan?.[0]||0)*side)*level+invitationClearance)*reveal),mul(work.v,((.20+(fan?.[1]||0)*side)*level-guideClearance)*reveal)))),paths=[];
     const at=(x,y,z=0)=>add(origin,add(add(mul(work.u,x*work.width*.52),mul(work.v,y*work.height*.54)),mul(work.normal,z)));
     const path=(id,points,alpha,width=.65,fill=null,role='depth')=>paths.push({id:'depth-'+level+'-'+id,points,color,alpha,width,fill,role});
     const perimeter=Array.from({length:65},(_,i)=>{const a=i/64*TAU,c=Math.cos(a),sn=Math.sin(a);return at(Math.sign(c)*Math.abs(c)**.38,Math.sign(sn)*Math.abs(sn)**.38);});
@@ -911,7 +1321,7 @@
   const ambient=surroundings(timeline,p);if(ambient.alpha>.005)layers.push(ambient);
   layers.push(storyWorld(timeline,p));
   const drama=dramaSet(timeline,p);if(drama)layers.push(drama);
-  const thread=storyThread(timeline,p);if(thread.alpha>.005)layers.push(thread);
+  const thread=storyThread(timeline,p,position);if(thread.alpha>.005)layers.push(thread);
   // The first imagined place returns as a soft, open pavilion for the visitor.
   const closing=smooth((position-9.15)/.85);
   if(closing>.005){const paths=[],path=(id,fn,alpha,width=.8)=>paths.push({id:'closing-'+id,points:Array.from({length:49},(_,i)=>fn(i/48)),color:cfg.tones.dream,width,alpha,fill:null,role:'surroundings',secondary:false});
@@ -957,9 +1367,12 @@
    // plane travels back towards the face during the handoff; an equal dolly
    // along the page normal keeps the readable angle from collapsing edge-on.
    [releaseStart,releaseEnd]=lessonHandoffs[18],release=(timeline-18-releaseStart)/(releaseEnd-releaseStart),
-   handoff=compact?smoother(release+1/3):0,
-   subject=compact?lerp(lessonPagePoint(p,[.84,.355]),workCentre,smoother(release)):workCentre,
-   shoulder=at(event.shoulderOffset),eye=at(event.eyeOffset),lens=add(eye,mul(p.work.normal,-.38*handoff)),
+   handoff=smoother(release+1/3),
+   subject=lerp(lessonPagePoint(p,[.84,.355]),workCentre,smoother(release)),
+   // Ease back along the paper normal as the leaves separate. This gives
+   // both the flying sheets and the incoming sample folio room in the frame.
+   withdraw=smoother((track-event.holdEnd)/.14),
+   shoulder=at(event.shoulderOffset),eye=at(event.eyeOffset),lens=add(eye,mul(p.work.normal,-.38*handoff-.75*withdraw)),
    rear={yaw:event.yaw,pitch:event.pitch,distance:event.distance,target:[...event.target],focal:cfg.camera.focal},
    incoming=smoother((track-event.start)/(event.rear-event.start)),outgoing=1-smoother((track-event.holdEnd)/(event.returnEnd-event.holdEnd)),
    approach=smoother((track-event.rear)/(event.shoulder-event.rear)),inhabit=smoother((track-event.shoulder)/(event.eye-event.shoulder)),
@@ -1012,6 +1425,7 @@
   // Rotation and viewport coefficients are computed once, not for every strand vertex.
   const project=p=>{const qx=p[0]-tx,qy=p[1]-ty,qz=p[2]-tz,x=qx*cy+qz*sy,z=-qx*sy+qz*cy,y=qy*cx-z*sx,depth=qy*sx+z*cx,k=scale/Math.max(camera.near||.25,camera.distance-depth);return [ox+x*k,oy-y*k,depth];};
   project.camera=camera;project.scale=scale;project.center=[ox,oy];
+  project.eye=[tx-sy*cx*camera.distance,ty+sx*camera.distance,tz+cy*cx*camera.distance];
   project.depth=p=>{const qx=p[0]-tx,qy=p[1]-ty,qz=p[2]-tz,z=-qx*sy+qz*cy;return qy*sx+z*cx;};
   project.clip=(points,closed=false)=>{
    if(!camera.perspectiveWeight)return [points];
@@ -1027,6 +1441,16 @@
   return prepareProjection(camera,w,h,yaw*free,pitch*free);
  }
  function projectLines(lines,project){return lines.flatMap(line=>{const alpha=line.alpha*(line.part==='head'?1-smoother(((project.camera.eyeWeight||0)-.03)/.40):1);return alpha>.001?project.clip(line.points).map(points=>({...line,alpha,points:points.map(project)})):[];});}
+ // Objects can have bevels, curled sheets and moving lids. A work label
+ // faces out of the maker's work plane regardless of their tessellation.
+ function workLabelVisibility(layers,project){
+  const surface=layers.find(layer=>layer.labelSurface)?.labelSurface;
+  const focus=1-smooth(project.camera.focusWeight/.25);
+  if(!surface)return focus;
+  const towardEye=norm(sub(project.eye,surface.origin));
+  const facing=surface.normal.reduce((sum,n,i)=>sum+n*towardEye[i],0);
+  return smooth((facing-.10)/.25)*focus;
+ }
  function projectIllustrations(layers,project){return layers.map(layer=>({...layer,paths:layer.paths.flatMap(item=>project.clip(item.points,!!item.fill).map(points=>({...item,points:points.map(project)})))}));}
  // Compatibility for callers that explicitly need the legacy neutral projection.
  function project(p,w,h,yaw=0,pitch=0){return prepareProjection({...cfg.camera,target:[0,0,0]},w,h,yaw,pitch)(p);}
@@ -1054,5 +1478,5 @@
    return polygon.length>=3?[...polygon,polygon[0]]:null;
   }).filter(Boolean);
  }
- const api={motion,performanceAt:(position,idleSeconds=0)=>motion.poseAt(resolve(position),idleSeconds),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,trailSpanAt,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
+ const api={motion,performanceAt:(position,idleSeconds=0)=>motion.poseAt(resolve(position),idleSeconds),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,workLabelVisibility,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,trailSpanAt,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

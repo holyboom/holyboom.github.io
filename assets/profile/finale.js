@@ -82,12 +82,43 @@
     }
     return {...s,q,front,radius};
    }).sort((a,b)=>a.q[2]-b.q[2]),bodyDepth=project(f.pose.shoulder)[2];
-   function icon(s){if(s.alpha<.005)return;
-    const size=s.radius/.48,alpha=s.alpha*(.13+.87*s.front);
+   const pieces=f.synthesis?.ids.map(id=>projected.find(s=>s.id===id));
+   const socket=pieces?.[0],plug=pieces?.[1];
+   const jointAngle=socket&&plug?clamp(Math.atan2(plug.q[1]-socket.q[1],plug.q[0]-socket.q[0]),-.40,.40):0;
+   const focus=f.synthesis?Math.min(...f.attention.pulls.map(v=>v.weight))*formationAt(p):0;
+   function housing(s,isSocket){
+    // The open jaws of the receiver and the stepped brass tongue of the
+    // insert are distinct silhouettes even with the inner artwork unlit.
+    const points=isSocket?
+     [[-.98,-.60],[-.71,-.94],[.56,-.94],[1.13,-.58],[1.13,-.28],[.70,-.28],[.70,.26],[1.13,.26],[1.13,.58],[.65,.90],[-.73,.90],[-.98,.61]]:
+     [[-.66,-.82],[.46,-.82],[.98,-.40],[.98,.43],[.52,.90],[-.66,.90],[-.84,.48],[-.84,.17],[-1.32,.17],[-1.32,-.18],[-.84,-.18],[-.84,-.47]];
+    const r=s.radius;
+    function plate(offset,fill,stroke){
+     ctx.beginPath();for(const [i,[x,y]] of points.entries()){if(i===0)ctx.moveTo(x*r,(y+offset)*r);else ctx.lineTo(x*r,(y+offset)*r);}
+     ctx.closePath();ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle=stroke;ctx.lineWidth=.78;ctx.stroke();
+    }
+    ctx.save();ctx.globalAlpha*=s.pull;ctx.rotate(jointAngle);
+    plate(.11,isSocket?'#282c49':'#51402f','#958799');
+    plate(0,isSocket?'#5c657f':'#967950',isSocket?'#bfcde0':'#f0cca0');
+    if(!isSocket){
+     ctx.fillStyle='#f4d691';ctx.fillRect(-1.28*r,-.12*r,.40*r,.24*r);
+    }
+    ctx.restore();
+   }
+   function icon(s){
+    if(s.alpha<.005)return;
+    const acquired=(s===socket||s===plug)?s.pull||0:0;
+    const radius=s.radius*(1-.33*acquired),size=radius/.48,alpha=s.alpha*(.13+.87*s.front);
     const selected=(s.id===f.attention.targetId||s.id===f.attention.secondaryId)&&f.attention.weight>.1;
-    const focus=f.synthesis?Math.min(...f.attention.pulls.map(v=>v.weight))*formationAt(p):0;
     ctx.save();ctx.globalAlpha=alpha*(selected?1:1-.46*focus);ctx.translate(s.q[0],s.q[1]);if(s.tilt)ctx.rotate(s.tilt);
-    ctx.fillStyle='#0c0914';ctx.beginPath();ctx.arc(0,0,size*.48,0,TAU);ctx.fill();ctx.shadowColor=s.color;ctx.shadowBlur=selected?14:s.front*5;ctx.strokeStyle=s.color;ctx.lineWidth=selected?1.6:.65;ctx.beginPath();ctx.arc(0,0,size*.48,0,TAU);ctx.stroke();ctx.shadowBlur=0;const image=textures.get(s.id);if(image){ctx.beginPath();ctx.arc(0,0,size*.45,0,TAU);ctx.clip();ctx.drawImage(image,-size*.43,-size*.43,size*.86,size*.86);}else{ctx.strokeStyle=s.color;ctx.beginPath();ctx.moveTo(-size*.18,0);ctx.lineTo(0,-size*.2);ctx.lineTo(size*.18,0);ctx.lineTo(0,size*.2);ctx.closePath();ctx.stroke();}ctx.restore();}
+    if(acquired>.001)housing(s,s===socket);
+    ctx.fillStyle='#0c0914';ctx.beginPath();ctx.arc(0,0,radius,0,TAU);ctx.fill();
+    ctx.shadowColor=s.color;ctx.shadowBlur=selected?14*(1-acquired):s.front*5;ctx.strokeStyle=s.color;ctx.lineWidth=selected?1.6-.6*acquired:.65;ctx.stroke();ctx.shadowBlur=0;
+    const image=textures.get(s.id);
+    if(image){ctx.beginPath();ctx.arc(0,0,size*.45,0,TAU);ctx.clip();ctx.drawImage(image,-size*.43,-size*.43,size*.86,size*.86);}
+    else{ctx.strokeStyle=s.color;ctx.beginPath();ctx.moveTo(-size*.18,0);ctx.lineTo(0,-size*.2);ctx.lineTo(size*.18,0);ctx.lineTo(0,size*.2);ctx.closePath();ctx.stroke();}
+    ctx.restore();
+   }
    if(p<.94)for(const s of projected){if(s.flight>.01&&s.flight<.999){const a=f.head,b=s.point,mid=lerp(a,b,.45);mid[1]+=.20;drawPath(Array.from({length:17},(_,i)=>bezier(a,mid,mid,b,i/16)),s.color,.9,s.alpha*(1-s.flight)*.65,project);}}
    // Three spatial planes remain faint; identity lives in the icons and native catalogue.
    if(p>.71)for(const category of Object.keys(groups)){const sample=model.skills.find(s=>s.category===category),points=Array.from({length:97},(_,i)=>orbit({...sample,slot:0},i/96*TAU));drawPath(points,colors[category],.65,smooth((p-.71)/.22)*.16,project);}
@@ -116,7 +147,7 @@
      ctx.globalAlpha=.84*strength;ctx.strokeStyle=lane===1?right.color:left.color;ctx.lineWidth=1.3;
      ctx.beginPath();ctx.moveTo(...start);ctx.quadraticCurveTo((start[0]+end[0])/2-uy*bow,(start[1]+end[1])/2+ux*bow,...end);ctx.stroke();
     }
-    const q=project(center),radius=clamp(project0.scale*.105/(f.camera.distance-q[2]),7,19),halo=ctx.createRadialGradient(q[0],q[1],0,q[0],q[1],radius*2.6);halo.addColorStop(0,'#fffbe5');halo.addColorStop(.23,'#ffe499bb');halo.addColorStop(.58,'#ddacff50');halo.addColorStop(1,'#bf8aff00');ctx.save();ctx.globalCompositeOperation='lighter';const sincePress=(f.synthesis.phase-6.63)/.32;ctx.globalAlpha=strength*(.48+.45*Math.exp(-sincePress*sincePress));ctx.fillStyle=halo;ctx.fillRect(q[0]-radius*2.6,q[1]-radius*2.6,radius*5.2,radius*5.2);ctx.restore();
+    const q=project(center),radius=clamp(project0.scale*.042/(f.camera.distance-q[2]),2,9),halo=ctx.createRadialGradient(q[0],q[1],0,q[0],q[1],radius*2.6);halo.addColorStop(0,'#fffbe5');halo.addColorStop(.23,'#ffe499bb');halo.addColorStop(.58,'#ddacff50');halo.addColorStop(1,'#bf8aff00');ctx.save();ctx.globalCompositeOperation='lighter';const sincePress=(f.synthesis.phase-6.63)/.32;ctx.globalAlpha=strength*(.31+.50*Math.exp(-sincePress*sincePress));ctx.fillStyle=halo;ctx.fillRect(q[0]-radius*2.6,q[1]-radius*2.6,radius*5.2,radius*5.2);ctx.restore();
    }}
    if(f.trace?.weight>.005){const pair=f.trace.ids.map(id=>projected.find(s=>s.id===id));if(pair.every(Boolean)){const a=pair[0].point,b=pair[1].point,mid=lerp(a,b,.5);mid[1]+=.16;drawPath(Array.from({length:31},(_,i)=>bezier(a,mid,mid,b,i/30)),'#d1c2ef',.8,f.trace.weight*.5,project);}}
    const pointed=projected.find(s=>s.id===f.attention.targetId);if(p>.94){for(const [side,control]of Object.entries(f.attention.hands||{})){const node=projected.find(s=>s.id===control.targetId);if(node&&control.weight>.15&&(!node.pad||node.pull<1)){const tip=f.pose.contacts[side].tip,mid=lerp(tip,node.point,.5);mid[1]+=.035;drawPath(Array.from({length:13},(_,i)=>bezier(tip,mid,mid,node.point,i/12)),node.color,.85,control.weight*formationAt(p)*(1-(node.pad?node.pull:0))*.60,project);}}}

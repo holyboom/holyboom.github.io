@@ -156,14 +156,17 @@
   if(!modelCache||modelCache.position!==current||modelCache.detail!==detail||modelCache.exploded!==exploded||modelCache.ambientPhase!==ambientPhase||modelCache.idlePose!==idlePose)modelCache={position:current,detail,exploded,ambientPhase,idlePose,lines:g.frame(current,detail,exploded,ambientPhase,idlePose)};
   const geom=modelCache.lines,theme=g.paletteAt(current),emotion=g.dramaAt(current);
   const compactOffering=innerWidth<768&&shot.prop==='possibility';
-  const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow),lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength,lightHalo=(humanLight?12+handLight.charge*13:7)*sourceStrength*(compactOffering ? .65 : 1);
   const project=g.createProjector(current,w,h,{compact:innerWidth<768,yaw:px,pitch:py,expanded:exploded});renderedCamera=project.camera;
   // Idle articulation is solved on the same rig as the contact geometry.
   const projectPoint=project;
   const rawIllustrations=g.illustration(current,exploded,idlePose);
   const readingSource=project.camera.eyeWeight>.5?g.performanceAt(current,idlePose).contacts.left.tip:g.lightAt(current,ambientPhase,idlePose);
-  const readingComponents=rawIllustrations.filter(layer=>layer.role==='front-work'&&layer.alpha>.5).flatMap(layer=>layer.paths.filter(item=>(item.fill||item.readingAnchor)&&item.points.length>=4&&!item.skin));
+  const readingComponents=rawIllustrations.filter(layer=>layer.role==='front-work'&&layer.alpha>.5).flatMap(layer=>layer.paths.filter(item=>item.alpha*layer.alpha>.12&&item.readingAnchor!==false&&(item.fill||item.readingAnchor)&&item.points.length>=4&&!item.skin));
   const readingFrame=readingThread?.read({position:current,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible,quietSource:innerWidth<768&&(shot.index===17||shot.index===18)});
+  const smallDetail=readingFrame?.quietSource&&shot.prop!=='ember';
+  const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow);
+  const lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength*(smallDetail ? .82 : 1);
+  const lightHalo=(humanLight?12+handLight.charge*13:7)*sourceStrength*(compactOffering||smallDetail ? .65 : 1);
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
   const halo=ctx.createRadialGradient(w*.5,h*.5,0,w*.5,h*.5,Math.min(w,h)*.43);halo.addColorStop(0,theme.accent+'16');halo.addColorStop(1,'rgba(133,83,222,0)');ctx.globalAlpha=1-emotion.isolation*.75-emotion.doubt*.15;ctx.fillStyle=halo;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
   if(emotion.strength>.001){
@@ -286,7 +289,7 @@
    // Fine dust retains its optical size on phones; other prop lines stay lighter.
    ctx.lineWidth=item.width*(innerWidth<768&&!item.particle?.7:1);ctx.stroke();
   }
-  const labelVisibility=(plane?g.smooth((plane.facing-.10)/.25):1)*(1-g.smooth(project.camera.focusWeight/.25));
+  const labelVisibility=g.workLabelVisibility(illustrations,project);
   ctx.textAlign='center';
   for(const layer of illustrations){
    const alpha=(layer.textAlpha??layer.alpha)*(layer.role==='front-work'?labelVisibility:1);if(alpha<=.005||innerWidth<768)continue;

@@ -34,6 +34,24 @@ const stats=[];for(const compact of [false,true]){const forward=samples.map(p=>h
  const mid=position(compact?event.eye+.02:(event.eye+event.holdEnd)/2),pov=g.perspectiveAt(mid,{compact}),project=g.createProjector(mid,720,720,{compact}),eye=g.cameraEye(project.camera),q=project(pov.subject),hover=g.createProjector(mid,720,720,{compact,yaw:.05,pitch:-.05});
  check('camera-is-at-the-anatomical-eye-point-'+compact,distance(eye,pov.eye)<1e-9&&project.camera.eyeWeight===1,{eye,expected:pov.eye});check('held-eye-line-faces-the-work-and-suppresses-hover-'+compact,distance(q.slice(0,2),project.center)<1e-8&&distance(q,hover(pov.subject))<1e-8);check('the-makers-own-head-does-not-obstruct-the-eyes-'+compact,!frame(mid,compact).lines.some(l=>l.part==='head'));stats.push({compact,eye,subject:pov.subject,camera:project.camera});
 }
+// In the former eye shot the incoming folio swept through the caption, and
+// two detached pages passed behind the lens before their flight could be seen.
+for(const [w,h] of [[393,221],[390,286],[696,718]]){
+ const compact=w<500,clipped=[],seen=new Set();
+ for(let i=0;i<=40;i++){
+  const p=position(18.39+i/100),project=g.createProjector(p,w,h,{compact});
+  const materials=g.illustration(p,0,.9).filter(l=>l.alpha>.25&&(l.role==='loose-page'||l.prop==='library'));
+  for(const material of materials){
+   seen.add(material.id||material.prop);
+   const outside=material.paths.filter(path=>path.fill&&path.alpha>.2).some(path=>path.points.some(point=>{
+    const [x,y,z]=project(point);
+    return x<5||x>w-5||y<24||y>h-(compact?60:56)||project.camera.distance-z<project.camera.near;
+   }));
+   if(outside)clipped.push({track:g.cameraTrack(p),part:material.id||material.prop});
+  }
+ }
+ check('loose-sheets-and-folio-clear-frame-and-caption-'+w,seen.size===4&&!clipped.length,{subjects:[...seen],clipped});
+}
 const cuts=[];for(const t of [event.start,event.rear,event.shoulder,event.eye,event.holdEnd,event.returnEnd])for(const compact of [false,true]){const a=fields(g.cameraAt(position(t-1e-6),{compact})),b=fields(g.cameraAt(position(t+1e-6),{compact}));if(Math.max(...a.map((v,i)=>Math.abs(v-b[i])))>.001)cuts.push({t,compact});}check('all-camera-phase-boundaries-are-continuous',cuts.length===0,cuts);
 const after=g.cameraAt(position(event.returnEnd+.02));check('camera-ownership-and-clipping-release-after-the-shot',after.perspectiveWeight===0&&after.eyeWeight===0&&!after.perspectiveId&&after.near===.25);
 if(process.env.SKIP_BROWSER!=='1'){const {chromium}=require('playwright'),b=await chromium.launch();try{for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){const page=await b.newPage({viewport});page.on('pageerror',e=>errors.push(e.message));await page.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+'profile/');await page.waitForFunction(()=>window.ProfileExperience&&window.ProfileGeometry?.perspectiveAt);await page.evaluate(()=>document.fonts.ready);async function go(track){const p=position(track);await page.evaluate(p=>{const a=ProfileExperience.snapshot().anchors,c=Math.floor(p),f=ProfileGeometry.config.morph;scrollTo({top:a[c]+(a[c+1]-a[c])*(f.start+(f.end-f.start)*(p-c)),behavior:'instant'});},p);await page.waitForFunction(p=>{const s=ProfileExperience.snapshot();return Math.abs(s.current-p)<.001&&s.current===s.target;},p);return page.evaluate(()=>ProfileExperience.snapshot());}

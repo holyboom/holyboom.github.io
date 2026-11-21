@@ -79,8 +79,24 @@
    const q=project(source),handVisible=project.camera.distance-q[2]>=(project.camera.near||.25);
    const hand=canvasPoint(q,r,padding,{width:r.width,height:r.height}),inside=p=>p[0]>=r.left+5&&p[0]<=r.right-5&&p[1]>=Math.max(r.top,headerBottom)+24&&p[1]<=r.bottom-38;
    let origin=hand,componentId=null,contour=[];
-   const candidates=components.map(item=>{const points=project.clip(item.points,true).flatMap(points=>points.map(q=>canvasPoint(project(q),r,padding,{width:r.width,height:r.height}))),visible=points.filter(inside);if(!visible.length)return null;const centre=[0,1].map(axis=>visible.reduce((n,p)=>n+p[axis],0)/visible.length);return {id:item.id,points,visible,distance:Math.hypot(centre[0]-hand[0],centre[1]-hand[1])};}).filter(Boolean).sort((a,b)=>a.distance-b.distance);
-   if(candidates.length){const c=candidates[0];const edge=compact?Math.max(...c.visible.map(p=>p[1])):Math.min(...c.visible.map(p=>p[0])),rim=c.visible.filter(p=>compact?edge-p[1]<3:p[0]-edge<3);origin=rim.reduce((a,b)=>compact?(b[0]<a[0]?b:a):(b[1]>a[1]?b:a));componentId=c.id;contour=c.points.every(inside)?c.points:[];}
+   const candidates=components.map(item=>{
+    const points=project.clip(item.points,true).flatMap(loop=>loop.map(q=>canvasPoint(project(q),r,padding,{width:r.width,height:r.height})));
+    const visible=points.filter(inside);
+    if(!visible.length)return null;
+    const centre=[0,1].map(axis=>visible.reduce((n,p)=>n+p[axis],0)/visible.length);
+    const xs=visible.map(p=>p[0]),ys=visible.map(p=>p[1]);
+    const size=Math.sqrt((Math.max(...xs)-Math.min(...xs))*(Math.max(...ys)-Math.min(...ys)));
+    // Prefer the material in the palm to an adjacent rivet or a single key.
+    const distance=Math.hypot(centre[0]-hand[0],centre[1]-hand[1])+(compact?Math.max(0,16-size):0);
+    return {id:item.id,points,visible,size,distance};
+   }).filter(Boolean).sort((a,b)=>a.distance-b.distance);
+   if(candidates.length){
+    const c=candidates[0],axis=compact?1:0;
+    const edge=(compact?Math.max:Math.min)(...c.visible.map(p=>p[axis])),rim=c.visible.filter(p=>Math.abs(p[axis]-edge)<3);
+    origin=rim.reduce((a,b)=>compact?(b[0]<a[0]?b:a):(b[1]>a[1]?b:a));componentId=c.id;contour=c.points.length===c.visible.length?c.points:[];
+    // A full source ring would cover the chip, latch or seam on a phone.
+    quietSource=quietSource||(compact&&c.size<32);
+   }
    if(!inside(origin)||(!componentId&&!handVisible))return null;
    const box=target.rect,endpoint=[compact?box.left-8:box.right+9,box.bottom+4],gutter=compact?Math.max(12,Math.min(box.left-10,20)):stageRect.left+10;
    const geometry=route(origin,endpoint,gutter,compact,innerHeight-48),energy=energyAt(phase),sample=sampleRoute(geometry),point=sample(energy.travel),width=Math.min(compact?135:180,box.right-box.left),underline=compact?'M'+[box.left,endpoint[1]].join(' ')+'h'+width:'M'+[box.right-width,endpoint[1]].join(' ')+'h'+width;

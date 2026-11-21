@@ -33,6 +33,32 @@ for(let step=0;step<=60;step++){
  }
 }
 check('persistence-and-lesson-hand-off-with-caption-and-palm',contactIssues.length===0,contactIssues);
+// Compare leaf geometry relative to its own spine: breath and camera travel
+// alone cannot satisfy a turning-page check.
+const paperAt=(track,id,seconds=0)=>{
+ const paths=g.illustration(position(track),0,seconds).flatMap(layer=>layer.paths);
+ return paths.filter(path=>path.id?.startsWith('lesson-leaf-'+id+'-'));
+};
+const span=paths=>{
+ const corner=paths.find(path=>path.id.endsWith('-band-0')).points[0];
+ return paths.find(path=>path.id.endsWith('-edge')).points[0].map((n,i)=>n-corner[i]);
+};
+const middle=[];let turns=true;
+for(const [i,track] of [17.84,18.1025,18.2775].entries()){
+ const sheet=paperAt(track,i),flat=paperAt([17.93,18.182,18.33][i],i);
+ const arc=span(sheet),land=span(flat);
+ turns&&=sheet.length===8&&Math.hypot(...arc.map((n,i)=>n-land[i]))>.1;
+ middle.push(arc);
+}
+check('three-bound-leaves-turn-individually-off-the-spine',turns,middle);
+const idle=paperAt(18,3,1.02);
+check('craft-hold-turns-a-page-and-resolves-to-neutral',idle.length===8&&
+ Math.hypot(...span(idle).map((n,i)=>n-span(paperAt(18,3,.28))[i]))>.1&&
+ paperAt(18,3,0).length===0&&paperAt(18,3,2.4).length===0);
+const drifting=track=>g.illustration(position(track)).filter(layer=>layer.role==='loose-page');
+const flightCounts=[18.34,18.36,18.41,18.47,18.82].map(track=>drifting(track).length);
+check('sheets-release-individually-and-clear-the-next-work',String(flightCounts)==='0,1,2,3,0'&&
+ drifting(18.62).every(layer=>layer.alpha>0&&layer.alpha<.86),flightCounts);
 const bodies=points.map((_,i)=>g.performanceAt(position(13+i+.02))),closed=bodies[0],doubt=bodies[2],rise=bodies[4];
 check('doubt-is-bowed-and-the-return-reopens-the-silhouette',doubt.tilt>rise.tilt+.4&&closed.seatAmount>.99&&rise.seatAmount<.01);
 const active=samples.map(p=>g.illustration(p).find(l=>l.id==='drama-room')).filter(Boolean),ids=active[0].paths.map(p=>p.id);

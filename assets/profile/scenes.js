@@ -1,6 +1,6 @@
 /* Owner-editable direction: a symbolic maker, not a likeness or documentary scene. */
 (function(root){'use strict';
- const config={release:'living-lesson-v28',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
+ const config={release:'living-materials-v29',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
  establish:{yaw:-.30,pitch:.12,distance:6.4,target:[.10,0,0]},
  draft:{yaw:.58,pitch:.30,distance:5.25,target:[-.25,-.09,.22]},
  detail:{yaw:.44,pitch:.18,distance:5.05,target:[-.26,-.08,.25]},
@@ -119,7 +119,7 @@
  ];
  // A rear establishing view becomes over-shoulder, then the maker's eye line.
  // This free interval preserves the existing locked orbits and close-ups.
- config.camera.perspectives=[{id:'carry-the-experience',start:17.64,rear:17.91,shoulder:18.14,eye:18.32,holdEnd:18.51,returnEnd:18.88,
+ config.camera.perspectives=[{id:'carry-the-experience',start:17.64,rear:17.78,shoulder:17.86,eye:18.095,holdEnd:18.40,returnEnd:18.88,
   yaw:2.78,distance:6.35,pitch:.16,target:[-.40,.12,.22],shoulderOffset:[.44,.14,-1.25],eyeOffset:[0,.055,.15],focal:1.32,compactFocal:1.76,near:.09}];
  // Documentary inserts: establish context, approach a subject, let it register,
  // then return. They occupy their own intervals beside the locked orbit shots.
@@ -130,7 +130,7 @@
   {id:'stay-with-the-question',subject:'head',framing:'head',start:15.08,arrive:15.22,holdEnd:15.44,end:15.70,distance:2.15,compactDistance:2.75,yaw:.56,compactYaw:.38,pitch:.07,offset:[.015,-.10,.02],radius:.31},
   {id:'the-light-that-remains',subject:'light',framing:'hand',start:17.00,arrive:17.17,holdEnd:17.31,end:17.58,distance:2.55,compactDistance:3.0,yaw:-.34,compactYaw:-.22,pitch:.12,offset:[-.04,.035,0],radius:.29},
   {id:'a-capability-of-its-own',subject:'work',framing:'work',start:21.24,arrive:21.43,holdEnd:21.62,end:21.87,distance:3.10,compactDistance:3.60,yaw:-.38,compactYaw:-.25,pitch:.11,offset:[0,.02,0],radius:.49},
-  {id:'a-person-chooses',subject:'work',framing:'work',start:24.15,arrive:24.39,holdEnd:24.62,end:24.92,distance:3.10,compactDistance:3.60,yaw:.08,compactYaw:.02,pitch:.10,offset:[.06,-.035,0],radius:.49},
+  {id:'a-person-chooses',subject:'work',framing:'work',start:24.03,arrive:24.16,holdEnd:24.28,end:24.55,distance:3.10,compactDistance:3.60,yaw:.08,compactYaw:.02,pitch:.10,offset:[.055,.025,0],radius:.49},
   {id:'the-person-behind-it',subject:'head',framing:'head',start:27.14,arrive:27.40,holdEnd:27.62,end:27.91,distance:2.10,compactDistance:2.75,yaw:.10,compactYaw:.04,pitch:.035,offset:[0,-.11,.015],radius:.31}
  ];
  // Selected surroundings turn into dust at meaningful changes. Pods 0/1 flank

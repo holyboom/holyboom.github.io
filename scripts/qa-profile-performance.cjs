@@ -269,7 +269,49 @@ async function browserChecks() {
   } finally { await browser.close(); }
   check('no-browser-performance-errors', browserErrors.length === 0, browserErrors);
 }
+function checkEarlyWorkpieces() {
+  function material(timeline,tag) {
+    const position=positionForTimeline(timeline),pose=geometry.performanceAt(position);
+    const paths=geometry.illustration(position).filter(l=>l.role==='front-work'&&l.alpha>.5)
+      .flatMap(l=>l.paths).filter(item=>item.motion===tag&&item.alpha>.01);
+    return {pose,paths};
+  }
+  function extent(timeline,tag,axis) {
+    const {pose,paths}=material(timeline,tag);
+    const values=paths.flatMap(path=>path.points.map(q=>dot(subtract(q,pose.work.origin),pose.work[axis])));
+    return Math.max(...values)-Math.min(...values);
+  }
+  const roofDuringInk=extent(1.47,'fold','normal'),roofAfterLift=extent(1.96,'fold','normal');
+  check('house-ridge-rises-from-the-drawing-only-after-the-pen-clears',
+    roofDuringInk<1e-8&&roofAfterLift>.24,{roofDuringInk,roofAfterLift});
+  const listing=[2.52,2.65,2.82].map(t=>extent(t,'listing','v'));
+  check('printout-feeds-through-the-platen-in-keyboard-order',
+    listing[1]>listing[0]+.04&&listing[2]>listing[1]+.04,listing);
+  let maximumGripGap=0,leftLocksFirst=false,bothLocked=false;
+  for(let i=0;i<=36;i++){
+    const timeline=7.32+i*.01;
+    const p=motion.poseAt(timeline);
+    leftLocksFirst||=p.contacts.left.active&&!p.contacts.right.active;
+    bothLocked||=p.contacts.left.active&&p.contacts.right.active;
+    for(const side of ['left','right']){
+      if(!p.contacts[side].active)continue;
+      const {paths}=material(timeline,side+'-plug');
+      const gap=Math.min(...paths.map(item=>distanceToPaintedPath(p.contacts[side].tip,item)));
+      maximumGripGap=Math.max(maximumGripGap,gap);
+    }
+  }
+  check('ferrules-seat-in-sequence-under-the-respective-gloves',
+    leftLocksFirst&&bothLocked&&maximumGripGap<.005,{leftLocksFirst,bothLocked,maximumGripGap});
+  let bridgeGap=0;
+  for(const t of [8.30,8.42,8.54,8.66,8.88,9]){
+    const {pose,paths}=material(t,'truss'),vertices=paths.flatMap(path=>path.points);
+    for(const side of ['left','right'])
+      bridgeGap=Math.max(bridgeGap,Math.min(...vertices.map(q=>distance(q,pose.contacts[side].tip))));
+  }
+  check('truss-bearing-points-follow-both-palms-through-opening-and-hold',bridgeGap<1e-6,{bridgeGap});
+}
 async function main() {
+  checkEarlyWorkpieces();
   const stride = 1 / 200, timelines = Array.from({ length:6001 }, (_, i) => i * stride);
   const samples = timelines.map(timeline => ({ timeline, pose:motion.poseAt(timeline) }));
   check('all-31-beats-have-finite-joints', samples.every(({ pose }) => Object.values(points(pose)).every(isPoint)), { samples:samples.length });

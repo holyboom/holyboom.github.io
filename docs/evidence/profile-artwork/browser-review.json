@@ -1,0 +1,652 @@
+{
+  "baselineCommit": "3d634a8",
+  "baselineRelease": "living-lesson-v28",
+  "capturedRelease": "living-materials-v29",
+  "method": "v28 stage screenshots use the deployed profile. v29 uses a local source preview. All contact sheets use real browser screenshots. Film uses the actual Canvas2D artwork with a solid page background. Its first 132 frames replay equally spaced scroll-camera positions. Its final segment samples the 2.4s visible-time hold at the #craft chapter anchor on 24Hz controlled RAF ticks, resampled for 18 fps playback. Scroll positions and native-time stop checks are separate from film timing. Mobile screenshots and touch input use emulation on Linux.",
+  "stageRuns": [
+    {
+      "lang": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "chromium": "156.0.8078.79",
+      "matchedScrollPixelsAndShotId": true,
+      "beforeUrl": "https://holyboom.github.io/profile/",
+      "afterUrl": "http://127.0.0.1:4181/profile/",
+      "errorsBefore": [],
+      "errorsAfter": [],
+      "frames": [
+        {
+          "scene": 1,
+          "scrollY": 0,
+          "cameraTrack": 0,
+          "resolved": 0,
+          "prop": "none"
+        },
+        {
+          "scene": 2,
+          "scrollY": 1197,
+          "cameraTrack": 1.2214,
+          "resolved": 1.0032,
+          "prop": "blueprint"
+        },
+        {
+          "scene": 3,
+          "scrollY": 1515,
+          "cameraTrack": 2.2202,
+          "resolved": 2.0028,
+          "prop": "house"
+        },
+        {
+          "scene": 4,
+          "scrollY": 1833,
+          "cameraTrack": 3.219,
+          "resolved": 3.0025,
+          "prop": "code"
+        },
+        {
+          "scene": 5,
+          "scrollY": 2479,
+          "cameraTrack": 4.2213,
+          "resolved": 4.0031,
+          "prop": "component"
+        },
+        {
+          "scene": 6,
+          "scrollY": 2807,
+          "cameraTrack": 5.2205,
+          "resolved": 5.0029,
+          "prop": "assembly"
+        },
+        {
+          "scene": 7,
+          "scrollY": 3135,
+          "cameraTrack": 6.2198,
+          "resolved": 6.0027,
+          "prop": "verified"
+        },
+        {
+          "scene": 8,
+          "scrollY": 3805,
+          "cameraTrack": 7.2196,
+          "resolved": 7.0027,
+          "prop": "brief"
+        },
+        {
+          "scene": 9,
+          "scrollY": 4149,
+          "cameraTrack": 8.2196,
+          "resolved": 8.0027,
+          "prop": "network"
+        },
+        {
+          "scene": 10,
+          "scrollY": 4493,
+          "cameraTrack": 9.2196,
+          "resolved": 9.0027,
+          "prop": "assembly"
+        },
+        {
+          "scene": 11,
+          "scrollY": 5262,
+          "cameraTrack": 10.2194,
+          "resolved": 10.0026,
+          "prop": "ai"
+        },
+        {
+          "scene": 12,
+          "scrollY": 5701,
+          "cameraTrack": 11.2208,
+          "resolved": 11.003,
+          "prop": "review"
+        },
+        {
+          "scene": 13,
+          "scrollY": 6139,
+          "cameraTrack": 12.2199,
+          "resolved": 12.0028,
+          "prop": "verified"
+        },
+        {
+          "scene": 14,
+          "scrollY": 6986,
+          "cameraTrack": 13.2188,
+          "resolved": 13,
+          "prop": "ember"
+        },
+        {
+          "scene": 15,
+          "scrollY": 7256,
+          "cameraTrack": 14.2183,
+          "resolved": 14,
+          "prop": "fracture"
+        },
+        {
+          "scene": 16,
+          "scrollY": 7527,
+          "cameraTrack": 15.2215,
+          "resolved": 15,
+          "prop": "remnant"
+        },
+        {
+          "scene": 17,
+          "scrollY": 7797,
+          "cameraTrack": 16.221,
+          "resolved": 16.0031,
+          "prop": "repair"
+        },
+        {
+          "scene": 18,
+          "scrollY": 8067,
+          "cameraTrack": 17.2205,
+          "resolved": 17,
+          "prop": "ember"
+        },
+        {
+          "scene": 19,
+          "scrollY": 8755,
+          "cameraTrack": 18.2207,
+          "resolved": 18.003,
+          "prop": "lesson"
+        },
+        {
+          "scene": 20,
+          "scrollY": 9048,
+          "cameraTrack": 19.2185,
+          "resolved": 19.0024,
+          "prop": "library"
+        },
+        {
+          "scene": 21,
+          "scrollY": 9342,
+          "cameraTrack": 20.2198,
+          "resolved": 20,
+          "prop": "skill"
+        },
+        {
+          "scene": 22,
+          "scrollY": 9636,
+          "cameraTrack": 21.2211,
+          "resolved": 21.0031,
+          "prop": "moat"
+        },
+        {
+          "scene": 23,
+          "scrollY": 10318,
+          "cameraTrack": 22.2193,
+          "resolved": 22.0026,
+          "prop": "complexity"
+        },
+        {
+          "scene": 24,
+          "scrollY": 10609,
+          "cameraTrack": 23.2186,
+          "resolved": 23,
+          "prop": "interface"
+        },
+        {
+          "scene": 25,
+          "scrollY": 10901,
+          "cameraTrack": 24.2213,
+          "resolved": 24.0032,
+          "prop": "choice"
+        },
+        {
+          "scene": 26,
+          "scrollY": 11192,
+          "cameraTrack": 25.2206,
+          "resolved": 25.0029,
+          "prop": "recipient"
+        },
+        {
+          "scene": 27,
+          "scrollY": 11926,
+          "cameraTrack": 26.2195,
+          "resolved": 26.0027,
+          "prop": "interface"
+        },
+        {
+          "scene": 28,
+          "scrollY": 12353,
+          "cameraTrack": 27.219,
+          "resolved": 27.0025,
+          "prop": "review"
+        },
+        {
+          "scene": 29,
+          "scrollY": 12712,
+          "cameraTrack": 28.0592,
+          "resolved": 28,
+          "prop": "possibility"
+        },
+        {
+          "scene": 30,
+          "scrollY": 13271,
+          "cameraTrack": 29,
+          "resolved": 29,
+          "prop": "none"
+        },
+        {
+          "scene": 31,
+          "scrollY": 15708,
+          "cameraTrack": 30,
+          "resolved": 30,
+          "prop": "none"
+        }
+      ]
+    },
+    {
+      "lang": "th",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "chromium": "156.0.8078.79",
+      "matchedScrollPixelsAndShotId": true,
+      "beforeUrl": "https://holyboom.github.io/th/profile/",
+      "afterUrl": "http://127.0.0.1:4181/th/profile/",
+      "errorsBefore": [],
+      "errorsAfter": [],
+      "frames": [
+        {
+          "scene": 1,
+          "scrollY": 0,
+          "cameraTrack": 0,
+          "resolved": 0,
+          "prop": "none"
+        },
+        {
+          "scene": 2,
+          "scrollY": 1016,
+          "cameraTrack": 1.2194,
+          "resolved": 1.0026,
+          "prop": "blueprint"
+        },
+        {
+          "scene": 3,
+          "scrollY": 1316,
+          "cameraTrack": 2.2196,
+          "resolved": 2.0027,
+          "prop": "house"
+        },
+        {
+          "scene": 4,
+          "scrollY": 1616,
+          "cameraTrack": 3.2198,
+          "resolved": 3.0027,
+          "prop": "code"
+        },
+        {
+          "scene": 5,
+          "scrollY": 2246,
+          "cameraTrack": 4.2192,
+          "resolved": 4.0026,
+          "prop": "component"
+        },
+        {
+          "scene": 6,
+          "scrollY": 2581,
+          "cameraTrack": 5.2186,
+          "resolved": 5.0024,
+          "prop": "assembly"
+        },
+        {
+          "scene": 7,
+          "scrollY": 2917,
+          "cameraTrack": 6.2209,
+          "resolved": 6.003,
+          "prop": "verified"
+        },
+        {
+          "scene": 8,
+          "scrollY": 3579,
+          "cameraTrack": 7.2207,
+          "resolved": 7.003,
+          "prop": "brief"
+        },
+        {
+          "scene": 9,
+          "scrollY": 3904,
+          "cameraTrack": 8.2192,
+          "resolved": 8.0026,
+          "prop": "network"
+        },
+        {
+          "scene": 10,
+          "scrollY": 4230,
+          "cameraTrack": 9.2207,
+          "resolved": 9.003,
+          "prop": "assembly"
+        },
+        {
+          "scene": 11,
+          "scrollY": 4994,
+          "cameraTrack": 10.2204,
+          "resolved": 10.0029,
+          "prop": "ai"
+        },
+        {
+          "scene": 12,
+          "scrollY": 5451,
+          "cameraTrack": 11.2205,
+          "resolved": 11.0029,
+          "prop": "review"
+        },
+        {
+          "scene": 13,
+          "scrollY": 5908,
+          "cameraTrack": 12.2207,
+          "resolved": 12.003,
+          "prop": "verified"
+        },
+        {
+          "scene": 14,
+          "scrollY": 6747,
+          "cameraTrack": 13.2209,
+          "resolved": 13,
+          "prop": "ember"
+        },
+        {
+          "scene": 15,
+          "scrollY": 6994,
+          "cameraTrack": 14.2197,
+          "resolved": 14,
+          "prop": "fracture"
+        },
+        {
+          "scene": 16,
+          "scrollY": 7241,
+          "cameraTrack": 15.2185,
+          "resolved": 15,
+          "prop": "remnant"
+        },
+        {
+          "scene": 17,
+          "scrollY": 7489,
+          "cameraTrack": 16.2214,
+          "resolved": 16.0032,
+          "prop": "repair"
+        },
+        {
+          "scene": 18,
+          "scrollY": 7736,
+          "cameraTrack": 17.2202,
+          "resolved": 17,
+          "prop": "ember"
+        },
+        {
+          "scene": 19,
+          "scrollY": 8418,
+          "cameraTrack": 18.2186,
+          "resolved": 18.0024,
+          "prop": "lesson"
+        },
+        {
+          "scene": 20,
+          "scrollY": 8736,
+          "cameraTrack": 19.2189,
+          "resolved": 19.0025,
+          "prop": "library"
+        },
+        {
+          "scene": 21,
+          "scrollY": 9054,
+          "cameraTrack": 20.2193,
+          "resolved": 20,
+          "prop": "skill"
+        },
+        {
+          "scene": 22,
+          "scrollY": 9372,
+          "cameraTrack": 21.2196,
+          "resolved": 21.0027,
+          "prop": "moat"
+        },
+        {
+          "scene": 23,
+          "scrollY": 10118,
+          "cameraTrack": 22.2213,
+          "resolved": 22.0031,
+          "prop": "complexity"
+        },
+        {
+          "scene": 24,
+          "scrollY": 10439,
+          "cameraTrack": 23.2202,
+          "resolved": 23,
+          "prop": "interface"
+        },
+        {
+          "scene": 25,
+          "scrollY": 10760,
+          "cameraTrack": 24.2191,
+          "resolved": 24.0026,
+          "prop": "choice"
+        },
+        {
+          "scene": 26,
+          "scrollY": 11082,
+          "cameraTrack": 25.2212,
+          "resolved": 25.0031,
+          "prop": "recipient"
+        },
+        {
+          "scene": 27,
+          "scrollY": 11856,
+          "cameraTrack": 26.219,
+          "resolved": 26.0025,
+          "prop": "interface"
+        },
+        {
+          "scene": 28,
+          "scrollY": 12287,
+          "cameraTrack": 27.2211,
+          "resolved": 27.0031,
+          "prop": "review"
+        },
+        {
+          "scene": 29,
+          "scrollY": 12648,
+          "cameraTrack": 28.0603,
+          "resolved": 28,
+          "prop": "possibility"
+        },
+        {
+          "scene": 30,
+          "scrollY": 13210,
+          "cameraTrack": 29,
+          "resolved": 29,
+          "prop": "none"
+        },
+        {
+          "scene": 31,
+          "scrollY": 16153,
+          "cameraTrack": 30,
+          "resolved": 30,
+          "prop": "none"
+        }
+      ]
+    }
+  ],
+  "scrollAndHold": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.79",
+      "viewport": "390x640",
+      "lang": "th",
+      "scrollSamples": 33,
+      "forwardReverseMatches": 16,
+      "testedPairs": 16,
+      "allCanvasVisible": true,
+      "maxHorizontalOverflow": 0,
+      "loosePagesAtTrack": {
+        "18.38": [
+          "lesson-leaf-2"
+        ],
+        "18.49": [
+          "lesson-leaf-0",
+          "lesson-leaf-1",
+          "lesson-leaf-2"
+        ],
+        "18.6": [
+          "lesson-leaf-0",
+          "lesson-leaf-1",
+          "lesson-leaf-2"
+        ],
+        "18.8": [
+          "lesson-leaf-0"
+        ]
+      },
+      "heldY": 8085,
+      "sameY": true,
+      "idleTurnObserved": true,
+      "idleSecondsAtRest": 2.4,
+      "drawCountAtRest": [
+        176,
+        176
+      ],
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "viewport": "393x654",
+      "lang": "en",
+      "scrollSamples": 33,
+      "forwardReverseMatches": 16,
+      "testedPairs": 16,
+      "allCanvasVisible": true,
+      "maxHorizontalOverflow": 0,
+      "loosePagesAtTrack": {
+        "18.38": [
+          "lesson-leaf-2"
+        ],
+        "18.49": [
+          "lesson-leaf-0",
+          "lesson-leaf-1",
+          "lesson-leaf-2"
+        ],
+        "18.6": [
+          "lesson-leaf-0",
+          "lesson-leaf-1",
+          "lesson-leaf-2"
+        ],
+        "18.8": [
+          "lesson-leaf-0"
+        ]
+      },
+      "heldY": 8188,
+      "sameY": true,
+      "idleTurnObserved": true,
+      "idleSecondsAtRest": 2.4,
+      "drawCountAtRest": [
+        142,
+        142
+      ],
+      "pageErrors": []
+    }
+  ],
+  "touchInput": {
+    "viewport": "393x654, DPR2 touch emulation",
+    "method": "CDP Input.dispatchTouchEvent on the mobile-emulated profile. Slower forward drag, stop, faster reverse drag, then exact original native scroll offset.",
+    "samples": {
+      "first": {
+        "scrollY": 7914,
+        "track": 17.499764787873506,
+        "draws": 18,
+        "prop": [
+          {
+            "prop": "ember",
+            "alpha": 1
+          }
+        ]
+      },
+      "swipe": {
+        "scrollY": 8531,
+        "track": 18.296196907549895,
+        "draws": 149,
+        "prop": [
+          {
+            "prop": "lesson",
+            "alpha": 1
+          }
+        ]
+      },
+      "holdStart": {
+        "scrollY": 8531,
+        "track": 18.296196907549895,
+        "draws": 175,
+        "prop": [
+          {
+            "prop": "lesson",
+            "alpha": 1
+          }
+        ]
+      },
+      "holdEnd": {
+        "scrollY": 8531,
+        "track": 18.296196907549895,
+        "draws": 175,
+        "prop": [
+          {
+            "prop": "lesson",
+            "alpha": 1
+          }
+        ]
+      },
+      "returnSwipe": {
+        "scrollY": 7907,
+        "track": 17.47085531389042,
+        "draws": 315,
+        "prop": [
+          {
+            "prop": "ember",
+            "alpha": 1
+          }
+        ]
+      },
+      "exactBack": {
+        "scrollY": 7914,
+        "track": 17.499764787873506,
+        "draws": 325,
+        "prop": [
+          {
+            "prop": "ember",
+            "alpha": 1
+          }
+        ]
+      }
+    }
+  },
+  "film": {
+    "before": {
+      "frames": 132,
+      "cameraTrackRange": [
+        17.698001180900384,
+        18.860151196411245
+      ],
+      "holdTrack": 18,
+      "holdScrollY": 8188,
+      "holdVisibleSeconds": [
+        0,
+        2.4
+      ],
+      "holdCapturedFrames": 30
+    },
+    "after": {
+      "frames": 132,
+      "cameraTrackRange": [
+        17.698001180900384,
+        18.860151196411245
+      ],
+      "holdTrack": 18,
+      "holdScrollY": 8188,
+      "holdVisibleSeconds": [
+        0,
+        2.4
+      ],
+      "holdCapturedFrames": 30
+    }
+  }
+}
