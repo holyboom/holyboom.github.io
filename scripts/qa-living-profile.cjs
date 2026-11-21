@@ -17,7 +17,24 @@ const checks=[],errors=[],check=(name,pass,data)=>{checks.push({name,pass:!!pass
   assert.deepEqual(geometry.lightAt(position),geometry.frame(position)[0].points[0]);
   for(const direction of [-1,1]){const trail=geometry.lightTrail(position,direction);assert.deepEqual(trail[0].point,geometry.lightAt(position));assert(trail.every((p,i)=>p.alpha>=0&&p.alpha<=1&&(!i||p.alpha<=trail[i-1].alpha)));assert.deepEqual(trail.at(-1).point,geometry.lightAt(position-direction*geometry.config.gravity.trailSpan));}
  }
+ // Resume from a partially completed idle gesture, in either direction.
+ for(const position of [1.2,3.6,5.52,7.42]){
+  const idleSeconds=.85,signal=geometry.frame(position,2,0,0,idleSeconds)[0].points[0];
+  for(const direction of [-1,1])assert.deepEqual(geometry.lightTrail(position,direction,.06,12,0,idleSeconds)[0].point,signal);
+ }
  check('light-trail-attachment-and-directions',true);
+ for(const elapsed of [8,16,50,140]){
+  const spanAfter=speed=>{
+   let span=0;
+   for(let t=0;t<1400;t+=elapsed)span=geometry.trailSpanAt(span,speed*elapsed/1000,elapsed);
+   return span;
+  };
+  const slow=spanAfter(.125),fast=spanAfter(.65),fling=spanAfter(20);
+  assert(fast>slow*4&&fling<=geometry.config.gravity.trailSpan);
+  const firstTravel=-.002;
+  assert(geometry.trailSpanAt(0,firstTravel,elapsed)<=Math.abs(firstTravel));
+ }
+ check('hand-trail-exposure-follows-speed-at-different-frame-rates',true);
  const floorMotion=geometry.config.floorMotion,pulseBefore=geometry.config.gravity.collapse;geometry.config.floorMotion={squeeze:0,turn:0,sink:0};const relaxed=geometry.frame(2.5);geometry.config.floorMotion=floorMotion;const collapsed=geometry.frame(2.5);
  const distance=p=>Math.hypot(p[0]+.46,p[2]-.12);
  const world=collapsed.find(l=>l.group==='world'),plain=relaxed.find(l=>l.id===world.id);

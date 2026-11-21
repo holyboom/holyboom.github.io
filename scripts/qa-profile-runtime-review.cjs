@@ -28,7 +28,7 @@ const check=(name,pass,data)=>{checks.push({name,pass:Boolean(pass),data});if(!p
   }
   await page.waitForTimeout(120);await memory('initial');
   for(const [label,position]of [['typing',1.50],['reflection',5.55],['contact',10]]){
-   await go(position);await page.waitForTimeout(1050);const a=await snap();await page.waitForTimeout(350);const b=await snap();
+   await go(position);await page.waitForFunction(()=>{const s=ProfileExperience.snapshot();return s.current===s.target&&!s.dirty&&s.trailEnergy===0;});const a=await snap();await page.waitForTimeout(350);const b=await snap();
    check(label+'-render-loop-settles',a.draws===b.draws&&b.trailEnergy===0,{draws:[a.draws,b.draws],trailEnergy:b.trailEnergy});
   }
   // A visibilitychange drives the real handler, without claiming a real hidden

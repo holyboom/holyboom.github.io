@@ -27,9 +27,17 @@
   const fragments=environments.map((l,i)=>{const points=l.points.filter((_,j)=>j%Math.max(1,Math.floor(l.points.length/7))===0),center=points.reduce((a,b)=>add(a,b),[0,0,0]).map(v=>v/points.length),seed=hash(String(l.id)+':'+i);return {...l,id:'memory-'+i,sourceId:l.id,points,center,seed};});
   let poseKey=null,restPose=null;
   function sample(p,time=0,held=0,compact=false,glowTime=0,thoughtTime=p>.94?(p>=1?time:held):glowTime){p=clamp(p);const relax=smooth((p-.03)/.53),poseTime=28+relax;if(poseKey!==poseTime){poseKey=poseTime;restPose=g.motion.poseAt(poseTime);}const pose=restPose,head=add(pose.head,[0,.015,-.02]),visibleTime=p>=1?time:held,formation=smooth((p-.94)/.06),attention=acting?.sample(visibleTime,pose)||gesture(skills,visibleTime),nodes=skillFrames(skills,p,time,held,head),target=nodes.find(s=>s.id===attention.targetId),open=smooth((p-.68)/.20)*(1-formation);
-   for(const pull of attention.pulls||[]){const node=nodes.find(n=>n.id===pull.id);if(node){node.orbitPoint=[...node.point];node.pull=pull.weight*formation;node.point=lerp(node.point,pull.point,node.pull);}}
+   for(const pull of attention.pulls||[]){const node=nodes.find(n=>n.id===pull.id);if(node){node.orbitPoint=node.point;node.pull=pull.weight*formation;node.point=lerp(node.orbitPoint,pull.point,node.pull);}}
    const scaledControl=c=>c?{...c,weight:(c.weight||0)*formation,aim:c.targetId?nodes.find(n=>n.id===c.targetId)?.point:c.aim,prelude:scaledControl(c.prelude)}:null,hands=Object.fromEntries(Object.entries(attention.hands||{}).map(([key,c])=>[key,scaledControl(c)]));
    const actor=g.motion.finalePose(pose,{open:open*.82,acting:!!acting&&formation>0,...(!acting?{target:target?.point,side:target&&target.point[0]<CENTER[0]?-1:1,weight:attention.weight*formation}:{}),hands,headTarget:attention.headTarget,headWeight:attention.headWeight*formation,headRoll:attention.headRoll||0,torso:Object.fromEntries(Object.entries(attention.torso||{}).map(([key,v])=>[key,v*formation])),lead:attention.lead});
+   // Sample the moving orbit and the solved glove independently. Acquisition and
+   // release crossfade those two positions, so reverse scroll retraces the handoff.
+   for(const pull of attention.pulls||[]){
+    if(!pull.hand)continue;
+    const node=nodes.find(n=>n.id===pull.id),pad=actor.contacts[pull.hand].tip;
+    node.tilt=pull.tilt*node.pull;
+    node.pad=pad;node.point=lerp(node.orbitPoint,add(pad,[0,.14,0]),node.pull);
+   }
    const synthesis=attention.synthesis?{...attention.synthesis,weight:attention.synthesis.weight*formation}:null,trace=attention.trace?{...attention.trace,weight:attention.trace.weight*formation}:null;
    const memory=p>.64?[]:fragments.map((f,i)=>{const delay=(i%9)*.009,u=smooth((p-.16-delay)/(.43-delay)),lane=i%3-1,receiver=add(head,[lane*.035,0,-.015]),c1=add(f.center,[lane*.20,.19,.12]),c2=add(head,[lane*.40,.28,-.15]),center=bezier(f.center,c1,c2,receiver,u),scale=mix(1,.006,smooth(u)),turn=Math.sin(Math.PI*u)*(.3+(i%5)*.11),c=Math.cos(turn),s=Math.sin(turn);return {...f,alpha:f.alpha*smooth((p-.10)/.12)*(1-smooth((u-.92)/.08)),points:f.points.map(q=>{const v=mul(sub(q,f.center),scale);return add(center,[v[0]*c-v[2]*s,v[1],v[0]*s+v[2]*c]);})};});
    const arrived=p>.61?1:fragments.reduce((n,f,i)=>n+smooth((p-.30-(i%9)*.009)/.29),0)/fragments.length,charge=arrived*(1-smooth((p-.70)/.15)),baseCamera=g.cameraAt(SOURCE,{compact}),endCamera={yaw:-.22,pitch:.10,distance:8.3,focal:6,target:[-.40,.02,.16]},zoom=smooth((p-.1)/.40)*(1-smooth((p-.68)/.25)),blend=smooth((p-.68)/.26),camera={...baseCamera,yaw:mix(baseCamera.yaw,endCamera.yaw,blend),pitch:mix(baseCamera.pitch,endCamera.pitch,blend),distance:mix(baseCamera.distance*(1-zoom*.075),endCamera.distance,blend),target:lerp(lerp(baseCamera.target,add(head,[0,-.12,0]),zoom*.26),endCamera.target,blend),focal:6,near:.25,perspectiveWeight:0,focusWeight:0,orbitWeight:0};
@@ -64,8 +72,22 @@
    thoughtLayer?.draw(f,project,r);
    for(const l of f.environments)drawPath(l.points,l.color,l.width,l.alpha*f.sourceAlpha,project);
    for(const l of f.memory){drawPath(l.points,l.color,l.width||.75,l.alpha,project);if(f.p>.27&&l.alpha>.05){const q=project(l.points.at(-1));ctx.globalAlpha=l.alpha*.45;ctx.fillStyle=l.color;ctx.beginPath();ctx.arc(q[0],q[1],.9,0,TAU);ctx.fill();}}
-   const projected=f.nodes.map(s=>({...s,q:project(s.point)})).sort((a,b)=>a.q[2]-b.q[2]),bodyDepth=project(f.pose.shoulder)[2];
-   function icon(s){if(s.alpha<.005)return;const perspective=project0.scale/Math.max(.25,f.camera.distance-s.q[2]),front=clamp((s.q[2]+.9)/1.8),size=clamp(perspective*(.22+.09*front),innerWidth<768?10:12,innerWidth<768?27:39),alpha=s.alpha*(.13+.87*front),selected=(s.id===f.attention.targetId||s.id===f.attention.secondaryId)&&f.attention.weight>.1;ctx.save();ctx.globalAlpha=alpha;ctx.translate(s.q[0],s.q[1]);ctx.fillStyle='#0c0914';ctx.beginPath();ctx.arc(0,0,size*.48,0,TAU);ctx.fill();ctx.shadowColor=s.color;ctx.shadowBlur=selected?14:front*5;ctx.strokeStyle=s.color;ctx.lineWidth=selected?1.6:.65;ctx.beginPath();ctx.arc(0,0,size*.48,0,TAU);ctx.stroke();ctx.shadowBlur=0;const image=textures.get(s.id);if(image){ctx.beginPath();ctx.arc(0,0,size*.45,0,TAU);ctx.clip();ctx.drawImage(image,-size*.43,-size*.43,size*.86,size*.86);}else{ctx.strokeStyle=s.color;ctx.beginPath();ctx.moveTo(-size*.18,0);ctx.lineTo(0,-size*.2);ctx.lineTo(size*.18,0);ctx.lineTo(0,size*.2);ctx.closePath();ctx.stroke();}ctx.restore();}
+   const projected=f.nodes.map(s=>{
+    const q=project(s.point),perspective=project0.scale/Math.max(.25,f.camera.distance-q[2]);
+    const front=clamp((q[2]+.9)/1.8),compact=innerWidth<768;
+    let radius=.48*clamp(perspective*(.22+.09*front),compact?10:12,compact?27:39);
+    if(s.pad&&s.pull>0){
+     const pad=project(s.pad),crown=project(add(s.pad,[0,.14,0]));
+     radius=mix(radius,Math.hypot(crown[0]-pad[0],crown[1]-pad[1]),s.pull);
+    }
+    return {...s,q,front,radius};
+   }).sort((a,b)=>a.q[2]-b.q[2]),bodyDepth=project(f.pose.shoulder)[2];
+   function icon(s){if(s.alpha<.005)return;
+    const size=s.radius/.48,alpha=s.alpha*(.13+.87*s.front);
+    const selected=(s.id===f.attention.targetId||s.id===f.attention.secondaryId)&&f.attention.weight>.1;
+    const focus=f.synthesis?Math.min(...f.attention.pulls.map(v=>v.weight))*formationAt(p):0;
+    ctx.save();ctx.globalAlpha=alpha*(selected?1:1-.46*focus);ctx.translate(s.q[0],s.q[1]);if(s.tilt)ctx.rotate(s.tilt);
+    ctx.fillStyle='#0c0914';ctx.beginPath();ctx.arc(0,0,size*.48,0,TAU);ctx.fill();ctx.shadowColor=s.color;ctx.shadowBlur=selected?14:s.front*5;ctx.strokeStyle=s.color;ctx.lineWidth=selected?1.6:.65;ctx.beginPath();ctx.arc(0,0,size*.48,0,TAU);ctx.stroke();ctx.shadowBlur=0;const image=textures.get(s.id);if(image){ctx.beginPath();ctx.arc(0,0,size*.45,0,TAU);ctx.clip();ctx.drawImage(image,-size*.43,-size*.43,size*.86,size*.86);}else{ctx.strokeStyle=s.color;ctx.beginPath();ctx.moveTo(-size*.18,0);ctx.lineTo(0,-size*.2);ctx.lineTo(size*.18,0);ctx.lineTo(0,size*.2);ctx.closePath();ctx.stroke();}ctx.restore();}
    if(p<.94)for(const s of projected){if(s.flight>.01&&s.flight<.999){const a=f.head,b=s.point,mid=lerp(a,b,.45);mid[1]+=.20;drawPath(Array.from({length:17},(_,i)=>bezier(a,mid,mid,b,i/16)),s.color,.9,s.alpha*(1-s.flight)*.65,project);}}
    // Three spatial planes remain faint; identity lives in the icons and native catalogue.
    if(p>.71)for(const category of Object.keys(groups)){const sample=model.skills.find(s=>s.category===category),points=Array.from({length:97},(_,i)=>orbit({...sample,slot:0},i/96*TAU));drawPath(points,colors[category],.65,smooth((p-.71)/.22)*.16,project);}
@@ -83,11 +105,21 @@
 
    for(const s of projected)if(s.q[2]>=bodyDepth)icon(s);
    if(f.synthesis?.weight>.005){const pair=f.synthesis.ids.map(id=>projected.find(s=>s.id===id));if(pair.every(Boolean)){const a=pair[0].point,b=pair[1].point,center=lerp(a,b,.5),strength=f.synthesis.weight;
-    for(let lane=0;lane<3;lane++){const points=Array.from({length:41},(_,i)=>{const t=i/40,q=lerp(a,b,t),wave=Math.sin(Math.PI*t)*.055;return add(q,[0,Math.sin(t*TAU*2+f.synthesis.phase*1.9+lane*TAU/3)*wave,Math.cos(t*TAU*2+f.synthesis.phase*1.9+lane*TAU/3)*wave]);});drawPath(points,['#ffe3a0','#a9dfff','#e6a7ff'][lane],1.25,strength*.85,project);}
-    const q=project(center),radius=clamp(project0.scale*.105/(f.camera.distance-q[2]),7,19),halo=ctx.createRadialGradient(q[0],q[1],0,q[0],q[1],radius*2.6);halo.addColorStop(0,'#fffbe5');halo.addColorStop(.23,'#ffe499bb');halo.addColorStop(.58,'#ddacff50');halo.addColorStop(1,'#bf8aff00');ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=strength*(.72+.18*Math.sin(f.synthesis.phase*1.8));ctx.fillStyle=halo;ctx.fillRect(q[0]-radius*2.6,q[1]-radius*2.6,radius*5.2,radius*5.2);ctx.restore();
+    // Connect the facing rims. Arch the thread around the artwork and let it
+    // tighten into a small stitch under pressure, preserving both identities.
+    const [left,right]=pair,dx=right.q[0]-left.q[0],dy=right.q[1]-left.q[1],span=Math.hypot(dx,dy)||1;
+    const ux=dx/span,uy=dy/span;
+    for(const lane of [-1,1]){
+     const offset=lane*.60;
+     const rim=(s,direction)=>[s.q[0]+s.radius*(direction*ux*.8-uy*offset),s.q[1]+s.radius*(direction*uy*.8+ux*offset)];
+     const start=rim(left,1),end=rim(right,-1),bow=lane*(1-strength*.6)*Math.min(left.radius,right.radius);
+     ctx.globalAlpha=.84*strength;ctx.strokeStyle=lane===1?right.color:left.color;ctx.lineWidth=1.3;
+     ctx.beginPath();ctx.moveTo(...start);ctx.quadraticCurveTo((start[0]+end[0])/2-uy*bow,(start[1]+end[1])/2+ux*bow,...end);ctx.stroke();
+    }
+    const q=project(center),radius=clamp(project0.scale*.105/(f.camera.distance-q[2]),7,19),halo=ctx.createRadialGradient(q[0],q[1],0,q[0],q[1],radius*2.6);halo.addColorStop(0,'#fffbe5');halo.addColorStop(.23,'#ffe499bb');halo.addColorStop(.58,'#ddacff50');halo.addColorStop(1,'#bf8aff00');ctx.save();ctx.globalCompositeOperation='lighter';const sincePress=(f.synthesis.phase-6.63)/.32;ctx.globalAlpha=strength*(.48+.45*Math.exp(-sincePress*sincePress));ctx.fillStyle=halo;ctx.fillRect(q[0]-radius*2.6,q[1]-radius*2.6,radius*5.2,radius*5.2);ctx.restore();
    }}
    if(f.trace?.weight>.005){const pair=f.trace.ids.map(id=>projected.find(s=>s.id===id));if(pair.every(Boolean)){const a=pair[0].point,b=pair[1].point,mid=lerp(a,b,.5);mid[1]+=.16;drawPath(Array.from({length:31},(_,i)=>bezier(a,mid,mid,b,i/30)),'#d1c2ef',.8,f.trace.weight*.5,project);}}
-   const pointed=projected.find(s=>s.id===f.attention.targetId);if(p>.94){for(const [side,control]of Object.entries(f.attention.hands||{})){const node=projected.find(s=>s.id===control.targetId);if(node&&control.weight>.15){const tip=f.pose.contacts[side].tip,mid=lerp(tip,node.point,.5);mid[1]+=.035;drawPath(Array.from({length:13},(_,i)=>bezier(tip,mid,mid,node.point,i/12)),node.color,.85,control.weight*formationAt(p)*.60,project);}}}
+   const pointed=projected.find(s=>s.id===f.attention.targetId);if(p>.94){for(const [side,control]of Object.entries(f.attention.hands||{})){const node=projected.find(s=>s.id===control.targetId);if(node&&control.weight>.15&&(!node.pad||node.pull<1)){const tip=f.pose.contacts[side].tip,mid=lerp(tip,node.point,.5);mid[1]+=.035;drawPath(Array.from({length:13},(_,i)=>bezier(tip,mid,mid,node.point,i/12)),node.color,.85,control.weight*formationAt(p)*(1-(node.pad?node.pull:0))*.60,project);}}}
    ctx.globalAlpha=1;
    const labels={en:{remember:'What the work leaves with me.',gather:'Every piece carries a lesson.',within:'The experience stays with the person.',reveal:'Experience becomes capability.',orbit:'HolyMind · 34 skills, shaped through practice.'},th:{remember:'สิ่งที่ทำ ค่อย ๆ ติดตัวผมมา',gather:'แต่ละชิ้นมีเรื่องที่ผมได้เรียนรู้',within:'ประสบการณ์ยังอยู่ในคนที่ลงมือทำ',reveal:'สิ่งที่เรียนรู้ เริ่มมีตัวตนของมันเอง',orbit:'HolyMind · 34 สกิลจากการลงมือทำ'}};
    const reviewed=root.ProfileScenes?.reviewFinale;if(reviewed){Object.assign(labels.en,reviewed.en);Object.assign(labels.th,reviewed.th);}

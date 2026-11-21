@@ -1,0 +1,994 @@
+{
+  "baselineCommit": "f4a8bba8d0fbffc1329070f12666bcecc8bc7270",
+  "pixelRatio": 1,
+  "viewportCssPx": {
+    "desktop-en": [
+      1440,
+      900
+    ],
+    "mobile-th": [
+      390,
+      844
+    ]
+  },
+  "runtime": "Chromium 156.0.8078.79 on Linux. Device emulation for mobile. Screenshots cropped to the actual canvas box with its visible page overlays. No browser screenshot was retouched. The titled WebP sheets resize the original PNGs with Lanczos filtering.",
+  "timestamps": "Scroll beat numbers and visible seconds on sheets are target thresholds. Observed snapshot coordinates and visible seconds below were sampled immediately before the screenshot request.",
+  "coverage": {
+    "desktop-en": {
+      "source": {
+        "url": "https://holyboom.github.io/profile/",
+        "status": 200,
+        "chromium": "156.0.8078.79",
+        "errors": [],
+        "layout": "desktop",
+        "language": "en",
+        "frames": [
+          {
+            "name": "draw-1",
+            "scrollY": 1283,
+            "t": 1.4229650094762978,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "draw-2",
+            "scrollY": 1336,
+            "t": 1.7897239049473552,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "draw-3",
+            "scrollY": 1573,
+            "t": 2.230403600956104,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "doubt-1",
+            "scrollY": 7365,
+            "t": 14.41534008969984,
+            "clock": null,
+            "phase": null,
+            "scene": 14
+          },
+          {
+            "name": "doubt-2",
+            "scrollY": 7401,
+            "t": 14.863886623988554,
+            "clock": null,
+            "phase": null,
+            "scene": 15
+          },
+          {
+            "name": "doubt-3",
+            "scrollY": 7630,
+            "t": 15.303869897030193,
+            "clock": null,
+            "phase": null,
+            "scene": 15
+          },
+          {
+            "name": "pair-1",
+            "scrollY": 13271,
+            "t": 29,
+            "clock": 12.444699999999974,
+            "phase": "receive-left",
+            "scene": 29
+          },
+          {
+            "name": "pair-2",
+            "scrollY": 13271,
+            "t": 29,
+            "clock": 15.208599999999956,
+            "phase": "bring-together",
+            "scene": 29
+          },
+          {
+            "name": "pair-3",
+            "scrollY": 13271,
+            "t": 29,
+            "clock": 17.75049999999995,
+            "phase": "combine",
+            "scene": 29
+          }
+        ],
+        "pair": {
+          "skills": 34,
+          "synthesis": {
+            "ids": [
+              "constraint-discovery-loop",
+              "seed-expansion-via-search"
+            ],
+            "weight": 1
+          },
+          "captured": [
+            {
+              "id": "constraint-discovery-loop",
+              "weight": 1,
+              "point": [
+                -0.615,
+                0.35745220008289125,
+                0.74
+              ]
+            },
+            {
+              "id": "seed-expansion-via-search",
+              "weight": 1,
+              "point": [
+                -0.265,
+                0.3974522000828913,
+                0.7999999999999999
+              ]
+            }
+          ],
+          "gesture": "combine",
+          "visibleSeconds": 18.050499999999946,
+          "frameCost": 21.831798232029087
+        }
+      },
+      "revision": {
+        "url": "http://127.0.0.1:4321/profile/",
+        "status": 200,
+        "chromium": "156.0.8078.79",
+        "errors": [],
+        "layout": "desktop",
+        "language": "en",
+        "frames": [
+          {
+            "name": "draw-1",
+            "scrollY": 1283,
+            "t": 1.4229650094762978,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "draw-2",
+            "scrollY": 1336,
+            "t": 1.7897239049473552,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "draw-3",
+            "scrollY": 1573,
+            "t": 2.230403600956104,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "doubt-1",
+            "scrollY": 7365,
+            "t": 14.41534008969984,
+            "clock": null,
+            "phase": null,
+            "scene": 14
+          },
+          {
+            "name": "doubt-2",
+            "scrollY": 7401,
+            "t": 14.863886623988554,
+            "clock": null,
+            "phase": null,
+            "scene": 15
+          },
+          {
+            "name": "doubt-3",
+            "scrollY": 7630,
+            "t": 15.303869897030193,
+            "clock": null,
+            "phase": null,
+            "scene": 15
+          },
+          {
+            "name": "pair-1",
+            "scrollY": 13271,
+            "t": 29,
+            "clock": 12.497499999999997,
+            "phase": "receive-left",
+            "scene": 29
+          },
+          {
+            "name": "pair-2",
+            "scrollY": 13271,
+            "t": 29,
+            "clock": 15.25740000000001,
+            "phase": "align",
+            "scene": 29
+          },
+          {
+            "name": "pair-3",
+            "scrollY": 13271,
+            "t": 29,
+            "clock": 17.8247,
+            "phase": "combine",
+            "scene": 29
+          }
+        ],
+        "pair": {
+          "skills": 34,
+          "synthesis": {
+            "ids": [
+              "constraint-discovery-loop",
+              "seed-expansion-via-search"
+            ],
+            "weight": 1
+          },
+          "captured": [
+            {
+              "id": "constraint-discovery-loop",
+              "weight": 1,
+              "point": [
+                -0.9133916540555947,
+                0.41015023405489087,
+                0.620941030633625
+              ]
+            },
+            {
+              "id": "seed-expansion-via-search",
+              "weight": 1,
+              "point": [
+                -0.6263665091333199,
+                0.46110134644475786,
+                0.6227488660112416
+              ]
+            }
+          ],
+          "gesture": "combine",
+          "visibleSeconds": 18.4507,
+          "frameCost": 63.405369290112446
+        }
+      },
+      "timelineForwardReverse": [
+        {
+          "requested": 15.02,
+          "position": 5.498339999595108,
+          "t": 15.018746289317683,
+          "trail": -1,
+          "camera": "head"
+        },
+        {
+          "requested": 14.9,
+          "position": 5.35411885786413,
+          "t": 14.902001858994518,
+          "trail": -1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.79,
+          "position": 5.345822871206666,
+          "t": 14.790465589629079,
+          "trail": -1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.68,
+          "position": 5.339159501519792,
+          "t": 14.682040845419012,
+          "trail": -1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.57,
+          "position": 5.332496131832919,
+          "t": 14.56379862390091,
+          "trail": -1,
+          "camera": "hand"
+        },
+        {
+          "requested": 14.46,
+          "position": 5.326573136555697,
+          "t": 14.455658003605308,
+          "trail": -1,
+          "camera": "hand"
+        },
+        {
+          "requested": 14.57,
+          "position": 5.332496131832919,
+          "t": 14.56379862390091,
+          "trail": 1,
+          "camera": "hand"
+        },
+        {
+          "requested": 14.68,
+          "position": 5.339159501519792,
+          "t": 14.682040845419012,
+          "trail": 1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.79,
+          "position": 5.345822871206666,
+          "t": 14.790465589629079,
+          "trail": 1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.86,
+          "position": 5.3510054920742345,
+          "t": 14.863886623988554,
+          "trail": 1,
+          "camera": "full"
+        },
+        {
+          "requested": 1.79,
+          "position": 1.2236681116974768,
+          "t": 1.8142664393532397,
+          "trail": -1,
+          "camera": "hand"
+        },
+        {
+          "requested": 14.86,
+          "position": 5.350563944437329,
+          "t": 14.858089906755742,
+          "trail": 1,
+          "camera": "full"
+        }
+      ],
+      "sweep": {
+        "shotIdsReached": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "canvasVisibleAtAllShots": true,
+        "horizontalOverflowCssPx": 0
+      },
+      "heldPoseSamples": [
+        {
+          "draws": 49,
+          "target": 5.3510054920742345,
+          "current": 5.3597696582679895,
+          "shot": 15,
+          "idle": 0,
+          "drawCost": 137.6966832538559
+        },
+        {
+          "draws": 57,
+          "target": 5.3510054920742345,
+          "current": 5.3510054920742345,
+          "shot": 15,
+          "idle": 0.384,
+          "drawCost": 108.97889416953961
+        },
+        {
+          "draws": 76,
+          "target": 5.3510054920742345,
+          "current": 5.3510054920742345,
+          "shot": 15,
+          "idle": 1.600000000000001,
+          "drawCost": 88.58032244081
+        },
+        {
+          "draws": 81,
+          "target": 5.3510054920742345,
+          "current": 5.3510054920742345,
+          "shot": 15,
+          "idle": 1.9200000000000013,
+          "drawCost": 86.33025459806987
+        }
+      ],
+      "sharedHostIntervals": {
+        "slow": {
+          "count": 11,
+          "minMs": 133.3,
+          "p50Ms": 283.3,
+          "p95Ms": 483.3,
+          "maxMs": 483.3,
+          "meanMs": 307.56
+        },
+        "reverse": {
+          "count": 10,
+          "minMs": 116.7,
+          "p50Ms": 199.9,
+          "p95Ms": 233.3,
+          "maxMs": 233.3,
+          "meanMs": 190
+        },
+        "fast": {
+          "count": 4,
+          "minMs": 249.9,
+          "p50Ms": 250,
+          "p95Ms": 383.3,
+          "maxMs": 383.3,
+          "meanMs": 295.82
+        }
+      }
+    },
+    "mobile-th": {
+      "source": {
+        "url": "https://holyboom.github.io/th/profile/",
+        "status": 200,
+        "chromium": "156.0.8078.79",
+        "errors": [],
+        "layout": "mobile",
+        "language": "th",
+        "frames": [
+          {
+            "name": "draw-1",
+            "scrollY": 1097,
+            "t": 1.4182649983165125,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "draw-2",
+            "scrollY": 1148,
+            "t": 1.7926213465653826,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "draw-3",
+            "scrollY": 1371,
+            "t": 2.2316364507483444,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "doubt-1",
+            "scrollY": 7093,
+            "t": 14.409149639627927,
+            "clock": null,
+            "phase": null,
+            "scene": 14
+          },
+          {
+            "name": "doubt-2",
+            "scrollY": 7126,
+            "t": 14.859853155033868,
+            "clock": null,
+            "phase": null,
+            "scene": 15
+          },
+          {
+            "name": "doubt-3",
+            "scrollY": 7336,
+            "t": 15.303569566589976,
+            "clock": null,
+            "phase": null,
+            "scene": 15
+          },
+          {
+            "name": "pair-1",
+            "scrollY": 13211,
+            "t": 29,
+            "clock": 12.452699999999975,
+            "phase": "receive-left",
+            "scene": 29
+          },
+          {
+            "name": "pair-2",
+            "scrollY": 13211,
+            "t": 29,
+            "clock": 15.169199999999954,
+            "phase": "bring-together",
+            "scene": 29
+          },
+          {
+            "name": "pair-3",
+            "scrollY": 13211,
+            "t": 29,
+            "clock": 17.76649999999995,
+            "phase": "combine",
+            "scene": 29
+          }
+        ],
+        "pair": {
+          "skills": 34,
+          "synthesis": {
+            "ids": [
+              "constraint-discovery-loop",
+              "seed-expansion-via-search"
+            ],
+            "weight": 1
+          },
+          "captured": [
+            {
+              "id": "constraint-discovery-loop",
+              "weight": 1,
+              "point": [
+                -0.615,
+                0.3574665103453014,
+                0.74
+              ]
+            },
+            {
+              "id": "seed-expansion-via-search",
+              "weight": 1,
+              "point": [
+                -0.265,
+                0.39746651034530134,
+                0.7999999999999999
+              ]
+            }
+          ],
+          "gesture": "combine",
+          "visibleSeconds": 18.047199999999954,
+          "frameCost": 25.049742689406123
+        }
+      },
+      "revision": {
+        "url": "http://127.0.0.1:4321/th/profile/",
+        "status": 200,
+        "chromium": "156.0.8078.79",
+        "errors": [],
+        "layout": "mobile",
+        "language": "th",
+        "frames": [
+          {
+            "name": "draw-1",
+            "scrollY": 1097,
+            "t": 1.4182649983165125,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "draw-2",
+            "scrollY": 1148,
+            "t": 1.7926213465653826,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "draw-3",
+            "scrollY": 1371,
+            "t": 2.2316364507483444,
+            "clock": null,
+            "phase": null,
+            "scene": 2
+          },
+          {
+            "name": "doubt-1",
+            "scrollY": 7093,
+            "t": 14.409149639627927,
+            "clock": null,
+            "phase": null,
+            "scene": 14
+          },
+          {
+            "name": "doubt-2",
+            "scrollY": 7126,
+            "t": 14.859853155033868,
+            "clock": null,
+            "phase": null,
+            "scene": 15
+          },
+          {
+            "name": "doubt-3",
+            "scrollY": 7336,
+            "t": 15.303569566589976,
+            "clock": null,
+            "phase": null,
+            "scene": 15
+          },
+          {
+            "name": "pair-1",
+            "scrollY": 13211,
+            "t": 29,
+            "clock": 12.586400000000015,
+            "phase": "receive-left",
+            "scene": 29
+          },
+          {
+            "name": "pair-2",
+            "scrollY": 13211,
+            "t": 29,
+            "clock": 15.210400000000018,
+            "phase": "align",
+            "scene": 29
+          },
+          {
+            "name": "pair-3",
+            "scrollY": 13211,
+            "t": 29,
+            "clock": 17.806300000000014,
+            "phase": "combine",
+            "scene": 29
+          }
+        ],
+        "pair": {
+          "skills": 34,
+          "synthesis": {
+            "ids": [
+              "constraint-discovery-loop",
+              "seed-expansion-via-search"
+            ],
+            "weight": 1
+          },
+          "captured": [
+            {
+              "id": "constraint-discovery-loop",
+              "weight": 1,
+              "point": [
+                -0.9045583674897169,
+                0.3950074570848144,
+                0.6209410306336252
+              ]
+            },
+            {
+              "id": "seed-expansion-via-search",
+              "weight": 1,
+              "point": [
+                -0.6175332225674418,
+                0.4459585694746814,
+                0.6227488660112416
+              ]
+            }
+          ],
+          "gesture": "combine",
+          "visibleSeconds": 18.368300000000016,
+          "frameCost": 79.23260282965892
+        }
+      },
+      "timelineForwardReverse": [
+        {
+          "requested": 15.02,
+          "position": 5.498924088384481,
+          "t": 15.022241480072788,
+          "trail": -1,
+          "camera": "head"
+        },
+        {
+          "requested": 14.9,
+          "position": 5.35408478246986,
+          "t": 14.901612176078606,
+          "trail": -1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.79,
+          "position": 5.345845030154262,
+          "t": 14.790802603152859,
+          "trail": -1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.68,
+          "position": 5.339375053310967,
+          "t": 14.685736586626225,
+          "trail": -1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.57,
+          "position": 5.332905076467671,
+          "t": 14.571218314031999,
+          "trail": -1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.46,
+          "position": 5.326435099624375,
+          "t": 14.45314229752749,
+          "trail": -1,
+          "camera": "hand"
+        },
+        {
+          "requested": 14.57,
+          "position": 5.332905076467671,
+          "t": 14.571218314031999,
+          "trail": 1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.68,
+          "position": 5.339375053310967,
+          "t": 14.685736586626225,
+          "trail": 1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.79,
+          "position": 5.345845030154262,
+          "t": 14.790802603152859,
+          "trail": 1,
+          "camera": "full"
+        },
+        {
+          "requested": 14.86,
+          "position": 5.350697512786734,
+          "t": 14.859853155033868,
+          "trail": 1,
+          "camera": "full"
+        },
+        {
+          "requested": 1.79,
+          "position": 1.224171069130272,
+          "t": 1.8170384241047661,
+          "trail": -1,
+          "camera": "hand"
+        },
+        {
+          "requested": 14.86,
+          "position": 5.350255634314223,
+          "t": 14.853987993364228,
+          "trail": 1,
+          "camera": "full"
+        }
+      ],
+      "sweep": {
+        "shotIdsReached": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "canvasVisibleAtAllShots": true,
+        "horizontalOverflowCssPx": 0
+      },
+      "heldPoseSamples": [
+        {
+          "draws": 83,
+          "target": 5.350697512786734,
+          "current": 5.350889641359327,
+          "shot": 15,
+          "idle": 0,
+          "drawCost": 118.18525471472259
+        },
+        {
+          "draws": 96,
+          "target": 5.350697512786734,
+          "current": 5.350697512786734,
+          "shot": 15,
+          "idle": 0.7541000000000004,
+          "drawCost": 76.16577852987547
+        },
+        {
+          "draws": 125,
+          "target": 5.350697512786734,
+          "current": 5.350697512786734,
+          "shot": 15,
+          "idle": 2.4,
+          "drawCost": 49.8697509258162
+        },
+        {
+          "draws": 125,
+          "target": 5.350697512786734,
+          "current": 5.350697512786734,
+          "shot": 15,
+          "idle": 2.4,
+          "drawCost": 49.8697509258162
+        }
+      ],
+      "sharedHostIntervals": {
+        "slow": {
+          "count": 24,
+          "minMs": 66.6,
+          "p50Ms": 116.6,
+          "p95Ms": 233.3,
+          "maxMs": 466.6,
+          "meanMs": 139.57
+        },
+        "reverse": {
+          "count": 18,
+          "minMs": 50.1,
+          "p50Ms": 99.9,
+          "p95Ms": 500,
+          "maxMs": 500,
+          "meanMs": 123.14
+        },
+        "fast": {
+          "count": 12,
+          "minMs": 50.1,
+          "p50Ms": 83.3,
+          "p95Ms": 200,
+          "maxMs": 200,
+          "meanMs": 102.78
+        }
+      }
+    }
+  },
+  "nativeTabVisibility": {
+    "before": {
+      "hidden": false,
+      "draws": 2,
+      "time": 0.08
+    },
+    "hidden": {
+      "hidden": true,
+      "draws": 5,
+      "time": 0.22459999999999994
+    },
+    "hiddenEnd": {
+      "hidden": true,
+      "draws": 5,
+      "time": 0.22459999999999994
+    },
+    "resumed": {
+      "hidden": false,
+      "draws": 14,
+      "time": 0.6966000000000001
+    },
+    "events": [
+      {
+        "at": 2257.5,
+        "hidden": true,
+        "time": 0.22459999999999994,
+        "draws": 5
+      },
+      {
+        "at": 3980.2999999999884,
+        "hidden": false,
+        "time": 0.22459999999999994,
+        "draws": 5
+      }
+    ]
+  },
+  "nativeTabMethod": "Non-headless Chromium, Xorg dummy display, OS Ctrl+T / Ctrl+Shift+Tab, CDP read-only observations. Native visibility events recorded across 1.72s in background. Opening clock and draws stayed constant.",
+  "serialFramePacing": {
+    "method": "One browser at a time on the same Linux host, 4 CPU quota, software-rendered Canvas. Warm-up traversal then 7s forward 13.1→16.7, 3.8s reverse, 1.8s across 2.1→24.85. Distribution of requestAnimationFrame presentation intervals, ms. Delivery baseline served from archived sources. Other project checks could contend for CPU.",
+    "runs": {
+      "en-before": {
+        "slow": {
+          "count": 94,
+          "minMs": 49.9,
+          "p50Ms": 66.7,
+          "p95Ms": 100.1,
+          "maxMs": 283.4,
+          "meanMs": 74.64
+        },
+        "reverse": {
+          "count": 51,
+          "minMs": 50,
+          "p50Ms": 66.7,
+          "p95Ms": 133.3,
+          "maxMs": 150,
+          "meanMs": 75.81
+        },
+        "fast": {
+          "count": 28,
+          "minMs": 49.9,
+          "p50Ms": 66.6,
+          "p95Ms": 100,
+          "maxMs": 183.3,
+          "meanMs": 67.85
+        }
+      },
+      "en-after": {
+        "slow": {
+          "count": 98,
+          "minMs": 49.9,
+          "p50Ms": 66.7,
+          "p95Ms": 100,
+          "maxMs": 250,
+          "meanMs": 71.77
+        },
+        "reverse": {
+          "count": 63,
+          "minMs": 49.9,
+          "p50Ms": 50.1,
+          "p95Ms": 66.8,
+          "maxMs": 199.9,
+          "meanMs": 60.84
+        },
+        "fast": {
+          "count": 28,
+          "minMs": 33.3,
+          "p50Ms": 50,
+          "p95Ms": 83.3,
+          "maxMs": 283.4,
+          "meanMs": 64.88
+        }
+      },
+      "th-before": {
+        "slow": {
+          "count": 149,
+          "minMs": 33.2,
+          "p50Ms": 50,
+          "p95Ms": 66.7,
+          "maxMs": 166.6,
+          "meanMs": 47.31
+        },
+        "reverse": {
+          "count": 86,
+          "minMs": 16.6,
+          "p50Ms": 50,
+          "p95Ms": 50.1,
+          "maxMs": 199.9,
+          "meanMs": 44.77
+        },
+        "fast": {
+          "count": 33,
+          "minMs": 33.2,
+          "p50Ms": 50,
+          "p95Ms": 83.4,
+          "maxMs": 116.7,
+          "meanMs": 56.06
+        }
+      },
+      "th-after": {
+        "slow": {
+          "count": 160,
+          "minMs": 16.7,
+          "p50Ms": 33.4,
+          "p95Ms": 66.6,
+          "maxMs": 249.9,
+          "meanMs": 43.85
+        },
+        "reverse": {
+          "count": 87,
+          "minMs": 33.2,
+          "p50Ms": 33.4,
+          "p95Ms": 66.6,
+          "maxMs": 233.4,
+          "meanMs": 44.06
+        },
+        "fast": {
+          "count": 37,
+          "minMs": 33.2,
+          "p50Ms": 50,
+          "p95Ms": 66.7,
+          "maxMs": 166.7,
+          "meanMs": 49.55
+        }
+      }
+    }
+  }
+}

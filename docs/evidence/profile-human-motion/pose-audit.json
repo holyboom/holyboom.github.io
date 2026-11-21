@@ -1,0 +1,22 @@
+{
+  "counts": {
+    "poses": 18006,
+    "lockedContacts": 5328,
+    "plantedFeet": 31572,
+    "boundaryPairs": 174
+  },
+  "maxGap": {
+    "contact": 1.6883057536160646e-16,
+    "support": 2.7755575615628914e-16,
+    "boundary": 1.0622965866158048e-7
+  },
+  "limit": 0.000001,
+  "idlePhases": [
+    0,
+    0.36,
+    0.89,
+    1.27,
+    1.91,
+    2.4
+  ]
+}

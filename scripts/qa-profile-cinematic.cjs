@@ -37,7 +37,8 @@ for(let i=0;i<4;i++)c.step(cues[8],.04,true);check('latest-stable-intent-wins',c
    }
   }
   fs.writeFileSync(path.join(out,'scene-entries-'+viewport.width+'.json'),JSON.stringify(scenes,null,2));
-  // The event moves SVG only after the body/camera have settled.
+  // After the visible-time consideration beat, only the SVG event continues.
+  await p.waitForFunction(()=>!ProfileExperience.snapshot().dirty,null,{polling:50});
   const a=await p.evaluate(()=>{const s=ProfileExperience.snapshot();return {draws:s.draws,updates:s.cinematic.updates,image:document.querySelector('#architecture').toDataURL()};});await p.waitForTimeout(260);const z=await p.evaluate(()=>{const s=ProfileExperience.snapshot();return {draws:s.draws,updates:s.cinematic.updates,image:document.querySelector('#architecture').toDataURL()};});
   check('finite-event-keeps-the-settled-character-bitmap-'+viewport.width,a.draws===z.draws&&a.image===z.image&&z.updates>a.updates,{draws:[a.draws,z.draws],updates:[a.updates,z.updates]});
   await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});await p.waitForTimeout(80);const hidden=await p.evaluate(()=>ProfileExperience.snapshot().cinematic);await p.waitForTimeout(260);const still=await p.evaluate(()=>ProfileExperience.snapshot().cinematic);check('hidden-page-freezes-event-phase-and-paint-'+viewport.width,hidden.age===still.age&&hidden.updates===still.updates);

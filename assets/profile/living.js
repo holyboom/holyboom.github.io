@@ -14,6 +14,10 @@
  const mode='full',reduced=false;
  let anchors=[],w=0,h=0,dpr=1,frameId=0,last=0,current=0,target=0,exploded=0,px=0,py=0,tx=0,ty=0,visible=true,draws=0,drawCost=0,detail=1,dirty=true,previousWidth=innerWidth,previousHeight=innerHeight,lastLabel=-1;
  let openingSeconds=0,openingActive=false,ambientPhase=0;
+ // One breath or consideration beat on arrival. Travel winds the finite phrase
+ // back towards rest; the scroll coordinate never advances while reading.
+ const idleDuration=2.4;
+ let idleSeconds=0;
  let renderedCamera=null,modelCache=null,bitmapDetail=0,navPosition=-1,navScroll=-1;
  let layoutCorrection=null,measuredDisclosureOpen=beneath.open;
  const workPaths=[...document.querySelectorAll('.work-path')],workState=()=>workPaths.map(el=>el.open?'1':'0').join('');
@@ -108,7 +112,7 @@
  }
  function render(time){
   frameId=0;if(document.hidden||!visible||staticLayout()||!w||!h){last=0;return;}
-  const started=performance.now(),dt=last?Math.min(64,time-last):16;last=time;
+  const started=performance.now(),elapsed=last?time-last:16,dt=Math.min(64,elapsed);last=time;
   target=positionAt(scrollY);const follow=1-Math.exp(-dt/28);
   const previous=current,hadVisibleTrail=trailEnergy>.01;
   current=g.mix(current,target,follow);if(Math.abs(current-target)<0.0001)current=target;
@@ -116,7 +120,9 @@
   if(Math.abs(travel)>1){resetTrail();}
   else if(Math.abs(travel)>.00015){
    const direction=Math.sign(travel);if(direction!==trailDirection){trailSpan=0;trailEnergy=0;}
-   trailDirection=direction;trailSpan=Math.min(g.config.gravity.trailSpan,trailSpan+Math.abs(travel));lastMotion=time;trailEnergy=Math.min(1,trailEnergy+dt/110);
+   trailDirection=direction;
+   trailSpan=g.trailSpanAt(trailSpan,travel,elapsed);
+   trailEnergy=Math.sqrt(trailSpan/g.config.gravity.trailSpan);lastMotion=time;
   }else trailEnergy*=Math.exp(-dt/180);
   if(time-lastMotion>g.config.gravity.trailLife)resetTrail();
   px=g.mix(px,tx,follow);py=g.mix(py,ty,follow);
@@ -124,36 +130,56 @@
   const desired=beneath.open&&current>6.5?1:0;exploded=g.mix(exploded,desired,follow);
   const ending=finale?.render(dt/1000,scrollY);
   if(ending?.active){resetTrail();readingThread?.hide();renderedCamera=finale.snapshot().camera;updateNavigation();draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;dirty=false;if(ending.pending||current!==target)wake();return;}
+  const formed=g.resolve(current)>=1;
+  const moving=Math.abs(current-target)>.0001||Math.abs(travel)>.0001;
+  if(!formed)idleSeconds=0;
+  else if(moving){
+   // At rest the envelope has already closed. Cross directly to the other
+   // neutral endpoint so the next scroll never replays a finished breath.
+   if(idleSeconds===idleDuration)idleSeconds=0;
+   else if(idleSeconds>idleDuration/2)idleSeconds=Math.min(idleDuration,idleSeconds+dt/350);
+   else idleSeconds=Math.max(0,idleSeconds-dt/350);
+  }
+  else idleSeconds=Math.min(idleDuration,idleSeconds+elapsed/1000);
+  const idlePending=formed&&!moving&&idleSeconds<idleDuration;
+  // Both endpoints have neutral offsets. Reuse the resting model afterwards.
+  const idlePose=idleSeconds===idleDuration?0:idleSeconds;
   const cue=window.ProfileCinematicLines?.cueFor(Math.floor(current+.001),g.storyAt(current));
   // The finite SVG event shares this RAF, but a settled rig keeps its bitmap.
   // This avoids repainting hundreds of anatomical strands just to move dust.
-  if(!dirty&&!openingActive&&!hadVisibleTrail&&bitmapDetail===detail&&current===previous&&trailEnergy<.01&&Math.abs(exploded-desired)<.001&&Math.abs(px-tx)<.0001&&Math.abs(py-ty)<.0001){
+  if(!dirty&&modelCache?.idlePose===idlePose&&!openingActive&&!hadVisibleTrail&&bitmapDetail===detail&&current===previous&&trailEnergy<.01&&Math.abs(exploded-desired)<.001&&Math.abs(px-tx)<.0001&&Math.abs(py-ty)<.0001){
    if(cue)readingThread?.animate(dt/1000,cue,visible);
    if(readingThread?.pending())wake();
    return;
   }
-  if(!modelCache||modelCache.position!==current||modelCache.detail!==detail||modelCache.exploded!==exploded||modelCache.ambientPhase!==ambientPhase)modelCache={position:current,detail,exploded,ambientPhase,lines:g.frame(current,detail,exploded,ambientPhase)};
+  if(!modelCache||modelCache.position!==current||modelCache.detail!==detail||modelCache.exploded!==exploded||modelCache.ambientPhase!==ambientPhase||modelCache.idlePose!==idlePose)modelCache={position:current,detail,exploded,ambientPhase,idlePose,lines:g.frame(current,detail,exploded,ambientPhase,idlePose)};
   const geom=modelCache.lines,theme=g.paletteAt(current),emotion=g.dramaAt(current);
   const compactOffering=innerWidth<768&&g.storyAt(current).prop==='possibility';
   const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow),lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength,lightHalo=(humanLight?12+handLight.charge*13:7)*sourceStrength*(compactOffering ? .65 : 1);
   const project=g.createProjector(current,w,h,{compact:innerWidth<768,yaw:px,pitch:py,expanded:exploded});renderedCamera=project.camera;
-  // Performance is a pure function of story position. Scaling the whole body to
-  // suggest breathing also moved planted feet, hands and the work surface.
+  // Idle articulation is solved on the same rig as the contact geometry.
   const projectPoint=project;
-  const rawIllustrations=g.illustration(current,exploded);
-  const readingSource=project.camera.eyeWeight>.5?g.performanceAt(current).contacts.left.tip:g.lightAt(current);
+  const rawIllustrations=g.illustration(current,exploded,idlePose);
+  const readingSource=project.camera.eyeWeight>.5?g.performanceAt(current,idlePose).contacts.left.tip:g.lightAt(current,ambientPhase,idlePose);
   const readingComponents=rawIllustrations.filter(layer=>layer.role==='front-work'&&layer.alpha>.5).flatMap(layer=>layer.paths.filter(item=>(item.fill||item.readingAnchor)&&item.points.length>=4&&!item.skin));
   const readingFrame=readingThread?.read({position:current,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible});
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
   const halo=ctx.createRadialGradient(w*.5,h*.5,0,w*.5,h*.5,Math.min(w,h)*.43);halo.addColorStop(0,theme.accent+'16');halo.addColorStop(1,'rgba(133,83,222,0)');ctx.globalAlpha=1-emotion.isolation*.75-emotion.doubt*.15;ctx.fillStyle=halo;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
   if(emotion.strength>.001){
-   const light=projectPoint(g.lightAt(current)),radius=Math.min(w,h)*(.17+emotion.rise*.15),cast=ctx.createRadialGradient(light[0],light[1],0,light[0],light[1],radius);
+   const light=projectPoint(g.lightAt(current,ambientPhase,idlePose)),radius=Math.min(w,h)*(.17+emotion.rise*.15),cast=ctx.createRadialGradient(light[0],light[1],0,light[0],light[1],radius);
    cast.addColorStop(0,'#ffd394'+Math.round(21+15*emotion.rise).toString(16).padStart(2,'0'));cast.addColorStop(1,'#ffd39400');ctx.globalAlpha=emotion.strength*emotion.glow;ctx.fillStyle=cast;ctx.fillRect(0,0,w,h);
    const edge=ctx.createRadialGradient(w*.5,h*.50,Math.min(w,h)*.22,w*.5,h*.50,Math.max(w,h)*.65);edge.addColorStop(0,'#0b091200');edge.addColorStop(1,'#0b0912d9');ctx.globalAlpha=emotion.strength*(.40+emotion.doubt*.35);ctx.fillStyle=edge;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
   }
   ctx.lineCap=ctx.lineJoin='round';
   const projected=g.projectLines(geom.filter(line=>line.alpha>.005&&line.points.length>1),project);
-  const illustrations=g.projectIllustrations(rawIllustrations,project).map(layer=>({...layer,paths:layer.paths.filter(item=>item.alpha*layer.alpha>.001&&!(innerWidth<768&&item.secondary)).filter(item=>layer.id!=='story-world'||item.points.some(q=>q[0]>-16&&q[0]<w+16&&q[1]>-16&&q[1]<h+16))}));
+  // Skip invisible or desktop-only paths before the per-vertex transform.
+  // The world-set screen bounds can only be tested after projection.
+  const compactCanvas=innerWidth<768;
+  const visibleLayers=rawIllustrations.map(layer=>({...layer,paths:layer.paths.filter(item=>item.alpha*layer.alpha>.001&&!(compactCanvas&&item.secondary))}));
+  const illustrations=g.projectIllustrations(visibleLayers,project);
+  for(const layer of illustrations){
+   if(layer.id==='story-world')layer.paths=layer.paths.filter(item=>item.points.some(q=>q[0]>-16&&q[0]<w+16&&q[1]>-16&&q[1]<h+16));
+  }
   // Compare strands with the tilted work plane in camera space. A normalized
   // plane distance remains finite as an orbit passes its edge; a reciprocal
   // ray-plane depth has a horizon there and can send sorting keys to infinity.
@@ -238,7 +264,7 @@
    }
   }
   if(trailEnergy>.01&&trailSpan>.001){
-   const trail=g.lightTrail(current,trailDirection,trailSpan,36,ambientPhase).map(p=>({...p,q:projectPoint(p.point)}));
+   const trail=g.lightTrail(current,trailDirection,trailSpan,36,ambientPhase,idlePose).map(p=>({...p,q:projectPoint(p.point)}));
    for(let i=1;i<trail.length;i++){
     const visible=project.camera.perspectiveWeight?project.clip([trail[i-1].point,trail[i].point]).map(points=>points.map(projectPoint)):[[trail[i-1].q,trail[i].q]];
     for(const points of visible){if(Math.hypot(...points[0].map((value,axis)=>value-points[1][axis]))<1e-7)continue;
@@ -269,8 +295,8 @@
 
   bitmapDetail=detail;readingThread?.write(readingFrame);if(cue)readingThread?.animate(dt/1000,cue,visible);updateNavigation();draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;
   if(drawCost>8&&detail===1&&Math.abs(current-Math.round(current))<.02)detail=2;
-  dirty=bitmapDetail!==detail;
-  if(openingActive||bitmapDetail!==detail||readingThread?.pending()||trailEnergy>.01||current!==target||Math.abs(exploded-desired)>.001||Math.abs(px-tx)>.0001||Math.abs(py-ty)>.0001)wake();
+  dirty=bitmapDetail!==detail||idlePending;
+  if(openingActive||idlePending||bitmapDetail!==detail||readingThread?.pending()||trailEnergy>.01||current!==target||Math.abs(exploded-desired)>.001||Math.abs(px-tx)>.0001||Math.abs(py-ty)>.0001)wake();
  }
  function wake(){if(!frameId&&!document.hidden&&visible&&!staticLayout())frameId=requestAnimationFrame(render);}
  function scroll(){
@@ -278,7 +304,7 @@
   const finaleHost=finale?.host(scrollY);
   const host=finaleHost|| (scrollY>=(anchors[10]??Infinity)-1?contactHost:scrollY>=(anchors[9]??Infinity)-1?summaryHost:originalHost);
   if(canvas.parentElement!==host){host.appendChild(canvas);contact.classList.toggle('live-art',host===contactHost);professional.classList.toggle('live-art',host===summaryHost);layoutCorrection=null;measure({navigation:true});}
-  const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible){resetTrail();readingThread?.hide();finale?.resetTime();}
+  const rect=canvas.getBoundingClientRect();visible=rect.bottom>0&&rect.top<innerHeight;if(!visible){last=0;resetTrail();readingThread?.hide();finale?.resetTime();}
   target=positionAt(scrollY);dirty=true;updateNavigation();
   if(readingWidth===innerWidth&&readingHeight===innerHeight)readingContext=captureReadingContext();
   wake();}
@@ -295,5 +321,5 @@
  addEventListener('pageshow',measure);document.fonts.ready.then(measure);
  activate();scroll();
  // Read-only diagnostics for reproducible QA; no control over user content.
- window.ProfileExperience=Object.freeze({snapshot:()=>({finale:finale?.snapshot(),opening:{active:openingActive,seconds:openingSeconds,phase:ambientPhase},readingThread:readingThread?.snapshot(),cinematic:readingThread?.cinematicSnapshot(),mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
+ window.ProfileExperience=Object.freeze({snapshot:()=>({idleSeconds,finale:finale?.snapshot(),opening:{active:openingActive,seconds:openingSeconds,phase:ambientPhase},readingThread:readingThread?.snapshot(),cinematic:readingThread?.cinematicSnapshot(),mode,reduced,current,target,detail,draws,drawCost,anchors:[...anchors],width:w,height:h,exploded,dirty,trailEnergy,trailDirection,trailSpan,layoutCorrection:layoutCorrection?{...layoutCorrection}:null,shot:g.storyAt(current).index,sceneCount:g.sequence.length,camera:renderedCamera?{...renderedCamera,target:[...renderedCamera.target]}:null})});
 })();

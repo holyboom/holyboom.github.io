@@ -25,14 +25,38 @@
     const thinking=gate(u,.30,1.35,1.90,2.85),indicate=gate(u,2.15,3.35,5.85,7.15);think(thinking);if(indicate>.0001)point(a.id,lead,indicate,.57+beat.variant*.025);
     headWeight=gate(u,.0,.60,6.5,7.8);headTarget=lerp(add(base.head,[side*.35,.13,.50]),qa,ease((u-1.45)/1.10));torso.yaw+=side*.095*indicate;torso.pitch+=.022*indicate;stage=u<2.2?'think':u<3.35?'prepare':u<5.85?'indicate':u<7.8?'release':'rest';
    }else if(beat.kind==='pair'&&b){
-    secondaryId=b.id;const left=gate(u,1.05,2.65,10.7,12.8),right=gate(u,1.80,3.45,11.25,13.5),join=gate(u,4.15,6.65,8.5,10.15),pullL=gate(u,1.70,3.10,10.9,13.0),pullR=gate(u,2.50,3.95,11.45,13.65),breath=.008*Math.sin(time*1.5)*join;
-    const outerL=[-.99,.25,.60],outerR=[.17,.34,.68],innerL=[-.62,.20+breath,.64],innerR=[-.26,.24+breath,.70],leftGoal=lerp(outerL,innerL,join),rightGoal=lerp(outerR,innerR,join),leftPoint=add(leftGoal,[.005,.15,.10]),rightPoint=add(rightGoal,[-.005,.15,.10]);
-    hands.left={goal:leftGoal,aim:leftPoint,weight:left,shape:'cup',targetId:a.id};hands.right={goal:rightGoal,aim:rightPoint,weight:right,shape:'cup',targetId:b.id};pulls.push({id:a.id,point:leftPoint,weight:pullL},{id:b.id,point:rightPoint,weight:pullR});
-    weight=Math.max(left,right);headWeight=gate(u,.25,1.15,12.4,14.2);headTarget=lerp(lerp(lerp(qa,qb,ease((u-2.3)/.9)),lerp(leftPoint,rightPoint,.52),ease((u-3.8)/1.6)),qb,ease((u-11)/1.8));headRoll=.025*Math.sin(u*.8)*weight;torso={yaw:mix(-.055,.055,ease((u-2)/2))*(1-join)*weight,pitch:(.022+.045*join)*weight,roll:.018*Math.sin(u*.6)*weight};
-    stage=u<1.05?'consider':u<2.65?'receive-left':u<4.15?'receive-right':u<6.65?'bring-together':u<8.5?'combine':u<10.15?'separate':u<13.65?'return':'rest';synthesis={ids:[a.id,b.id],weight:join*Math.min(pullL,pullR),center:lerp(leftPoint,rightPoint,.5),phase:u,returning:u>8.5};
+    secondaryId=b.id;
+    const left=gate(u,.62,2.32,11.18,13.18),right=gate(u,1.96,3.62,10.56,12.55);
+    const pullL=gate(u,1.20,2.52,11.12,13.25),pullR=gate(u,2.65,3.85,10.54,12.65);
+    // The first hand catches low and establishes the socket. The second lifts,
+    // turns in over it, pauses just clear of the rim, then presses the last gap.
+    const brace=gate(u,2.72,4.9,9.7,11.35),align=gate(u,4.04,5.65,9.24,10.83);
+    const press=gate(u,5.89,6.63,9.02,9.79),show=gate(u,7.24,8.41,9.45,10.33);
+    const catchL=gate(u,2.31,2.68,2.8,3.6),catchR=gate(u,3.58,3.97,4.08,4.77);
+    const leftGoal=lerp([-1.14,.18,.55],[-.67,.17,.60],brace);
+    const rightGoal=lerp([.23,.48,.56],[-.20,.34,.60],align);
+    leftGoal[1]+=-.075*catchL+.12*show-.023*press;
+    rightGoal[1]+=-.06*catchR+.15*Math.sin(Math.PI*align)-.14*press+.12*show;
+    leftGoal[0]-=.21*brace+.07*show;
+    rightGoal[0]-=.36*press+.07*show;
+    const turn=align*(1-press),leftAxis=[.54,.15,.74],rightAxis=[-.56,.08+.45*turn,.72];
+    const hold=(key,id,goal,axis,amount,capture,tilt)=>{
+     hands[key]={goal,axis,normal:[0,-1,0],weight:amount,shape:'cup',targetId:id};
+     pulls.push({id,hand:key,point:goal,weight:capture,tilt});
+    };
+    hold('left',a.id,leftGoal,leftAxis,left,pullL,-.10*(1-brace));
+    hold('right',b.id,rightGoal,rightAxis,right,pullR,.46*turn);
+    weight=Math.max(left,right);
+    const seam=add(lerp(leftGoal,rightGoal,.5),[0,.18,.03]);
+    headWeight=gate(u,.08,.77,12.4,14.25);
+    headTarget=lerp(lerp(lerp(qa,qb,ease((u-1.47)/.77)),seam,ease((u-3.68)/.86)),qb,ease((u-10.13)/1.12));
+    headRoll=.085*(left-right)-.05*turn;
+    torso={yaw:-.19*left+.26*right-.26*press,pitch:.07*left+.12*align-.12*show,roll:.095*left-.14*right+.055*press};
+    stage=u<.62?'consider':u<2.52?'receive-left':u<4.04?'receive-right':u<5.89?'align':u<6.63?'press':u<9.02?'combine':u<10.54?'separate':u<13.25?'return':'rest';
+    synthesis={ids:[a.id,b.id],weight:press*Math.min(pullL,pullR),center:seam,phase:u,returning:u>9.02};
    }else if(beat.kind==='inspect'){
-    const receive=gate(u,.75,2.30,6.65,8.5),pull=gate(u,1.45,2.85,6.7,8.9),examine=gate(u,3.25,4.2,5.8,6.65),goal=[center[0]+side*.40,.35,.68],held=add(goal,[0,.16,.12]);
-    hands[lead]={goal,aim:held,weight:receive,shape:'cup',targetId:a.id};point(a.id,other,examine,.43);pulls.push({id:a.id,point:held,weight:pull});weight=Math.max(receive,examine);headWeight=gate(u,.12,.8,8.1,9.3);headTarget=lerp(qa,held,pull);headRoll=-side*.08*receive;torso={yaw:side*.08*receive,pitch:.065*receive,roll:-side*.025*receive};stage=u<.75?'notice':u<2.85?'receive':u<6.65?'examine':u<9?'release':'rest';
+    const receive=gate(u,.75,2.30,6.65,8.5),pull=gate(u,1.45,2.85,6.7,8.9),examine=gate(u,3.25,4.2,5.8,6.65),goal=[center[0]+side*(.46-.13*examine),.23+.14*examine,.63],held=add(goal,[0,.18,.03]);
+    hands[lead]={goal,axis:[-side*.50,.13+.25*examine,.76],normal:[0,-1,0],weight:receive,shape:'cup',targetId:a.id};point(a.id,other,examine,.43);pulls.push({id:a.id,hand:lead,point:held,weight:pull,tilt:side*.30*examine});weight=Math.max(receive,examine);headWeight=gate(u,.12,.8,8.1,9.3);headTarget=lerp(qa,held,pull);headRoll=-side*.08*receive;torso={yaw:side*.08*receive,pitch:.065*receive,roll:-side*.025*receive};stage=u<.75?'notice':u<2.85?'receive':u<6.65?'examine':u<9?'release':'rest';
    }else{
     const first=gate(u,1.1,2.2,3.6,4.7),second=gate(u,5.45,6.65,8.0,9.2),follow=ease((u-4.0)/1.6),firstSide=selection.first.side,secondSide=selection.second?.side||-firstSide;
     if(first>.0001)point(a.id,firstSide<0?'left':'right',first,.58);if(second>.0001)point(b?.id||a.id,secondSide<0?'left':'right',second,.66);

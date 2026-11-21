@@ -51,7 +51,7 @@
   switch(i){
    case 0:return right?work(-.08,.06,.13,'write'):work(-.34,-.17,.025,'brace',true);
    case 1:return right?work(.04,.24,.24,'write'):{target:bodyAt([-.23,.35,.19]),grip:'open',active:false,space:'body'};
-   case 2:return right?work(.16,.10,.14,'write'):work(-.34,-.17,.025,'brace',true);
+   case 2:return right?work(-.03,.17,.27,'write'):work(-.34,-.17,.025,'brace',true);
    case 3:return right?key(.13,-.01,.07):key(-.19,.01,.075);
    case 4:return right?work(.12,.08,.08,'point'):key(-.19,.01,.07);
    case 5:return right?work(.08,-.06,.12,'open'):work(-.30,.18,.08,'open');
@@ -87,17 +87,35 @@
   if([3,4,10].includes(i)){const n=right?3:2,cycle=smooth(a),phase=cycle*n+(right?0:.35),pulse=Math.sin(PI*(phase%1))**4;target=at(w.keyboard,(right?.13:-.19)+.025*Math.sin(cycle*PI*2),.01+(right?-.01:.015),.020*(1-pulse));active=pulse>.96;grip='type';space='keyboard';spec.press=pulse;}
   if(i===5&&right){const t=smooth(a);target=painted(w,mix(.48,.91,t),mix(.18,.65,t),.012+.10*Math.sin(PI*t));active=a>.86;grip='hold';}
   if([6,11,21].includes(i)&&right){target=at(w,mix(-.12,.11,smooth(a)),.11+.035*Math.sin(a*PI),.035);active=a>.1&&a<.85;grip='point';}
-  if([8,22].includes(i)){const t=smooth(a),x=i===8?(right?1.31:.49):(right?1.0:.46),y=i===8?.15:(right?.30:.13);target=painted(w,mix(right?.85:.69,x,t),mix(.36,y,t),.012+.08*Math.sin(PI*t));active=a>.85;}
+  if(i===8||i===22){
+   // Set one end of the strand before drawing the other taut. For the
+   // tangle, reverse which side takes the load and trace the short branch.
+   const anchorsFirst=i===8?!right:right;
+   const travel=anchorsFirst?ramp(a,0,.54):ramp(a,.16,.92);
+   const x=i===8?(right?1.31:.49):(right?1.0:.46);
+   const y=i===8?.15:(right?.30:.13);
+   target=painted(w,mix(right?.85:.69,x,travel),mix(.36,y,travel),.012+.08*Math.sin(PI*travel));
+   active=travel===1;
+  }
+  if(i===9){
+   // Weight is still between the palms at the start. Seat the object, then
+   // open the far fingers before the presenting hand clears the silhouette.
+   const release=ramp(a,right?.32:.16,right?.90:.70);
+   target=add(target,[side*.14*(release-1),.11*(1-release),.08*(1-release)]);
+  }
+  if(i===13){
+   const shelter=ramp(a,right?.14:0,right?.83:.60);
+   target=add(target,[side*.07*(1-shelter),(right?.13:-.025)*(1-shelter),.04*(1-shelter)]);
+  }
   if(i===14&&right){const reach=smooth(a/.56),recoil=smooth((a-.58)/.42);target=lerp(add(body.hip,[.20,.32,.34]),at(w,.14,.02,.04),reach);target=lerp(target,add(body.hip,[.18,.38,.35]),recoil*.45);active=false;grip='cup';}
-  if(i===15&&right){target=add(body.head,apply(body.headFrame,[.10,.06,.12]));active=true;}
   if(i===16&&!right){target=painted(w,.38,.26,.015);active=true;grip='brace';}
   if(i===16&&right){target=at(w,mix(-.13,.10,smooth(a)),mix(-.11,.04,smooth(a)),.012+.10*Math.sin(PI*smooth(a/.86)));active=a>.86;grip='hold';}
   if(i===19&&right){target=at(w,mix(.21,-.02,smooth(a)),.15+.08*Math.sin(PI*a),.012+.10*Math.sin(PI*smooth(a/.80)));active=a>.8;grip='hold';}
   if(i===20){const t=smooth(a);target=painted(w,right?mix(1.30,1.17,t):mix(.42,.63,t),.36,.015);active=a>.85;grip='cup';}
-  if(i===23&&right){target=at(w,mix(-.20,.16,smooth(a)),.06,.025);active=true;grip='open';}
+  if(i===23&&right){target=at(w,mix(-.13,.16,smooth(a)),.06,.025);active=true;grip='open';}
   if(i===24&&right){target=lerp(at(w,.13,.06,.09),spec.target,smooth(a));target[1]+=.025*Math.sin(PI*a);active=false;grip='open';}
   if(i===27&&right){target=at(w,mix(.18,.06,smooth(a)),.12,.012+.18*smooth((a-.16)/.84));active=a<.16;grip='hold';}
-  if([25,26,28].includes(i)&&right){const from=i===25?at(w,.57,-.10,.06):i===26?at(w,.58,-.15,.03):at(w,.10,-.28,.10);target=lerp(from,spec.target,smooth(a));target[1]+=.025*Math.sin(PI*a);}
+  if([25,26,28].includes(i)&&right){const from=i===25?at(w,.57,-.10,.06):i===26?at(w,.58,-.15,.03):at(w,.10,-.28,.10);target=lerp(from,spec.target,smooth(a));const arc=Math.sin(PI*smooth(a));target[1]+=(i===26?.11:i===28?.065:.08)*arc;target[0]+=(i===26?-.105:.05)*arc;target[2]+=.06*arc;}
   if(i===30&&right){target=add(target,[.015*Math.sin(PI*a),.035*Math.sin(PI*a),.025*Math.sin(PI*a)]);}
   return {...spec,target,active,grip,space};
  }
@@ -137,15 +155,103 @@
   }
   return {wf:{...wf,frame:f,shape,offset:shape.contactOffset,curl:wf.curl+mix(-.04,.14,closure)*amount},target,amount};
  }
- function evaluate(timeline,lightOnly=false){
+ // A reaction starts on perception, loads the support, then resolves after contact.
+ // Keep these offsets in joint space, upstream of the IK solve. All keys are
+ // sampled directly in either direction, including the hold leading into a cut.
+ const ramp=(u,start,end)=>smooth((u-start)/(end-start));
+ // Timings are fractions of the incoming shot. Lean, turn, bank and gaze are
+ // degrees. The asymmetry belongs to the action: tucked ribs on a lift, a
+ // counterturn against tension, or a retreat to clear the visitor's view.
+ const accents={
+  //                  see,   load, work, free, lean, turn, bank, gaze
+  1:  [ .025,.19,.42,.74,   -6, -10,  3,  16], // find the blank site
+  3:  [ .03, .13,.28,.39,    5,  10, -4,  10], // follow the pen to its rest
+  4:  [ .045,.19,.40,.63,    6, -13, -2, -15], // locate one component
+  5:  [ .04, .23,.49,.79,   10,   7,  6,  17], // seat the far corner first
+  6:  [ .02, .20,.44,.72,    8, -12, -4, -12], // peer along the seam
+  7:  [ .37, .54,.72,.94,    7,   9,  4,  11], // take the brief after rising
+  8:  [ .025,.17,.48,.78,   -6,  12, -5,  17], // keep the bridge under tension
+  9:  [ .065,.26,.53,.79,    9, -14,  5, -17], // deliver and release
+  10: [ .02, .16,.37,.71,   -5,  10, -3,  19], // notice the inference
+  11: [ .035,.22,.53,.83,    8,   9,  6, -16], // read the fine edge
+  12: [ .06, .28,.57,.85,   -7, -12, -4,  18], // signal approval, step clear
+  13: [ .32, .43,.69,.91,   10,  -9,  6, -11], // shelter the ember
+  14: [ .05, .21,.44,.69,   13,  -9, -6,  19], // reach against a resisting surface
+  16: [ .035,.19,.45,.71,    7,  12, -5, -12], // brace the near side before pressing
+  17: [ .11, .23,.51,.80,   -5,   8,  4,  14], // push through the support
+  18: [ .075,.28,.59,.85,    9,  12, -4,  13], // turn the lesson towards the light
+  19: [ .02, .16,.38,.80,    7,  13, -6,  16], // carry the folio across the midline
+  20: [ .04, .24,.50,.79,   11,  -6,  3, -14], // collect with both hands
+  21: [ .025,.19,.45,.73,   -8,  -9, -6, -15], // follow the edge of the moat
+  22: [ .03, .18,.55,.82,    7,  12,  6, -17], // separate the two branches
+  23: [ .07, .24,.46,.78,    8,  11, -2,  11], // sweep the interface clear
+  24: [ .08, .27,.54,.82,   -8, -13, -5,  17], // leave the choice to the reader
+  25: [ .02, .14,.39,.71,   -6,   9, -7,  12], // turn the open side out
+  26: [ .035,.16,.44,.76,   -9, -14,  5, -15], // clear the entrance
+  27: [ .05, .19,.48,.82,    7,  -8,  5,  15], // tip a layer into view
+  28: [ .06, .21,.47,.80,    9,   7, -4,  11], // offer, then transfer the weight
+  29: [ .11, .34,.61,.93,   -6, -10,  4, -15], // let the hands settle
+  30: [ .04, .22,.52,.89,   -9,  12, -5,  20]  // look to the visitor before inviting
+ };
+ const radians=PI/180;
+ function bodyActing(beat,u){
+  let lean=0,turn=0,nod=0,look=0,roll=0,shift=0;
+  if(beat===2){
+   // Paper is supported throughout. The pen comes off the second mark before
+   // the ribs draw back; the head stays aimed at the drawing a little longer.
+   const focus=ramp(u,.07,.21)*(1-ramp(u,.59,.75)),review=ramp(u,.68,.92);
+   lean=.085*focus-.25*review;turn=.17*focus+.18*review;
+   nod=.08*focus-.20*ramp(u,.77,.97);look=.19*ramp(u,.025,.13)*(1-ramp(u,.69,.93));
+   roll=-.07*focus+.065*review;shift=.017*focus-.024*review;
+  }else if(beat===15){
+   // Head checks the damaged edge, aborts the first approach, then settles
+   // into the palm while the other hand bears the surviving corner.
+   const check=ramp(u,.015,.10)*(1-ramp(u,.15,.30)),sink=ramp(u,.45,.69);
+   look=-.26*check+.10*sink;nod=.13*check+.10*sink;
+   lean=-.29*ramp(u,.10,.25)*(1-ramp(u,.43,.65))+.09*sink;
+   turn=.10*check-.09*sink;roll=-.13*sink;shift=-.018*sink;
+  }else if(accents[beat]){
+   const [see,load,work,free,bend,twist,bank,aim]=accents[beat];
+   const gaze=ramp(u,see,load)*(1-ramp(u,work,free));
+   const transfer=ramp(u,see,load)*(1-ramp(u,load,work));
+   const exert=ramp(u,load,work)*(1-ramp(u,work,free));
+   // Eyes arrive first. Transfer against the direction of the shoulder,
+   // reverse into the effort, and allow the pelvis to settle last.
+   look=aim*radians*gaze;nod=bend*radians*(.42*gaze+.30*exert);
+   lean=bend*radians*(exert-.27*transfer);turn=twist*radians*(exert-.34*transfer);
+   roll=bank*radians*exert;
+   shift=.0022*bank*(transfer-.8*exert);
+  }
+  return {lean,turn,nod,look,roll,shift};
+ }
+ function evaluate(timeline,lightOnly=false,idleSeconds=0){
   timeline=clamp(Number.isFinite(timeline)?timeline:0,0,30);const to=Math.ceil(timeline),from=Math.max(0,to-1),u=to===0?1:timeline-from,phase=phaseAt(to,u),a=direction[from],b=direction[to],isRise=to===7||to===17,isSit=to===13;
   const stanceProgress=isRise?smooth((u-(to===17?.40:.17))/(to===17?.32:.17)):isSit?smooth((u-.02)/.22):smooth((u-.10)/.72),seat= mix(seated(from)?1:0,seated(to)?1:0,stanceProgress),stand=1-seat;
-  const prepPulse=Math.sin(PI*clamp((u-(to===17?.12:0))/(to===17?.74:to===7?.40:to===13?.32:.80)))**2,bodyT=to===15?smooth((u-.025)/.20):to===2?smooth((u-.02)/.42):smooth((u-.08)/.62),headT=smooth((u-.015)/.44),stepSway=isRise?.025*(Math.sin(PI*clamp((u-(to===17?.10:0))/(to===17?.16:.09)))-Math.sin(PI*clamp((u-(to===17?.23:.07))/(to===17?.16:.10)))):0,shift=mix(a[3],b[3],bodyT)+stepSway;
+  const prepPulse=Math.sin(PI*clamp((u-(to===17?.12:0))/(to===17?.74:to===7?.40:to===13?.32:.80)))**2,bodyT=to===15?smooth((u-.025)/.20):to===2?smooth((u-.02)/.42):smooth((u-.08)/.62),headT=smooth((u-.015)/.44),stepSway=isRise?.025*(Math.sin(PI*clamp((u-(to===17?.10:0))/(to===17?.16:.09)))-Math.sin(PI*clamp((u-(to===17?.23:.07))/(to===17?.16:.10)))):0,baseShift=mix(a[3],b[3],bodyT)+stepSway;
   let yaw=mix(a[0],b[0],bodyT),lean=mix(a[1],b[1],bodyT)+(isRise?.42*prepPulse:isSit?.14*prepPulse:to===14?.07*smooth((u-.12)/.30)*(1-smooth((u-.60)/.25)):to===16?.045*prepPulse:0),headPitch=mix(a[2],b[2],headT),headYaw=mix(({25:-.04,26:.02,28:-.02,29:.02,30:.02})[from]??a[0]+.24,({25:-.04,26:.02,28:-.02,29:.02,30:.02})[to]??b[0]+.24,headT);headPitch+=.10*mix(seated(from)?1:0,seated(to)?1:0,headT);
   if(to===3){const dockingAttention=Math.sin(PI*clamp((u-.02)/.40))**2;headPitch+=.10*dockingAttention;headYaw-=.14*dockingAttention;}
   if(to===15){headPitch-=.10*smooth((u-.82)/.14);headYaw+=.12*smooth((u-.82)/.14);}if(from===15){headPitch-=.10*(1-headT);headYaw+=.12*(1-headT);}
   const authored=sampleClip(to===2?'draw':to===16?'repair':to===17?'rise':'',u);if(authored){lean+=authored.lean||0;yaw+=authored.yaw||0;headPitch+=authored.headPitch||0;headYaw+=authored.headYaw||0;}
-  const hip=[-.48+shift,-.22-.39*seat-.02*stand+mix(level[from],level[to],stanceProgress),.20-.32*seat+(isRise?.24*seat*smooth((u-(to===17?.20:.08))/(to===17?.20:.09)):isSit?.12*prepPulse:0)],pelvisFrame=frame(yaw*.35,-lean*.15,-shift*.38),chestFrame=frame(yaw,lean,-shift*.22),lumbar=add(hip,mul(frame(yaw*.6,lean*.45,-shift*.25).y,.26)),ribcage=add(lumbar,mul(frame(yaw*.85,lean*.8,-shift*.23).y,.28)),shoulder=add(ribcage,mul(chestFrame.y,.18)),neck=add(shoulder,mul(chestFrame.y,.105)),headFrame=frame(headYaw,headPitch,-shift*.15),head=add(neck,mul(headFrame.y,.255));
+  const acting=bodyActing(to,u),previousActing=bodyActing(from,1),release=1-ramp(u,.02,.31);
+  const shift=baseShift+acting.shift+previousActing.shift*release;
+  lean+=acting.lean+previousActing.lean*release;
+  yaw+=acting.turn+previousActing.turn*release;
+  headYaw+=acting.look+previousActing.look*release;
+  headPitch+=acting.nod+previousActing.nod*release;
+  // A single observed pause plays on the visible-time clock. Both ends
+  // return exactly to the scroll pose. Never move the pelvis, feet, paper
+  // plane or IK targets for a breath. The gaze settles after the chest.
+  const breath=ramp(idleSeconds,0,.86)*(1-ramp(idleSeconds,.92,2.32));
+  const glance=ramp(idleSeconds,.16,1.02)*(1-ramp(idleSeconds,1.18,2.4));
+  const attention=beat=>accents[beat]?.[7]??(beat===15?-15:14);
+  const sceneDirection=mix(attention(from),attention(to),headT);
+  const collapsed=mix(Number(from>=13&&from<=16),Number(to>=13&&to<=16),bodyT);
+  const pelvisLean=lean;
+  lean+=mix(.015,.026,collapsed)*breath;
+  headPitch+=mix(-.032,.046,collapsed)*glance;
+  headYaw+=sceneDirection*radians*.23*glance;
+  const shoulderRoll=acting.roll+previousActing.roll*release+.012*breath;
+  const hip=[-.48+shift,-.22-.39*seat-.02*stand+mix(level[from],level[to],stanceProgress),.20-.32*seat+(isRise?.24*seat*smooth((u-(to===17?.20:.08))/(to===17?.20:.09)):isSit?.12*prepPulse:0)],pelvisFrame=frame(yaw*.35,-pelvisLean*.15,-shift*.38),chestFrame=frame(yaw,lean,-shift*.22+shoulderRoll),lumbar=add(hip,mul(frame(yaw*.6,lean*.45,-shift*.25).y,.26)),ribcage=add(lumbar,mul(frame(yaw*.85,lean*.8,-shift*.23+shoulderRoll*.6).y,.28)),shoulder=add(ribcage,mul(chestFrame.y,.18)),neck=add(shoulder,mul(chestFrame.y,.105)),headFrame=frame(headYaw,headPitch,-shift*.15),head=add(neck,mul(headFrame.y,.255));
   const shoulderL=add(shoulder,mul(chestFrame.x,-lengths.shoulderSpan/2)),shoulderR=add(shoulder,mul(chestFrame.x,lengths.shoulderSpan/2)),hipL=add(add(hip,mul(pelvisFrame.x,-lengths.hipSpan/2)),mul(pelvisFrame.y,-.055)),hipR=add(add(hip,mul(pelvisFrame.x,lengths.hipSpan/2)),mul(pelvisFrame.y,-.055));
   const body={hip,head,headFrame},previousBase=workFrame(kinds[from],stand,from),currentBase=workFrame(kinds[to],stand,to),previousWork=from===15?inspectWork(previousBase,1):previousBase,currentWork=to===15?inspectWork(currentBase,1):currentBase,baseWork=blendWork(previousBase,currentBase,to===3?smooth((u-.36)/.14):smooth((u-.16)/.20)),work=inspectWork(baseWork,to===15?smooth(phase.action):from===15?1-smooth((u-.16)/.20):0);
   const hands=[],wrists=[],contacts=[],reach=[],handAmounts=[];
@@ -154,6 +260,15 @@
    if(u<phase.actionStart){const t=to===16?smooth((u-(side===-1?.18:.27))/(side===-1?.12:.15)):smooth((u-phase.attentionEnd)/Math.max(.01,phase.actionStart-phase.attentionEnd));spec={...actionStart,target:lerp(start.target,actionStart.target,t),active:false};spec.target[1]+=.035*Math.sin(PI*t);if(side===1&&(to===25||to===26))spec.target[2]+=.08*Math.sin(PI*t);wf=blendWrist(startWrist,actionStartWrist,t);}
    else if(u<=phase.actionEnd){spec=actionSpec(to,side,phase.action,work,body);weight=spec.active?1:0;wf=spec.grip==='type'?wristFor(spec,work,side):blendWrist(actionStartWrist,actionEndWrist,smooth(phase.action));}
    else {const t=smooth((u-phase.actionEnd)/Math.max(.01,phase.settle-phase.actionEnd));spec={...finish,target:lerp(actionEnd.target,finish.target,t),active:finish.active&&t>.999};weight=spec.active?1:0;wf=blendWrist(actionEndWrist,finishWrist,t);}
+   if(to===15&&side===1){
+    // Leave a visible gap when the first reach stalls. Lower the elbow before
+    // raising the palm; weight transfers only after the temple reaches it.
+    const waiting=add(body.hip,[.30,.39,.29]),withdraw=ramp(u,.13,.34),touch=ramp(u,.41,.68);
+    const target=lerp(lerp(start.target,waiting,withdraw),finish.target,touch);
+    target[1]-=.07*Math.sin(PI*withdraw);target[2]+=.055*Math.sin(PI*touch);
+    spec={...finish,target,active:touch===1};
+    weight=spec.active?1:0;wf=blendWrist(startWrist,finishWrist,withdraw);
+   }
    if(to===0){spec=finish;weight=spec.active?1:0;wf=finishWrist;}
    if(to===19&&u>phase.actionEnd){const t=smooth((u-phase.actionEnd-.05)/(phase.settle-phase.actionEnd-.05));spec={...finish,target:lerp(actionEnd.target,finish.target,t),active:actionEnd.active&&t<.001};weight=spec.active?1:0;wf=blendWrist(actionEndWrist,finishWrist,t);}
    if(to===16&&u>phase.actionEnd){const releaseStart=phase.actionEnd+(phase.settle-phase.actionEnd)*(side===1?.50:.60),releaseEnd=phase.settle-(side===1?.02:0),t=smooth((u-releaseStart)/(releaseEnd-releaseStart));spec={...finish,target:lerp(actionEnd.target,finish.target,t),grip:t<.5?actionEnd.grip:finish.grip,active:actionEnd.active&&t<.001};weight=spec.active?1:0;wf=blendWrist(actionEndWrist,finishWrist,t);offsetFreedom*=t;}
@@ -171,7 +286,7 @@
    if((isRise||isSit)&&side===-1){const supportBlend=isRise?(to===17?smooth((u-.10)/.14)*(1-smooth((u-.60)/.15)):smooth((u-.01)/.10)*(1-smooth((u-.27)/.08))):smooth(u/.04)*(1-smooth((u-.23)/.08)),supportSpec={target:tableSupport,grip:'brace',space:'support'};spec={...spec,target:lerp(spec.target,tableSupport,supportBlend),grip:supportBlend>.5?'brace':spec.grip,space:supportBlend>.5?'support':spec.space};wf=blendWrist(wf,wristFor(supportSpec,work,side),supportBlend);weight=supportBlend>.999?1:0;offsetFreedom*=1-supportBlend;}
    if(authored&&weight===0&&offsetFreedom>0)spec.target=add(spec.target,mul(authored[side===-1?'handL':'handR']||[0,0,0],offsetFreedom));
    const accent=handAccent(wf,spec,side,to,u,weight);wf=accent.wf;spec={...spec,target:accent.target};handAmounts[side===-1?0:1]=accent.amount;
-   const goal=sub(spec.target,apply(wf.frame,wf.offset)),origin=side===-1?shoulderL:shoulderR,poleWeight=side===1?(to===15?smooth((u-.18)/.40):from===15?1-smooth((u-.08)/.50):0):0,pole=add(origin,lerp([side*.45,-.48,-.22],[.02,-.50,.55],poleWeight)),solution=twoBone(origin,goal,lengths.upperArm,lengths.forearm,pole);
+   const goal=sub(spec.target,apply(wf.frame,wf.offset)),origin=side===-1?shoulderL:shoulderR,poleWeight=side===1?(to===15?smooth((u-.18)/.40):from===15?1-smooth((u-.08)/.50):0):0,pole=add(origin,lerp([side*.45,-.48,-.22],[.52,-.50,.36],poleWeight)),solution=twoBone(origin,goal,lengths.upperArm,lengths.forearm,pole);
    const index=side===-1?0:1;hands[index]=solution;wrists[index]=wf.frame;if(!lightOnly){reach[index]={requested:goal,solved:solution.end,clamped:solution.clamped,error:solution.error};
    contacts[index]={target:spec.target,tip:add(solution.end,apply(wf.frame,wf.offset)),active:weight===1,weight,grip:spec.grip,gripOffset:wf.offset,fingerCurl:wf.curl,shape:wf.shape,space:spec.space,effector:spec.effector||(spec.grip==='write'?'stylus':'fingertip')};}
   }
@@ -184,8 +299,8 @@
   return {head,hip,shoulder,shoulderL,shoulderR,hipL,hipR,elbowL:hands[0].joint,elbowR:hands[1].joint,handL:hands[0].end,handR:hands[1].end,knees:legs.map(l=>l.joint),feet:legs.map(l=>l.end),tilt:headPitch,seated:seat>.5,seatAmount:seat,frames:{head:headFrame,chest:chestFrame,pelvis:pelvisFrame,wristL:wrists[0],wristR:wrists[1],footL:footState[0].frame,footR:footState[1].frame},spine:{pelvis:hip,lumbar,ribcage,chest:shoulder,neck},light,handMotion:{left:handAmounts[0],right:handAmounts[1],light:accentAt(timeline)},work,drawing,tool,contacts:{left:contacts[0],right:contacts[1]},support:{floorY,seatY,seatCenter:[...seatCenter],tableSupport:[...tableSupport],seatWeight,footL:footState[0],footR:footState[1]},weights:{left:leftWeight,right:rightWeight,seat:seatWeight},phase:{from,to,beat:to,progress:u,stage:phase.stage,action:phase.action,bridge:phase.bridge,attentionEnd:phase.attentionEnd,actionStart:phase.actionStart,actionEnd:phase.actionEnd,settle:phase.settle},lengths,reach:{left:reach[0],right:reach[1]},authoring:authored?'blender-curves':'authored-controls'};
  }
  // Trail sampling shares the same rig evaluation but omits unused body/prop output.
- function poseAt(timeline){return evaluate(timeline,false);}
- function lightAt(timeline){return evaluate(timeline,true);}
+ function poseAt(timeline,idleSeconds=0){return evaluate(timeline,false,idleSeconds);}
+ function lightAt(timeline,idleSeconds=0){return evaluate(timeline,true,idleSeconds);}
  function pose(value){if(typeof value==='number')return poseAt(value);const aliases={build:5,review:11,experience:24};const i=aliases[value]??names.indexOf(value);return poseAt(i<0?0:i);}
  // Additive finale gestures reuse the original fixed-length rig and C glove.
  function finalePose(base,options={}){
@@ -206,7 +321,7 @@
    if(target&&handSide===side&&weight){const direction=norm(sub(target,shoulder)),requested=add(shoulder,mul(direction,.58));goal=lerp(goal,requested,weight);const aiming=norm(sub(target,goal));wrist=blendFrame(wrist,palm(aiming,[0,1,0]),weight);shape=handShapes.blend(shape,handShapes.pose('point',handSide),weight);grip='point';}
    function control(c){if(!c)return;if(c.prelude)control(c.prelude);const amount=clamp(c.weight||0);if(!amount)return;
     const requested=c.point&&c.aim?add(shoulder,mul(norm(sub(c.aim,shoulder)),clamp(c.reach||.61,.38,.68))):c.goal||goal;
-    goal=add(lerp(goal,requested,amount),mul(c.arc||[handSide*.025,.018,.17],Math.sin(PI*amount)));if(c.aim)wrist=blendFrame(wrist,palm(norm(sub(c.aim,goal)),[0,1,0]),amount);
+    goal=add(lerp(goal,requested,amount),mul(c.arc||[handSide*.025,.018,.17],Math.sin(PI*amount)));if(c.axis||c.aim)wrist=blendFrame(wrist,palm(c.axis||norm(sub(c.aim,goal)),c.normal||[0,1,0]),amount);
     shape=handShapes.blend(shape,handShapes.pose(c.shape||'open',handSide),amount);if(amount>.5)grip=c.shape||'open';
    }
    control(controls[key]);

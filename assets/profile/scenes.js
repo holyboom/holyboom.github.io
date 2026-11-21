@@ -1,6 +1,6 @@
 /* Owner-editable direction: a symbolic maker, not a likeness or documentary scene. */
 (function(root){'use strict';
- const config={release:'living-gemini-copy-v26',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
+ const config={release:'living-human-motion-v27',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
  establish:{yaw:-.30,pitch:.12,distance:6.4,target:[.10,0,0]},
  draft:{yaw:.58,pitch:.30,distance:5.25,target:[-.25,-.09,.22]},
  detail:{yaw:.44,pitch:.18,distance:5.05,target:[-.26,-.08,.25]},
@@ -124,7 +124,7 @@
  // Documentary inserts: establish context, approach a subject, let it register,
  // then return. They occupy their own intervals beside the locked orbit shots.
  config.camera.inserts=[
-  {id:'the-first-mark',subject:'drawing',framing:'hand',start:1.10,arrive:1.34,holdEnd:1.56,end:1.86,distance:2.55,compactDistance:3.05,yaw:.36,compactYaw:.26,pitch:.27,offset:[0,-.015,0],radius:.27},
+  {id:'the-first-mark',subject:'drawing',framing:'hand',start:1.10,arrive:1.34,holdEnd:1.49,end:1.90,distance:3.06,compactDistance:3.29,yaw:.36,compactYaw:.26,pitch:.27,offset:[-.11,.075,0],radius:.27},
   {id:'the-review-boundary',subject:'work',framing:'work',start:11.12,arrive:11.37,holdEnd:11.60,end:11.91,distance:3.05,compactDistance:3.55,yaw:-.13,compactYaw:-.08,pitch:.14,offset:[0,0,0],radius:.49},
   {id:'the-weight-of-resistance',subject:'light',framing:'hand',start:14.16,arrive:14.27,holdEnd:14.43,end:14.70,distance:2.65,compactDistance:3.10,yaw:-.46,compactYaw:-.30,pitch:.19,offset:[-.035,.015,0],radius:.29},
   {id:'stay-with-the-question',subject:'head',framing:'head',start:15.08,arrive:15.22,holdEnd:15.44,end:15.70,distance:2.15,compactDistance:2.75,yaw:.56,compactYaw:.38,pitch:.07,offset:[.015,-.10,.02],radius:.31},

@@ -10,8 +10,19 @@ check('all-acting-keeps-bone-lengths-reachable-hands-and-planted-feet',boneError
 let maxStep=0,last=null,worst=null;for(let i=0;i<=12700;i++){const t=i*.05,v=model.sample(1,t,t);if(last)for(const key of ['handL','handR','elbowL','elbowR','head']){const step=distance(last.pose[key],v.pose[key]);if(step>maxStep){maxStep=step;worst={t,key};}}last=v;}
 check('elbows-never-flip-through-ten-complete-phrases',maxStep<.12,{maxStep,worst});
 const pairs=samples.filter(v=>v.synthesis?.weight>.99),pairSets=new Set(pairs.map(v=>v.synthesis.ids.join('+')));check('combining-uses-two-real-different-identities-and-varies-its-pairs',pairs.length>100&&pairSets.size>=10&&pairs.every(v=>v.synthesis.ids.length===2&&v.synthesis.ids[0]!==v.synthesis.ids[1]&&v.synthesis.ids.every(id=>ids.has(id))&&v.nodes.length===34&&new Set(v.nodes.map(n=>n.id)).size===34),{pairs:pairSets.size});
-let heldError=0,pullDistance=0;for(const t of [17.5,18.5,55.5,56.5]){const v=model.sample(1,t,t);for(const [side,id]of [['left',v.synthesis.ids[0]],['right',v.synthesis.ids[1]]]){const node=v.nodes.find(n=>n.id===id),hand=v.pose[side==='left'?'handL':'handR'];heldError=Math.max(heldError,Math.abs(distance(node.point,hand)-Math.hypot(.005,.15,.10)));pullDistance=Math.max(pullDistance,distance(node.point,node.orbitPoint));}}
-check('received-icons-actually-follow-the-two-hands',heldError<1e-8&&pullDistance>.25,{heldError,pullDistance});
+let heldError=0,pullDistance=0,checkedPads=0;
+for(const frame of samples){
+ if(frame.attention.kind!=='pair')continue;
+ for(const pull of frame.attention.pulls){
+  const node=frame.nodes.find(n=>n.id===pull.id);
+  if(node.pull!==1)continue;
+  const tip=frame.pose.contacts[pull.hand].tip,rim=[node.point[0],node.point[1]-.14,node.point[2]];
+  heldError=Math.max(heldError,distance(tip,rim));
+  pullDistance=Math.max(pullDistance,distance(node.point,node.orbitPoint));
+  checkedPads++;
+ }
+}
+check('received-icons-actually-follow-the-two-hands',checkedPads>100&&heldError<1e-8&&pullDistance>.25,{checkedPads,heldError,pullDistance});
 const returned=model.sample(1,24.5,24.5);check('both-identities-rejoin-their-own-moving-orbits',returned.nodes.every(n=>!n.pull||distance(n.point,n.orbitPoint)<1e-7)&&returned.synthesis.weight===0);
 const thinking=model.sample(1,1.55,1.55),pointing=model.sample(1,4.5,4.5);check('thinking-and-pointing-use-materially-different-postures',distance(thinking.pose.handR,pointing.pose.handR)>.30&&thinking.attention.stage==='think'&&pointing.attention.stage==='indicate');
 const held=17.7,progress=[.94,.95,.97,.99,1],forward=progress.map(p=>JSON.stringify(model.sample(p,held,held)));check('a-combination-reverses-and-reforms-with-its-held-phase',JSON.stringify(forward)===JSON.stringify([...progress].reverse().map(p=>JSON.stringify(model.sample(p,held,held))).reverse()));

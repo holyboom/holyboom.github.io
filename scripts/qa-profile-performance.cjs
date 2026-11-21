@@ -40,7 +40,7 @@ function distanceToPaintedPath(point,item,closedSurface=false) {
   }
   return inside?Math.min(nearest,Math.abs(dot(subtract(point,a),normal))):nearest;
 }
-const paintedSpaces=new Set(['work','paper','keyboard','support','stylus-dock']);
+const paintedSpaces=new Set(['work','paper','fragment','keyboard','support','stylus-dock']);
 function paintedSurfaceGap(position,contact,modelLines=null,layers=null) {
   let painted,supportAlpha;
   if(['support','stylus-dock'].includes(contact.space)) {
@@ -48,7 +48,13 @@ function paintedSurfaceGap(position,contact,modelLines=null,layers=null) {
     supportAlpha=Math.max(0,...supports.filter(line=>line.closedSurface&&distanceToPaintedPath(contact.target,line,true)<.045).map(line=>line.alpha));
     painted=supports.filter(line=>line.alpha>.1);
   }
-  else painted=(layers||geometry.illustration(position)).filter(layer=>layer.alpha>.35).flatMap(layer=>layer.paths).filter(item=>item.alpha>.1&&(contact.space!=='keyboard'||item.role==='keyboard'));
+  else {
+    // A fingertip is always near its own glove. Only its actual workpiece
+    // (including the ink on the drafting sheet) can validate this contact.
+    painted=(layers||geometry.illustration(position))
+      .filter(layer=>layer.alpha>.35&&(layer.role==='front-work'||layer.id==='drawn-ink'))
+      .flatMap(layer=>layer.paths.filter(item=>item.alpha>.1&&(contact.space!=='keyboard'||item.role==='keyboard')));
+  }
   return {count:painted.length,supportAlpha,error:painted.length?Math.min(...painted.map(item=>distanceToPaintedPath(contact.target,item,item.closedSurface))):Infinity};
 }
 const maxDifference = (a, b) => a.length===b.length?Math.max(...a.map((v, i) => Math.abs(v - b[i]))):Infinity;
@@ -270,6 +276,32 @@ async function main() {
   const fastLightErrors=[];
   for(const {timeline,pose}of samples){const fast=motion.lightAt(timeline),error=distance(fast,pose.light);if(error!==0)worst(fastLightErrors,{timeline,error});}
   check('fast-light-is-exactly-the-complete-pose-emitter',fastLightErrors.length===0,{samples:samples.length,failures:fastLightErrors});
+  const idleErrors=[],idleTimes=[.35,.89,1.2,1.85,2.4];
+  let idlePoses=0,maxHeadTravel=0;
+  for(let index=0;index<samples.length;index+=4){
+    const {timeline,pose}=samples[index];
+    for(const seconds of idleTimes){
+      const p=motion.poseAt(timeline,seconds);
+      idlePoses++;
+      maxHeadTravel=Math.max(maxHeadTravel,distance(p.head,pose.head));
+      const finite=Object.values(points(p)).every(isPoint);
+      const emitterError=distance(p.light,motion.lightAt(timeline,seconds));
+      const contactError=Math.max(...['left','right'].map(side=>{
+        const c=p.contacts[side];
+        if(!c.active)return 0;
+        // A temple contact follows the animated head in its own local frame.
+        const drift=c.space==='head-support'?0:distance(c.target,pose.contacts[side].target);
+        return Math.max(drift,distance(c.tip,c.target));
+      }));
+      const footError=Math.max(...p.feet.map((foot,i)=>distance(foot,pose.feet[i])));
+      const reachError=Math.max(p.reach.left.error,p.reach.right.error);
+      const restored=seconds!==2.4||JSON.stringify(points(p))===JSON.stringify(points(pose));
+      if(!finite||!restored||emitterError>1e-9||contactError>.005||footError>1e-8||reachError>.01)
+        worst(idleErrors,{timeline,seconds,finite,restored,emitterError,contactError,footError,reachError,error:Math.max(footError,reachError,contactError)});
+    }
+  }
+  check('idle-breath-and-glance-return-to-scroll-pose-with-feet-and-contacts-locked',
+    idleErrors.length===0&&maxHeadTravel>.01,{idlePoses,maxHeadTravel,failures:idleErrors});
   const reference = bones(motion.poseAt(1.5)), ranges = {};
   for (const name of Object.keys(reference)) ranges[name] = { min:Infinity, max:-Infinity, maxError:0 };
   for (const { pose } of samples) for (const [name, value] of Object.entries(bones(pose))) {

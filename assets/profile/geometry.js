@@ -213,12 +213,12 @@
   const sx=1+.14*Math.sin(phase),sy=1-.10*Math.sin(phase),sz=1+.10*Math.sin(phase*.7),angle=.16*Math.sin(phase*.53),c=Math.cos(angle),s=Math.sin(angle);
   return q=>{const x=q[0]*sx+.16*(Math.sin(phase*.61+q[1]*1.4)-Math.sin(q[1]*1.4)),y=q[1]*sy+.12*(Math.sin(phase*.83+q[0]*1.7)-Math.sin(q[0]*1.7)),z=q[2]*sz+.16*(Math.sin(phase*.9+(q[0]+q[1])*.8)-Math.sin((q[0]+q[1])*.8));return [x*c-z*s,y,x*s+z*c];};
  }
- function frame(position,detail=1,explode=0,ambientPhase=0){
+ function frame(position,detail=1,explode=0,ambientPhase=0,idleSeconds=0){
   const timeline=resolve(position),a=Math.floor(timeline),b=Math.min(a+1,sequence.length-1),raw=timeline-a;
   const elastic=openingDeformer(a===0?ambientPhase:0);
   // The resting opening only needs its visible membrane, not a rebuilt human.
   if(timeline===0&&ambientPhase)return scene(0).filter(s=>!(detail>1&&Math.floor(s.id/2)%detail&&!s.important&&!s.floor)).map(line=>line.id<192?{...line,points:line.points.map(elastic)}:line);
-  const source=scene(a),destination=raw?scene(b):source,p=motion.poseAt(timeline),body=createScene(a,p,true,a>0?detail:1);
+  const source=scene(a),destination=raw?scene(b):source,p=motion.poseAt(timeline,idleSeconds),body=createScene(a,p,true,a>0?detail:1);
   const lines=[],pulse=Math.sin(PI*raw)**2,attractor=p.light,floorTransform=floors.deformer(raw,p),emotion=dramaState(timeline);
   for(let l=0;l<source.length;l++){
    const s=source[l],d=destination[l];if(detail>1&&Math.floor(l/2)%detail&&!s.important&&!s.floor)continue;
@@ -240,11 +240,18 @@
   }
   return lines;
  }
- function lightAt(position,ambientPhase=0){
-  const timeline=resolve(position),light=motion.lightAt(timeline);return timeline>=1?light:lerp(openingDeformer(ambientPhase)(scene(0)[0].points[0]),light,smooth(timeline/.88));
+ function lightAt(position,ambientPhase=0,idleSeconds=0){
+  const timeline=resolve(position),light=motion.lightAt(timeline,idleSeconds);return timeline>=1?light:lerp(openingDeformer(ambientPhase)(scene(0)[0].points[0]),light,smooth(timeline/.88));
  }
- function lightTrail(position,direction=1,span=cfg.gravity.trailSpan,count=32,ambientPhase=0){
-  return Array.from({length:count},(_,i)=>{const age=i/(count-1);return {point:lightAt(position-direction*span*age,ambientPhase),alpha:(1-age)**1.7};});
+ // Exposure follows actual elapsed time, including frames slower than the
+ // simulation tick. The first span after reversal fits inside the new path.
+ function trailSpanAt(previousSpan,travel,elapsedMs){
+  if(elapsedMs<=0)return previousSpan;
+  const exposureMs=140,target=Math.min(cfg.gravity.trailSpan,Math.abs(travel)*exposureMs/elapsedMs);
+  return mix(previousSpan,target,1-Math.exp(-elapsedMs/exposureMs));
+ }
+ function lightTrail(position,direction=1,span=cfg.gravity.trailSpan,count=32,ambientPhase=0,idleSeconds=0){
+  return Array.from({length:count},(_,i)=>{const age=i/(count-1);return {point:lightAt(position-direction*span*age,ambientPhase,idleSeconds),alpha:(1-age)**1.7};});
  }
  // Recognizable action props sit in front of the woven world. Colour supports their meaning.
  const objectCache=[];
@@ -253,7 +260,7 @@
   const shot=sequence[index],accent=cfg.tones[shot.tone],paths=[],texts=[],z=.95;
   const isDrawing=['blueprint','house'].includes(shot.prop);
   const point=(x,y,z=0)=>[x,y,z];
-  const line=(points,{color=accent,width=2.1,fill=null,alpha=1,role='work'}={})=>paths.push({points:points.map(p=>point(...p)),color,width,fill,alpha,role});
+  const line=(points,{color=accent,width=2.1,fill=null,alpha=1,role='work',motion=null}={})=>paths.push({points:points.map(p=>point(...p)),color,width,fill,alpha,role,motion});
   const label=(text,x=.89,y=-.35,size=11)=>texts.push({text:cfg.text?.[text]??text,point:point(x,y),color:accent,size});
   const arc=(x,y,rx,ry,start=0,end=TAU,style={})=>line(Array.from({length:49},(_,i)=>{const a=mix(start,end,i/48);return [x+Math.cos(a)*rx,y+Math.sin(a)*ry];}),style);
   const roundRect=(x,y,w,h,style={})=>{
@@ -261,7 +268,6 @@
    for(const [cx,cy,start] of [[x+w-r,y+h-r,0],[x+r,y+h-r,PI/2],[x+r,y+r,PI],[x+w-r,y+r,PI*1.5]])for(let i=0;i<9;i++){const a=start+i/8*PI/2;points.push([cx+r*Math.cos(a),cy+r*Math.sin(a)]);}
    points.push(points[0]);line(points,{fill:'#100f20',...style});
   };
-  const frame=()=>{roundRect(.24,-.20,1.30,1.04);line([[.25,.65],[1.53,.65]],{width:.7,alpha:.5});for(let i=0;i<3;i++)arc(.34+i*.08,.74,.013,.013,0,TAU,{width:1});};
   const check=(x,y)=>line([[x-.10,y],[x-.02,y-.07],[x+.14,y+.13]],{color:cfg.tones.care,width:3});
   const page=(x=.42,y=-.07)=>{roundRect(x,y,.9,.73);for(let i=0;i<3;i++)line([[x+.12,y+.54-i*.14],[x+.70-(i%2)*.15,y+.54-i*.14]],{width:1.3,alpha:.6});};
   const orb=(x,y,r,style={})=>{
@@ -274,55 +280,155 @@
   const prop=shot.prop;
   if(prop==='none')return {paths,texts};
   if(['blueprint','house'].includes(prop)){
-   roundRect(.24,-.20,1.30,1.04,{fill:'#131021'});for(let i=0;i<5;i++){line([[.34+i*.23,-.10],[.34+i*.23,.57]],{width:.5,alpha:.2});line([[.32,-.10+i*.15],[1.45,-.10+i*.15]],{width:.5,alpha:.2});}
-   if(prop==='house'){line([[.47,.23],[.89,.57],[1.31,.23]],{width:3});roundRect(.57,-.06,.64,.34,{fill:null,width:2.6});roundRect(.82,-.06,.15,.24,{fill:null,width:1.5});roundRect(1.02,.11,.10,.09,{fill:null,width:1});}
-   else{roundRect(.52,-.01,.69,.46,{fill:null});line([[.83,-.01],[.83,.23],[1.20,.23]],{width:1.5});arc(.83,.23,.15,.15,-PI/2,0,{width:1});}
+   // Two registration ticks and a clipped corner make this a sheet on a desk.
+   // The valley folds sit flat until the pen clears them for inspection.
+   const corners=[[.24,-.20],[1.54,-.20],[1.54,.64],[1.34,.84],[.24,.84],[.24,-.20]];
+   const contour=corners.slice(1).flatMap((b,i)=>Array.from({length:6},(_,j)=>lerp(corners[i],b,j/6)));
+   line([...contour,corners.at(-1)],{fill:'#171427',width:1.1});
+   line([[1.34,.84],[1.33,.63],[1.54,.64]],{width:.9,alpha:.75});
+   for(let i=0;i<5;i++)line([[.29,-.09+i*.16],[1.47,-.09+i*.16]],{width:.55,alpha:.22});
+   for(const x of [.34,1.42])line([[x,-.12],[x,-.02]],{width:1});
+   if(prop==='house'){
+    const fold={color:cfg.tones.dream,width:1.55,motion:'fold'};
+    for(const y of [.03,.51])line([[.52,y,0],[.52,y,.20],[.85,y,.41],[1.18,y,.20],[1.18,y,0]],fold);
+    for(const [x,h] of [[.52,.20],[.85,.41],[1.18,.20]])line([[x,.03,h],[x,.51,h]],fold);
+    for(let j=1;j<=4;j++){const y=.03+j*.096;line([[.52,y,.20],[.85,y,.41],[1.18,y,.20]],{...fold,width:.75,alpha:.58});}
+    line([[.60,.03,.005],[.60,.03,.14],[.72,.03,.14],[.72,.03,.005]],fold);
+    line([[.52,.51],[1.18,.51],[1.18,.03],[.52,.03],[.52,.51]],{width:1.15});
+   }else{
+    line([[.50,-.01],[1.23,-.01],[1.23,.48],[.50,.48],[.50,-.01]],{width:1.7});
+    line([[.83,-.01],[.83,.23],[1.23,.23]],{width:1.3});arc(.83,.23,.15,.15,-PI/2,0,{width:.9});
+   }
    label(prop==='house'?'A PLACE FOR PEOPLE':'THE FIRST DRAWING');
   }else if(['code','component','ai'].includes(prop)){
-   frame();line([[.24,-.20],[.06,-.48],[1.65,-.48],[1.54,-.20]],{fill:'#111c28',width:2,role:'keyboard'});for(let i=0;i<6;i++)line([[.37+i*.15,-.29],[.35+i*.15,-.37]],{width:3,alpha:.55,role:'keyboard'});line([[.63,.47],[.47,.32],[.63,.17]],{width:3});line([[1.12,.47],[1.28,.32],[1.12,.17]],{width:3});line([[.98,.50],[.80,.14]],{width:2});
-   line([[.47,-.04],[.83,-.04]],{width:2,alpha:.5});line([[.91,-.04],[1.31,-.04]],{width:2,alpha:.35});
-   if(prop==='ai'){orb(1.42,.84,.19,{color:cfg.tones.dream});label('AI ENTERS THE WORKFLOW');}
-   else label(prop==='code'?'DRAWING → CODE':'ONE WORKING COMPONENT');
+   // All three typing beats use the same physical keyboard. The result
+   // it drives progresses from code, to a chip, to a new inference branch.
+   line([[.24,-.20],[.06,-.48],[1.65,-.48],[1.54,-.20],[.24,-.20]],{fill:'#111c28',width:1.35,role:'keyboard'});
+   for(let row=0;row<2;row++)for(let col=0;col<8;col++){
+    const x=.31+col*.14+row*.035,y=-.31+row*.058;
+    line([[x,y],[x+.095,y]],{width:2,alpha:.7,role:'keyboard',motion:'key'});
+   }
+   if(prop==='code'){
+    roundRect(.29,-.15,1.19,.88,{width:1.3});
+    for(let i=0;i<4;i++){const x=.42+(i%3)*.09,y=.52-i*.15;line([[x,y],[x+.19,y]],{width:2.4});line([[x+.25,y],[x+.54-i*.04,y]],{color:cfg.tones.care,width:1.35,motion:'output'});}
+   }else if(prop==='component'){
+    roundRect(.57,.06,.64,.54,{fill:'#132532',width:2.1});
+    for(const dir of [-1,1])for(let i=0;i<4;i++){const y=.12+i*.12,x=dir===1?1.21:.57;line([[x,y],[x+dir*.13,y],[x+dir*.22,y+.06]],{width:1.35});}
+    line([[.65,.24],[.82,.24],[.86,.43],[.91,.17],[.97,.33],[1.13,.33]],{color:cfg.tones.care,width:2,motion:'output'});
+   }else{
+    for(let i=0;i<3;i++){const y=.04+i*.22;orb(.42,y,.065);link([.48,y],[.88,.36],{color:cfg.tones.build});}
+    orb(.89,.36,.17);link([1.02,.36],[1.34,.62],{color:cfg.tones.care,motion:'output'});orb(1.36,.63,.11,{color:cfg.tones.care});
+   }
+   label(prop==='ai'?'AI ENTERS THE WORKFLOW':prop==='code'?'DRAWING → CODE':'ONE WORKING COMPONENT');
+  }else if(prop==='assembly'&&index===5){
+   // The moving collar travels with the pinching hand into a fixed socket.
+   for(const radius of [.24,.19])arc(.91,.65,radius,radius*.65,0,TAU,{fill:radius===.24?'#13212b':null,width:1.35});
+   for(let i=0;i<3;i++)link([.91+(i-1)*.08,.55],[.50+i*.36,-.12],{width:.95,alpha:.55});
+   for(const r of [.14,.10])arc(.91,.65,r,r*.74,0,TAU,{fill:r===.14?'#233148':null,color:cfg.palette.highlight,width:1.6,motion:'collar'});
+   arc(.91,.65,.21,.143,0,TAU,{color:cfg.tones.care,motion:'seam',width:2.2});
+   label('PARTS BECOME A SYSTEM',.89,-.52);
   }else if(['assembly','network','complexity'].includes(prop)){
-   const nodes=prop==='complexity'?[[.36,.75],[.87,.88],[1.38,.69],[.46,.13],[1.0,.30],[1.48,-.05],[.79,-.25]]:[[.39,.15],[.91,.65],[1.42,.15]];
-   for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++)if(prop!=='network'||j===i+1)link(nodes[i],nodes[j],{alpha:prop==='complexity'?.4:.9});
-   for(const [i,node]of nodes.entries()){roundRect(node[0]-.15,node[1]-.12,.30,.24,{width:1.7});if(prop==='assembly')check(node[0],node[1]);else arc(...node,.045,.045,0,TAU,{width:1});}
+   const nodes=prop==='complexity'?[[.36,.75],[.87,.88],[1.38,.69],[.46,.13],[1.0,.30],[1.48,-.05],[.79,-.25]]:prop==='assembly'?[[.33,.30],[.68,.57],[1.03,.37],[1.40,.53]]:[[.49,.15],[.91,.65],[1.31,.15]];
+   for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++)if(prop==='complexity'||j===i+1)link(nodes[i],nodes[j],{width:1.5,alpha:prop==='complexity'?.48:.98,motion:'span'});
+   for(const [i,node]of nodes.entries())orb(...node,prop==='complexity'?.073:prop==='assembly'?.085:.102,{color:i===1?cfg.palette.highlight:accent});
    label(prop==='complexity'?'THE DEPTH BENEATH':prop==='network'?'PEOPLE · REQUIREMENTS · CODE':'PARTS BECOME A SYSTEM',.89,-.52);
   }else if(['brief','review','verified','lesson'].includes(prop)){
-   page();if(prop==='review'){arc(1.24,.02,.25,.25,0,TAU,{color:cfg.tones.human,fill:'#151323'});line([[1.4,-.14],[1.57,-.31]],{color:cfg.tones.human,width:4});arc(1.24,.02,.08,.05,0,TAU,{color:cfg.tones.human});}
-   if(prop==='verified'){arc(1.24,.02,.22,.22,0,TAU,{color:cfg.tones.care,fill:'#101b19'});check(1.24,.02);}
-   if(prop==='lesson'){arc(.90,.83,.12,.12,0,TAU,{fill:'#211c18'});line([[.84,.65],[.96,.65]],{width:2});}
+   if(prop==='brief'||prop==='review'&&index===11){
+    page(.40,-.08);
+    if(prop==='review'){
+     arc(1.00,.50,.20,.18,0,TAU,{color:cfg.tones.human,fill:'#262033',motion:'lens'});
+     line([[1.15,.38],[1.33,.20]],{width:3,motion:'lens'});
+    }else line([[.43,.02],[.76,.18],[1.11,.17]],{color:cfg.tones.care,width:1.65});
+   }else if(prop==='verified'){
+    if(index===6){
+     arc(.90,.33,.51,.32,0,TAU,{fill:'#122020',width:1.15});
+     for(let i=0;i<7;i++){const a=PI*.15+i*PI*.118;line([[.90+Math.cos(a)*.40,.30+Math.sin(a)*.26],[.90+Math.cos(a)*.45,.30+Math.sin(a)*.3]],{width:1.35});}
+     line([[.90,.28],[1.12,.51]],{width:2.3,motion:'needle'});
+    }else{
+     for(const r of [.32,.27,.18])arc(.88,.34,r,r*.88,0,TAU,{fill:r===.32?'#142321':null,width:r===.32?1.9:.9});
+     check(.88,.34);
+    }
+   }else if(prop==='lesson'){
+    // An open folded folio lies across the left palm during the POV insert.
+    const leaf=[[.39,-.02],[.86,.02],[.88,.63],[.43,.73],[.39,-.02]];
+    line(leaf.flatMap((q,i)=>i?Array.from({length:7},(_,j)=>lerp(leaf[i-1],q,(j+1)/7)):[q]),{fill:'#1e1925',width:1.2});
+    line([[.86,.02],[1.30,.09],[1.38,.72],[.88,.63],[.86,.02]],{fill:'#241c2b',width:1.2});
+    for(let i=0;i<4;i++)line([[.51,.48-i*.10],[.76,.45-i*.10]],{width:.9,alpha:.5});
+   }else{
+    for(let i=0;i<3;i++)roundRect(.41+i*.08,-.06+i*.10,.77,.54,{fill:i===2?'#202a3a':'#141723',width:1.2,motion:i===2?'peel':null});
+    line([[.72,.41],[.92,.57],[1.13,.40]],{width:1.9,motion:'peel'});
+   }
    label({brief:'UNDERSTAND THE NEED',review:'A PERSON REVIEWS',verified:'REVIEWED BY A PERSON',lesson:'KEEP THE LESSON'}[prop]);
   }else if(prop==='remnant'){
    // A single piece of the failed surface stays in the left palm. The right
    // hand can support the bowed head, making doubt legible without a face.
-   const outline=[[.46,-.035],[.63,-.01],[.70,.11],[.59,.23],[.40,.15],[.46,-.035]];
+   const outline=[[.46,-.035],[.66,-.01],[.77,.12],[.68,.11],[.76,.24],[.63,.19],[.65,.33],[.48,.25],[.40,.15],[.46,-.035]];
    // Retain the same sampled closed-plane contract as the larger work objects.
    line(outline.flatMap((a,i)=>i===outline.length-1?[a]:Array.from({length:4},(_,j)=>lerp(a,outline[i+1],j/4))),{color:cfg.tones.human,fill:'#17121d',width:1.7});
-   line([[.46,.025],[.57,.12],[.62,.08]],{color:cfg.tones.friction,width:1,alpha:.55});
+   // The selvedge rests on the palm. Loose ends taper and hang away
+   // from that corner as the hand turns the failed piece to find the seam.
+   for(let i=0;i<9;i++){
+    const t=i/8,root=[.43+t*.26,.12+t*.08,.014];
+    line([[.46+t*.16,-.018+t*.018,.014],root,[root[0]-.025,.15+.06*Math.sin(PI*t),.02]],{color:cfg.tones.human,width:.8,alpha:.65});
+    if(i%2===0)line([root,[root[0]+.025,.16+t*.06,.05],[root[0]+.064,.16+t*.08,.07],[root[0]+.14,.10+t*.12,.11]],{color:cfg.tones.friction,width:1.1,motion:'fray'});
+   }
+   line([[.46,.025],[.57,.12],[.62,.08]],{color:cfg.palette.highlight,width:1.1,alpha:.75});
   }else if(prop==='ember'){
-   const x=.89,y=.32;
-   for(let i=3;i>0;i--)arc(x,y,.07+i*.065,.09+i*.09,0,TAU,{color:cfg.tones.human,width:1,alpha:.16/i});
-   line([[x,y-.09],[x-.12,y+.01],[x-.06,y+.15],[x+.015,y+.26],[x+.10,y+.07],[x+.08,y-.06],[x,y-.09]],{color:cfg.tones.human,fill:'#ffd394',width:1.5,alpha:.9});
-   // The nearby HTML action/caption carries this meaning; keep the hands free of labels.
+   const x=.89,y=.32,rise=index===17;
+   for(let i=0;i<4;i++){const w=.09+i*.04,h=rise?.25+i*.035:.14+i*.022;
+    const points=Array.from({length:33},(_,k)=>{const a=k/32*TAU,f=.65+.35*Math.cos(a);return [x+w*Math.sin(a)*f,y-h*Math.cos(a),.04*Math.sin(a*2+i)];});
+    line(points,{color:i===1?cfg.palette.highlight:cfg.tones.human,width:i===0?2:.85,fill:i===0?'#ffd394':null,alpha:i===0?.94:.50});
+   }
   }else if(['fracture','repair'].includes(prop)){
-   orb(.35,.40,.16);orb(1.42,.40,.16);
-   link([.51,.40],[.79,.40]);link([1.05,.40],[1.26,.40]);
-   if(prop==='fracture'){line([[.89,.64],[.82,.49],[.99,.35],[.88,.19]],{color:cfg.tones.friction,width:3});arc(.93,.40,.36,.36,0,TAU,{color:cfg.tones.friction,alpha:.18,width:1});label('THE PATH IS NOT CLEAR');}
-   else{link([.79,.40],[1.05,.40],{color:cfg.tones.human,width:4});check(.93,.03);label('TRY · LEARN · REFINE');}
+   // Five pulled fibres share two anchors. The free split ends recoil
+   // independently. In repair, a shuttle lays a seam across the same break.
+   orb(.35,.40,.13);orb(1.42,.40,.13);
+   for(let i=0;i<5;i++){const y=.28+i*.05,offset=(i%3)*.025;
+    for(const side of [-1,1]){const x=side<0?.35:1.42,end=side<0?.78-offset:1.01+offset;
+     line(Array.from({length:19},(_,j)=>{const t=j/18;return [mix(x,end,t),mix(.4,y,t)+.055*Math.sin(PI*t),.025*Math.sin(t*PI+i)];}),{width:i===2?1.7:1.0,motion:prop==='fracture'?'tension':null});}
+    if(prop==='repair')line([[.77,y],[.88,y+.043],[1.04,y-.014]],{width:1.55,color:cfg.tones.care,motion:'seam'});
+   }
+   if(prop==='repair')arc(1.03,.40,.08,.045,0,TAU,{fill:'#bcf4e8',width:1.2,motion:'shuttle'});
+   label(prop==='fracture'?'THE PATH IS NOT CLEAR':'TRY · LEARN · REFINE');
   }else if(prop==='library'){
-   for(let i=0;i<3;i++){const x=.28+i*.41,y=.08+Math.sin(i*2)*.15;roundRect(x,y,.33,.54);line([[x+.07,y+.04],[x+.07,y+.50]],{width:1});line([[x+.13,y+.39],[x+.27,y+.39]],{width:1.5});link([x+.16,y+.56],[.9,.92],{width:1,alpha:.5});}
+   for(let i=0;i<3;i++){const x=.28+i*.41,y=.08+Math.sin(i*2)*.15,motion=i===2?'leaf':null;roundRect(x,y,.33,.54,{motion});line([[x+.07,y+.04],[x+.07,y+.50]],{width:1,motion});line([[x+.13,y+.39],[x+.27,y+.39]],{width:1.5,motion});link([x+.16,y+.56],[.9,.92],{width:1,alpha:.5});}
    orb(.9,.93,.12);label('SEEK · SELECT · SYNTHESIZE');
   }else if(['skill','moat'].includes(prop)){
-   orb(.9,.36,.29,{color:cfg.tones.dream});
+   orb(.9,.36,.29,{color:cfg.tones.dream,motion:prop==='skill'?'compress':null});
    if(prop==='moat')line([[.90,1.0],[1.44,.76],[1.40,.10],[.90,-.33],[.40,.10],[.36,.76],[.90,1.0]],{width:2.7});
    else for(let i=0;i<3;i++){const a=i/3*TAU;orb(.9+Math.cos(a)*.55,.36+Math.sin(a)*.55,.07,{color:cfg.tones.human});link([.9+Math.cos(a)*.46,.36+Math.sin(a)*.46],[.9+Math.cos(a)*.30,.36+Math.sin(a)*.30],{alpha:.5});}
    label(prop==='moat'?'PURPOSE · METHOD · CHARACTER':'A SKILL OF ITS OWN',.90,-.53);
   }else if(['interface','choice','recipient'].includes(prop)){
-   frame();line([[.43,.46],[1.03,.46]],{width:3});line([[.43,.31],[1.28,.31]],{width:1.3,alpha:.5});
-   roundRect(.43,-.03,.83,.18,{color:cfg.tones.care,fill:'#12382d'});line([[.99,.02],[1.08,.06],[.99,.1]],{color:cfg.tones.care,width:2});
-   if(prop==='choice'){arc(1.40,.17,.23,.23,0,TAU,{color:cfg.tones.human,fill:'#191a22'});check(1.4,.17);}
-   if(prop==='recipient'){arc(1.47,.89,.15,.15,0,TAU,{color:cfg.tones.human,fill:'#191a22'});line([[1.19,.57],[1.24,.70],[1.47,.76],[1.68,.70],[1.74,.57]],{color:cfg.tones.human,width:2.5});}
+   // Gates open into depth; the choice is a fork with a movable token.
+   // Neither shape needs a simulated browser surrounding the action.
+   if(prop==='choice'){
+    for(const side of [-1,1]){
+     const path=Array.from({length:25},(_,i)=>{const t=i/24;return [.87+side*.42*t*t,-.15+t*.85,.09*Math.sin(PI*t)];});
+     line(path,{width:side===1?2.4:1.15,color:side===1?cfg.tones.care:accent});
+    }
+    orb(.87,-.1,.085,{color:cfg.palette.highlight,motion:'token'});
+    arc(1.29,.70,.078,.052,0,TAU,{width:1.45,fill:'#18352d'});
+   }else if(prop==='recipient'){
+    for(let i=0;i<5;i++){const x=.42+i*.24;arc(x,.24,.15,.34,0,TAU,{width:i===2?1.5:.95,color:i===2?cfg.palette.highlight:accent});}
+    line([[.27,.24],[.89,.21],[1.55,.26]],{width:1.6,motion:'span'});
+    orb(1.55,.26,.086,{color:cfg.tones.human});
+   }else{
+    const openDoor=index===26;
+    // A strand through the left jamb gives the bracing hand a contact.
+    roundRect(.37,-.02,.13,.35,{fill:'#17262d',width:1.2});
+    for(let rib=0;rib<5;rib++){
+     const inset=rib*.052,span=.53-inset;
+     const points=Array.from({length:33},(_,k)=>{const a=k/32*PI;return [.89+Math.cos(a)*span,-.12+Math.sin(a)*(.84-inset),-rib*.075];});
+     line(points,{width:rib===0?2.2:1,alpha:1-rib*.105,motion:openDoor?'gate':null});
+    }
+    const threshold=[[.32,-.12],[1.46,-.12],[1.22,.02,-.30],[.55,.02,-.30],[.32,-.12]];
+    line(threshold,{fill:'#18282a',width:1.35});
+    if(!openDoor){
+     line([[.55,.43,.041],[1.18,.43,.041]],{width:.9,alpha:.6});
+     arc(1.12,.43,.065,.06,0,TAU,{color:cfg.palette.highlight,fill:'#244034',motion:'slider',width:1.35});
+     line([[.36,.01],[.61,.12],[1.15,.12],[1.31,.21]],{color:cfg.tones.care,width:1.45,motion:'output'});
+    }
+   }
    if(prop!=='recipient')label(prop==='choice'?'YOUR NEXT STEP. YOUR CHOICE.':'A CLEAR WAY IN');
   }
   return objectCache[index]={paths,texts,prop};
@@ -652,8 +758,11 @@
    const world=q=>add(origin,add(add(mul(frame.x,q[0]),mul(frame.y,q[1])),mul(frame.z,q[2])));
    for(const [name,fn]of [['palm',skin.palm],...skin.fingers.map((fn,i)=>['finger-'+i,fn])]){
     const intervals=name==='palm'?[0,.12,.30,.50,.70,.88,1]:[0,.06,.12,.34,.56,.79,.90,.96,1];
-    for(let row=0;row<intervals.length-1;row++)for(let column=0;column<12;column++){
-     const u=intervals[row],v=intervals[row+1],a=column/12*TAU,b=(column+1)/12*TAU,points=[fn(u,a),fn(u,b),fn(v,b),fn(v,a)].map(world),surface='glove-'+side+'-'+name;
+    // Adjacent quads share a ring. Evaluate its FK surface and transform
+    // each vertex once, keeping the original winding and seam coordinates.
+    const rings=intervals.map(u=>Array.from({length:13},(_,i)=>world(fn(u,i/12*TAU))));
+    for(let row=0;row<rings.length-1;row++)for(let column=0;column<12;column++){
+     const near=rings[row],far=rings[row+1],points=[near[column],near[column+1],far[column+1],far[column]],surface='glove-'+side+'-'+name;
      paths.push({id:surface+'-'+row+'-'+column,points:[...points,points[0]],fill:'#583372',color:'#583372',width:.3,alpha:1,role:'volume',skin:true,surface:'glove-'+side});
     }
    }
@@ -661,16 +770,84 @@
   }
   return layers;
  }
- function illustration(position,explode=0){
-  const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline),work=p.work,handoff=p.phase.to===3?p.tool.handoff:timeline>=13&&timeline<17?[.42,.66]:[.10,.26],t=smooth((raw-handoff[0])/(handoff[1]-handoff[0]));
+ function illustration(position,explode=0,idleSeconds=0){
+  const timeline=resolve(position),from=Math.floor(timeline),to=Math.min(sequence.length-1,from+1),raw=timeline-from,p=motion.poseAt(timeline,idleSeconds),work=p.work,handoff=p.phase.to===3?p.tool.handoff:from===14?[.17,.30]:timeline>=13&&timeline<17?[.42,.66]:[.10,.26],t=smooth((raw-handoff[0])/(handoff[1]-handoff[0]));
   const map=(q,frame=work)=>add(frame.origin,add(add(mul(frame.u,(q[0]-.89)*(frame.width||1.3)/1.3),mul(frame.v,(q[1]-.32)*(frame.height||1.04)/1.04)),mul(frame.normal,(q[2]||0)*Math.min((frame.width||1.3)/1.3,(frame.height||1.04)/1.04))));
-  const keyboard=q=>{const f=work.keyboard||work;return add(f.origin,add(mul(f.u,(q[0]-.855)*(f.width||.84)/1.59),mul(f.v,(q[1]+.34)*(f.height||.30)/.28)));};
+  const keyboard=q=>{const f=work.keyboard;return add(f.origin,add(mul(f.u,(q[0]-.855)*f.width/1.59),mul(f.v,(q[1]+.34)*f.height/.28)));};
+  // Local contact registers on each loose piece. The socket/folio stays put
+  // during acquisition. Only the acquired piece follows the solved finger.
+  const phase=p.phase;
+  function workMaterial(index){
+   const incoming=phase.to===index,action=incoming?phase.action:1;
+   const acquired=incoming?smooth((phase.progress-phase.actionStart+.09)/.09):0;
+   const released=incoming?smooth((phase.progress-phase.actionEnd)/.12):1;
+   const pin=(start,finish,pivot)=>{
+    const grip=lerp(lerp(map(start),p.contacts.right.tip,acquired),map(finish),released);
+    return sub(grip,map(pivot));
+   };
+   const offsets={
+    slider:()=>pin([.705,.43],[1.12,.43],[1.12,.43]),
+    collar:()=>pin([.48,.18],[.91,.65],[.91,.65]),
+    shuttle:()=>pin([.70,.12],[1.03,.40],[1.03,.40]),
+    leaf:()=>pin([1.23,.52],[.86,.60],[1.23,.52]),
+    lens:()=>pin([.78,.52],[1.05,.52],[1.33,.20]),
+    peel:()=>pin([1.14,.55],[1.02,.56,.32],[1.14,.55])
+   };
+   const prop=sequence[index].prop;
+   return (item,pathIndex)=>{
+    let alpha=item.alpha,color=item.color;
+    let transform=q=>map(q);
+    if(prop==='ember'){
+     transform=([x,y,z])=>add(p.light,add(mul(work.u,(x-.89)*.52),add(mul(work.v,(y-.32)*.52),mul(work.normal,z*.52))));
+    }else if(prop==='remnant'){
+     const hinge=map([.46,-.035]),tilt=-.14+.66*smooth(action)-.26*smooth((action-.66)/.34);
+     const palm=add(hinge,mul(work.normal,.015));
+     transform=([x,y,z],i)=>{
+      const fray=item.motion==='fray'?i/(item.points.length-1):0;
+      const curl=fray*Math.sin(PI*action),dx=(x-.46)*1.18,dy=(y+.035)*1.2-.055*curl;
+      const local=map([.46+dx*Math.cos(tilt)-dy*Math.sin(tilt),-.035+dy*Math.cos(tilt)+dx*Math.sin(tilt),z+.09*curl]);
+      return add(palm,sub(local,hinge));
+     };
+    }else if(offsets[item.motion]){
+     const offset=offsets[item.motion]();transform=q=>add(map(q),offset);
+    }else if(item.role==='keyboard'){
+     transform=keyboard;
+     if(item.motion==='key'){
+      const key=keyboard(item.points[0]),gap=Math.min(...['left','right'].map(side=>Math.hypot(...sub(p.contacts[side].tip,key))));
+      const press=1-smooth(gap/.085);alpha*=.58+.42*press;
+      if(press>.6)color=cfg.palette.highlight;
+      transform=q=>add(keyboard(q),mul(work.keyboard.normal,-.009*press));
+     }
+    }else if(item.motion==='fold'){
+     const rise=incoming?smooth((phase.progress-phase.actionEnd)/.18):1;
+     transform=([x,y,h])=>map([x,y+h*.36*(1-rise),h*rise]);
+    }else if(item.motion==='output'||item.motion==='seam'){
+     const onset=item.motion==='seam'?.71+(pathIndex%5)*.042:.08+(pathIndex%4)*.09;
+     alpha*=smooth((action-onset)/.18);
+    }else if(item.motion==='tension'){
+     const load=Math.sin(PI*action)**2;
+     transform=([x,y,z],i)=>{const free=i/(item.points.length-1);return map([x+(x>.89?-.12:.12)*load*free,y-.075*load*free,z+.18*free*load]);};
+    }else if(item.motion==='span'){
+     transform=([x,y,z],i)=>map([x,y-(.14*(1-action)+.035)*Math.sin(PI*i/(item.points.length-1)),z]);
+    }else if(item.motion==='needle'){
+     transform=([x,y])=>map([x-(y-.28)*.95*(1-action),y,0]);
+    }else if(item.motion==='compress'){
+     const radius=1.33-.33*smooth(action);
+     transform=([x,y,z])=>map([.9+(x-.9)*radius,.36+(y-.36)/Math.sqrt(radius),z]);
+    }else if(item.motion==='token'){
+     transform=([x,y,z])=>map([x+.42*action*action,y+.80*action,z+.085*Math.sin(PI*action)]);
+    }else if(item.motion==='gate'){
+     transform=([x,y,z])=>map([.89+(x-.89)*(.55+.45*action),y,z-.22*action*(y+.12)]);
+    }
+    return {...item,id:'work-'+index+'-'+pathIndex,alpha,color,points:item.points.map(transform)};
+   };
+  }
   const layers=[{index:from,alpha:1-t,textAlpha:1-smooth((raw-handoff[0]+.08)/.08)},{index:to,alpha:t,textAlpha:smooth((raw-handoff[1])/.08)}].filter(o=>o.alpha>.005).map(o=>{
-   const object=objectScene(o.index),ember=object.prop==='ember';
+   const object=objectScene(o.index);
    if(object.prop==='possibility')return {...o,role:'front-work',...possibilityVessel(position,p)};
-   return {...o,role:'front-work',prop:object.prop,paths:object.paths.map((item,pathIndex)=>({...item,id:'work-'+o.index+'-'+pathIndex,alpha:item.alpha*(object.prop==='house'&&!item.fill? .32:1),points:item.points.map(q=>item.role==='keyboard'?keyboard(q):ember?add(p.light,add(mul(work.u,(q[0]-.89)*.42),mul(work.v,(q[1]-.32)*.42))):map(q))})),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):map(item.point)}))};
+   return {...o,role:'front-work',prop:object.prop,paths:object.paths.map(workMaterial(o.index)),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):map(item.point)}))};
   });
-  if(p.drawing?.strokes){const alpha=p.phase.to===3?1-smooth(p.phase.progress/.32):1,paths=p.drawing.strokes.filter(points=>points.length>1).map(points=>({points,color:cfg.tones.human,width:2.3,alpha:1,fill:null,role:'work'}));if(paths.length&&alpha>.005)layers.push({alpha,textAlpha:0,paths,texts:[]});}
+  if(p.drawing?.strokes){const alpha=p.phase.to===3?1-smooth(p.phase.progress/.32):1,paths=p.drawing.strokes.filter(points=>points.length>1).map(points=>({points,color:cfg.tones.human,width:2.3,alpha:1,fill:null,role:'work'}));if(paths.length&&alpha>.005)layers.push({id:'drawn-ink',alpha,textAlpha:0,paths,texts:[]});}
   // The disclosed architecture opens behind the unchanged interaction surface.
   // These are visible layers with their own world-space depth, not a moved hand target.
   const reveal=clamp(explode)*smooth((position-6.5)/.2)*smooth((8.2-position)/.2);
@@ -831,5 +1008,5 @@
    return polygon.length>=3?[...polygon,polygon[0]]:null;
   }).filter(Boolean);
  }
- const api={motion,performanceAt:position=>motion.poseAt(resolve(position)),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
+ const api={motion,performanceAt:(position,idleSeconds=0)=>motion.poseAt(resolve(position),idleSeconds),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,trailSpanAt,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

@@ -109,7 +109,7 @@ The narrative, camera event configuration, support choreography and environment 
 - Motion is fixed to Full by the owner. There is no selector, hidden control or public setter. The old `holyboom.profile.motion.v1` value and OS reduced-motion preference do not switch this profile to a static mode. This is the explicitly requested policy; these tests do not certify reduced-motion accessibility.
 - Mobile, short screens and landscape all keep the live Canvas. The boot and runtime agree. Structural reflow preserves the visible reading point and snaps the resumed frame to that location; small toolbar-height changes retain native scrolling. On desktop, narrative and art have separate columns.
 - `Explore beneath the surface` opens the Experience / Orchestration / Review & access explanation and spreads the sculpture's layers. Two woven graph layers fan behind the unchanged front surface; the lateral offset exposes actual graph links on compact screens. Layout changes preserve the displayed pose and decay the correction through reversible, monotonic story travel. It is a conceptual diagram, not a claim of live execution.
-- Full motion follows native scroll and supports fine-pointer parallax outside locked orbit windows. A paused scroll holds the composition; there is no automatic whole-body breathing cycle or permanent idle render loop. Hidden/offscreen rendering suspends.
+- Full motion follows native scroll and supports fine-pointer parallax outside locked orbit windows. A paused scroll holds the story coordinate. The visible character takes one 2.4-second breath and looks back towards the task. The shared scheduler then keeps the settled bitmap. Hidden and offscreen rendering suspends.
 - Focus scroll margins keep keyboard targets and outlines clear of the sticky art/header without changing chapter-anchor offsets. Essential narrative content and controls have native HTML equivalents. The decorative Canvas is aria-hidden and does not intercept pointer input.
 - Print hides decoration and exposes disclosure content.
 
@@ -168,10 +168,17 @@ The five-beat personal passage now separates isolation, resistance, doubt, resol
 
 `reading-thread.js` carries one filament from the actual projected hand/contact to visible text. Company names receive it when visible; otherwise a visible heading or line of copy receives it. Desktop routes use the left reading gutter; mobile routes descend outside the text column. Bitmap padding is accounted for, geometry is measured on existing reflow/disclosure/font events, and DOM reads precede SVG writes. The filament shares the existing renderer and cannot capture pointer input. Portraits keep their own negative space.
 
-The opening membrane alone has an explicitly independent ambient clock. Its analytic phase alternates between slower and faster motion; fixed strand identities deform elastically before blending into the existing human rig. Once the membrane has formed the person, the ambient clock and idle render loop stop. Hidden/offscreen time is not replayed. Sampling an explicit phase remains deterministic; the rest of the story ignores this phase. Full motion remains fixed with no selector.
+The opening membrane alone has an explicitly independent ambient clock. Its analytic phase alternates between slower and faster motion; fixed strand identities deform elastically before blending into the existing human rig. Once the membrane has formed the person, its opening clock stops. Subsequent poses use a separate finite observation beat. Hidden/offscreen time is not replayed. Sampling an explicit phase remains deterministic; the rest of the story ignores this phase. Full motion remains fixed with no selector.
 
 Run `test:profile-perspective`, `test:profile-reading-thread` and `test:profile-opening` for eye alignment/clipping, native source/receiver binding and responsive reading behavior, and ambient lifecycle checks. Current preview artifacts and verification are in `docs/evidence/perspective-reading/`.
 
 ### Woven transfer refinement
 
 The reading link now binds to a visible foreground component edge and sweeps its actual contour. `reading-thread.js → energyAt()` separates charge, flight, impact and aftermath; the receiver impact cannot precede arrival. The packet, woven satellites, tail, receiver ellipse and dust all use the same scroll phase. Desktop routing follows the gutter to the receiver baseline, and action-list targets use the action text instead of the number marker. There is no separate timer or listener. See `docs/evidence/reading-wow/` for native captures and validation. Publication remains held for preview review.
+
+
+## Directing the hands and objects
+
+The two language editions share the same rig. `poseAt(timeline, idleSeconds)` solves the gaze, ribcage and shoulder offsets before limb contact. Work surfaces, gloves and reading-thread origins use the same sample. During scroll, the hand trail responds to speed and starts again on a direction change. The finale has its own visible-time performance after the 34 skills arrive.
+
+The directing notes map each scene to its action, support, prop and camera. The accompanying reference log links to the human performances and records the inspected times. [Scene map](evidence/profile-human-motion/scene-map.md) · [Motion references](evidence/profile-human-motion/references.md)
