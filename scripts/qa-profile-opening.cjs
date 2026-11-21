@@ -41,7 +41,14 @@ async function paintedWeave(page,selector,returning=false) {
    // percentile so a faint antialiased pixel cannot become the lower extent.
    const rows=Array.from({length:innerHeight},(_,y)=>changed(y,y+1));
    metrics.count=rows.reduce((sum,n)=>sum+n,0);
-   let sum=0;metrics.lowerEdge=rows.findIndex(n=>(sum+=n)>=metrics.count*.95);
+   function edge(section){
+    const cutoff=section.reduce((sum,n)=>sum+n,0)*.95;
+    let sum=0;return section.findIndex(n=>(sum+=n)>=cutoff);
+   }
+   metrics.lowerEdge=edge(rows);
+   // Across the camera handoff, compare the fabric below the stage. The
+   // actor and paper can occlude different amounts of the upper threads.
+   metrics.marginFoot=rows.findLastIndex((n,y)=>y>=seam&&n>=3);
   }
   if(selector){
    const el=document.querySelector(selector),range=new Range();range.selectNodeContents(el.firstChild);
@@ -67,7 +74,7 @@ async function checkPaperReturn(page){
   await view.evaluate(p=>{
    const a=ProfileExperience.snapshot().anchors,c=ProfileGeometry.config.morph;
    const start=a[8]+(a[9]-a[8])*(c.start+(c.end-c.start)*(ProfileFinale.SOURCE-8));
-   const y=p<0?Math.ceil(start)-1:Math.ceil(start+(a[9]-start)*p);
+   const y=p<=0?Math.ceil(start)-(p<0?1:0):Math.round(start+(a[9]-start)*p);
    scrollTo({top:y,behavior:'instant'});
   },phase);
   await view.waitForFunction(p=>{
@@ -120,7 +127,7 @@ async function checkPaperReturn(page){
  check('a-paused-or-hidden-page-holds-the-same-pull',pause&&first.roots>0);
  const flight=await inkAt(.23),next=await attachment();
  const spent=await inkAt(.40),back=await inkAt(.15),again=await attachment();
- check('shared-fabric-remains-on-screen-as-the-portal-takes-over',before.byFoot>20&&entry.byFoot>20&&Math.abs(entry.lowerEdge-before.lowerEdge)<12,{before,entry});
+ check('shared-fabric-remains-on-screen-as-the-portal-takes-over',before.byStage>20&&entry.byStage>20&&before.byFoot>20&&entry.byFoot>20&&Math.abs(entry.marginFoot-before.marginFoot)<6,{before,entry});
  check('scroll-lifts-the-lower-fabric-and-finishes-the-pull',entry.lowerEdge>lift.lowerEdge+20&&lift.lowerEdge>flight.lowerEdge+8&&flight.count>20&&spent.count===0,{entry,lift,flight,spent});
  check('threads-follow-the-real-moving-paper-fold',[first,next].every(s=>s.roots>0&&s.gap<2)&&distance(first.tail,next.tail)>2,{first,next});
  check('reversing-retraces-the-fabric-and-paper',Math.abs(back.lowerEdge-lift.lowerEdge)<3&&distance(first.tail,again.tail)<1&&back.count>20&&again.roots>0&&again.gap<2,{lift,back,first,again});
