@@ -84,9 +84,22 @@ async function checkStageComposition(browser){
     g.projectIllustrations=(...args)=>(window.__documentaryLayers=layers(...args));
    });
    const rows=[];
+   // scrollY can change one frame before the scroll handler paints. Compare
+   // to the actual native reading map so the previous pose cannot satisfy a seek.
+   async function paintedAt(y){
+    await page.waitForFunction(y=>{
+     const s=ProfileExperience.snapshot(),a=s.anchors,g=ProfileGeometry;
+     const expected=g.positionFromAnchors(scrollY,a,s.readingStops);
+     const m=g.config.morph,start=a[8]+(a[9]-a[8])*(m.start+(m.end-m.start)*(ProfileFinale.SOURCE-8));
+     const inFinale=scrollY>=start&&scrollY<a[10];
+     const phase=scrollY>=a[9]-1?1:(scrollY-start)/(a[9]-start);
+     return Math.abs(y-scrollY)<=1&&s.current===s.target&&Math.abs(s.current-expected)<.0002&&
+      s.finale.active===inFinale&&(!inFinale||Math.abs(s.finale.p-phase)<.0002)&&Boolean(window.__documentaryLayers);
+    },y);
+   }
    async function scroll(y,behavior='instant'){
     await page.evaluate(({y,behavior})=>scrollTo({top:y,behavior}),{y,behavior});
-    await page.waitForFunction(y=>{const s=ProfileExperience.snapshot();return Math.abs(y-scrollY)<=1&&s.current===s.target&&s.draws>0&&Boolean(window.__documentaryLayers);},y);
+    await paintedAt(y);
    }
    async function sample(label){rows.push({label,...await page.evaluate(compositionSample)});}
    const shots=w<768?[['work',27.23]]:[['drawing',1.52],['inspection',7.81],['hesitation',15.4],['work',27.23],['held-paper',28.08]];
@@ -100,7 +113,8 @@ async function checkStageComposition(browser){
    }
    const from=await page.evaluate(()=>scrollY);
    await page.mouse.wheel(0,-108);
-   await page.waitForFunction(y=>scrollY<y-30&&ProfileExperience.snapshot().current===ProfileExperience.snapshot().target,from);
+   await page.waitForFunction(y=>scrollY<y-30,from);
+   await paintedAt(await page.evaluate(()=>scrollY));
    await sample('reverse-wheel');
    const seam=await page.evaluate(()=>ProfileExperience.scrollForPosition(ProfileFinale.SOURCE));
    await scroll(Math.ceil(seam)-1);await sample('before-release');await scroll(Math.ceil(seam)+1);await sample('after-release');
