@@ -29,6 +29,35 @@
  }
  function strandPath(sample,offset,phase,extent=1){return Array.from({length:49},(_,i)=>{const u=extent*i/48,p=sample(u),a=sample(u-.008),b=sample(u+.008),dx=b[0]-a[0],dy=b[1]-a[1],n=Math.hypot(dx,dy)||1,k=offset*Math.sin(Math.PI*u)*Math.sin(TAU*(u*1.5-phase));return (i?'L':'M')+[p[0]-dy/n*k,p[1]+dx/n*k].join(' ');}).join(' ');}
  function canvasPoint(q,rect,padding,size){return [rect.left+padding.left+q[0]/size.width*(rect.width-padding.left-padding.right),rect.top+padding.top+q[1]/size.height*(rect.height-padding.top-padding.bottom)];}
+ // Sparse samples of the painted strands give a screen-space silhouette.
+ // The same projected geometry drives both the canvas and the filament mask.
+ function actorSilhouettes(lines,rect,padding){
+  const samples={head:[],torso:[]};
+  for(const line of lines){
+   const points=samples[line.part];
+   if(!points||line.alpha<.05||(!line.important&&line.id%3))continue;
+   const stride=Math.max(1,Math.floor(line.points.length/9));
+   for(let i=0;i<line.points.length;i+=stride)points.push(canvasPoint(line.points[i],rect,padding,rect));
+  }
+  function hull(points){
+   if(points.length<3)return '';
+   points.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+   function half(list){
+    const edge=[];
+    for(const p of list){
+     while(edge.length>1){
+      const a=edge[edge.length-2],b=edge[edge.length-1];
+      if((b[0]-a[0])*(p[1]-a[1])-(b[1]-a[1])*(p[0]-a[0])>0)break;
+      edge.pop();
+     }
+     edge.push(p);
+    }
+    edge.pop();return edge;
+   }
+   return half(points).concat(half(points.reverse())).map(q=>q.map(v=>v.toFixed(1)).join(',')).join(' ');
+  }
+  return {head:hull(samples.head),torso:hull(samples.torso)};
+ }
  // Closed disclosures can retain Range rectangles without painting their text.
  // A tether must terminate on a visible glyph, never one of those retained boxes.
  function visibleReceiver(el){
@@ -53,6 +82,32 @@
   const gradient=svg.querySelector('linearGradient'),stop=gradient.lastElementChild,halo=svg.querySelector('.reading-thread-halo'),line=svg.querySelector('.reading-thread-line'),under=svg.querySelector('.reading-thread-under'),sourceDot=svg.querySelector('.reading-thread-source'),sourceRing=svg.querySelector('.reading-thread-source-ring'),arrival=svg.querySelector('.reading-thread-arrival'),end=svg.querySelector('.reading-thread-end'),trace=svg.querySelector('.reading-component-trace');
   const nodes=(selector,tag,count)=>{const group=svg.querySelector(selector);return Array.from({length:count},()=>{const node=document.createElementNS(NS,tag);group.appendChild(node);return node;});},weave=nodes('.reading-thread-weave','path',4),packet=nodes('.reading-thread-packet','circle',12),dust=nodes('.reading-thread-dust','circle',8);
   const cinema=root.ProfileCinematicLines?.create(svg);
+  let depthMask=null;
+  function setDepthMask(frame){
+   if(!frame.silhouettes){depthMask?.ink.removeAttribute('mask');return;}
+   if(!depthMask){
+    const defs=svg.querySelector('defs'),ink=document.createElementNS(NS,'g');
+    for(const child of [...svg.children])if(child!==defs)ink.appendChild(child);
+    svg.appendChild(ink);
+    const element=(parent,name,attributes)=>{
+     const node=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attributes))node.setAttribute(k,v);
+     parent.appendChild(node);return node;
+    };
+    const clip=element(defs,'clipPath',{id:'reading-picture-clip'});
+    const screen=element(clip,'rect',{});
+    const mask=element(defs,'mask',{id:'reading-figure-depth',maskUnits:'userSpaceOnUse',x:0,y:0,width:'100%',height:'100%'});
+    element(mask,'rect',{width:'100%',height:'100%',fill:'white'});
+    const body=element(mask,'g',{'clip-path':'url(#reading-picture-clip)',fill:'black',stroke:'black','stroke-width':4,'stroke-linejoin':'round'});
+    depthMask={ink,screen,body,head:element(body,'polygon',{}),torso:element(body,'polygon',{}),
+     contact:element(mask,'circle',{fill:'white',r:6})};
+   }
+   const m=depthMask,b=frame.region;
+   m.ink.setAttribute('mask','url(#reading-figure-depth)');
+   for(const [k,v] of Object.entries({x:b.left,y:b.top,width:Math.max(0,b.right-b.left),height:Math.max(0,b.bottom-b.top)}))m.screen.setAttribute(k,v);
+   m.head.setAttribute('points',frame.silhouettes.head);m.torso.setAttribute('points',frame.silhouettes.torso);
+   m.contact.setAttribute('cx',frame.origin[0]);m.contact.setAttribute('cy',frame.origin[1]);
+   m.body.setAttribute('opacity',frame.silhouettes.opacity*(1-smooth((frame.launch?.progress||0)/.035)));
+  }
   let questionLines=[],receivers=[],padding={left:0,right:0,top:0,bottom:0},receiver=null,snapshot={visible:false},headerBottom=100,launchSource=null;
   function measure(){
    launchSource=null;
@@ -79,7 +134,7 @@
    }if(candidates.length)return candidates.sort((a,b)=>b.priority-a.priority||a.rect.top-b.rect.top)[0];}
    return null;
   }
-  function read({position,project,source,components=[],phase=0,accent,active=true,quietSource=false,preferred=null,layout=null}){
+  function read({position,project,source,components=[],projectedActor=null,phase=0,accent,active=true,quietSource=false,preferred=null,layout=null}){
    if(!active||position<1||document.hidden||(project.camera.framing==='head'&&project.camera.focusWeight>.4))return null;
    const compact=innerWidth<768,r=layout?.rect||canvas.getBoundingClientRect(),stageRect=layout?.rect||stage.getBoundingClientRect(),inset=layout?.padding||padding,safeTop=compact?Math.max(headerBottom,stageRect.bottom)+16:headerBottom+20;
    const target=select(Math.min(chapters.length-1,Math.floor(position+.001)),compact,safeTop,preferred,layout?.readY,layout?.activeBeat);if(!target)return null;
@@ -107,7 +162,9 @@
    if(!inside(origin)||(!componentId&&!handVisible))return null;
    const box=target.rect,endpoint=[compact?box.left-8:box.right+9,box.bottom+4],gutter=compact?Math.max(12,Math.min(box.left-10,20)):stageRect.left+10;
    const geometry=route(origin,endpoint,gutter,compact,innerHeight-48),energy=energyAt(phase),sample=sampleRoute(geometry),point=sample(energy.travel),width=Math.min(compact?135:180,box.right-box.left),underline=compact?'M'+[box.left,endpoint[1]].join(' ')+'h'+width:'M'+[box.right-width,endpoint[1]].join(' ')+'h'+width;
-   return {origin,endpoint,geometry,point,underline,target,accent,compact,quietSource,energy,sample,contour,componentId,viewport:[innerWidth,innerHeight],region:{left:r.left+inset.left,right:r.right-inset.right,top:Math.max(headerBottom,r.top+inset.top),bottom:r.bottom-inset.bottom}};
+   const opacity=1-smooth((project.camera.eyeWeight||0)/.28);
+   const silhouettes=!compact&&projectedActor&&opacity>.001?{...actorSilhouettes(projectedActor,r,inset),opacity}:null;
+   return {origin,endpoint,geometry,point,underline,target,accent,compact,quietSource,energy,sample,contour,componentId,silhouettes,viewport:[innerWidth,innerHeight],region:{left:r.left+inset.left,right:r.right-inset.right,top:Math.max(headerBottom,r.top+inset.top),bottom:r.bottom-inset.bottom}};
   }
 
   function hide(){svg.style.display='none';cinema?.hide();if(receiver){receiver.classList.remove('story-receiver');receiver=null;}snapshot={visible:false};}
@@ -115,6 +172,7 @@
    if(!frame){hide();return;}
    if(frame.launch)cinema?.hide();else cinema?.setFrame(frame);
    const {origin,endpoint,geometry,point,target,accent,compact,viewport,energy,sample,contour,componentId}=frame;
+   setDepthMask(frame);
    svg.style.display='block';svg.style.width=viewport[0]+'px';svg.style.height=viewport[1]+'px';svg.setAttribute('viewBox','0 0 '+viewport.join(' '));svg.style.setProperty('--reading-tone',accent);svg.dataset.layout=compact?'below':'beside';
    svg.classList.toggle('quiet-source',frame.quietSource);
    svg.style.opacity='';svg.style.clipPath='';under.style.opacity='';end.style.opacity='';sourceDot.style.opacity='';
@@ -149,7 +207,8 @@
     const project=g.createProjector(position,r.width,r.height,{compact}),shot=g.storyAt(position);
     const layer=g.illustration(position).find(l=>l.id==='paper-plane'&&l.alpha>.5);
     const components=layer?.paths.filter(item=>item.readingAnchor&&item.fill)||[];
-    const initial=read({position,project,source:g.lightAt(position),components,phase:g.cameraTrack(position)%1,
+    const projectedActor=compact?null:g.projectLines(g.frame(position,2).filter(l=>l.points.length>1&&(l.part==='head'||l.part==='torso')),project);
+    const initial=read({position,project,source:g.lightAt(position),components,projectedActor,phase:g.cameraTrack(position)%1,
      accent:g.paletteAt(position).accent,layout:{rect:r,padding:sourcePadding,readY:startY,activeBeat:shot.chapter+':'+shot.step}});
     launchSource={key,initial};
    }

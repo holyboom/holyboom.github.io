@@ -24,6 +24,25 @@ const positionFor=s=>Math.min(10,s.chapter+(s.step+.05)/s.count);
  check('compact-reduces-orbit-and-dolly-range', ['yaw','pitch','distance'].every(key=>scenicSpan(compactScenic,key)<scenicSpan(scenic,key)));
  const transitClipping=[];for(const position of positions)for(const {w,h,compact}of [{w:696,h:860,compact:false},{w:390,h:228,compact:true}]){const project=g.createProjector(position,w,h,{compact}),subject=project.camera.framing==='perspective'?g.perspectiveAt(position,{compact}).subject:project.camera.framing==='head'?g.performanceAt(position).head:g.lightAt(position),q=project(subject);if(q[0]<0||q[0]>w||q[1]<0||q[1]>h)transitClipping.push({position,w,h,framing:project.camera.framing,point:q.slice(0,2)});}
  check('intended-subject-remains-in-frame-during-transitions',transitClipping.length===0,transitClipping);
+ // During these medium tracking shots the camera follows a low filament.
+ // Test the actual crown between holds in both landscape picture formats.
+ const headroom=[];
+ for(const id of ['listening-to-connection','belief-to-first-prototype','complexity-to-person']){
+  const {start,end}=g.filamentRails.find(rail=>rail.id===id);
+  let minimum=1;
+  for(let i=0;i<=48;i++){
+   const track=start+(end-start)*i/48,shot=g.sequence[Math.floor(track)];
+   const position=shot.chapter+(shot.step+track%1)/shot.count;
+   const head=g.frame(position,2).filter(line=>line.part==='head'&&line.alpha>.1).flatMap(line=>line.points);
+   for(const [w,h] of [[742,548],[584,560]]){
+    const project=g.createProjector(position,w,h);
+    minimum=Math.min(minimum,...head.map(point=>project(point)[1]/h));
+   }
+   if(!head.length)minimum=0;
+  }
+  headroom.push({id,minimum});
+ }
+ check('desktop-medium-filament-moves-leave-the-full-crown-visible',headroom.every(rail=>rail.minimum>.02),headroom);
  const clipping=[],nonfinite=[],nearPlane=[],misaligned=[];
  for(const {w,h,compact}of [{w:696,h:860,compact:false},{w:390,h:228,compact:true},{w:480,h:620,compact:false},{w:720,h:720,compact:false}]){
   for(const shot of g.sequence){const position=positionFor(shot),project=g.createProjector(position,w,h,{compact}),model=g.frame(position,2),hand=g.lightAt(position),tip=project(hand),trailTip=project(g.lightTrail(position,1)[0].point),signalTip=project(model.find(l=>l.id===0).points[0]);

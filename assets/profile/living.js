@@ -124,6 +124,7 @@
    const preserved=current,origin=g.positionFromAnchors(scrollY,anchors,readingStops),delta=preserved-origin;
    layoutCorrection=Math.abs(delta)>.00001?{origin,delta,span:Math.max(.30,2.2*Math.abs(delta))}:null;
   }
+  holdDesktopStage(scrollY);
   finale?.measure(anchors);
   const r=canvas.getBoundingClientRect();readingThread?.measure();sharedWeave?.measure();w=r.width;h=r.height;
   dpr=Math.min(devicePixelRatio||1,innerWidth<768?1.5:1.75);
@@ -239,7 +240,8 @@
   const preferred=current>=6.87&&current<7.16?question:
    current>=7.16&&current<7.295?entranceTitle:
    current>=7.295&&current<=7.34?entranceBody:null;
-  const readingFrame=readingThread?.read({position:current,preferred,project,source:readingSource,components:readingComponents,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible,quietSource:innerWidth<768&&(shot.index===17||shot.index===18)});
+  const projected=g.projectLines(geom.filter(line=>line.alpha>.005&&line.points.length>1),project);
+  const readingFrame=readingThread?.read({position:current,preferred,project,source:readingSource,components:readingComponents,projectedActor:projected,phase:g.cameraTrack(current)%1,accent:theme.accent,active:visible,quietSource:innerWidth<768&&(shot.index===17||shot.index===18)});
   const smallDetail=readingFrame?.quietSource&&shot.prop!=='ember';
   const handLight=g.motion.accentAt(g.resolve(current)),humanLight=g.resolve(current)>=1,sourceStrength=Math.sqrt(emotion.glow);
   const lightCore=(humanLight?3+handLight.charge*2.5:2.6)*sourceStrength*(smallDetail ? .82 : 1);
@@ -252,7 +254,6 @@
    const edge=ctx.createRadialGradient(w*.5,h*.50,Math.min(w,h)*.22,w*.5,h*.50,Math.max(w,h)*.65);edge.addColorStop(0,'#0b091200');edge.addColorStop(1,'#0b0912d9');ctx.globalAlpha=emotion.strength*(.40+emotion.doubt*.35);ctx.fillStyle=edge;ctx.fillRect(0,0,w,h);ctx.globalAlpha=1;
   }
   ctx.lineCap=ctx.lineJoin='round';
-  const projected=g.projectLines(geom.filter(line=>line.alpha>.005&&line.points.length>1),project);
   if(innerWidth<768&&canvas.parentElement===originalHost){
    const paper=rawIllustrations.find(layer=>layer.prop==='possibility');
    const plane=paper?g.projectPaperPlane(paper,project):null;
@@ -299,13 +300,23 @@
    fragments.push(points);return fragments;
   };
   const ink=line=>['code','network'].includes(line.group)?g.config.palette.world:['intent','tool'].includes(line.group)?g.config.tones.human:['prop','architecture'].includes(line.group)?g.config.palette.highlight:line.group==='world'?theme.accent:g.config.palette.line;
+  const signal=projected.find(l=>l.id===0),seed=signal?.points[0];
+  // On the wider picture, a few load-bearing strands catch the existing
+  // hand light. Leave the recesses violet so the bend of the arm reads.
+  let workLight=null;
+  if(!compactCanvas&&formed&&seed&&seed[0]>=0&&seed[0]<=w&&seed[1]>=0&&seed[1]<=h){
+   workLight=ctx.createRadialGradient(seed[0],seed[1],0,seed[0],seed[1],Math.min(w,h)*.55);
+   workLight.addColorStop(0,'#edcfde');
+   workLight.addColorStop(.52,'#d3a9f6');
+   workLight.addColorStop(1,g.config.palette.line);
+  }
   const drawLine=line=>{
    const depth=line.points[Math.floor(line.points.length/2)][2];ctx.globalAlpha=line.alpha*g.clamp(.72+depth*.10,.25,1);ctx.strokeStyle=line.group==='fabric'&&depth>.3?g.config.palette.highlight:ink(line);ctx.lineWidth=line.id===0?1.6:line.width;
+   if(workLight&&line.group==='human'&&line.important)ctx.strokeStyle=workLight;
    path(ctx,line.points);ctx.stroke();
    if(line.important&&['human','fabric'].includes(line.group)){const q=line.points[Math.floor(line.points.length/4)];ctx.globalAlpha=line.alpha*.75;ctx.fillStyle=g.config.palette.highlight;ctx.beginPath();ctx.arc(q[0],q[1],.9,0,Math.PI*2);ctx.fill();}
    if(line.id===0){const seed=line.points[0];ctx.globalAlpha=line.alpha;ctx.fillStyle='#eefff8';ctx.beginPath();ctx.arc(seed[0],seed[1],lightCore,0,Math.PI*2);ctx.fill();}
   };
-  const signal=projected.find(l=>l.id===0),seed=signal?.points[0];
   // Diffuse light precedes opaque prop fills, so a hidden torso cannot glow
   // through a work surface. The sharp strands join the painter queue below.
   if(gc){gc.setTransform(.5,0,0,.5,0,0);gc.clearRect(0,0,w,h);gc.lineWidth=2;gc.lineCap=gc.lineJoin='round';
@@ -386,7 +397,20 @@
   if(openingActive||idlePending||bitmapDetail!==detail||readingThread?.pending()||trailEnergy>.01||current!==target||Math.abs(exploded-desired)>.001||Math.abs(px-tx)>.0001||Math.abs(py-ty)>.0001)wake();
  }
  function wake(){if(!frameId&&!document.hidden&&visible&&!staticLayout())frameId=requestAnimationFrame(render);}
+ // The grid's last row can release its sticky item while the last work
+ // scene is still playing. Keep the desktop picture on its mark until
+ // the moving finale owns the shot. This offset never changes text flow.
+ function holdDesktopStage(y){
+  let hold=0;
+  if(innerWidth>=768&&y>=anchors[8]&&y<anchors[9]){
+   const top=stage.getBoundingClientRect().top,mark=parseFloat(getComputedStyle(stage).top);
+   hold=Math.max(0,mark-top);
+  }
+  const value=hold?hold+'px':'';
+  if(stage.style.getPropertyValue('--stage-hold')!==value)stage.style.setProperty('--stage-hold',value);
+ }
  function scroll(){
+  holdDesktopStage(scrollY);
   document.documentElement.classList.toggle('profile-story-active',scrollY<(anchors[9]??Infinity)-1);
   const finaleHost=finale?.host(scrollY);
   const host=finaleHost|| (scrollY>=(anchors[10]??Infinity)-1?contactHost:scrollY>=(anchors[9]??Infinity)-1?summaryHost:originalHost);
@@ -403,7 +427,7 @@
  document.addEventListener('visibilitychange',()=>{last=0;resetTrail();if(document.hidden)finale?.resetTime();if(!document.hidden){measure();wake();}});
  const observer=new IntersectionObserver(()=>scroll(),{rootMargin:'100px'});observer.observe(stage);observer.observe(summaryHost);observer.observe(contactHost);
  const ro=new ResizeObserver(()=>measure());
- for(const element of [journey,question,entranceTitle,entranceBody])if(element)ro.observe(element);
+ for(const element of [journey,originalHost,question,entranceTitle,entranceBody])if(element)ro.observe(element);
  const copyChanges=new MutationObserver(requestCopyMeasure);
  for(const copy of journey.querySelectorAll('.chapter-copy')){
   ro.observe(copy);

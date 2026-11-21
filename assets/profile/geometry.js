@@ -1517,7 +1517,27 @@
  // A fixed focal length changes perspective through distance, not a CSS scale transform.
  const smoother=t=>{t=clamp(t);return t*t*t*(t*(t*6-15)+10);};
  const cameraCache=new Map();
- function shotCamera(i){if(cameraCache.has(i))return cameraCache.get(i);const base=cfg.camera.shots[sequence[i].prop==='possibility'?'offering':i===22||i===23?'gateway':sequence[i].shot||'establish'],seat=motion.poseAt(i).seatAmount||0;const value={...base,target:[...base.target]};if(i>0){if(sequence[i].shot==='establish')value.target=[-.24,-.10,.16];value.target[1]-=.15*seat;}cameraCache.set(i,value);return value;}
+ // The desktop picture has its own landscape matte. Stage the standing
+ // shots above the floor and bring seated/two-hand work forward as a pair.
+ // These are physical camera moves, so projection, picking and the finale
+ // all inherit the same eye and the same fixed focal length.
+ const desktopShotDistance={establish:.87,draft:.92,detail:.96,connect:.90,isolate:.91,intimate:.97,rise:.92,reveal:.90,offering:.87};
+ const desktopOrbitDistance={'drawing-side':.84,'conviction-rear':.87,'synthesis-side':.84,'experience-depth':.95};
+ function shotCamera(i,compact){
+  const key=i*2+Number(compact);
+  if(cameraCache.has(key))return cameraCache.get(key);
+  const shot=sequence[i],kind=shot.prop==='possibility'?'offering':i===22||i===23?'gateway':shot.shot||'establish';
+  const base=cfg.camera.shots[kind],seat=motion.poseAt(i).seatAmount||0,value={...base,target:[...base.target]};
+  if(i>0){
+   if(shot.shot==='establish')value.target=[-.24,-.10,.16];
+   value.target[1]-=.15*seat;
+   if(!compact&&i<=28){
+    value.distance*=desktopShotDistance[kind]||1;
+    value.target[1]-=kind==='gateway'?.06:.17;
+   }
+  }
+  cameraCache.set(key,value);return value;
+ }
  function cameraTrack(position){
   position=clamp(position,0,cfg.scenes.length-1);const chapter=Math.floor(position),start=starts[chapter];
   return Math.min(sequence.length-1,start+(position-chapter)*sequence[start].count);
@@ -1528,7 +1548,14 @@
   const weight=clamp(smoother((track-event.start)/(event.lockStart-event.start))*(1-smoother((track-event.returnEnd)/(event.end-event.returnEnd))));
   const entry=compact?mix(-.20,event.entryYaw,cfg.camera.compactStrength):event.entryYaw,exit=compact?mix(-.20,event.exitYaw,cfg.camera.compactStrength):event.exitYaw,peak=compact?event.compactYaw:event.yaw;
   const yaw=track<=event.holdEnd?mix(entry,peak,smoother((track-event.lockStart)/(event.turnEnd-event.lockStart))):mix(peak,exit,smoother((track-event.holdEnd)/(event.returnEnd-event.holdEnd)));
-  return {id:event.id,track,weight,locked:track>=event.lockStart&&track<=event.returnEnd,progress:clamp((track-event.start)/(event.end-event.start)),disclosureFan:event.disclosureFan?[...event.disclosureFan]:null,camera:{yaw,pitch:event.pitch,distance:event.distance,target:[...event.target]}};
+  const target=[...event.target],distance=event.distance*(compact?1:desktopOrbitDistance[event.id]||1);
+  if(!compact){
+   target[1]-=.15;
+   // The large driven wheel sits to the right of the operator. Orbit
+   // around their common midpoint so the toothed rim stays in the frame.
+   if(event.id==='synthesis-side'){target[0]+=.22;target[2]-=.17;}
+  }
+  return {id:event.id,track,weight,locked:track>=event.lockStart&&track<=event.returnEnd,progress:clamp((track-event.start)/(event.end-event.start)),disclosureFan:event.disclosureFan?[...event.disclosureFan]:null,camera:{yaw,pitch:event.pitch,distance,target}};
  }
  function focusAt(position,{compact=false}={}){
   const track=cameraTrack(position),event=cfg.camera.inserts?.find(e=>track>e.start&&track<e.end);if(!event)return null;
@@ -1572,18 +1599,18 @@
   {id:'imagination-to-hand',start:.25,end:1.09,opening:true},
   {id:'component-to-system',start:4.10,end:5.50},
   {id:'fragment-to-repair',start:15.72,end:16.88},
-  {id:'listening-to-connection',start:7.15,end:8.80},
-  {id:'belief-to-first-prototype',start:9.25,end:10.94},
-  {id:'complexity-to-person',start:25.03,end:25.92}
+  {id:'listening-to-connection',start:7.15,end:8.80,desktopStandOff:5.68,desktopAimLift:.18},
+  {id:'belief-to-first-prototype',start:9.25,end:10.94,desktopStandOff:5.72,desktopAimLift:.19},
+  {id:'complexity-to-person',start:25.03,end:25.92,desktopStandOff:5.60,desktopAimLift:.13}
  ];
  function filamentAt(position,{compact=false}={}){
   const track=cameraTrack(position),event=filamentRails.find(e=>track>e.start&&track<e.end);if(!event)return null;
   const u=clamp((track-event.start)/(event.end-event.start)),progress=smoother(u),p=motion.poseAt(resolve(position)),route=event.opening?t=>weave(t*.5,.32):memoryRoute(resolve(position),p),at=mix(event.opening?.80:.42,0,progress),point=route(at),ahead=route(Math.max(0,at-.035));
-  return {id:event.id,track,progress,point,ahead,weight:Math.sin(PI*u)**4*(compact?.60:1),standOff:compact?5.8:5.3};
+  return {id:event.id,track,progress,point,ahead,weight:Math.sin(PI*u)**4*(compact?.60:1),standOff:compact?5.8:event.desktopStandOff||5.3,aimLift:compact?0:event.desktopAimLift||0};
  }
  function cameraAt(position,{compact=false,strength=1,expanded=0}={}){
   position=clamp(position,0,cfg.scenes.length-1);const chapter=Math.floor(position),start=starts[chapter],count=sequence[start].count,local=(position-chapter)*count,step=Math.min(count-1,Math.floor(local));
-  const a=start+step,b=Math.min(sequence.length-1,a+1),from=shotCamera(a),to=shotCamera(b),t=smoother((local-step-.08)/.88);
+  const a=start+step,b=Math.min(sequence.length-1,a+1),from=shotCamera(a,compact),to=shotCamera(b,compact),t=smoother((local-step-.08)/.88);
   const neutral={yaw:-.20,pitch:.12,distance:5.9,target:[-.24,-.18,.20]},amount=clamp(strength)*(compact?cfg.camera.compactStrength:1);
   const value={yaw:mix(from.yaw,to.yaw,t),pitch:mix(from.pitch,to.pitch,t),distance:Math.exp(mix(Math.log(from.distance),Math.log(to.distance),t)),target:lerp(from.target,to.target,t)};
   if([6,12,16].includes(a)){const u=local-step,wide=smoother(u/.24)*(1-smoother((u-.82)/.18));value.distance=mix(value.distance,6.55,wide);value.target=lerp(value.target,[-.30,-.20,.18],wide);value.pitch=mix(value.pitch,.12,wide);}
@@ -1602,7 +1629,14 @@
    Object.assign(base,blendCamera(base,subjective,perspective.outgoing*clamp(strength)*(1-reveal)));
   }
   const filament=filamentAt(position,{compact}),filamentWeight=(filament?.weight||0)*clamp(strength)*(1-Math.max(weight,focusWeight,povWeight))*(1-reveal);
-  if(filamentWeight>0){const eye=cameraEye(base),direction=norm(sub(eye,filament.point)),railEye=add(filament.point,mul(direction,filament.standOff)),target=lerp(base.target,lerp(filament.point,filament.ahead,.65),.36),guided=cameraFromEye(railEye,target,base.focal);Object.assign(base,blendCamera(base,guided,filamentWeight));}
+  if(filamentWeight>0){
+   const eye=cameraEye(base),direction=norm(sub(eye,filament.point)),railEye=add(filament.point,mul(direction,filament.standOff));
+   const target=lerp(base.target,lerp(filament.point,filament.ahead,.65),.36);
+   // The filament dives below the hands during these moves. The eye keeps
+   // the full crown in the picture as the maker leans across the work.
+   target[1]+=filament.aimLift;
+   Object.assign(base,blendCamera(base,cameraFromEye(railEye,target,base.focal),filamentWeight));
+  }
   return {...base,filamentId:filamentWeight>.001?filament.id:null,filamentWeight,orbitId:orbit?.id||null,orbitWeight:weight,locked:!!orbit?.locked&&strength===1,focusId:focusWeight>0?focus.id:null,focusWeight,framing:povWeight>.001?'perspective':focusWeight>.02?focus.framing:'full',perspectiveId:povWeight>0?perspective.id:null,perspectiveWeight:povWeight,eyeWeight:(perspective?.eyeWeight||0)*clamp(strength)*(1-reveal),near:povWeight>0?perspective.near:.25};
  }
  function prepareProjection(camera,w,h,yaw=0,pitch=0){

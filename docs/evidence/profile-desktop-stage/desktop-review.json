@@ -1,0 +1,1409 @@
+{
+  "comparison": "Deployed v33 before, candidate source after; desktop browser pages at matched native narrative beats, including the last source scene and traveling finale. Independent native document offsets listed for each layout.",
+  "engines": "Linux Chromium and WebKit, DPR 1; viewport pixels exclude browser chrome.",
+  "subjectCheck": "Project the current motion rig head and both glove tips using the current camera, canvas CSS padding and drawn area. Compare projected centers with DOM line rectangles of visible text. This check samples three points, not whole character silhouettes.",
+  "checks": {
+    "ch-en-1024x768": {
+      "before": {
+        "browser": "156.0.8078.79",
+        "release": "living-paper-current-v33",
+        "url": "https://holyboom.github.io/profile/",
+        "http": 200,
+        "pageErrors": [],
+        "horizontalOverflowPx": 0,
+        "storyNativeFrames": {
+          "open": {
+            "y": 0,
+            "cameraTrack": 0,
+            "canvasCssXYWH": [
+              503.2,
+              105,
+              479.9,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "draw": {
+            "y": 1242,
+            "cameraTrack": 1.521,
+            "canvasCssXYWH": [
+              503.2,
+              105,
+              479.9,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "hesitate": {
+            "y": 7310,
+            "cameraTrack": 14.367,
+            "canvasCssXYWH": [
+              503.2,
+              105,
+              479.9,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "lesson": {
+            "y": 8685,
+            "cameraTrack": 18.089,
+            "canvasCssXYWH": [
+              503.2,
+              105,
+              479.9,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "gates": {
+            "y": 10006,
+            "cameraTrack": 23.08,
+            "canvasCssXYWH": [
+              503.2,
+              105,
+              479.9,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "work": {
+            "y": 12406,
+            "cameraTrack": 27.23,
+            "canvasCssXYWH": [
+              503.2,
+              105,
+              479.9,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "offer": {
+            "y": 12776,
+            "cameraTrack": 28.081,
+            "canvasCssXYWH": [
+              503.2,
+              37.9,
+              479.9,
+              628
+            ],
+            "projectedJointsInsideType": []
+          }
+        },
+        "endNativeFrames": {
+          "flight": {
+            "y": 12948,
+            "portalProgress": 0.2452,
+            "phase": "gather",
+            "canvasCssXYWH": [
+              503.2,
+              98,
+              479.9,
+              628
+            ],
+            "skillCount": 34
+          },
+          "collect": {
+            "y": 13118,
+            "portalProgress": 0.5795,
+            "phase": "within",
+            "canvasCssXYWH": [
+              503.7,
+              98.3,
+              479.3,
+              625.9
+            ],
+            "skillCount": 34
+          },
+          "burst": {
+            "y": 13230,
+            "portalProgress": 0.7997,
+            "phase": "reveal",
+            "canvasCssXYWH": [
+              541.3,
+              197.5,
+              441.8,
+              495.6
+            ],
+            "skillCount": 34
+          },
+          "orbit": {
+            "y": 13332,
+            "portalProgress": 1,
+            "phase": "orbit",
+            "canvasCssXYWH": [
+              563,
+              252,
+              420,
+              420
+            ],
+            "skillCount": 34
+          }
+        },
+        "lastWorkAndFirstPortal": {}
+      },
+      "after": {
+        "browser": "156.0.8078.79",
+        "release": "living-desktop-stage-v34",
+        "url": "http://127.0.0.1:4388/profile/",
+        "http": 200,
+        "pageErrors": [],
+        "horizontalOverflowPx": 0,
+        "storyNativeFrames": {
+          "open": {
+            "y": 0,
+            "cameraTrack": 0,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "projectedJointsInsideType": []
+          },
+          "draw": {
+            "y": 1260,
+            "cameraTrack": 1.52,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "projectedJointsInsideType": []
+          },
+          "hesitate": {
+            "y": 7966,
+            "cameraTrack": 14.369,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "projectedJointsInsideType": []
+          },
+          "lesson": {
+            "y": 9440,
+            "cameraTrack": 18.091,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "projectedJointsInsideType": []
+          },
+          "gates": {
+            "y": 10878,
+            "cameraTrack": 23.08,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "projectedJointsInsideType": []
+          },
+          "work": {
+            "y": 13550,
+            "cameraTrack": 27.231,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "projectedJointsInsideType": []
+          },
+          "offer": {
+            "y": 13959,
+            "cameraTrack": 28.08,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "projectedJointsInsideType": []
+          }
+        },
+        "endNativeFrames": {
+          "flight": {
+            "y": 14150,
+            "portalProgress": 0.245,
+            "phase": "gather",
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "skillCount": 34
+          },
+          "collect": {
+            "y": 14339,
+            "portalProgress": 0.5804,
+            "phase": "within",
+            "canvasCssXYWH": [
+              414.4,
+              130.4,
+              583.8,
+              559.7
+            ],
+            "skillCount": 34
+          },
+          "burst": {
+            "y": 14463,
+            "portalProgress": 0.8004,
+            "phase": "reveal",
+            "canvasCssXYWH": [
+              440.8,
+              147.4,
+              547.8,
+              555.4
+            ],
+            "skillCount": 34
+          },
+          "orbit": {
+            "y": 14575,
+            "portalProgress": 1,
+            "phase": "orbit",
+            "canvasCssXYWH": [
+              455.9,
+              157.6,
+              527.2,
+              553
+            ],
+            "skillCount": 34
+          }
+        },
+        "lastWorkAndFirstPortal": {
+          "seamBefore": {
+            "y": 14011,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "headCssXY": [
+              619.4,
+              216.9
+            ]
+          },
+          "seamAfter": {
+            "y": 14012,
+            "canvasCssXYWH": [
+              414,
+              130.2,
+              584.4,
+              559.8
+            ],
+            "headCssXY": null
+          }
+        }
+      }
+    },
+    "ch-en-1366x768": {
+      "before": {
+        "browser": "156.0.8078.79",
+        "release": "living-paper-current-v33",
+        "url": "https://holyboom.github.io/profile/",
+        "http": 200,
+        "pageErrors": [],
+        "horizontalOverflowPx": 0,
+        "storyNativeFrames": {
+          "open": {
+            "y": 0,
+            "cameraTrack": 0,
+            "canvasCssXYWH": [
+              616.5,
+              105,
+              644.5,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "draw": {
+            "y": 1280,
+            "cameraTrack": 1.52,
+            "canvasCssXYWH": [
+              616.5,
+              105,
+              644.5,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "face": {
+            "y": 4018,
+            "cameraTrack": 7.768,
+            "canvasCssXYWH": [
+              616.5,
+              105,
+              644.5,
+              628
+            ],
+            "projectedJointsInsideType": [
+              {
+                "joint": "head",
+                "element": "scene-transition",
+                "text": "Connect across boundaries",
+                "point": [
+                  860.3,
+                  188.7
+                ]
+              }
+            ]
+          },
+          "hesitate": {
+            "y": 7365,
+            "cameraTrack": 14.368,
+            "canvasCssXYWH": [
+              616.5,
+              105,
+              644.5,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "lesson": {
+            "y": 8782,
+            "cameraTrack": 18.092,
+            "canvasCssXYWH": [
+              616.5,
+              105,
+              644.5,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "gates": {
+            "y": 10087,
+            "cameraTrack": 23.08,
+            "canvasCssXYWH": [
+              616.5,
+              105,
+              644.5,
+              628
+            ],
+            "projectedJointsInsideType": []
+          },
+          "work": {
+            "y": 12476,
+            "cameraTrack": 27.229,
+            "canvasCssXYWH": [
+              616.5,
+              105,
+              644.5,
+              628
+            ],
+            "projectedJointsInsideType": [
+              {
+                "joint": "left",
+                "element": "scene-caption",
+                "text": "Explore the demonstration. Look beneath the surface.",
+                "point": [
+                  895.2,
+                  637.8
+                ]
+              },
+              {
+                "joint": "right",
+                "element": "scene-caption",
+                "text": "Explore the demonstration. Look beneath the surface.",
+                "point": [
+                  979.2,
+                  591.2
+                ]
+              }
+            ]
+          },
+          "offer": {
+            "y": 12845,
+            "cameraTrack": 28.079,
+            "canvasCssXYWH": [
+              616.5,
+              38.2,
+              644.5,
+              628
+            ],
+            "projectedJointsInsideType": []
+          }
+        },
+        "endNativeFrames": {
+          "flight": {
+            "y": 13018,
+            "portalProgress": 0.2456,
+            "phase": "gather",
+            "canvasCssXYWH": [
+              616.5,
+              98,
+              644.5,
+              628
+            ],
+            "skillCount": 34
+          },
+          "collect": {
+            "y": 13188,
+            "portalProgress": 0.5803,
+            "phase": "within",
+            "canvasCssXYWH": [
+              618,
+              98.3,
+              643.2,
+              626.9
+            ],
+            "skillCount": 34
+          },
+          "burst": {
+            "y": 13300,
+            "portalProgress": 0.8008,
+            "phase": "reveal",
+            "canvasCssXYWH": [
+              711,
+              157.7,
+              564.8,
+              558.8
+            ],
+            "skillCount": 34
+          },
+          "orbit": {
+            "y": 13401,
+            "portalProgress": 1,
+            "phase": "orbit",
+            "canvasCssXYWH": [
+              764,
+              254.2,
+              520,
+              520
+            ],
+            "skillCount": 34
+          }
+        },
+        "lastWorkAndFirstPortal": {
+          "seamBefore": {
+            "y": 12893,
+            "canvasCssXYWH": [
+              616.5,
+              -9.8,
+              644.5,
+              628
+            ],
+            "headCssXY": [
+              853.8,
+              145
+            ]
+          },
+          "seamAfter": {
+            "y": 12894,
+            "canvasCssXYWH": [
+              616.5,
+              -10,
+              644.5,
+              628
+            ],
+            "headCssXY": null
+          }
+        }
+      },
+      "after": {
+        "browser": "156.0.8078.79",
+        "release": "living-desktop-stage-v34",
+        "url": "http://127.0.0.1:4388/profile/",
+        "http": 200,
+        "pageErrors": [],
+        "horizontalOverflowPx": 0,
+        "storyNativeFrames": {
+          "open": {
+            "y": 0,
+            "cameraTrack": 0,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "projectedJointsInsideType": []
+          },
+          "draw": {
+            "y": 1298,
+            "cameraTrack": 1.519,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "projectedJointsInsideType": []
+          },
+          "face": {
+            "y": 4092,
+            "cameraTrack": 7.771,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "projectedJointsInsideType": []
+          },
+          "hesitate": {
+            "y": 7513,
+            "cameraTrack": 14.371,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "projectedJointsInsideType": []
+          },
+          "lesson": {
+            "y": 8940,
+            "cameraTrack": 18.09,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "projectedJointsInsideType": []
+          },
+          "gates": {
+            "y": 10298,
+            "cameraTrack": 23.08,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "projectedJointsInsideType": []
+          },
+          "work": {
+            "y": 12749,
+            "cameraTrack": 27.23,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "projectedJointsInsideType": []
+          },
+          "offer": {
+            "y": 13125,
+            "cameraTrack": 28.081,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "projectedJointsInsideType": []
+          }
+        },
+        "endNativeFrames": {
+          "flight": {
+            "y": 13300,
+            "portalProgress": 0.2452,
+            "phase": "gather",
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "skillCount": 34
+          },
+          "collect": {
+            "y": 13473,
+            "portalProgress": 0.5797,
+            "phase": "within",
+            "canvasCssXYWH": [
+              580.5,
+              131.4,
+              741.5,
+              550.2
+            ],
+            "skillCount": 34
+          },
+          "burst": {
+            "y": 13587,
+            "portalProgress": 0.8002,
+            "phase": "reveal",
+            "canvasCssXYWH": [
+              601,
+              147.7,
+              696.9,
+              552
+            ],
+            "skillCount": 34
+          },
+          "orbit": {
+            "y": 13690,
+            "portalProgress": 1,
+            "phase": "orbit",
+            "canvasCssXYWH": [
+              612.8,
+              157.4,
+              671.3,
+              553
+            ],
+            "skillCount": 34
+          }
+        },
+        "lastWorkAndFirstPortal": {
+          "seamBefore": {
+            "y": 13173,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "headCssXY": [
+              866,
+              216.5
+            ]
+          },
+          "seamAfter": {
+            "y": 13174,
+            "canvasCssXYWH": [
+              580.1,
+              131.1,
+              742.2,
+              550.2
+            ],
+            "headCssXY": null
+          }
+        }
+      },
+      "wheelHoldReverse": {
+        "retraceSameRectAndProgress": true,
+        "850msHoldSameRectAndProgress": true,
+        "nativeWheelDeltaY": [
+          120,
+          0
+        ],
+        "errors": []
+      }
+    },
+    "wk-th-1440x900": {
+      "before": {
+        "browser": "27.2",
+        "release": "living-paper-current-v33",
+        "url": "https://holyboom.github.io/th/profile/",
+        "http": 200,
+        "pageErrors": [],
+        "horizontalOverflowPx": 0,
+        "storyNativeFrames": {
+          "open": {
+            "y": 0,
+            "cameraTrack": 0,
+            "canvasCssXYWH": [
+              646.5,
+              105,
+              695.5,
+              760
+            ],
+            "projectedJointsInsideType": []
+          },
+          "draw": {
+            "y": 1303,
+            "cameraTrack": 1.52,
+            "canvasCssXYWH": [
+              646.5,
+              105,
+              695.5,
+              760
+            ],
+            "projectedJointsInsideType": []
+          },
+          "hesitate": {
+            "y": 7084,
+            "cameraTrack": 14.37,
+            "canvasCssXYWH": [
+              646.5,
+              105,
+              695.5,
+              760
+            ],
+            "projectedJointsInsideType": []
+          },
+          "lesson": {
+            "y": 8409,
+            "cameraTrack": 18.089,
+            "canvasCssXYWH": [
+              646.5,
+              105,
+              695.5,
+              760
+            ],
+            "projectedJointsInsideType": []
+          },
+          "gates": {
+            "y": 9752,
+            "cameraTrack": 23.08,
+            "canvasCssXYWH": [
+              646.5,
+              105,
+              695.5,
+              760
+            ],
+            "projectedJointsInsideType": []
+          },
+          "work": {
+            "y": 12100,
+            "cameraTrack": 27.229,
+            "canvasCssXYWH": [
+              646.5,
+              105,
+              695.5,
+              760
+            ],
+            "projectedJointsInsideType": [
+              {
+                "joint": "left",
+                "element": "scene-caption",
+                "text": "ลองดูทั้งสิ่งที่ทำได้ และขอบเขตของตัวอย่าง",
+                "point": [
+                  946,
+                  727.3
+                ]
+              }
+            ]
+          },
+          "offer": {
+            "y": 12419,
+            "cameraTrack": 28.08,
+            "canvasCssXYWH": [
+              646.5,
+              -169.6,
+              695.5,
+              760
+            ],
+            "projectedJointsInsideType": []
+          }
+        },
+        "endNativeFrames": {
+          "flight": {
+            "y": 12568,
+            "portalProgress": 0.245,
+            "phase": "gather",
+            "canvasCssXYWH": [
+              646.5,
+              98,
+              695.5,
+              760
+            ],
+            "skillCount": 34
+          },
+          "collect": {
+            "y": 12715,
+            "portalProgress": 0.5799,
+            "phase": "within",
+            "canvasCssXYWH": [
+              648.2,
+              98.3,
+              693.7,
+              757.6
+            ],
+            "skillCount": 34
+          },
+          "burst": {
+            "y": 12812,
+            "portalProgress": 0.8008,
+            "phase": "reveal",
+            "canvasCssXYWH": [
+              758.9,
+              211.9,
+              583,
+              606.2
+            ],
+            "skillCount": 34
+          },
+          "orbit": {
+            "y": 12899,
+            "portalProgress": 1,
+            "phase": "orbit",
+            "canvasCssXYWH": [
+              822,
+              259.2,
+              520,
+              520
+            ],
+            "skillCount": 34
+          }
+        },
+        "lastWorkAndFirstPortal": {
+          "seamBefore": {
+            "y": 12460,
+            "canvasCssXYWH": [
+              646.5,
+              -210.6,
+              695.5,
+              760
+            ],
+            "headCssXY": [
+              900.1,
+              -6.8
+            ]
+          },
+          "seamAfter": {
+            "y": 12461,
+            "canvasCssXYWH": [
+              646.5,
+              -211,
+              695.5,
+              760
+            ],
+            "headCssXY": null
+          }
+        }
+      },
+      "after": {
+        "browser": "27.2",
+        "release": "living-desktop-stage-v34",
+        "url": "http://127.0.0.1:4388/th/profile/",
+        "http": 200,
+        "pageErrors": [],
+        "horizontalOverflowPx": 0,
+        "storyNativeFrames": {
+          "open": {
+            "y": 0,
+            "cameraTrack": 0,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              674.3
+            ],
+            "projectedJointsInsideType": []
+          },
+          "draw": {
+            "y": 1321,
+            "cameraTrack": 1.52,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              674.3
+            ],
+            "projectedJointsInsideType": []
+          },
+          "hesitate": {
+            "y": 7317,
+            "cameraTrack": 14.368,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              671.5
+            ],
+            "projectedJointsInsideType": []
+          },
+          "lesson": {
+            "y": 8696,
+            "cameraTrack": 18.089,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              671.5
+            ],
+            "projectedJointsInsideType": []
+          },
+          "gates": {
+            "y": 10039,
+            "cameraTrack": 23.08,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              674.3
+            ],
+            "projectedJointsInsideType": []
+          },
+          "work": {
+            "y": 12387,
+            "cameraTrack": 27.229,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              674.3
+            ],
+            "projectedJointsInsideType": []
+          },
+          "offer": {
+            "y": 12706,
+            "cameraTrack": 28.079,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              671.5
+            ],
+            "projectedJointsInsideType": []
+          }
+        },
+        "endNativeFrames": {
+          "flight": {
+            "y": 12855,
+            "portalProgress": 0.2449,
+            "phase": "gather",
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              674.3
+            ],
+            "skillCount": 34
+          },
+          "collect": {
+            "y": 13002,
+            "portalProgress": 0.5798,
+            "phase": "within",
+            "canvasCssXYWH": [
+              611.9,
+              134.4,
+              781.5,
+              674.1
+            ],
+            "skillCount": 34
+          },
+          "burst": {
+            "y": 13099,
+            "portalProgress": 0.8007,
+            "phase": "reveal",
+            "canvasCssXYWH": [
+              634.8,
+              153.9,
+              725.8,
+              657.5
+            ],
+            "skillCount": 34
+          },
+          "orbit": {
+            "y": 13186,
+            "portalProgress": 1,
+            "phase": "orbit",
+            "canvasCssXYWH": [
+              647.9,
+              165.5,
+              694,
+              648
+            ],
+            "skillCount": 34
+          }
+        },
+        "lastWorkAndFirstPortal": {
+          "seamBefore": {
+            "y": 12747,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              671.5
+            ],
+            "headCssXY": [
+              898.3,
+              238.2
+            ]
+          },
+          "seamAfter": {
+            "y": 12748,
+            "canvasCssXYWH": [
+              611.5,
+              134.1,
+              782.4,
+              674.3
+            ],
+            "headCssXY": null
+          }
+        }
+      },
+      "wheelHoldReverse": {
+        "retraceSameRectAndProgress": true,
+        "850msHoldSameRectAndProgress": true,
+        "nativeWheelDeltaY": [
+          120,
+          0
+        ],
+        "errors": []
+      }
+    },
+    "ch-en-1920x1080": {
+      "before": {
+        "browser": "156.0.8078.79",
+        "release": "living-paper-current-v33",
+        "url": "https://holyboom.github.io/profile/",
+        "http": 200,
+        "pageErrors": [],
+        "horizontalOverflowPx": 0,
+        "storyNativeFrames": {
+          "open": {
+            "y": 0,
+            "cameraTrack": 0,
+            "canvasCssXYWH": [
+              886.5,
+              105,
+              695.5,
+              920
+            ],
+            "projectedJointsInsideType": []
+          },
+          "draw": {
+            "y": 1361,
+            "cameraTrack": 1.519,
+            "canvasCssXYWH": [
+              886.5,
+              105,
+              695.5,
+              920
+            ],
+            "projectedJointsInsideType": []
+          },
+          "hesitate": {
+            "y": 7545,
+            "cameraTrack": 14.369,
+            "canvasCssXYWH": [
+              886.5,
+              105,
+              695.5,
+              920
+            ],
+            "projectedJointsInsideType": []
+          },
+          "lesson": {
+            "y": 9059,
+            "cameraTrack": 18.089,
+            "canvasCssXYWH": [
+              886.5,
+              105,
+              695.5,
+              920
+            ],
+            "projectedJointsInsideType": []
+          },
+          "gates": {
+            "y": 10366,
+            "cameraTrack": 23.08,
+            "canvasCssXYWH": [
+              886.5,
+              105,
+              695.5,
+              920
+            ],
+            "projectedJointsInsideType": []
+          },
+          "work": {
+            "y": 12735,
+            "cameraTrack": 27.23,
+            "canvasCssXYWH": [
+              886.5,
+              103.8,
+              695.5,
+              920
+            ],
+            "projectedJointsInsideType": []
+          },
+          "offer": {
+            "y": 13100,
+            "cameraTrack": 28.081,
+            "canvasCssXYWH": [
+              886.5,
+              -261.3,
+              695.5,
+              920
+            ],
+            "projectedJointsInsideType": []
+          }
+        },
+        "endNativeFrames": {
+          "flight": {
+            "y": 13270,
+            "portalProgress": 0.2454,
+            "phase": "gather",
+            "canvasCssXYWH": [
+              886.5,
+              98,
+              695.5,
+              920
+            ],
+            "skillCount": 34
+          },
+          "collect": {
+            "y": 13438,
+            "portalProgress": 0.5801,
+            "phase": "within",
+            "canvasCssXYWH": [
+              888.3,
+              98.5,
+              693.7,
+              915.9
+            ],
+            "skillCount": 34
+          },
+          "burst": {
+            "y": 13548,
+            "portalProgress": 0.7993,
+            "phase": "reveal",
+            "canvasCssXYWH": [
+              997.9,
+              261,
+              584.1,
+              666.1
+            ],
+            "skillCount": 34
+          },
+          "orbit": {
+            "y": 13649,
+            "portalProgress": 1,
+            "phase": "orbit",
+            "canvasCssXYWH": [
+              1062,
+              253.8,
+              520,
+              520
+            ],
+            "skillCount": 34
+          }
+        },
+        "lastWorkAndFirstPortal": {
+          "seamBefore": {
+            "y": 13146,
+            "canvasCssXYWH": [
+              886.5,
+              -307.3,
+              695.5,
+              920
+            ],
+            "headCssXY": [
+              1140,
+              -23.5
+            ]
+          },
+          "seamAfter": {
+            "y": 13147,
+            "canvasCssXYWH": [
+              886.5,
+              -308.1,
+              695.5,
+              920
+            ],
+            "headCssXY": null
+          }
+        }
+      },
+      "after": {
+        "browser": "156.0.8078.79",
+        "release": "living-desktop-stage-v34",
+        "url": "http://127.0.0.1:4388/profile/",
+        "http": 200,
+        "pageErrors": [],
+        "horizontalOverflowPx": 0,
+        "storyNativeFrames": {
+          "open": {
+            "y": 0,
+            "cameraTrack": 0,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "projectedJointsInsideType": []
+          },
+          "draw": {
+            "y": 1361,
+            "cameraTrack": 1.519,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "projectedJointsInsideType": []
+          },
+          "hesitate": {
+            "y": 7505,
+            "cameraTrack": 14.369,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "projectedJointsInsideType": []
+          },
+          "lesson": {
+            "y": 9019,
+            "cameraTrack": 18.089,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "projectedJointsInsideType": []
+          },
+          "gates": {
+            "y": 10326,
+            "cameraTrack": 23.08,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "projectedJointsInsideType": []
+          },
+          "work": {
+            "y": 12649,
+            "cameraTrack": 27.231,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "projectedJointsInsideType": []
+          },
+          "offer": {
+            "y": 13007,
+            "cameraTrack": 28.081,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "projectedJointsInsideType": []
+          }
+        },
+        "endNativeFrames": {
+          "flight": {
+            "y": 13174,
+            "portalProgress": 0.2456,
+            "phase": "gather",
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "skillCount": 34
+          },
+          "collect": {
+            "y": 13339,
+            "portalProgress": 0.5805,
+            "phase": "within",
+            "canvasCssXYWH": [
+              762,
+              143.3,
+              1045.6,
+              838.5
+            ],
+            "skillCount": 34
+          },
+          "burst": {
+            "y": 13447,
+            "portalProgress": 0.7996,
+            "phase": "reveal",
+            "canvasCssXYWH": [
+              847,
+              163.8,
+              818,
+              744.6
+            ],
+            "skillCount": 34
+          },
+          "orbit": {
+            "y": 13546,
+            "portalProgress": 1,
+            "phase": "orbit",
+            "canvasCssXYWH": [
+              896.4,
+              175.5,
+              685.6,
+              690
+            ],
+            "skillCount": 34
+          }
+        },
+        "lastWorkAndFirstPortal": {
+          "seamBefore": {
+            "y": 13053,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "headCssXY": [
+              1155.2,
+              273.2
+            ]
+          },
+          "seamAfter": {
+            "y": 13054,
+            "canvasCssXYWH": [
+              760.6,
+              142.9,
+              1049.4,
+              840.1
+            ],
+            "headCssXY": null
+          }
+        }
+      }
+    }
+  },
+  "evidence": {
+    "laptopSheet": "desktop-story.webp",
+    "widescreenSheet": "desktop-finale.webp",
+    "motionComparison": {
+      "file": "desktop-scroll.mp4",
+      "matchedFrames": 91,
+      "frameRate": 12,
+      "rendering": "Native document scroll at matched story phases with a controlled browser clock. Three editorial cuts.",
+      "maxCameraTrackDifference": 0.0049,
+      "maxFinaleProgressDifference": 0.0016,
+      "publishedBeforeUTC": [
+        "2026-11-21T22:14:37+00:00",
+        "2026-11-21T22:15:02+00:00"
+      ],
+      "previewAfterUTC": [
+        "2026-11-21T22:20:13+00:00",
+        "2026-11-21T22:23:49+00:00"
+      ]
+    }
+  },
+  "fullHeadRailCheck": {
+    "742.2x550.2": {
+      "7.15–8.8": 26.2,
+      "9.25–10.94": 16.4,
+      "25.03–25.92": 21.1
+    },
+    "1049.4x840.1": {
+      "7.15–8.8": 40,
+      "9.25–10.94": 25.1,
+      "25.03–25.92": 32.2
+    },
+    "584.4x559.8": {
+      "7.15–8.8": 26.6,
+      "9.25–10.94": 16.7,
+      "25.03–25.92": 21.5
+    },
+    "782.4x671.5": {
+      "7.15–8.8": 32,
+      "9.25–10.94": 20,
+      "25.03–25.92": 25.8
+    }
+  },
+  "fullHeadRailCheckMethod": "CSS-pixel space above the extremity of sampled, projected cranium geometry on the three character-following camera arcs. Native canvas sizes rounded to 0.1 CSS px. Model sampled every 0.10 story track. Positive values are within the picture."
+}

@@ -166,3 +166,103 @@ main :is(a,summary),.site-footer a{scroll-margin-block:110px 20px}
  .profile-enhanced .stage-frame :is(.scene-transition,.scene-meaning,.scene-caption){z-index:2}
  :root:not(.profile-story-active) .shared-weave-host{visibility:hidden}
 }
+
+/* The phone's picture fills its existing frame. On desktop the action has
+   its own aperture, with a title above it and a typeset caption below. */
+.stage-picture{position:absolute;inset:0}
+@media screen and (min-width:768px){
+ :is(.profile-enhanced,.profile-boot) .journey{
+  max-width:1820px;
+  padding-inline:clamp(68px,5.8vw,108px) clamp(26px,3.2vw,60px);
+  grid-template-columns:minmax(0,min(37%,545px)) minmax(0,1fr);
+  column-gap:clamp(24px,3vw,62px);
+ }
+ :is(.profile-enhanced,.profile-boot) .chapter{min-width:0}
+ :is(.profile-enhanced,.profile-boot) .hero-note{right:0}
+ :is(.profile-enhanced,.profile-boot) .hero-note>span:last-child{display:none}
+ :is(.profile-enhanced,.profile-boot) .stage{
+  top:96px;
+  height:calc(100svh - 110px);
+  max-height:1160px;
+ }
+ :is(.profile-enhanced,.profile-boot) .stage-frame{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  grid-template-rows:auto 1px minmax(0,1fr) auto auto;
+  align-content:stretch;position:relative;margin:0;
+  transform:translateY(var(--stage-hold,0px));
+  padding-block:clamp(6px,1.3vh,18px) 0;
+ }
+ .stage-frame::before,.stage-frame::after{display:none}
+ .stage-frame .stage-picture{
+  position:relative;inset:auto;grid-column:1/-1;grid-row:3;
+  min-height:0;min-width:0;isolation:isolate;
+  background:radial-gradient(ellipse at 50% 52%,color-mix(in srgb,var(--scene-accent) 6%,transparent),transparent 68%);
+ }
+ .stage-picture>canvas{position:absolute;inset:0}
+ .stage-frame .stage-top{
+  position:static;grid-column:2;grid-row:1;align-self:center;
+  padding-inline-start:18px;white-space:nowrap;
+ }
+ .stage-frame .stage-top>span:first-child,.stage-frame .stage-bottom{display:none}
+ .stage-frame .stage-count{display:block}
+ .stage-frame .scene-transition{display:contents}
+ .scene-transition .transition-copy{
+  grid-column:1;grid-row:1;min-width:0;align-self:center;
+  line-height:1.45;font-size:clamp(16px,1.22vw,22px);
+ }
+ .scene-transition .transition-track{
+  grid-column:1/-1;grid-row:2;align-self:end;
+  margin-top:6px;height:1px;width:100%;max-width:none;
+ }
+ .stage-frame .scene-meaning,.stage-frame .scene-caption{
+  position:static;grid-column:1/-1;justify-self:center;text-align:center;
+  max-width:100%;margin:0;padding-inline:12px;
+ }
+ .stage-frame .scene-meaning{
+  grid-row:4;align-self:end;font-size:10px;line-height:1.55;
+ }
+ .stage-frame .scene-caption{
+  grid-row:5;align-self:start;min-height:2.7em;
+  font-size:clamp(18px,1.55vw,25px);line-height:1.35;text-wrap:balance;
+  padding-top:.16em;
+ }
+ :lang(th) .stage-frame .scene-caption{
+  font-size:clamp(16px,1.25vw,22px);line-height:1.68;min-height:3.36em;
+ }
+}
+@media screen and (min-width:768px) and (max-width:1099px){
+ :is(.profile-enhanced,.profile-boot) .journey{padding-inline:3.5vw 2.5vw;column-gap:22px}
+}
+@media screen and (min-width:1600px){
+ :is(.profile-enhanced,.profile-boot) .chapter-rail{left:max(14px,calc((100vw - 1820px)/2 + 12px))!important}
+}
+
+/* Desktop finale. Keep the professional text beside the arriving picture,
+   and give both the traveling caption and its dock the same baseline. */
+@media screen and (min-width:768px){
+ :is(.profile-boot,.profile-enhanced) #experience{
+  padding-block-start:clamp(22px,6svh,76px);
+ }
+ :is(.profile-boot,.profile-enhanced) #experience .section-heading{
+  grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);
+  grid-template-rows:auto auto 1fr auto;
+  align-items:start;column-gap:clamp(32px,4vw,72px);
+ }
+ :is(.profile-boot,.profile-enhanced) #experience .section-heading>.eyebrow{
+  grid-area:1/1;margin:0;
+ }
+ :is(.profile-boot,.profile-enhanced) #experience .section-heading>h2{grid-area:2/1}
+ :is(.profile-boot,.profile-enhanced) #experience .reflection-art{
+  grid-area:1/2/span 3;justify-self:stretch;max-width:none;aspect-ratio:auto;
+  height:max(160px,min(72svh,62vw,690px,calc(100svh - 190px)));
+ }
+ .profile-enhanced.profile-story-active #experience .reflection-art>img{visibility:hidden}
+ .profile-enhanced #experience .finale-notes{
+  justify-self:stretch;max-width:none;margin-top:30px;
+ }
+ .finale-portal{overflow:visible}
+ .finale-portal-caption,.profile-enhanced #experience .finale-phase{
+  inset:calc(100% + 6px) 8px auto;margin:0;max-width:none;
+  font-size:clamp(12px,1vw,15px);line-height:1.6;text-wrap:balance;
+ }
+}

@@ -166,7 +166,19 @@
    const plane=p<.35&&sourcePlane&&g.launchPaperPlane?g.launchPaperPlane(sourcePlane,p,actor):null;
    const quiet=1-.73*Math.max(0,...overture.echoes.map(e=>e.alpha));
    const memory=p>.64?[]:fragments.map((f,i)=>{const delay=(i%9)*.009,u=smooth((p-.16-delay)/(.43-delay)),lane=i%3-1,receiver=add(head,[lane*.035,0,-.015]),c1=add(f.center,[lane*.20,.19,.12]),c2=add(head,[lane*.40,.28,-.15]),center=bezier(f.center,c1,c2,receiver,u),scale=mix(1,.006,smooth(u)),turn=Math.sin(Math.PI*u)*(.3+(i%5)*.11),c=Math.cos(turn),s=Math.sin(turn);return {...f,alpha:quiet*f.alpha*smooth((p-.10)/.12)*(1-smooth((u-.92)/.08)),points:f.points.map(q=>{const v=mul(sub(q,f.center),scale);return add(center,[v[0]*c-v[2]*s,v[1],v[0]*s+v[2]*c]);})};});
-   const arrived=p>.61?1:fragments.reduce((n,f,i)=>n+smooth((p-.30-(i%9)*.009)/.29),0)/fragments.length,charge=arrived*(1-smooth((p-.70)/.15)),baseCamera=g.cameraAt(SOURCE,{compact}),endCamera={yaw:-.22,pitch:.10,distance:8.3,focal:6,target:[-.40,.02,.16]},zoom=smooth((p-.1)/.40)*(1-smooth((p-.68)/.25)),blend=smooth((p-.68)/.26),camera={...baseCamera,yaw:mix(baseCamera.yaw,endCamera.yaw,blend),pitch:mix(baseCamera.pitch,endCamera.pitch,blend),distance:mix(baseCamera.distance*(1-zoom*.075),endCamera.distance,blend),target:lerp(lerp(baseCamera.target,add(head,[0,-.12,0]),zoom*.26),endCamera.target,blend),focal:6,near:.25,perspectiveWeight:0,focusWeight:0,orbitWeight:0};
+   // In the landscape aperture the gathering dolly holds the full standing
+   // figure while the eyes track each work. The phone keeps its head close-up.
+   const gatherTarget=compact?add(head,[0,-.12,0]):[head[0],actor.hip[1]+.12,head[2]];
+   const arrived=p>.61?1:fragments.reduce((n,f,i)=>n+smooth((p-.30-(i%9)*.009)/.29),0)/fragments.length;
+   const charge=arrived*(1-smooth((p-.70)/.15)),baseCamera=g.cameraAt(SOURCE,{compact});
+   const zoom=smooth((p-.1)/.40)*(1-smooth((p-.68)/.25)),blend=smooth((p-.68)/.26);
+   const targetMark=lerp(baseCamera.target,gatherTarget,zoom*.26);
+   // Open a little room to the left as the plan appears and let the view
+   // come back with the ink. The flying paper stays in the opposite margin.
+   if(!compact)targetMark[0]-=.17*smooth((p-.11)/.065)*(1-smooth((p-.245)/.10));
+   const camera={...baseCamera,yaw:mix(baseCamera.yaw,-.22,blend),pitch:mix(baseCamera.pitch,.10,blend),
+    distance:mix(baseCamera.distance*(1-zoom*.075),8.3,blend),target:lerp(targetMark,[-.40,.02,.16],blend),
+    focal:6,near:.25,perspectiveWeight:0,focusWeight:0,orbitWeight:0};
    const light=actingModule?.lightAt(p,charge,thoughtTime,formation)||thoughtModule?.lightAt(p,charge,thoughtTime,formation)||{energy:charge,flare:0,gold:charge,phase:0,spectrum:['#fff8df','#ffe0a2','#edb662']},hookIds=thoughtModule&&formation>0?thoughtModule.targets(skills,(s,t)=>orbit(s,phase(s.category,t)),visibleTime,light.hook):[],hookTargets=hookIds.map(id=>nodes.find(n=>n.id===id)).filter(Boolean);
    return {p,pose:actor,head:actualHead,overture,plane,light,thoughtTime,hookTargets,synthesis,trace,sourceAlpha:quiet*(1-smooth((p-.12)/.16)),environments,memory,charge,nodes,attention,camera,phase:p<.10?'remember':p<.48?'gather':p<.68?'within':p<.94?'reveal':'orbit',pose0};
   }
@@ -179,7 +191,10 @@
   let layoutWidth=innerWidth,layoutHeight=innerHeight,anchors=[],start=Infinity,end=Infinity,active=false,settled=false,sourceRect=null,padding={top:0,bottom:0,left:0,right:0},snapshot={},loaded=false,lastName='',lastPhase='',lastP=-1,geometryCache=null,skinCache=null;
   function sourceBounds(y){
    const r=stageHost.getBoundingClientRect(),sticky=parseFloat(getComputedStyle(stageHost.closest('.stage')).top)||105;
-   const top=Math.min(sticky,r.top+Math.max(0,y-start));
+   // The desktop picture has its own row beneath the shot title. Recover
+   // its sticky mark even when a direct link starts below the entire stage.
+   const top=innerWidth>=768?sticky+r.top-stageHost.closest('.stage-frame').getBoundingClientRect().top:
+    Math.min(sticky,r.top+Math.max(0,y-start));
    return {left:r.left,right:r.right,top,bottom:top+r.height,width:r.width,height:r.height};
   }
   const measuredInsets=new Map();
@@ -211,7 +226,12 @@
    professional.classList.add('finale-active');const nextSettled=p>=1;if(settled&&!nextSettled)time.capture();settled=nextSettled;professional.classList.toggle('finale-settled',settled);
    if(settled){portal.style.display='none';const r=summaryHost.getBoundingClientRect();if(r.bottom<=0||r.top>=innerHeight)thoughtLayer?.hide();return summaryHost;}
    const s=stageHost.getBoundingClientRect(),d=summaryHost.getBoundingClientRect(),u=smooth((p-.53)/.47),w=mix(sourceRect.width,d.width,u),h=mix(sourceRect.height,d.height,u),safe=document.querySelector('.site-header').getBoundingClientRect().bottom+10;
-   const earlyTop=mix(sourceRect.top,Math.max(safe,sourceRect.top),smooth(p/.18)),dy=Math.min(d.top,Math.max(safe,innerHeight-h-18)),top=mix(earlyTop,dy,u);
+   const earlyTop=mix(sourceRect.top,Math.max(safe,sourceRect.top),smooth(p/.18));
+   // Aim at the resting mark in viewport space. As the fixed picture
+   // settles, it takes up the last few pixels of the native figure's scroll.
+   const dy=innerWidth>=768?d.top-(end-y)*(1-smooth((p-.82)/.18)):
+    Math.min(d.top,Math.max(safe,innerHeight-h-18));
+   const top=mix(earlyTop,dy,u);
    portal.style.display='block';portal.style.left=mix(s.left,d.left,u)+'px';portal.style.top=top+'px';portal.style.width=w+'px';portal.style.height=h+'px';
    return portal;
   }
