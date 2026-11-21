@@ -9,6 +9,42 @@ const engine=process.env.ENGINE||'chromium',base=process.env.TEST_URL||'http://1
  async function receiver(){return p.evaluate(()=>{const s=ProfileExperience.snapshot(),r=s.readingThread;if(!r.visible)return{visible:false,finale:s.finale.active};const el=document.querySelector('.story-receiver');let closed=false;for(let d=el?.closest('details');d;d=d.parentElement?.closest('details'))if(!d.open&&!d.firstElementChild?.contains(el))closed=true;const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),boxes=[];let node;while((node=walker.nextNode())){if(!node.textContent.trim()||node.parentElement.closest('[aria-hidden="true"]'))continue;const range=document.createRange();range.selectNodeContents(node);for(const b of range.getClientRects()){const x=b.left+Math.min(3,b.width/2),y=b.top+b.height/2,hit=document.elementFromPoint(x,y);if(b.width>5&&b.height>4&&hit&&(hit===el||el.contains(hit)))boxes.push({left:b.left,right:b.right,bottom:b.bottom});}range.detach();}const compact=innerWidth<768,error=boxes.length?Math.min(...boxes.map(b=>Math.hypot(r.target[0]-(compact?b.left-8:b.right+9),r.target[1]-(b.bottom+4)))):Infinity;return{visible:true,closed,error,receiver:r.receiver,target:r.target,details:el?.closest('details')?.id};});}
  const gap=await p.evaluate(()=>{const a=document.querySelector('#work-heading .tags').getBoundingClientRect(),b=document.querySelector('#work-heading .story-bridge').getBoundingClientRect();return b.top-a.bottom;});check('last-reading-and-experience-bridge-have-no-empty-screen-'+tag,gap>=0&&gap<=64,{gap});
  const rows=[];for(let i=0;i<=22;i++){const pos=8.30+i*.02;await go(pos);rows.push({position:pos,...await receiver()});}check('every-reading-endpoint-belongs-to-a-painted-glyph-'+tag,rows.every(r=>!r.visible||(!r.closed&&r.error<1)),rows.filter(r=>r.visible&&(r.closed||r.error>=1)));check('offering-still-has-a-visible-reading-connection-'+tag,rows.some(r=>r.visible));await go(8.68);await p.screenshot({path:path.join(out,'offer-'+tag+'.png')});
+ // The next-project bridge is native copy. On a short phone its middle can
+ // coincide with the beginning of the portal, on taller screens it comes earlier.
+ const launch=await p.evaluate(()=>{
+  const a=ProfileExperience.snapshot().anchors,source=ProfileExperience.scrollForPosition(ProfileFinale.SOURCE);
+  const stage=document.querySelector(innerWidth<768?'.stage':'.site-header').getBoundingClientRect();
+  const bridge=document.querySelector('#work-heading .story-bridge strong').getBoundingClientRect();
+  // Phones reserve the orbit picture above the title. Follow the element
+  // that the reader actually sees enter the viewport during the throw.
+  const compact=innerWidth<768,entry=document.querySelector(compact?'#experience .reflection-art':'#experience-title').getBoundingClientRect();
+  const entryY=compact?entry.top+Math.min(48,entry.height*.20):entry.bottom;
+  return {source,end:a[9],bridge:scrollY+(bridge.top+bridge.bottom)/2-(stage.bottom+innerHeight)/2,entry:scrollY+entryY-innerHeight};
+ });
+ async function nativePose(y){
+  await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);
+  await p.waitForFunction(({y,source,end})=>{
+   const s=ProfileExperience.snapshot(),expected=ProfileGeometry.clamp((scrollY-source)/(end-source));
+   const position=ProfileGeometry.positionFromAnchors(scrollY,s.anchors,s.readingStops);
+   return Math.abs(scrollY-y)<=1&&Math.abs(s.target-position)<.0001&&s.current===s.target&&(scrollY>=source?s.finale.active&&Math.abs(s.finale.p-expected)<.002:!s.finale.active);
+  },{y,...launch});
+  return p.evaluate(()=>{
+   const s=ProfileExperience.snapshot(),f=s.finale;
+   const layer=!f.active&&ProfileGeometry.illustration(s.current,s.exploded,s.idleSeconds).find(l=>l.id==='paper-plane');
+   const canvas=document.createElement('canvas');canvas.width=96;canvas.height=64;
+   const ctx=canvas.getContext('2d');ctx.drawImage(document.querySelector('#architecture'),0,0,96,64);
+   let hash=2166136261;for(const byte of ctx.getImageData(0,0,96,64).data)hash=Math.imul(hash^byte,16777619);
+   return {y:scrollY,p:f.active?f.p:0,portal:f.active,plane:f.active?f.planeVisible:!!layer?.paths.some(item=>item.id==='work-28-plane-wing-near'&&item.alpha*layer.alpha>.1),alpha:f.active?f.planeAlpha:null,hash};
+  });
+ }
+ const bridgePlane=await nativePose(launch.bridge),entrance=await nativePose(launch.entry);
+ check('the-bridge-shows-the-plane-before-release-'+tag,bridgePlane.plane&&bridgePlane.p<.20,bridgePlane);
+ check('experience-arrives-during-the-natural-handoff-'+tag,entrance.p<.34&&entrance.plane,entrance);
+ const at=t=>launch.source+(launch.end-launch.source)*t;
+ const flying=await nativePose(at(.28));
+ await p.waitForTimeout(250);
+ const paused=await nativePose(at(.28)),cleared=await nativePose(at(.42)),reverse=await nativePose(at(.28));
+ check('paper-flight-paints-pauses-clears-and-retraces-'+tag,flying.plane&&flying.alpha>0&&!cleared.plane&&flying.hash===paused.hash&&flying.hash===reverse.hash&&cleared.hash!==flying.hash,{flying,paused,cleared,reverse});
  // Closed details can retain layout rectangles: opening and closing them must not leave a ghost receiver.
  await p.evaluate(()=>document.querySelector('#work-review').open=true);await p.waitForTimeout(100);await go(8.60);const opened=await receiver();await p.evaluate(()=>document.querySelector('#work-review').open=false);await p.waitForTimeout(100);await go(8.60);const closed=await receiver();check('disclosure-close-removes-hidden-receiver-candidates-'+tag,[opened,closed].every(r=>!r.visible||(!r.closed&&r.error<1)),{opened,closed});
  // Native closed details may retain the last laid-out text rectangles.

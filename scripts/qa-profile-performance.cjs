@@ -40,7 +40,7 @@ function distanceToPaintedPath(point,item,closedSurface=false) {
   }
   return inside?Math.min(nearest,Math.abs(dot(subtract(point,a),normal))):nearest;
 }
-const paintedSpaces=new Set(['work','paper','fragment','keyboard','support','stylus-dock']);
+const paintedSpaces=new Set(['work','paper','fragment','keyboard','support','stylus-dock','paper-keel']);
 function paintedSurfaceGap(position,contact,modelLines=null,layers=null) {
   let painted,supportAlpha;
   if(['support','stylus-dock'].includes(contact.space)) {
@@ -308,6 +308,27 @@ function checkEarlyWorkpieces() {
       bridgeGap=Math.max(bridgeGap,Math.min(...vertices.map(q=>distance(q,pose.contacts[side].tip))));
   }
   check('truss-bearing-points-follow-both-palms-through-opening-and-hold',bridgeGap<1e-6,{bridgeGap});
+  const wheelAngle=(timeline,which)=>{
+    const line=material(timeline,'gear-'+which+'-mark').paths[0].points;
+    const v=subtract(line.at(-1),line[0]),u=[.69,0,-.724];
+    return Math.atan2(v[1],dot(v,u)/dot(u,u));
+  };
+  const roll=which=>{
+    const change=wheelAngle(19.86,which)-wheelAngle(19.58,which);
+    return Math.atan2(Math.sin(change),Math.cos(change));
+  };
+  const drive=roll('drive'),driven=roll('driven');
+  const lamp=t=>material(t,'gear-output-lamp').paths[0].alpha;
+  const unlit=lamp(19.57),lit=lamp(19.86);
+  let crankGap=0;
+  for(const t of [19.27,19.39,19.56,19.62,19.72,19.84]){
+    const {pose,paths}=material(t,'gear-crank'),rim=paths[0].points;
+    const centre=rim[0].map((n,i)=>(n+rim[(rim.length-1)/2][i])/2);
+    crankGap=Math.max(crankGap,distance(centre,pose.contacts.right.tip));
+  }
+  check('meshed-gears-transmit-the-crank-at-tooth-ratio-before-lighting-the-output',
+    drive>1.1&&driven<-.6&&Math.abs(drive*10+driven*18)<.003&&crankGap<.001&&unlit<.15&&lit>.95,
+    {drive,driven,crankGap,unlit,lit});
 }
 function checkEntranceActing() {
   const study=motion.poseAt(22),load=motion.poseAt(22.20),step=motion.poseAt(22.34),stand=motion.poseAt(23);
@@ -344,8 +365,42 @@ function checkEntranceActing() {
     cues.join(' ')==='11 10 00 10 11 10 10'&&braceSlip<1e-6&&sliderTravel>.26,
     {cues,braceSlip,sliderTravel});
 }
+function checkWheelAndThrow() {
+  let crankSlip=0,braceSlip=0,held=true;
+  for(let n=25;n<=100;n++){
+    const u=n/100,p=motion.poseAt(19+u),wheel=motion.skillRig(u);
+    crankSlip=Math.max(crankSlip,distance(p.contacts.right.tip,wheel.crank));
+    braceSlip=Math.max(braceSlip,distance(p.contacts.left.tip,wheel.brace));
+    held&&=p.contacts.right.active&&p.contacts.left.active;
+  }
+  const catchWheel=motion.poseAt(19.22),seated=motion.skillRig(.59),turned=motion.skillRig(.85);
+  check('brace-takes-the-load-before-the-crank-seats-and-turns',
+    catchWheel.contacts.left.active&&!catchWheel.contacts.right.active&&held&&crankSlip<1e-8&&braceSlip<1e-8&&
+    distance(motion.skillRig(.34).pinion,seated.pinion)>.15&&seated.turn===0&&turned.turn>1&&
+    distance(seated.pinion,turned.pinion)<1e-8,{crankSlip,braceSlip,turn:turned.turn});
+  const presented=motion.poseAt(28),source=presented.contacts.right.tip;
+  let padError=0,reachError=0;
+  function duringThrow(p) {
+    const base=motion.poseAt(28+geometry.smooth((p-.03)/.53));
+    return motion.finalePose(base,{launchProgress:p});
+  }
+  for(let j=101;j<=370;j++){
+    const p=j/1000,actor=duringThrow(p);
+    reachError=Math.max(reachError,actor.reach.right.error);
+    if(p<=.20){
+      const expected=source.map((n,i)=>n+motion.paperThrowOffset(p)[i]);
+      padError=Math.max(padError,distance(actor.contacts.right.tip,expected));
+    }
+  }
+  const gathered=duringThrow(.143),release=duringThrow(.20),follow=duringThrow(.225);
+  check('paper-draws-back-then-leaves-the-real-palm-before-the-follow-through',
+    gathered.contacts.right.tip[0]<source[0]-.05&&release.contacts.right.tip[0]>source[0]+.14&&
+    follow.contacts.right.tip[0]>release.contacts.right.tip[0]+.025&&release.contacts.right.active&&
+    !follow.contacts.right.active&&reachError<1e-8&&padError<1e-8,{padError,reachError});
+}
 async function main() {
   checkEarlyWorkpieces();
+  checkWheelAndThrow();
   checkEntranceActing();
   const stride = 1 / 200, timelines = Array.from({ length:6001 }, (_, i) => i * stride);
   const samples = timelines.map(timeline => ({ timeline, pose:motion.poseAt(timeline) }));

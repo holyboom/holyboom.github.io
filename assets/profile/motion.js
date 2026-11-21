@@ -21,11 +21,11 @@
  [.42,.055,.04,.07],[-.20,-.075,.015,-.06],[.08,.25,-.035,.035],[-.36,.28,.39,-.04],
  [.13,-.085,.07,.035],[-.18,.44,.65,-.065],[.38,-.10,.27,.06],[-.34,.38,.72,-.055],
  [.26,.32,.38,.035],[-.22,-.085,-.07,-.025],[.36,.025,.25,.055],[-.15,.13,.035,-.04],
- [-.26,.07,.28,-.05],[.46,-.055,.10,.065],[.36,.48,.60,-.075],[.95,-.10,-.12,.075],
+ [.44,.31,.57,-.035],[.46,-.055,.10,.065],[.36,.48,.60,-.075],[.95,-.10,-.12,.075],
  [-.24,-.08,.04,-.07],[.08,-.025,-.04,.045],[-.16,.035,.12,-.035],[.48,.24,.34,.05],
- [.20,-.055,.045,-.065],[-.34,-.035,.09,.045],[.30,-.065,-.055,-.045]
+ [.62,.03,.10,.055],[-.34,-.035,.09,.045],[.30,-.065,-.055,-.045]
  ];
- const gazeYaw={22:1.48,25:-.04,26:.02,28:-.02,29:.02,30:.02};
+ const gazeYaw={20:1.27,22:1.48,25:-.04,26:.02,28:1.04,29:.02,30:.02};
  // Negative offsets bend the knees without changing the planted foot targets.
  const level=[0,0,0,0,0,0,0,-.015,0,-.025,-.025,-.075,0,0,0,0,0,0,-.025,-.045,-.25,0,-.265,-.045,-.02,0,-.025,-.055,-.015,0,0];
  // Standing foot marks: width and fore/aft stagger. Transfers step one foot at
@@ -51,6 +51,23 @@
  function at(w,x,y,z=0){return add(w.origin,add(add(mul(w.u,x),mul(w.v,y)),mul(w.normal,z)));}
  function painted(w,x,y,z=.012){return at(w,(x-.89)*w.width/1.3,(y-.32)*w.height/1.04,z);}
  function inspectWork(w,amount){if(!amount)return w;const x=(.46-.89)*w.width/1.3,y=(-.035-.32)*w.height/1.04,z=.015,pivot=at(w,x,y,z),r=frame(.24*amount,-.10*amount,.08*amount),u=apply(r,w.u),v=apply(r,w.v),normal=norm(cross(u,v));return {...w,u,v,normal,origin:sub(pivot,add(add(mul(u,x),mul(v,y)),mul(normal,z)))};}
+ // Two parallel spur gears share a fixed face plane. Draw the small wheel
+ // onto its axle before loading the crank. Both renderer and wrist sample
+ // this point, including the axial depth of the brass handle.
+ function skillRig(progress){
+  const seat=ramp(progress,.34,.58),turn=65*PI/180*ramp(progress,.59,.85);
+  const u=[.69,0,-.724],n=[.724,0,.69],angle=2.40+turn;
+  const pinion=add([.07,.16+.075*(1-seat),.43],mul(n,.16*(1-seat)));
+  const crank=add(add(pinion,mul(n,.085)),add(mul(u,.14*Math.cos(angle)),[0,.14*Math.sin(angle),0]));
+  return {pinion,crank,brace:[-.305,.09,.44],turn};
+ }
+ // The launch offsets are in world coordinates so the crease can leave the
+ // hand with its actual displacement even on a backwards scroll or a seek.
+ const paperPad=[.07,.41,.60],paperAxis=[.87,.13,.47];
+ function paperThrowOffset(p){
+  const draw=ramp(p,.10,.143)*(1-ramp(p,.143,.214)),thrust=ramp(p,.143,.225);
+  return add(mul([-.060,.012,-.030],draw),mul([.19,.077,.060],thrust));
+ }
  function handSpec(i,side,w,body){const right=side===1,hip=body.hip,head=body.head;const bodyAt=v=>add(hip,v),work=(x,y,z,grip='open',active=false,space='work')=>({target:at(w,x,y,z),grip,active,space});const rest=(open=false)=>({target:bodyAt(right?[.27,.14,.27]:[-.23,.10,.23]),grip:open?'open':'relaxed',active:false,space:'body'});const key=(x,y,z,active=false)=>({target:at(w.keyboard,x,y,z),grip:'type',active,space:'keyboard'});
   switch(i){
    case 0:return right?work(-.08,.06,.13,'write'):work(-.34,-.17,.025,'brace',true);
@@ -74,12 +91,12 @@
    case 16:return right?work(.04,-.17,.19,'open'):work(-.35,-.21,.12,'open');
    case 17:return {target:bodyAt(right?[.13,.40,.35]:[-.37,.12,.15]),grip:right?'cup':'open',active:false,space:'body'};
    case 19:return right?work(.14,.15,.12,'hold'):work(-.31,-.12,.025,'hold',true);
-   case 20:return right?work(.17,-.08,.07,'cup'):work(-.26,-.10,.07,'cup');
+   case 20:{const rig=skillRig(1);return {target:right?rig.crank:rig.brace,grip:right?'hold':'brace',active:true,space:'work',roll:right?-.32:0};}
    case 21:return right?{target:bodyAt([.36,.67,.12]),grip:'open',active:false,space:'body'}:{target:painted(w,.40,.10,.015),grip:'hold',active:true,space:'work'};
    case 23:return right?work(.27,.29,.21,'open',false,'invitation'):work(-.32,-.15,.025,'brace',true);
    case 24:return right?work(-.30,-.36,.15,'open',false,'agency'):{target:bodyAt([-.10,.31,.27]),grip:'relaxed',active:false,space:'body'};
    case 25:return right?work(.55,-.06,-.04,'open',false,'welcome'):{target:bodyAt([-.47,.30,.26]),grip:'open',active:false,space:'body'};
-   case 28:return right?work(.09,-.30,.23,'open',false,'offer'):{target:bodyAt([-.16,.20,.34]),grip:'open',active:false,space:'body'};
+   case 28:return right?{target:paperPad,grip:'open',active:true,space:'paper-keel',effector:'palm-pad'}:{target:bodyAt([-.31,.23,.06]),grip:'relaxed',active:false,space:'body'};
    case 26:return right?work(.50,-.14,.02,'open',false,'invitation'):{target:bodyAt([-.32,.12,.10]),grip:'open',active:false,space:'body'};
    case 27:return right?{target:bodyAt([.20,.61,.26]),grip:'hold',active:false,space:'body'}:work(-.33,-.14,.025,'hold',true);
    case 29:return {target:bodyAt(right?[.06,.10,.28]:[-.08,.12,.30]),grip:'relaxed',active:false,space:'body'};
@@ -122,7 +139,6 @@
   if(i===16&&!right){target=painted(w,.38,.26,.015);active=true;grip='brace';}
   if(i===16&&right){target=at(w,mix(-.13,.10,smooth(a)),mix(-.11,.04,smooth(a)),.012+.10*Math.sin(PI*smooth(a/.86)));active=a>.86;grip='hold';}
   if(i===19&&right){target=at(w,mix(.21,-.02,smooth(a)),.15+.08*Math.sin(PI*a),.012+.10*Math.sin(PI*smooth(a/.80)));active=a>.8;grip='hold';}
-  if(i===20){const t=smooth(a);target=painted(w,right?mix(1.30,1.17,t):mix(.42,.63,t),.36,.015);active=a>.85;grip='cup';}
   if(i===23&&right){target=at(w,mix(-.13,.16,smooth(a)),.06,.025);active=true;grip='hold';space='work';}
   if(i===24&&right){target=lerp(at(w,.13,.06,.09),spec.target,smooth(a));target[1]+=.025*Math.sin(PI*a);active=false;grip='open';}
   if(i===27&&right){target=at(w,mix(.18,.06,smooth(a)),.12,.012+.18*smooth((a-.16)/.84));active=a<.16;grip='hold';}
@@ -133,16 +149,17 @@
    target=lerp(latch,spec.target,release);target[1]+=.07*Math.sin(PI*release);
    active=release===0;grip=a<.31?'hold':'open';space='work';
   }
-  if([25,28].includes(i)&&right){
-   const from=i===25?at(w,.57,-.10,.06):at(w,.10,-.28,.10);
+  if(i===25&&right){
+   const from=at(w,.57,-.10,.06);
    target=lerp(from,spec.target,smooth(a));const arc=Math.sin(PI*smooth(a));
-   target[1]+=(i===28?.065:.08)*arc;target[0]+=.05*arc;target[2]+=.06*arc;
+   target[1]+=.08*arc;target[0]+=.05*arc;target[2]+=.06*arc;
   }
   if(i===30&&right){target=add(target,[.015*Math.sin(PI*a),.035*Math.sin(PI*a),.025*Math.sin(PI*a)]);}
   return {...spec,target,active,grip,space};
  }
  function wristFor(spec,w,side){let forward,normal=[0,1,0],offset=[0,0,.105];
-  if(spec.grip==='write'){forward=add(add(mul(w.normal,-1),mul(w.v,.20)),mul(w.u,.12));normal=w.v;offset=[.015,-.025,.15];}
+  if(spec.space==='paper-keel'){forward=paperAxis;normal=[-.06,-1,.07];}
+  else if(spec.grip==='write'){forward=add(add(mul(w.normal,-1),mul(w.v,.20)),mul(w.u,.12));normal=w.v;offset=[.015,-.025,.15];}
   else if(spec.grip==='type'){forward=mul(w.keyboard.v,-1);normal=w.keyboard.normal;}
   else if(spec.grip==='point'){forward=w.normal;normal=w.v;}
   else if(['brace','hold'].includes(spec.grip)){normal=spec.space==='support'?[0,1,0]:spec.back?mul(w.normal,-1):w.normal;forward=spec.space==='support'?[side*.12,0,.99]:mul(w.v,w.kind==='paper'?-1:1);}
@@ -150,6 +167,13 @@
   else if(spec.grip==='relaxed'){forward=[side*.12,-.85,.50];normal=[0,.50,.85];offset=[0,0,.10];}
   else {forward=spec.space==='invitation'?[.85,-.04,.53]:spec.space==='welcome'?[.36,-.30,.88]:spec.space==='offer'?[.04,-.04,1]:[side*.20,-.10,.97];normal=spec.space==='welcome'||spec.space==='invitation'?[0,-1,-.35]:[0,-1,0];offset=[0,0,.105];}
   const shape=spec.grip==='type'&&Number.isFinite(spec.press)?handShapes.press(spec.press,side):handShapes.pose(spec.grip,side);offset=shape.contactOffset;
+  // An open hand keeps its spread fingers while the actual palm pad carries
+  // the keel. Other open gestures use the free-hand point for the light.
+  if(spec.space==='paper-keel'){
+   const pad=handShapes.pose('cup',side);
+   const carrying={...shape,contactOffset:pad.contactOffset,contactFeature:pad.contactFeature,parameters:{...shape.parameters,features:pad.parameters.features}};
+   return {frame:palm(forward,normal),offset:carrying.contactOffset,curl:spec.grip==='cup'?.47:.12,shape:carrying};
+  }
   const curl={write:.68,type:.32,hold:.62,brace:.34,point:.20,relaxed:.40,open:.12,cup:.47,reflect:.45}[spec.grip]??.4,f=palm(forward,normal);if(spec.roll){const c=Math.cos(spec.roll),s=Math.sin(spec.roll);return {frame:{x:add(mul(f.x,c),mul(f.y,s)),y:add(mul(f.y,c),mul(f.x,-s)),z:f.z},offset,curl,shape};}return {frame:f,offset,curl,shape};
  }
  function phaseAt(to,u){const t=timing[to],bridge=to===7?.36:to===13?.32:0,scale=1-bridge,attentionEnd=to===3?.10:bridge+t[0]*scale,start=to===3?.50:attentionEnd+t[1]*scale,end=to===3?.82:start+t[2]*scale,settle=to===3?.92:end+t[3]*scale;return {bridge,attentionEnd,stage:u<bridge?'bridge':u<attentionEnd?'attention':u<start?'preparation':u<end?'action':u<settle?'response':'hold',actionStart:start,actionEnd:end,settle,action:clamp((u-start)/(end-start))};}
@@ -232,6 +256,20 @@
    look=-.26*check+.10*sink;nod=.13*check+.10*sink;
    lean=-.29*ramp(u,.10,.25)*(1-ramp(u,.43,.65))+.09*sink;
    turn=.10*check-.09*sink;roll=-.13*sink;shift=-.018*sink;
+  }else if(beat===20){
+   // Dip into the incoming spindle, then resist the torque with the left
+   // shoulder. The head checks the driven wheel after the turn.
+   const seat=ramp(u,.26,.49)*(1-ramp(u,.57,.76));
+   const effort=ramp(u,.56,.70)*(1-ramp(u,.83,.94));
+   lean=.21*seat+.08*effort;turn=-.19*seat+.22*effort;roll=-.13*effort;
+   look=-.12*seat+.16*ramp(u,.71,.83)*(1-ramp(u,.90,1));nod=.09*seat;shift=-.033*seat;
+  }else if(beat===28){
+   // Follow the imaginary flight line with the head before carrying the
+   // folded keel forward; the trailing shoulder keeps the hand in relief.
+   const draw=ramp(u,.09,.35)*(1-ramp(u,.54,.77)),offer=ramp(u,.50,.78)*(1-ramp(u,.88,1));
+   lean=.16*draw+.08*offer;turn=-.31*draw+.13*offer;roll=-.11*draw+.08*offer;
+   look=.28*ramp(u,.12,.36)*(1-ramp(u,.65,.89));nod=.19*draw-.08*offer;
+   shift=-.065*draw+.028*offer;
   }else if(accents[beat]){
    const [see,load,work,free,bend,twist,bank,aim]=accents[beat];
    const gaze=ramp(u,see,load)*(1-ramp(u,work,free));
@@ -287,6 +325,25 @@
    if(u<phase.actionStart){const t=to===16?smooth((u-(side===-1?.18:.27))/(side===-1?.12:.15)):smooth((u-phase.attentionEnd)/Math.max(.01,phase.actionStart-phase.attentionEnd));spec={...actionStart,target:lerp(start.target,actionStart.target,t),active:false};spec.target[1]+=.035*Math.sin(PI*t);if(side===1&&(to===25||to===26))spec.target[2]+=.08*Math.sin(PI*t);wf=blendWrist(startWrist,actionStartWrist,t);}
    else if(u<=phase.actionEnd){spec=actionSpec(to,side,phase.action,work,body);weight=spec.active?1:0;wf=spec.grip==='type'?wristFor(spec,work,side):blendWrist(actionStartWrist,actionEndWrist,smooth(phase.action));}
    else {const t=smooth((u-phase.actionEnd)/Math.max(.01,phase.settle-phase.actionEnd));spec={...finish,target:lerp(actionEnd.target,finish.target,t),active:finish.active&&t>.999};weight=spec.active?1:0;wf=blendWrist(actionEndWrist,finishWrist,t);}
+   if(to===20){
+    const right=side===1,rig=skillRig(u),reach=right?ramp(u,.09,.25):ramp(u,.035,.20);
+    const target=lerp(start.target,right?rig.crank:rig.brace,reach);
+    target[1]+=(right?.09:.036)*Math.sin(PI*reach);
+    spec={...finish,target,roll:right?.15-.47*rig.turn/(65*PI/180):0,active:reach===1};
+    wf=blendWrist(startWrist,wristFor(spec,work,side),reach);weight=spec.active?1:0;
+   }
+   if(to===28&&side===1){
+    // Bring the keel across the chest to sight the fold. Hold that address
+    // briefly before the whole arm presents the plane to its flight line.
+    const catchKeel=ramp(u,.07,.35),present=ramp(u,.50,.79);
+    const folded=[-.27,.36,.47],target=lerp(lerp(start.target,folded,catchKeel),finish.target,present);
+    target[1]+=.06*Math.sin(PI*catchKeel)+.045*Math.sin(PI*present);
+    target[2]-=.032*Math.sin(PI*present);
+    spec={...finish,target,grip:present===1?'open':'cup',active:catchKeel===1};
+    const cradle=wristFor({...finish,grip:'cup'},work,side);
+    wf=blendWrist(blendWrist(startWrist,cradle,catchKeel),finishWrist,present);
+    weight=spec.active?1:0;
+   }
    if(to===23&&u<phase.actionStart){
     // Unhook one end at a time. The free hand passes below the old cable
     // before taking the gate rail; the other hand finds the lower support.
@@ -363,7 +420,40 @@
  function lightAt(timeline,idleSeconds=0){return evaluate(timeline,true,idleSeconds);}
  function pose(value){if(typeof value==='number')return poseAt(value);const aliases={build:5,review:11,experience:24};const i=aliases[value]??names.indexOf(value);return poseAt(i<0?0:i);}
  // Additive finale gestures reuse the original fixed-length rig and C glove.
+ function throwPaper(base,p){
+  const wake=ramp(p,.10,.143),fade=1-ramp(p,.226,.37),weight=wake*fade;
+  const pose={...base,frames:{...base.frames},contacts:{...base.contacts},reach:{...base.reach}};
+  const press=ramp(p,.10,.14)*(1-ramp(p,.145,.20));
+  const shape=handShapes.blend(base.contacts.right.shape,handShapes.blend(handShapes.pose('open',1),handShapes.pose('cup',1),press*.58),weight);
+  const turn=ramp(p,.143,.223),axis=lerp(paperAxis,[.91,.23,.35],turn);
+  const wrist=blendFrame(base.frames.wristR,palm(axis,[-.06,-1,.07]),weight);
+  const tip=lerp(base.contacts.right.tip,add(paperPad,paperThrowOffset(p)),fade);
+  const offset=lerp(base.contacts.right.gripOffset,handShapes.pose('cup',1).contactOffset,weight);
+  const requested=sub(tip,apply(wrist,offset));
+  const arm=twoBone(base.shoulderR,requested,lengths.upperArm,lengths.forearm,base.elbowR);
+  pose.handR=arm.end;pose.elbowR=arm.joint;pose.frames.wristR=wrist;
+  pose.contacts.right={...base.contacts.right,tip:add(arm.end,apply(wrist,offset)),target:tip,shape,gripOffset:offset,grip:'open',active:p<=.20,weight:p<=.20?1:0};
+  pose.reach.right={requested,solved:arm.end,clamped:arm.clamped,error:arm.error};
+  pose.frames.head=blendFrame(base.frames.head,frame(1.12,-.12,.07),weight*turn);
+  pose.light=add(arm.end,apply(wrist,[.015,-.052,.055]));
+  return pose;
+ }
+ function headAim(head,target,roll=0,down=.37){
+  const d=sub(target,head);
+  return frame(clamp(Math.atan2(d[0],d[2]),-.76,.76),clamp(-Math.atan2(d[1],Math.hypot(d[0],d[2])),-.28,down),roll);
+ }
  function finalePose(base,options={}){
+  const throwing=options.launchProgress>.10&&options.launchProgress<.37;
+  if(throwing||options.memoryLooks?.length){
+   const pose=throwing?throwPaper(base,options.launchProgress):base;
+   if(!options.memoryLooks?.length)return pose;
+   let aim=pose.frames.head,total=0;
+   for(const look of options.memoryLooks){
+    total+=look.weight;
+    aim=blendFrame(aim,headAim(pose.head,look.point,0,.54),look.weight/total);
+   }
+   return {...pose,frames:{...pose.frames,head:blendFrame(pose.frames.head,aim,total)}};
+  }
   const controls=options.hands||{},torso=options.torso||{},bodyAmount=Math.abs(torso.yaw||0)+Math.abs(torso.pitch||0)+Math.abs(torso.roll||0);
   if(!options.open&&!options.weight&&!options.headWeight&&!bodyAmount&&!Object.values(controls).some(c=>c?.weight||c?.prelude?.weight))return base;
   const p={...base,frames:{...base.frames},contacts:{...base.contacts},reach:{...base.reach},spine:{...base.spine}};
@@ -393,9 +483,9 @@
    p.contacts[key]={...p.contacts[key],shape,grip,active:false,weight:0,tip:add(solution.end,apply(wrist,shape.contactOffset))};
    p.reach[key]={requested:goal,solved:solution.end,clamped:solution.clamped,error:solution.error};
   }
-  const look=options.headTarget||target;if(look){const delta=sub(look,p.head),yaw=clamp(Math.atan2(delta[0],delta[2]),-.76,.76),pitch=clamp(-Math.atan2(delta[1],Math.hypot(delta[0],delta[2])),-.28,.37);p.frames.head=blendFrame(p.frames.head,frame(yaw,pitch,options.headRoll||0),clamp(options.headWeight||weight));}
+  const look=options.headTarget||target;if(look)p.frames.head=blendFrame(p.frames.head,headAim(p.head,look,options.headRoll||0),clamp(options.headWeight||weight));
   p.light=p.contacts[options.lead||(side<0?'left':'right')].tip;return p;
  }
  function restPose(){return poseAt(29);}
- const api={poseAt,lightAt,accentAt,pose,restPose,finalePose,setClips,lengths,names,lessonHandoffs,doorPoint};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
+ const api={poseAt,lightAt,accentAt,pose,restPose,finalePose,setClips,lengths,names,lessonHandoffs,doorPoint,skillRig,paperThrowOffset};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileMotion=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

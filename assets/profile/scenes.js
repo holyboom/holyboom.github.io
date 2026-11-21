@@ -1,6 +1,6 @@
 /* Owner-editable direction: a symbolic maker, not a likeness or documentary scene. */
 (function(root){'use strict';
- const config={release:'living-new-era-v30',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
+ const config={release:'living-paper-flight-v31',tones:{dream:'#c398ff',build:'#78dafa',human:'#ffd394',friction:'#ff9996',care:'#98ebc4'},palette:{background:'#0B0912',line:'#b17af5',highlight:'#e3ccff',signal:'#a8f0de',world:'#a471d6'},gravity:{collapse:0.66,swirl:0.48,trailSpan:0.25,trailLife:750},camera:{yaw:-0.30,pitch:0.12,distance:6,focal:6,compactStrength:.65,shots:{
  establish:{yaw:-.30,pitch:.12,distance:6.4,target:[.10,0,0]},
  gateway:{yaw:.60,pitch:.14,distance:7.20,target:[.43,-.24,.86]},
  draft:{yaw:.58,pitch:.30,distance:5.25,target:[-.25,-.09,.22]},
@@ -10,6 +10,7 @@
  intimate:{yaw:.42,pitch:.10,distance:5.35,target:[-.25,-.06,.25]},
  rise:{yaw:-.42,pitch:.02,distance:6.2,target:[-.30,-.10,.20]},
  reveal:{yaw:.20,pitch:.19,distance:6.35,target:[-.08,-.08,.20]},
+ offering:{yaw:.78,pitch:-.095,distance:6.0,target:[.05,-.05,.46]},
  portrait:{yaw:-.15,pitch:.10,distance:5.90,target:[-.25,-.08,.20]}
  }},morph:{start:0.16,end:0.91},scenes:[
  {verb:'Imagine',shot:'establish',shape:'maker',pose:'design',label:'00 / THE PERSON BEHIND THE SYSTEM',caption:'A world begins at the end of a drawn line.',scale:1},
@@ -114,7 +115,7 @@
   {id:'conviction-rear',start:12.45,lockStart:12.92,turnEnd:13.30,holdEnd:13.45,returnEnd:13.94,end:14.15,
    entryYaw:.28,yaw:2.85,exitYaw:.42,compactYaw:2.65,distance:6.9,pitch:.12,target:[-.26,-.22,.16]},
   {id:'synthesis-side',start:18.92,lockStart:19.12,turnEnd:19.70,holdEnd:20.22,returnEnd:20.88,end:21.12,
-   entryYaw:.28,yaw:-1.08,exitYaw:.20,compactYaw:-1.00,distance:6.4,pitch:.16,target:[-.18,-.12,.22]},
+   entryYaw:.28,yaw:-.67,exitYaw:.20,compactYaw:-.62,distance:6.25,pitch:.68,target:[-.18,-.075,.22]},
   {id:'experience-depth',start:22.87,lockStart:23.05,turnEnd:23.40,holdEnd:23.51,returnEnd:23.81,end:24.02,
    entryYaw:.60,yaw:1.05,exitYaw:.44,compactYaw:1.00,distance:7.20,pitch:.14,target:[.43,-.24,.86],disclosureFan:[.68,-.38]}
  ];
@@ -132,7 +133,7 @@
   {id:'the-light-that-remains',subject:'light',framing:'hand',start:17.00,arrive:17.17,holdEnd:17.31,end:17.58,distance:2.55,compactDistance:3.0,yaw:-.34,compactYaw:-.22,pitch:.12,offset:[-.04,.035,0],radius:.29},
   {id:'inside-the-cables',subject:'cables',framing:'work',start:21.22,arrive:21.83,holdEnd:22.18,end:22.66,distance:2.53,compactDistance:2.12,yaw:-.22,compactYaw:-.18,pitch:.14,offset:[-.025,-.105,0],radius:.49},
   {id:'a-person-chooses',subject:'work',framing:'work',start:24.03,arrive:24.16,holdEnd:24.28,end:24.55,distance:3.10,compactDistance:3.60,yaw:.08,compactYaw:.02,pitch:.10,offset:[.055,.025,0],radius:.49},
-  {id:'the-person-behind-it',subject:'head',framing:'head',start:27.14,arrive:27.40,holdEnd:27.62,end:27.91,distance:2.10,compactDistance:2.75,yaw:.10,compactYaw:.04,pitch:.035,offset:[0,-.11,.015],radius:.31}
+  {id:'the-person-behind-it',subject:'head',framing:'head',start:27.06,arrive:27.17,holdEnd:27.26,end:27.40,distance:2.10,compactDistance:2.75,yaw:.10,compactYaw:.04,pitch:.035,offset:[0,-.11,.015],radius:.31}
  ];
  // Selected surroundings turn into dust at meaningful changes. Pods 0/1 flank
  // the maker; the distant third pod stays intact as a quiet visual anchor.

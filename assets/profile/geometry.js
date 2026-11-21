@@ -592,32 +592,95 @@
    folio(.12,'#f3dcae','#cf8c59','leaf',.13);
    arc(...indexPivot,.061,.061,0,TAU,{fill:'#bc8a61',color:'#ffe1a4',width:1});
    label('SEEK · SELECT · SYNTHESIZE');
-  }else if(prop==='skill'||prop==='moat'){
-   // A cut stone has a stable ridge in side view. Its negative is picked
-   // up in the shield in the next beat.
-   const skill=prop==='skill',motion=skill?'compress':null;
+  }else if(prop==='skill'){
+   // Two keyed spur gears share a cast mounting jig. The pitch circles are
+   // tangent; a tooth on the pinion enters a gap on the larger wheel.
+   const jig={motion:'workshop-jig',fill:'#475266',color:'#92a0ae',width:.85};
+   // Cast trestles anchor the two bearings; the open space beneath the bed
+   // lets the floor show through as the camera moves around the fixture.
+   for(const [x,spread] of [[-.19,-.09],[1.29,.12]]){
+    facet([[x-.064,-.55,-.10],[x+.060,-.55,-.10],[x+spread+.038,-1.445,-.14],[x+spread-.054,-1.445,-.14]],{...jig,fill:'#515564',color:'#737584'});
+    facet([[x+.060,-.55,-.10],[x+.060,-.55,-.24],[x+spread+.038,-1.445,-.25],[x+spread+.038,-1.445,-.14]],{...jig,fill:'#353c4c',color:'#535b68'});
+    facet([[x+spread-.090,-1.44,.012],[x+spread+.098,-1.44,.012],[x+spread+.100,-1.435,-.24],[x+spread-.066,-1.435,-.24]],{...jig,fill:'#515a68',color:'#626a77'});
+   }
+   facet([[-.39,-.58,-.25],[1.47,-.58,-.25],[1.52,-.46,-.21],[-.32,-.46,-.21]],jig);
+   facet([[-.37,-.57,-.19],[1.49,-.57,-.19],[1.48,-.535,.12],[-.37,-.535,.12]],{...jig,fill:'#656e79'});
+   for(const [x,y,half] of [[0,0,.14],[.868,.221,.165]]){
+    facet([[x-.24,-.47,-.18],[x+.19,-.47,-.18],[x+half,y-.04,-.18],[x+.055,y+.113,-.18],[x-.065,y+.113,-.18],[x-half,y-.04,-.18]],{...jig,fill:'#52566b'});
+    facet([[x+half*.68,y-.07,-.17],[x+half,y-.04,-.17],[x+.19,-.47,-.17],[x+.125,-.47,-.17]],{...jig,fill:'#75768a',color:'#92929f',width:.65});
+   }
+   const disk=(x,y,z,r,style)=>line(Array.from({length:33},(_,i)=>[x+r*Math.cos(TAU*i/32),y+r*Math.sin(TAU*i/32),z]),style);
+   const brace={motion:'gear-brace',color:'#baada0',fill:'#807774',width:.85};
+   facet([[-.055,-.014,0],[.21,-.25,-.006],[.32,-.25,-.006],[.042,.028,0]],brace);
+   disk(0,0,0,.060,{...brace,fill:'#a8b4b2',color:'#d7d9cd'});
+   // The shaft remains on the bearing while the small wheel is lifted onto it.
+   const shaft={...jig,fill:'#b5b7b8',color:'#d9d6c7'};
+   facet([[-.049,.009,-.19],[-.049,.009,.05],[.050,.009,.05],[.050,.009,-.19]],shaft);
+   disk(0,0,.05,.055,shaft);
+   function wheel(teeth,spokes,driven){
+    const prefix=driven?'gear-driven':'gear-drive',radius=teeth*.032,bore=radius*(driven?.70:.63);
+    const face=driven?'#779cb2':'#d39a61',edge=driven?'#c0dce3':'#ffda95',side=driven?'#455c72':'#855d42';
+    const style={motion:prefix+'-rim',fill:face,color:edge,width:.82};
+    const radial=(a,r,z)=>[r*Math.cos(a),r*Math.sin(a),z];
+    const pitch=TAU/teeth,phase=.249+(driven?PI+pitch*.5:0),outline=[];
+    for(let i=0;i<teeth;i++){
+     const a=phase+i*pitch;
+     for(const [f,r] of [[-.47,radius-.036],[-.34,radius-.036],[-.15,radius+.033],[.15,radius+.033],[.34,radius-.036]])outline.push(radial(a+f*pitch,r,.018));
+    }
+    // A reverse-wound bore leaves actual open space between the spokes.
+    const ring=z=>{
+     const outside=outline.map(([x,y])=>[x,y,z]),inside=Array.from({length:49},(_,i)=>radial(phase-.47*pitch-TAU*i/48,bore,z));
+     // Double a cut corner to preserve it in the rounded strand painter.
+     // The machined, circular inner edge needs only one sample per angle.
+     return [...outside.flatMap(q=>[q,q]),outside[0],outside[0],...inside,inside[0],outside[0]];
+    };
+    line(ring(-.066),{...style,motion:prefix+'-back',fill:side,color:side});
+    // Join the two cut faces around each tooth. The exposed axial walls
+    // are visible at the side camera as the pinion slides onto its spindle.
+    for(let i=0;i<teeth;i++){
+     const near=Array.from({length:6},(_,j)=>outline[(i*5+j)%outline.length]);
+     const far=near.map(([x,y])=>[x,y,-.066]).reverse();
+     line([...near,...far].flatMap(q=>[q,q]).concat([near[0]]),{...style,motion:prefix+'-flank',fill:side,color:side,width:.55});
+    }
+    for(let i=0;i<spokes;i++){
+     const angle=phase+i*TAU/spokes,radialPoint=(r,w)=>[r*Math.cos(angle)-w*Math.sin(angle),r*Math.sin(angle)+w*Math.cos(angle),.013];
+     const width=driven?.054:.037;
+     facet([radialPoint(.035,-width*.9),radialPoint(bore+.023,-width),radialPoint(bore+.023,width),radialPoint(.035,width*.9)],
+      {...style,motion:prefix+'-spoke',fill:face});
+    }
+    line(ring(.018),style);
+    disk(0,0,.031,driven?.102:.081,{...style,motion:prefix+'-hub',fill:side});
+    disk(0,0,.041,driven?.049:.038,{...style,motion:prefix+'-hub',fill:'#c9c6b6',color:'#e4e5d8'});
+    // One engraved witness mark on the rim makes the opposite rotations visible.
+    line([radial(phase+.7*pitch,bore+.014,.027),radial(phase+.7*pitch,radius-.047,.027)],{...style,motion:prefix+'-mark',fill:null,color:'#f7eed9',width:1.8});
+   }
+   wheel(18,5,true);wheel(10,4,false);
+   const armAngle=2.40,pinX=.14*Math.cos(armAngle),pinY=.14*Math.sin(armAngle),crank={motion:'gear-drive-crank',color:'#e8cfa1',fill:'#ae7851',width:1.1};
+   facet([[-.024,-.022,.045],[pinX-.027,pinY-.019,.045],[pinX+.018,pinY+.027,.045],[.025,.015,.045]],crank);
+   line([[pinX,pinY,.043],[pinX,pinY,.085]],{...crank,fill:null,width:3.1});
+   disk(pinX,pinY,.085,.032,{...crank,motion:'gear-crank',fill:'#f4d8a4',color:'#fff0c8'});
+   // A single wired pilot lamp on the fixed bearing responds to the output.
+   line([[1.16,-.32,-.11],[1.43,-.32,-.11],[1.54,-.245,-.07]],{...jig,fill:null,color:'#b7a68d',width:1.45});
+   facet([[1.43,-.46,-.09],[1.62,-.46,-.09],[1.605,-.425,-.09],[1.575,-.26,-.09],[1.493,-.26,-.09]],{...jig,fill:'#667877',color:'#9bafb0'});
+   disk(1.54,-.175,-.07,.110,{...jig,fill:'#53696d',color:'#9cbebe'});
+   disk(1.54,-.175,-.061,.078,{motion:'gear-output-lamp',fill:'#b3f3ae',color:'#ebffe0',width:1.45});
+   disk(1.52,-.152,-.056,.024,{motion:'gear-output-lamp',fill:'#fffde3',color:'#fffde3',width:.66});
+   label('A SKILL OF ITS OWN',.90,-.53);
+  }else if(prop==='moat'){
    const a=[.50,.41,.01],b=[.71,.70,-.12],c=[1.12,.69,-.08],d=[1.30,.37,.015],e=[.91,-.045,.145],f=[.91,.40,.35];
-   if(!skill){
-    facet([[.36,.67,-.08],[.62,.73,-.09],[.90,.9,-.10],[1.18,.73,-.09],[1.43,.67,-.08],[1.37,.23,-.06],[1.20,.035,-.02],[.90,-.27,.03],[.59,.035,-.02],[.41,.20,-.04]],{fill:'#35475b',color:'#a4cecb',width:2});
-    line([[.43,.58],[.53,.26],[.65,.10],[.89,-.12],[1.17,.12],[1.29,.33]],{color:'#6b929c',width:1});
-    for(const side of [-1,1]){
-     const cheek=[[1.32,.68,-.07],[1.44,.67,-.08],[1.37,.23,-.06],[1.16,.035,-.02],[1.26,.26,-.035]];
-     facet(cheek.map(([x,y,z])=>[.90+side*(x-.90),y,z]),{fill:'#537878',color:'#89b6ad',width:.9,motion:'shield-rim'});
-    }
-    // A raised leather strap wraps back into two rivets at the shield rim.
-    // Its lower bend sits on the palmar contact of the defending hand.
-    facet([[.43,.29,-.045],[.37,.24,.035],[.363,.10,.035],[.405,.049,.035],[.51,.105,-.025],[.55,.17,-.04],[.45,.134,.035],[.426,.157,.035],[.43,.22,.015],[.49,.25,-.045]],{fill:'#9b765c',color:'#dcbb8a',width:1.2});
+   facet([[.36,.67,-.08],[.62,.73,-.09],[.90,.9,-.10],[1.18,.73,-.09],[1.43,.67,-.08],[1.37,.23,-.06],[1.20,.035,-.02],[.90,-.27,.03],[.59,.035,-.02],[.41,.20,-.04]],{fill:'#35475b',color:'#a4cecb',width:2});
+   line([[.43,.58],[.53,.26],[.65,.10],[.89,-.12],[1.17,.12],[1.29,.33]],{color:'#6b929c',width:1});
+   for(const side of [-1,1]){
+    const cheek=[[1.32,.68,-.07],[1.44,.67,-.08],[1.37,.23,-.06],[1.16,.035,-.02],[1.26,.26,-.035]];
+    facet(cheek.map(([x,y,z])=>[.90+side*(x-.90),y,z]),{fill:'#537878',color:'#89b6ad',width:.9,motion:'shield-rim'});
    }
+   // A raised leather strap wraps back into two rivets at the shield rim.
+   // Its lower bend sits on the palmar contact of the defending hand.
+   facet([[.43,.29,-.045],[.37,.24,.035],[.363,.10,.035],[.405,.049,.035],[.51,.105,-.025],[.55,.17,-.04],[.45,.134,.035],[.426,.157,.035],[.43,.22,.015],[.49,.25,-.045]],{fill:'#9b765c',color:'#dcbb8a',width:1.2});
    for(const [corners,fill] of [[[a,b,f],'#648ea0'],[[b,c,f],'#c2e7df'],[[c,d,f],'#96b8d3'],[[d,e,f],'#6076a2'],[[e,a,f],'#8273ab']]){
-    facet(corners,{fill,color:'#cfbddc',width:.8,motion});
+    facet(corners,{fill,color:'#cfbddc',width:.8});
    }
-   if(skill){
-    for(let i=0;i<3;i++){
-     const path=Array.from({length:25},(_,j)=>{const t=j/24;return [.9+(i-1)*(.03+.55*t),.36+(.48+.12*(i%2))*t+.14*Math.sin(t*PI*2+i)*t,.05+i*.035];});
-     line(path,{color:['#d9ab83','#8eb3bf','#bb9cce'][i],width:1.65,motion:'gather'});
-    }
-   }
-   label(skill?'A SKILL OF ITS OWN':'PURPOSE · METHOD · CHARACTER',.90,-.53);
+   label('PURPOSE · METHOD · CHARACTER',.90,-.53);
   }else if(['interface','choice','recipient'].includes(prop)){
    // Gates open into depth; the choice is a fork with a movable token.
    // Neither shape needs a simulated browser surrounding the action.
@@ -708,46 +771,67 @@
   }
   return objectCache[index]={paths,texts,prop};
  }
- // A single work-chapter offering replaces the repeated browser/recipient prop.
- // World-space ribs share the approved palm and camera; every path retraces scroll.
- function possibilityVessel(position,p){
-  const track=cameraTrack(position),unfold=smooth((track-27.62)/.36),work=p.work;
-  const source=p.contacts.right.tip,hub=add(source,add(mul(work.v,.045),mul(work.u,-.025)));
-  const height=.14+.30*unfold,ceiling=p.head[1]-(.35-.05*unfold);
-  if(hub[1]+height>ceiling)hub[1]=ceiling-height;
-  const world=q=>add(hub,add(add(mul(work.u,q[0]),mul(work.v,q[1])),mul(work.normal,q[2])));
-  const ribs=[],paths=[],path=(id,points,color,width=1,alpha=1,extra={})=>paths.push({id:'work-28-vessel-'+id,points,color,width,alpha,fill:null,role:'volume',...extra});
-  const cubic=(a,b,c,d,t)=>a.map((n,i)=>(1-t)**3*n+3*(1-t)**2*t*b[i]+3*(1-t)*t*t*c[i]+t**3*d[i]);
-  const leaves=[
-   {tip:[-.82,.20,-.07],c1:[-.18,.06,.10],c2:[-.64,.34,.05],bud:[-.065,.14,-.035],width:.18,color:cfg.tones.dream},
-   {tip:[-.48,.37,-.24],c1:[-.13,.14,-.11],c2:[-.62,.31,-.27],bud:[.005,.15,-.055],width:.12,color:cfg.tones.build},
-   {tip:[.12,.31,.10],c1:[.14,.05,.13],c2:[.23,.25,.14],bud:[.065,.10,.045],width:.095,color:cfg.tones.care}
-  ];
-  for(let index=0;index<leaves.length;index++){
-   const leaf=leaves[index],open=smooth((unfold-index*.065)/(1-index*.065)),tip=lerp(leaf.bud,leaf.tip,open),c1=lerp(mul(leaf.bud,.30),leaf.c1,open),c2=lerp(mul(leaf.bud,.72),leaf.c2,open);
-   const centre=t=>cubic([0,0,0],c1,c2,tip,t);
-   const surface=(t,s)=>{const q=centre(t),a=centre(clamp(t-.001)),b=centre(clamp(t+.001)),side=norm([-(b[1]-a[1]),b[0]-a[0],0]),span=leaf.width*(.16+.84*open)*Math.sin(PI*t)**.85;return world(add(q,add(mul(side,span*s),[0,0,(.025+.06*open)*Math.sin(PI*t)*(1-s*s)])));};
-   ribs.push(surface);
-   const sample=(fn,count=33)=>Array.from({length:count},(_,i)=>fn(i/(count-1)));
-   path(index+'-spine',sample(t=>surface(t,0)),leaf.color,1.35,.92);
-   path(index+'-reflected-light',sample(t=>surface(t*.20,0),13),cfg.tones.human,1.05,.25+.34*unfold);
-   for(const side of [-1,1])path(index+'-rim-'+side,sample(t=>surface(t,side)),leaf.color,1.15,.78);
-   for(let row=1;row<=7;row++){const v=-1+row/4;path(index+'-warp-'+row,sample(t=>surface(t,v),25),leaf.color,.55,.22+.10*(1-Math.abs(v)));}
-   for(let rib=1;rib<=10;rib++){const t=rib/11;path(index+'-weft-'+rib,sample(v=>surface(t,v*2-1),17),leaf.color,.60,.25+.13*Math.sin(PI*t));}
-   const rim=[...sample(t=>surface(t,-1),17),...sample(t=>surface(1-t,1),17)];rim.push(rim[0]);
-   path(index+'-contour',rim,leaf.color,.45,.13,{readingAnchor:true});
-   const q=surface(1,0),radius=.008+.005*open;
-   path(index+'-tip',sample(t=>add(q,add(mul(work.u,Math.cos(TAU*t)*radius),mul(work.v,Math.sin(TAU*t)*radius))),17),cfg.palette.highlight,1.35,.92);
+ // The keel rests on the glove. Each wing opens about the same crease, so
+ // the two sheets stay joined while they change from a fold to a glider.
+ function paperPlane(position,pose){
+  const track=cameraTrack(position),unfold=smooth((track-27.52)/.17);
+  const source=pose.contacts.right.tip,hub=source.slice();
+  const axis=norm([.94,.225,.26]),up=norm(cross([.12,-.62,.82],axis)),span=cross(axis,up);
+  const point=(length,side,lift)=>add(hub,add(mul(axis,length),add(mul(span,side),mul(up,lift))));
+  // The maker carries the closed wings below the chin, then fans them up
+  // on either side of the keel as the camera returns from the portrait.
+  const angle=.055-(1-unfold)*1.12;
+  const wing=(length,side,lift=0)=>point(length,side*Math.cos(angle),lift+Math.abs(side)*Math.sin(angle));
+  const nose=point(1.26,0,.145),tail=point(-.15,0,.145),pin=hub;
+  const far=wing(-.24,-.53,.18),near=wing(-.38,.60,.18);
+  const farFold=wing(-.08,-.21,.15),nearFold=wing(-.11,.22,.145);
+  const paths=[];
+  function ink(id,points,color,width,options={}){
+   paths.push({id:'work-28-plane-'+id,points,color,width,alpha:1,fill:null,role:'paper',readingAnchor:false,...options});
   }
-  for(const [index,[a,b]] of [[ribs[0](.36,.6),ribs[1](.42,-.6)],[ribs[1](.27,.4),ribs[2](.44,-.5)]].entries()){
-   const c=add(lerp(a,b,.35),mul(work.normal,index?-.06:.05)),d=add(lerp(a,b,.70),mul(work.v,-.045));
-   path('cross-span-'+index,Array.from({length:25},(_,i)=>cubic(a,c,d,b,i/24)),index?cfg.tones.care:cfg.palette.highlight,.65,.28*unfold);
+  function panel(id,vertices,fill,color){
+   // A doubled corner remains a sharp paper edge in the curved path painter.
+   const points=vertices.flatMap((q,i)=>[q,q,lerp(q,vertices[(i+1)%vertices.length],.5)]);
+   ink(id,[...points,vertices[0]],color,1,{fill,readingAnchor:true});
   }
-  const ring=Array.from({length:25},(_,i)=>world([Math.cos(i/24*TAU)*.025,Math.sin(i/24*TAU)*.025,0]));
-  path('hub',ring,cfg.tones.human,1.65,.90,{readingAnchor:true});
-  const light=p.light,gap=Math.hypot(...sub(light,hub));
-  if(gap>.008)path('hand-thread',Array.from({length:17},(_,i)=>{const t=i/16;return add(lerp(light,hub,t),mul(work.v,Math.sin(PI*t)*.025));}),cfg.tones.human,.95,.68);
-  return {id:'possibility-vessel',prop:'possibility',paths,texts:[],unfold,hub,source,track};
+  panel('wing-far',[far,tail,nose],'#aebed9','#d2dbed');
+  panel('wing-near',[tail,near,nose],'#f7eacb','#fff3d4');
+  panel('inner-fold',[nearFold,tail,nose],'#d9c8ae','#e9d7b8');
+  panel('keel',[tail,pin,nose],'#a28d7a','#dec7ab');
+  ink('spine',[tail,nose],'#fff3d6',1.65);
+  ink('far-crease',[farFold,nose],'#e9e5e9',.9);
+  // Two small blueprint registration marks survive on the paper it came from.
+  for(let i=0;i<2;i++){
+   const a=lerp(near,nose,.19+i*.058),b=lerp(near,nearFold,.45-i*.13);
+   ink('registration-'+i,[a,lerp(b,nose,.19+i*.058)],'#91858a',.9);
+  }
+  return {id:'paper-plane',prop:'possibility',paths,texts:[],unfold,hub,source,tip:nose,axis,track};
+ }
+ // Retain the exact chapter geometry into the throw. Once released, the rear
+ // folds bank as one sheet; the glint is the path actually traced by the nose.
+ const paperRelease=.20,paperGone=.34,glideSpan=paperGone-paperRelease;
+ const releaseOffset=motion.paperThrowOffset(paperRelease);
+ const exitSpeed=mul(sub(motion.paperThrowOffset(paperRelease+.0001),motion.paperThrowOffset(paperRelease-.0001)),glideSpan/.0002);
+ function launchPaperPlane(plane,progress,actor){
+  if(!plane||progress>=paperGone)return null;
+  if(progress<=0)return plane;
+  const flight=clamp((progress-paperRelease)/glideSpan),tip=actor?.contacts.right.tip||plane.hub;
+  const pivot=flight>0?add(plane.hub,releaseOffset):tip;
+  function airborne(q,t){
+   const local=sub(q,plane.hub),bank=-.63*smooth(t),c=Math.cos(bank),s=Math.sin(bank);
+   const rolled=add(add(mul(local,c),mul(cross(plane.axis,local),s)),mul(plane.axis,local.reduce((n,v,i)=>n+v*plane.axis[i],0)*(1-c)));
+   const yaw=.69*smooth(t),dx=rolled[0]*Math.cos(yaw)+rolled[2]*Math.sin(yaw),dz=-rolled[0]*Math.sin(yaw)+rolled[2]*Math.cos(yaw);
+   // Hermite glide leaves the glove with its measured speed before banking
+   // into depth. The same curve supplies every vertex of the short light trail.
+   const drift=add(mul(exitSpeed,t*(1-t)**2),add(mul([.78,.47,-.98],t*t*(3-2*t)),mul([.34,-.20,-1.8],t*t*(t-1))));
+   return add(add(pivot,drift),[dx,rolled[1],dz]);
+  }
+  const paths=plane.paths.map(path=>({...path,points:path.points.map(q=>airborne(q,flight))}));
+  if(flight>.01){
+   const points=Array.from({length:21},(_,i)=>airborne(plane.tip,flight*Math.pow(i/20,.86)));
+   paths.unshift({id:'paper-flight-crease',points,color:'#ffdc9a',alpha:.72*smooth(flight/.18),width:1.15,role:'paper',fill:null});
+  }
+  return {...plane,alpha:plane.alpha*(1-smooth((progress-.245)/.095)),paths,hub:airborne(plane.hub,flight),tip:airborne(plane.tip,flight),flight};
  }
  // Quiet, authored surroundings share the camera and scroll timeline, but never
  // become hand targets. Stable path identities let their woven forms reconfigure.
@@ -1176,6 +1260,7 @@
   const phase=p.phase;
   function workMaterial(index){
    const incoming=phase.to===index,action=incoming?phase.action:1;
+   const gearing=index===20?motion.skillRig(incoming?phase.progress:1):null;
    const acquired=incoming?smooth((phase.progress-phase.actionStart+.09)/.09):0;
    const released=incoming?smooth((phase.progress-phase.actionEnd)/.12):1;
    const pin=(start,finish,pivot,release=released)=>{
@@ -1293,18 +1378,20 @@
       const side=x<.89?-1:1,bar=side<0?.29:1.48,free=clamp(Math.abs(x-bar)/.47);
       return map([x-side*.095*tension*free,y-.068*tension*free,z+.15*free*tension]);
      };
-    }else if(item.motion==='gather'){
-     const extent=1-.87*smooth(action);
-     transform=([x,y,z])=>map([.9+(x-.9)*extent,.36+(y-.36)*extent,z*extent]);
-     alpha*=.35+.65*extent;
     }else if(item.motion==='span'){
      transform=([x,y,z],i)=>map([x,y-(.14*(1-action)+.035)*Math.sin(PI*i/(item.points.length-1)),z]);
     }else if(item.motion==='needle'){
      const settle=.10*Math.sin(PI*smooth(action))*Math.sin(3*PI*smooth(action));
      transform=([x,y])=>map([x-(y-.28)*(1.9*(1-action)+settle),y,0]);
-    }else if(item.motion==='compress'){
-     const radius=1.33-.33*smooth(action);
-     transform=([x,y,z])=>map([.9+(x-.9)*radius,.36+(y-.36)/Math.sqrt(radius),z]);
+    }else if(gearing){
+     const fixed=[.07,.16,.43],driven=item.motion.startsWith('gear-driven-'),drive=item.motion.startsWith('gear-drive-')||item.motion==='gear-crank';
+     const base=driven?[fixed[0]+.69*.868,fixed[1]+.221,fixed[2]-.724*.868]:drive?gearing.pinion:item.motion==='gear-brace'?gearing.brace:fixed;
+     const spin=driven?-gearing.turn*10/18:drive?gearing.turn:0,cos=Math.cos(spin),sin=Math.sin(spin);
+     if(item.motion==='gear-output-lamp')alpha*=.10+.90*smooth((gearing.turn-.42)/.40);
+     transform=([x,y,z])=>{
+      const u=cos*x-sin*y,v=sin*x+cos*y;
+      return [base[0]+.69*u+.724*z,base[1]+v,base[2]-.724*u+.69*z];
+     };
     }else if(item.motion==='harness'){
      transform=([x,y,z],i)=>{
       const t=i/(item.points.length-1),span=Math.sin(PI*t);
@@ -1360,7 +1447,7 @@
   const layers=[{index:from,alpha:1-t,textAlpha:1-smooth((raw-handoff[0]+.08)/.08)},{index:to,alpha:t,textAlpha:smooth((raw-handoff[1])/.08)}].filter(o=>o.alpha>.005).map(o=>{
    const object=objectScene(o.index);
    const front={...o,role:'front-work',labelSurface:{origin:work.origin,normal:work.normal}};
-   if(object.prop==='possibility')return {...front,...possibilityVessel(position,p)};
+   if(object.prop==='possibility')return {...front,...paperPlane(position,p)};
    return {...front,prop:object.prop,paths:object.paths.map(workMaterial(o.index)),texts:object.texts.map(item=>({...item,point:['code','component','ai'].includes(object.prop)?add(work.keyboard.origin,add(mul(work.keyboard.v,-work.keyboard.height/2-.10),mul(work.keyboard.normal,-.015))):object.prop==='lesson'?heldPage(item.point):map(item.point)}))};
   });
   if(from===22&&raw>0&&raw<.99){
@@ -1421,7 +1508,7 @@
  // A fixed focal length changes perspective through distance, not a CSS scale transform.
  const smoother=t=>{t=clamp(t);return t*t*t*(t*(t*6-15)+10);};
  const cameraCache=new Map();
- function shotCamera(i){if(cameraCache.has(i))return cameraCache.get(i);const base=cfg.camera.shots[i===22||i===23?'gateway':sequence[i].shot||'establish'],seat=motion.poseAt(i).seatAmount||0;const value={...base,target:[...base.target]};if(i>0){if(sequence[i].shot==='establish')value.target=[-.24,-.10,.16];value.target[1]-=.15*seat;}cameraCache.set(i,value);return value;}
+ function shotCamera(i){if(cameraCache.has(i))return cameraCache.get(i);const base=cfg.camera.shots[sequence[i].prop==='possibility'?'offering':i===22||i===23?'gateway':sequence[i].shot||'establish'],seat=motion.poseAt(i).seatAmount||0;const value={...base,target:[...base.target]};if(i>0){if(sequence[i].shot==='establish')value.target=[-.24,-.10,.16];value.target[1]-=.15*seat;}cameraCache.set(i,value);return value;}
  function cameraTrack(position){
   position=clamp(position,0,cfg.scenes.length-1);const chapter=Math.floor(position),start=starts[chapter];
   return Math.min(sequence.length-1,start+(position-chapter)*sequence[start].count);
@@ -1576,5 +1663,5 @@
    return polygon.length>=3?[...polygon,polygon[0]]:null;
   }).filter(Boolean);
  }
- const api={motion,performanceAt:(position,idleSeconds=0)=>motion.poseAt(resolve(position),idleSeconds),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,workLabelVisibility,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,trailSpanAt,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
+ const api={motion,launchPaperPlane,performanceAt:(position,idleSeconds=0)=>motion.poseAt(resolve(position),idleSeconds),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,workLabelVisibility,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,trailSpanAt,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
