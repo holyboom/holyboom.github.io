@@ -26,19 +26,40 @@ const phases=Array.from({length:101},(_,i)=>i/100),energy=phases.map(math.energy
  for(const [width,height,locale] of [[393,654,'th/'],[1440,900,'']]){
   const page=await b.newPage({viewport:{width,height}});
   await page.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+locale+'profile/#ai-experiences');
-  await page.waitForFunction(()=>window.ProfileExperience&&scrollY>0&&document.fonts.status==='loaded');
-  async function atRest(){
-   await page.waitForFunction(()=>ProfileExperience.snapshot().current===ProfileExperience.snapshot().target);
-   return page.evaluate(()=>{const s=ProfileExperience.snapshot();return {beat:ProfileGeometry.resolve(s.current),text:s.readingThread?.receiver,tag:document.querySelector('.story-receiver')?.tagName,y:scrollY};});
+  await page.waitForFunction(()=>window.ProfileExperience);
+  async function atRest(landmark,expectedY){
+   // A native fragment scroll crosses several intervals where the actor is
+   // already at rest. Wait for the requested text and the document itself.
+   await page.evaluate(()=>{window.__readingLanding=null;});
+   const landing=await page.waitForFunction(({landmark,expectedY})=>{
+    const heading=document.querySelector('#title-ai-experiences');
+    const y=scrollY,r=heading.getBoundingClientRect(),s=ProfileExperience.snapshot();
+    if(document.fonts.status!=='loaded'||s.current!==s.target)return false;
+    if(expectedY!=null&&Math.abs(y-expectedY)>1)return false;
+    if(Math.abs(ProfileGeometry.positionFromAnchors(y,s.anchors,s.readingStops)-s.target)>.0001)return false;
+    if(landmark){
+     const top=document.querySelector(innerWidth<768?'.stage':'.site-header').getBoundingClientRect().bottom;
+     if(Math.min(innerHeight,r.bottom)-Math.max(top,r.top)<r.height*.85)return false;
+     // A heading fragment clears the sticky illustration. Allow the small
+     // font/rounding difference between the native jump and its CSS margin.
+     if(landmark==='heading'&&(r.top<top-1||r.top>parseFloat(getComputedStyle(heading).scrollMarginTop)+12))return false;
+    }
+    const last=window.__readingLanding;
+    const frames=last&&last.y===y&&last.top===r.top&&last.target===s.target?last.frames+1:1;
+    window.__readingLanding={y,top:r.top,target:s.target,frames};
+    if(frames<3)return false;
+    return {beat:ProfileGeometry.resolve(s.current),text:s.readingThread?.receiver,tag:document.querySelector('.story-receiver')?.tagName,y};
+   },{landmark,expectedY});
+   return landing.jsonValue();
   }
   async function read(selector,fraction,elementFraction=0){
-   await page.evaluate(({selector,fraction,elementFraction})=>{
+   const y=await page.evaluate(({selector,fraction,elementFraction})=>{
     const top=document.querySelector(innerWidth<768?'.stage':'.site-header').getBoundingClientRect().bottom;
     const r=document.querySelector(selector).getBoundingClientRect();
-    scrollTo({top:scrollY+r.top+r.height*elementFraction-top-(innerHeight-top)*fraction,behavior:'instant'});
+    const y=scrollY+r.top+r.height*elementFraction-top-(innerHeight-top)*fraction;
+    scrollTo({top:y,behavior:'instant'});return y;
    },{selector,fraction,elementFraction});
-   await page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
-   return atRest();
+   return atRest(null,y);
   }
   const map=await page.evaluate(()=>{
    const {anchors,readingStops}=ProfileExperience.snapshot(),g=ProfileGeometry;
@@ -51,10 +72,9 @@ const phases=Array.from({length:101},(_,i)=>i/100),energy=phases.map(math.energy
    return {monotonic,outsideError};
   });
   check('reading-map-is-monotonic-and-confined-to-the-bridge-'+width,map.monotonic&&map.outsideError===0,map);
-  const anchor=await atRest();
+  const anchor=await atRest('section');
   await page.evaluate(()=>{location.hash='title-ai-experiences';});
-  await page.waitForFunction(()=>{const el=document.querySelector('#title-ai-experiences');return Math.abs(el.getBoundingClientRect().top-parseFloat(getComputedStyle(el).scrollMarginTop))<2;});
-  const heading=await atRest(),question=await read('#craft .story-bridge strong',.5,.5);
+  const heading=await atRest('heading'),question=await read('#craft .story-bridge strong',.5,.5);
   check('direct-heading-link-clears-sticky-art-'+width,heading.beat===23&&heading.tag==='H2',heading);
   const body=await read('#ai-experiences .scene-sequence+p',.25);
   const back=await read('#craft .story-bridge strong',.5,.5);
@@ -72,6 +92,25 @@ const phases=Array.from({length:101},(_,i)=>i/100),energy=phases.map(math.energy
   }
   await page.close();
  }
+ // Hold the fonts across an actual wheel gesture during an initial fragment
+ // navigation. Font reflow may change scrollY while retaining the chosen text.
+ const late=await b.newPage({viewport:{width:1440,height:900}});
+ let releaseFonts;const fontsHeld=new Promise(resolve=>{releaseFonts=resolve;});
+ await late.route('**/*.woff2',async route=>{await fontsHeld;await route.continue();});
+ try{
+  await late.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+'profile/#ai-experiences',{waitUntil:'domcontentloaded'});
+  await late.waitForFunction(()=>{
+   const section=document.querySelector('#ai-experiences');
+   return window.ProfileExperience&&Math.abs(section.getBoundingClientRect().top-parseFloat(getComputedStyle(section).scrollMarginTop))<2;
+  });
+  const beforeWheel=await late.evaluate(()=>scrollY);
+  await late.mouse.move(700,470);await late.mouse.wheel(0,280);
+  await late.waitForFunction(y=>scrollY>y+200,beforeWheel);
+  releaseFonts();await late.waitForLoadState('load');await late.evaluate(()=>document.fonts.ready);
+  await late.waitForTimeout(400);
+  const after=await late.evaluate(()=>({heading:document.querySelector('#title-ai-experiences').getBoundingClientRect().top,header:document.querySelector('.site-header').getBoundingClientRect().bottom,y:scrollY}));
+  check('wheel-during-font-load-keeps-the-readers-chosen-position',after.heading<after.header,after);
+ }finally{releaseFonts();await late.close();}
  const p=await b.newPage({viewport:{width:390,height:844}});await p.route('**/reading-thread.js*',r=>r.abort());await p.goto((process.env.TEST_URL||'http://127.0.0.1:4174/')+'profile/');await p.waitForFunction(()=>window.ProfileExperience);check('a-failed-reading-module-does-not-break-full-motion',await p.evaluate(()=>ProfileExperience.snapshot().mode==='full')&&await p.locator('#architecture').isVisible());await p.close();
 }finally{await b.close();}
 check('no-browser-errors',errors.length===0,errors);const failed=checks.filter(c=>!c.pass);fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({checks,errors},null,2));console.log(JSON.stringify({checks:checks.length,failed,out}));if(failed.length)process.exitCode=1;

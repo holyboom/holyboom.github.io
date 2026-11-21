@@ -14,7 +14,45 @@ def render(head, data, lang='en'):
     scene_total = 3 + sum(len(c['beats']) for c in story['chapters'])
     head = head.replace('/assets/profile/profile.css', '/assets/profile/living.css?v='+release)
     head = head.replace('#100b1b', '#0B0912')
+    # Register before deferred scripts. A reader can take over the viewport
+    # while the fonts are still downloading.
+    entrance_fragment = '''<script>
+(() => {
+  const hash = location.hash;
+  if (innerWidth < 768 || !['#ai-experiences', '#title-ai-experiences'].includes(hash)) return;
+  const events = new AbortController();
+  const options = {signal: events.signal, passive: true, capture: true};
+  let timer;
+  const cancel = () => { clearTimeout(timer); events.abort(); };
+  for (const type of ['wheel', 'pointerdown', 'touchstart', 'keydown', 'hashchange', 'popstate', 'pagehide']) {
+    addEventListener(type, cancel, options);
+  }
+  document.addEventListener('visibilitychange', () => { if (document.hidden) cancel(); }, options);
+  addEventListener('load', async () => {
+    await document.fonts.ready;
+    if (events.signal.aborted) return;
+    if (performance.getEntriesByType('navigation')[0]?.type !== 'navigate') return cancel();
+    const afterScroll = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        cancel();
+        if (innerWidth < 768 || location.hash !== hash || !document.documentElement.classList.contains('profile-enhanced')) return;
+        const heading = document.querySelector('#title-ai-experiences').getBoundingClientRect();
+        const header = document.querySelector('.site-header').getBoundingClientRect();
+        // A late font swap can move the entire heading behind the sticky
+        // header after the browser has completed its initial fragment jump.
+        if (heading.bottom <= header.bottom + 1 && heading.bottom > -innerHeight * .5) {
+          document.querySelector(hash).scrollIntoView({block: 'start', behavior: 'instant'});
+        }
+      }, 160);
+    };
+    addEventListener('scroll', afterScroll, options);
+    afterScroll();
+  }, options);
+})();
+</script>'''
     head = head.replace('</head>', f'''<script>document.documentElement.dataset.profileMotion='full';document.documentElement.classList.add('profile-boot');setTimeout(()=>document.documentElement.classList.remove('profile-boot'),4000)</script><link rel="preload" href="/assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+{entrance_fragment}
 <script defer src="/assets/profile/scenes.js?v={release}"></script>
 <script defer src="/assets/profile/performance-source/pilot-clips.js?v={release}"></script>
 <script defer src="/assets/profile/hand-shapes.js?v={release}"></script>
