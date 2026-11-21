@@ -4,7 +4,7 @@
  const ns='http://www.w3.org/2000/svg';
  // Stable IDs on the two outer folds of the original membrane / floor rig.
  const warpSources=[80,96,97,100,101,84,104,105,108,109,112,88,176,177,180,181,92];
- const floorSources=[684,691,698,705,712,719,726,733],levels=24;
+ const levels=24;
  function attr(node,key,value){if(node.getAttribute(key)!==String(value))node.setAttribute(key,value);}
  const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n));
  const mix=(a,b,t)=>a+(b-a)*t;
@@ -48,7 +48,7 @@
  function create({stage,canvas}){
   const frame=canvas.closest('.stage-frame'),journey=stage.closest('.journey'),host=journey?.querySelector('.shared-weave-host');
   let upper,lower,fabric,warp,crossings,ground,layout,inkMask,quietRows,marginRows,visible=false;
-  let labels=[],measuredShot=-1;
+  let labels=[],measuredShot=-1,portalCaption;
   function mount(){
    if(upper)return;
    upper=svgNode('svg',{class:'shared-weave','aria-hidden':'true',focusable:'false'});
@@ -66,26 +66,40 @@
    fabric=svgNode('g',{'data-material':'membrane'});ground=svgNode('g',{'data-material':'terrain'});mesh.append(fabric,ground);
    const paths=(group,count,kind)=>Array.from({length:count},()=>{const path=svgNode('path',{'data-thread':kind});group.append(path);return path;});
    crossings=paths(fabric,15,'weft');warp=paths(fabric,17,'warp');
-   ground={group:ground,paths:paths(ground,8,'floor')};
+   ground={group:ground,paths:paths(ground,8,'floor'),pulses:paths(ground,8,'return-light')};
    warp.forEach((path,i)=>path.setAttribute('stroke-width',i===0||i===16?'1.05':'.77'));
    crossings.forEach((path,i)=>{path.setAttribute('stroke-width','.62');path.setAttribute('opacity',i%4===0?'.36':'.23');});
    ground.paths.forEach((path,i)=>path.setAttribute('stroke-width',i%3===0?'.8':'.56'));
+   ground.pulses.forEach((path,i)=>{
+    path.setAttribute('pathLength','1');path.setAttribute('stroke',i%3===0?'#fff4ce':'#f9c99b');
+    path.setAttribute('stroke-width',i%3===0?'1.65':'1.08');path.setAttribute('opacity','0');
+   });
   }
   function hide(){
    if(!upper||!visible)return;
    upper.style.display='none';lower.style.display='none';visible=false;
   }
-  function measureLabels(){
-   const f=frame.getBoundingClientRect(),range=document.createRange();labels=[];marginRows=null;
+  function glyphs(node,left,top){
+   const range=document.createRange();range.selectNodeContents(node);
+   return Array.from(range.getClientRects()).filter(r=>r.width>1&&r.height>1)
+    .map(r=>({top:r.top-top,bottom:r.bottom-top,right:r.right-left}));
+  }
+  function measureLabels(sourceShot){
+   const f=frame.getBoundingClientRect();labels=[];marginRows=null;
    for(const node of frame.querySelectorAll('.scene-caption,.scene-meaning')){
-    range.selectNodeContents(node);
-    for(const r of range.getClientRects())if(r.width>1&&r.height>1)labels.push({top:r.top-f.top,bottom:r.bottom-f.top,right:r.right-f.left});
+    const text=sourceShot&&(node.matches('.scene-caption')?sourceShot.caption:sourceShot.meaning+' · '+(sourceShot.step+1)+' / '+sourceShot.count);
+    // During a scrub the hidden stage caption may still belong to an earlier
+    // or later shot. Measure the outgoing shot in its actual font and box.
+    if(sourceShot&&node.textContent!==text){
+     const copy=node.cloneNode(false);copy.setAttribute('aria-hidden','true');copy.style.visibility='hidden';copy.textContent=text;
+     node.after(copy);labels.push(...glyphs(copy,f.left,f.top));copy.remove();
+    }else labels.push(...glyphs(node,f.left,f.top));
    }
   }
-  function measure(){
+  function measure(sourceBounds){
    layout=null;
-   if(!frame||!host||innerWidth>=768||!frame.contains(canvas)){hide();return;}
-   const box=canvas.getBoundingClientRect(),f=frame.getBoundingClientRect();
+   if(!frame||!host||innerWidth>=768||(!frame.contains(canvas)&&!sourceBounds?.width)){hide();return;}
+   const box=frame.contains(canvas)?canvas.getBoundingClientRect():sourceBounds,f=frame.getBoundingClientRect();
    if(box.width<1||box.height<1||!f.width){hide();return;}
    mount();
    const css=getComputedStyle(canvas),px=k=>parseFloat(css[k])||0;
@@ -104,16 +118,27 @@
     svg.style.setProperty('--shared-weave-seam',f.height+'px');svg.style.pointerEvents='none';
    }
   }
-  function draw({position,projected,theme,shot,ambientPhase=0,scroll=window.scrollY}){
+  function draw({position,projected,theme,shot,ambientPhase=0,scroll=window.scrollY,plane,launchProgress=null}){
    if(!layout||innerWidth>=768||!projected?.length){hide();return;}
    if(!visible){upper.style.removeProperty('display');lower.style.removeProperty('display');visible=true;}
    const l=layout,story=shot||root.ProfileGeometry.storyAt(position),timeline=story.timeline??root.ProfileGeometry.resolve(position);
-   if(story.index!==measuredShot){measureLabels();measuredShot=story.index;}
    const opening=1-ease((timeline-.17)/.65),floor=ease((timeline-.18)/.60);
-   const x=q=>l.x+q[0]*l.sx,y=q=>l.y+q[1]*l.sy;
+   const launching=launchProgress!==null,p=launchProgress||0;
+   const labelKey=launching?'plane-source':story.index;
+   if(labelKey!==measuredShot){measureLabels(launching?story:null);measuredShot=labelKey;}
+   const x=launching?q=>q[0]+l.left:q=>l.x+q[0]*l.sx,y=launching?q=>q[1]-l.stageTop:q=>l.y+q[1]*l.sy;
+   // Native floor fibres attach one at a time while the plane is offered.
+   // At portal ownership the same painted crease and margin are still held.
+   const acquire=plane?(launching?1:ease((root.ProfileGeometry.cameraTrack(position)-27.56)/.61)):0;
+   const toSvg=q=>[x(q),y(q)];
+   const fold=acquire>0?{tail:toSvg(plane.tail),keel:toSvg(plane.keel),nose:toSvg(plane.nose)}:null;
+   const pull=ease((p-.017)/.163),flight=ease((p-.195)/.13),recoil=ease((p-.081)/.108);
    const top=scroll+l.stageTop,right=l.right-2,width=l.width;
    const native=ease(scroll/(l.height*.98)),phase=timeline*.53;
-   if(!marginRows||marginRows.scroll!==scroll){
+   if(launching&&!portalCaption)portalCaption=document.querySelector('.finale-portal-caption');
+   const portalText=launching&&portalCaption?.textContent;
+   if(!marginRows||marginRows.scroll!==scroll||marginRows.portalText!==portalText){
+    const portalGlyphs=portalText?glyphs(portalCaption,-l.left,l.stageTop):[],transfer=ease((p-.018)/.065);
     const docStart=top+l.seam-68,docEnd=top+l.height+60;
     // Skip preceding chapters without revisiting all their lines each frame.
     let lo=0,hi=l.lines.length;
@@ -122,9 +147,11 @@
     for(let j=lo;j<l.lines.length&&l.lines[j].top<docEnd;j++)seen.push(l.lines[j]);
     function inkEdge(localY,base){
      const docY=top+localY;let edge=base;
-     if(localY<l.seam+30)for(const line of labels){
-      const space=Math.max(0,line.top-localY,localY-line.bottom);
-      if(space<34)edge=Math.max(edge,mix(base,Math.min(right-3,line.right+12),1-ease(space/34)));
+     if(localY<l.seam+30){
+      for(const [group,weight] of [[labels,1-transfer],[portalGlyphs,transfer]])for(const line of group){
+       const space=Math.max(0,line.top-localY,localY-line.bottom);
+       if(space<34)edge=Math.max(edge,mix(base,Math.min(right-3,line.right+12),weight*(1-ease(space/34))));
+      }
      }
      for(const line of seen){
       const space=Math.max(0,line.top-docY,docY-line.bottom);
@@ -139,14 +166,15 @@
      return {t,y:v,edge:inkEdge(v,natural),quietEdge:inkEdge(v,l.left+width*.875)};
     });
     const cut=(a,b,r)=>'M0,'+a.toFixed(1)+'H'+Math.min(right,r).toFixed(1)+'V'+b.toFixed(1)+'H0Z';
-    attr(inkMask,'d',labels.map(v=>cut(v.top-2,v.bottom+2,v.right+4)).join('')+
+    const captionInk=transfer<1?labels.concat(portalGlyphs):portalGlyphs;
+    attr(inkMask,'d',captionInk.map(v=>cut(v.top-2,v.bottom+2,v.right+4)).join('')+
      seen.filter(v=>v.bottom-top>l.seam-3).map(v=>cut(Math.max(l.seam-2,v.top-top-3),v.bottom-top+3,v.right+5)).join(''));
     quietRows.forEach((stop,i)=>{
      const row=rows[Math.max(0,i-1)],room=right-row.edge;
      attr(stop,'offset',i===0?'0%':Math.min(100,row.y/l.height*100).toFixed(2)+'%');
      attr(stop,'stop-opacity',i===0?1:ease((room-4)/21).toFixed(3));
     });
-    marginRows={scroll,rows};
+    marginRows={scroll,portalText,rows};
    }
    const rows=marginRows.rows;
    // The warp rotates about the ribbon's length. One hem crosses in front
@@ -166,7 +194,7 @@
    for(const line of projected){
     if((opening>0&&line.id>=80&&line.id<192)||(floor>0&&line.floor)){const old=byId.get(line.id);if(!old||old.points.length<line.points.length)byId.set(line.id,line);}
    }
-   function attach(path,line,index,sections,alpha){
+   function attach(path,line,index,sections,alpha,shuttle){
     if(!line||line.points.length<3||alpha<.004){path.setAttribute('opacity','0');return;}
     const points=line.points,n=points.length;
     let i=Math.min(n-2,Math.max(1,Math.round(index*(n-1)))),fraction=0;
@@ -198,8 +226,44 @@
     // Never pull it upwards to the opening's earlier departure row.
     let start=0;
     if(line.floor)while(start<sections.length-3&&sections[start][1]<root[1]+Math.max(22,(sections[start][0]-root[0])*.38))start++;
-    const route=start?sections.slice(start):sections;
-    attr(path,'d',threadPath(root,[sign*dx/length,sign*dy/length],route));attr(path,'opacity',strength.toFixed(3));
+    let route=start?sections.slice(start):sections,tangent=[sign*dx/length,sign*dy/length],joint=root;
+    if(shuttle){
+     const {bind,lane}=shuttle;
+     const grip=blend(fold.tail,fold.keel,.5+.4*lane);
+     joint=blend(root,grip,bind);joint[1]-=Math.sin(Math.PI*bind)*l.seam*.043;
+     // While the aircraft is still in hand the slack hangs beside its tail.
+     // Flight straightens the strands into the direction of the departing keel.
+     const a=fold.tail,b=fold.nose,span=Math.max(1,Math.hypot(a[0]-b[0],a[1]-b[1]));
+     const back=[(a[0]-b[0])/span,(a[1]-b[1])/span],release=ease((p-.176)/.060);
+     const hung=[.31+.17*lane,.94],wake=blend(hung,back,release);
+     tangent=blend(tangent,wake,bind);
+     // Interpolate the starting row too. Switching to an earlier margin row
+     // on the frame a thread lifts would shift the whole hanging curve.
+     if(start>0){
+      const last=sections.length-1;
+      route=sections.map((_,k)=>{
+       const j=mix(start,last,k/last)*(1-bind)+k*bind,lo=Math.min(last,Math.floor(j));
+       return blend(sections[lo],sections[Math.min(last,lo+1)],j-lo);
+      });
+     }
+     if(pull>0){
+      const suspended=[joint,...route],last=route.length;
+      const reach=span*(.17+.10*(lane+1)/2+.48*release)*(1-.74*flight);
+      // Retrace the existing margin. The free end travels up past each line
+      // of prose before the last loop turns into a short, tapered flight wake.
+      route=route.map((_,k)=>{
+       const u=(k+1)/last,q=u*(1-.946*pull)*last,lo=Math.floor(q);
+       const hanging=blend(suspended[lo],suspended[Math.min(last,lo+1)],q-lo);
+       const curl=Math.sin(Math.PI*u)*(lane*4+3*Math.sin(1.6*Math.PI*u))*(1-.58*flight);
+       const jet=[joint[0]+wake[0]*reach*u-wake[1]*curl,
+        joint[1]+wake[1]*reach*u+wake[0]*curl+span*.08*u*u*(1-flight)];
+       return blend(hanging,jet,recoil);
+      });
+     }
+     strength=mix(strength,shuttle.major?.72:.49,bind)*(1-ease((p-.244)/.090));
+    }
+    const d=threadPath(joint,tangent,route);
+    attr(path,'d',d);attr(path,'opacity',strength.toFixed(3));return d;
    }
    fabric.style.display=opening>0?'':'none';
    if(opening>0){
@@ -228,12 +292,29 @@
     ground.paths.forEach((path,i)=>{
      // These retained terrain IDs exist in every world and morph through
      // terraces, channels and islands with the original floor coordinates.
-     const line=byId.get(floorSources[i]),lane=i/(ground.paths.length-1)*2-1;
-     attach(path,line,0,bands.map(point=>point(lane)),i%3===0?.37:.24);
+     const line=byId.get(root.ProfileGeometry.weaveFloorIds[i]),lane=i/(ground.paths.length-1)*2-1,major=i%3===0;
+     const bind=ease((acquire-i*.015)/.895),shuttle=fold&&bind>0?{bind,lane,major}:null;
+     const d=attach(path,line,0,bands.map(point=>point(lane)),major?.37:.24,shuttle);
+     if(fold||path.hasAttribute('data-bind')){
+      attr(path,'data-bind',bind.toFixed(3));attr(path,'data-pull',pull.toFixed(3));attr(path,'data-flight',flight.toFixed(3));
+     }
+     // The light is a moving portion of the same cubic, beginning near the
+     // hem and travelling towards the fold. It lingers on the gathered tail.
+     const pulse=ground.pulses[i];
+     if(p>.016&&p<.294&&d){
+      const travel=ease((p-.016-i*.0014)/.147),brightness=ease((p-.016)/.022)*(1-ease((p-.216)/.078));
+      attr(pulse,'d',d);attr(pulse,'stroke-dasharray',(mix(.095,.40,recoil)*(major?1:.65)).toFixed(3)+' 2');
+      attr(pulse,'stroke-dashoffset',(-(1-travel)*.92).toFixed(3));attr(pulse,'opacity',(brightness*(major?.92:.65)).toFixed(3));
+     }else if(pulse.getAttribute('opacity')!=='0')attr(pulse,'opacity','0');
     });
    }
   }
-  return {measure,draw,hide};
+  function drawLaunch(frame){
+   if(!frame?.plane||frame.progress>=.34||innerWidth>=768){hide();return;}
+   if(!layout)measure(frame.sourceBounds);
+   draw({...frame,launchProgress:frame.progress,theme:root.ProfileGeometry.paletteAt(frame.position)});
+  }
+  return {measure,draw,drawLaunch,hide};
  }
  root.ProfileSharedWeave={create};
 })(typeof globalThis!=='undefined'?globalThis:this);

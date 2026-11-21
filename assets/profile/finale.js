@@ -170,19 +170,44 @@
    const light=actingModule?.lightAt(p,charge,thoughtTime,formation)||thoughtModule?.lightAt(p,charge,thoughtTime,formation)||{energy:charge,flare:0,gold:charge,phase:0,spectrum:['#fff8df','#ffe0a2','#edb662']},hookIds=thoughtModule&&formation>0?thoughtModule.targets(skills,(s,t)=>orbit(s,phase(s.category,t)),visibleTime,light.hook):[],hookTargets=hookIds.map(id=>nodes.find(n=>n.id===id)).filter(Boolean);
    return {p,pose:actor,head:actualHead,overture,plane,light,thoughtTime,hookTargets,synthesis,trace,sourceAlpha:quiet*(1-smooth((p-.12)/.16)),environments,memory,charge,nodes,attention,camera,phase:p<.10?'remember':p<.48?'gather':p<.68?'within':p<.94?'reveal':'orbit',pose0};
   }
-  return {skills,sample};
+  const sourceFloor=environments.filter(l=>l.floor&&g.weaveFloorIds.includes(l.id));
+  return {skills,sample,sourcePlane,sourceFloor};
  }
  function create(options){
   const {g,canvas,ctx,stageHost,summaryHost,professional,contact,requestMeasure,wake}=options,model=createModel(g,root.ProfileFinaleData||[]),time=clock(),thoughtLayer=thoughtModule?.create(),textures=new Map(),lang=document.documentElement.lang,portal=document.createElement('div');portal.className='finale-portal';portal.setAttribute('aria-hidden','true');document.body.appendChild(portal);const portalCaption=document.createElement('p');portalCaption.className='finale-portal-caption';portal.appendChild(portalCaption);
   const caption=document.querySelector('.finale-caption'),name=document.querySelector('.finale-skill-name'),purpose=document.querySelector('.finale-skill-purpose'),bridge=document.querySelector('#work-heading .story-bridge');
   let layoutWidth=innerWidth,layoutHeight=innerHeight,anchors=[],start=Infinity,end=Infinity,active=false,settled=false,sourceRect=null,padding={top:0,bottom:0,left:0,right:0},snapshot={},loaded=false,lastName='',lastPhase='',lastP=-1,geometryCache=null,skinCache=null;
-  function sourceBounds(y){const r=stageHost.getBoundingClientRect(),sticky=parseFloat(getComputedStyle(stageHost.closest('.stage')).top)||105;return {left:r.left,top:Math.min(sticky,r.top+Math.max(0,y-start)),width:r.width,height:r.height};}
-  function measure(a){anchors=a;end=a[9];start=a[8]+(a[9]-a[8])*(g.config.morph.start+(g.config.morph.end-g.config.morph.start)*(SOURCE-8));if(active&&(layoutWidth!==innerWidth||layoutHeight!==innerHeight)){sourceRect=sourceBounds(scrollY);padding=innerWidth<768?{top:20,bottom:38,left:0,right:0}:{top:0,bottom:0,left:0,right:0};}layoutWidth=innerWidth;layoutHeight=innerHeight;}
+  function sourceBounds(y){
+   const r=stageHost.getBoundingClientRect(),sticky=parseFloat(getComputedStyle(stageHost.closest('.stage')).top)||105;
+   const top=Math.min(sticky,r.top+Math.max(0,y-start));
+   return {left:r.left,right:r.right,top,bottom:top+r.height,width:r.width,height:r.height};
+  }
+  const measuredInsets=new Map();
+  function stagePadding(){
+   const compact=innerWidth<768;
+   if(canvas.parentElement===stageHost){
+    const css=getComputedStyle(canvas),px=side=>parseFloat(css.getPropertyValue('padding-'+side))||0;
+    measuredInsets.set(compact,{left:px('left'),right:px('right'),top:px('top'),bottom:px('bottom')});
+   }
+   // A direct link can start in the dock. In that case there is no source
+   // canvas to measure until the reader returns to the preceding chapter.
+   return measuredInsets.get(compact)||(compact?{left:0,right:0,top:20,bottom:lang==='th'?48:38}:{left:0,right:0,top:0,bottom:0});
+  }
+  function measure(a){
+   const previousStart=start,previousEnd=end;
+   anchors=a;end=a[9];start=a[8]+(end-a[8])*(g.config.morph.start+(g.config.morph.end-g.config.morph.start)*(SOURCE-8));
+   // A late font or an edited working chapter can move the entrance while
+   // the canvas is in the portal. Keep its source camera on that same mark.
+   if(active&&(layoutWidth!==innerWidth||layoutHeight!==innerHeight||previousStart!==start||previousEnd!==end)){
+    sourceRect=sourceBounds(scrollY);padding=stagePadding();
+   }
+   layoutWidth=innerWidth;layoutHeight=innerHeight;
+  }
   function progress(y){return y>=end-1?1:clamp((y-start)/Math.max(1,end-start));}
   function load(){if(loaded)return;loaded=true;for(const s of model.skills){const img=new Image();img.src='/assets/skills/'+s.id+'.webp';img.decode().then(async()=>{let bitmap=img;if(root.createImageBitmap){try{bitmap=await createImageBitmap(img,{resizeWidth:160,resizeHeight:160,resizeQuality:'high'});}catch{}}if(bitmap===img){const tile=document.createElement('canvas');tile.width=tile.height=160;tile.getContext('2d').drawImage(img,0,0,160,160);bitmap=tile;}textures.set(s.id,bitmap);img.removeAttribute('src');wake();}).catch(()=>{});}}
   function desired(y){if(y>start-innerHeight*1.4)load();return y>=start&&y<anchors[10];}
   function host(y){const wanted=desired(y),p=progress(y);document.documentElement.classList.toggle('profile-finale-active',wanted);if(!wanted){thoughtLayer?.hide();if(active){active=false;settled=false;professional.classList.remove('finale-active','finale-settled');portal.style.display='none';caption?.classList.remove('is-visible');}return null;}
-   if(!active){active=true;const fromStage=canvas.parentElement===stageHost,style=getComputedStyle(canvas);sourceRect=sourceBounds(y);for(const side of ['top','bottom','left','right'])padding[side]=fromStage?(parseFloat(style['padding'+side[0].toUpperCase()+side.slice(1)])||0):(innerWidth<768?(side==='top'?20:side==='bottom'?38:0):0);}
+   if(!active){active=true;sourceRect=sourceBounds(y);padding=stagePadding();}
    professional.classList.add('finale-active');const nextSettled=p>=1;if(settled&&!nextSettled)time.capture();settled=nextSettled;professional.classList.toggle('finale-settled',settled);
    if(settled){portal.style.display='none';const r=summaryHost.getBoundingClientRect();if(r.bottom<=0||r.top>=innerHeight)thoughtLayer?.hide();return summaryHost;}
    const s=stageHost.getBoundingClientRect(),d=summaryHost.getBoundingClientRect(),u=smooth((p-.53)/.47),w=mix(sourceRect.width,d.width,u),h=mix(sourceRect.height,d.height,u),safe=document.querySelector('.site-header').getBoundingClientRect().bottom+10;
@@ -199,6 +224,24 @@
     ctx.closePath();ctx.globalAlpha=clamp(alpha*fillAlpha);ctx.fillStyle=item.fill;ctx.fill();
    }
    drawPath(item.points,item.color,item.width,alpha,project);
+  }
+  let originalFold=null;
+  function flightFrame(f,r,project){
+   if(!f.plane)return null;
+   const viewport=q=>{const [x,y,z]=project(q);return [r.left+x,r.top+y,z];};
+   const compact=innerWidth<768;
+   if(originalFold?.bounds!==sourceRect||originalFold.padding!==padding){
+    const {left,top,width,height}=sourceRect,base=g.createProjector(SOURCE,width,height,{compact});
+    const sourcePoint=q=>{
+     const [x,y,z]=base(q);return [left+padding.left+x*(width-padding.left-padding.right)/width,
+      top+padding.top+y*(height-padding.top-padding.bottom)/height,z];
+    };
+    originalFold={bounds:sourceRect,padding,plane:g.projectPaperPlane(model.sourcePlane,sourcePoint)};
+   }
+   const projected=compact?model.sourceFloor.map(l=>({id:l.id,floor:true,alpha:l.alpha*f.sourceAlpha,points:l.points.map(viewport)})):[];
+   return {plane:g.projectPaperPlane(f.plane,viewport),sourcePlane:originalFold.plane,
+    position:SOURCE,progress:f.p,startY:start,bounds:{left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height},
+    sourceBounds:sourceRect,sourcePadding:padding,projected};
   }
   const formationAt=p=>smooth((p-.94)/.06);
  function render(dt,y){const p=progress(y),r=canvas.getBoundingClientRect(),visible=r.bottom>0&&r.top<innerHeight&&r.right>0;if(!active||!r.width||!r.height)return {active:false,pending:false};
@@ -295,10 +338,11 @@
    if(lastPhase!==f.phase){lastPhase=f.phase;const el=document.querySelector('.finale-phase');if(el)el.textContent=labels[lang==='th'?'th':'en'][f.phase];portalCaption.textContent=labels[lang==='th'?'th':'en'][f.phase];}
    caption?.classList.toggle('is-visible',p>.85);const partner=projected.find(s=>s.id===f.attention.secondaryId),pairing=f.attention.kind==='pair'&&partner&&f.attention.weight>.15,selected=pointed||(!lastName?projected.find(s=>s.q[2]>bodyDepth)||projected[0]:null),captionKey=selected?(pairing?selected.id+'+'+partner.id:selected.id):lastName;
    if(selected&&captionKey!==lastName&&!caption?.contains(document.activeElement)){lastName=captionKey;if(name)name.textContent=pairing?selected.name+' + '+partner.name:selected.name;if(purpose)purpose.textContent=pairing?(reviewed?.[lang==='th'?'th':'en']?.synthesis||(lang==='th'?'ลองให้สองวิธีนี้ทำงานด้วยกัน':'Two ways of working, brought together.')):(lang==='th'?selected.concept_th:selected.purpose);}
-   snapshot={active:true,p,phase:f.phase,visible,visibleSeconds:c.time,heldSeconds:c.held,headGlowSeconds:c.glowTime,thoughtSeconds:c.thoughtTime,thought:thoughtLayer?.snapshot(),headLight:f.light,actingKind:f.attention.kind,actingBeat:f.attention.beat,secondaryId:f.attention.secondaryId,synthesis:f.synthesis?{ids:f.synthesis.ids,weight:f.synthesis.weight}:null,captured:f.nodes.filter(s=>s.pull>.01).map(s=>({id:s.id,weight:s.pull,point:s.point})),skillCount:f.nodes.length,fragmentCount:f.memory.length,memoryWorks:f.overture.echoes.filter(e=>e.alpha>.04).map(e=>e.id),planeAlpha:f.plane?.alpha||0,planeVisible:(f.plane?.alpha||0)>.01,arrivedMass:f.charge,targetId:f.attention.targetId,gesture:f.attention.stage,hand:f.attention.targetId&&pointed?.point[0]<CENTER[0]?'left':'right',head:f.head,host:canvas.parentElement===portal?'portal':'experience',textures:textures.size,camera:f.camera};lastP=p;
-   return {active:true,pending:visible&&(p>=1||(p>.38&&p<.85&&f.charge>.005)),visible};
+   const weaveFrame=flightFrame(f,r,project);
+   snapshot={active:true,p,phase:f.phase,paperFold:weaveFrame?.plane||null,visible,visibleSeconds:c.time,heldSeconds:c.held,headGlowSeconds:c.glowTime,thoughtSeconds:c.thoughtTime,thought:thoughtLayer?.snapshot(),headLight:f.light,actingKind:f.attention.kind,actingBeat:f.attention.beat,secondaryId:f.attention.secondaryId,synthesis:f.synthesis?{ids:f.synthesis.ids,weight:f.synthesis.weight}:null,captured:f.nodes.filter(s=>s.pull>.01).map(s=>({id:s.id,weight:s.pull,point:s.point})),skillCount:f.nodes.length,fragmentCount:f.memory.length,memoryWorks:f.overture.echoes.filter(e=>e.alpha>.04).map(e=>e.id),planeAlpha:f.plane?.alpha||0,planeVisible:(f.plane?.alpha||0)>.01,arrivedMass:f.charge,targetId:f.attention.targetId,gesture:f.attention.stage,hand:f.attention.targetId&&pointed?.point[0]<CENTER[0]?'left':'right',head:f.head,host:canvas.parentElement===portal?'portal':'experience',textures:textures.size,camera:f.camera};lastP=p;
+   return {active:true,pending:visible&&(p>=1||(p>.38&&p<.85&&f.charge>.005)),visible,weaveFrame};
   }
-  return {measure,host,render,progress,desired,snapshot:()=>({...snapshot,active,visible:active&&canvas.getBoundingClientRect().bottom>0&&canvas.getBoundingClientRect().top<innerHeight}),resetTime:()=>{thoughtLayer?.hide();},model};
+  return {measure,host,render,progress,desired,snapshot:()=>({...snapshot,active,paperFold:active?snapshot.paperFold:null,visible:active&&canvas.getBoundingClientRect().bottom>0&&canvas.getBoundingClientRect().top<innerHeight}),resetTime:()=>{thoughtLayer?.hide();},model};
  }
  const api={SOURCE,phase,orbit,clock,catalogue,gesture,createModel,create};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileFinale=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

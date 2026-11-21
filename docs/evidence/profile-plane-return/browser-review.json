@@ -1,0 +1,829 @@
+{
+  "profiles": [
+    "https://holyboom.github.io/profile/",
+    "https://holyboom.github.io/th/profile/"
+  ],
+  "versions": [
+    "living-shared-weave-v32",
+    "living-paper-current-v33"
+  ],
+  "comparison": {
+    "beforeOrigin": "Deployed English and Thai pages",
+    "afterOrigin": "Local source preview",
+    "browserContext": "Playwright Linux browser engines in touch-enabled mobile viewports, deviceScaleFactor=1, without browser chrome",
+    "engines": {
+      "Chromium": "156.0.8078.79",
+      "WebKit": "27.2"
+    },
+    "nativePhotoPositions": {
+      "viewportCssPx": [
+        393,
+        654
+      ],
+      "first": 12785,
+      "second": 12833,
+      "portalBeginsAtCssY": 12827.19286845,
+      "portalEndsAtCssY": 13405.21875
+    },
+    "horizontalOverflowPx": 0,
+    "pageErrors": []
+  },
+  "film": {
+    "filename": "plane-return.mp4",
+    "engine": "Chromium",
+    "frameRate": 12,
+    "scanPositions": 77,
+    "nativeScrollYFromTo": [
+      12785,
+      13070
+    ],
+    "method": "Matched native document scroll offsets with a controlled renderer clock; original website frames displayed side by side. Repeated offsets at ends are holds. Film cadence is editorial."
+  },
+  "still": {
+    "filename": "plane-return.webp",
+    "engine": "WebKit",
+    "columnsInOrder": [
+      {
+        "frame": "photo1",
+        "nativeScrollY": 12785
+      },
+      {
+        "frame": "photo2",
+        "nativeScrollY": 12833
+      },
+      {
+        "frame": "p0.1",
+        "nativeScrollY": 12885
+      },
+      {
+        "frame": "p0.27",
+        "nativeScrollY": 12983
+      }
+    ]
+  },
+  "rasterMethod": "Difference between normal frame and a copy hiding one overlay at exactly the same native scroll position and clock. Count includes pixels with any RGB channel difference >=5/255, ignoring top navigation. Lower extent is the 99th percentile viewport y of that overlay. Geometry coordinates rounded to .01 CSS px before contact comparison.",
+  "samples": [
+    {
+      "sample": "pre",
+      "scrollY": 12827,
+      "finaleProgress": null,
+      "planeAlpha": null,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 8703,
+          "lowerExtent99pctCssY": 507.0
+        },
+        "Right": {
+          "changedPixels": 5385,
+          "lowerExtent99pctCssY": 649.2
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 8984,
+          "lowerExtent99pctCssY": 507.0
+        },
+        "Right": {
+          "changedPixels": 5873,
+          "lowerExtent99pctCssY": 650.0
+        }
+      },
+      "foldContact": null
+    },
+    {
+      "sample": "entry",
+      "scrollY": 12828,
+      "finaleProgress": 0.0013963664208392287,
+      "planeAlpha": 1,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 5602,
+          "lowerExtent99pctCssY": 506.0
+        },
+        "Right": {
+          "changedPixels": 5758,
+          "lowerExtent99pctCssY": 650.0
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 18.374,
+        "furthestRightRootToTailKeelSegmentPx": 0.004,
+        "rightRootCount": 8,
+        "tailViewport": [
+          200.299,
+          173.098
+        ]
+      }
+    },
+    {
+      "sample": "sample",
+      "scrollY": 12833,
+      "finaleProgress": 0.01004649805273061,
+      "planeAlpha": 1,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 5549,
+          "lowerExtent99pctCssY": 501.0
+        },
+        "Right": {
+          "changedPixels": 5815,
+          "lowerExtent99pctCssY": 650.0
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 18.375,
+        "furthestRightRootToTailKeelSegmentPx": 0.005,
+        "rightRootCount": 8,
+        "tailViewport": [
+          200.299,
+          173.107
+        ]
+      }
+    },
+    {
+      "sample": "lift",
+      "scrollY": 12862,
+      "finaleProgress": 0.060217261517700627,
+      "planeAlpha": 1,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 3987,
+          "lowerExtent99pctCssY": 390.0
+        },
+        "Right": {
+          "changedPixels": 5249,
+          "lowerExtent99pctCssY": 590.0
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 7.427,
+        "furthestRightRootToTailKeelSegmentPx": 0.005,
+        "rightRootCount": 8,
+        "tailViewport": [
+          200.299,
+          174.629
+        ]
+      }
+    },
+    {
+      "sample": "curl",
+      "scrollY": 12899,
+      "finaleProgress": 0.12422823559369686,
+      "planeAlpha": 1,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 1298,
+          "lowerExtent99pctCssY": 211.0
+        },
+        "Right": {
+          "changedPixels": 1487,
+          "lowerExtent99pctCssY": 308.1
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 0.004,
+        "furthestRightRootToTailKeelSegmentPx": 0.004,
+        "rightRootCount": 8,
+        "tailViewport": [
+          197.557,
+          179.726
+        ]
+      }
+    },
+    {
+      "sample": "load",
+      "scrollY": 12937,
+      "finaleProgress": 0.18996923599607135,
+      "planeAlpha": 1,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 415,
+          "lowerExtent99pctCssY": 189.0
+        },
+        "Right": {
+          "changedPixels": 141,
+          "lowerExtent99pctCssY": 216.0
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 0.002,
+        "furthestRightRootToTailKeelSegmentPx": 0.006,
+        "rightRootCount": 8,
+        "tailViewport": [
+          208.219,
+          179.518
+        ]
+      }
+    },
+    {
+      "sample": "release",
+      "scrollY": 12951,
+      "finaleProgress": 0.21418960456536723,
+      "planeAlpha": 1,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 477,
+          "lowerExtent99pctCssY": 188.2
+        },
+        "Right": {
+          "changedPixels": 270,
+          "lowerExtent99pctCssY": 210.0
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 0.004,
+        "furthestRightRootToTailKeelSegmentPx": 0.005,
+        "rightRootCount": 8,
+        "tailViewport": [
+          215.953,
+          177.573
+        ]
+      }
+    },
+    {
+      "sample": "flight",
+      "scrollY": 12975,
+      "finaleProgress": 0.25571023639844587,
+      "planeAlpha": 0.9647353991699053,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 380,
+          "lowerExtent99pctCssY": 178.0
+        },
+        "Right": {
+          "changedPixels": 168,
+          "lowerExtent99pctCssY": 184.0
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 0.003,
+        "furthestRightRootToTailKeelSegmentPx": 0.002,
+        "rightRootCount": 8,
+        "tailViewport": [
+          228.613,
+          168.6
+        ]
+      }
+    },
+    {
+      "sample": "slip",
+      "scrollY": 12995,
+      "finaleProgress": 0.2903107629260114,
+      "planeAlpha": 0.5345424253306781,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 178,
+          "lowerExtent99pctCssY": 168.0
+        },
+        "Right": {
+          "changedPixels": 98,
+          "lowerExtent99pctCssY": 172.0
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 0.004,
+        "furthestRightRootToTailKeelSegmentPx": 0.005,
+        "rightRootCount": 8,
+        "tailViewport": [
+          235.672,
+          161.944
+        ]
+      }
+    },
+    {
+      "sample": "last",
+      "scrollY": 13012,
+      "finaleProgress": 0.3197212104744421,
+      "planeAlpha": 0.11724378106067701,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 42,
+          "lowerExtent99pctCssY": 164.0
+        },
+        "Right": {
+          "changedPixels": 9,
+          "lowerExtent99pctCssY": 167.9
+        }
+      },
+      "foldContact": {
+        "leftStartToTailPx": 0.005,
+        "furthestRightRootToTailKeelSegmentPx": 0.006,
+        "rightRootCount": 8,
+        "tailViewport": [
+          236.505,
+          160.999
+        ]
+      }
+    },
+    {
+      "sample": "gone",
+      "scrollY": 13035,
+      "finaleProgress": 0.35951181598114246,
+      "planeAlpha": 0,
+      "liveBefore": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "candidateAfter": {
+        "Left": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        },
+        "Right": {
+          "changedPixels": 0,
+          "lowerExtent99pctCssY": null
+        }
+      },
+      "foldContact": null
+    }
+  ],
+  "nativeScrollRevisits": [
+    {
+      "configuration": "wk-en-393x654",
+      "releaseAndRevisit": {
+        "direct": {
+          "scrollY": 12899,
+          "progress": 0.124
+        },
+        "pre": {
+          "scrollY": 12826,
+          "progress": null
+        },
+        "entry": {
+          "scrollY": 12828,
+          "progress": 0.001
+        },
+        "forward": {
+          "scrollY": 12899,
+          "progress": 0.124
+        },
+        "near": {
+          "scrollY": 12937,
+          "progress": 0.19
+        },
+        "mid": {
+          "scrollY": 12972,
+          "progress": 0.251
+        },
+        "hold": {
+          "scrollY": 12972,
+          "progress": 0.251
+        },
+        "gone": {
+          "scrollY": 13058,
+          "progress": 0.399
+        },
+        "reverseMid": {
+          "scrollY": 12972,
+          "progress": 0.251
+        },
+        "reverse": {
+          "scrollY": 12899,
+          "progress": 0.124
+        },
+        "back": {
+          "scrollY": 12826,
+          "progress": null
+        },
+        "again": {
+          "scrollY": 12899,
+          "progress": 0.124
+        }
+      },
+      "pointsComparedPerFrame": 45,
+      "maxViewportDeltaPx": {
+        "directVersusForward": 0.0,
+        "forwardVersusReverse": 0.0,
+        "flightVersusHold890ms": 0.0,
+        "flightVersusReverse": 0.0
+      },
+      "horizontalOverflowPx": 0
+    },
+    {
+      "configuration": "wk-th-393x654",
+      "releaseAndRevisit": {
+        "direct": {
+          "scrollY": 12627,
+          "progress": 0.124
+        },
+        "pre": {
+          "scrollY": 12565,
+          "progress": null
+        },
+        "entry": {
+          "scrollY": 12567,
+          "progress": 0
+        },
+        "forward": {
+          "scrollY": 12627,
+          "progress": 0.124
+        },
+        "near": {
+          "scrollY": 12659,
+          "progress": 0.19
+        },
+        "mid": {
+          "scrollY": 12688,
+          "progress": 0.25
+        },
+        "hold": {
+          "scrollY": 12688,
+          "progress": 0.25
+        },
+        "gone": {
+          "scrollY": 12761,
+          "progress": 0.401
+        },
+        "reverseMid": {
+          "scrollY": 12688,
+          "progress": 0.25
+        },
+        "reverse": {
+          "scrollY": 12627,
+          "progress": 0.124
+        },
+        "back": {
+          "scrollY": 12565,
+          "progress": null
+        },
+        "again": {
+          "scrollY": 12627,
+          "progress": 0.124
+        }
+      },
+      "pointsComparedPerFrame": 45,
+      "maxViewportDeltaPx": {
+        "directVersusForward": 0.0,
+        "forwardVersusReverse": 0.0,
+        "flightVersusHold890ms": 0.0,
+        "flightVersusReverse": 0.0
+      },
+      "horizontalOverflowPx": 0
+    },
+    {
+      "configuration": "ch-en-393x700",
+      "releaseAndRevisit": {
+        "direct": {
+          "scrollY": 12911,
+          "progress": 0.125
+        },
+        "pre": {
+          "scrollY": 12837,
+          "progress": null
+        },
+        "entry": {
+          "scrollY": 12839,
+          "progress": 0.001
+        },
+        "forward": {
+          "scrollY": 12911,
+          "progress": 0.125
+        },
+        "near": {
+          "scrollY": 12949,
+          "progress": 0.19
+        },
+        "mid": {
+          "scrollY": 12984,
+          "progress": 0.25
+        },
+        "hold": {
+          "scrollY": 12984,
+          "progress": 0.25
+        },
+        "gone": {
+          "scrollY": 13071,
+          "progress": 0.399
+        },
+        "reverseMid": {
+          "scrollY": 12984,
+          "progress": 0.25
+        },
+        "reverse": {
+          "scrollY": 12911,
+          "progress": 0.125
+        },
+        "back": {
+          "scrollY": 12837,
+          "progress": null
+        },
+        "again": {
+          "scrollY": 12911,
+          "progress": 0.125
+        }
+      },
+      "pointsComparedPerFrame": 45,
+      "maxViewportDeltaPx": {
+        "directVersusForward": 0.0,
+        "forwardVersusReverse": 0.0,
+        "flightVersusHold890ms": 0.0,
+        "flightVersusReverse": 0.0
+      },
+      "horizontalOverflowPx": 0
+    }
+  ],
+  "portalCaptionCheck": {
+    "method": "Intersect the actual portal caption DOM text ranges with the isolated right-strand raster. RGB threshold 5/255. Chromium 393 x 654.",
+    "samples": [
+      {
+        "sample": "lift",
+        "scrollY": 12862,
+        "rightMeshPixelsInsideCaptionTextRects": 0,
+        "rectsCssPx": [
+          [
+            119.1875,
+            278.78125,
+            273.8125,
+            292.78125
+          ]
+        ]
+      },
+      {
+        "sample": "curl",
+        "scrollY": 12899,
+        "rightMeshPixelsInsideCaptionTextRects": 0,
+        "rectsCssPx": [
+          [
+            124.609375,
+            284.90625,
+            268.375,
+            298.90625
+          ]
+        ]
+      },
+      {
+        "sample": "load",
+        "scrollY": 12937,
+        "rightMeshPixelsInsideCaptionTextRects": 0,
+        "rectsCssPx": [
+          [
+            124.609375,
+            286.671875,
+            268.375,
+            300.671875
+          ]
+        ]
+      },
+      {
+        "sample": "release",
+        "scrollY": 12951,
+        "rightMeshPixelsInsideCaptionTextRects": 0,
+        "rectsCssPx": [
+          [
+            124.609375,
+            286.671875,
+            268.375,
+            300.671875
+          ]
+        ]
+      },
+      {
+        "sample": "flight",
+        "scrollY": 12975,
+        "rightMeshPixelsInsideCaptionTextRects": 0,
+        "rectsCssPx": [
+          [
+            124.609375,
+            286.671875,
+            268.375,
+            300.671875
+          ]
+        ]
+      },
+      {
+        "sample": "slip",
+        "scrollY": 12995,
+        "rightMeshPixelsInsideCaptionTextRects": 0,
+        "rectsCssPx": [
+          [
+            124.609375,
+            286.671875,
+            268.375,
+            300.671875
+          ]
+        ]
+      },
+      {
+        "sample": "last",
+        "scrollY": 13012,
+        "rightMeshPixelsInsideCaptionTextRects": 0,
+        "rectsCssPx": [
+          [
+            124.609375,
+            286.671875,
+            268.375,
+            300.671875
+          ]
+        ]
+      }
+    ]
+  },
+  "browserTouch": {
+    "input": "Chromium touch events dispatched through browser DevTools (Linux emulation)",
+    "engine": "156.0.8078.79",
+    "viewport": [
+      393,
+      654
+    ],
+    "dpr": 2,
+    "initial": {
+      "y": 12785,
+      "pose": 8.701532041410765,
+      "track": 28.104596124232295,
+      "prop": "possibility",
+      "p": null,
+      "phase": null,
+      "memories": null,
+      "plane": null,
+      "headClock": null,
+      "draws": 13,
+      "return": null,
+      "tail": null,
+      "visible": true
+    },
+    "lift": {
+      "y": 12889,
+      "pose": 8.771701909208668,
+      "track": 28.315105727626005,
+      "prop": "possibility",
+      "p": 0.10692797232991409,
+      "phase": "gather",
+      "memories": [],
+      "plane": 1,
+      "headClock": 0,
+      "draws": 54,
+      "return": "return",
+      "tail": [
+        200.15506245784036,
+        178.65643038536984
+      ],
+      "visible": true
+    },
+    "flight": {
+      "y": 12978,
+      "pose": 8.831751122997257,
+      "track": 28.495253368991772,
+      "prop": "none",
+      "p": 0.2609003153775807,
+      "phase": "gather",
+      "memories": [
+        "blueprint"
+      ],
+      "plane": 0.9253373705761949,
+      "headClock": 0,
+      "draws": 80,
+      "return": "released",
+      "tail": [
+        229.96460399100434,
+        167.38141763448886
+      ],
+      "visible": true
+    },
+    "hold": {
+      "y": 12978,
+      "pose": 8.831751122997257,
+      "track": 28.495253368991772,
+      "prop": "none",
+      "p": 0.2609003153775807,
+      "phase": "gather",
+      "memories": [
+        "blueprint"
+      ],
+      "plane": 0.9253373705761949,
+      "headClock": 0,
+      "draws": 80,
+      "return": "released",
+      "tail": [
+        229.96460399100434,
+        167.38141763448886
+      ],
+      "visible": true
+    },
+    "back": {
+      "y": 12783,
+      "pose": 8.70018262087619,
+      "track": 28.100547862628567,
+      "prop": "possibility",
+      "p": null,
+      "phase": null,
+      "memories": null,
+      "plane": null,
+      "headClock": null,
+      "draws": 111,
+      "return": null,
+      "tail": null,
+      "visible": true
+    },
+    "exact": {
+      "y": 12785,
+      "pose": 8.701532041410765,
+      "track": 28.104596124232295,
+      "prop": "possibility",
+      "p": null,
+      "phase": null,
+      "memories": null,
+      "plane": null,
+      "headClock": null,
+      "draws": 117,
+      "return": null,
+      "tail": null,
+      "visible": true
+    }
+  }
+}

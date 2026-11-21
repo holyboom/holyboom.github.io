@@ -805,7 +805,7 @@
    const a=lerp(near,nose,.19+i*.058),b=lerp(near,nearFold,.45-i*.13);
    ink('registration-'+i,[a,lerp(b,nose,.19+i*.058)],'#91858a',.9);
   }
-  return {id:'paper-plane',prop:'possibility',paths,texts:[],unfold,hub,source,tip:nose,axis,track};
+  return {id:'paper-plane',prop:'possibility',paths,texts:[],unfold,hub,source,tip:nose,tail,nearFold,farFold,axis,track};
  }
  // Retain the exact chapter geometry into the throw. Once released, the rear
  // folds bank as one sheet; the glint is the path actually traced by the nose.
@@ -831,7 +831,16 @@
    const points=Array.from({length:21},(_,i)=>airborne(plane.tip,flight*Math.pow(i/20,.86)));
    paths.unshift({id:'paper-flight-crease',points,color:'#ffdc9a',alpha:.72*smooth(flight/.18),width:1.15,role:'paper',fill:null});
   }
-  return {...plane,alpha:plane.alpha*(1-smooth((progress-.245)/.095)),paths,hub:airborne(plane.hub,flight),tip:airborne(plane.tip,flight),flight};
+  return {...plane,alpha:plane.alpha*(1-smooth((progress-.245)/.095)),paths,hub:airborne(plane.hub,flight),tip:airborne(plane.tip,flight),
+   tail:airborne(plane.tail,flight),nearFold:airborne(plane.nearFold,flight),farFold:airborne(plane.farFold,flight),flight};
+ }
+ // The same five vertices form the painted keel, wing creases and spine.
+ // Project before normalising the heading so banking and perspective survive.
+ function projectPaperPlane(plane,project){
+  if(!plane?.tail)return null;
+  const screen=q=>project(q).slice(0,2),tail=screen(plane.tail),nose=screen(plane.tip);
+  return {tail,keel:screen(plane.hub),nose,nearFold:screen(plane.nearFold),farFold:screen(plane.farFold),
+   axis:norm(sub(nose,tail)),alpha:plane.alpha};
  }
  // Quiet, authored surroundings share the camera and scroll timeline, but never
  // become hand targets. Stable path identities let their woven forms reconfigure.
@@ -1663,5 +1672,7 @@
    return polygon.length>=3?[...polygon,polygon[0]]:null;
   }).filter(Boolean);
  }
- const api={motion,launchPaperPlane,performanceAt:(position,idleSeconds=0)=>motion.poseAt(resolve(position),idleSeconds),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,workLabelVisibility,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,trailSpanAt,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
+ // Retained world-floor curves attached to the reading margin across all stages.
+ const weaveFloorIds=Object.freeze([684,691,698,705,712,719,726,733]);
+ const api={motion,launchPaperPlane,projectPaperPlane,weaveFloorIds,performanceAt:(position,idleSeconds=0)=>motion.poseAt(resolve(position),idleSeconds),config:cfg,LINES,SAMPLES,sequence,starts,resolve,storyAt,orbitAt,focusAt,cameraTrack,cameraAt,cameraEye,filamentAt,filamentRails,perspectiveAt,createProjector,projectorForCamera:prepareProjection,bodyLines:(p,detail=2)=>createScene(29,p,true,detail).filter(l=>l.points.length>1).map(l=>({...l,alpha:l.alpha*(l.group==='human'?.76:1)})),bodySkin:p=>gloveSkin(29,p),projectLines,projectIllustrations,workLabelVisibility,skinMaterials,clipFilled,sceneryFocus,sceneryOpacity,paletteAt,dramaAt,illustration,lightAt,lightTrail,trailSpanAt,clamp,mix,smooth,openingPhase,frame,project,positionFromAnchors};if(typeof module==='object'&&module.exports)module.exports=api;else root.ProfileGeometry=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

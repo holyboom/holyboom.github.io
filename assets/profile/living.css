@@ -120,7 +120,7 @@ main :is(a,summary),.site-footer a{scroll-margin-block:110px 20px}
 }
 @media print{.finale-portal,.finale-phase{display:none!important}.finale-notes{max-width:none}.finale-caption{min-height:0}.finale-catalog>div{display:block!important}}
 
-.profile-finale-active .stage-frame>:not(canvas){visibility:hidden}.finale-portal-caption{position:absolute;bottom:20px;left:12%;right:12%;font-size:13px;line-height:1.8;text-align:center;color:var(--mint);z-index:2;pointer-events:none;text-shadow:0 2px 8px #0b0912}
+.profile-finale-active .stage-frame>:not(canvas,.shared-weave){visibility:hidden}.finale-portal-caption{position:absolute;bottom:20px;left:12%;right:12%;font-size:13px;line-height:1.8;text-align:center;color:var(--mint);z-index:2;pointer-events:none;text-shadow:0 2px 8px #0b0912}
 
 .profile-enhanced .reflection-art .finale-phase{visibility:hidden}.profile-enhanced .finale-settled .reflection-art .finale-phase{visibility:visible}
 
@@ -164,5 +164,5 @@ main :is(a,summary),.site-footer a{scroll-margin-block:110px 20px}
  }
  .profile-enhanced .shared-weave-lower{clip-path:inset(var(--shared-weave-seam,100%) 0 0 0)}
  .profile-enhanced .stage-frame :is(.scene-transition,.scene-meaning,.scene-caption){z-index:2}
- .profile-finale-active .shared-weave-host,:root:not(.profile-story-active) .shared-weave-host{visibility:hidden}
+ :root:not(.profile-story-active) .shared-weave-host{visibility:hidden}
 }

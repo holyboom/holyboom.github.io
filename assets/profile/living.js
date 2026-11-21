@@ -191,7 +191,17 @@
   openingActive=current<1&&g.resolve(current)<g.config.opening.stopAt;if(openingActive)openingSeconds+=dt/1000;ambientPhase=openingActive?g.openingPhase(openingSeconds):0;
   const desired=beneath.open&&current>6.5?1:0;exploded=g.mix(exploded,desired,follow);
   const ending=finale?.render(dt/1000,scrollY);
-  if(ending?.active){resetTrail();readingThread?.hide();sharedWeave?.hide();renderedCamera=finale.snapshot().camera;draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;dirty=false;if(ending.pending||current!==target)wake();return;}
+  if(ending?.active){
+   resetTrail();
+   if(ending.weaveFrame){
+    readingThread?.drawLaunch(ending.weaveFrame);
+    if(innerWidth<768)sharedWeave?.drawLaunch(ending.weaveFrame);
+   }else{
+    readingThread?.hide();sharedWeave?.hide();
+   }
+   renderedCamera=finale.snapshot().camera;draws++;drawCost=drawCost*.9+(performance.now()-started)*.1;
+   dirty=false;if(ending.pending||current!==target)wake();return;
+  }
   const formed=g.resolve(current)>=1;
   const moving=Math.abs(current-target)>.0001||Math.abs(travel)>.0001;
   if(!formed)idleSeconds=0;
@@ -244,7 +254,9 @@
   ctx.lineCap=ctx.lineJoin='round';
   const projected=g.projectLines(geom.filter(line=>line.alpha>.005&&line.points.length>1),project);
   if(innerWidth<768&&canvas.parentElement===originalHost){
-   sharedWeave?.draw({position:current,projected,theme,shot,ambientPhase});
+   const paper=rawIllustrations.find(layer=>layer.prop==='possibility');
+   const plane=paper?g.projectPaperPlane(paper,project):null;
+   sharedWeave?.draw({position:current,projected,theme,shot,ambientPhase,plane});
   }
   // Skip invisible or desktop-only paths before the per-vertex transform.
   // The world-set screen bounds can only be tested after projection.

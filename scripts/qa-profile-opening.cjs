@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypt
 
 // Hold the actual SVG frame while the browser paints it on the page and in
 // isolation. Text antialiasing can change when a layer disappears on Linux.
-async function paintedWeave(page,selector) {
+async function paintedWeave(page,selector,returning=false) {
  const mesh=await page.locator('#profile-shared-fabric').elementHandle();
  const still=await mesh.evaluateHandle(el=>{const copy=el.cloneNode(true);el.replaceWith(copy);return copy;});
  const frames=[];
@@ -18,7 +18,7 @@ async function paintedWeave(page,selector) {
   await still.evaluate((copy,el)=>copy.replaceWith(el),mesh);
   await still.dispose();await mesh.dispose();
  }
- return page.evaluate(async ({images,selector})=>{
+ return page.evaluate(async ({images,selector,returning})=>{
   const pixels=await Promise.all(images.map(async encoded=>{
    const img=new Image();img.src='data:image/png;base64,'+encoded;await img.decode();
    const canvas=document.createElement('canvas');canvas.width=img.width;canvas.height=img.height;
@@ -36,6 +36,13 @@ async function paintedWeave(page,selector) {
    return count;
   }
   const metrics={seam,byStage:changed(seam,seam+band),byFoot:changed(innerHeight-band,innerHeight)};
+  if(returning){
+   // The scroll gesture moves the visible ink itself up the page. Measure a
+   // percentile so a faint antialiased pixel cannot become the lower extent.
+   const rows=Array.from({length:innerHeight},(_,y)=>changed(y,y+1));
+   metrics.count=rows.reduce((sum,n)=>sum+n,0);
+   let sum=0;metrics.lowerEdge=rows.findIndex(n=>(sum+=n)>=metrics.count*.95);
+  }
   if(selector){
    const el=document.querySelector(selector),range=new Range();range.selectNodeContents(el.firstChild);
    metrics.height=el.getBoundingClientRect().height;
@@ -50,7 +57,97 @@ async function paintedWeave(page,selector) {
    });
   }
   return metrics;
- },{images:frames,selector});
+ },{images:frames,selector,returning});
+}
+
+// The ownership boundary is a document coordinate. Test the two adjacent
+// native pixels as well as the held and flying stages of the actual throw.
+async function checkPaperReturn(page){
+ async function go(phase,view=page){
+  await view.evaluate(p=>{
+   const a=ProfileExperience.snapshot().anchors,c=ProfileGeometry.config.morph;
+   const start=a[8]+(a[9]-a[8])*(c.start+(c.end-c.start)*(ProfileFinale.SOURCE-8));
+   const y=p<0?Math.ceil(start)-1:Math.ceil(start+(a[9]-start)*p);
+   scrollTo({top:y,behavior:'instant'});
+  },phase);
+  await view.waitForFunction(p=>{
+   const s=ProfileExperience.snapshot(),f=s.finale;
+   return s.current===s.target&&(p<0?!f.active:f.active&&Math.abs(f.p-p)<.01);
+  },phase);
+ }
+ async function inkAt(phase,view=page){
+  await go(phase,view);
+  return paintedWeave(view,null,true);
+ }
+ async function attachment(view=page){
+  return view.evaluate(()=>{
+   const state=ProfileExperience.snapshot(),f=state.finale,g=ProfileGeometry;
+   const model=ProfileFinale.createModel(g,ProfileFinaleData).sample(f.p,f.visibleSeconds,f.heldSeconds,true);
+   const canvas=document.querySelector('#architecture').getBoundingClientRect();
+   const project=g.projectorForCamera(model.camera,canvas.width,canvas.height);
+   // Once airborne, the portal paints with all of its padding released.
+   const screen=(id,index)=>{
+    const line=model.plane.paths.find(l=>l.id==='work-28-plane-'+id);
+    const q=project(line.points[index]);return [q[0]+canvas.left,q[1]+canvas.top];
+   };
+   const tail=screen('spine',0),keel=screen('keel',3),dx=keel[0]-tail[0],dy=keel[1]-tail[1];
+   const roots=[];
+   for(const path of document.querySelectorAll('.shared-weave path[data-thread="floor"]')){
+    if(!path.getBoundingClientRect().height||Number(path.getAttribute('opacity'))<=0)continue;
+    const q=path.getPointAtLength(0).matrixTransform(path.getScreenCTM()),x=q.x-tail[0],y=q.y-tail[1];
+    const t=Math.min(1,Math.max(0,(x*dx+y*dy)/(dx*dx+dy*dy||1)));
+    roots.push(Math.hypot(x-t*dx,y-t*dy));
+   }
+   return {tail,roots:roots.length,gap:Math.max(0,...roots),readingTip:state.readingThread?.launch?.returnTip||null};
+  });
+ }
+ const before=await inkAt(-1),entry=await inkAt(0),lift=await inkAt(.15);
+ const first=await attachment();
+ const pause=await page.evaluate(async()=>{
+  const path=()=>Array.from(document.querySelectorAll('.shared-weave path[data-thread="floor"]'),el=>el.getAttribute('d')).join('');
+  const start=path(),p=ProfileExperience.snapshot().finale.p;
+  await new Promise(resolve=>setTimeout(resolve,140));
+  const idle=path();const descriptor=Object.getOwnPropertyDescriptor(document,'hidden');
+  try{
+   Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));
+   await new Promise(resolve=>setTimeout(resolve,140));
+   return start.length>0&&start===idle&&idle===path()&&ProfileExperience.snapshot().finale.p===p;
+  }finally{
+   if(descriptor)Object.defineProperty(document,'hidden',descriptor);else delete document.hidden;
+   document.dispatchEvent(new Event('visibilitychange'));
+  }
+ });
+ check('a-paused-or-hidden-page-holds-the-same-pull',pause&&first.roots>0);
+ const flight=await inkAt(.23),next=await attachment();
+ const spent=await inkAt(.40),back=await inkAt(.15),again=await attachment();
+ check('shared-fabric-remains-on-screen-as-the-portal-takes-over',before.byFoot>20&&entry.byFoot>20&&Math.abs(entry.lowerEdge-before.lowerEdge)<12,{before,entry});
+ check('scroll-lifts-the-lower-fabric-and-finishes-the-pull',entry.lowerEdge>lift.lowerEdge+20&&lift.lowerEdge>flight.lowerEdge+8&&flight.count>20&&spent.count===0,{entry,lift,flight,spent});
+ check('threads-follow-the-real-moving-paper-fold',[first,next].every(s=>s.roots>0&&s.gap<2)&&distance(first.tail,next.tail)>2,{first,next});
+ check('reversing-retraces-the-fabric-and-paper',Math.abs(back.lowerEdge-lift.lowerEdge)<3&&distance(first.tail,again.tail)<1&&back.count>20&&again.roots>0&&again.gap<2,{lift,back,first,again});
+ const direct=await page.context().browser().newPage({viewport:page.viewportSize()});
+ try{
+  await direct.goto(new URL('#experience',page.url()).href);
+  await direct.evaluate(()=>document.fonts.ready);
+  await direct.waitForFunction(()=>window.ProfileExperience?.snapshot().finale.p===1&&document.querySelector('#experience #architecture'));
+  const active=await direct.locator('.shared-weave-lower').isVisible()||await direct.evaluate(()=>ProfileExperience.snapshot().readingThread.visible);
+  const cold=await inkAt(.15,direct),coldFold=await attachment(direct);
+  const sameReading=first.readingTip&&coldFold.readingTip?distance(first.readingTip,coldFold.readingTip)<1:first.readingTip===coldFold.readingTip;
+  check('a-direct-summary-skips-the-pull-and-restores-it-on-reverse',!active&&sameReading&&cold.count>20&&Math.abs(cold.lowerEdge-lift.lowerEdge)<3&&coldFold.roots>0&&coldFold.gap<2,{active,cold,coldFold});
+  await direct.setViewportSize({width:320,height:568});
+  await direct.goto(new URL('/th/profile/',page.url()).href);
+  await direct.waitForFunction(()=>window.ProfileExperience?.snapshot().opening.active);
+  await direct.evaluate(()=>document.fonts.ready);
+  // The Thai caption wraps here. The middle of a curve can shift around its
+  // text even when both endpoints and the paper attachment still agree.
+  const capture=()=>direct.evaluate(()=>({y:scrollY,p:ProfileExperience.snapshot().finale.p,
+   curves:Array.from(document.querySelectorAll('.shared-weave path[data-thread="floor"]'),path=>path.getAttribute('d'))}));
+  await go(-1,direct);await go(.011,direct);const outbound=await capture();
+  await go(1,direct);await go(.24,direct);await go(.011,direct);const rewound=await capture();
+  const forwardHash=hash(outbound.curves),reverseHash=hash(rewound.curves);
+  check('thai-narrow-caption-preserves-every-fold-curve-on-rewind',outbound.y===rewound.y&&outbound.p===rewound.p&&outbound.curves.some(Boolean)&&forwardHash===reverseHash,
+   {y:[outbound.y,rewound.y],progress:[outbound.p,rewound.p],curves:outbound.curves.length,forwardHash,reverseHash});
+ }finally{await direct.close();}
+
 }
 
 async function checkSharedWeave(page,viewport){
@@ -98,9 +195,7 @@ async function checkSharedWeave(page,viewport){
  await checkPaint('opening-strands-paint-below-stage-and-near-viewport-foot');
  await seek(4);
  await checkPaint('story-floor-continues-into-the-reading-space');
- await seek(8.9);
- await page.waitForFunction(()=>ProfileExperience.snapshot().finale?.active);
- check('the-finale-replaces-the-story-weave',!(await lower.isVisible()));
+ await checkPaperReturn(page);
  await page.setViewportSize({width:320,height:568});
  await page.waitForFunction(()=>innerWidth===320&&ProfileExperience.snapshot().width<=320);
  await seek(0);
