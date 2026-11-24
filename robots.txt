@@ -4,4 +4,12 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# Training and dataset crawlers
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Meta-ExternalAgent
+User-agent: Applebot-Extended
+Disallow: /
+
 Sitemap: https://holyboom.github.io/sitemap.xml
