@@ -35,7 +35,11 @@ const {webkit,chromium}=require('playwright'),fs=require('fs');
   }
   await p.goto(new URL('profile/summary.txt',base).href,{waitUntil:'domcontentloaded'});const plain=await p.locator('body').innerText();check('plain-profile-complete',plain.includes('Theerawee')||plain.includes('THEERAWEE'));check('plain-profile-linkedin',plain.includes('https://www.linkedin.com/in/boom-theerawee'));
   const robots=await(await p.request.get(new URL('robots.txt',base).href)).text(),sitemap=await(await p.request.get(new URL('sitemap.xml',base).href)).text();
-  check('search-access-retained',robots.includes('User-agent: OAI-SearchBot\nAllow: /')&&!robots.includes('Disallow: /'));
+  const robotsGroups=robots.split(/\r?\n\s*\r?\n/);
+  check('search-access-retained',['*','OAI-SearchBot'].every(agent=>{
+   const group=robotsGroups.filter(block=>block.split(/\r?\n/).includes('User-agent: '+agent));
+   return group.length===1&&group[0].split(/\r?\n/).includes('Allow: /')&&!/^Disallow:\s*\S/im.test(group[0]);
+  }));
   check('curated-sitemap',sitemap.includes(origin+'/profile/')&&sitemap.includes(origin+'/th/profile/')&&!sitemap.includes('/qa/')&&!sitemap.includes('/docs/'));
   const root=await browser.newPage({viewport:{width:390,height:844}});root.on('pageerror',e=>errors.push(e.message));await root.goto(base,{waitUntil:'networkidle'});await root.waitForFunction(()=>window.HolyMindJourney&&HolyMindSkills.list().length===34);
   check('home-full-name-title',(await root.title()).includes('Theerawee Rangram'));
